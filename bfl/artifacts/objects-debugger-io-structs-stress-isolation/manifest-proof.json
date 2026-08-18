@@ -1,0 +1,11 @@
+{
+  "schema": "object-manifest-v1",
+  "checkpoint_handle": "ckpt-f3aa206b11363598cb7565d2a3af14fb",
+  "checkpoint_fingerprint": "f3aa206b11363598cb7565d2a3af14fb3043063eb742c13b89ed720da1190606",
+  "manifest_fingerprint": "d71f8d5f6aa6a67384102b7d22addd9fcecefe86a8c7b8aba528988af5853aee",
+  "coordinate_manifest_fingerprint": "034fad286c9d944c6197655f7376033a1bc24ca3eb866b6a14d7a39c2bb73230",
+  "readback_fingerprint_matches": true,
+  "manifest_contents": ["lexical rows", "attribute rows", "route sites", "per-seed spatial blocks", "pixel-bounding-box join", "measured evidence", "property back-map"],
+  "unit_tests_passed": "11/11",
+  "claim_boundary": "Durable typed I/O and in-job readback are established for the recorded handle; universal or prompt-independent addresses are not established."
+}

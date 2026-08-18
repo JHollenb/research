@@ -10,4 +10,6 @@ The experiments move from broad observation to increasingly specific tests. We f
 
 The resulting reports are designed to be readable on their own and to preserve both positive and negative evidence. Strong visual results are treated as hypotheses until they survive native-consumer evaluation, independent controls, exact replay, and explicit collateral or generalization tests.
 
+The current highest-value result is the [Objects Become Debugger I/O experiment](bfl/demos/objects-debugger-io-structs-stress-isolation.md), which connects object discovery, selective editing, durable manifests, stress testing, and isolation in one evidence chain. It suggests a promising object-facing interface while preserving clear limits around context, spatial addressing, and generalization.
+
 See the [Black Forest Labs experiment index](bfl/index.md) for the high-level catalog and the [standalone reports](bfl/demos/) for detailed methods and proof artifacts.

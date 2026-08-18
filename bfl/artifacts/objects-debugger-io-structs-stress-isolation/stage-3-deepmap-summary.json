@@ -1,0 +1,35 @@
+{
+  "stage": "deep property map and stress battery",
+  "question": "How deep, redundant, portable, and dose-tolerant are the object addresses?",
+  "conditioner_depth": {
+    "layers_profiled": 36,
+    "final_layer_locality_ratio": {
+      "ball_color_blue_to_green": 17.2,
+      "ball_material_blue_to_glass": 15.2,
+      "ball_material_blue_to_chrome": 12.5,
+      "fox_color_red_to_white": 11.7,
+      "ball_shape_ball_to_cube": 10.7,
+      "ball_size_small_to_large": 8.7
+    },
+    "same_property_delta_cosine": {"glass_to_chrome": 0.47, "red_white_to_red_purple": 0.56},
+    "cross_property_cosine": [0.22, 0.29],
+    "interpretation": "Property deltas remain row-dominant through the conditioner but are not independent axes."
+  },
+  "route": {
+    "sites": ["joint.2", "joint.3", "joint.4", "single.0"],
+    "single_site_effect": "Each individual site moves the image nearly as much as the four-site route for fox color.",
+    "fox_color_step_ladder_seed_7217": [0.08, 0.20, 0.43, 0.47]
+  },
+  "dose": {
+    "alphas": [0.25, 0.5, 1, 2, 4, 8],
+    "behavior": "Useful progress rises through alpha 1–2, remains coherent through alpha 4, and collapses into semantic drift at alpha 8.",
+    "collateral": "Ball edits saturate earlier and leak more strongly at alpha 4–8; the fox can move by up to 106 MAD in the overdriven ball branch."
+  },
+  "stress_results": {
+    "ood_attributes": "Purple fox, glass ball, and chrome ball render coherently through the object rows.",
+    "two_object_composition": "White fox plus green ball and white fox plus blue cube render correctly on both seeds; some ROI scalars are negative despite clean panes.",
+    "wrong_address": "A fox red-to-white payload written at the ball color row leaves the fox at sham-level change and whitens the ball on both seeds.",
+    "meaning": "The address chooses the target and the payload chooses the transform; the whitening direction is portable across object addresses."
+  },
+  "claim_boundary": "One scene family, two seeds, exploratory controls, no held-out generalization or certified tier."
+}

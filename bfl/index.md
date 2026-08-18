@@ -2,6 +2,12 @@
 
 This index is a map of the standalone BFL experiment reports in this directory. Each entry says what the experiment tests, how the intervention is evaluated, and what the evidence currently supports. The reports and their local proof bundles contain the full methods, raw receipts, images, and verifiers.
 
+## New highest-value experiment
+
+### [Objects Become Debugger I/O: deep property mapping, stress, and isolation](demos/objects-debugger-io-structs-stress-isolation.md)
+
+This integrated three-stage experiment maps image objects back to lexical addresses, proves those addresses are live through recolor/replace/reshape/move/layer edits, publishes the measured address as a fingerprinted durable manifest, and then stress-tests depth, route redundancy, dose, novelty, composition, wrong-address payloads, and object isolation. The strongest result is that object rows re-bind a fox or ball alone in a white context while image-side complement writes destroy the object; together with the wrong-address control, this shows a promising object-register interface with a clear text-route carrier and explicit limits. It is exploratory evidence from one scene family and two seeds, but it is currently the most complete end-to-end experiment in the collection.
+
 ## Original ranked experiments
 
 ### 1. [Recipient-native capability patch](demos/recipient-native-capability-patch.md)

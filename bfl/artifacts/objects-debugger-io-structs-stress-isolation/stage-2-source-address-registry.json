@@ -1,0 +1,404 @@
+{
+  "claim_boundary": "Prompt- and seed-local addresses; exploratory evidence, no certified-circuit claim. Visual verdicts from retained proof sheets; numeric ROIs polluted by scene re-render (attribute-contrast instrument preferred, presence-contrast flagged). ROI scalars are diagnostics that can understate and overstate; retained panes are primary evidence.",
+  "corrections": [
+    "corrections/removal-residue-and-roi-diagnostics.md",
+    "../../object-move-layering/job-feb8fdd9727e/corrections/latent-move-address-pollution-and-vacuous-ladders.md"
+  ],
+  "latent_cut_and_paste": {
+    "source_target_region_mads": {
+      "31337": {
+        "duplicate@s15_s19": {
+          "dst": 59.56982421875,
+          "src": 0.8914388418197632
+        },
+        "translate@full_band": {
+          "dst": 58.43880081176758,
+          "src": 123.35921478271484
+        },
+        "translate@s10_s15_s19": {
+          "dst": 58.43880081176758,
+          "src": 123.35921478271484
+        },
+        "translate@s15_s19": {
+          "dst": 58.43880081176758,
+          "src": 123.35921478271484
+        },
+        "translate@s19": {
+          "dst": 58.43880081176758,
+          "src": 123.35921478271484
+        }
+      },
+      "7217": {
+        "duplicate@s15_s19": {
+          "dst": 67.78630065917969,
+          "src": 21.14176368713379
+        },
+        "translate@full_band": {
+          "dst": 67.10628509521484,
+          "src": 59.84586715698242
+        },
+        "translate@s10_s15_s19": {
+          "dst": 67.10628509521484,
+          "src": 59.84586715698242
+        },
+        "translate@s15_s19": {
+          "dst": 67.10628509521484,
+          "src": 59.84586715698242
+        },
+        "translate@s19": {
+          "dst": 67.10628509521484,
+          "src": 59.84586715698242
+        }
+      }
+    },
+    "verdict": "seed 7217: real relocation (~112px, +35/+44 blueness at destination) rendered as glassy artifacts; seed 31337: REFUTED \u2014 presence-contrast address selected fox flank (Jaccard 0.0 vs attribute), ball untouched; site ladders byte-identical by construction. See object-move-layering corrections."
+  },
+  "model": "flux2-klein-4b",
+  "objects": {
+    "ball": {
+      "controllability": {
+        "ball_recolor": {
+          "fox_roi_mad_by_seed": {
+            "31337": 10.003092765808105,
+            "7217": 3.0545248985290527
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.495972634374901,
+            "7217": 0.5658117386593022
+          },
+          "visual_verdict": "pass both seeds (green ball, fox untouched)"
+        },
+        "ball_recolor_color_row_only": {
+          "fox_roi_mad_by_seed": {
+            "31337": 4.61474609375,
+            "7217": 1.392578125
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.3498731455115902,
+            "7217": 0.41960739097217936
+          },
+          "visual_verdict": "pass, weaker (single row)"
+        },
+        "ball_remove@full_band": {
+          "fox_roi_mad_by_seed": {
+            "31337": 0.6516927480697632,
+            "7217": 2.2317709922790527
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.6853724131568106,
+            "7217": 0.8218251418895771
+          },
+          "visual_verdict": "identical to s15_s19 BY CONSTRUCTION (last-write-wins full-state replacement); ladder carries no information"
+        },
+        "ball_remove@s10_s15": {
+          "fox_roi_mad_by_seed": {
+            "31337": 1.6193034648895264,
+            "7217": 2.3758137226104736
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.6115634881741032,
+            "7217": 0.7275422433103773
+          },
+          "visual_verdict": "partial; strongest residue on seed 31337"
+        },
+        "ball_remove@s15_s19": {
+          "fox_roi_mad_by_seed": {
+            "31337": 0.66015625,
+            "7217": 2.2353515625
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.6854294483055391,
+            "7217": 0.8217735196859381
+          },
+          "visual_verdict": "pass seed 7217 (ball gone, snow filled); seed 31337 silhouette gone but blue-teal residue on fox paw at zoom \u2014 see corrections/removal-residue-and-roi-diagnostics.md"
+        },
+        "ball_replace_rock": {
+          "fox_roi_mad_by_seed": {
+            "31337": 26.89713478088379,
+            "7217": 13.6630859375
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.3879671949039616,
+            "7217": 0.32391266135694985
+          },
+          "visual_verdict": "pass both seeds (rock rendered, fox retained)"
+        },
+        "ball_reshape_cube": {
+          "fox_roi_mad_by_seed": {
+            "31337": 21.596515655517578,
+            "7217": 10.332356452941895
+          },
+          "own_roi_progress_by_seed": {
+            "31337": 0.6834730359809329,
+            "7217": 0.4621834663039964
+          },
+          "visual_verdict": "pass both seeds (cube rendered)"
+        },
+        "ball_resize_large": {
+          "fox_roi_mad_by_seed": {
+            "31337": 7.566243648529053,
+            "7217": 5.1949872970581055
+          },
+          "own_roi_progress_by_seed": {
+            "31337": -0.028118759229533552,
+            "7217": -0.1576032888719605
+          },
+          "visual_verdict": "FAIL via single size row (see relational_properties.resize)"
+        },
+        "ball_sham": {
+          "fox_roi_mad_by_seed": {
+            "31337": 7.687987804412842,
+            "7217": 1.10107421875
+          },
+          "own_roi_progress_by_seed": {
+            "31337": null,
+            "7217": null
+          },
+          "visual_verdict": "control: no semantic change"
+        }
+      },
+      "source_address": {
+        "instrument_agreement": {
+          "31337": {
+            "jaccard_attr_vs_presence": 0.0,
+            "jaccard_attr_vs_register": 0.455
+          },
+          "7217": {
+            "jaccard_attr_vs_presence": 0.231,
+            "jaccard_attr_vs_register": 0.455
+          }
+        },
+        "lexical_row_decomposition": {
+          "ball_color_row": [
+            13
+          ],
+          "ball_noun_row": [
+            14
+          ],
+          "ball_size_row": [
+            12
+          ]
+        },
+        "lexical_rows": [
+          12,
+          13,
+          14
+        ],
+        "lexical_tokens": [
+          "\u0120small",
+          "\u0120blue",
+          "\u0120ball"
+        ],
+        "route": [
+          "joint.2",
+          "joint.3",
+          "joint.4",
+          "single.0"
+        ],
+        "spatial_blocks_by_seed": {
+          "31337": [
+            79,
+            98,
+            99,
+            169,
+            186,
+            202,
+            217,
+            218
+          ],
+          "7217": [
+            118,
+            191,
+            203,
+            204,
+            207,
+            212,
+            213,
+            220
+          ]
+        }
+      }
+    },
+    "fox": {
+      "controllability": {
+        "recolor": {
+          "own_roi_progress_by_seed": {
+            "31337": 0.8755130767846515,
+            "7217": 0.9101912428841447
+          },
+          "visual_verdict": "pass both seeds (white fox, ball retained)"
+        }
+      },
+      "source_address": {
+        "lexical_rows": [
+          7,
+          8
+        ],
+        "lexical_tokens": [
+          "\u0120red",
+          "\u0120fox"
+        ],
+        "route": [
+          "joint.2",
+          "joint.3",
+          "joint.4",
+          "single.0"
+        ],
+        "spatial_blocks_by_seed": {
+          "31337": [
+            55,
+            164,
+            165,
+            166,
+            179,
+            181,
+            182,
+            195
+          ],
+          "7217": [
+            103,
+            170,
+            171,
+            172,
+            185,
+            187,
+            201,
+            207
+          ]
+        }
+      }
+    }
+  },
+  "provenance": {
+    "move_layering_job": "job-feb8fdd9727e",
+    "registry_job": "job-7203efff7289",
+    "relational_window_job": "job-fef9b8f17332"
+  },
+  "relational_properties": {
+    "layer": {
+      "row_counts": {
+        "active_rows": 32,
+        "all_512": 512,
+        "changed_rows": 1,
+        "changed_to_end_of_active": 22,
+        "window_pm1": 3,
+        "window_pm3": 7
+      },
+      "transfer_curve_image_progress": {
+        "active_rows": {
+          "31337": 0.782,
+          "7217": 0.581
+        },
+        "all_512": {
+          "31337": 0.949,
+          "7217": 0.947
+        },
+        "changed_rows": {
+          "31337": 0.132,
+          "7217": -0.158
+        },
+        "changed_to_end_of_active": {
+          "31337": 0.265,
+          "7217": -0.099
+        },
+        "window_pm1": {
+          "31337": 0.472,
+          "7217": 0.029
+        },
+        "window_pm3": {
+          "31337": 0.641,
+          "7217": 0.128
+        }
+      },
+      "verdict": "relational payload is NOT row-local: ~half transfers in a \u00b13-row phrase window, the rest requires active rows plus the 480 padding/query rows"
+    },
+    "layer_full_route_reference": {
+      "31337": 0.9509378024625227,
+      "7217": 0.9439920307196087
+    },
+    "move": {
+      "row_counts": {
+        "active_rows": 42,
+        "all_512": 512,
+        "changed_rows": 2,
+        "changed_to_end_of_active": 24,
+        "window_pm1": 6,
+        "window_pm3": 14
+      },
+      "transfer_curve_image_progress": {
+        "active_rows": {
+          "31337": 0.745,
+          "7217": 0.775
+        },
+        "all_512": {
+          "31337": 0.867,
+          "7217": 0.906
+        },
+        "changed_rows": {
+          "31337": -0.002,
+          "7217": -0.068
+        },
+        "changed_to_end_of_active": {
+          "31337": 0.424,
+          "7217": 0.427
+        },
+        "window_pm1": {
+          "31337": -0.009,
+          "7217": -0.069
+        },
+        "window_pm3": {
+          "31337": 0.512,
+          "7217": 0.602
+        }
+      },
+      "verdict": "relational payload is NOT row-local: ~half transfers in a \u00b13-row phrase window, the rest requires active rows plus the 480 padding/query rows"
+    },
+    "move_full_route_reference": {
+      "31337": 0.8712315045601117,
+      "7217": 0.9061350059563585
+    },
+    "resize": {
+      "row_counts": {
+        "active_rows": 32,
+        "all_512": 512,
+        "changed_rows": 1,
+        "changed_to_end_of_active": 20,
+        "window_pm1": 3,
+        "window_pm3": 7
+      },
+      "transfer_curve_image_progress": {
+        "active_rows": {
+          "31337": 0.81,
+          "7217": 0.561
+        },
+        "all_512": {
+          "31337": 0.96,
+          "7217": 0.752
+        },
+        "changed_rows": {
+          "31337": 0.045,
+          "7217": -0.001
+        },
+        "changed_to_end_of_active": {
+          "31337": 0.517,
+          "7217": 0.484
+        },
+        "window_pm1": {
+          "31337": 0.09,
+          "7217": 0.095
+        },
+        "window_pm3": {
+          "31337": 0.633,
+          "7217": 0.517
+        }
+      },
+      "verdict": "relational payload is NOT row-local: ~half transfers in a \u00b13-row phrase window, the rest requires active rows plus the 480 padding/query rows"
+    }
+  },
+  "scene": "a photorealistic red fox sitting beside a small blue ball in fresh snow at dawn, soft light",
+  "schema": "saturn-source-address-registry-v1",
+  "seeds": [
+    "31337",
+    "7217"
+  ]
+}

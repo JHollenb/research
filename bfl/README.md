@@ -2,6 +2,12 @@
 
 This directory contains standalone reports on experiments with Black Forest Labs image generators. Together they form one investigation rather than a collection of unrelated demos: first we measure the model's behavioral limits and artifact boundaries, then trace where information travels, then intervene on those routes, and finally test whether the discovered interfaces support editing, repair, substitution, or efficient execution.
 
+## New highest-value experiment
+
+### Objects Become Debugger I/O
+
+The object experiment is currently the strongest because it closes the loop from a rendered object to a durable, inspectable control interface. The first stage discovers lexical and spatial addresses, the second proves that those addresses support selective edits and exposes contextual limits for size, movement, and layering, and the third turns the result into a fingerprinted manifest before testing conditioner depth, route redundancy, dose tolerance, out-of-distribution attributes, composition, wrong-address payload portability, and isolation. The most important findings are that property payloads remain row-local and route-redundant, the address selects the target while the payload selects the transform, and text-route object rows can re-bind an object in a void context while image-side complement writes remove it. The evidence is still bounded to one scene family and two seeds, but it is the collection's clearest demonstration of a useful model-facing object interface and its failure modes.
+
 ## How the experiments fit together
 
 The foundation is measurement. Behavior taxonomy reports separate counting, typography, lexical presence, and semantic substitution, while model-family forensics and decoder-boundary studies establish which artifacts are actually being compared. The empty-context scaffold and image-stream timing experiments add an important constraint: both positional structure and denoising phase affect the final image, so a successful intervention must respect shape, route, and time rather than treating the model as a static latent space.
@@ -14,9 +20,15 @@ The interface experiments ask whether the same downstream image process can acce
 
 The repair and control experiments turn those observations into practical tests. The recipient-native capability patch shows that a small local operation can restore a bounded capability in a distilled model; Klein seam bisection probes where that mismatch enters; the nonlinear interaction compiler tests whether native composition can be learned; and the native-state selector tests whether an earlier state can decide when to intervene. Their partial or negative results are useful because they identify the missing pieces: generalization, uncertainty calibration, collateral control, and consumer-closed training.
 
+The object-address experiment now provides the clearest bridge across these layers. It uses the causal route and checkpoint controls established by the earlier panels, turns the resulting addresses into a durable manifest, and then uses the edit battery, dose sweep, wrong-address control, and isolation test to distinguish a real object-facing interface from a visually convenient but unstable mask. Its results support the broader route findings while adding a concrete unit of state—an object with lexical, route, spatial, and evidence fields—that later editing and composition experiments can compile against.
+
 The systems experiments make the scientific loop affordable and reproducible. Exact phase-resident serving, suffix replay, reference caching, closed-loop students, and guarded FLUX.2 Dev paging reduce the cost of branching and preserve exactness where it matters. This lets the causal experiments retain alternative futures, replay controls, and failure cases instead of relying on a single winning image.
 
 ## Strongest experiments
+
+### Objects Become Debugger I/O
+
+This is the strongest integrated experiment because it demonstrates discovery, a live write path, durable typed state, and stress-tested boundaries in one chain. It shows selective property edits, route redundancy, useful dose through roughly 4×, visually clean novel attributes and compositions, target/payload separation under a wrong-address control, and text-route isolation of individual objects. Its importance is not that every address is solved; it is that the experiment defines a plausible object interface and measures exactly where that interface stops working.
 
 ### Exact phase-resident serving and replay
 

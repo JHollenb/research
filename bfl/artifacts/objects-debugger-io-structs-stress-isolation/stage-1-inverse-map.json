@@ -1,0 +1,30 @@
+{
+  "stage": "inverse object map",
+  "question": "Can a rendered object's image region be mapped back to a small lexical address on the transport route?",
+  "model": "FLUX.2 Klein 4B",
+  "resolution": [256, 256],
+  "steps": 4,
+  "guidance": 1.0,
+  "seeds": [7217, 31337],
+  "base_prompt": "a photorealistic red fox sitting beside a blue ball in fresh snow at dawn, soft light",
+  "route": ["joint.2", "joint.3", "joint.4", "single.0"],
+  "stream": "text",
+  "dose": 1.0,
+  "intervention": "Replace only the lexical rows naming one object with donor states and replay the unchanged suffix.",
+  "lexical_rows": {
+    "fox": [7, 8],
+    "ball": [12, 13],
+    "ground": [14, 15, 16]
+  },
+  "results": {
+    "fox_red_to_white_progress": [0.92, 0.94],
+    "fox_selectivity_x": [13.7, 9.6],
+    "ball_blue_to_green_progress": [0.77, 0.65],
+    "ball_selectivity_x": [9.2, 8.4],
+    "ground_to_autumn_progress": [0.31, 0.37],
+    "sham_progress": [-0.03, 0.09],
+    "exact_noop_rgb_mad": 0.0,
+    "batched_noop_floor_rgb_mad": [0.4, 0.8]
+  },
+  "interpretation": "Fox and ball edits are object-selective on both seeds; the distributed ground edit is a deliberate boundary case. The result is exploratory and prompt- and seed-local."
+}
