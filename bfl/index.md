@@ -1,117 +1,132 @@
 # Black Forest Labs Experiment Index
 
-This index is a map of the standalone BFL experiment reports in this directory. Each entry says what the experiment tests, how the intervention is evaluated, and what the evidence currently supports. The reports and their local proof bundles contain the full methods, raw receipts, images, and verifiers.
+This is the executive map of the standalone Black Forest Labs experiments. Each entry answers three questions: what we are trying to learn or build, what changed in the model's output or execution, and what practical capability the result opens—or rules out. The linked reports and local artifact bundles contain the detailed methods, receipts, images, controls, and verifiers.
 
-## New highest-value experiment
+## Best experiments at a glance
 
-### [Objects Become Debugger I/O: deep property mapping, stress, and isolation](demos/objects-debugger-io-structs-stress-isolation.md)
+| experiment | why it matters |
+| --- | --- |
+| [Semantic Circuit Objects](#semantic-circuit-objects-creating-symbols-and-using-them-directly-in-flux2) | The strongest synthesis: a causal semantic route becomes a typed object symbol that can be read, edited, isolated, and written back into the model. The blue-mug value-level write shows the object interface can operate on stored model values rather than only on donor prompts. |
+| [Objects Become Debugger I/O](#objects-become-debugger-io-deep-property-mapping-stress-and-isolation) | The end-to-end object experiment maps image regions to lexical addresses, proves selective edits, packages the address as durable state, and stress-tests dose, wrong-address writes, composition, and isolation. It is the clearest bridge from model internals to a usable control surface. |
+| [Counterfactual Diffusion Futures](#counterfactual-diffusion-futures) | A generation can be forked early, steered toward a different scene or subject, and resumed through the unchanged image process. This opens controlled image editing and “what would have happened if…” exploration while preserving exact parents and controls. |
+| [Exact Phase-Resident Serving](#exact-phase-resident-serving-replay-and-edit-caching) | Prompt encoding, denoising, suffix replay, and reference edits can be separated while preserving exact pixels. The result makes expensive causal experiments practical by reducing repeated work without accepting an image-quality tradeoff. |
+| [Route Cartographer with Consumer-Closed Promotion](#route-cartographer-with-consumer-closed-promotion) | It turns route discovery into a safe decision loop: candidate interventions are promoted only when the native image consumer improves, and rejected futures roll back exactly. This is the foundation for reliable model debugging instead of activation-only guesswork. |
+| [Twenty-Axis Native Semantic Route Circuit](#twenty-axis-native-semantic-route-circuit) | A broad panel tests whether one causal route carries many independent visual factors. It finds a substantial set of useful route effects while preserving the distinction between a route-level capability and proof that one token owns one concept. |
 
-This integrated three-stage experiment maps image objects back to lexical addresses, proves those addresses are live through recolor/replace/reshape/move/layer edits, publishes the measured address as a fingerprinted durable manifest, and then stress-tests depth, route redundancy, dose, novelty, composition, wrong-address payloads, and object isolation. The strongest result is that object rows re-bind a fox or ball alone in a white context while image-side complement writes destroy the object; together with the wrong-address control, this shows a promising object-register interface with a clear text-route carrier and explicit limits. It is exploratory evidence from one scene family and two seeds, but it is currently the most complete end-to-end experiment in the collection.
+## Object interfaces and semantic circuits
 
-## Original ranked experiments
+### [Semantic Circuit Objects: Creating Symbols and Using Them Directly in FLUX.2](demos/semantic-circuit-object-interface.md)
 
-### 1. [Recipient-native capability patch](demos/recipient-native-capability-patch.md)
+This synthesis explains how a consumer-visible semantic circuit becomes a typed object symbol. We localize lexical rows with controlled donor/base contrasts, join them to image-space probes, record route, timing, payload, dose, and evidence fields, and then use the symbol to edit, isolate, delete, compose, or numerically steer an object. The key image effects are selective fox and ball edits, white-context object isolation, role and pose recovery through verb/relation rows, and a blue mug created by subtracting two captured values and writing the displacement into the mug row. It opens a model-facing object interface for controllable editing and debugging, but remains exploratory and not a universal prompt-independent API.
 
-This experiment compares a full-capacity and distilled FLUX.2 Klein model, then installs a tiny rank-8 recipient-local patch at an early route and dose to repair a counting regression. It changes a three-apple output to five using only 55,297 FP16 parameters, survives a fresh process without the donor path, and uninstalls exactly; later held-out tests show that the patch is not yet general because collateral changes ordinary prompts.
+### [Objects Become Debugger I/O: Deep Property Mapping, Stress, and Isolation](demos/objects-debugger-io-structs-stress-isolation.md)
 
-### 2. [Exact phase-resident serving, replay, and edit caching](demos/exact-phase-resident-serving.md)
+This three-stage experiment asks whether a rendered object can become a durable debugger value rather than a visual region selected after the fact. It maps a fox and ball to lexical addresses, proves those addresses through recolor, material, shape, movement, layering, dose, wrong-address, and isolation tests, and stores the result as a fingerprinted manifest. The image effects are object-selective edits and white-context re-binding, while the failures reveal that size, pose, relations, and image-side deletion require context. It opens a concrete path toward object-level image tools with explicit addresses, controls, and failure modes.
 
-The serving experiment separates prompt encoding from denoising so model weights are not repeatedly transferred. Eight 512² generations are pixel- and PNG-exact while running 10.66× faster per image and 6.25× faster end-to-end; exact suffix replay and a reference-edit cache extend the result to zero-error trajectory branching and a median 4,696× cache-hit speedup.
+### [Twenty-Axis Native Semantic Route Circuit](demos/twenty-axis-semantic-route-circuit.md)
 
-### 3. [Counterfactual diffusion futures](demos/counterfactual-diffusion-futures.md)
+This panel tests one typed native route against twenty visual contrasts such as identity, count, lighting, and scene changes. Six rows pass the strict 9/9 gate and eleven pass a looser 7/9 carrier-level gate; the expected output is a controlled movement toward the native target image, while route ablation and sham controls distinguish a real consumer effect from a hidden-state correlation. It opens a broad route map for choosing where to intervene, but does not establish that any single address owns a named concept.
 
-Here a four-step FLUX.2 trajectory is paused, forked, edited with a donor route state, and resumed through the unchanged image generator. Early edits reach 0.904–0.971 progress toward the intended scene or subject, hostile donors move toward their own targets, shams stay non-targeted, and halfway edits fall to 0.095–0.358; exact replay restores every parent, establishing a strong bounded editing trend rather than a universal editor.
+### [Distributed K/V Causal Route](demos/distributed-kv-causal-route.md)
 
-### 4. [Twenty-axis native semantic route circuit](demos/twenty-axis-semantic-route-circuit.md)
+This experiment probes twenty native key/value sites to learn whether a color-binding effect lives in one location or across a distributed route. The effect reproduces across sites, grows nonlinearly with dose, accumulates across denoising steps, and reaches strong native endpoint margins, meaning several sites can influence the final color seen in the image. It opens distributed route control and better intervention design, while donor-color collisions leave bilateral specificity and cross-scene portability unresolved.
 
-This panel tests one typed route against twenty independent visual contrasts using native targets, route transfers, and route-write ablations. Six rows pass the strict 9/9 gate, eleven pass a looser carrier-level 7/9 gate, and three remain candidates; an empty-string control confirms structural route activity without proving that any one address owns a named concept.
+### [Route Cartographer with Consumer-Closed Promotion](demos/route-cartographer-consumer-closure.md)
 
-### 5. [Cross-family conditioner substitution and repair](demos/cross-family-conditioner-repair.md)
+The cartographer records native states, branches, route candidates, and endpoint outcomes, then promotes an intervention only when the real image consumer improves. One update is promoted, three are rejected, and exact rollback succeeds 5/5; whole text-state transfers close the tested edges while single-token QKV routes do not. The practical use case is a safe model-debugging loop that can discover promising routes without mistaking an internal activation change for a useful image capability.
 
-Foreign language-model conditioners are mapped into the native FLUX.2 `[512, 7680]` contract while the image suffix stays fixed. Copying the complete native tensor restores the native image exactly, proving the suffix is healthy; learned adapters achieve high tensor alignment and improve seen prompts, but held-out semantic fidelity remains partial, so the result establishes compatibility and repair potential rather than universal interchangeability.
+### [Scene Circuit Certificate](demos/scene-circuit-certificate.md)
 
-### 6. [Distributed K/V causal route](demos/distributed-kv-causal-route.md)
+This two-seed certificate tests whether a declared route can change scene context while controls show causal necessity, donor specificity, dose response, and consumer visibility. The target scene moves strongly toward the native donor, route ablation remains near the source, and wrong-color controls move in the wrong direction; the image-side collateral panel shows that subjects are not perfectly preserved. It opens bounded scene editing and route certification, but not clean scene-only disentanglement.
 
-This 20-site intervention panel asks where color-binding information travels through a native Klein generation. The effect reproduces across all sites, changes nonlinearly with dose, accumulates across denoising steps, and reaches native S4 margins of +6.740 forward and +8.830 reverse with 83/96 and 88/96 endpoint recoveries; adversarial donor-color collisions mean bilateral specificity and portability remain open.
+### [Diffusion-Time Causal Clock and Image-Stream Roles](demos/diffusion-time-causal-clock.md)
 
-### 7. [Typed snake topology repair and interaction residual](demos/typed-snake-topology-interaction.md)
+This experiment changes when an intervention enters the denoising schedule to learn when image decisions become difficult to change. Early edits produce much larger final effects than late edits, while character pinning, regional edits, and image-token tracing separate identity, scene, and carrier timing. It opens schedule-aware editing, checkpoint selection, and more efficient intervention search; it does not imply every semantic factor has the same temporal authority.
 
-A typed donor relay changes a closed green coil into an open S-shaped snake through a four-site route, reaching 0.9008 progress while route ablation, wrong-axis, half-dose, and held-out controls separate the effect from generic image movement. The paired composition panel reaches 0.901 for a native lighting×color interaction versus 0.396 for addition, while the first learned mixer fails to beat a held-out linear baseline.
+### [Empty-Context Positional Scaffold](demos/empty-context-positional-scaffold.md)
 
-### 8. [Diffusion-time causal clock and image-stream roles](demos/diffusion-time-causal-clock.md)
+This test removes only a small set of active-adjacent conditioning rows from an otherwise empty context and compares the result with prompt swaps and matched-position controls. Changing roughly 3.5% of the occupied rows produces large RGB changes across two seeds, showing that apparently empty context can carry a positional or tonal scaffold that affects the image. It opens better context design and warns against treating unused conditioner space as harmless padding.
 
-This experiment varies the denoising step at which the same intervention enters the trajectory. At relative dose 0.15, step 1 produces 0.359 final effect and 2.399× amplification, while step 7 produces 0.078 and 0.523×, with a crossover near step 4; character pinning, regional edits, and image-token tracing further show that identity, scene, and carrier roles have different temporal authority.
+### [Temporal Carrier Compiler](demos/temporal-carrier-compiler.md)
 
-### 9. [Closed-loop students and reference mappers](demos/closed-loop-students-mappers.md)
+This search chooses among routes and denoising steps to find a carrier that can transfer an image edit to a new trajectory. It selects a late image-stream seam and transfers part of two held-out edits with wrong-time, sign, and sham separation. The use case is compiling reusable temporal interventions, while the partial transfer shows that a carrier location alone is not yet a complete semantic editor.
 
-A 3.77-million-parameter student predicts dense FLUX.2 transitions, keeps a reference register, applies uncertainty-gated corrections, and lets the native consumer finish the trajectory. It reaches scheduler parity cosine 0.999998, full-trajectory free image cosine 0.878 mean and 0.744 minimum, and 22.2–32.7× speed in a bounded lane; poor worst cases remain, so it is an approximation trend rather than a replacement model.
+## Editing, repair, and composition
 
-### 10. [Empty-context positional scaffold](demos/empty-context-positional-scaffold.md)
+### [Counterfactual Diffusion Futures](demos/counterfactual-diffusion-futures.md)
 
-The context experiment zeros only 18 active-adjacent rows in a `[1,512,7680]` maskless conditioner and compares the result with prompt swaps and matched-position controls. That 3.5%-occupancy intervention changes RGB MAD by 41.9 and 53.2 across two seeds, comparable to whole-prompt changes, supporting a positional scaffold or tone-bank mechanism rather than the assumption that unused rows are harmless padding.
+This experiment pauses a four-step generation, forks the trajectory, writes a donor route state, and resumes the unchanged image process. Early edits reach 0.904–0.971 progress toward the intended scene or subject, hostile donors move toward their own targets, shams stay near the source, and halfway edits are much weaker; exact replay restores every parent. It opens controlled image editing, counterfactual previews, and branching creative workflows, with the boundary that the result is a bounded donor-assisted editor rather than a universal prompt-free editor.
 
-### 11. [Model-family forensics](demos/model-family-forensics.md)
+### [Recipient-Native Capability Patch](demos/recipient-native-capability-patch.md)
 
-Seven pinned BFL artifacts are compared byte-for-byte and by trajectory behavior, covering 2,883 objects totaling 17.442 GB. The study identifies conditioner provenance, a structured 96.1081% Klein 9B→9B-KV rewrite, exact base/distilled trajectory compatibility, a bounded FLUX.1→FLUX.2 lineage result, and byte-identical VAE statics; these are release and structure findings, not semantic inheritance claims.
+This experiment installs a tiny rank-8 recipient-local patch in a distilled FLUX.2 model to repair a counting regression. The output changes from three apples to five using 55,297 FP16 parameters, survives a fresh process without the donor path, and uninstalls exactly; held-out prompts reveal collateral changes. It opens targeted model repair and capability-specific patching, but the current patch is not general enough to ship as a universal fix.
 
-### 12. [Behavior taxonomy](demos/behavior-taxonomy.md)
+### [Typed Snake Topology Repair and Interaction Residual](demos/typed-snake-topology-interaction.md)
 
-Instead of assigning one “understanding” score, this experiment decomposes counting, typography, lexical presence, and semantic substitution. Count accuracy falls from 1.000 at two objects to 0.0625 at seven; spelling remains strong, lexical presence is word-dependent, and substitutions are asymmetric, while an early counting-circuit hypothesis collapses under strict wording and paraphrase controls.
+A typed route intervention changes a closed green coil into an open S-shaped snake, reaching 0.9008 progress while ablation, wrong-axis, dose, and held-out controls reject generic image movement. A paired lighting×color panel shows a real nonlinear interaction that addition alone misses, while the first learned mixer fails to beat a held-out linear baseline. This opens structured shape editing and native interaction measurement, not a general algebra for combining arbitrary edits.
 
-### 13. [Route cartographer with consumer-closed promotion](demos/route-cartographer-consumer-closure.md)
+### [Nonlinear Interaction Compiler](demos/nonlinear-interaction-compiler.md)
 
-The cartographer records 685 native states, 85 branches, and 325 observations across 56 nodes and 54 edges, then promotes address-driven updates only when the native endpoint improves. One update is promoted and three are rejected with exact 5/5 rollback; whole text-state transfers close every tested joint edge at weakest return alignment 0.911, while single-token QKV routes reach only 0.001–0.227, rejecting the idea that every local address is a standalone program.
+This experiment first establishes that two edits interact in the native consumer, then trains a small mixer to predict the interaction residual on held-out pairs. The learned mixer reaches 0.716 mean progress versus 0.735 for simple addition, so the image still contains a real nonlinear term but the first compiler does not generalize enough. It opens a path toward learned multi-edit composition with a clear native-consumer promotion gate.
 
-### 14. [VAE and decoder output boundary](demos/vae-decoder-output-boundary.md)
+### [Wall-Picture Hotpatch](demos/wall-picture-hotpatch.md)
 
-The decoder study replaces or perturbs the output boundary while holding the upstream trajectory fixed. A Small Decoder removes 43.678% of parameters, runs 1.517× faster, and reaches pixel cosine 0.999784 but never exact parity across 192 outputs; a third-party VAE reaches 0.999729 cosine, while blind output-connected probes show reachability without proving semantic necessity.
+Four prompt-paired trajectories move a framed picture to the requested side of a wall while a protected-object write preserves the frame and artwork crop. Position and opposite-direction controls pass, so the expected output is a localized scene change with the protected object retained. It opens practical spatial hotpatching for layout edits, while remaining limited to this prompt family and consumer rather than proving donor-free spatial understanding.
 
-### 15. [9B and 9B-KV head-sensitivity stability](demos/9b-kv-head-sensitivity.md)
+### [Living-Room Hotpatch](demos/living-room-hotpatch.md)
 
-Four physical head ablations are repeated in a natural FLUX.2 Klein 9B/9B-KV pair whose denoiser values differ by 96.1081%. The same sensitivity ordering survives the rewrite—D0H29 > D0H27 > S5H26 ≫ S22H25—with D0H29 producing MAD 13.54 and 11.61 while S22H25 is nearly silent; this separates causal sensitivity from weight identity without assigning semantic ownership to a head.
+This experiment moves a couch right in four living-room trajectories, moves it left with an opposite donor, keeps a norm-matched sham separate, and verifies exact parent replay. Native target progress reaches 0.943–0.975 and couch-region progress 0.766–0.871, strongest at an early cut. It opens localized object movement while showing that natural-language distance such as “two feet” is not yet calibrated to physical measurement.
 
-### 16. [FLUX.2 Dev paged execution](demos/flux2-dev-paged-execution.md)
+### [Native-State Route Selector v6](demos/native-state-route-selector-v6.md)
 
-This guarded runtime experiment executes a 112.805 GB BF16 FLUX.2 Dev artifact by paging a 24.011B-parameter conditioner and 32.223B-parameter denoiser with explicit lifetimes, never co-resident. All 11 lifecycle gates pass for a one-step 512² forward and VAE decode in about 336 seconds; a richer four-step diagnostic is retained separately and is not promoted as a terminal quality result.
+A selector uses an earlier native state to choose native continuation, one of two fixed repair routes, or abstention. Calibration finds a support radius with zero false-positive repairs, and every unsupported held-out case abstains while native cases match exactly. It opens fail-closed automation that refuses uncertain interventions instead of producing a confident-looking bad image; it is not yet a general semantic router.
 
-## Follow-up experiments
+### [Klein Seam Bisection](demos/klein-seam-bisection.md)
 
-### 17. [Klein seam bisection](demos/klein-seam-bisection.md)
+This experiment searches route, timestep, and stream seams to locate where a distilled recipient diverges from a base model, then tries a small rank-8 repair. It repeatedly selects `joint.2 → step 0 → text` and preserves exact split-load custody, but only one of four held-out count cells transfers. It opens a practical debugging method for finding model seams, while showing that local repair does not automatically generalize.
 
-Base activations are sealed first, then a fresh distilled recipient searches 32 route × timestep × stream seams for a rank-8 repair. It selects `joint.2 → step 0 → text`, demonstrating a reproducible localized mismatch and exact split-load custody, but only one of four held-out count cells transfers, so this is not general capability restoration.
+### [Textless Klein Renderer](demos/textless-klein-renderer.md)
 
-### 18. [Four-frontend semantic ABI](demos/four-frontend-semantic-abi.md)
+SceneGraph, CAD, image-derived JSON, and robot-state JSON are compiled directly into a native Klein conditioner without converting held-out inputs back into text. The transport contract works, but held-out progress ranges from -0.299 to 1.000 with mean 0.364. It opens direct structured-input rendering for design and robotics workflows, while establishing that tensor compatibility is not the same as reliable compositional semantics.
 
-Qwen, SmolLM, and Mamba conditioners are tested against one frozen Klein consumer over 72 route × timestep × stream coordinates. Typed capture, exact replay, and complete native donor transport work, but compact token/channel intersections fail and the carrier values remain family-specific, supporting a distributed consumer boundary rather than a shared semantic tensor ABI.
+## Serving, compatibility, and model characterization
 
-### 19. [Nonlinear interaction compiler](demos/nonlinear-interaction-compiler.md)
+### [Exact Phase-Resident Serving, Replay, and Edit Caching](demos/exact-phase-resident-serving.md)
 
-The experiment first proves that a native pair interaction residual is causal and dose-sensitive, then trains a 32-parameter mixer to predict it on held-out edit pairs. The learned mixer reaches 0.716 mean progress versus 0.735 for simple addition, so native nonlinear composition remains a real target while this first learned compiler is rejected as a general solution.
+This systems experiment separates prompt encoding from denoising so weights are not repeatedly transferred. Eight 512² generations remain pixel- and PNG-exact while running 10.66× faster per image and 6.25× faster end-to-end; exact suffix replay and reference-edit caching extend the result to zero-error branching and a median 4,696× cache-hit speedup. It opens an efficient substrate for large intervention sweeps, interactive editing, and reproducible counterfactual research.
 
-### 20. [Temporal carrier compiler](demos/temporal-carrier-compiler.md)
+### [Closed-Loop Students and Reference Mappers](demos/closed-loop-students-mappers.md)
 
-A 16-cell search over four routes and four denoising steps selects `joint.2 → step 3 → image` as the strongest image-stream carrier. The selected Act transfers part of two pair-disjoint held-out edits with strong wrong-time, sign, and sham separation, establishing late temporal authority but not a complete semantic compiler.
+A 3.77-million-parameter student predicts dense FLUX.2 transitions, maintains a reference register, applies uncertainty-gated corrections, and lets the native consumer finish. It reaches scheduler parity cosine 0.999998, free-run image cosine 0.878 mean and 0.744 minimum, and 22.2–32.7× speed in the bounded lane. It opens fast approximate simulation and cost-effective search, but poor worst cases prevent treating it as a replacement model.
 
-### 21. [Textless Klein renderer](demos/textless-klein-renderer.md)
+### [Cross-Family Conditioner Substitution and Repair](demos/cross-family-conditioner-repair.md)
 
-SceneGraph, CAD, image-derived JSON, and robot/JSON states are compiled directly into a native Klein conditioner without converting held-out states back into text. The transport contract works, but held-out progress ranges from -0.299 to 1.000 with mean 0.364, showing a promising textless rendering path whose compositional semantics are not yet general.
+Foreign language-model conditioners are mapped into the native FLUX.2 `[512, 7680]` contract while the image suffix stays fixed. A complete native tensor restores the native image exactly, while learned adapters improve seen prompts but only partially preserve held-out semantics. It opens multimodel frontends and compatibility repair, with the important boundary that matching tensor shape or hidden-state similarity does not guarantee semantic interchangeability.
 
-### 22. [Wall-picture hotpatch](demos/wall-picture-hotpatch.md)
+### [Four-Frontend Semantic ABI](demos/four-frontend-semantic-abi.md)
 
-A four-seed prompt-paired trajectory edit moves a framed picture to the requested side of a wall while an explicit protected-object write preserves the exact frame/artwork crop in all four specimens. Position and opposite-direction controls pass, but the result is scoped to this prompt family and consumer; it is not donor-free spatial understanding.
+Qwen, SmolLM, and Mamba conditioners are tested against one frozen Klein consumer across route, timestep, and stream coordinates. Typed capture, exact replay, and complete native donor transport work, but compact token/channel intersections fail and carrier values remain family-specific. It opens a disciplined design for frontend/consumer interfaces while ruling out the assumption that a small shared semantic tensor ABI already exists.
 
-### 23. [Living-room hotpatch](demos/living-room-hotpatch.md)
+### [VAE and Decoder Output Boundary](demos/vae-decoder-output-boundary.md)
 
-Four living-room trajectories are patched so a couch moves right, while an opposite donor moves it left, a norm-matched sham stays separate, and parent replay remains exact. Native target progress is 0.943–0.975 and couch-region progress is 0.766–0.871, with the effect strongest at an early cut; “two feet” remains a prompt-level instruction rather than a calibrated distance.
+This study changes the decoder while holding the upstream trajectory fixed. A smaller decoder removes 43.678% of parameters, runs 1.517× faster, and reaches pixel cosine 0.999784 without exact parity across 192 outputs; a third-party VAE reaches 0.999729. It opens decoder optimization and output-boundary substitution, while showing that visual similarity is not the same as exact compatibility.
 
-### 24. [Native-state route selector v6](demos/native-state-route-selector-v6.md)
+### [FLUX.2 Dev Paged Execution](demos/flux2-dev-paged-execution.md)
 
-A four-action selector uses an earlier native state to choose native continuation, two fixed repair routes, or abstention. Calibration finds a support radius with zero false-positive repairs, and the selector abstains on every unsupported green-circle held-out while matching native exactly; this is valuable fail-closed uncertainty evidence, not route-utility prediction or a semantic meta-router.
+This guarded runtime executes a 112.805 GB BF16 FLUX.2 Dev artifact by paging the conditioner and denoiser so they are never co-resident. All 11 lifecycle gates pass for a one-step 512² forward and VAE decode in about 336 seconds. It opens research access to models that exceed local memory, while keeping the richer four-step diagnostic separate from any terminal quality claim.
 
-### 25. [Scene circuit certificate](demos/scene-circuit-certificate.md)
+### [Model-Family Forensics](demos/model-family-forensics.md)
 
-The two-seed scene panel certifies a reproducible native route effect: minimum scene progress is 0.9133, route-ablation progress is 0.0225, wrong-color progress is -0.4303, and exact replay passes. A separate collateral analysis shows incomplete subject preservation, so the result certifies scene-route control but not scene-only disentanglement.
+Seven pinned BFL artifacts are compared byte-for-byte and by trajectory behavior, covering 2,883 objects totaling 17.442 GB. The study identifies conditioner provenance, a structured 96.1081% Klein 9B→9B-KV rewrite, exact base/distilled trajectory compatibility, a bounded FLUX.1→FLUX.2 lineage result, and byte-identical VAE statics. It opens release auditing, model-lineage analysis, and safer artifact selection without claiming semantic inheritance.
 
-### 26. [FLUX.1 conditioner causal controls](demos/flux1-conditioner-causal-controls.md)
+### [9B and 9B-KV Head-Sensitivity Stability](demos/9b-kv-head-sensitivity.md)
 
-A SmolLM adapter is tested against the frozen FLUX.1 dual conditioner with separate native, adapted, zero, wrong-source, and native-wrong controls on held-out pairs. The adapted branch changes the consumer in a source-specific way, but held-out behavior remains far from native equivalence; the corrected native no-op is exact, making this a clean negative result for semantic interchangeability rather than a wiring failure.
+Four physical head ablations are repeated across a natural FLUX.2 Klein 9B/9B-KV pair whose denoisers differ by 96.1081%. The same sensitivity ordering survives the rewrite, with D0H29 and D0H27 highly active and S22H25 nearly silent. It opens robust architectural debugging and helps separate causal sensitivity from raw weight identity, without assigning semantic ownership to a single head.
+
+### [FLUX.1 Conditioner Causal Controls](demos/flux1-conditioner-causal-controls.md)
+
+A SmolLM adapter is tested against a frozen FLUX.1 dual conditioner with native, adapted, zero, wrong-source, and native-wrong controls on held-out pairs. The adapter changes the consumer in a source-specific way, but held-out behavior remains far from native equivalence while the corrected native no-op is exact. It opens a clean compatibility benchmark and prevents false confidence from wiring success alone.
+
+### [Behavior Taxonomy](demos/behavior-taxonomy.md)
+
+This benchmark decomposes image-model behavior into counting, typography, lexical presence, and semantic substitution instead of assigning one broad “understanding” score. Counting accuracy falls from 1.000 at two objects to 0.0625 at seven; spelling remains strong, lexical presence depends on the word, and substitutions are asymmetric. It opens better product and research diagnostics by showing which user-visible behaviors are reliable and which need targeted improvement.
