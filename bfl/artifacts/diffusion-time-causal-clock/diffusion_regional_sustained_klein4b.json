@@ -1,0 +1,144 @@
+{
+  "model": "flux2-klein-4b",
+  "identity_metric": "DINOv2-small CLS cosine on decoded pixels",
+  "num_steps": 8,
+  "guidance": 1.0,
+  "boxes": [
+    0.5,
+    0.7
+  ],
+  "windows": [
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ]
+  ],
+  "ref_prompt": "a portrait of a woman with distinctive curly red hair and green eyes, plain grey background",
+  "per_scene": {
+    "trail": {
+      "scene_baseline": {
+        "ref": 0.023,
+        "scene": 1.0
+      },
+      "whole_swap_k3": {
+        "ref": 0.6966,
+        "scene": 0.2023
+      },
+      "sustained_box0.5_k2-4": {
+        "ref": 0.1954,
+        "scene": 0.7921
+      },
+      "sustained_box0.5_k2-5": {
+        "ref": 0.2477,
+        "scene": 0.7848
+      },
+      "sustained_box0.5_k2-7": {
+        "ref": 0.3185,
+        "scene": 0.7481
+      },
+      "sustained_box0.7_k2-4": {
+        "ref": 0.223,
+        "scene": 0.5195
+      },
+      "sustained_box0.7_k2-5": {
+        "ref": 0.2963,
+        "scene": 0.53
+      },
+      "sustained_box0.7_k2-7": {
+        "ref": 0.4363,
+        "scene": 0.452
+      }
+    },
+    "cafe": {
+      "scene_baseline": {
+        "ref": -0.0052,
+        "scene": 1.0
+      },
+      "whole_swap_k3": {
+        "ref": 0.7969,
+        "scene": 0.1119
+      },
+      "sustained_box0.5_k2-4": {
+        "ref": 0.2068,
+        "scene": 0.6645
+      },
+      "sustained_box0.5_k2-5": {
+        "ref": 0.2769,
+        "scene": 0.6237
+      },
+      "sustained_box0.5_k2-7": {
+        "ref": 0.4511,
+        "scene": 0.5008
+      },
+      "sustained_box0.7_k2-4": {
+        "ref": 0.3672,
+        "scene": 0.6275
+      },
+      "sustained_box0.7_k2-5": {
+        "ref": 0.485,
+        "scene": 0.5244
+      },
+      "sustained_box0.7_k2-7": {
+        "ref": 0.6134,
+        "scene": 0.3694
+      }
+    }
+  },
+  "pareto_mean": {
+    "scene_baseline": {
+      "ref": 0.0089,
+      "scene": 1.0
+    },
+    "sustained_box0.5_k2-4": {
+      "ref": 0.2011,
+      "scene": 0.7283
+    },
+    "sustained_box0.5_k2-5": {
+      "ref": 0.2623,
+      "scene": 0.7043
+    },
+    "sustained_box0.5_k2-7": {
+      "ref": 0.3848,
+      "scene": 0.6244
+    },
+    "sustained_box0.7_k2-4": {
+      "ref": 0.2951,
+      "scene": 0.5735
+    },
+    "sustained_box0.7_k2-5": {
+      "ref": 0.3906,
+      "scene": 0.5272
+    },
+    "sustained_box0.7_k2-7": {
+      "ref": 0.5249,
+      "scene": 0.4107
+    },
+    "whole_swap_k3": {
+      "ref": 0.7468,
+      "scene": 0.1571
+    }
+  },
+  "best_by_corner": {
+    "method": "sustained_box0.5_k2-7",
+    "ref": 0.3848,
+    "scene": 0.6244
+  },
+  "strongest_identity": {
+    "method": "sustained_box0.7_k2-7",
+    "ref": 0.5249,
+    "scene": 0.4107
+  },
+  "gates": {
+    "G_SUSTAINED_CLIMBS_FRONTIER": true
+  },
+  "reading": "Sustained regional re-injection over a window with a bigger box. If the strongest-identity sustained variant stays well below the whole-swap's 0.75 while scene stays high, latent-space regional injection cannot pin strong identity without importing composition: identity is a global-structure property, not maskable \u2014 the trade-off is fundamental for this mechanism.",
+  "source": "beast job-b8d4317aa4ca (mrun --pin beast --gpu, PhasePipeline stitch)"
+}

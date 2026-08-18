@@ -1,0 +1,508 @@
+{
+  "all_native_domains": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.05364693728760158,
+      -0.0060527412884297934,
+      -0.04565379675224343,
+      0.028858467382256073,
+      -0.0238303651417851,
+      0.03597598106354367,
+      0.06714048696181293
+    ],
+    "discovery_groups": [
+      "action_running",
+      "light_color_blue",
+      "object_identity_cat",
+      "scene_grass",
+      "subject_color_blue",
+      "time_night"
+    ],
+    "discovery_rows": 54,
+    "feature_mean": [
+      0.38390591285294956,
+      0.015560090688641703,
+      0.9992199548416667,
+      6.353208316697015,
+      6.565892967912886,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.03205449491611893,
+      0.008324551722560783,
+      0.00023770112885964875,
+      0.5822584168600013,
+      0.7629236890231699,
+      0.47140452079103157,
+      0.47140452079103157
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "655947da8c97deef392f4738bd31d50c3da8f279b16c3c23b52cc6c29e46dbd8",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.09479506685417252,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "color_pooled": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      0.004093766716643937,
+      -0.001981563642829391,
+      0.04166956087416489,
+      0.0006429045003628199,
+      -0.028589968457535045,
+      0.04566488334796521,
+      0.08241662879522678
+    ],
+    "discovery_groups": [
+      "light_color_blue",
+      "subject_color_blue"
+    ],
+    "discovery_rows": 18,
+    "feature_mean": [
+      0.3841882397731145,
+      0.012531869219478211,
+      0.9993817110856374,
+      6.023084461688995,
+      6.561723470687866,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.014949688216804247,
+      0.005525829259169877,
+      0.0001229795008004722,
+      0.5143743431689061,
+      0.7551901748357838,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "a8ea9b5bf813911d70d16f57d17703a25be3a25514ad04a80185008a65d0cf1e",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.005265963919385984,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "light_context_transfer": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.02254211442381159,
+      -0.00875206343862304,
+      0.022397783865911153,
+      -0.013647935202045823,
+      -0.011260357042298575,
+      0.08444611651149884,
+      0.12677067441146034
+    ],
+    "discovery_groups": [
+      "light_color_blue"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.38508326560258865,
+      0.010946942573536032,
+      0.9993855357170105,
+      5.969016452630361,
+      6.564917167027791,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.008289653591863963,
+      0.007206444350935418,
+      0.00013172788991184752,
+      0.5793052429629455,
+      0.7642863058932298,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "9c75d410faf6de4ac5bea6d215ed05d739bafcdb6481ab67d8066feb2ad5fb66",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": -0.004903855009211437,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "native_action_running": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      0.011467836820066132,
+      0.0004551046897886453,
+      -0.010209847356448082,
+      -0.008321896444581488,
+      -0.004128399425424608,
+      0.04171555893147221,
+      0.04963149441708566
+    ],
+    "discovery_groups": [
+      "action_running"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.3629906152685483,
+      0.02014535550859505,
+      0.9991382360458374,
+      6.732070167859395,
+      6.566815535227458,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.019831908372352505,
+      0.010880830217953217,
+      0.00019855583007406523,
+      0.2318532059282805,
+      0.748536857883347,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "c06a707ceaa825c560147f692c0b9b645c97cfa900a883736e7bb25d20095c12",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.11934742248720592,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "native_light_color_blue": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.02254211442381159,
+      -0.00875206343862304,
+      0.022397783865911153,
+      -0.013647935202045823,
+      -0.011260357042298575,
+      0.08444611651149884,
+      0.12677067441146034
+    ],
+    "discovery_groups": [
+      "light_color_blue"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.38508326560258865,
+      0.010946942573536032,
+      0.9993855357170105,
+      5.969016452630361,
+      6.564917167027791,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.008289653591863963,
+      0.007206444350935418,
+      0.00013172788991184752,
+      0.5793052429629455,
+      0.7642863058932298,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "9c75d410faf6de4ac5bea6d215ed05d739bafcdb6481ab67d8066feb2ad5fb66",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": -0.004903855009211437,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "native_object_identity_cat": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.015575957514646436,
+      -0.011634742973750407,
+      0.01685156315558856,
+      -0.007724963320629229,
+      0.0031288082896503053,
+      -0.019886290633997394,
+      0.0628436064703814
+    ],
+    "discovery_groups": [
+      "object_identity_cat"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.37143400808175403,
+      0.011931281680851096,
+      0.9992179771264394,
+      6.471751411755879,
+      6.596561948458354,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.047061707812545026,
+      0.008724084709833407,
+      0.00026949495652738866,
+      0.4970246319845117,
+      0.7702173013190718,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "1129c2b9823eb1ebd64b6a13352fd955131d7952f68eda825e9e57ca7d2108ea",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.2089426639179412,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "native_scene_grass": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.007330746175269913,
+      0.00825761091590304,
+      0.008433588133125473,
+      0.004061058895782597,
+      0.0002934721296264276,
+      0.03947384013160993,
+      0.03257686044432115
+    ],
+    "discovery_groups": [
+      "scene_grass"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.3981054797768593,
+      0.02051710346442516,
+      0.9991728514432907,
+      6.438754141330719,
+      6.545160849889119,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.03658463491355575,
+      0.006590141357240487,
+      0.00022846186005963653,
+      0.6296990980215539,
+      0.776093288797066,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "20ef9c64aaeca36dab08e2e4ed726ad370876d528ad0a675cd4e54487cab43f9",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.10303918172915777,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "native_subject_color_blue": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.005048690450738592,
+      9.208137846562837e-05,
+      0.0026516385516972382,
+      -0.0017994356991681967,
+      0.0004436833428539235,
+      -0.003492822079620735,
+      0.02515150778064703
+    ],
+    "discovery_groups": [
+      "subject_color_blue"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.3832932139436404,
+      0.014116795865420393,
+      0.9993778864542643,
+      6.07715247074763,
+      6.558529774347941,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.01940788129640525,
+      0.002027992325880891,
+      0.00011343025453272532,
+      0.4332674302199517,
+      0.7459694655738,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "ec58777e45901a2c57f8f23fdf0d6b2f39f95cffab556fe569cfa76f8e19f0ff",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.015435782847957477,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "native_time_night": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.010300846950453947,
+      -0.01607729547325423,
+      -0.003078889843333255,
+      -0.014472403023393554,
+      -0.016234326645803036,
+      0.032101552362707036,
+      0.05362446574515915
+    ],
+    "discovery_groups": [
+      "time_night"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.4025288944443067,
+      0.0157030650390225,
+      0.9990272422631582,
+      6.430505255858104,
+      6.563372532526652,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.025096063912506298,
+      0.006297756011547395,
+      0.00021481938471730423,
+      0.647172090249818,
+      0.7709835531953487,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "95579b76b0c5d787abbe14f8e7b441e9523d4273484dc3d71920cf6c4b13a93d",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.12690920515192824,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  },
+  "subject_role_local": {
+    "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+    "coefficients": [
+      -0.005048690450738592,
+      9.208137846562837e-05,
+      0.0026516385516972382,
+      -0.0017994356991681967,
+      0.0004436833428539235,
+      -0.003492822079620735,
+      0.02515150778064703
+    ],
+    "discovery_groups": [
+      "subject_color_blue"
+    ],
+    "discovery_rows": 9,
+    "feature_mean": [
+      0.3832932139436404,
+      0.014116795865420393,
+      0.9993778864542643,
+      6.07715247074763,
+      6.558529774347941,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "feature_scale": [
+      0.01940788129640525,
+      0.002027992325880891,
+      0.00011343025453272532,
+      0.4332674302199517,
+      0.7459694655738,
+      0.47140452079103173,
+      0.47140452079103173
+    ],
+    "features": [
+      "qk_max_mean",
+      "qk_max_std",
+      "entropy_mean",
+      "q_rms_mean",
+      "k_rms_mean",
+      "kind_k",
+      "kind_v"
+    ],
+    "fingerprint": "ec58777e45901a2c57f8f23fdf0d6b2f39f95cffab556fe569cfa76f8e19f0ff",
+    "harmful_threshold": 0.0,
+    "identity_or_clock_features_visible": false,
+    "intercept": 0.015435782847957477,
+    "outcome_key": "consumer_closure",
+    "regularization": 1.0,
+    "schema": "saturn-portable-mechanism-forecaster-v1"
+  }
+}

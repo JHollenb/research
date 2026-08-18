@@ -1,0 +1,866 @@
+{
+  "action_running": {
+    "evaluation": {
+      "claim_boundary": "prospective transfer to unopened groups under a fixed semantic feature ABI; not universal model-family invariance",
+      "discovery_group_overlap": false,
+      "evaluation_groups": [
+        "action_running"
+      ],
+      "fingerprint": "d8fc4e32b9fa91d3dbd5b2e3c18d4aa062aac35bdfd93fe71e40f44ed8de0216",
+      "harmful_accuracy": 0.8888888888888888,
+      "harmful_auc": 1.0,
+      "harmful_rows": 8,
+      "mae": 0.10597182847929909,
+      "per_group": {
+        "action_running": {
+          "harmful_auc": 1.0,
+          "mae": 0.10597182847929909,
+          "rows": 9
+        }
+      },
+      "predictions": [
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.07532782107591629,
+          "prediction": 0.18441348482495962,
+          "row_id": "action_running:action:joint.2:q"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.16489283740520477,
+          "prediction": 0.254260393722516,
+          "row_id": "action_running:action:joint.2:k"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.24983630776405336,
+          "prediction": 0.3298446918563776,
+          "row_id": "action_running:action:joint.2:v"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.050983385741710664,
+          "prediction": 0.21825723096002614,
+          "row_id": "action_running:action:joint.3:q"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.14171704053878784,
+          "prediction": 0.28810413985758254,
+          "row_id": "action_running:action:joint.3:k"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.09991065859794615,
+          "prediction": 0.3636884379914441,
+          "row_id": "action_running:action:joint.3:v"
+        },
+        {
+          "group": "action_running",
+          "harmful": false,
+          "outcome": -0.005106715857982638,
+          "prediction": 0.028126338540574586,
+          "row_id": "action_running:action:joint.4:q"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.14279712140560152,
+          "prediction": 0.09797324743813099,
+          "row_id": "action_running:action:joint.4:k"
+        },
+        {
+          "group": "action_running",
+          "harmful": true,
+          "outcome": 0.15376834571361542,
+          "prediction": 0.17355754557199254,
+          "row_id": "action_running:action:joint.4:v"
+        }
+      ],
+      "predictor_fingerprint": "5634c200b503ba92a14bc49dd1615bd26dc1449127e10409c74a58a965b372c8",
+      "rmse": 0.12857390902545013,
+      "rows": 9,
+      "schema": "saturn-portable-mechanism-forecaster-evaluation-v1"
+    },
+    "predictor": {
+      "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+      "coefficients": [
+        -0.0790368073628331,
+        -0.014797778283572153,
+        -0.06660908337492916,
+        0.06387232875458326,
+        -0.04483912647593854,
+        0.032926148617587414,
+        0.0685569284587069
+      ],
+      "discovery_groups": [
+        "light_color_blue",
+        "object_identity_cat",
+        "scene_grass",
+        "subject_color_blue",
+        "time_night"
+      ],
+      "discovery_rows": 45,
+      "feature_mean": [
+        0.3880889723698298,
+        0.014643037724651033,
+        0.9992362986008326,
+        6.277435946464538,
+        6.565708454449972,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        0.03239351684711838,
+        0.007377898317199718,
+        0.00024148415616779021,
+        0.6013567513892643,
+        0.7657684875561181,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "features": [
+        "qk_max_mean",
+        "qk_max_std",
+        "entropy_mean",
+        "q_rms_mean",
+        "k_rms_mean",
+        "kind_k",
+        "kind_v"
+      ],
+      "fingerprint": "5634c200b503ba92a14bc49dd1615bd26dc1449127e10409c74a58a965b372c8",
+      "harmful_threshold": 0.0,
+      "identity_or_clock_features_visible": false,
+      "intercept": 0.08988459572755242,
+      "outcome_key": "consumer_closure",
+      "regularization": 1.0,
+      "schema": "saturn-portable-mechanism-forecaster-v1"
+    }
+  },
+  "light_color_blue": {
+    "evaluation": {
+      "claim_boundary": "prospective transfer to unopened groups under a fixed semantic feature ABI; not universal model-family invariance",
+      "discovery_group_overlap": false,
+      "evaluation_groups": [
+        "light_color_blue"
+      ],
+      "fingerprint": "d4dde9504e9487e414a96922bda0f560b9cb28604278ded7b2c2106aae6d905f",
+      "harmful_accuracy": 0.7777777777777778,
+      "harmful_auc": 0.95,
+      "harmful_rows": 5,
+      "mae": 0.1301287861733086,
+      "per_group": {
+        "light_color_blue": {
+          "harmful_auc": 0.95,
+          "mae": 0.1301287861733086,
+          "rows": 9
+        }
+      },
+      "predictions": [
+        {
+          "group": "light_color_blue",
+          "harmful": false,
+          "outcome": -0.2594083666801453,
+          "prediction": -0.015507093067095856,
+          "row_id": "light_color_blue:light_color:joint.2:q"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": false,
+          "outcome": -0.013073607534170154,
+          "prediction": 0.03230879840403082,
+          "row_id": "light_color_blue:light_color:joint.2:k"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": true,
+          "outcome": 0.21793370693922043,
+          "prediction": 0.09244229645817603,
+          "row_id": "light_color_blue:light_color:joint.2:v"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": false,
+          "outcome": -0.039640349149703984,
+          "prediction": -0.0011091614119404236,
+          "row_id": "light_color_blue:light_color:joint.3:q"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": true,
+          "outcome": 0.10246669948101043,
+          "prediction": 0.04670673005918624,
+          "row_id": "light_color_blue:light_color:joint.3:k"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": true,
+          "outcome": 0.1791982263326645,
+          "prediction": 0.10684022811333145,
+          "row_id": "light_color_blue:light_color:joint.3:v"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": false,
+          "outcome": -0.26328987479209903,
+          "prediction": 0.06745284822679484,
+          "row_id": "light_color_blue:light_color:joint.4:q"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": true,
+          "outcome": 0.025056943297386162,
+          "prediction": 0.11526873969792152,
+          "row_id": "light_color_blue:light_color:joint.4:k"
+        },
+        {
+          "group": "light_color_blue",
+          "harmful": true,
+          "outcome": 0.0066219270229339565,
+          "prediction": 0.1754022377520667,
+          "row_id": "light_color_blue:light_color:joint.4:v"
+        }
+      ],
+      "predictor_fingerprint": "716417c5fb6c700af7782b0573a925a868b0dc9e19a81c9fd3cea8c2789417a6",
+      "rmse": 0.16094882036695557,
+      "rows": 9,
+      "schema": "saturn-portable-mechanism-forecaster-evaluation-v1"
+    },
+    "predictor": {
+      "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+      "coefficients": [
+        -0.05953901037359348,
+        -0.021889163142922618,
+        -0.04857383392014782,
+        0.021566995089599864,
+        0.0015256782155067847,
+        0.022540627405142444,
+        0.050887830238845196
+      ],
+      "discovery_groups": [
+        "action_running",
+        "object_identity_cat",
+        "scene_grass",
+        "subject_color_blue",
+        "time_night"
+      ],
+      "discovery_rows": 45,
+      "feature_mean": [
+        0.3836704423030218,
+        0.01648272031166284,
+        0.999186838666598,
+        6.430046689510346,
+        6.566088128089905,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        0.034912926310738744,
+        0.00822579802168915,
+        0.00024031574707070636,
+        0.5516213471945266,
+        0.7626507236783528,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "features": [
+        "qk_max_mean",
+        "qk_max_std",
+        "entropy_mean",
+        "q_rms_mean",
+        "k_rms_mean",
+        "kind_k",
+        "kind_v"
+      ],
+      "fingerprint": "716417c5fb6c700af7782b0573a925a868b0dc9e19a81c9fd3cea8c2789417a6",
+      "harmful_threshold": 0.0,
+      "identity_or_clock_features_visible": false,
+      "intercept": 0.11473485122684537,
+      "outcome_key": "consumer_closure",
+      "regularization": 1.0,
+      "schema": "saturn-portable-mechanism-forecaster-v1"
+    }
+  },
+  "object_identity_cat": {
+    "evaluation": {
+      "claim_boundary": "prospective transfer to unopened groups under a fixed semantic feature ABI; not universal model-family invariance",
+      "discovery_group_overlap": false,
+      "evaluation_groups": [
+        "object_identity_cat"
+      ],
+      "fingerprint": "861e109b27c8ad1a938cacc7838b67935fe6706e47db3149b4a58468595fadb7",
+      "harmful_accuracy": 0.8888888888888888,
+      "harmful_auc": null,
+      "harmful_rows": 9,
+      "mae": 0.1436615540610697,
+      "per_group": {
+        "object_identity_cat": {
+          "harmful_auc": null,
+          "mae": 0.1436615540610697,
+          "rows": 9
+        }
+      },
+      "predictions": [
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.1365159869194031,
+          "prediction": 0.019301850976217484,
+          "row_id": "object_identity_cat:object_identity:joint.2:q"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.11575202047824859,
+          "prediction": 0.11795818844217973,
+          "row_id": "object_identity_cat:object_identity:joint.2:k"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.3932494163513184,
+          "prediction": 0.15994812902741984,
+          "row_id": "object_identity_cat:object_identity:joint.2:v"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.18381479382514954,
+          "prediction": -0.02245683755341385,
+          "row_id": "object_identity_cat:object_identity:joint.3:q"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.12549819499254228,
+          "prediction": 0.07619949991254842,
+          "row_id": "object_identity_cat:object_identity:joint.3:k"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.49336158037185673,
+          "prediction": 0.11818944049778851,
+          "row_id": "object_identity_cat:object_identity:joint.3:v"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.19512071013450621,
+          "prediction": 0.007492414242218887,
+          "row_id": "object_identity_cat:object_identity:joint.4:q"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.15852148234844207,
+          "prediction": 0.10614875170818114,
+          "row_id": "object_identity_cat:object_identity:joint.4:k"
+        },
+        {
+          "group": "object_identity_cat",
+          "harmful": true,
+          "outcome": 0.07864978983998298,
+          "prediction": 0.14813869229342125,
+          "row_id": "object_identity_cat:object_identity:joint.4:v"
+        }
+      ],
+      "predictor_fingerprint": "3069379c3798de739a8efd4f12db9fbe6c5650e3fa60c8622204c70e71501c7b",
+      "rmse": 0.18156173764595795,
+      "rows": 9,
+      "schema": "saturn-portable-mechanism-forecaster-evaluation-v1"
+    },
+    "predictor": {
+      "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+      "coefficients": [
+        -0.020115096706126486,
+        0.013067610369558714,
+        -0.03335702164988548,
+        0.028294666902962562,
+        -0.03645586209830434,
+        0.04650704348614024,
+        0.06630129130576924
+      ],
+      "discovery_groups": [
+        "action_running",
+        "light_color_blue",
+        "scene_grass",
+        "subject_color_blue",
+        "time_night"
+      ],
+      "discovery_rows": 45,
+      "feature_mean": [
+        0.38640029380718866,
+        0.01628585249019983,
+        0.9992203503847122,
+        6.329499697685241,
+        6.559759171803792,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        0.02743531094551503,
+        0.00804832166960494,
+        0.00023081539582280232,
+        0.5950214686485169,
+        0.7613083392087421,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "features": [
+        "qk_max_mean",
+        "qk_max_std",
+        "entropy_mean",
+        "q_rms_mean",
+        "k_rms_mean",
+        "kind_k",
+        "kind_v"
+      ],
+      "fingerprint": "3069379c3798de739a8efd4f12db9fbe6c5650e3fa60c8622204c70e71501c7b",
+      "harmful_threshold": 0.0,
+      "identity_or_clock_features_visible": false,
+      "intercept": 0.07196554744140467,
+      "outcome_key": "consumer_closure",
+      "regularization": 1.0,
+      "schema": "saturn-portable-mechanism-forecaster-v1"
+    }
+  },
+  "scene_grass": {
+    "evaluation": {
+      "claim_boundary": "prospective transfer to unopened groups under a fixed semantic feature ABI; not universal model-family invariance",
+      "discovery_group_overlap": false,
+      "evaluation_groups": [
+        "scene_grass"
+      ],
+      "fingerprint": "7c08f8523a259ca176d702fa61b6b1475892782d32cd08603811f59ae4a01685",
+      "harmful_accuracy": 1.0,
+      "harmful_auc": 1.0,
+      "harmful_rows": 8,
+      "mae": 0.0830499411812633,
+      "per_group": {
+        "scene_grass": {
+          "harmful_auc": 1.0,
+          "mae": 0.0830499411812633,
+          "rows": 9
+        }
+      },
+      "predictions": [
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.06046129614114761,
+          "prediction": 0.02019542156489096,
+          "row_id": "scene_grass:scene:joint.2:q"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.0806730255484581,
+          "prediction": 0.09150666419839412,
+          "row_id": "scene_grass:scene:joint.2:k"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.07530648335814476,
+          "prediction": 0.173742533214061,
+          "row_id": "scene_grass:scene:joint.2:v"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.14727653339505195,
+          "prediction": 0.03210384071806603,
+          "row_id": "scene_grass:scene:joint.3:q"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.16933951377868653,
+          "prediction": 0.10341508335156921,
+          "row_id": "scene_grass:scene:joint.3:k"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.08971197977662088,
+          "prediction": 0.18565095236723606,
+          "row_id": "scene_grass:scene:joint.3:v"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": false,
+          "outcome": -0.08542792722582818,
+          "prediction": -0.07029650812124913,
+          "row_id": "scene_grass:scene:joint.4:q"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.17608051598072053,
+          "prediction": 0.001014734512254048,
+          "row_id": "scene_grass:scene:joint.4:k"
+        },
+        {
+          "group": "scene_grass",
+          "harmful": true,
+          "outcome": 0.21393121480941774,
+          "prediction": 0.08325060352792092,
+          "row_id": "scene_grass:scene:joint.4:v"
+        }
+      ],
+      "predictor_fingerprint": "41207de4e43c50c449cddb0a9543b86aaba853af7f0163d23303834ee1ca8def",
+      "rmse": 0.09786489568706651,
+      "rows": 9,
+      "schema": "saturn-portable-mechanism-forecaster-evaluation-v1"
+    },
+    "predictor": {
+      "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+      "coefficients": [
+        -0.06315258594104949,
+        -0.007417034958782418,
+        -0.05833222697154775,
+        0.013302736426026208,
+        -0.01372177064129198,
+        0.033616442160659545,
+        0.07238280258582402
+      ],
+      "discovery_groups": [
+        "action_running",
+        "light_color_blue",
+        "object_identity_cat",
+        "subject_color_blue",
+        "time_night"
+      ],
+      "discovery_rows": 45,
+      "feature_mean": [
+        0.3810659994681676,
+        0.014568688133485014,
+        0.999229375521342,
+        6.336099151770274,
+        6.570039391517639,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        0.030280538678216732,
+        0.008280973788027472,
+        0.00023839197230557602,
+        0.5707620387240238,
+        0.7601945479756073,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "features": [
+        "qk_max_mean",
+        "qk_max_std",
+        "entropy_mean",
+        "q_rms_mean",
+        "k_rms_mean",
+        "kind_k",
+        "kind_v"
+      ],
+      "fingerprint": "41207de4e43c50c449cddb0a9543b86aaba853af7f0163d23303834ee1ca8def",
+      "harmful_threshold": 0.0,
+      "identity_or_clock_features_visible": false,
+      "intercept": 0.09314624387916776,
+      "outcome_key": "consumer_closure",
+      "regularization": 1.0,
+      "schema": "saturn-portable-mechanism-forecaster-v1"
+    }
+  },
+  "subject_color_blue": {
+    "evaluation": {
+      "claim_boundary": "prospective transfer to unopened groups under a fixed semantic feature ABI; not universal model-family invariance",
+      "discovery_group_overlap": false,
+      "evaluation_groups": [
+        "subject_color_blue"
+      ],
+      "fingerprint": "699b3c3398bcbd92f6dc118447be842c0e10b168c162dfd1647b003d1ad488ae",
+      "harmful_accuracy": 0.6666666666666666,
+      "harmful_auc": 0.6111111111111112,
+      "harmful_rows": 6,
+      "mae": 0.07245574114831758,
+      "per_group": {
+        "subject_color_blue": {
+          "harmful_auc": 0.6111111111111112,
+          "mae": 0.07245574114831758,
+          "rows": 9
+        }
+      },
+      "predictions": [
+        {
+          "group": "subject_color_blue",
+          "harmful": false,
+          "outcome": -0.04574533760314808,
+          "prediction": -0.005988011200210183,
+          "row_id": "subject_color_blue:subject_color:joint.2:q"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": false,
+          "outcome": -0.023708578571677213,
+          "prediction": 0.08581223595779279,
+          "row_id": "subject_color_blue:subject_color:joint.2:k"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": true,
+          "outcome": 0.08430602699518204,
+          "prediction": 0.15208868463463127,
+          "row_id": "subject_color_blue:subject_color:joint.2:v"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": true,
+          "outcome": 0.00414480734616518,
+          "prediction": 0.011924671934464143,
+          "row_id": "subject_color_blue:subject_color:joint.3:q"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": false,
+          "outcome": -0.007163567647512537,
+          "prediction": 0.10372491909246714,
+          "row_id": "subject_color_blue:subject_color:joint.3:k"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": true,
+          "outcome": 0.07452484369277954,
+          "prediction": 0.17000136776930563,
+          "row_id": "subject_color_blue:subject_color:joint.3:v"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": true,
+          "outcome": 0.03175286585465073,
+          "prediction": -0.03992282692411325,
+          "row_id": "subject_color_blue:subject_color:joint.4:q"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": true,
+          "outcome": 0.007359768450260164,
+          "prediction": 0.05187742023388973,
+          "row_id": "subject_color_blue:subject_color:joint.4:k"
+        },
+        {
+          "group": "subject_color_blue",
+          "harmful": true,
+          "outcome": 0.013451217114925387,
+          "prediction": 0.11815386891072821,
+          "row_id": "subject_color_blue:subject_color:joint.4:v"
+        }
+      ],
+      "predictor_fingerprint": "c88d83a0fbc26660c2773ba5f9853ba03c79e9f16df4dc0d970291f3b638bb0f",
+      "rmse": 0.08008631695969798,
+      "rows": 9,
+      "schema": "saturn-portable-mechanism-forecaster-evaluation-v1"
+    },
+    "predictor": {
+      "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+      "coefficients": [
+        -0.04727186785930675,
+        -0.005694202797943072,
+        -0.03598529437117336,
+        0.023436612014624575,
+        -0.02678142125471576,
+        0.04327505152001666,
+        0.0745180690482531
+      ],
+      "discovery_groups": [
+        "action_running",
+        "light_color_blue",
+        "object_identity_cat",
+        "scene_grass",
+        "time_night"
+      ],
+      "discovery_rows": 45,
+      "feature_mean": [
+        0.3840284526348114,
+        0.015848749653285973,
+        0.9991883685191473,
+        6.408419485886892,
+        6.5673656066258745,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        0.03402301435677165,
+        0.009046286480977944,
+        0.00024339830082165573,
+        0.5924492082595932,
+        0.7662610296921678,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "features": [
+        "qk_max_mean",
+        "qk_max_std",
+        "entropy_mean",
+        "q_rms_mean",
+        "k_rms_mean",
+        "kind_k",
+        "kind_v"
+      ],
+      "fingerprint": "c88d83a0fbc26660c2773ba5f9853ba03c79e9f16df4dc0d970291f3b638bb0f",
+      "harmful_threshold": 0.0,
+      "identity_or_clock_features_visible": false,
+      "intercept": 0.11066692365539854,
+      "outcome_key": "consumer_closure",
+      "regularization": 1.0,
+      "schema": "saturn-portable-mechanism-forecaster-v1"
+    }
+  },
+  "time_night": {
+    "evaluation": {
+      "claim_boundary": "prospective transfer to unopened groups under a fixed semantic feature ABI; not universal model-family invariance",
+      "discovery_group_overlap": false,
+      "evaluation_groups": [
+        "time_night"
+      ],
+      "fingerprint": "54907c2724f45bac623b420f5c87252b394a05519945f5003becd234546b950c",
+      "harmful_accuracy": 0.7777777777777778,
+      "harmful_auc": 0.375,
+      "harmful_rows": 8,
+      "mae": 0.1037019886475906,
+      "per_group": {
+        "time_night": {
+          "harmful_auc": 0.375,
+          "mae": 0.1037019886475906,
+          "rows": 9
+        }
+      },
+      "predictions": [
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.10434613674879074,
+          "prediction": 0.01752476102703507,
+          "row_id": "time_night:time:joint.2:q"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.057315297424793236,
+          "prediction": 0.09182206278687435,
+          "row_id": "time_night:time:joint.2:k"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.37629583179950715,
+          "prediction": 0.1612963024405828,
+          "row_id": "time_night:time:joint.2:v"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.031430401280522345,
+          "prediction": 0.0576539852715518,
+          "row_id": "time_night:time:joint.3:q"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.11817465722560883,
+          "prediction": 0.13195128703139108,
+          "row_id": "time_night:time:joint.3:k"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.29750054478645327,
+          "prediction": 0.20142552668509953,
+          "row_id": "time_night:time:joint.3:v"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.02268709875643253,
+          "prediction": -0.01756421584337456,
+          "row_id": "time_night:time:joint.4:q"
+        },
+        {
+          "group": "time_night",
+          "harmful": true,
+          "outcome": 0.24281115978956225,
+          "prediction": 0.056733085916464726,
+          "row_id": "time_night:time:joint.4:k"
+        },
+        {
+          "group": "time_night",
+          "harmful": false,
+          "outcome": -0.10837828144431115,
+          "prediction": 0.12620732557017317,
+          "row_id": "time_night:time:joint.4:v"
+        }
+      ],
+      "predictor_fingerprint": "e14bfcbcc7d232db8a39771b105734b1cc3d366ec07b20c0cc3d63cf2ce8aa04",
+      "rmse": 0.1317982345496054,
+      "rows": 9,
+      "schema": "saturn-portable-mechanism-forecaster-evaluation-v1"
+    },
+    "predictor": {
+      "claim_boundary": "frozen discovery predictor; unopened recipient groups required",
+      "coefficients": [
+        -0.04654577686928549,
+        -0.004647750564169618,
+        -0.02844181054741437,
+        0.0396334762696837,
+        -0.03164141744255304,
+        0.035024083932163705,
+        0.06777455458344142
+      ],
+      "discovery_groups": [
+        "action_running",
+        "light_color_blue",
+        "object_identity_cat",
+        "scene_grass",
+        "subject_color_blue"
+      ],
+      "discovery_rows": 45,
+      "feature_mean": [
+        0.3801813165346781,
+        0.015531495818565546,
+        0.9992584973573685,
+        6.337748928864797,
+        6.566397054990133,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "feature_scale": [
+        0.03199672767656697,
+        0.008672977660650541,
+        0.00022284426239778848,
+        0.5671239175811871,
+        0.761300475400504,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "features": [
+        "qk_max_mean",
+        "qk_max_std",
+        "entropy_mean",
+        "q_rms_mean",
+        "k_rms_mean",
+        "kind_k",
+        "kind_v"
+      ],
+      "fingerprint": "e14bfcbcc7d232db8a39771b105734b1cc3d366ec07b20c0cc3d63cf2ce8aa04",
+      "harmful_threshold": 0.0,
+      "identity_or_clock_features_visible": false,
+      "intercept": 0.08837223919460707,
+      "outcome_key": "consumer_closure",
+      "regularization": 1.0,
+      "schema": "saturn-portable-mechanism-forecaster-v1"
+    }
+  }
+}

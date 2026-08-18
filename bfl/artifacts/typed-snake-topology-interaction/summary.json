@@ -1,0 +1,335 @@
+{
+  "branches": [
+    {
+      "batch_screen": {
+        "rgb_vs_source": {
+          "rgb_cosine": 0.9278982877731323,
+          "rgb_mad": 43.5352668762207,
+          "rgb_rms": 69.12762451171875
+        },
+        "rgb_vs_target": {
+          "rgb_cosine": 0.9963026642799377,
+          "rgb_mad": 4.62109375,
+          "rgb_rms": 15.936628341674805
+        },
+        "scene_progress": 0.8993699367064849,
+        "topology": {
+          "bbox_aspect": 1.0661764705882353,
+          "component_count": 1,
+          "hole_area_fraction": 0.0,
+          "instrument_limit": "green-mask topology; not an object/identity certificate",
+          "largest_component_area": 9016,
+          "largest_component_fraction": 0.1375732421875,
+          "open_topology": true,
+          "significant_hole_count": 0,
+          "status": "open_supported"
+        }
+      },
+      "branch_id": "repair_route",
+      "rgb_vs_source": {
+        "rgb_cosine": 0.9279159903526306,
+        "rgb_mad": 43.50749206542969,
+        "rgb_rms": 69.1092529296875
+      },
+      "rgb_vs_target": {
+        "rgb_cosine": 0.9963793754577637,
+        "rgb_mad": 4.531336307525635,
+        "rgb_rms": 15.768162727355957
+      },
+      "scalar_authority_receipt": {
+        "checkpoint_fingerprint": "c2dc0458492c8ca89c4ac0b6e1a3a741e88513c16ff97bc89beec5de2d4d6e12",
+        "checkpoint_id": "traj-2766c3870274bf1e5df267dab76ebfde",
+        "execution_mode": "exact_scalar_suffix",
+        "numerical_contract": "scalar-authority"
+      },
+      "scene_progress": 0.9008024563016757,
+      "topology": {
+        "bbox_aspect": 1.0583941605839415,
+        "component_count": 1,
+        "hole_area_fraction": 0.0,
+        "instrument_limit": "green-mask topology; not an object/identity certificate",
+        "largest_component_area": 9014,
+        "largest_component_fraction": 0.137542724609375,
+        "open_topology": true,
+        "significant_hole_count": 0,
+        "status": "open_supported"
+      },
+      "typed_act_count": 16
+    },
+    {
+      "batch_screen": {
+        "rgb_vs_source": {
+          "rgb_cosine": 0.927337646484375,
+          "rgb_mad": 43.26638412475586,
+          "rgb_rms": 69.41780853271484
+        },
+        "rgb_vs_target": {
+          "rgb_cosine": 0.9397724270820618,
+          "rgb_mad": 35.04212951660156,
+          "rgb_rms": 63.97825241088867
+        },
+        "scene_progress": 0.19007592227135933,
+        "topology": {
+          "bbox_aspect": 1.5648148148148149,
+          "component_count": 1,
+          "hole_area_fraction": 0.0,
+          "instrument_limit": "green-mask topology; not an object/identity certificate",
+          "largest_component_area": 8186,
+          "largest_component_fraction": 0.124908447265625,
+          "open_topology": true,
+          "significant_hole_count": 0,
+          "status": "open_supported"
+        }
+      },
+      "branch_id": "repair_half",
+      "rgb_vs_source": {
+        "rgb_cosine": 0.927521288394928,
+        "rgb_mad": 43.1946907043457,
+        "rgb_rms": 69.4022445678711
+      },
+      "rgb_vs_target": {
+        "rgb_cosine": 0.9398659467697144,
+        "rgb_mad": 35.04146194458008,
+        "rgb_rms": 63.973995208740234
+      },
+      "scalar_authority_receipt": {
+        "checkpoint_fingerprint": "c2dc0458492c8ca89c4ac0b6e1a3a741e88513c16ff97bc89beec5de2d4d6e12",
+        "checkpoint_id": "traj-2766c3870274bf1e5df267dab76ebfde",
+        "execution_mode": "exact_scalar_suffix",
+        "numerical_contract": "scalar-authority"
+      },
+      "scene_progress": 0.18843439920564622,
+      "topology": {
+        "bbox_aspect": 2.485294117647059,
+        "component_count": 2,
+        "hole_area_fraction": 0.0,
+        "instrument_limit": "green-mask topology; not an object/identity certificate",
+        "largest_component_area": 4721,
+        "largest_component_fraction": 0.0720367431640625,
+        "open_topology": true,
+        "significant_hole_count": 0,
+        "status": "open_supported"
+      },
+      "typed_act_count": 16
+    },
+    {
+      "batch_screen": {
+        "rgb_vs_source": {
+          "rgb_cosine": 0.9031468629837036,
+          "rgb_mad": 55.281803131103516,
+          "rgb_rms": 76.83085632324219
+        },
+        "rgb_vs_target": {
+          "rgb_cosine": 0.9233403205871582,
+          "rgb_mad": 43.544307708740234,
+          "rgb_rms": 70.52422332763672
+        },
+        "scene_progress": 0.27127264096973863,
+        "topology": {
+          "component_count": 0,
+          "hole_area_fraction": 0.0,
+          "largest_component_area": 0,
+          "open_topology": null,
+          "significant_hole_count": 0,
+          "status": "unscored_no_green_component"
+        }
+      },
+      "branch_id": "wrong_axis_coiled_rope",
+      "rgb_vs_source": {
+        "rgb_cosine": 0.9031005501747131,
+        "rgb_mad": 55.27170944213867,
+        "rgb_rms": 76.85323333740234
+      },
+      "rgb_vs_target": {
+        "rgb_cosine": 0.9233325123786926,
+        "rgb_mad": 43.5206298828125,
+        "rgb_rms": 70.52872467041016
+      },
+      "scalar_authority_receipt": {
+        "checkpoint_fingerprint": "c2dc0458492c8ca89c4ac0b6e1a3a741e88513c16ff97bc89beec5de2d4d6e12",
+        "checkpoint_id": "traj-2766c3870274bf1e5df267dab76ebfde",
+        "execution_mode": "exact_scalar_suffix",
+        "numerical_contract": "scalar-authority"
+      },
+      "scene_progress": 0.271586592505106,
+      "topology": {
+        "component_count": 0,
+        "hole_area_fraction": 0.0,
+        "largest_component_area": 0,
+        "open_topology": null,
+        "significant_hole_count": 0,
+        "status": "unscored_no_green_component"
+      },
+      "typed_act_count": 16
+    },
+    {
+      "batch_screen": {
+        "rgb_vs_source": {
+          "rgb_cosine": 0.9291697144508362,
+          "rgb_mad": 51.15248107910156,
+          "rgb_rms": 66.00504302978516
+        },
+        "rgb_vs_target": {
+          "rgb_cosine": 0.9361918568611145,
+          "rgb_mad": 47.173892974853516,
+          "rgb_rms": 64.54878234863281
+        },
+        "scene_progress": 0.0919516526765849,
+        "topology": {
+          "component_count": 0,
+          "hole_area_fraction": 0.0,
+          "largest_component_area": 0,
+          "open_topology": null,
+          "significant_hole_count": 0,
+          "status": "unscored_no_green_component"
+        }
+      },
+      "branch_id": "sham_norm_matched",
+      "rgb_vs_source": {
+        "rgb_cosine": 0.9291722178459167,
+        "rgb_mad": 51.15771484375,
+        "rgb_rms": 65.99510955810547
+      },
+      "rgb_vs_target": {
+        "rgb_cosine": 0.9361897706985474,
+        "rgb_mad": 47.18501663208008,
+        "rgb_rms": 64.54790496826172
+      },
+      "scalar_authority_receipt": {
+        "checkpoint_fingerprint": "c2dc0458492c8ca89c4ac0b6e1a3a741e88513c16ff97bc89beec5de2d4d6e12",
+        "checkpoint_id": "traj-2766c3870274bf1e5df267dab76ebfde",
+        "execution_mode": "exact_scalar_suffix",
+        "numerical_contract": "scalar-authority"
+      },
+      "scene_progress": 0.09181552766377749,
+      "topology": {
+        "component_count": 0,
+        "hole_area_fraction": 0.0,
+        "largest_component_area": 0,
+        "open_topology": null,
+        "significant_hole_count": 0,
+        "status": "unscored_no_green_component"
+      },
+      "typed_act_count": 16
+    },
+    {
+      "batch_screen": {
+        "rgb_vs_source": {
+          "rgb_cosine": 0.9998818635940552,
+          "rgb_mad": 0.898284912109375,
+          "rgb_rms": 2.7927656173706055
+        },
+        "rgb_vs_target": {
+          "rgb_cosine": 0.9276002049446106,
+          "rgb_mad": 43.3333854675293,
+          "rgb_rms": 68.83856201171875
+        },
+        "scene_progress": -0.9807443055996873,
+        "topology": {
+          "bbox_aspect": 2.3698630136986303,
+          "component_count": 1,
+          "hole_area_fraction": 0.0,
+          "instrument_limit": "green-mask topology; not an object/identity certificate",
+          "largest_component_area": 7951,
+          "largest_component_fraction": 0.1213226318359375,
+          "open_topology": true,
+          "significant_hole_count": 0,
+          "status": "open_supported"
+        }
+      },
+      "branch_id": "route_ablation",
+      "rgb_vs_source": {
+        "rgb_cosine": 1.0000001192092896,
+        "rgb_mad": 0.0,
+        "rgb_rms": 0.0
+      },
+      "rgb_vs_target": {
+        "rgb_cosine": 0.9277492761611938,
+        "rgb_mad": 43.26826095581055,
+        "rgb_rms": 68.77950286865234
+      },
+      "scalar_authority_receipt": {
+        "checkpoint_fingerprint": "c2dc0458492c8ca89c4ac0b6e1a3a741e88513c16ff97bc89beec5de2d4d6e12",
+        "checkpoint_id": "traj-2766c3870274bf1e5df267dab76ebfde",
+        "execution_mode": "exact_scalar_suffix",
+        "numerical_contract": "scalar-authority"
+      },
+      "scene_progress": -0.9999999997688837,
+      "topology": {
+        "bbox_aspect": 2.3972602739726026,
+        "component_count": 1,
+        "hole_area_fraction": 0.000457763671875,
+        "instrument_limit": "green-mask topology; not an object/identity certificate",
+        "largest_component_area": 8083,
+        "largest_component_fraction": 0.1233367919921875,
+        "open_topology": false,
+        "significant_hole_count": 1,
+        "status": "closed_loop_supported"
+      },
+      "typed_act_count": 0
+    }
+  ],
+  "claim_boundary": "One native FLUX.2 source, one frozen open-S target prompt, one wrong-axis rope donor, one norm-matched sham, one fresh seed, exact checkpoint replay, and a green-mask topology instrument. This establishes an operational repair for this prompt family at this checkpoint; it does not establish universal geometry control.",
+  "execution": {
+    "additional_scheduler_submissions": 0,
+    "batch_telemetry": {
+      "branch_suffix_steps": 20,
+      "checkpoint_fingerprint": "c2dc0458492c8ca89c4ac0b6e1a3a741e88513c16ff97bc89beec5de2d4d6e12",
+      "checkpoint_id": "traj-2766c3870274bf1e5df267dab76ebfde",
+      "execution_mode": "batched_suffix",
+      "logical_branches": 5,
+      "numerical_contract": "batch-dependent",
+      "output_type": "pil",
+      "physical_prefix_denoiser_calls": 0,
+      "physical_suffix_denoiser_calls": 4,
+      "reused_prefix_denoiser_calls": 0,
+      "revert_count": 5,
+      "shared_prefix_reused": true,
+      "shared_prefix_steps": 0,
+      "total_physical_denoiser_calls": 4
+    },
+    "checkpoint_captures": 1,
+    "device": "cuda",
+    "dtype": "bfloat16 frozen suffix",
+    "elapsed_s": 16.480277098948136,
+    "logical_full_runs": 3,
+    "logical_local_branches": 5,
+    "model_loads": 1,
+    "mrun_job_id": "job-3a60c2b24603",
+    "peak_rss_mb": 16569.5078125,
+    "peak_vram_mb": 8225.06005859375,
+    "physical_suffix_batches": 1,
+    "physical_suffix_scalar_replays": 5,
+    "reported_numerical_contract": "scalar-authority"
+  },
+  "schema": "saturn-snake-coil-repair-report-v1",
+  "seed": 7777,
+  "typed_act": {
+    "abi_version": "v1",
+    "fingerprint": "f488b54bd9ad7417185f28137d3368c0676d5d9bf0e8a9af1d8b30611b32dc2e",
+    "identity": "snake.geometry.route_relay:v1",
+    "invalidates": [],
+    "name": "snake.geometry.route_relay",
+    "numerical_contract": "typed-route-state-relay",
+    "reads": [
+      "source_state",
+      "donor_state",
+      "dose"
+    ],
+    "schema": "saturn-act-spec-v1",
+    "tolerance": {
+      "max_nonfinite": 0.0
+    },
+    "write_abis": {
+      "patched_state": {
+        "role": "route_text_state"
+      }
+    },
+    "write_kinds": {
+      "patched_state": "tensor"
+    },
+    "writes": [
+      "patched_state"
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "SATURN_INTERACTION_RESIDUAL_CONFIG=interaction_residual_config.json",
+    "PYTHONPATH=saturn_src:mrun_src:mstack_experiments:common_src:.",
+    "uv",
+    "run",
+    "--project",
+    "generative-image-model-atlas",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "Pillow>=9.0",
+    "python",
+    "-u",
+    "run_saturn_interaction_residual_panel.py"
+  ],
+  "config_sha256": "e9903470e7f9aaf4d3674bd7fc3392c1f608ff5adaa2fb1794ae624aeee85d38",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "experiment": "saturn-flux-interaction-residual-panel-20260814",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "native FLUX.2 semantic interaction residual causal panel",
+  "log_sha256": "5ee59dc932b934175d11054a147bc50dacd95ea4b054748cc57300d53a6a6a1a",
+  "model_id": "black-forest-labs/FLUX.2-klein-4B",
+  "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+  "mrun_job_id": "job-fb6cd9430e5f",
+  "mrun_ok": true,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "SATURN_INTERACTION_RESIDUAL_CONFIG=interaction_residual_config.json",
+        "PYTHONPATH=saturn_src:mrun_src:mstack_experiments:common_src:.",
+        "uv",
+        "run",
+        "--project",
+        "generative-image-model-atlas",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "Pillow>=9.0",
+        "python",
+        "-u",
+        "run_saturn_interaction_residual_panel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-fb6cd9430e5f",
+      "log_path": "/mnt/big/mrun-work/job-fb6cd9430e5f/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1786694851.1828816
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1786694851.864675
+        },
+        {
+          "name": "process.launch",
+          "ts": 1786694851.8947997
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1786694851.9468486
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1786694942.8323348
+        },
+        {
+          "name": "finished",
+          "ts": 1786694942.8565683
+        }
+      ]
+    },
+    "elapsed_s": 91.72,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "4048d6d83d8ec2ebf800a00a2823197a6029472e9777fee0258b6eae1e24cd8d",
+      "size_bytes": 3520808
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 19668.3,
+    "peak_vram_mb": 8318.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "payload": {
+    "dose_grid": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "exact_scalar_suffix": true,
+    "native_interaction_residual": true,
+    "pairs": [
+      "lighting__weather",
+      "identity__fur",
+      "orientation__relation"
+    ],
+    "route": [
+      "joint.2",
+      "joint.3",
+      "joint.4",
+      "single.0"
+    ],
+    "seeds": [
+      4242,
+      9001
+    ],
+    "single_boundary_residuals": true,
+    "wrong_site": true,
+    "wrong_time": true
+  },
+  "pipeline_class": "Flux2KleinPipeline",
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 36000,
+    "vram_mb": 12000
+  },
+  "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "branches_per_pair_seed": 17,
+    "checkpoint_policy": "one source checkpoint per pair/seed; all native corners and residual controls stay on one resident model lease",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "logical_branches": 102,
+    "logical_checkpoint_replays": 102,
+    "logical_operations": 102,
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "native_full_trajectories_per_pair_seed": 4,
+    "pair_count": 3,
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1",
+    "seed_count": 2
+  },
+  "schema": "saturn-flux-interaction-residual-mrun-request-v1",
+  "staging_contract": {
+    "checkpoint_replay": true,
+    "exact_scalar_suffix": true,
+    "native_qwen_conditioner": true,
+    "no_training": true,
+    "one_model_lease": true,
+    "real_model": true
+  },
+  "task_family": "saturn-flux-rosetta-manalysis",
+  "worker_sha256": "e9b204e38114ccdf6e4b2a81c3a709bb73dd46f065e5fc08d0f8cb0a1b21ace7"
+}

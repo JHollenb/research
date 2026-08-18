@@ -1,0 +1,385 @@
+{
+  "claim_boundary": "Families are deterministic clusters of this capture's route-effect vectors; they are not semantic capability labels.",
+  "clusters": [
+    [
+      "subject_color_blue",
+      "light_color_blue"
+    ],
+    [
+      "object_identity_cat",
+      "action_running",
+      "time_night"
+    ],
+    [
+      "scene_grass"
+    ]
+  ],
+  "cosine_similarity": {
+    "action_running": {
+      "action_running": 1.0,
+      "light_color_blue": 0.34804347842916333,
+      "object_identity_cat": 0.7738329680413736,
+      "scene_grass": 0.8218141806786091,
+      "subject_color_blue": 0.4357946315597249,
+      "time_night": 0.7436220996141738
+    },
+    "light_color_blue": {
+      "action_running": 0.34804347842916333,
+      "light_color_blue": 1.0,
+      "object_identity_cat": 0.2703219906734999,
+      "scene_grass": 0.29183477659104096,
+      "subject_color_blue": 0.5657202976230982,
+      "time_night": 0.4279485951238434
+    },
+    "object_identity_cat": {
+      "action_running": 0.7738329680413736,
+      "light_color_blue": 0.2703219906734999,
+      "object_identity_cat": 1.0,
+      "scene_grass": 0.5693644451638417,
+      "subject_color_blue": 0.7244165369529292,
+      "time_night": 0.8701678151666342
+    },
+    "scene_grass": {
+      "action_running": 0.8218141806786091,
+      "light_color_blue": 0.29183477659104096,
+      "object_identity_cat": 0.5693644451638417,
+      "scene_grass": 1.0,
+      "subject_color_blue": 0.17959004813308052,
+      "time_night": 0.47318781401887605
+    },
+    "subject_color_blue": {
+      "action_running": 0.4357946315597249,
+      "light_color_blue": 0.5657202976230982,
+      "object_identity_cat": 0.7244165369529292,
+      "scene_grass": 0.17959004813308052,
+      "subject_color_blue": 1.0000000000000002,
+      "time_night": 0.648841723667552
+    },
+    "time_night": {
+      "action_running": 0.7436220996141738,
+      "light_color_blue": 0.4279485951238434,
+      "object_identity_cat": 0.8701678151666342,
+      "scene_grass": 0.47318781401887605,
+      "subject_color_blue": 0.648841723667552,
+      "time_night": 0.9999999999999998
+    }
+  },
+  "domain_summaries": {
+    "action_running": {
+      "consumer_closure_vector": [
+        0.07532782107591629,
+        0.16489283740520477,
+        0.24983630776405336,
+        0.050983385741710664,
+        0.14171704053878784,
+        0.09991065859794615,
+        -0.005106715857982638,
+        0.14279712140560152,
+        0.15376834571361542
+      ],
+      "mean_consumer_closure": 0.11934742248720592,
+      "positive_route_count": 8,
+      "semantic_group": "action_running",
+      "signature_family": "route-signature-family-1",
+      "top_routes": [
+        {
+          "consumer_closure": 0.24983630776405336,
+          "route": "joint.2-v"
+        },
+        {
+          "consumer_closure": 0.16489283740520477,
+          "route": "joint.2-k"
+        },
+        {
+          "consumer_closure": 0.15376834571361542,
+          "route": "joint.4-v"
+        }
+      ]
+    },
+    "light_color_blue": {
+      "consumer_closure_vector": [
+        -0.2594083666801453,
+        -0.013073607534170154,
+        0.21793370693922043,
+        -0.039640349149703984,
+        0.10246669948101043,
+        0.1791982263326645,
+        -0.26328987479209903,
+        0.025056943297386162,
+        0.0066219270229339565
+      ],
+      "mean_consumer_closure": -0.004903855009211442,
+      "positive_route_count": 5,
+      "semantic_group": "light_color_blue",
+      "signature_family": "route-signature-family-0",
+      "top_routes": [
+        {
+          "consumer_closure": 0.21793370693922043,
+          "route": "joint.2-v"
+        },
+        {
+          "consumer_closure": 0.1791982263326645,
+          "route": "joint.3-v"
+        },
+        {
+          "consumer_closure": 0.10246669948101043,
+          "route": "joint.3-k"
+        }
+      ]
+    },
+    "object_identity_cat": {
+      "consumer_closure_vector": [
+        0.1365159869194031,
+        0.11575202047824859,
+        0.3932494163513184,
+        0.18381479382514954,
+        0.12549819499254228,
+        0.49336158037185673,
+        0.19512071013450621,
+        0.15852148234844207,
+        0.07864978983998298
+      ],
+      "mean_consumer_closure": 0.20894266391793886,
+      "positive_route_count": 9,
+      "semantic_group": "object_identity_cat",
+      "signature_family": "route-signature-family-1",
+      "top_routes": [
+        {
+          "consumer_closure": 0.49336158037185673,
+          "route": "joint.3-v"
+        },
+        {
+          "consumer_closure": 0.3932494163513184,
+          "route": "joint.2-v"
+        },
+        {
+          "consumer_closure": 0.19512071013450621,
+          "route": "joint.4-q"
+        }
+      ]
+    },
+    "scene_grass": {
+      "consumer_closure_vector": [
+        0.06046129614114761,
+        0.0806730255484581,
+        0.07530648335814476,
+        0.14727653339505195,
+        0.16933951377868653,
+        0.08971197977662088,
+        -0.08542792722582818,
+        0.17608051598072053,
+        0.21393121480941774
+      ],
+      "mean_consumer_closure": 0.10303918172915776,
+      "positive_route_count": 8,
+      "semantic_group": "scene_grass",
+      "signature_family": "route-signature-family-2",
+      "top_routes": [
+        {
+          "consumer_closure": 0.21393121480941774,
+          "route": "joint.4-v"
+        },
+        {
+          "consumer_closure": 0.17608051598072053,
+          "route": "joint.4-k"
+        },
+        {
+          "consumer_closure": 0.16933951377868653,
+          "route": "joint.3-k"
+        }
+      ]
+    },
+    "subject_color_blue": {
+      "consumer_closure_vector": [
+        -0.04574533760314808,
+        -0.023708578571677213,
+        0.08430602699518204,
+        0.00414480734616518,
+        -0.007163567647512537,
+        0.07452484369277954,
+        0.03175286585465073,
+        0.007359768450260164,
+        0.013451217114925387
+      ],
+      "mean_consumer_closure": 0.015435782847958355,
+      "positive_route_count": 6,
+      "semantic_group": "subject_color_blue",
+      "signature_family": "route-signature-family-0",
+      "top_routes": [
+        {
+          "consumer_closure": 0.08430602699518204,
+          "route": "joint.2-v"
+        },
+        {
+          "consumer_closure": 0.07452484369277954,
+          "route": "joint.3-v"
+        },
+        {
+          "consumer_closure": 0.03175286585465073,
+          "route": "joint.4-q"
+        }
+      ]
+    },
+    "time_night": {
+      "consumer_closure_vector": [
+        0.10434613674879074,
+        0.057315297424793236,
+        0.37629583179950715,
+        0.031430401280522345,
+        0.11817465722560883,
+        0.29750054478645327,
+        0.02268709875643253,
+        0.24281115978956225,
+        -0.10837828144431115
+      ],
+      "mean_consumer_closure": 0.12690920515192883,
+      "positive_route_count": 8,
+      "semantic_group": "time_night",
+      "signature_family": "route-signature-family-1",
+      "top_routes": [
+        {
+          "consumer_closure": 0.37629583179950715,
+          "route": "joint.2-v"
+        },
+        {
+          "consumer_closure": 0.29750054478645327,
+          "route": "joint.3-v"
+        },
+        {
+          "consumer_closure": 0.24281115978956225,
+          "route": "joint.4-k"
+        }
+      ]
+    }
+  },
+  "pairwise_distance_median_threshold": 0.13779851521054906,
+  "pairwise_mean_absolute_distance": {
+    "action_running": {
+      "action_running": 0.0,
+      "light_color_blue": 0.1418707369930214,
+      "object_identity_cat": 0.120812623285585,
+      "scene_grass": 0.06461088177230621,
+      "subject_color_blue": 0.11210265779761056,
+      "time_night": 0.09929945708976853
+    },
+    "light_color_blue": {
+      "action_running": 0.1418707369930214,
+      "light_color_blue": 0.0,
+      "object_identity_cat": 0.21384651892715031,
+      "scene_grass": 0.1595238078799513,
+      "subject_color_blue": 0.10395374354540964,
+      "time_night": 0.15736866204275024
+    },
+    "object_identity_cat": {
+      "action_running": 0.120812623285585,
+      "light_color_blue": 0.21384651892715031,
+      "object_identity_cat": 0.0,
+      "scene_grass": 0.14961054383052722,
+      "subject_color_blue": 0.1935068810699805,
+      "time_night": 0.10076449819737011
+    },
+    "scene_grass": {
+      "action_running": 0.06461088177230621,
+      "light_color_blue": 0.1595238078799513,
+      "object_identity_cat": 0.14961054383052722,
+      "scene_grass": 0.0,
+      "subject_color_blue": 0.11564347370731413,
+      "time_night": 0.13779851521054906
+    },
+    "subject_color_blue": {
+      "action_running": 0.11210265779761056,
+      "light_color_blue": 0.10395374354540964,
+      "object_identity_cat": 0.1935068810699805,
+      "scene_grass": 0.11564347370731413,
+      "subject_color_blue": 0.0,
+      "time_night": 0.14056125911673814
+    },
+    "time_night": {
+      "action_running": 0.09929945708976853,
+      "light_color_blue": 0.15736866204275024,
+      "object_identity_cat": 0.10076449819737011,
+      "scene_grass": 0.13779851521054906,
+      "subject_color_blue": 0.14056125911673814,
+      "time_night": 0.0
+    }
+  },
+  "route_order": [
+    "joint.2-q",
+    "joint.2-k",
+    "joint.2-v",
+    "joint.3-q",
+    "joint.3-k",
+    "joint.3-v",
+    "joint.4-q",
+    "joint.4-k",
+    "joint.4-v"
+  ],
+  "vectors": {
+    "action_running": [
+      0.07532782107591629,
+      0.16489283740520477,
+      0.24983630776405336,
+      0.050983385741710664,
+      0.14171704053878784,
+      0.09991065859794615,
+      -0.005106715857982638,
+      0.14279712140560152,
+      0.15376834571361542
+    ],
+    "light_color_blue": [
+      -0.2594083666801453,
+      -0.013073607534170154,
+      0.21793370693922043,
+      -0.039640349149703984,
+      0.10246669948101043,
+      0.1791982263326645,
+      -0.26328987479209903,
+      0.025056943297386162,
+      0.0066219270229339565
+    ],
+    "object_identity_cat": [
+      0.1365159869194031,
+      0.11575202047824859,
+      0.3932494163513184,
+      0.18381479382514954,
+      0.12549819499254228,
+      0.49336158037185673,
+      0.19512071013450621,
+      0.15852148234844207,
+      0.07864978983998298
+    ],
+    "scene_grass": [
+      0.06046129614114761,
+      0.0806730255484581,
+      0.07530648335814476,
+      0.14727653339505195,
+      0.16933951377868653,
+      0.08971197977662088,
+      -0.08542792722582818,
+      0.17608051598072053,
+      0.21393121480941774
+    ],
+    "subject_color_blue": [
+      -0.04574533760314808,
+      -0.023708578571677213,
+      0.08430602699518204,
+      0.00414480734616518,
+      -0.007163567647512537,
+      0.07452484369277954,
+      0.03175286585465073,
+      0.007359768450260164,
+      0.013451217114925387
+    ],
+    "time_night": [
+      0.10434613674879074,
+      0.057315297424793236,
+      0.37629583179950715,
+      0.031430401280522345,
+      0.11817465722560883,
+      0.29750054478645327,
+      0.02268709875643253,
+      0.24281115978956225,
+      -0.10837828144431115
+    ]
+  }
+}

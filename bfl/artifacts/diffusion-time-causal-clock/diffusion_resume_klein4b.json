@@ -1,0 +1,25 @@
+{
+  "source": "beast job-8069d4252805 (mrun --pin beast --gpu, PhasePipeline stitch)",
+  "model": "flux2-klein-4b",
+  "pipeline": "Flux2KleinPipeline wrapped by mrun PhasePipeline (streamed on 16GB GPU, peak_vram 9.1GB)",
+  "prompt": "a photorealistic portrait of a red-haired woman in a blue jacket, studio lighting",
+  "seed": 4101,
+  "num_steps": 8,
+  "guidance_scale": 1.0,
+  "eps": 0.15,
+  "faithful": {"rerun_final_rel": 0.0, "rerun_pixel_mad": 0.0, "pass": true,
+               "note": "unedited re-run reproduces the golden trajectory BIT-EXACT (deterministic FlowMatchEuler denoise)"},
+  "per_k": [
+    {"k": 1, "sigma_rank_from_end": 7, "delta_inject_rel": 0.15, "delta_final_rel": 0.35981, "compounded_ratio": 2.3986, "final_pixel_mad": 12.9322, "propagation_curve": [0.15, 0.14996, 0.15009, 0.15085, 0.15406, 0.16772, 0.22459, 0.35981]},
+    {"k": 2, "sigma_rank_from_end": 6, "delta_inject_rel": 0.15, "delta_final_rel": 0.2828, "compounded_ratio": 1.8853, "final_pixel_mad": 8.7051, "propagation_curve": [0.15, 0.1499, 0.14988, 0.15051, 0.15572, 0.18653, 0.2828]},
+    {"k": 4, "sigma_rank_from_end": 4, "delta_inject_rel": 0.15, "delta_final_rel": 0.1601, "compounded_ratio": 1.0673, "final_pixel_mad": 3.5319, "propagation_curve": [0.15, 0.14862, 0.14546, 0.13985, 0.1601]},
+    {"k": 6, "sigma_rank_from_end": 2, "delta_inject_rel": 0.15, "delta_final_rel": 0.09262, "compounded_ratio": 0.6175, "final_pixel_mad": 1.5843, "propagation_curve": [0.15, 0.13014, 0.09262]},
+    {"k": 7, "sigma_rank_from_end": 1, "delta_inject_rel": 0.15001, "delta_final_rel": 0.0784, "compounded_ratio": 0.5226, "final_pixel_mad": 1.1853, "propagation_curve": [0.15001, 0.0784]}
+  ],
+  "depth_ordering": {"early_k": 1, "late_k": 7, "early_final_rel": 0.35981, "late_final_rel": 0.0784,
+                     "early_edit_moves_image_more": true,
+                     "compounded_ratio_by_k": {"1": 2.3986, "2": 1.8853, "4": 1.0673, "6": 0.6175, "7": 0.5226},
+                     "crossover_step": "~4 (ratio ~1.0): edits before amplify, after dissipate"},
+  "gates": {"G_FAITHFUL": true, "G_COMPOUNDED": true, "G_DEPTH_ORDERED": true},
+  "reading": "Diffusion resume-at-k analog of the LLM finding. Bit-exact faithful resume. An edit's FINAL effect is monotone in injection step: EARLY (high-noise) edits compound (2.4x, whole-image) while LATE (low-noise) edits wash out (0.5x, fine detail) -- crossover at k~4. Character-pinning law: inject identity EARLY to pin structure; late injections dissipate. The single-step diff misstates the compounded effect (early understated 0.15->0.36, late overstated 0.15->0.08). Depth clock is INVERTED vs the LLM (diffusion builds coarse->fine, so early dominates; the LLM residual refines toward output, so late survives)."
+}
