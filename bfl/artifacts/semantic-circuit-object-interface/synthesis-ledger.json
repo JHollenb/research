@@ -1,0 +1,61 @@
+{
+  "bundle": "semantic-circuit-object-interface",
+  "model": "FLUX.2 Klein 4B",
+  "resolution": [256, 256],
+  "steps": 4,
+  "seeds": [7217, 31337],
+  "route": ["joint.2", "joint.3", "joint.4", "single.0"],
+  "stream": "text",
+  "semantic_circuit": {
+    "twenty_axis_strict_passes": 6,
+    "twenty_axis_loose_passes": 11,
+    "twenty_axis_candidates": 3,
+    "scene_certificate_min_progress": 0.9132605916,
+    "scene_certificate_route_ablation_progress": 0.0224780594,
+    "interpretation": "The circuit is a consumer-visible causal route, not a claim that one token or site owns an independent concept."
+  },
+  "symbol_creation": {
+    "base_scene": "a photorealistic red fox sitting beside a small blue ball in fresh snow at dawn, soft light",
+    "lexical_rows": {
+      "fox": [7, 8],
+      "ball": [12, 13],
+      "ground": [14, 15, 16]
+    },
+    "inverse_map_progress": {
+      "fox_red_to_white": [0.92, 0.94],
+      "ball_blue_to_green": [0.77, 0.65]
+    },
+    "exact_noop_rgb_mad": 0.0,
+    "manifest_readback_fingerprint_matches": true,
+    "manifest_unit_tests": "11/11",
+    "manifest_fields": ["lexical rows", "attribute rows", "route sites", "per-seed spatial blocks", "pixel-bounding-box join", "measured evidence", "property back-map"]
+  },
+  "object_capabilities": {
+    "wrong_address": "A fox whitening payload written at the ball row changes the ball while the fox remains near sham level.",
+    "out_of_distribution": ["purple fox", "transparent glass ball", "chrome mirror sphere"],
+    "composition": "White-fox plus green-ball and white-fox plus blue-cube edits render on both seeds.",
+    "isolation_progress": {
+      "fox": [0.9159, 0.9152],
+      "ball": [0.9950, 0.9968]
+    },
+    "pose_context": "Verb and relation rows restore pose and placement; identity rows alone can preserve an object while losing composition.",
+    "dose_boundary": "Useful visual edits extend to approximately 4x in the original stress battery; overdrive eventually produces semantic drift."
+  },
+  "value_level_debugger": {
+    "recipe": "catmug.mug_color += foxball.blue_ball - foxball.red_fox",
+    "result": "A blue mug appears at both seeds without a blue-mug render or edit prompt.",
+    "mug_roi_mad": [59.8, 65.0],
+    "cat_roi_mad": [1.9, 3.6],
+    "raw_value_copy": "Raw value transplant behaves like a setpoint and produces a terracotta/beige material drift rather than the intended displacement.",
+    "closed_loop": "At seed 31337 alpha 1.0 scores +5.67 while alpha 2.0 overshoots to -2.32; the 7217 optimum is noise-level.",
+    "claim_boundary": "Donor-variant-free, not prompt-free: the source and target base prompts still supply the captured values."
+  },
+  "limitations": [
+    "Exploratory evidence only; no certified semantic-object tier.",
+    "Two seeds, one pinned model recipe, and shared article-introduced scene grammar.",
+    "Cross-scene source and target color rows coincide positionally in the tested grammar.",
+    "A norm-matched sham was not run at the value-level mug address and complement collateral is non-trivial in scalars.",
+    "Payload sparsity is seed-inconsistent and full position-versus-content disambiguation remains open.",
+    "The manifest extractor is tested on these grammars, not arbitrary prompts."
+  ]
+}

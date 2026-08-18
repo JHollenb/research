@@ -1,0 +1,32 @@
+{
+  "stage": "object registry and edit battery",
+  "question": "Does an extracted per-object address support live edits, removal, movement, and layering?",
+  "source_address_schema": {
+    "lexical_rows": "token rows for object words and attributes",
+    "route": ["joint.2", "joint.3", "joint.4", "single.0"],
+    "spatial_blocks": "attribute-contrast-derived packed latent blocks joined to image coordinates"
+  },
+  "lexical_rows": {
+    "fox": [7, 8],
+    "ball": [12, 13, 14],
+    "ball_attributes": {"size": 12, "color": 13, "noun": 14}
+  },
+  "results": {
+    "fox_red_to_white_progress": [0.910, 0.876],
+    "ball_blue_to_green": "pass on both seeds",
+    "ball_to_gray_rock": "pass on both seeds",
+    "ball_to_blue_cube": "pass on both seeds",
+    "ball_size_single_row": {"progress": [-0.16, -0.03], "interpretation": "single-row locality failure, not native size absence"},
+    "ball_removal_spatial_blocks": {"seed_7217": "clean removal, progress 0.822", "seed_31337": "silhouette removed with blue-teal residue, progress 0.685"},
+    "whole_scene_move": [0.906, 0.871],
+    "occlusion_flip": [0.944, 0.951],
+    "relational_window_plus_minus_3": {
+      "resize": [0.52, 0.63],
+      "move": [0.51, 0.60],
+      "layer": [0.13, 0.64]
+    },
+    "wrong_address": "A presence-contrast spatial address moved content at one seed and edited the fox flank at the other; the address error executed cleanly against the wrong object."
+  },
+  "controls": ["exact no-op replay", "norm-matched shams", "wrong address", "duplicate source/destination", "route and row windows"],
+  "interpretation": "Attributes are compact lexical edits, while size, position, and occlusion are contextual and distributed across phrase and padding rows."
+}

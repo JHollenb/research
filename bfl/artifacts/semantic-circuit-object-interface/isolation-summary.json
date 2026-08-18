@@ -1,0 +1,24 @@
+{
+  "stage": "object isolation",
+  "question": "Can an object be rebound into a void context without carrying its scene?",
+  "native_route_isolation_progress": {
+    "fox_seed_7217": 0.9159,
+    "ball_seed_7217": 0.9950,
+    "fox_seed_31337": 0.9152,
+    "ball_seed_31337": 0.9968
+  },
+  "strategies": {
+    "route_void_keep": "Replace every route row with white-void donor states except the object's 2–3 lexical rows. The object re-binds alone on white on both seeds; bare rows preserve identity but lose composition.",
+    "plus_minus_3_phrase_window": "Restores fox pose and body composition, but brings the ball or snowfield back with the ball; relational context carries both pose and neighbors.",
+    "image_complement": "Replace all 248 non-object image blocks with void states. The background becomes white but the object collapses to a smudge.",
+    "hybrid": "Late image writes override the route-side keep, confirming that the surviving object is carried by text-route state in this assay.",
+    "sham_context": "Norm-matched noise produces a flat gray field and kills the object, so void-keep survival is semantic rather than row preservation alone.",
+    "both_objects": "Keeping both lexical objects in the void context renders the fox and ball together on white."
+  },
+  "metric_policy": {
+    "primary": ["object retention in the object's own ROI", "background emptiness against the void reference"],
+    "secondary": ["global MAD", "route progress", "return alignment"],
+    "reason": "Donor layouts differ, and derived ROI scalars understate several visually clean panes."
+  },
+  "claim_boundary": "Text-route isolation is an exploratory trend for the tested scene and seeds; image-side object isolation and general composition preservation are not established."
+}
