@@ -1,0 +1,1091 @@
+{
+  "act_package": {
+    "act_spec": {
+      "abi_version": "v1",
+      "name": "flux.route.low_rank_write",
+      "reads": [
+        "route_state",
+        "compiled_delta",
+        "dose"
+      ],
+      "site": "joint.2",
+      "step": 0,
+      "stream": "text",
+      "writes": [
+        "route_state_out"
+      ]
+    },
+    "donor_logits": false,
+    "donor_payloads": false,
+    "dose_envelope": {
+      "screen": [
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "selected": 2.0
+    },
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "package": "act-package.npz",
+    "package_bytes": 104044,
+    "package_sha256": "f4c49f07a4a19ec689528274822c3585686f00f8b33bff9ca1ca2b91c62d4e83",
+    "parameter_count": 55297,
+    "payload_dtype": "float16",
+    "prompt_lookup": false,
+    "rank": 8,
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "runtime_labels": false,
+    "schema": "saturn-flux-recipient-native-act-package-v1",
+    "selected_gain": 2.0,
+    "site": "joint.2",
+    "step": 0,
+    "stream": "text"
+  },
+  "claim_boundary": "developmental recipient-native patch trend; not a sealed capability-transfer certificate",
+  "collected_artifact_dir": "/Users/jakeholl/domains/saturn/experiments/2026-08-14-flux-capability-patch-red-apples/results/job-e6e94936134a",
+  "compile_package": "act-package.npz",
+  "consumer_closed_controller": {
+    "accepted_gain": 2.0,
+    "accepted_state_fingerprint": "d79f263a637791ff776d4b23ff5c6deb325e1f68b60ba5404720edf369328c77",
+    "controller_id": "flux-red-apples-consumer-dose",
+    "ledger_verified": true,
+    "receipts": [
+      {
+        "kind": "baseline",
+        "receipt": {
+          "comparison": null,
+          "decision": {
+            "action": "establish-baseline",
+            "promoted": true,
+            "reason": "initial-state"
+          },
+          "interval_id": "baseline",
+          "post_state_fingerprint": "57777834b6ea51ea602a0ce1a2dfafc61be15979469ac3aaec0f38e4ab9b4fb0",
+          "rollback": {
+            "required": false,
+            "verified_exact": true
+          }
+        }
+      },
+      {
+        "comparison": {
+          "comparisons": [
+            {
+              "baseline": -2.0,
+              "candidate": -2.0,
+              "comparison": "equivalent",
+              "direction": "maximize",
+              "metric": "count_error",
+              "oriented_delta": 0.0,
+              "source": "validation",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "comparison": "equivalent",
+              "direction": "maximize",
+              "metric": "count_exact",
+              "oriented_delta": 0.0,
+              "source": "autonomous_rollout",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": -1.0,
+              "candidate": -0.5,
+              "comparison": "better",
+              "direction": "maximize",
+              "metric": "dose_nearness",
+              "oriented_delta": 0.5,
+              "source": "trace_endpoints",
+              "tolerance": 0.0
+            }
+          ],
+          "decisive_objective_index": 2,
+          "kind": "lexicographic",
+          "policy_fingerprint": "a9ec11a6e5cf3934470b015c0ed8c1563d361f2a4ee2c6852d36c987e46e7a2b",
+          "promoted": true,
+          "relation": "lexicographic-improvement",
+          "scalarized_score_used": false
+        },
+        "decision": {
+          "action": "promote-candidate",
+          "promoted": true,
+          "reason": "lexicographic-improvement"
+        },
+        "interval_id": "dose-0.500",
+        "post_state_fingerprint": "217909f607dec8d9a27d6939fda07c26094d4d8456d10df07fd0a37be32462aa",
+        "rollback": {
+          "required": false,
+          "verified_exact": true
+        }
+      },
+      {
+        "comparison": {
+          "comparisons": [
+            {
+              "baseline": -2.0,
+              "candidate": -2.0,
+              "comparison": "equivalent",
+              "direction": "maximize",
+              "metric": "count_error",
+              "oriented_delta": 0.0,
+              "source": "validation",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "comparison": "equivalent",
+              "direction": "maximize",
+              "metric": "count_exact",
+              "oriented_delta": 0.0,
+              "source": "autonomous_rollout",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": -0.5,
+              "candidate": -0.0,
+              "comparison": "better",
+              "direction": "maximize",
+              "metric": "dose_nearness",
+              "oriented_delta": 0.5,
+              "source": "trace_endpoints",
+              "tolerance": 0.0
+            }
+          ],
+          "decisive_objective_index": 2,
+          "kind": "lexicographic",
+          "policy_fingerprint": "a9ec11a6e5cf3934470b015c0ed8c1563d361f2a4ee2c6852d36c987e46e7a2b",
+          "promoted": true,
+          "relation": "lexicographic-improvement",
+          "scalarized_score_used": false
+        },
+        "decision": {
+          "action": "promote-candidate",
+          "promoted": true,
+          "reason": "lexicographic-improvement"
+        },
+        "interval_id": "dose-1.000",
+        "post_state_fingerprint": "96e8d0b1169f40dfd30060fdd5d6c086d72962530b1968077f1e6c110ce72b6d",
+        "rollback": {
+          "required": false,
+          "verified_exact": true
+        }
+      },
+      {
+        "comparison": {
+          "comparisons": [
+            {
+              "baseline": -2.0,
+              "candidate": -0.0,
+              "comparison": "better",
+              "direction": "maximize",
+              "metric": "count_error",
+              "oriented_delta": 2.0,
+              "source": "validation",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": 0.0,
+              "candidate": 1.0,
+              "comparison": "better",
+              "direction": "maximize",
+              "metric": "count_exact",
+              "oriented_delta": 1.0,
+              "source": "autonomous_rollout",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": -0.0,
+              "candidate": -1.0,
+              "comparison": "worse",
+              "direction": "maximize",
+              "metric": "dose_nearness",
+              "oriented_delta": -1.0,
+              "source": "trace_endpoints",
+              "tolerance": 0.0
+            }
+          ],
+          "decisive_objective_index": 0,
+          "kind": "lexicographic",
+          "policy_fingerprint": "a9ec11a6e5cf3934470b015c0ed8c1563d361f2a4ee2c6852d36c987e46e7a2b",
+          "promoted": true,
+          "relation": "lexicographic-improvement",
+          "scalarized_score_used": false
+        },
+        "decision": {
+          "action": "promote-candidate",
+          "promoted": true,
+          "reason": "lexicographic-improvement"
+        },
+        "interval_id": "dose-2.000",
+        "post_state_fingerprint": "d79f263a637791ff776d4b23ff5c6deb325e1f68b60ba5404720edf369328c77",
+        "rollback": {
+          "required": false,
+          "verified_exact": true
+        }
+      },
+      {
+        "comparison": {
+          "comparisons": [
+            {
+              "baseline": -0.0,
+              "candidate": -2.0,
+              "comparison": "worse",
+              "direction": "maximize",
+              "metric": "count_error",
+              "oriented_delta": -2.0,
+              "source": "validation",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": 1.0,
+              "candidate": 0.0,
+              "comparison": "worse",
+              "direction": "maximize",
+              "metric": "count_exact",
+              "oriented_delta": -1.0,
+              "source": "autonomous_rollout",
+              "tolerance": 0.0
+            },
+            {
+              "baseline": -1.0,
+              "candidate": -3.0,
+              "comparison": "worse",
+              "direction": "maximize",
+              "metric": "dose_nearness",
+              "oriented_delta": -2.0,
+              "source": "trace_endpoints",
+              "tolerance": 0.0
+            }
+          ],
+          "decisive_objective_index": 0,
+          "kind": "lexicographic",
+          "policy_fingerprint": "a9ec11a6e5cf3934470b015c0ed8c1563d361f2a4ee2c6852d36c987e46e7a2b",
+          "promoted": false,
+          "relation": "lexicographic-regression",
+          "scalarized_score_used": false
+        },
+        "decision": {
+          "action": "restore-prior",
+          "promoted": false,
+          "reason": "lexicographic-regression"
+        },
+        "interval_id": "dose-4.000",
+        "post_state_fingerprint": "d79f263a637791ff776d4b23ff5c6deb325e1f68b60ba5404720edf369328c77",
+        "rollback": {
+          "required": true,
+          "verified_exact": true
+        }
+      }
+    ]
+  },
+  "execution": {
+    "donor_runtime_loaded": false,
+    "elapsed_seconds": 89.30420033005066,
+    "physical_model_loads": 2,
+    "sequential_model_loads": true
+  },
+  "execution_receipt": {
+    "claim_boundary": "developmental recipient-native patch trend; not a sealed capability-transfer certificate",
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "PATCH_CONFIG=config.json",
+      "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+      "uv",
+      "run",
+      "--no-project",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "--with",
+      "Pillow>=9.0",
+      "python",
+      "-u",
+      "fast_validate.py",
+      "--package",
+      "act-package.npz"
+    ],
+    "config_sha256": "ce5827721c49db65b6db062213d309dd4fcf431fa71eb145215e109d84029e2b",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "experiment": "flux-capability-patch-red-apples-validate",
+    "helper_sha256": "df43c43281ff2f46ae31da6e6749648db71a3b296f8c3d1d6cd83d88464b8c69",
+    "instrument": "short Saturn recipient-native Act validate lease",
+    "log_sha256": "c1c679d2538ff2ea7ea61390f280bc845e1ef8610a286c43205edd10ca9850dd",
+    "mode": "validate",
+    "mrun_job_id": "job-e6e94936134a",
+    "mrun_result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "DIFFUSERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "TQDM_DISABLE=1",
+          "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+          "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+          "PATCH_CONFIG=config.json",
+          "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+          "uv",
+          "run",
+          "--no-project",
+          "--offline",
+          "--with",
+          "diffusers==0.39.0",
+          "--with",
+          "transformers==5.14.1",
+          "--with",
+          "accelerate==1.14.0",
+          "--with",
+          "safetensors>=0.5",
+          "--with",
+          "numpy>=2.0",
+          "--with",
+          "Pillow>=9.0",
+          "python",
+          "-u",
+          "fast_validate.py",
+          "--package",
+          "act-package.npz"
+        ],
+        "cwd": "/mnt/big/mrun-work/job-e6e94936134a",
+        "log_path": "/mnt/big/mrun-work/job-e6e94936134a/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1786781159.1166544
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1786781159.8745015
+          },
+          {
+            "name": "process.launch",
+            "ts": 1786781159.917036
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1786781159.9715283
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1786781260.0189197
+          },
+          {
+            "name": "finished",
+            "ts": 1786781260.0452514
+          }
+        ]
+      },
+      "elapsed_s": 100.97,
+      "executed_payload": {
+        "host": "beast",
+        "sha256": "ac665ed8a2342ed44c107adec452ebbf6d4e9f38c21bb6a81d46a9c7858ba701",
+        "size_bytes": 4068954
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 35595.1,
+      "peak_vram_mb": 8834.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "patch_worker_sha256": "1bc94bd0a5724a035f1c93998674d4ce15b0946f70133f087e43683a3e49d464",
+    "payload": {
+      "candidate_sites": [
+        "joint.2"
+      ],
+      "checkpoint_features": [
+        "TrajectoryCheckpoint",
+        "PhasePipeline",
+        "advance_checkpoint",
+        "Frame",
+        "ActSpec",
+        "ActRegistry",
+        "DeterministicCheckpointController"
+      ],
+      "target": "red_apples_row"
+    },
+    "preflight": "strict",
+    "report_present": true,
+    "reservation": {
+      "est_wall_s": 600,
+      "ram_mb": 36000,
+      "vram_mb": 9000
+    },
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "checkpoint_policy": "recipient checkpoint -> consumer dose replay -> native suffix controls -> donor-free child",
+      "claim_boundary": "developmental recipient-native patch trend; not a sealed capability-transfer certificate",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "donor_free_serving": true,
+      "execution_model": "finite_local_program",
+      "interactive": false,
+      "lease_scope": "entire-flux-capability-patch-red-apples-validate-worker",
+      "logical_branches": 20,
+      "logical_checkpoint_replays": 12,
+      "logical_operations": 20,
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "native_scheduler_and_vae": true,
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "physical_model_loads": 2,
+      "replay_grid": false,
+      "replay_policy": "local_checkpoint_restore",
+      "schema": "saturn-single-lease-scheduling-contract-v1",
+      "sequential_model_loads": true
+    },
+    "schema": "saturn-flux-capability-patch-red-apples-short-mrun-request-v1",
+    "task_family": "flux-capability-patch-red-apples-validate",
+    "worker_sha256": "131edc19c0a8480268e573d568b51405be871eab68c7fe2f19a656f1f309afb1"
+  },
+  "fresh_process": {
+    "donor_disabled": "1",
+    "image_output": "/tmp/flux-red-apples-validate-job-e6e94936134a/fresh-donor-free.png",
+    "image_present": true,
+    "result": {
+      "donor_path_unavailable": true,
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 0.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "observed_count": 5,
+          "raw": {
+            "count_absolute_error": 0.0,
+            "count_exact": 1.0,
+            "expected_count": 5,
+            "observed_color_component_count": 5,
+            "red_component_count": 5,
+            "red_pixel_fraction": 0.0887109375
+          }
+        },
+        "independent": {
+          "absolute_error": 0.0,
+          "components": [
+            {
+              "area": 4721.0,
+              "x": 0.8594417572021484,
+              "y": 0.5086371302604675
+            },
+            {
+              "area": 4653.0,
+              "x": 0.6693070530891418,
+              "y": 0.5087755918502808
+            },
+            {
+              "area": 4648.0,
+              "x": 0.4883652627468109,
+              "y": 0.5089612007141113
+            },
+            {
+              "area": 4645.0,
+              "x": 0.12383157759904861,
+              "y": 0.5089098811149597
+            },
+            {
+              "area": 4643.0,
+              "x": 0.30640193819999695,
+              "y": 0.5089537501335144
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "mask_fraction": 0.08900070190429688,
+          "observed_count": 5,
+          "target_color": "red"
+        }
+      },
+      "gain": 2.0,
+      "seed": 6172,
+      "status": "complete",
+      "telemetry": {
+        "calls_per_scheduler_step": 1,
+        "patch_site": "joint.2",
+        "patch_step": 0,
+        "patch_stream": "text",
+        "patched": true,
+        "transformer_calls": 4
+      }
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"donor_path_unavailable\": true, \"evaluation\": {\"atlas\": {\"absolute_error\": 0.0, \"evaluator\": \"image-atlas-controlled-geometry-v1\", \"exact\": 1.0, \"expected_count\": 5, \"observed_count\": 5, \"raw\": {\"count_absolute_error\": 0.0, \"count_exact\": 1.0, \"expected_count\": 5, \"observed_color_component_count\": 5, \"red_component_count\": 5, \"red_pixel_fraction\": 0.0887109375}}, \"independent\": {\"absolute_error\": 0.0, \"components\": [{\"area\": 4721.0, \"x\": 0.8594417572021484, \"y\": 0.5086371302604675}, {\"area\": 4653.0, \"x\": 0.6693070530891418, \"y\": 0.5087755918502808}, {\"area\": 4648.0, \"x\": 0.4883652627468109, \"y\": 0.5089612007141113}, {\"area\": 4645.0, \"x\": 0.12383157759904861, \"y\": 0.5089098811149597}, {\"area\": 4643.0, \"x\": 0.30640193819999695, \"y\": 0.5089537501335144}], \"evaluator\": \"full-resolution-rgb-connected-components-v1\", \"exact\": 1.0, \"expected_count\": 5, \"mask_fraction\": 0.08900070190429688, \"observed_count\": 5, \"target_color\": \"red\"}}, \"gain\": 2.0, \"seed\": 6172, \"status\": \"complete\", \"telemetry\": {\"calls_per_scheduler_step\": 1, \"patch_site\": \"joint.2\", \"patch_step\": 0, \"patch_stream\": \"text\", \"patched\": true, \"transformer_calls\": 4}}\n"
+  },
+  "phase_audit": {
+    "advanced_checkpoint_fingerprint": "6d338cdc6ffbc25abd983237f13255f4798cfa783f9c6b786645d3861bf26915",
+    "advanced_observer": [
+      {
+        "step_index": 0
+      }
+    ],
+    "advanced_suffix_replay_exact": true,
+    "checkpoint_fingerprint": "4bc8e4f2f068d3e9d646bb2fee2867fa57a62a6bdf53d95ee6ed5c9a32a60563"
+  },
+  "preserved_records": {
+    "act": {
+      "artifact_name": "preserved-with-target-act.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 0.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "observed_count": 5,
+          "raw": {
+            "count_absolute_error": 0.0,
+            "count_exact": 1.0,
+            "expected_count": 5,
+            "observed_color_component_count": 5,
+            "red_component_count": 5,
+            "red_pixel_fraction": 0.0701171875
+          }
+        },
+        "independent": {
+          "absolute_error": 0.0,
+          "components": [
+            {
+              "area": 3692.0,
+              "x": 0.6715556979179382,
+              "y": 0.5014873147010803
+            },
+            {
+              "area": 3681.0,
+              "x": 0.8557133078575134,
+              "y": 0.5016302466392517
+            },
+            {
+              "area": 3675.0,
+              "x": 0.4896068871021271,
+              "y": 0.5013576149940491
+            },
+            {
+              "area": 3646.0,
+              "x": 0.3106420040130615,
+              "y": 0.5014883875846863
+            },
+            {
+              "area": 3621.0,
+              "x": 0.1349639594554901,
+              "y": 0.5012714266777039
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "mask_fraction": 0.06986618041992188,
+          "observed_count": 5,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "c2b063a71f70f72da59459b4caac3503bd2bd609b9d69820680bab6d04335b69",
+      "png_sha256": "019e044793b62d7aab7919eb6db53727b647373fa11b0250e1fb665d63d316ea"
+    },
+    "native": {
+      "artifact_name": "preserved-native.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 0.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "observed_count": 5,
+          "raw": {
+            "count_absolute_error": 0.0,
+            "count_exact": 1.0,
+            "expected_count": 5,
+            "observed_color_component_count": 5,
+            "red_component_count": 5,
+            "red_pixel_fraction": 0.082265625
+          }
+        },
+        "independent": {
+          "absolute_error": 0.0,
+          "components": [
+            {
+              "area": 4387.0,
+              "x": 0.8711252212524414,
+              "y": 0.5050685405731201
+            },
+            {
+              "area": 4338.0,
+              "x": 0.49379849433898926,
+              "y": 0.505121111869812
+            },
+            {
+              "area": 4320.0,
+              "x": 0.3072678744792938,
+              "y": 0.505240261554718
+            },
+            {
+              "area": 4318.0,
+              "x": 0.6822507977485657,
+              "y": 0.5051565766334534
+            },
+            {
+              "area": 4235.0,
+              "x": 0.12368182837963104,
+              "y": 0.504988431930542
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "mask_fraction": 0.08238983154296875,
+          "observed_count": 5,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "109ff26c0c16aa1c917fe997cd3d47361f8298bd1d736d75edb7bf2bbab5b820",
+      "png_sha256": "cf233d086417d0a62c30bcea247a7175d99498f2cae6c63702b261c0dfef1c0f"
+    },
+    "zero_dose": {
+      "artifact_name": "preserved-zero-dose.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 0.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "observed_count": 5,
+          "raw": {
+            "count_absolute_error": 0.0,
+            "count_exact": 1.0,
+            "expected_count": 5,
+            "observed_color_component_count": 5,
+            "red_component_count": 5,
+            "red_pixel_fraction": 0.082265625
+          }
+        },
+        "independent": {
+          "absolute_error": 0.0,
+          "components": [
+            {
+              "area": 4387.0,
+              "x": 0.8711252212524414,
+              "y": 0.5050685405731201
+            },
+            {
+              "area": 4338.0,
+              "x": 0.49379849433898926,
+              "y": 0.505121111869812
+            },
+            {
+              "area": 4320.0,
+              "x": 0.3072678744792938,
+              "y": 0.505240261554718
+            },
+            {
+              "area": 4318.0,
+              "x": 0.6822507977485657,
+              "y": 0.5051565766334534
+            },
+            {
+              "area": 4235.0,
+              "x": 0.12368182837963104,
+              "y": 0.504988431930542
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "mask_fraction": 0.08238983154296875,
+          "observed_count": 5,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "109ff26c0c16aa1c917fe997cd3d47361f8298bd1d736d75edb7bf2bbab5b820",
+      "png_sha256": "cf233d086417d0a62c30bcea247a7175d99498f2cae6c63702b261c0dfef1c0f"
+    }
+  },
+  "schema": "saturn-flux-capability-patch-validate-fast-report-v1",
+  "status": "complete",
+  "target": {
+    "count": 5,
+    "count_target": "red apples",
+    "expected_count": 5,
+    "family": "red_apples",
+    "id": "red_apples_row",
+    "prompt": "A clean flat illustration on a pure white background showing exactly five separate red apples arranged in a single horizontal row with equal spacing. No other objects, fruit, marks, or text.",
+    "target_color": "red"
+  },
+  "target_records": {
+    "act": {
+      "artifact_name": "target-act.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 0.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "observed_count": 5,
+          "raw": {
+            "count_absolute_error": 0.0,
+            "count_exact": 1.0,
+            "expected_count": 5,
+            "observed_color_component_count": 5,
+            "red_component_count": 5,
+            "red_pixel_fraction": 0.0810546875
+          }
+        },
+        "independent": {
+          "absolute_error": 0.0,
+          "components": [
+            {
+              "area": 4261.0,
+              "x": 0.49054476618766785,
+              "y": 0.49650838971138
+            },
+            {
+              "area": 4258.0,
+              "x": 0.8512108325958252,
+              "y": 0.4965627193450928
+            },
+            {
+              "area": 4249.0,
+              "x": 0.6713572144508362,
+              "y": 0.49673113226890564
+            },
+            {
+              "area": 4201.0,
+              "x": 0.31327319145202637,
+              "y": 0.49675247073173523
+            },
+            {
+              "area": 4177.0,
+              "x": 0.13746558129787445,
+              "y": 0.4967249035835266
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 1.0,
+          "expected_count": 5,
+          "mask_fraction": 0.08073806762695312,
+          "observed_count": 5,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "b03535154de2a07c6bce431b85264bbc49f49f03fe7985b45458f5778a858aae",
+      "png_sha256": "2cad9d21cc7428971081e517a7131441d43083fa5d6a7cdd9adb9ebaa4f4bfc2"
+    },
+    "native": {
+      "artifact_name": "target-native.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 2.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 0.0,
+          "expected_count": 5,
+          "observed_count": 3,
+          "raw": {
+            "count_absolute_error": 2.0,
+            "count_exact": 0.0,
+            "expected_count": 5,
+            "observed_color_component_count": 3,
+            "red_component_count": 3,
+            "red_pixel_fraction": 0.1457421875
+          }
+        },
+        "independent": {
+          "absolute_error": 2.0,
+          "components": [
+            {
+              "area": 12735.0,
+              "x": 0.8170236349105835,
+              "y": 0.5325886607170105
+            },
+            {
+              "area": 12600.0,
+              "x": 0.4971378743648529,
+              "y": 0.5325404405593872
+            },
+            {
+              "area": 12561.0,
+              "x": 0.1779424399137497,
+              "y": 0.5327942967414856
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 0.0,
+          "expected_count": 5,
+          "mask_fraction": 0.14458465576171875,
+          "observed_count": 3,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "64311c5e63dbb6f0c54bdf2871629508a4836a4060467cbde264335496a444ad",
+      "png_sha256": "dd20e8fe811c9ef3e896e112b5a2972c9b7e72bd600a82604cd9531126a0f66b"
+    },
+    "wrong_time": {
+      "artifact_name": "target-wrong-time.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 2.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 0.0,
+          "expected_count": 5,
+          "observed_count": 3,
+          "raw": {
+            "count_absolute_error": 2.0,
+            "count_exact": 0.0,
+            "expected_count": 5,
+            "observed_color_component_count": 3,
+            "red_component_count": 3,
+            "red_pixel_fraction": 0.1444140625
+          }
+        },
+        "independent": {
+          "absolute_error": 2.0,
+          "components": [
+            {
+              "area": 12667.0,
+              "x": 0.8168776631355286,
+              "y": 0.5339691042900085
+            },
+            {
+              "area": 12502.0,
+              "x": 0.49672678112983704,
+              "y": 0.5339167714118958
+            },
+            {
+              "area": 12428.0,
+              "x": 0.17694388329982758,
+              "y": 0.5344501733779907
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 0.0,
+          "expected_count": 5,
+          "mask_fraction": 0.14347457885742188,
+          "observed_count": 3,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "aadb6e09128e6b385604636ceb83cfa48fb775f5dc351c798b35d10e626eb82b",
+      "png_sha256": "0f3dfa925c9badd9de1ed081362e3c85033182770260227da946d81efd6342a1"
+    },
+    "zero_dose": {
+      "artifact_name": "target-zero-dose.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 2.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 0.0,
+          "expected_count": 5,
+          "observed_count": 3,
+          "raw": {
+            "count_absolute_error": 2.0,
+            "count_exact": 0.0,
+            "expected_count": 5,
+            "observed_color_component_count": 3,
+            "red_component_count": 3,
+            "red_pixel_fraction": 0.1457421875
+          }
+        },
+        "independent": {
+          "absolute_error": 2.0,
+          "components": [
+            {
+              "area": 12735.0,
+              "x": 0.8170236349105835,
+              "y": 0.5325886607170105
+            },
+            {
+              "area": 12600.0,
+              "x": 0.4971378743648529,
+              "y": 0.5325404405593872
+            },
+            {
+              "area": 12561.0,
+              "x": 0.1779424399137497,
+              "y": 0.5327942967414856
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 0.0,
+          "expected_count": 5,
+          "mask_fraction": 0.14458465576171875,
+          "observed_count": 3,
+          "target_color": "red"
+        }
+      },
+      "pixel_sha256": "64311c5e63dbb6f0c54bdf2871629508a4836a4060467cbde264335496a444ad",
+      "png_sha256": "dd20e8fe811c9ef3e896e112b5a2972c9b7e72bd600a82604cd9531126a0f66b"
+    }
+  },
+  "uninstall": {
+    "native_pixel_sha256": "dd20e8fe811c9ef3e896e112b5a2972c9b7e72bd600a82604cd9531126a0f66b",
+    "pixel_bytes_exact": true,
+    "zero_dose_pixel_sha256": "dd20e8fe811c9ef3e896e112b5a2972c9b7e72bd600a82604cd9531126a0f66b"
+  },
+  "wrong_source": {
+    "count": 7,
+    "count_target": "blue circles",
+    "expected_count": 7,
+    "family": "blue_circles",
+    "id": "blue_circles_7",
+    "prompt": "A minimal flat vector diagram on a pure white background showing exactly seven separate solid blue circles arranged in a single horizontal row with equal spacing. No other shapes, objects, marks, or text.",
+    "target_color": "blue"
+  },
+  "wrong_source_records": {
+    "act": {
+      "artifact_name": "wrong-source-with-target-act.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 0.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 1.0,
+          "expected_count": 7,
+          "observed_count": 7,
+          "raw": {
+            "blue_component_count": 7,
+            "blue_pixel_fraction": 0.0502734375,
+            "count_absolute_error": 0.0,
+            "count_exact": 1.0,
+            "expected_count": 7,
+            "observed_color_component_count": 7
+          }
+        },
+        "independent": {
+          "absolute_error": 0.0,
+          "components": [
+            {
+              "area": 1875.0,
+              "x": 0.4976406991481781,
+              "y": 0.48904475569725037
+            },
+            {
+              "area": 1874.0,
+              "x": 0.26361560821533203,
+              "y": 0.4891616106033325
+            },
+            {
+              "area": 1872.0,
+              "x": 0.37722769379615784,
+              "y": 0.48931729793548584
+            },
+            {
+              "area": 1865.0,
+              "x": 0.8412879109382629,
+              "y": 0.48863449692726135
+            },
+            {
+              "area": 1861.0,
+              "x": 0.6163079738616943,
+              "y": 0.48863425850868225
+            },
+            {
+              "area": 1853.0,
+              "x": 0.7295610904693604,
+              "y": 0.48839086294174194
+            },
+            {
+              "area": 1849.0,
+              "x": 0.15049760043621063,
+              "y": 0.4897077679634094
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 1.0,
+          "expected_count": 7,
+          "mask_fraction": 0.049777984619140625,
+          "observed_count": 7,
+          "target_color": "blue"
+        }
+      },
+      "pixel_sha256": "cb48473229fbb440195ef91a1a1a89f375b3cfd535a1ce54a12affcd10397703",
+      "png_sha256": "e77f478b8629ea57181142a7297cb245b2b85277a72b05783b6851125e3ab099"
+    },
+    "native": {
+      "artifact_name": "wrong-source-native.png",
+      "evaluation": {
+        "atlas": {
+          "absolute_error": 2.0,
+          "evaluator": "image-atlas-controlled-geometry-v1",
+          "exact": 0.0,
+          "expected_count": 7,
+          "observed_count": 5,
+          "raw": {
+            "blue_component_count": 5,
+            "blue_pixel_fraction": 0.0780859375,
+            "count_absolute_error": 2.0,
+            "count_exact": 0.0,
+            "expected_count": 7,
+            "observed_color_component_count": 5
+          }
+        },
+        "independent": {
+          "absolute_error": 2.0,
+          "components": [
+            {
+              "area": 4094.0,
+              "x": 0.8597580194473267,
+              "y": 0.5004794597625732
+            },
+            {
+              "area": 4091.0,
+              "x": 0.1281544417142868,
+              "y": 0.5001686215400696
+            },
+            {
+              "area": 4077.0,
+              "x": 0.4909806251525879,
+              "y": 0.5000131726264954
+            },
+            {
+              "area": 4061.0,
+              "x": 0.6746253371238708,
+              "y": 0.5002262592315674
+            },
+            {
+              "area": 4031.0,
+              "x": 0.30909132957458496,
+              "y": 0.5004201531410217
+            }
+          ],
+          "evaluator": "full-resolution-rgb-connected-components-v1",
+          "exact": 0.0,
+          "expected_count": 7,
+          "mask_fraction": 0.07764434814453125,
+          "observed_count": 5,
+          "target_color": "blue"
+        }
+      },
+      "pixel_sha256": "e0ccc2e1fd1af77743d397d838e6579ea8b8a95ad997945dacac567d4d060d16",
+      "png_sha256": "0c4b03d7c57ab676db6688a699d51750943102a77c20888c08e6df682bebb4ff"
+    }
+  }
+}

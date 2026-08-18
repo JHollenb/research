@@ -1,0 +1,200 @@
+{
+  "cache_stats": {
+    "entries": 0,
+    "evictions": 0,
+    "hits": 4,
+    "invalidations": 4,
+    "misses": 4
+  },
+  "claim_boundary": "four real image-conditioned edit prompts reused one reference image through the typed checkpoint ABI; native image-conditioned FLUX remains the authority",
+  "execution": {
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "PYTHONPATH=mrun_src:mstack_src:manalysis_src",
+      "uv",
+      "run",
+      "--project",
+      "generative-image-model-atlas",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "--with",
+      "mlflow>=2.9",
+      "--with",
+      "boto3>=1.34",
+      "--with",
+      "python-dotenv>=1.0",
+      "python",
+      "-u",
+      "run_saturn_real_edit_reuse.py"
+    ],
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "host_selection": "prefer_beast_softly",
+    "log_sha256": "e01582ee684211ee74a1d0f7cd7809bd43fdf08b28e0dadb41d1c6391d85a828",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+    "mrun_job_id": "job-3f8ac1d45dba",
+    "mrun_ok": true,
+    "mrun_result": {
+      "elapsed_s": 43.07,
+      "executed_payload": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 18286.8,
+      "peak_vram_mb": 8486.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "parent_mrun_job_id": "job-3f8ac1d45dba",
+    "pipeline_class": "Flux2KleinPipeline",
+    "preflight": "strict",
+    "report_present": true,
+    "retry_lineage": null,
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "schema": "saturn-roadmap-mrun-request-v1",
+    "suite": "real-edit-reuse",
+    "task_family": "saturn-real-flux-real-edit-reuse",
+    "worker_sha256": "09343821624be0ade9c3a3cf3411fcd18c86c81528d5aae60a540d4d75d323d8"
+  },
+  "model": {
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "id": "black-forest-labs/FLUX.2-klein-4B",
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+  },
+  "model_load_seconds": 0.45534391899127513,
+  "phase_telemetry": {
+    "device_cache_hits": 4,
+    "device_tensor_transfers": 5,
+    "device_transfer_bytes": 39321600
+  },
+  "process_peak_rss_mb": 18501.4921875,
+  "reference_creation_seconds": 0.37012263596989214,
+  "rows": [
+    {
+      "cache_hit_same_checkpoint": true,
+      "cache_key": "39d461f65170127951f06473c0f52faa97e6fb99e380e9a01a9065dbcaee36f5",
+      "cache_speedup": 3879.073704177831,
+      "capture_hit_seconds": 4.492397420108318e-05,
+      "capture_miss_seconds": 0.17426340701058507,
+      "edit_index": 0,
+      "native_seconds": 0.35195815504994243,
+      "native_vs_replay": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0000000000000002,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      },
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, warmer light",
+      "reference_id": "ref:image-sha256:49dc2592a8d2700ef9b4dcd023f30dc7978bd11711fd6140b163c159616ccf67",
+      "reference_token_count": 256,
+      "replay_seconds": 0.1745306149823591
+    },
+    {
+      "cache_hit_same_checkpoint": true,
+      "cache_key": "d4a77597169ddf81c57863841689a757465dc50804d832e4ba955805bae97cab",
+      "cache_speedup": 4557.677802358757,
+      "capture_hit_seconds": 3.815104719251394e-05,
+      "capture_miss_seconds": 0.17388018092606217,
+      "edit_index": 1,
+      "native_seconds": 0.3447653049370274,
+      "native_vs_replay": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      },
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, falling snow",
+      "reference_id": "ref:image-sha256:49dc2592a8d2700ef9b4dcd023f30dc7978bd11711fd6140b163c159616ccf67",
+      "reference_token_count": 256,
+      "replay_seconds": 0.1748593490337953
+    },
+    {
+      "cache_hit_same_checkpoint": true,
+      "cache_key": "ff11716f058468feda80b201aadbed35016399850149f495619ffe9a063a02ec",
+      "cache_speedup": 4965.407019165855,
+      "capture_hit_seconds": 3.5005039535462856e-05,
+      "capture_miss_seconds": 0.17381426901556551,
+      "edit_index": 2,
+      "native_seconds": 0.34432835003826767,
+      "native_vs_replay": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 0.9999999999999999,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      },
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, blue-hour sky",
+      "reference_id": "ref:image-sha256:49dc2592a8d2700ef9b4dcd023f30dc7978bd11711fd6140b163c159616ccf67",
+      "reference_token_count": 256,
+      "replay_seconds": 0.1743653069715947
+    },
+    {
+      "cache_hit_same_checkpoint": true,
+      "cache_key": "7e8045b1bec5433d3ac283fea45d1035f9a1765b5a7cbee9bd7c612154f5b162",
+      "cache_speedup": 4835.301501914078,
+      "capture_hit_seconds": 3.6097015254199505e-05,
+      "capture_miss_seconds": 0.17453995207324624,
+      "edit_index": 3,
+      "native_seconds": 0.3456627289997414,
+      "native_vs_replay": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      },
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, a red scarf",
+      "reference_id": "ref:image-sha256:49dc2592a8d2700ef9b4dcd023f30dc7978bd11711fd6140b163c159616ccf67",
+      "reference_token_count": 256,
+      "replay_seconds": 0.1746767379809171
+    }
+  ],
+  "schema": "saturn-real-edit-reuse-v1",
+  "status": "trend",
+  "summary": {
+    "cache_hit_speedup_median": 4696.489652136417,
+    "invalidated_dependency_count": 4,
+    "native_edit_seconds_median": 0.3452140169683844,
+    "native_vs_replay_exact_count": 4,
+    "native_vs_replay_mean_cosine": 1.0,
+    "reference_reused_count": 4,
+    "replay_seconds_median": 0.1746036764816381
+  },
+  "workload": {
+    "cut_step": 2,
+    "edit_prompts": [
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, warmer light",
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, falling snow",
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, blue-hour sky",
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, a red scarf"
+    ],
+    "reference_id": "ref:image-sha256:49dc2592a8d2700ef9b4dcd023f30dc7978bd11711fd6140b163c159616ccf67",
+    "reference_prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic",
+    "resolution": [
+      256,
+      256
+    ],
+    "steps": 4
+  }
+}

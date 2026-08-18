@@ -1,0 +1,1647 @@
+{
+  "claim_boundary": "paired development diagnostic; not a certified capability gap or patch",
+  "collected_image_dir": "/Users/jakeholl/domains/saturn/experiments/2026-08-14-flux-capability-gap-debug/results/job-725897a11485",
+  "execution": {
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "elapsed_seconds": 235.69483211496845,
+    "peak_rss_mb": 33126.84765625,
+    "peak_vram_mb": 7998.2919921875,
+    "physical_panel_images": 16,
+    "sequential_model_loads": 2
+  },
+  "execution_receipt": {
+    "claim_boundary": "paired development diagnostic; evaluator and gap must be audited before patch compilation",
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "GAP_CONFIG=config-red-apples-variants.json",
+      "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+      "uv",
+      "run",
+      "--project",
+      "generative-image-model-atlas",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "--with",
+      "Pillow>=9.0",
+      "python",
+      "-u",
+      "gap_diagnostic.py"
+    ],
+    "config_sha256": "96fcadfe2fa29b0e09d8170ec85088e3ad5bd3a9e28022976702e9cf56837422",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "experiment": "flux-capability-gap-debug-red-apples-variants",
+    "instrument": "paired Base/distilled count panel plus Saturn trajectory checkpoint replay",
+    "log_sha256": "00d45e9c00d745b502566f62858d3b058b04757d072fa4f77e4fd0fd2e03cfed",
+    "mrun_job_id": "job-725897a11485",
+    "mrun_result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "DIFFUSERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "TQDM_DISABLE=1",
+          "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+          "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+          "GAP_CONFIG=config-red-apples-variants.json",
+          "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+          "uv",
+          "run",
+          "--project",
+          "generative-image-model-atlas",
+          "--offline",
+          "--with",
+          "diffusers==0.39.0",
+          "--with",
+          "transformers==5.14.1",
+          "--with",
+          "accelerate==1.14.0",
+          "--with",
+          "safetensors>=0.5",
+          "--with",
+          "numpy>=2.0",
+          "--with",
+          "Pillow>=9.0",
+          "python",
+          "-u",
+          "gap_diagnostic.py"
+        ],
+        "cwd": "/mnt/big/mrun-work/job-725897a11485",
+        "log_path": "/mnt/big/mrun-work/job-725897a11485/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1786694603.1887574
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1786694603.8716922
+          },
+          {
+            "name": "process.launch",
+            "ts": 1786694603.9037204
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1786694603.9563355
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1786694851.0300877
+          },
+          {
+            "name": "finished",
+            "ts": 1786694851.0436378
+          }
+        ]
+      },
+      "elapsed_s": 247.9,
+      "executed_payload": {
+        "host": "beast",
+        "sha256": "fc4138a52fdc9cdde2ef00f3d6064e24ac70028c7ef754606b932db5e9454f31",
+        "size_bytes": 3707487
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 32957.0,
+      "peak_vram_mb": 8318.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "payload": {
+      "audit_features": [
+        "TrajectoryCheckpoint",
+        "resume_checkpoint",
+        "advance_checkpoint",
+        "step_observer",
+        "Frame"
+      ],
+      "audit_prompt_id": "red_apples_row",
+      "paired_models": 2,
+      "panel_conditions": 8,
+      "sequential_model_loads": true
+    },
+    "preflight": "strict",
+    "report_present": true,
+    "reservation": {
+      "est_wall_s": 1200,
+      "ram_mb": 40000,
+      "vram_mb": 13000
+    },
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "checkpoint_policy": "load Base once for the paired panel, release it, load distilled once, then capture one immutable hardest-case checkpoint and replay its suffix",
+      "claim_boundary": "paired gap discovery only; no Act or transfer claim",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_local_program",
+      "interactive": false,
+      "lease_scope": "entire-gap-diagnostic-worker",
+      "logical_branches": 20,
+      "logical_checkpoint_replays": 4,
+      "logical_operations": 20,
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "native_scheduler_and_vae": true,
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "physical_model_loads": 2,
+      "replay_policy": "local_checkpoint_restore",
+      "schema": "saturn-single-lease-scheduling-contract-v1",
+      "sequential_model_loads": true
+    },
+    "schema": "saturn-flux-capability-gap-debug-mrun-request-v1",
+    "task_family": "saturn-flux-capability-gap-debug",
+    "worker_sha256": "df43c43281ff2f46ae31da6e6749648db71a3b296f8c3d1d6cd83d88464b8c69"
+  },
+  "models": {
+    "base": {
+      "guidance_scale": 4.0,
+      "model_id": "black-forest-labs/FLUX.2-klein-base-4B",
+      "revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d",
+      "steps": 50
+    },
+    "distilled": {
+      "guidance_scale": 1.0,
+      "model_id": "black-forest-labs/FLUX.2-klein-4B",
+      "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+      "steps": 4
+    }
+  },
+  "next_step": {
+    "available_prompt_count": 4,
+    "prompt_lookup_used": false,
+    "ranked_conditions": [
+      "red_apples:5"
+    ],
+    "selection_policy": "retain only conditions where both evaluators agree on direction and the paired panel contains a positive Base-minus-distilled trend"
+  },
+  "paired_gap": {
+    "by_condition": {
+      "red_apples:5": {
+        "atlas_base_exact_mean": 1.0,
+        "atlas_distilled_exact_mean": 0.625,
+        "atlas_gap_exact_mean": 0.375,
+        "independent_base_exact_mean": 1.0,
+        "independent_distilled_exact_mean": 0.5,
+        "independent_gap_exact_mean": 0.5,
+        "pairs": 8
+      }
+    },
+    "pairs": [
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 0.0,
+        "distilled_atlas_exact": 1.0,
+        "distilled_independent_absolute_error": 0.0,
+        "distilled_independent_exact": 1.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 0.0,
+        "gap_independent_exact": 0.0,
+        "prompt_id": "red_apples_evenly_spaced",
+        "seed": 611
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 0.0,
+        "distilled_atlas_exact": 1.0,
+        "distilled_independent_absolute_error": 0.0,
+        "distilled_independent_exact": 1.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 0.0,
+        "gap_independent_exact": 0.0,
+        "prompt_id": "red_apples_evenly_spaced",
+        "seed": 617
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 2.0,
+        "distilled_atlas_exact": 0.0,
+        "distilled_independent_absolute_error": 2.0,
+        "distilled_independent_exact": 0.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 1.0,
+        "gap_independent_exact": 1.0,
+        "prompt_id": "red_apples_row",
+        "seed": 611
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 2.0,
+        "distilled_atlas_exact": 0.0,
+        "distilled_independent_absolute_error": 2.0,
+        "distilled_independent_exact": 0.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 1.0,
+        "gap_independent_exact": 1.0,
+        "prompt_id": "red_apples_row",
+        "seed": 617
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 0.0,
+        "distilled_atlas_exact": 1.0,
+        "distilled_independent_absolute_error": 2.0,
+        "distilled_independent_exact": 0.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 0.0,
+        "gap_independent_exact": 1.0,
+        "prompt_id": "red_apples_simple",
+        "seed": 611
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 3.0,
+        "distilled_atlas_exact": 0.0,
+        "distilled_independent_absolute_error": 3.0,
+        "distilled_independent_exact": 0.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 1.0,
+        "gap_independent_exact": 1.0,
+        "prompt_id": "red_apples_simple",
+        "seed": 617
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 0.0,
+        "distilled_atlas_exact": 1.0,
+        "distilled_independent_absolute_error": 0.0,
+        "distilled_independent_exact": 1.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 0.0,
+        "gap_independent_exact": 0.0,
+        "prompt_id": "red_apples_vector",
+        "seed": 611
+      },
+      {
+        "base_atlas_absolute_error": 0.0,
+        "base_atlas_exact": 1.0,
+        "base_independent_absolute_error": 0.0,
+        "base_independent_exact": 1.0,
+        "count": 5,
+        "distilled_atlas_absolute_error": 0.0,
+        "distilled_atlas_exact": 1.0,
+        "distilled_independent_absolute_error": 0.0,
+        "distilled_independent_exact": 1.0,
+        "family": "red_apples",
+        "gap_atlas_exact": 0.0,
+        "gap_independent_exact": 0.0,
+        "prompt_id": "red_apples_vector",
+        "seed": 617
+      }
+    ],
+    "ranked_conditions": [
+      "red_apples:5"
+    ]
+  },
+  "prompt_panel": [
+    {
+      "count": 5,
+      "count_target": "red apples",
+      "expected_count": 5,
+      "family": "red_apples",
+      "id": "red_apples_row",
+      "prompt": "A clean flat illustration of exactly five red apples in one horizontal row on a white background, with no other objects.",
+      "target_color": "red"
+    },
+    {
+      "count": 5,
+      "count_target": "red apples",
+      "expected_count": 5,
+      "family": "red_apples",
+      "id": "red_apples_evenly_spaced",
+      "prompt": "Exactly five red apples, no more and no fewer, evenly spaced left to right on a plain white background. Minimal icon style and no other objects.",
+      "target_color": "red"
+    },
+    {
+      "count": 5,
+      "count_target": "red apples",
+      "expected_count": 5,
+      "family": "red_apples",
+      "id": "red_apples_vector",
+      "prompt": "Minimal vector diagram of exactly 5 separate red apples arranged in a straight line on white. All five are fully visible; include nothing else.",
+      "target_color": "red"
+    },
+    {
+      "count": 5,
+      "count_target": "red apples",
+      "expected_count": 5,
+      "family": "red_apples",
+      "id": "red_apples_simple",
+      "prompt": "A simple white-background picture showing five and only five red apples in a single row, equally spaced, with no plate or extra items.",
+      "target_color": "red"
+    }
+  ],
+  "records": {
+    "base": [
+      {
+        "artifact_name": "base__red_apples_row__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.1121875
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5847.0,
+                "x": 0.1208869218826294,
+                "y": 0.4987049102783203
+              },
+              {
+                "area": 5811.0,
+                "x": 0.8780435919761658,
+                "y": 0.4989144504070282
+              },
+              {
+                "area": 5779.0,
+                "x": 0.31157582998275757,
+                "y": 0.49899882078170776
+              },
+              {
+                "area": 5739.0,
+                "x": 0.6886247992515564,
+                "y": 0.49903619289398193
+              },
+              {
+                "area": 5724.0,
+                "x": 0.5007442831993103,
+                "y": 0.49885094165802
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.1102752685546875,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "e4f37e5e801eacb457ca26eb82021e462d16c740ed61a7b62686bdaf816142c6",
+        "png_sha256": "ddf3071080bc33097a1773e1c402007e0e811402e154afeb4930db5465841e95",
+        "prompt_id": "red_apples_row",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 611,
+          "transformer_calls": 100
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_row__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.0968359375
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5148.0,
+                "x": 0.888346791267395,
+                "y": 0.48221147060394287
+              },
+              {
+                "area": 5113.0,
+                "x": 0.6923264265060425,
+                "y": 0.4818556606769562
+              },
+              {
+                "area": 5101.0,
+                "x": 0.11440104246139526,
+                "y": 0.48262205719947815
+              },
+              {
+                "area": 5018.0,
+                "x": 0.49864673614501953,
+                "y": 0.4824135899543762
+              },
+              {
+                "area": 5016.0,
+                "x": 0.30842477083206177,
+                "y": 0.4825045168399811
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.0968780517578125,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "8e4e910ecfc18823d9e00fe8ef6571c4d5690e20aa3872d81ee839555ab8dbd9",
+        "png_sha256": "821c6c07fcb53e6c3023bdd622d36c3fd40124fbb8b1da2a2611d6fabf3fef8e",
+        "prompt_id": "red_apples_row",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_evenly_spaced__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.08390625
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 4398.0,
+                "x": 0.6866624355316162,
+                "y": 0.49278491735458374
+              },
+              {
+                "area": 4361.0,
+                "x": 0.8739399909973145,
+                "y": 0.49260634183883667
+              },
+              {
+                "area": 4360.0,
+                "x": 0.49798113107681274,
+                "y": 0.4928100109100342
+              },
+              {
+                "area": 4356.0,
+                "x": 0.1232728436589241,
+                "y": 0.49262866377830505
+              },
+              {
+                "area": 4354.0,
+                "x": 0.3100295960903168,
+                "y": 0.4927457273006439
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.0832977294921875,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "f499a91b07d14c4811491fe8320a7ee1368d76e97f785d6bf628e0a819ef1b31",
+        "png_sha256": "d524cab60a18d863934892033e79f03e213f04ba86baa3452fcf9df88a055946",
+        "prompt_id": "red_apples_evenly_spaced",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 611,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_evenly_spaced__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.078515625
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 4106.0,
+                "x": 0.11360207200050354,
+                "y": 0.48562222719192505
+              },
+              {
+                "area": 4094.0,
+                "x": 0.8870530128479004,
+                "y": 0.4856641888618469
+              },
+              {
+                "area": 4084.0,
+                "x": 0.6937041878700256,
+                "y": 0.485489159822464
+              },
+              {
+                "area": 4081.0,
+                "x": 0.30643847584724426,
+                "y": 0.48558565974235535
+              },
+              {
+                "area": 4064.0,
+                "x": 0.4997101128101349,
+                "y": 0.48540425300598145
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.07793045043945312,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "7a9a78b70de777ee64dd7f67d0d00a8acadc0453ae5907cba36583c99449865f",
+        "png_sha256": "81bee3770b1e23d93c04d827c0994406f1f2e1bc12c0936f3c33255cbcf6aac4",
+        "prompt_id": "red_apples_evenly_spaced",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_vector__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.1040625
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5313.0,
+                "x": 0.8750415444374084,
+                "y": 0.4928530752658844
+              },
+              {
+                "area": 5310.0,
+                "x": 0.12333705276250839,
+                "y": 0.49328410625457764
+              },
+              {
+                "area": 5308.0,
+                "x": 0.6866418123245239,
+                "y": 0.4929560124874115
+              },
+              {
+                "area": 5308.0,
+                "x": 0.31127405166625977,
+                "y": 0.4931635856628418
+              },
+              {
+                "area": 5294.0,
+                "x": 0.4988913834095001,
+                "y": 0.49298396706581116
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.1017913818359375,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "a789ca0e8c0c1df3b3d9a0326fc93752ab4e985b83acc25838d558327aad5d4b",
+        "png_sha256": "fc244b144cc106d70045d29bc74a9b83d7ab292278ade41beb427b3257fe3fc7",
+        "prompt_id": "red_apples_vector",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 611,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_vector__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.0929296875
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5119.0,
+                "x": 0.8857432007789612,
+                "y": 0.4785211682319641
+              },
+              {
+                "area": 5067.0,
+                "x": 0.11780806630849838,
+                "y": 0.47871825098991394
+              },
+              {
+                "area": 5043.0,
+                "x": 0.3098798394203186,
+                "y": 0.47875240445137024
+              },
+              {
+                "area": 5043.0,
+                "x": 0.6922520995140076,
+                "y": 0.4783538579940796
+              },
+              {
+                "area": 4968.0,
+                "x": 0.5013424754142761,
+                "y": 0.4784444272518158
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.09670639038085938,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "8b1116b0eaeeebe801662a0f1ae10f9659d339a709ee59982b0c31630567dff6",
+        "png_sha256": "e52c101225d0468e486176299a7e3e0e08f520be483f0ceadbcffee1ffc9426f",
+        "prompt_id": "red_apples_vector",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_simple__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.1205859375
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 6568.0,
+                "x": 0.12227790802717209,
+                "y": 0.5034455060958862
+              },
+              {
+                "area": 6516.0,
+                "x": 0.31258538365364075,
+                "y": 0.5032110810279846
+              },
+              {
+                "area": 6482.0,
+                "x": 0.8770761489868164,
+                "y": 0.5026072263717651
+              },
+              {
+                "area": 6470.0,
+                "x": 0.6884374022483826,
+                "y": 0.5031169056892395
+              },
+              {
+                "area": 6455.0,
+                "x": 0.5004276037216187,
+                "y": 0.5035878419876099
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.12410736083984375,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "cd195a26571ace2bf440bef578501bc81e69facfb5f959559ed5cf7d855de469",
+        "png_sha256": "65b4b9b02413357419edee916dd056a9d390809fcc0aaa8c670e636b88fd1c83",
+        "prompt_id": "red_apples_simple",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 611,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "base__red_apples_simple__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.1006640625
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5632.0,
+                "x": 0.6927235126495361,
+                "y": 0.4725131094455719
+              },
+              {
+                "area": 5566.0,
+                "x": 0.5006669759750366,
+                "y": 0.4726301431655884
+              },
+              {
+                "area": 5551.0,
+                "x": 0.8861928582191467,
+                "y": 0.4744921624660492
+              },
+              {
+                "area": 5542.0,
+                "x": 0.12104152143001556,
+                "y": 0.4748319387435913
+              },
+              {
+                "area": 5541.0,
+                "x": 0.3132256269454956,
+                "y": 0.47328951954841614
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.10620498657226562,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "base",
+        "pixel_sha256": "5abc957b3b8e13b06492da55d11f419233a806202c532a3e1e39e4a7304499a2",
+        "png_sha256": "7fd37bd11fd2c0f3ab6cd302dc22fc04d239f47a68fe60730539b8a4d96e3500",
+        "prompt_id": "red_apples_simple",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 2,
+          "guidance_branch_captured": "positive/conditional call 0",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      }
+    ],
+    "distilled": [
+      {
+        "artifact_name": "distilled__red_apples_row__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 2.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "observed_count": 3,
+            "raw": {
+              "count_absolute_error": 2.0,
+              "count_exact": 0.0,
+              "expected_count": 5,
+              "observed_color_component_count": 3,
+              "red_component_count": 3,
+              "red_pixel_fraction": 0.186171875
+            }
+          },
+          "independent": {
+            "absolute_error": 2.0,
+            "components": [
+              {
+                "area": 16177.0,
+                "x": 0.1867346465587616,
+                "y": 0.5459446310997009
+              },
+              {
+                "area": 16163.0,
+                "x": 0.5006656050682068,
+                "y": 0.5462244749069214
+              },
+              {
+                "area": 16016.0,
+                "x": 0.8137520551681519,
+                "y": 0.5456192493438721
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "mask_fraction": 0.18449020385742188,
+            "observed_count": 3,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "a8e89012fc050b46ee6cb799cdd0dca0acbc3574e5b88df82723ba68a8004449",
+        "png_sha256": "e9e2f50ff39e1558059932b578b00db20a7bdab569f98b909fe770589cf3936d",
+        "prompt_id": "red_apples_row",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 611,
+          "transformer_calls": 4
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_row__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 2.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "observed_count": 3,
+            "raw": {
+              "count_absolute_error": 2.0,
+              "count_exact": 0.0,
+              "expected_count": 5,
+              "observed_color_component_count": 3,
+              "red_component_count": 3,
+              "red_pixel_fraction": 0.145859375
+            }
+          },
+          "independent": {
+            "absolute_error": 2.0,
+            "components": [
+              {
+                "area": 12756.0,
+                "x": 0.8060500621795654,
+                "y": 0.5287282466888428
+              },
+              {
+                "area": 12701.0,
+                "x": 0.1890115737915039,
+                "y": 0.5291313529014587
+              },
+              {
+                "area": 12681.0,
+                "x": 0.49727076292037964,
+                "y": 0.528776228427887
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "mask_fraction": 0.14548492431640625,
+            "observed_count": 3,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "7647a944bca19ad254380c8e5e3152fc5a85a3f8d1a3353413b866df4f0f402b",
+        "png_sha256": "0b00b9121dbb69a40ecc88741e7d65902cc0a265ebf596bb8cbca855726aea19",
+        "prompt_id": "red_apples_row",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_evenly_spaced__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.082265625
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 4387.0,
+                "x": 0.8711252212524414,
+                "y": 0.5050685405731201
+              },
+              {
+                "area": 4338.0,
+                "x": 0.49379849433898926,
+                "y": 0.505121111869812
+              },
+              {
+                "area": 4320.0,
+                "x": 0.3072678744792938,
+                "y": 0.505240261554718
+              },
+              {
+                "area": 4318.0,
+                "x": 0.6822507977485657,
+                "y": 0.5051565766334534
+              },
+              {
+                "area": 4235.0,
+                "x": 0.12368182837963104,
+                "y": 0.504988431930542
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.08238983154296875,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "109ff26c0c16aa1c917fe997cd3d47361f8298bd1d736d75edb7bf2bbab5b820",
+        "png_sha256": "cf233d086417d0a62c30bcea247a7175d99498f2cae6c63702b261c0dfef1c0f",
+        "prompt_id": "red_apples_evenly_spaced",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 611,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_evenly_spaced__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.079609375
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 4183.0,
+                "x": 0.6901885271072388,
+                "y": 0.4983918368816376
+              },
+              {
+                "area": 4180.0,
+                "x": 0.8827723264694214,
+                "y": 0.4980795681476593
+              },
+              {
+                "area": 4149.0,
+                "x": 0.309981107711792,
+                "y": 0.49854373931884766
+              },
+              {
+                "area": 4142.0,
+                "x": 0.49898892641067505,
+                "y": 0.49822211265563965
+              },
+              {
+                "area": 4128.0,
+                "x": 0.11823317408561707,
+                "y": 0.4987119734287262
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.07927703857421875,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "d61e88337783f3af7352754b9ea23660c82e15c1d4e07c5487a8b039827733b4",
+        "png_sha256": "e69dcdce1fce15334b8d640c20db797b163fc4e8b169b0fb77de98b53acd770f",
+        "prompt_id": "red_apples_evenly_spaced",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_vector__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.1000390625
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5334.0,
+                "x": 0.8735149502754211,
+                "y": 0.5068764686584473
+              },
+              {
+                "area": 5295.0,
+                "x": 0.4952491819858551,
+                "y": 0.5067018866539001
+              },
+              {
+                "area": 5289.0,
+                "x": 0.3077698051929474,
+                "y": 0.5069358944892883
+              },
+              {
+                "area": 5289.0,
+                "x": 0.6844597458839417,
+                "y": 0.5069654583930969
+              },
+              {
+                "area": 5234.0,
+                "x": 0.12122753262519836,
+                "y": 0.5070112347602844
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.10087203979492188,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "51ec5d837c25a838abb8c18f45e1210297c2722ebc867b80b4f03dfff0d7a3ef",
+        "png_sha256": "39d00c36728ed8916ad5913c388e7dfe7660394363d5fef854f7c909fb678e12",
+        "prompt_id": "red_apples_vector",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 611,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_vector__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.0975
+            }
+          },
+          "independent": {
+            "absolute_error": 0.0,
+            "components": [
+              {
+                "area": 5157.0,
+                "x": 0.8875265717506409,
+                "y": 0.49144837260246277
+              },
+              {
+                "area": 5076.0,
+                "x": 0.6890208125114441,
+                "y": 0.49188458919525146
+              },
+              {
+                "area": 5059.0,
+                "x": 0.11140092462301254,
+                "y": 0.4931707978248596
+              },
+              {
+                "area": 5037.0,
+                "x": 0.3049302101135254,
+                "y": 0.4923763573169708
+              },
+              {
+                "area": 5032.0,
+                "x": 0.4943150281906128,
+                "y": 0.49202948808670044
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "mask_fraction": 0.09674453735351562,
+            "observed_count": 5,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "b3a1b65cb7f2259c9df754d4bfc1d197fba0393e1524cc62b037b41fc6a650b7",
+        "png_sha256": "9510c0e62fa6cb72b66ec9b24fce38e7a669532aeff1ed567079354c15cd28db",
+        "prompt_id": "red_apples_vector",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_simple__seed-611.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 0.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 1.0,
+            "expected_count": 5,
+            "observed_count": 5,
+            "raw": {
+              "count_absolute_error": 0.0,
+              "count_exact": 1.0,
+              "expected_count": 5,
+              "observed_color_component_count": 5,
+              "red_component_count": 5,
+              "red_pixel_fraction": 0.1648046875
+            }
+          },
+          "independent": {
+            "absolute_error": 2.0,
+            "components": [
+              {
+                "area": 15637.0,
+                "x": 0.18289577960968018,
+                "y": 0.5318586230278015
+              },
+              {
+                "area": 15377.0,
+                "x": 0.8173733353614807,
+                "y": 0.5300841331481934
+              },
+              {
+                "area": 15307.0,
+                "x": 0.5001775026321411,
+                "y": 0.5331559181213379
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "mask_fraction": 0.17690658569335938,
+            "observed_count": 3,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "002277e77154afea781863c301cb53ef7d0a170fe80d2d271ab5a09bb63c7c46",
+        "png_sha256": "18069473d1809bc156d70784d3d8b59765651d0ff851c1490e47a3bc67904996",
+        "prompt_id": "red_apples_simple",
+        "seed": 611,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 611,
+          "transformer_calls": 0
+        }
+      },
+      {
+        "artifact_name": "distilled__red_apples_simple__seed-617.png",
+        "count": 5,
+        "evaluation": {
+          "atlas": {
+            "absolute_error": 3.0,
+            "evaluator": "image-atlas-controlled-geometry-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "observed_count": 2,
+            "raw": {
+              "count_absolute_error": 3.0,
+              "count_exact": 0.0,
+              "expected_count": 5,
+              "observed_color_component_count": 2,
+              "red_component_count": 2,
+              "red_pixel_fraction": 0.14671875
+            }
+          },
+          "independent": {
+            "absolute_error": 3.0,
+            "components": [
+              {
+                "area": 29162.0,
+                "x": 0.6495229601860046,
+                "y": 0.496942400932312
+              },
+              {
+                "area": 11620.0,
+                "x": 0.18404263257980347,
+                "y": 0.5065439343452454
+              }
+            ],
+            "evaluator": "full-resolution-rgb-connected-components-v1",
+            "exact": 0.0,
+            "expected_count": 5,
+            "mask_fraction": 0.1559295654296875,
+            "observed_count": 2,
+            "target_color": "red"
+          }
+        },
+        "family": "red_apples",
+        "model_key": "distilled",
+        "pixel_sha256": "8592e26c299c2b0a9032f8c7d828d110c903234d074def66ac64621133983a48",
+        "png_sha256": "bea25ae05144dbe795dc33bd4cedbe2d2bd3aa3947b5b0c938e65470c6bea79c",
+        "prompt_id": "red_apples_simple",
+        "seed": 617,
+        "telemetry": {
+          "calls_per_scheduler_step": 1,
+          "guidance_branch_captured": "single native call",
+          "initial_latent_seed": 617,
+          "transformer_calls": 0
+        }
+      }
+    ]
+  },
+  "resolution": [
+    512,
+    512
+  ],
+  "route_gap_on_audit_case": {
+    "joint.2": {
+      "base_rms": 39.451255798339844,
+      "cosine": 0.9233902096748352,
+      "distilled_rms": 24.878517150878906,
+      "relative_rms_difference": 0.7663531924066824,
+      "shape": [
+        1,
+        512,
+        3072
+      ]
+    },
+    "joint.3": {
+      "base_rms": 51.59454345703125,
+      "cosine": 0.9046293497085571,
+      "distilled_rms": 29.669828414916992,
+      "relative_rms_difference": 0.9376701601766771,
+      "shape": [
+        1,
+        512,
+        3072
+      ]
+    },
+    "joint.4": {
+      "base_rms": 224.6151580810547,
+      "cosine": 0.8262143135070801,
+      "distilled_rms": 133.22547912597656,
+      "relative_rms_difference": 1.0288821580558283,
+      "shape": [
+        1,
+        512,
+        3072
+      ]
+    },
+    "single.0": {
+      "base_rms": 223.8615264892578,
+      "cosine": 0.8179945945739746,
+      "distilled_rms": 133.5179901123047,
+      "relative_rms_difference": 1.034485359458579,
+      "shape": [
+        1,
+        512,
+        3072
+      ]
+    }
+  },
+  "saturn_audit": {
+    "advanced_checkpoint": {
+      "advanced_pixel_sha256": "e9e2f50ff39e1558059932b578b00db20a7bdab569f98b909fe770589cf3936d",
+      "fingerprint": "9463caee3392515015dd73f6f9360d673b1415b34cc1906c1a35c89f6177251c",
+      "observer": [
+        {
+          "latents_after_rms": 0.9596195220947266,
+          "step_index": 0,
+          "timestep": 1000.0
+        }
+      ],
+      "step_index": 1,
+      "suffix_replay_matches_parent": true
+    },
+    "capture_observer": [],
+    "checkpoint": {
+      "checkpoint_id": "traj-4a9a259afaed94d2d94419f97d902b26",
+      "fingerprint": "86e3c5d7a63632ee36d939ac44f7aba36ad79ae295083a78042164fda7761a82",
+      "latents": {
+        "device": "cuda:0",
+        "dtype": "torch.bfloat16",
+        "shape": [
+          1,
+          1024,
+          128
+        ]
+      },
+      "metadata": {
+        "device": "cuda",
+        "latent_shape": [
+          1,
+          1024,
+          128
+        ],
+        "output_type_requested_at_capture": "latent",
+        "prefix_steps_executed": 0,
+        "reference_conditioned": false,
+        "reference_ids": [],
+        "reference_token_count": 0,
+        "schedule_sigmas": [
+          1.0,
+          0.75,
+          0.5,
+          0.25
+        ],
+        "scheduler_class": "FlowMatchEulerDiscreteScheduler",
+        "scheduler_config_fingerprint": "4b789da6fd87d665b94add7b36f7c43c263ee143ced829565358fe1e3b6fbc75",
+        "scheduler_num_inference_steps": 4,
+        "scheduler_sigmas": [
+          1.0,
+          0.9580853581428528,
+          0.8839818835258484,
+          0.7174965739250183,
+          0.0
+        ],
+        "scheduler_state_schema": "mrun-flux2-scheduler-state-v1"
+      },
+      "pipeline_class": "Flux2KleinPipeline",
+      "pooled_prompt_embeds": null,
+      "reference_ids": [],
+      "reference_latents": null,
+      "reference_token_count": 0,
+      "resolution": [
+        512,
+        512
+      ],
+      "schema": "mrun-diffusion-trajectory-checkpoint-v1",
+      "step_index": 0,
+      "total_steps": 4
+    },
+    "checkpoint_fingerprint": "86e3c5d7a63632ee36d939ac44f7aba36ad79ae295083a78042164fda7761a82",
+    "exact_parent_replay": true,
+    "features_used": [
+      "TrajectoryCheckpoint",
+      "resume_checkpoint",
+      "advance_checkpoint",
+      "step_observer",
+      "Frame"
+    ],
+    "phase_native_pixel_sha256": "e9e2f50ff39e1558059932b578b00db20a7bdab569f98b909fe770589cf3936d",
+    "prompt_id": "red_apples_row",
+    "raw_native_pixel_sha256": "a8e89012fc050b46ee6cb799cdd0dca0acbc3574e5b88df82723ba68a8004449",
+    "raw_vs_phase_native_exact": true,
+    "replay_pixel_sha256": "e9e2f50ff39e1558059932b578b00db20a7bdab569f98b909fe770589cf3936d",
+    "seed": 611,
+    "typed_frame": {
+      "act": "root:v1",
+      "frame_id": "eeba75bc53e10bc689cb543e8cc4218921ae4fc14e0d1f42edea75dc84e01a60",
+      "implementation": "saturn",
+      "metadata": {
+        "dtype": "torch.float32",
+        "prompt_id": "red_apples_row",
+        "purpose": "gap-audit-parent",
+        "seed": 611,
+        "shape": [
+          1,
+          512,
+          3072
+        ]
+      },
+      "parent_frame_id": null,
+      "program_fingerprint": "saturn",
+      "schema": "saturn-frame-v1",
+      "slots": {
+        "route_state": {
+          "abi": {},
+          "fingerprint": "c935254a2ebbb1d855c5f43fa54bd21fef2729bb3cb5b248b8e325d20f8d217f",
+          "handle": "saturn://flux2/joint.2/text",
+          "kind": "route_state",
+          "name": "route_state"
+        }
+      }
+    }
+  },
+  "schema": "saturn-flux-capability-gap-debug-report-v1",
+  "screen_seeds": [
+    611,
+    617
+  ],
+  "status": "complete",
+  "summaries": {
+    "base": {
+      "red_apples:5": {
+        "atlas_absolute_error_mean": 0.0,
+        "atlas_exact_mean": 1.0,
+        "independent_absolute_error_mean": 0.0,
+        "independent_exact_mean": 1.0,
+        "records": 8
+      }
+    },
+    "distilled": {
+      "red_apples:5": {
+        "atlas_absolute_error_mean": 0.875,
+        "atlas_exact_mean": 0.625,
+        "independent_absolute_error_mean": 1.125,
+        "independent_exact_mean": 0.5,
+        "records": 8
+      }
+    }
+  }
+}

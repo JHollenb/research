@@ -1,0 +1,251 @@
+{
+  "axes": [
+    {
+      "interpretation": "matching donor route states move both tested semantic axes toward their targets",
+      "name": "target_execution",
+      "raw": {
+        "by_axis": {
+          "scene": {
+            "specimens": 2.0,
+            "target_execution_mean": 0.9115377632379156,
+            "target_execution_min": 0.9066319997392558,
+            "temporal_localization_mean": 0.7812616845042284
+          },
+          "subject": {
+            "specimens": 2.0,
+            "target_execution_mean": 0.937526426053277,
+            "target_execution_min": 0.9044758018212694,
+            "temporal_localization_mean": 0.7089027163698173
+          }
+        },
+        "max": 0.9705770502852845,
+        "min": 0.9044758018212694
+      },
+      "status": "convergent trend",
+      "unit": "normalized_pixel_progress_mean",
+      "value": 0.9245320946455963
+    },
+    {
+      "interpretation": "seed stability summary; not a probability of correctness",
+      "name": "target_execution_stability",
+      "raw": {
+        "sample_std": 0.031135355841823104,
+        "values": [
+          0.9164435267365753,
+          0.9066319997392558,
+          0.9705770502852845,
+          0.9044758018212694
+        ]
+      },
+      "status": "descriptive",
+      "unit": "one_minus_sample_std",
+      "value": 0.9688646441581769
+    },
+    {
+      "interpretation": "matching target effect separates from hostile and sham target effects",
+      "name": "source_specificity_margin",
+      "raw": {
+        "min": 0.8777668062935582,
+        "values": [
+          0.8851619817383221,
+          0.8777668062935582,
+          1.285192458187658,
+          3.0805858547804585
+        ]
+      },
+      "status": "convergent trend",
+      "unit": "normalized_pixel_progress_margin_mean",
+      "value": 1.532176775249999
+    },
+    {
+      "interpretation": "the same route intervention is weaker when installed after half the denoising trajectory",
+      "name": "temporal_localization",
+      "raw": {
+        "late_values": [
+          0.1651337439486651,
+          0.09541841351870917,
+          0.09882100517962977,
+          0.3584264141872896
+        ],
+        "values": [
+          0.7513097827879102,
+          0.8112135862205466,
+          0.8717560451056547,
+          0.5460493876339798
+        ]
+      },
+      "status": "convergent trend",
+      "unit": "early_minus_late_target_progress_mean",
+      "value": 0.7450822004370228
+    },
+    {
+      "interpretation": "all specimens replay the unmodified parent exactly after branch disposal",
+      "name": "rollback_exactness",
+      "status": "observed",
+      "unit": "boolean",
+      "value": 1.0
+    }
+  ],
+  "claim_boundary": "Two semantic axes and two seeds per axis in one frozen FLUX model. This is replication of route-state intervention behavior, not a portable capability, cross-model patch, or training-state rollback.",
+  "controls": {
+    "dose_curves": [
+      [
+        0.0009182372705409669,
+        0.02012323716702824,
+        0.9164435267365753
+      ],
+      [
+        0.0003413136735047617,
+        0.06870802366511952,
+        0.9066319997392558
+      ],
+      [
+        0.0007611765676858173,
+        0.6639075231358373,
+        0.9705770502852845
+      ],
+      [
+        -0.0049539843428025865,
+        0.3778511493069582,
+        0.9044758018212694
+      ]
+    ],
+    "hostile_own_progress": [
+      0.9534770552113211,
+      0.9503191003401102,
+      0.9257843202362943,
+      0.9534770552113211
+    ],
+    "hostile_target_progress": [
+      -0.5314141925782079,
+      -0.5080706775169652,
+      -0.40438092676148707,
+      -2.810471556964559
+    ],
+    "passing_fraction": 1.0,
+    "passing_specimens": 4,
+    "sham_target_progress": [
+      0.0312815449982532,
+      0.0288651934456976,
+      -0.3146154079023733,
+      -2.176110052959189
+    ],
+    "specimens": [
+      {
+        "axis": "scene",
+        "dose_curve": [
+          0.0009182372705409669,
+          0.02012323716702824,
+          0.9164435267365753
+        ],
+        "dose_response_auc": 0.23940205958529318,
+        "hostile_own_progress": 0.9534770552113211,
+        "hostile_target_progress": -0.5314141925782079,
+        "id": "scene-seed9001",
+        "late_target_execution": 0.1651337439486651,
+        "passed": true,
+        "rollback_exact": true,
+        "seed": 9001,
+        "sham_target_progress": 0.0312815449982532,
+        "source_specificity_margin": 0.8851619817383221,
+        "target_execution": 0.9164435267365753,
+        "temporal_localization": 0.7513097827879102
+      },
+      {
+        "axis": "scene",
+        "dose_curve": [
+          0.0003413136735047617,
+          0.06870802366511952,
+          0.9066319997392558
+        ],
+        "dose_response_auc": 0.2610973401857499,
+        "hostile_own_progress": 0.9503191003401102,
+        "hostile_target_progress": -0.5080706775169652,
+        "id": "scene-seed1337",
+        "late_target_execution": 0.09541841351870917,
+        "passed": true,
+        "rollback_exact": true,
+        "seed": 1337,
+        "sham_target_progress": 0.0288651934456976,
+        "source_specificity_margin": 0.8777668062935582,
+        "target_execution": 0.9066319997392558,
+        "temporal_localization": 0.8112135862205466
+      },
+      {
+        "axis": "subject",
+        "dose_curve": [
+          0.0007611765676858173,
+          0.6639075231358373,
+          0.9705770502852845
+        ],
+        "dose_response_auc": 0.5747883182811613,
+        "hostile_own_progress": 0.9257843202362943,
+        "hostile_target_progress": -0.40438092676148707,
+        "id": "subject-seed4242",
+        "late_target_execution": 0.09882100517962977,
+        "passed": true,
+        "rollback_exact": true,
+        "seed": 4242,
+        "sham_target_progress": -0.3146154079023733,
+        "source_specificity_margin": 1.285192458187658,
+        "target_execution": 0.9705770502852845,
+        "temporal_localization": 0.8717560451056547
+      },
+      {
+        "axis": "subject",
+        "dose_curve": [
+          -0.0049539843428025865,
+          0.3778511493069582,
+          0.9044758018212694
+        ],
+        "dose_response_auc": 0.4138060290230958,
+        "hostile_own_progress": 0.9534770552113211,
+        "hostile_target_progress": -2.810471556964559,
+        "id": "subject-seed9001",
+        "late_target_execution": 0.3584264141872896,
+        "passed": true,
+        "rollback_exact": true,
+        "seed": 9001,
+        "sham_target_progress": -2.176110052959189,
+        "source_specificity_margin": 3.0805858547804585,
+        "target_execution": 0.9044758018212694,
+        "temporal_localization": 0.5460493876339798
+      }
+    ],
+    "total_specimens": 4
+  },
+  "evidence_level": "convergent trend",
+  "execution": {
+    "elapsed_seconds": 47.445023379987106,
+    "exact_scalar_suffixes": 20,
+    "logical_batched_suffixes": 40,
+    "model_loads": 1,
+    "mrun_job_id": "job-2fddfd10af81",
+    "peak_rss_mb": 18854.8984375,
+    "peak_vram_mb": 8232.646484375,
+    "physical_batched_suffix_calls": 8,
+    "specimen_count": 4
+  },
+  "measurement_model": {
+    "authority": "native frozen suffix + scheduler + VAE",
+    "semantic_evaluator": false,
+    "target_progress": "1 - MAD(branch, target) / MAD(source, target)"
+  },
+  "model": "black-forest-labs/FLUX.2-klein-4B",
+  "non_claims": {
+    "general_intelligence": "not_measured",
+    "learned_capability": "not_measured",
+    "portable_capability": "not_measured",
+    "prompt_independent_semantics": "not_measured"
+  },
+  "receipt_schema": "saturn-real-hotpatch-cinema-replication-report-v1",
+  "route": [
+    "joint.2",
+    "joint.3",
+    "joint.4",
+    "single.0"
+  ],
+  "schema": "saturn-route-capability-vector-v1",
+  "source": "/Users/jakeholl/domains/saturn/results/real-hotpatch-cinema-replication/job-2fddfd10af81/report.json",
+  "specimen_count": 4
+}

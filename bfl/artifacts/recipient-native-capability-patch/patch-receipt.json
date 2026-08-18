@@ -1,0 +1,182 @@
+{
+  "claim_boundary": "developmental recipient-native patch trend; not a sealed capability-transfer certificate",
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PATCH_CONFIG=config.json",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "Pillow>=9.0",
+    "python",
+    "-u",
+    "fast_validate.py",
+    "--package",
+    "act-package.npz"
+  ],
+  "config_sha256": "ce5827721c49db65b6db062213d309dd4fcf431fa71eb145215e109d84029e2b",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "experiment": "flux-capability-patch-red-apples-validate",
+  "helper_sha256": "df43c43281ff2f46ae31da6e6749648db71a3b296f8c3d1d6cd83d88464b8c69",
+  "instrument": "short Saturn recipient-native Act validate lease",
+  "log_sha256": "c1c679d2538ff2ea7ea61390f280bc845e1ef8610a286c43205edd10ca9850dd",
+  "mode": "validate",
+  "mrun_job_id": "job-e6e94936134a",
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PATCH_CONFIG=config.json",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+        "uv",
+        "run",
+        "--no-project",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "Pillow>=9.0",
+        "python",
+        "-u",
+        "fast_validate.py",
+        "--package",
+        "act-package.npz"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-e6e94936134a",
+      "log_path": "/mnt/big/mrun-work/job-e6e94936134a/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1786781159.1166544
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1786781159.8745015
+        },
+        {
+          "name": "process.launch",
+          "ts": 1786781159.917036
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1786781159.9715283
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1786781260.0189197
+        },
+        {
+          "name": "finished",
+          "ts": 1786781260.0452514
+        }
+      ]
+    },
+    "elapsed_s": 100.97,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "ac665ed8a2342ed44c107adec452ebbf6d4e9f38c21bb6a81d46a9c7858ba701",
+      "size_bytes": 4068954
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 35595.1,
+    "peak_vram_mb": 8834.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "patch_worker_sha256": "1bc94bd0a5724a035f1c93998674d4ce15b0946f70133f087e43683a3e49d464",
+  "payload": {
+    "candidate_sites": [
+      "joint.2"
+    ],
+    "checkpoint_features": [
+      "TrajectoryCheckpoint",
+      "PhasePipeline",
+      "advance_checkpoint",
+      "Frame",
+      "ActSpec",
+      "ActRegistry",
+      "DeterministicCheckpointController"
+    ],
+    "target": "red_apples_row"
+  },
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "est_wall_s": 600,
+    "ram_mb": 36000,
+    "vram_mb": 9000
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "recipient checkpoint -> consumer dose replay -> native suffix controls -> donor-free child",
+    "claim_boundary": "developmental recipient-native patch trend; not a sealed capability-transfer certificate",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "donor_free_serving": true,
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-flux-capability-patch-red-apples-validate-worker",
+    "logical_branches": 20,
+    "logical_checkpoint_replays": 12,
+    "logical_operations": 20,
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "native_scheduler_and_vae": true,
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "physical_model_loads": 2,
+    "replay_grid": false,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1",
+    "sequential_model_loads": true
+  },
+  "schema": "saturn-flux-capability-patch-red-apples-short-mrun-request-v1",
+  "task_family": "flux-capability-patch-red-apples-validate",
+  "worker_sha256": "131edc19c0a8480268e573d568b51405be871eab68c7fe2f19a656f1f309afb1"
+}

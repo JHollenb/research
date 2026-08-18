@@ -1,0 +1,309 @@
+{
+  "claim_boundary": "real FLUX.2 Klein 4B prompt, device, reference-identity, trajectory-prefix, checkpoint-continuation, and invalidation measurements; references are declared cache dependencies because this Flux2 trajectory ABI does not yet implement an image-conditioned denoiser input; not an image-edit quality certification",
+  "continuation": {
+    "first_seconds": 0.13280209701042622,
+    "parity": {
+      "changed_fraction": 0.0,
+      "cosine_similarity": 1.0,
+      "exact": true,
+      "max_abs_rgb": 0,
+      "mean_abs_rgb": 0.0
+    },
+    "second_seconds": 0.1327711989870295,
+    "speedup": 1.000232716309203
+  },
+  "edit_rows": [
+    {
+      "cached_suffix_seconds": 0.13248741999268532,
+      "checkpoint_id": "traj-6cb1600ccf40c7a779fa03ce465eca12",
+      "edit_index": 0,
+      "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+      "shared_prefix_steps": 2,
+      "speedup": 1.0022984596345872,
+      "uncached_suffix_seconds": 0.1327919369796291,
+      "uncached_vs_cached": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 0.9999999999999999,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      }
+    },
+    {
+      "cached_suffix_seconds": 0.13254515698645264,
+      "checkpoint_id": "traj-6cb1600ccf40c7a779fa03ce465eca12",
+      "edit_index": 1,
+      "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+      "shared_prefix_steps": 2,
+      "speedup": 0.9994968961640913,
+      "uncached_suffix_seconds": 0.13247847300954163,
+      "uncached_vs_cached": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      }
+    },
+    {
+      "cached_suffix_seconds": 0.13284895406104624,
+      "checkpoint_id": "traj-6cb1600ccf40c7a779fa03ce465eca12",
+      "edit_index": 2,
+      "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+      "shared_prefix_steps": 2,
+      "speedup": 0.999899773373994,
+      "uncached_suffix_seconds": 0.1328356390586123,
+      "uncached_vs_cached": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 0.9999999999999999,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      }
+    },
+    {
+      "cached_suffix_seconds": 0.13287590409163386,
+      "checkpoint_id": "traj-6cb1600ccf40c7a779fa03ce465eca12",
+      "edit_index": 3,
+      "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+      "shared_prefix_steps": 2,
+      "speedup": 0.9997676992412773,
+      "uncached_suffix_seconds": 0.1328450369182974,
+      "uncached_vs_cached": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      }
+    },
+    {
+      "cached_suffix_seconds": 0.13283126091118902,
+      "checkpoint_id": "traj-6cb1600ccf40c7a779fa03ce465eca12",
+      "edit_index": 4,
+      "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+      "shared_prefix_steps": 2,
+      "speedup": 1.0011519582448365,
+      "uncached_suffix_seconds": 0.1329842769773677,
+      "uncached_vs_cached": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      }
+    },
+    {
+      "cached_suffix_seconds": 0.13278835103847086,
+      "checkpoint_id": "traj-6cb1600ccf40c7a779fa03ce465eca12",
+      "edit_index": 5,
+      "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+      "shared_prefix_steps": 2,
+      "speedup": 1.0002071795892362,
+      "uncached_suffix_seconds": 0.13281586207449436,
+      "uncached_vs_cached": {
+        "changed_fraction": 0.0,
+        "cosine_similarity": 1.0,
+        "exact": true,
+        "max_abs_rgb": 0,
+        "mean_abs_rgb": 0.0
+      }
+    }
+  ],
+  "edit_summary": {
+    "cached_suffix_mean_ms": 132.72950784691298,
+    "cached_suffix_p50_ms": 132.80980597482994,
+    "edits": 6,
+    "shared_prefix_steps_per_edit": 2,
+    "uncached_vs_cached_cosine_mean": 1.0,
+    "uncached_vs_cached_exact_count": 6
+  },
+  "execution": {
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "PYTHONPATH=mrun_src:mstack_src:manalysis_src",
+      "uv",
+      "run",
+      "--project",
+      "generative-image-model-atlas",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "python",
+      "-u",
+      "run_saturn_edit_cache.py"
+    ],
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "host_selection": "prefer_beast_softly",
+    "log_sha256": "7aa1f8e06d0ae78481e47197a87261e3af605e79ee52847c4e20204f18299c2f",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+    "mrun_job_id": "job-a0c675bb6825",
+    "mrun_ok": true,
+    "mrun_result": {
+      "elapsed_s": 34.94,
+      "executed_payload": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 17624.2,
+      "peak_vram_mb": 8340.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "parent_mrun_job_id": "job-a0c675bb6825",
+    "pipeline_class": "Flux2KleinPipeline",
+    "preflight": "strict",
+    "report_present": true,
+    "retry_lineage": null,
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "schema": "saturn-roadmap-mrun-request-v1",
+    "suite": "cache",
+    "task_family": "saturn-real-flux-edit-cache",
+    "worker_sha256": "2525f00ce252c63c911862a8f4610b615758353d7a4de5a70c5160af7939c3e7"
+  },
+  "model": {
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "id": "black-forest-labs/FLUX.2-klein-4B",
+    "pipeline_class": "Flux2KleinPipeline",
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+  },
+  "model_load_seconds": 0.4334529920015484,
+  "phase_events": [
+    {
+      "label": "encode",
+      "rss_mb": 950.046875,
+      "vram_reserved_mb": 7728.0
+    },
+    {
+      "label": "denoise",
+      "rss_mb": 9087.2109375,
+      "vram_reserved_mb": 7582.0
+    },
+    {
+      "label": "encode",
+      "rss_mb": 11062.3359375,
+      "vram_reserved_mb": 7772.0
+    },
+    {
+      "label": "denoise",
+      "rss_mb": 11723.38671875,
+      "vram_reserved_mb": 7602.0
+    },
+    {
+      "label": "encode",
+      "rss_mb": 10161.65625,
+      "vram_reserved_mb": 7774.0
+    },
+    {
+      "label": "denoise",
+      "rss_mb": 11743.6328125,
+      "vram_reserved_mb": 7602.0
+    },
+    {
+      "label": "encode",
+      "rss_mb": 11277.6640625,
+      "vram_reserved_mb": 7772.0
+    },
+    {
+      "label": "denoise",
+      "rss_mb": 11677.6328125,
+      "vram_reserved_mb": 7602.0
+    }
+  ],
+  "phase_telemetry": {
+    "device_cache_entries": 1,
+    "device_cache_hits": 2,
+    "device_tensor_transfers": 4,
+    "device_transfer_bytes": 31457280
+  },
+  "process_peak_rss_mb": 18370.88671875,
+  "prompt_cache": {
+    "encode_calls": 4,
+    "hit_seconds": 2.6640016585588455e-05,
+    "hit_speedup": 19592.670987082452,
+    "miss_seconds": 0.5219490800518543,
+    "same_object_on_hit": true
+  },
+  "prompt_variant_rows": [
+    {
+      "first_encode_calls": 1,
+      "generation_seconds": 3.4690142649924383,
+      "image_fingerprint": "af82252810b5ac3f2268ea1dd789ed3174e10ebd0a70f316ec0fd19f1e979f9b",
+      "index": 0,
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, warmer light",
+      "same_object_on_hit": true
+    },
+    {
+      "first_encode_calls": 1,
+      "generation_seconds": 3.440370349911973,
+      "image_fingerprint": "2798cfaa6e4dca607e8e433419197f3ce7c1e7e39489b0e8cb6870f8315d684b",
+      "index": 1,
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, falling snow",
+      "same_object_on_hit": true
+    },
+    {
+      "first_encode_calls": 1,
+      "generation_seconds": 3.4082975279306993,
+      "image_fingerprint": "84d37d19db38a6d685cc11b418ed290aa911e103b5244a22e3e02dfe3ded8685",
+      "index": 2,
+      "prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, blue-hour sky",
+      "same_object_on_hit": true
+    }
+  ],
+  "schema": "saturn-real-flux-edit-cache-v1",
+  "status": "observation",
+  "trajectory_prefix_cache": {
+    "cache_key": "43fe560990349ec1d9b5aa98ba0027efbec9bf7c9686c4b5e6cbd36724369a30",
+    "cache_stats_before_invalidation": {
+      "entries": 1,
+      "evictions": 0,
+      "hits": 1,
+      "invalidations": 1,
+      "misses": 2
+    },
+    "checkpoint_hit_fingerprint": "7429515ce41d1698d6d54bc1b2f3323cbda73b2d4efd641faf5d8e1bf337d6e2",
+    "checkpoint_miss_fingerprint": "7429515ce41d1698d6d54bc1b2f3323cbda73b2d4efd641faf5d8e1bf337d6e2",
+    "hit_seconds": 6.552087143063545e-06,
+    "hit_speedup": 19705.369780746954,
+    "invalidated_keys": [
+      "43fe560990349ec1d9b5aa98ba0027efbec9bf7c9686c4b5e6cbd36724369a30"
+    ],
+    "miss_seconds": 0.12911129998974502,
+    "post_invalidation_checkpoint_fingerprint": "7429515ce41d1698d6d54bc1b2f3323cbda73b2d4efd641faf5d8e1bf337d6e2",
+    "post_invalidation_miss_seconds": 0.12693475896958262
+  },
+  "workload": {
+    "base_image_fingerprint": "e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+    "base_prompt": "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic",
+    "cut_step": 2,
+    "edit_prompts": [
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, warmer light",
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, falling snow",
+      "a red fox sitting in fresh snow at dawn, soft studio light, photorealistic, blue-hour sky"
+    ],
+    "height": 256,
+    "native_base_seconds": 0.3686531060375273,
+    "reference_id": "ref:image-sha256:e2d6ce1db64b9eb8c5d57f6b059d1fec884cec708df9441236dd018d5502c3ff",
+    "steps": 4,
+    "width": 256
+  }
+}

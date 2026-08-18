@@ -1,0 +1,267 @@
+{
+  "study": "/home/beast/domains/experiments/2026-07-24-generative-image-model-atlas/config/study.json",
+  "model_id": "flux2-klein-4b",
+  "seeds": [
+    101,
+    202
+  ],
+  "prompts": [
+    {
+      "id": "smoke-typography",
+      "prompt": "a shop sign that says \"OPEN\" in bold red letters"
+    },
+    {
+      "id": "smoke-object",
+      "prompt": "a chrome teapot on a wooden table, studio lighting"
+    },
+    {
+      "id": "smoke-scene",
+      "prompt": "a foggy mountain village at dawn, watercolor"
+    },
+    {
+      "id": "smoke-count",
+      "prompt": "exactly three yellow tennis balls on blue fabric"
+    }
+  ],
+  "torch": "2.13.0+cu130",
+  "paths": {
+    "reference": {
+      "strategy": "model_cpu_offload",
+      "images": [
+        {
+          "prompt_id": "smoke-typography",
+          "seed": 101,
+          "wall_s": 8.374,
+          "png_sha256": "758ca560232698d6ba6ce80f3d20f5ad35bd768e010399a51d1ccbe2c4ac6a57",
+          "pixel_sha256": "f35e30ac60992460e65d6e724d89a69f38d209ca9bc1bf02ca9e793e37e1df22",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-typography",
+          "seed": 202,
+          "wall_s": 6.918,
+          "png_sha256": "878e86ff1c2755b74bd6281d7665b9991b9c6e86618648529d5a5d83a980a3b6",
+          "pixel_sha256": "8961d3e4393cae1a6e34142578b035abd68765e629db8645ee2475be3d7e0f8d",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-object",
+          "seed": 101,
+          "wall_s": 6.807,
+          "png_sha256": "1881bc0bc992c511783f7e2540da95110996ac7eacb83bd7582c40548367e1e5",
+          "pixel_sha256": "d95722c469bd3ad581688af5fd05b67f5dbeaa2daee9b787c3511ac85e253ab7",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-object",
+          "seed": 202,
+          "wall_s": 6.415,
+          "png_sha256": "629bfb9f1489c7af647560e4c1701d87f0ea954e4d75cae4cdf15fe128221c31",
+          "pixel_sha256": "257acbff609db1e26815475de866c8f01b4edca1b3a46895c361257502ca5b83",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-scene",
+          "seed": 101,
+          "wall_s": 6.016,
+          "png_sha256": "6c7049dfd26b8c05c6b0420b8141d17fca651004b397a4e790d06d08d1581a31",
+          "pixel_sha256": "7c3ebae81c99b3f5fc0acce980fad9f6bdb7238099f29b00b6aecb2fbdeeeb8e",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-scene",
+          "seed": 202,
+          "wall_s": 5.996,
+          "png_sha256": "cfff9f91eda2e036ceaf18f829ef9386bcf954edb17ce8eb26b897ac536eb63d",
+          "pixel_sha256": "46724e393e40d90bba99ca20ed586b50466215b540d78ece1de78ce59e912eea",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-count",
+          "seed": 101,
+          "wall_s": 5.728,
+          "png_sha256": "1c40f7f72e18064dfacf7ebeaabcd84766768b4d984a87e2b968b488d528098e",
+          "pixel_sha256": "f48a7fe22dd82cabe35c5fab83482ce16f4f762cb3df508e6961c8f2d8bc18ce",
+          "peak_vram_mb": 8321.8
+        },
+        {
+          "prompt_id": "smoke-count",
+          "seed": 202,
+          "wall_s": 5.498,
+          "png_sha256": "b23fee0fcdd4c0851d2961006a76aaabfcd7707f0739a56358fc420953be92af",
+          "pixel_sha256": "7f0bbdf027ffbb4931172ec91072682e2b76c8465d581a6bcaf654128b64bd28",
+          "peak_vram_mb": 8321.8
+        }
+      ],
+      "load_wall_s": 4.337,
+      "rss_before_bytes": 512004096,
+      "rss_after_bytes": 19413950464,
+      "rss_peak_bytes_monotonic": 19409424384,
+      "gen_wall_total_s": 51.752,
+      "gen_wall_mean_s": 6.469
+    },
+    "candidate": {
+      "strategy": "phase-cuda",
+      "images": [
+        {
+          "prompt_id": "smoke-typography",
+          "seed": 101,
+          "wall_s": 0.609,
+          "png_sha256": "758ca560232698d6ba6ce80f3d20f5ad35bd768e010399a51d1ccbe2c4ac6a57",
+          "pixel_sha256": "f35e30ac60992460e65d6e724d89a69f38d209ca9bc1bf02ca9e793e37e1df22",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-typography",
+          "seed": 202,
+          "wall_s": 0.61,
+          "png_sha256": "878e86ff1c2755b74bd6281d7665b9991b9c6e86618648529d5a5d83a980a3b6",
+          "pixel_sha256": "8961d3e4393cae1a6e34142578b035abd68765e629db8645ee2475be3d7e0f8d",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-object",
+          "seed": 101,
+          "wall_s": 0.608,
+          "png_sha256": "1881bc0bc992c511783f7e2540da95110996ac7eacb83bd7582c40548367e1e5",
+          "pixel_sha256": "d95722c469bd3ad581688af5fd05b67f5dbeaa2daee9b787c3511ac85e253ab7",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-object",
+          "seed": 202,
+          "wall_s": 0.605,
+          "png_sha256": "629bfb9f1489c7af647560e4c1701d87f0ea954e4d75cae4cdf15fe128221c31",
+          "pixel_sha256": "257acbff609db1e26815475de866c8f01b4edca1b3a46895c361257502ca5b83",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-scene",
+          "seed": 101,
+          "wall_s": 0.6,
+          "png_sha256": "6c7049dfd26b8c05c6b0420b8141d17fca651004b397a4e790d06d08d1581a31",
+          "pixel_sha256": "7c3ebae81c99b3f5fc0acce980fad9f6bdb7238099f29b00b6aecb2fbdeeeb8e",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-scene",
+          "seed": 202,
+          "wall_s": 0.611,
+          "png_sha256": "cfff9f91eda2e036ceaf18f829ef9386bcf954edb17ce8eb26b897ac536eb63d",
+          "pixel_sha256": "46724e393e40d90bba99ca20ed586b50466215b540d78ece1de78ce59e912eea",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-count",
+          "seed": 101,
+          "wall_s": 0.604,
+          "png_sha256": "1c40f7f72e18064dfacf7ebeaabcd84766768b4d984a87e2b968b488d528098e",
+          "pixel_sha256": "f48a7fe22dd82cabe35c5fab83482ce16f4f762cb3df508e6961c8f2d8bc18ce",
+          "peak_vram_mb": 8583.3
+        },
+        {
+          "prompt_id": "smoke-count",
+          "seed": 202,
+          "wall_s": 0.608,
+          "png_sha256": "b23fee0fcdd4c0851d2961006a76aaabfcd7707f0739a56358fc420953be92af",
+          "pixel_sha256": "7f0bbdf027ffbb4931172ec91072682e2b76c8465d581a6bcaf654128b64bd28",
+          "peak_vram_mb": 8583.3
+        }
+      ],
+      "load_wall_s": 0.37,
+      "encode_phase_wall_s": 1.247,
+      "encode_phase_vram_peak_mb": 8321.8,
+      "swap_to_denoise_wall_s": 2.173,
+      "denoise_resident_vram_peak_mb": 8053.5,
+      "denoise_phase_vram_peak_mb": 8583.3,
+      "phase_events": [
+        {
+          "label": "encode",
+          "rss_mb": 9426.2109375,
+          "vram_reserved_mb": 7702.0
+        },
+        {
+          "label": "denoise",
+          "rss_mb": 11525.546875,
+          "vram_reserved_mb": 7572.0
+        }
+      ],
+      "unplanned_swaps": 0,
+      "encode_calls": 4,
+      "rss_before_bytes": 9841135616,
+      "rss_after_bytes": 19065946112,
+      "rss_peak_bytes_monotonic": 19836461056,
+      "gen_wall_total_s": 4.855,
+      "gen_wall_mean_s": 0.607
+    }
+  },
+  "parity": [
+    {
+      "prompt_id": "smoke-typography",
+      "seed": 101,
+      "reference_pixel_sha256": "f35e30ac60992460e65d6e724d89a69f38d209ca9bc1bf02ca9e793e37e1df22",
+      "candidate_pixel_sha256": "f35e30ac60992460e65d6e724d89a69f38d209ca9bc1bf02ca9e793e37e1df22",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-typography",
+      "seed": 202,
+      "reference_pixel_sha256": "8961d3e4393cae1a6e34142578b035abd68765e629db8645ee2475be3d7e0f8d",
+      "candidate_pixel_sha256": "8961d3e4393cae1a6e34142578b035abd68765e629db8645ee2475be3d7e0f8d",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-object",
+      "seed": 101,
+      "reference_pixel_sha256": "d95722c469bd3ad581688af5fd05b67f5dbeaa2daee9b787c3511ac85e253ab7",
+      "candidate_pixel_sha256": "d95722c469bd3ad581688af5fd05b67f5dbeaa2daee9b787c3511ac85e253ab7",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-object",
+      "seed": 202,
+      "reference_pixel_sha256": "257acbff609db1e26815475de866c8f01b4edca1b3a46895c361257502ca5b83",
+      "candidate_pixel_sha256": "257acbff609db1e26815475de866c8f01b4edca1b3a46895c361257502ca5b83",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-scene",
+      "seed": 101,
+      "reference_pixel_sha256": "7c3ebae81c99b3f5fc0acce980fad9f6bdb7238099f29b00b6aecb2fbdeeeb8e",
+      "candidate_pixel_sha256": "7c3ebae81c99b3f5fc0acce980fad9f6bdb7238099f29b00b6aecb2fbdeeeb8e",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-scene",
+      "seed": 202,
+      "reference_pixel_sha256": "46724e393e40d90bba99ca20ed586b50466215b540d78ece1de78ce59e912eea",
+      "candidate_pixel_sha256": "46724e393e40d90bba99ca20ed586b50466215b540d78ece1de78ce59e912eea",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-count",
+      "seed": 101,
+      "reference_pixel_sha256": "f48a7fe22dd82cabe35c5fab83482ce16f4f762cb3df508e6961c8f2d8bc18ce",
+      "candidate_pixel_sha256": "f48a7fe22dd82cabe35c5fab83482ce16f4f762cb3df508e6961c8f2d8bc18ce",
+      "png_equal": true,
+      "pixel_equal": true
+    },
+    {
+      "prompt_id": "smoke-count",
+      "seed": 202,
+      "reference_pixel_sha256": "7f0bbdf027ffbb4931172ec91072682e2b76c8465d581a6bcaf654128b64bd28",
+      "candidate_pixel_sha256": "7f0bbdf027ffbb4931172ec91072682e2b76c8465d581a6bcaf654128b64bd28",
+      "png_equal": true,
+      "pixel_equal": true
+    }
+  ],
+  "parity_pass": true,
+  "speedup_per_image": 10.66,
+  "speedup_end_to_end": 6.25
+}

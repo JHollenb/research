@@ -1,0 +1,173 @@
+{
+  "claim_boundary": "paired development diagnostic; evaluator and gap must be audited before patch compilation",
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "GAP_CONFIG=config-red-apples-variants.json",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+    "uv",
+    "run",
+    "--project",
+    "generative-image-model-atlas",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "Pillow>=9.0",
+    "python",
+    "-u",
+    "gap_diagnostic.py"
+  ],
+  "config_sha256": "96fcadfe2fa29b0e09d8170ec85088e3ad5bd3a9e28022976702e9cf56837422",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "experiment": "flux-capability-gap-debug-red-apples-variants",
+  "instrument": "paired Base/distilled count panel plus Saturn trajectory checkpoint replay",
+  "log_sha256": "00d45e9c00d745b502566f62858d3b058b04757d072fa4f77e4fd0fd2e03cfed",
+  "mrun_job_id": "job-725897a11485",
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "GAP_CONFIG=config-red-apples-variants.json",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:image_atlas:.",
+        "uv",
+        "run",
+        "--project",
+        "generative-image-model-atlas",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "Pillow>=9.0",
+        "python",
+        "-u",
+        "gap_diagnostic.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-725897a11485",
+      "log_path": "/mnt/big/mrun-work/job-725897a11485/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1786694603.1887574
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1786694603.8716922
+        },
+        {
+          "name": "process.launch",
+          "ts": 1786694603.9037204
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1786694603.9563355
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1786694851.0300877
+        },
+        {
+          "name": "finished",
+          "ts": 1786694851.0436378
+        }
+      ]
+    },
+    "elapsed_s": 247.9,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "fc4138a52fdc9cdde2ef00f3d6064e24ac70028c7ef754606b932db5e9454f31",
+      "size_bytes": 3707487
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 32957.0,
+    "peak_vram_mb": 8318.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "payload": {
+    "audit_features": [
+      "TrajectoryCheckpoint",
+      "resume_checkpoint",
+      "advance_checkpoint",
+      "step_observer",
+      "Frame"
+    ],
+    "audit_prompt_id": "red_apples_row",
+    "paired_models": 2,
+    "panel_conditions": 8,
+    "sequential_model_loads": true
+  },
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "est_wall_s": 1200,
+    "ram_mb": 40000,
+    "vram_mb": 13000
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "load Base once for the paired panel, release it, load distilled once, then capture one immutable hardest-case checkpoint and replay its suffix",
+    "claim_boundary": "paired gap discovery only; no Act or transfer claim",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-gap-diagnostic-worker",
+    "logical_branches": 20,
+    "logical_checkpoint_replays": 4,
+    "logical_operations": 20,
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "native_scheduler_and_vae": true,
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "physical_model_loads": 2,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1",
+    "sequential_model_loads": true
+  },
+  "schema": "saturn-flux-capability-gap-debug-mrun-request-v1",
+  "task_family": "saturn-flux-capability-gap-debug",
+  "worker_sha256": "df43c43281ff2f46ae31da6e6749648db71a3b296f8c3d1d6cd83d88464b8c69"
+}
