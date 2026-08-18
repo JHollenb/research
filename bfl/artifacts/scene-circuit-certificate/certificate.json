@@ -1,0 +1,231 @@
+{
+  "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+  "gates": [
+    {
+      "id": "reproducibility",
+      "observed": {
+        "seed_count": 2,
+        "seeds": [
+          "4242",
+          "9001"
+        ]
+      },
+      "passed": true,
+      "rule": "at least two independent seeds are required"
+    },
+    {
+      "id": "sufficiency",
+      "observed": {
+        "minimum_scene_progress": 0.9132605915813907
+      },
+      "passed": true,
+      "rule": "min scene progress >= 0.9"
+    },
+    {
+      "id": "necessity",
+      "observed": {
+        "maximum_route_ablation_scene_progress": 0.022478059397213257
+      },
+      "passed": true,
+      "rule": "max route-ablation scene progress <= 0.15"
+    },
+    {
+      "id": "specificity_wrong_axis",
+      "observed": {
+        "maximum_wrong_color_scene_progress": -0.4303132839954793,
+        "minimum_wrong_color_margin": 1.3559930503211004
+      },
+      "passed": true,
+      "rule": "wrong-axis donor stays below the scene target and remains more color-like"
+    },
+    {
+      "id": "specificity_sham",
+      "observed": {
+        "maximum_sham_scene_progress": 0.10859346469260778
+      },
+      "passed": true,
+      "rule": "max norm-matched sham scene progress <= 0.35"
+    },
+    {
+      "id": "dose_response",
+      "observed": {
+        "scene_progress_by_seed": {
+          "4242": [
+            1.284146122770835e-10,
+            -0.01366973076151523,
+            0.059807889485324006,
+            0.4846719352443404,
+            0.9438734326776155
+          ],
+          "9001": [
+            1.343098965378431e-10,
+            -0.058037997311915834,
+            0.020407592490434223,
+            0.37267900739623483,
+            0.9132605915813907
+          ]
+        },
+        "scene_return_progress_by_seed": {
+          "4242": [
+            0.0,
+            0.08206312358379364,
+            0.3373183608055115,
+            0.879298985004425,
+            0.9836190342903137
+          ],
+          "9001": [
+            0.0,
+            0.15882575511932373,
+            0.4560082256793976,
+            0.7432774305343628,
+            0.9823917150497437
+          ]
+        }
+      },
+      "passed": true,
+      "rule": "RGB dose is directionally monotone within display tolerance and the downstream return carrier is monotone within causal tolerance"
+    },
+    {
+      "id": "mediation",
+      "observed": {
+        "all_rescue_fractions": [
+          0.9617085891578255,
+          0.9169450356587042,
+          0.7704782254031485,
+          0.9636500701550218,
+          0.9230346512086899,
+          0.8051734366468964
+        ],
+        "minimum_rescue_fraction": 0.7704782254031485
+      },
+      "passed": true,
+      "rule": "every tested edge rescue fraction >= 0.5"
+    },
+    {
+      "id": "consumer_continuation",
+      "observed": {
+        "minimum_scene_return_alignment": 0.9708396196365356,
+        "minimum_scene_return_progress": 0.9823917150497437
+      },
+      "passed": true,
+      "rule": "the scene carrier survives into the final scheduler return register"
+    },
+    {
+      "id": "exact_scalar_replay",
+      "observed": {
+        "exact_scalar_branch_count_by_seed": {
+          "4242": 18,
+          "9001": 18
+        }
+      },
+      "passed": true,
+      "rule": "all recorded intervention branches use scalar-authority checkpoint replay"
+    }
+  ],
+  "per_seed": {
+    "4242": {
+      "branch_count": 18,
+      "dose_scene_progress": [
+        1.284146122770835e-10,
+        -0.01366973076151523,
+        0.059807889485324006,
+        0.4846719352443404,
+        0.9438734326776155
+      ],
+      "dose_scene_return_progress": [
+        0.0,
+        0.08206312358379364,
+        0.3373183608055115,
+        0.879298985004425,
+        0.9836190342903137
+      ],
+      "exact_scalar_branch_count": 18,
+      "mediation_rescue_fraction": {
+        "joint.2->joint.3": 0.9617085891578255,
+        "joint.3->joint.4": 0.9169450356587042,
+        "joint.4->single.0": 0.7704782254031485
+      },
+      "necessity_route_ablation_scene_progress": 0.022478059397213257,
+      "scene_return_alignment": 0.9889681339263916,
+      "scene_return_progress": 0.9836190342903137,
+      "sham_scene_progress": 0.10859346469260778,
+      "sufficiency_scene_progress": 0.9438734326776155,
+      "wrong_color_margin": 1.3559930503211004,
+      "wrong_color_progress": 0.9256797663256212,
+      "wrong_color_scene_progress": -0.4303132839954793
+    },
+    "9001": {
+      "branch_count": 18,
+      "dose_scene_progress": [
+        1.343098965378431e-10,
+        -0.058037997311915834,
+        0.020407592490434223,
+        0.37267900739623483,
+        0.9132605915813907
+      ],
+      "dose_scene_return_progress": [
+        0.0,
+        0.15882575511932373,
+        0.4560082256793976,
+        0.7432774305343628,
+        0.9823917150497437
+      ],
+      "exact_scalar_branch_count": 18,
+      "mediation_rescue_fraction": {
+        "joint.2->joint.3": 0.9636500701550218,
+        "joint.3->joint.4": 0.9230346512086899,
+        "joint.4->single.0": 0.8051734366468964
+      },
+      "necessity_route_ablation_scene_progress": 0.00600046104530394,
+      "scene_return_alignment": 0.9708396196365356,
+      "scene_return_progress": 0.9823917150497437,
+      "sham_scene_progress": 0.03147685355551866,
+      "sufficiency_scene_progress": 0.9132605915813907,
+      "wrong_color_margin": 1.486336891624668,
+      "wrong_color_progress": 0.9544210040326239,
+      "wrong_color_scene_progress": -0.5319158875920442
+    }
+  },
+  "schema": "saturn-causal-circuit-certificate-v1",
+  "scope": {
+    "guidance": 1.0,
+    "model": "black-forest-labs/FLUX.2-klein-4B",
+    "prompts": {
+      "scene_target": "a photorealistic red fox standing in a sunlit desert at noon, warm red light",
+      "source": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+      "wrong_axis": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light"
+    },
+    "resolution": [
+      256,
+      256
+    ],
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "route": [
+      "joint.2",
+      "joint.3",
+      "joint.4",
+      "single.0"
+    ],
+    "seeds": [
+      "4242",
+      "9001"
+    ],
+    "steps": 4
+  },
+  "status": "certified",
+  "terminal_claim": "The declared joint.2 -> joint.3 -> joint.4 -> single.0 route is a causally sufficient, necessary, specific, dose-responsive, and consumer-continuing scene circuit for native FLUX.2 Klein/Qwen under the recorded 256x256, four-step, guidance-1 experiment.",
+  "thresholds": {
+    "consumer_min_scene_return_alignment": 0.8,
+    "consumer_min_scene_return_progress": 0.75,
+    "dose_endpoint_min_scene_progress": 0.9,
+    "dose_image_monotonic_tolerance": 0.1,
+    "dose_return_monotonic_tolerance": 0.05,
+    "dose_start_max_scene_progress": 0.15,
+    "mediation_min_rescue_fraction": 0.5,
+    "necessity_max_scene_progress": 0.15,
+    "specificity_max_sham_scene_progress": 0.35,
+    "specificity_max_wrong_scene_progress": 0.35,
+    "specificity_min_wrong_color_margin": 0.1,
+    "sufficiency_min_scene_progress": 0.9
+  }
+}

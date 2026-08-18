@@ -1,0 +1,3594 @@
+{
+  "calibration": {
+    "chosen_multiplier": 3.0,
+    "chosen_radius": 8.11496114730835,
+    "families": [
+      "negative_red_circles",
+      "negative_red_triangles",
+      "positive_red_circles",
+      "positive_red_triangles"
+    ],
+    "grid_action_counts": {
+      "0.5": {
+        "abstain": 8
+      },
+      "0.75": {
+        "abstain": 8
+      },
+      "1.0": {
+        "abstain": 8
+      },
+      "1.25": {
+        "abstain": 8
+      },
+      "1.5": {
+        "abstain": 8
+      },
+      "2.0": {
+        "abstain": 8
+      },
+      "3.0": {
+        "abstain": 4,
+        "native": 4
+      }
+    },
+    "parent_count": 8,
+    "policy": {
+      "calibration_parent_diagnostics": [
+        {
+          "family": "positive_red_circles",
+          "native_utility": 2.0,
+          "nearest_development_distance": 13.94693374633789,
+          "route_logits": [
+            0.24190975725650787,
+            -2.894131660461426,
+            3.6522247791290283
+          ],
+          "route_margin": 3.4103150367736816,
+          "route_utilities": {
+            "joint3_gain2": 0.012820786476135253,
+            "joint4_gain2": 0.012478236198425294,
+            "native": 2.0
+          },
+          "seed": 8001,
+          "task_id": "red_circles_five_calibration"
+        },
+        {
+          "family": "positive_red_circles",
+          "native_utility": 2.0,
+          "nearest_development_distance": 14.678462982177734,
+          "route_logits": [
+            0.36408066749572754,
+            -3.020054340362549,
+            3.655977725982666
+          ],
+          "route_margin": 3.2918970584869385,
+          "route_utilities": {
+            "joint3_gain2": 0.01442915439605713,
+            "joint4_gain2": 1.0113083219528198,
+            "native": 2.0
+          },
+          "seed": 8002,
+          "task_id": "red_circles_five_calibration"
+        },
+        {
+          "family": "negative_red_circles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 10.503715515136719,
+          "route_logits": [
+            1.6141129732131958,
+            -1.0257707834243774,
+            0.41165685653686523
+          ],
+          "route_margin": 1.2024561166763306,
+          "route_utilities": {
+            "joint3_gain2": 0.004066893100738525,
+            "joint4_gain2": 0.004485842227935791,
+            "native": 0.0
+          },
+          "seed": 8001,
+          "task_id": "red_circles_three_negative_calibration"
+        },
+        {
+          "family": "negative_red_circles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 11.270930290222168,
+          "route_logits": [
+            1.6771578788757324,
+            -1.1002873182296753,
+            0.4231284558773041
+          ],
+          "route_margin": 1.254029393196106,
+          "route_utilities": {
+            "joint3_gain2": 0.003316087007522583,
+            "joint4_gain2": 0.006136830806732178,
+            "native": 0.0
+          },
+          "seed": 8002,
+          "task_id": "red_circles_three_negative_calibration"
+        },
+        {
+          "family": "positive_red_triangles",
+          "native_utility": 2.0,
+          "nearest_development_distance": 7.010264873504639,
+          "route_logits": [
+            1.2925240993499756,
+            -0.8738188743591309,
+            0.5812960267066956
+          ],
+          "route_margin": 0.71122807264328,
+          "route_utilities": {
+            "joint3_gain2": 1.0181908054351807,
+            "joint4_gain2": 2.0156203832626343,
+            "native": 2.0
+          },
+          "seed": 8001,
+          "task_id": "red_triangles_four_calibration"
+        },
+        {
+          "family": "positive_red_triangles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 7.4731364250183105,
+          "route_logits": [
+            1.3810157775878906,
+            -0.933995246887207,
+            0.5529805421829224
+          ],
+          "route_margin": 0.8280352354049683,
+          "route_utilities": {
+            "joint3_gain2": 0.01264717960357666,
+            "joint4_gain2": 0.00597888708114624,
+            "native": 0.0
+          },
+          "seed": 8002,
+          "task_id": "red_triangles_four_calibration"
+        },
+        {
+          "family": "negative_red_triangles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 5.584447860717773,
+          "route_logits": [
+            1.1125199794769287,
+            -0.7568851709365845,
+            0.6443661451339722
+          ],
+          "route_margin": 0.46815383434295654,
+          "route_utilities": {
+            "joint3_gain2": 0.00830013656616211,
+            "joint4_gain2": 0.006116928100585938,
+            "native": 0.0
+          },
+          "seed": 8001,
+          "task_id": "red_triangles_two_negative_calibration"
+        },
+        {
+          "family": "negative_red_triangles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 5.698629856109619,
+          "route_logits": [
+            1.1772010326385498,
+            -0.8155202269554138,
+            0.6383205652236938
+          ],
+          "route_margin": 0.538880467414856,
+          "route_utilities": {
+            "joint3_gain2": 0.009688721656799317,
+            "joint4_gain2": 0.006366990566253662,
+            "native": 0.0
+          },
+          "seed": 8002,
+          "task_id": "red_triangles_two_negative_calibration"
+        }
+      ],
+      "chosen_multiplier": 3.0,
+      "chosen_policy": {
+        "false_positive_count": 0,
+        "false_positive_rate": 0.0,
+        "mean_native_utility": 0.75,
+        "mean_selected_utility": 0.75,
+        "multiplier": 3.0,
+        "parent_count": 8,
+        "radius": 8.11496114730835,
+        "route_coverage": 0.5,
+        "route_dispatch_count": 4,
+        "safe": true,
+        "selected": [
+          {
+            "low_route_margin": false,
+            "native_utility": 2.0,
+            "out_of_support": true,
+            "seed": 8001,
+            "selected_action": "abstain",
+            "selected_utility": 2.0,
+            "task_id": "red_circles_five_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 2.0,
+            "out_of_support": true,
+            "seed": 8002,
+            "selected_action": "abstain",
+            "selected_utility": 2.0,
+            "task_id": "red_circles_five_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": true,
+            "seed": 8001,
+            "selected_action": "abstain",
+            "selected_utility": 0.0,
+            "task_id": "red_circles_three_negative_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": true,
+            "seed": 8002,
+            "selected_action": "abstain",
+            "selected_utility": 0.0,
+            "task_id": "red_circles_three_negative_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 2.0,
+            "out_of_support": false,
+            "seed": 8001,
+            "selected_action": "native",
+            "selected_utility": 2.0,
+            "task_id": "red_triangles_four_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": false,
+            "seed": 8002,
+            "selected_action": "native",
+            "selected_utility": 0.0,
+            "task_id": "red_triangles_four_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": false,
+            "seed": 8001,
+            "selected_action": "native",
+            "selected_utility": 0.0,
+            "task_id": "red_triangles_two_negative_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": false,
+            "seed": 8002,
+            "selected_action": "native",
+            "selected_utility": 0.0,
+            "task_id": "red_triangles_two_negative_calibration"
+          }
+        ],
+        "utility_not_worse": true
+      },
+      "chosen_radius": 8.11496114730835,
+      "development_loo_nearest_distance_max": 2.704987049102783,
+      "grid": [
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 0.5,
+          "parent_count": 8,
+          "radius": 1.3524935245513916,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 0.75,
+          "parent_count": 8,
+          "radius": 2.0287402868270874,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 1.0,
+          "parent_count": 8,
+          "radius": 2.704987049102783,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 1.25,
+          "parent_count": 8,
+          "radius": 3.381233811378479,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 1.5,
+          "parent_count": 8,
+          "radius": 4.057480573654175,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 2.0,
+          "parent_count": 8,
+          "radius": 5.409974098205566,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 3.0,
+          "parent_count": 8,
+          "radius": 8.11496114730835,
+          "route_coverage": 0.5,
+          "route_dispatch_count": 4,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": false,
+              "seed": 8001,
+              "selected_action": "native",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": false,
+              "seed": 8002,
+              "selected_action": "native",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": false,
+              "seed": 8001,
+              "selected_action": "native",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": false,
+              "seed": 8002,
+              "selected_action": "native",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        }
+      ],
+      "heldout_outcomes_visible": false,
+      "max_false_positive_rate": 0.25,
+      "objective": "max-route-coverage-subject-to-calibration-collateral-cap"
+    },
+    "rows": 32,
+    "seeds": [
+      8001,
+      8002
+    ]
+  },
+  "development_table": [
+    {
+      "all": {
+        "exact_rate": 0.75,
+        "mean_error": 0.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 8
+      },
+      "by_family": {
+        "negative_red_apples": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "negative_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_red_apples": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "abstain",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "positive": {
+        "exact_rate": 0.5,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 9.741275280714035,
+        "rows": 8
+      },
+      "by_family": {
+        "negative_red_apples": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 4.598462343215942,
+          "rows": 2
+        },
+        "negative_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 10.349013090133667,
+          "rows": 2
+        },
+        "positive_red_apples": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 19.222301483154297,
+          "rows": 2
+        },
+        "positive_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 4.795324206352234,
+          "rows": 2
+        }
+      },
+      "candidate": "joint3_gain2",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 7.473737716674805,
+        "rows": 4
+      },
+      "positive": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 12.008812844753265,
+        "rows": 4
+      },
+      "site": "joint.3",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.875,
+        "mean_error": 0.25,
+        "mean_pixel_mad": 6.895236641168594,
+        "rows": 8
+      },
+      "by_family": {
+        "negative_red_apples": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 5.804800033569336,
+          "rows": 2
+        },
+        "negative_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 5.737725734710693,
+          "rows": 2
+        },
+        "positive_red_apples": {
+          "exact_rate": 0.5,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 10.528207778930664,
+          "rows": 2
+        },
+        "positive_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 5.510213017463684,
+          "rows": 2
+        }
+      },
+      "candidate": "joint4_gain2",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 5.771262884140015,
+        "rows": 4
+      },
+      "positive": {
+        "exact_rate": 0.75,
+        "mean_error": 0.5,
+        "mean_pixel_mad": 8.019210398197174,
+        "rows": 4
+      },
+      "site": "joint.4",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.75,
+        "mean_error": 0.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 8
+      },
+      "by_family": {
+        "negative_red_apples": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "negative_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_red_apples": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_red_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "native",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "positive": {
+        "exact_rate": 0.5,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    }
+  ],
+  "execution": {
+    "calibration_outcomes_used_before_heldout": true,
+    "calibration_parent_count": 8,
+    "calibration_rows": 32,
+    "forest_closure": true,
+    "heldout_outcomes_visible_at_dispatch": false,
+    "parent_count": 22,
+    "reopened_closure": true,
+    "rewind_exact": true,
+    "row_count": 106,
+    "step_suffix_exact": true
+  },
+  "heldout_atlas_table": [
+    {
+      "all": {
+        "exact_rate": 0.6666666666666666,
+        "mean_error": 0.3333333333333333,
+        "mean_pixel_mad": 9.401883761088053,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 9.827242612838745,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 3.89306902885437,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 14.485339641571045,
+          "rows": 2
+        }
+      },
+      "candidate": "fixed_joint3",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 9.827242612838745,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.5,
+        "mean_error": 0.5,
+        "mean_pixel_mad": 9.189204335212708,
+        "rows": 4
+      },
+      "site": "joint.3",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.6666666666666666,
+        "mean_error": 1.6666666666666667,
+        "mean_pixel_mad": 8.361046552658081,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 5.935580492019653,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 5.0,
+          "mean_pixel_mad": 5.366594314575195,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 13.780964851379395,
+          "rows": 2
+        }
+      },
+      "candidate": "joint4_control",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 5.935580492019653,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.5,
+        "mean_error": 2.5,
+        "mean_pixel_mad": 9.573779582977295,
+        "rows": 4
+      },
+      "site": "joint.4",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "native",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_dispatch",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 1.29768967628479,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 3.89306902885437,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_inverted",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 1.946534514427185,
+        "rows": 4
+      },
+      "site": "joint.3",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_wrong_time",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_zero_state",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    }
+  ],
+  "heldout_dispatch_atlas_table": [
+    {
+      "absolute_error": 1.0,
+      "expected_count": 6,
+      "observed_count": 5,
+      "seed": 7001,
+      "selected_action": "abstain",
+      "task_id": "green_circles_six"
+    },
+    {
+      "absolute_error": 1.0,
+      "expected_count": 6,
+      "observed_count": 5,
+      "seed": 7002,
+      "selected_action": "abstain",
+      "task_id": "green_circles_six"
+    },
+    {
+      "absolute_error": 2.0,
+      "expected_count": 5,
+      "observed_count": 3,
+      "seed": 7001,
+      "selected_action": "native",
+      "task_id": "green_squares_five"
+    },
+    {
+      "absolute_error": 2.0,
+      "expected_count": 5,
+      "observed_count": 3,
+      "seed": 7002,
+      "selected_action": "native",
+      "task_id": "green_squares_five"
+    },
+    {
+      "absolute_error": 0.0,
+      "expected_count": 3,
+      "observed_count": 3,
+      "seed": 7001,
+      "selected_action": "native",
+      "task_id": "green_triangles_three_negative"
+    },
+    {
+      "absolute_error": 0.0,
+      "expected_count": 3,
+      "observed_count": 3,
+      "seed": 7002,
+      "selected_action": "native",
+      "task_id": "green_triangles_three_negative"
+    }
+  ],
+  "heldout_dispatch_table": [
+    {
+      "absolute_error": 1.0,
+      "expected_count": 6,
+      "observed_count": 5,
+      "seed": 7001,
+      "selected_action": "abstain",
+      "task_id": "green_circles_six"
+    },
+    {
+      "absolute_error": 1.0,
+      "expected_count": 6,
+      "observed_count": 5,
+      "seed": 7002,
+      "selected_action": "abstain",
+      "task_id": "green_circles_six"
+    },
+    {
+      "absolute_error": 2.0,
+      "expected_count": 5,
+      "observed_count": 3,
+      "seed": 7001,
+      "selected_action": "native",
+      "task_id": "green_squares_five"
+    },
+    {
+      "absolute_error": 2.0,
+      "expected_count": 5,
+      "observed_count": 3,
+      "seed": 7002,
+      "selected_action": "native",
+      "task_id": "green_squares_five"
+    },
+    {
+      "absolute_error": 0.0,
+      "expected_count": 3,
+      "observed_count": 3,
+      "seed": 7001,
+      "selected_action": "native",
+      "task_id": "green_triangles_three_negative"
+    },
+    {
+      "absolute_error": 0.0,
+      "expected_count": 3,
+      "observed_count": 3,
+      "seed": 7002,
+      "selected_action": "native",
+      "task_id": "green_triangles_three_negative"
+    }
+  ],
+  "heldout_selector_modes": {
+    "selector_dispatch": {
+      "exact_rate": 0.3333333333333333,
+      "mean_error": 1.0,
+      "mean_pixel_mad": 0.0,
+      "rows": 6
+    },
+    "selector_inverted": {
+      "exact_rate": 0.3333333333333333,
+      "mean_error": 1.0,
+      "mean_pixel_mad": 1.29768967628479,
+      "rows": 6
+    },
+    "selector_wrong_time": {
+      "exact_rate": 0.3333333333333333,
+      "mean_error": 1.0,
+      "mean_pixel_mad": 0.0,
+      "rows": 6
+    },
+    "selector_zero_state": {
+      "exact_rate": 0.3333333333333333,
+      "mean_error": 1.0,
+      "mean_pixel_mad": 0.0,
+      "rows": 6
+    }
+  },
+  "heldout_table": [
+    {
+      "all": {
+        "exact_rate": 0.6666666666666666,
+        "mean_error": 0.3333333333333333,
+        "mean_pixel_mad": 9.401883761088053,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 9.827242612838745,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 3.89306902885437,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 14.485339641571045,
+          "rows": 2
+        }
+      },
+      "candidate": "fixed_joint3",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 9.827242612838745,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.5,
+        "mean_error": 0.5,
+        "mean_pixel_mad": 9.189204335212708,
+        "rows": 4
+      },
+      "site": "joint.3",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.6666666666666666,
+        "mean_error": 1.6666666666666667,
+        "mean_pixel_mad": 8.361046552658081,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 5.935580492019653,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 5.0,
+          "mean_pixel_mad": 5.366594314575195,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 13.780964851379395,
+          "rows": 2
+        }
+      },
+      "candidate": "joint4_control",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 5.935580492019653,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.5,
+        "mean_error": 2.5,
+        "mean_pixel_mad": 9.573779582977295,
+        "rows": 4
+      },
+      "site": "joint.4",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "native",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_dispatch",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 1.29768967628479,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 3.89306902885437,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_inverted",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 1.946534514427185,
+        "rows": 4
+      },
+      "site": "joint.3",
+      "step": 0
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_wrong_time",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    },
+    {
+      "all": {
+        "exact_rate": 0.3333333333333333,
+        "mean_error": 1.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 6
+      },
+      "by_family": {
+        "negative_green_triangles": {
+          "exact_rate": 1.0,
+          "mean_error": 0.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_circles": {
+          "exact_rate": 0.0,
+          "mean_error": 1.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        },
+        "positive_green_squares": {
+          "exact_rate": 0.0,
+          "mean_error": 2.0,
+          "mean_pixel_mad": 0.0,
+          "rows": 2
+        }
+      },
+      "candidate": "selector_zero_state",
+      "negative": {
+        "exact_rate": 1.0,
+        "mean_error": 0.0,
+        "mean_pixel_mad": 0.0,
+        "rows": 2
+      },
+      "positive": {
+        "exact_rate": 0.0,
+        "mean_error": 1.5,
+        "mean_pixel_mad": 0.0,
+        "rows": 4
+      },
+      "site": null,
+      "step": null
+    }
+  ],
+  "instrument": {
+    "atlas_vs_independent": {
+      "agreement_rate": 0.9905660377358491,
+      "agreements": 105,
+      "rows": 106
+    },
+    "blue_circle_resolution_audit": {
+      "atlas_nominal_size": 160,
+      "interpretation": "A count that changes with image scale is an evaluator-resolution sensitivity; a count that remains merged at full resolution is a consumer-level geometry failure.",
+      "rows": [
+        {
+          "candidate": "native",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "selector_dispatch",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "fixed_joint3",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "joint4_control",
+          "counts": {
+            "160": 1,
+            "256": 1,
+            "384": 2,
+            "512": 2
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "native",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7002
+        },
+        {
+          "candidate": "selector_dispatch",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7002
+        },
+        {
+          "candidate": "fixed_joint3",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7002
+        },
+        {
+          "candidate": "joint4_control",
+          "counts": {
+            "160": 1,
+            "256": 1,
+            "384": 4,
+            "512": 5
+          },
+          "seed": 7002
+        }
+      ],
+      "sizes": [
+        160,
+        256,
+        384,
+        512
+      ],
+      "source": "artifact-only target-color hue-mask connected-component audit",
+      "target_color": "green",
+      "task_id": "green_circles_six"
+    },
+    "development_families": [
+      "negative_red_apples",
+      "negative_red_squares",
+      "positive_red_apples",
+      "positive_red_squares"
+    ],
+    "evaluator_disagreements": [
+      {
+        "atlas_count": 2,
+        "candidate_id": "joint4_gain2",
+        "independent_count": 4,
+        "phase": "calibration",
+        "seed": 8002,
+        "task_id": "red_circles_five_calibration"
+      }
+    ],
+    "family_sets_disjoint": true,
+    "heldout_families": [
+      "negative_green_triangles",
+      "positive_green_circles",
+      "positive_green_squares"
+    ],
+    "native_feature_parent_groups": {
+      "calibration/red_circles_five_calibration/seed-8001": 1,
+      "calibration/red_circles_five_calibration/seed-8002": 1,
+      "calibration/red_circles_three_negative_calibration/seed-8001": 1,
+      "calibration/red_circles_three_negative_calibration/seed-8002": 1,
+      "calibration/red_triangles_four_calibration/seed-8001": 1,
+      "calibration/red_triangles_four_calibration/seed-8002": 1,
+      "calibration/red_triangles_two_negative_calibration/seed-8001": 1,
+      "calibration/red_triangles_two_negative_calibration/seed-8002": 1,
+      "development/red_apples_canonical/seed-611": 1,
+      "development/red_apples_canonical/seed-6172": 1,
+      "development/red_apples_three_negative/seed-611": 1,
+      "development/red_apples_three_negative/seed-6172": 1,
+      "development/red_squares_three/seed-611": 1,
+      "development/red_squares_three/seed-6172": 1,
+      "development/red_squares_two_negative/seed-611": 1,
+      "development/red_squares_two_negative/seed-6172": 1,
+      "heldout/green_circles_six/seed-7001": 1,
+      "heldout/green_circles_six/seed-7002": 1,
+      "heldout/green_squares_five/seed-7001": 1,
+      "heldout/green_squares_five/seed-7002": 1,
+      "heldout/green_triangles_three_negative/seed-7001": 1,
+      "heldout/green_triangles_three_negative/seed-7002": 1
+    },
+    "selector_raw_feature_matches_native": {
+      "matches": 6,
+      "rate": 1.0,
+      "rows": 6
+    },
+    "target_color_resolution_audit": {
+      "atlas_nominal_size": 160,
+      "interpretation": "A count that changes with image scale is an evaluator-resolution sensitivity; a count that remains merged at full resolution is a consumer-level geometry failure.",
+      "rows": [
+        {
+          "candidate": "native",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "selector_dispatch",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "fixed_joint3",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "joint4_control",
+          "counts": {
+            "160": 1,
+            "256": 1,
+            "384": 2,
+            "512": 2
+          },
+          "seed": 7001
+        },
+        {
+          "candidate": "native",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7002
+        },
+        {
+          "candidate": "selector_dispatch",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7002
+        },
+        {
+          "candidate": "fixed_joint3",
+          "counts": {
+            "160": 5,
+            "256": 5,
+            "384": 5,
+            "512": 5
+          },
+          "seed": 7002
+        },
+        {
+          "candidate": "joint4_control",
+          "counts": {
+            "160": 1,
+            "256": 1,
+            "384": 4,
+            "512": 5
+          },
+          "seed": 7002
+        }
+      ],
+      "sizes": [
+        160,
+        256,
+        384,
+        512
+      ],
+      "source": "artifact-only target-color hue-mask connected-component audit",
+      "target_color": "green",
+      "task_id": "green_circles_six"
+    }
+  },
+  "report": "saturn/results/flux-native-state-route-selector-v6/job-32de47a11821/report.json",
+  "schema": "saturn-flux-native-state-route-selector-v6-analysis-v1",
+  "selector": {
+    "abstain_margin": 0.1,
+    "abstention_policy": "abstain when route margin is below the fixed threshold or the standardized native state is outside the calibration-frozen support radius",
+    "actions": [
+      {
+        "gain": 0.0,
+        "id": "native",
+        "sign": 1.0,
+        "site": null,
+        "step": null
+      },
+      {
+        "gain": 2.0,
+        "id": "joint3_gain2",
+        "sign": 1.0,
+        "site": "joint.3",
+        "step": 0
+      },
+      {
+        "gain": 2.0,
+        "id": "joint4_gain2",
+        "sign": 1.0,
+        "site": "joint.4",
+        "step": 0
+      },
+      {
+        "gain": 0.0,
+        "id": "abstain",
+        "sign": 1.0,
+        "site": null,
+        "step": null
+      }
+    ],
+    "calibration_policy": {
+      "calibration_parent_diagnostics": [
+        {
+          "family": "positive_red_circles",
+          "native_utility": 2.0,
+          "nearest_development_distance": 13.94693374633789,
+          "route_logits": [
+            0.24190975725650787,
+            -2.894131660461426,
+            3.6522247791290283
+          ],
+          "route_margin": 3.4103150367736816,
+          "route_utilities": {
+            "joint3_gain2": 0.012820786476135253,
+            "joint4_gain2": 0.012478236198425294,
+            "native": 2.0
+          },
+          "seed": 8001,
+          "task_id": "red_circles_five_calibration"
+        },
+        {
+          "family": "positive_red_circles",
+          "native_utility": 2.0,
+          "nearest_development_distance": 14.678462982177734,
+          "route_logits": [
+            0.36408066749572754,
+            -3.020054340362549,
+            3.655977725982666
+          ],
+          "route_margin": 3.2918970584869385,
+          "route_utilities": {
+            "joint3_gain2": 0.01442915439605713,
+            "joint4_gain2": 1.0113083219528198,
+            "native": 2.0
+          },
+          "seed": 8002,
+          "task_id": "red_circles_five_calibration"
+        },
+        {
+          "family": "negative_red_circles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 10.503715515136719,
+          "route_logits": [
+            1.6141129732131958,
+            -1.0257707834243774,
+            0.41165685653686523
+          ],
+          "route_margin": 1.2024561166763306,
+          "route_utilities": {
+            "joint3_gain2": 0.004066893100738525,
+            "joint4_gain2": 0.004485842227935791,
+            "native": 0.0
+          },
+          "seed": 8001,
+          "task_id": "red_circles_three_negative_calibration"
+        },
+        {
+          "family": "negative_red_circles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 11.270930290222168,
+          "route_logits": [
+            1.6771578788757324,
+            -1.1002873182296753,
+            0.4231284558773041
+          ],
+          "route_margin": 1.254029393196106,
+          "route_utilities": {
+            "joint3_gain2": 0.003316087007522583,
+            "joint4_gain2": 0.006136830806732178,
+            "native": 0.0
+          },
+          "seed": 8002,
+          "task_id": "red_circles_three_negative_calibration"
+        },
+        {
+          "family": "positive_red_triangles",
+          "native_utility": 2.0,
+          "nearest_development_distance": 7.010264873504639,
+          "route_logits": [
+            1.2925240993499756,
+            -0.8738188743591309,
+            0.5812960267066956
+          ],
+          "route_margin": 0.71122807264328,
+          "route_utilities": {
+            "joint3_gain2": 1.0181908054351807,
+            "joint4_gain2": 2.0156203832626343,
+            "native": 2.0
+          },
+          "seed": 8001,
+          "task_id": "red_triangles_four_calibration"
+        },
+        {
+          "family": "positive_red_triangles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 7.4731364250183105,
+          "route_logits": [
+            1.3810157775878906,
+            -0.933995246887207,
+            0.5529805421829224
+          ],
+          "route_margin": 0.8280352354049683,
+          "route_utilities": {
+            "joint3_gain2": 0.01264717960357666,
+            "joint4_gain2": 0.00597888708114624,
+            "native": 0.0
+          },
+          "seed": 8002,
+          "task_id": "red_triangles_four_calibration"
+        },
+        {
+          "family": "negative_red_triangles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 5.584447860717773,
+          "route_logits": [
+            1.1125199794769287,
+            -0.7568851709365845,
+            0.6443661451339722
+          ],
+          "route_margin": 0.46815383434295654,
+          "route_utilities": {
+            "joint3_gain2": 0.00830013656616211,
+            "joint4_gain2": 0.006116928100585938,
+            "native": 0.0
+          },
+          "seed": 8001,
+          "task_id": "red_triangles_two_negative_calibration"
+        },
+        {
+          "family": "negative_red_triangles",
+          "native_utility": 0.0,
+          "nearest_development_distance": 5.698629856109619,
+          "route_logits": [
+            1.1772010326385498,
+            -0.8155202269554138,
+            0.6383205652236938
+          ],
+          "route_margin": 0.538880467414856,
+          "route_utilities": {
+            "joint3_gain2": 0.009688721656799317,
+            "joint4_gain2": 0.006366990566253662,
+            "native": 0.0
+          },
+          "seed": 8002,
+          "task_id": "red_triangles_two_negative_calibration"
+        }
+      ],
+      "chosen_multiplier": 3.0,
+      "chosen_policy": {
+        "false_positive_count": 0,
+        "false_positive_rate": 0.0,
+        "mean_native_utility": 0.75,
+        "mean_selected_utility": 0.75,
+        "multiplier": 3.0,
+        "parent_count": 8,
+        "radius": 8.11496114730835,
+        "route_coverage": 0.5,
+        "route_dispatch_count": 4,
+        "safe": true,
+        "selected": [
+          {
+            "low_route_margin": false,
+            "native_utility": 2.0,
+            "out_of_support": true,
+            "seed": 8001,
+            "selected_action": "abstain",
+            "selected_utility": 2.0,
+            "task_id": "red_circles_five_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 2.0,
+            "out_of_support": true,
+            "seed": 8002,
+            "selected_action": "abstain",
+            "selected_utility": 2.0,
+            "task_id": "red_circles_five_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": true,
+            "seed": 8001,
+            "selected_action": "abstain",
+            "selected_utility": 0.0,
+            "task_id": "red_circles_three_negative_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": true,
+            "seed": 8002,
+            "selected_action": "abstain",
+            "selected_utility": 0.0,
+            "task_id": "red_circles_three_negative_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 2.0,
+            "out_of_support": false,
+            "seed": 8001,
+            "selected_action": "native",
+            "selected_utility": 2.0,
+            "task_id": "red_triangles_four_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": false,
+            "seed": 8002,
+            "selected_action": "native",
+            "selected_utility": 0.0,
+            "task_id": "red_triangles_four_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": false,
+            "seed": 8001,
+            "selected_action": "native",
+            "selected_utility": 0.0,
+            "task_id": "red_triangles_two_negative_calibration"
+          },
+          {
+            "low_route_margin": false,
+            "native_utility": 0.0,
+            "out_of_support": false,
+            "seed": 8002,
+            "selected_action": "native",
+            "selected_utility": 0.0,
+            "task_id": "red_triangles_two_negative_calibration"
+          }
+        ],
+        "utility_not_worse": true
+      },
+      "chosen_radius": 8.11496114730835,
+      "development_loo_nearest_distance_max": 2.704987049102783,
+      "grid": [
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 0.5,
+          "parent_count": 8,
+          "radius": 1.3524935245513916,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 0.75,
+          "parent_count": 8,
+          "radius": 2.0287402868270874,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 1.0,
+          "parent_count": 8,
+          "radius": 2.704987049102783,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 1.25,
+          "parent_count": 8,
+          "radius": 3.381233811378479,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 1.5,
+          "parent_count": 8,
+          "radius": 4.057480573654175,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 2.0,
+          "parent_count": 8,
+          "radius": 5.409974098205566,
+          "route_coverage": 0.0,
+          "route_dispatch_count": 0,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        },
+        {
+          "false_positive_count": 0,
+          "false_positive_rate": 0.0,
+          "mean_native_utility": 0.75,
+          "mean_selected_utility": 0.75,
+          "multiplier": 3.0,
+          "parent_count": 8,
+          "radius": 8.11496114730835,
+          "route_coverage": 0.5,
+          "route_dispatch_count": 4,
+          "safe": true,
+          "selected": [
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 2.0,
+              "task_id": "red_circles_five_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8001,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": true,
+              "seed": 8002,
+              "selected_action": "abstain",
+              "selected_utility": 0.0,
+              "task_id": "red_circles_three_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 2.0,
+              "out_of_support": false,
+              "seed": 8001,
+              "selected_action": "native",
+              "selected_utility": 2.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": false,
+              "seed": 8002,
+              "selected_action": "native",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_four_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": false,
+              "seed": 8001,
+              "selected_action": "native",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            },
+            {
+              "low_route_margin": false,
+              "native_utility": 0.0,
+              "out_of_support": false,
+              "seed": 8002,
+              "selected_action": "native",
+              "selected_utility": 0.0,
+              "task_id": "red_triangles_two_negative_calibration"
+            }
+          ],
+          "utility_not_worse": true
+        }
+      ],
+      "heldout_outcomes_visible": false,
+      "max_false_positive_rate": 0.25,
+      "objective": "max-route-coverage-subject-to-calibration-collateral-cap"
+    },
+    "class_balance": "inverse-label-frequency",
+    "development_examples": [
+      {
+        "candidate_scores": {
+          "abstain": -2.0,
+          "joint3_gain2": -0.019396654129028322,
+          "joint4_gain2": -2.008428409576416,
+          "native": -2.0
+        },
+        "family": "positive_red_apples",
+        "feature_sha256": "af0f8395213ef9581d14b29ec4bb5483c27d5cb282aa4bc82e7f40479033221b",
+        "label": "joint3_gain2",
+        "label_score": -0.019396654129028322,
+        "seed": 611,
+        "task_id": "red_apples_canonical"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -2.0,
+          "joint3_gain2": -0.019047948837280275,
+          "joint4_gain2": -0.012628005981445313,
+          "native": -2.0
+        },
+        "family": "positive_red_apples",
+        "feature_sha256": "5f0775e13811f1e99efe4a3affe28f6ef07f9f63dcbb21dc4aed943045b1a638",
+        "label": "joint4_gain2",
+        "label_score": -0.012628005981445313,
+        "seed": 6172,
+        "task_id": "red_apples_canonical"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -0.0,
+          "joint3_gain2": -0.005837416172027588,
+          "joint4_gain2": -0.005467241764068604,
+          "native": -0.0
+        },
+        "family": "negative_red_apples",
+        "feature_sha256": "3c288f62002764d58b42e231a82d2a9acbfb903d70cd06afa6dae2382509067e",
+        "label": "native",
+        "label_score": -0.0,
+        "seed": 611,
+        "task_id": "red_apples_three_negative"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -0.0,
+          "joint3_gain2": -0.003359508514404297,
+          "joint4_gain2": -0.006142358303070069,
+          "native": -0.0
+        },
+        "family": "negative_red_apples",
+        "feature_sha256": "cd0041a8a88bd09b2a36d6d3032f91c2d3ece23ca997ac95eff151d6af176fef",
+        "label": "native",
+        "label_score": -0.0,
+        "seed": 6172,
+        "task_id": "red_apples_three_negative"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -0.0,
+          "joint3_gain2": -0.006349470615386963,
+          "joint4_gain2": -0.00844612979888916,
+          "native": -0.0
+        },
+        "family": "positive_red_squares",
+        "feature_sha256": "027f8dd68b311abc27d66e564ca7abc2590043d323396540e9f1e595a70be8a6",
+        "label": "native",
+        "label_score": -0.0,
+        "seed": 611,
+        "task_id": "red_squares_three"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -0.0,
+          "joint3_gain2": -0.003241177797317505,
+          "joint4_gain2": -0.002574296236038208,
+          "native": -0.0
+        },
+        "family": "positive_red_squares",
+        "feature_sha256": "e18d4a7285d1d23425fa0bd9ea4ea4bc5e8c4a6718ed1a463b3fb86db6b739b5",
+        "label": "native",
+        "label_score": -0.0,
+        "seed": 6172,
+        "task_id": "red_squares_three"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -0.0,
+          "joint3_gain2": -0.006146589756011963,
+          "joint4_gain2": -0.00560443639755249,
+          "native": -0.0
+        },
+        "family": "negative_red_squares",
+        "feature_sha256": "a2da0c7bf3781045e6de4759eb9ea91d660f574a53b50f2dfc357f16be922e09",
+        "label": "native",
+        "label_score": -0.0,
+        "seed": 611,
+        "task_id": "red_squares_two_negative"
+      },
+      {
+        "candidate_scores": {
+          "abstain": -0.0,
+          "joint3_gain2": -0.014551436424255371,
+          "joint4_gain2": -0.0058710150718688965,
+          "native": -0.0
+        },
+        "family": "negative_red_squares",
+        "feature_sha256": "6f09bef6560d1fb4ccc325ce36b83227ae8c91d8c5b3a9ff017e4868afe80105",
+        "label": "native",
+        "label_score": -0.0,
+        "seed": 6172,
+        "task_id": "red_squares_two_negative"
+      }
+    ],
+    "development_feature_matrix": [
+      [
+        0.2111077904701233,
+        -1.7266298532485962,
+        0.15268230438232422,
+        -0.19665707647800446,
+        0.017549270763993263,
+        -0.30780717730522156,
+        0.0026528488378971815,
+        0.12111997604370117,
+        0.032745663076639175,
+        0.1659887284040451,
+        0.11436029523611069,
+        -0.25929298996925354,
+        -0.20751208066940308,
+        -1.3371883630752563,
+        3.2854573726654053,
+        -0.07382813096046448,
+        13.304641723632812,
+        15.304490089416504,
+        15.100293159484863,
+        14.193717002868652,
+        14.79645824432373,
+        13.844573020935059,
+        14.884514808654785,
+        15.032797813415527,
+        15.305545806884766,
+        14.221062660217285,
+        15.548293113708496,
+        15.780059814453125,
+        14.59890365600586,
+        15.099993705749512,
+        16.819866180419922,
+        14.927962303161621
+      ],
+      [
+        0.2039150446653366,
+        -1.7171639204025269,
+        0.14673469960689545,
+        -0.17911766469478607,
+        0.014227770268917084,
+        -0.3186229169368744,
+        0.008062329143285751,
+        0.12133287638425827,
+        0.01863773725926876,
+        0.17007164657115936,
+        0.11985800415277481,
+        -0.2554168403148651,
+        -0.19189555943012238,
+        -1.3594121932983398,
+        3.261924982070923,
+        -0.08521922677755356,
+        13.287646293640137,
+        15.289314270019531,
+        15.083395957946777,
+        14.179923057556152,
+        14.778546333312988,
+        13.822657585144043,
+        14.873577117919922,
+        15.018547058105469,
+        15.290663719177246,
+        14.203455924987793,
+        15.53543758392334,
+        15.766669273376465,
+        14.580741882324219,
+        15.079257011413574,
+        16.798233032226562,
+        14.914592742919922
+      ],
+      [
+        0.11631368845701218,
+        -1.7203178405761719,
+        0.1642659306526184,
+        -0.3336869180202484,
+        0.08570348471403122,
+        -0.2883148491382599,
+        0.013239514082670212,
+        0.24752096831798553,
+        -0.001909598708152771,
+        0.22372454404830933,
+        0.09023211151361465,
+        -0.1960078328847885,
+        -0.2019634246826172,
+        -1.403493046760559,
+        3.301697015762329,
+        -0.13940660655498505,
+        13.194668769836426,
+        15.136470794677734,
+        15.016131401062012,
+        14.093658447265625,
+        14.727920532226562,
+        13.738348960876465,
+        14.78988265991211,
+        14.953900337219238,
+        15.218293190002441,
+        14.109908103942871,
+        15.45598316192627,
+        15.692063331604004,
+        14.514286994934082,
+        15.004414558410645,
+        16.69919776916504,
+        14.840556144714355
+      ],
+      [
+        0.10842379927635193,
+        -1.7132682800292969,
+        0.15793190896511078,
+        -0.31960853934288025,
+        0.08080276846885681,
+        -0.29949167370796204,
+        0.018591297790408134,
+        0.2454005628824234,
+        -0.0171870868653059,
+        0.23221422731876373,
+        0.097242571413517,
+        -0.19103701412677765,
+        -0.18755078315734863,
+        -1.4216283559799194,
+        3.282320976257324,
+        -0.14868837594985962,
+        13.170727729797363,
+        15.125930786132812,
+        14.995475769042969,
+        14.076408386230469,
+        14.709155082702637,
+        13.7152099609375,
+        14.778359413146973,
+        14.935402870178223,
+        15.205241203308105,
+        14.09768009185791,
+        15.4420166015625,
+        15.677635192871094,
+        14.489222526550293,
+        14.983451843261719,
+        16.68145751953125,
+        14.824055671691895
+      ],
+      [
+        0.21768851578235626,
+        -1.6764588356018066,
+        0.022478224709630013,
+        -0.17927058041095734,
+        -0.004742833320051432,
+        -0.19315214455127716,
+        -0.04684315249323845,
+        0.10534048080444336,
+        0.022264325991272926,
+        0.1623108834028244,
+        0.17982302606105804,
+        -0.3226408362388611,
+        -0.25197634100914,
+        -1.3481603860855103,
+        3.2450358867645264,
+        -0.25177907943725586,
+        13.256573677062988,
+        15.155713081359863,
+        15.055790901184082,
+        14.113112449645996,
+        14.761482238769531,
+        13.774612426757812,
+        14.834185600280762,
+        14.998573303222656,
+        15.25658893585205,
+        14.180660247802734,
+        15.51003646850586,
+        15.727249145507812,
+        14.572962760925293,
+        15.063899040222168,
+        16.734413146972656,
+        14.899585723876953
+      ],
+      [
+        0.20934128761291504,
+        -1.665871500968933,
+        0.015586246736347675,
+        -0.16635294258594513,
+        -0.013812086544930935,
+        -0.20479829609394073,
+        -0.04474899172782898,
+        0.09839311242103577,
+        0.006625200156122446,
+        0.1697467565536499,
+        0.1889055371284485,
+        -0.3180711567401886,
+        -0.23755808174610138,
+        -1.3668180704116821,
+        3.227614164352417,
+        -0.26224440336227417,
+        13.236454963684082,
+        15.135566711425781,
+        15.035231590270996,
+        14.097969055175781,
+        14.741272926330566,
+        13.75167465209961,
+        14.821599006652832,
+        14.977363586425781,
+        15.241413116455078,
+        14.162124633789062,
+        15.497581481933594,
+        15.708748817443848,
+        14.550902366638184,
+        15.04122543334961,
+        16.72109031677246,
+        14.885476112365723
+      ],
+      [
+        0.18014587461948395,
+        -1.705468773841858,
+        0.010596126317977905,
+        -0.17319445312023163,
+        -0.008448079228401184,
+        -0.1954200714826584,
+        -0.05929870530962944,
+        0.15267007052898407,
+        0.03657779470086098,
+        0.1712392419576645,
+        0.17246125638484955,
+        -0.3061436116695404,
+        -0.2331664115190506,
+        -1.3816156387329102,
+        3.285388231277466,
+        -0.27902600169181824,
+        13.241265296936035,
+        15.111353874206543,
+        15.046749114990234,
+        14.115500450134277,
+        14.74952220916748,
+        13.764832496643066,
+        14.822436332702637,
+        14.985941886901855,
+        15.247077941894531,
+        14.170235633850098,
+        15.505146980285645,
+        15.717178344726562,
+        14.554405212402344,
+        15.048932075500488,
+        16.658559799194336,
+        14.880194664001465
+      ],
+      [
+        0.17014668881893158,
+        -1.6928941011428833,
+        0.004741599317640066,
+        -0.15992218255996704,
+        -0.017149537801742554,
+        -0.2088382989168167,
+        -0.05711962655186653,
+        0.14667333662509918,
+        0.02120714820921421,
+        0.17982347309589386,
+        0.18018031120300293,
+        -0.3001178205013275,
+        -0.22059255838394165,
+        -1.3997081518173218,
+        3.264087438583374,
+        -0.28881460428237915,
+        13.221210479736328,
+        15.087634086608887,
+        15.02863597869873,
+        14.099629402160645,
+        14.729752540588379,
+        13.743316650390625,
+        14.806976318359375,
+        14.96610164642334,
+        15.233471870422363,
+        14.154313087463379,
+        15.488444328308105,
+        15.701469421386719,
+        14.532218933105469,
+        15.02824878692627,
+        16.64812660217285,
+        14.865662574768066
+      ]
+    ],
+    "development_fit_accuracy": 1.0,
+    "development_label_distribution": {
+      "abstain": 0,
+      "joint3_gain2": 1,
+      "joint4_gain2": 1,
+      "native": 6
+    },
+    "development_labels": [
+      "joint3_gain2",
+      "joint4_gain2",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native"
+    ],
+    "development_loo_nearest_distance_max": 2.704987049102783,
+    "development_predictions": [
+      "joint3_gain2",
+      "joint4_gain2",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native"
+    ],
+    "feature_dimension": 32,
+    "forest_promotion": {
+      "before": "b4a010203e3272946ed23e1930f0f6358ad1792ba2bbfe8478970bebd036dad3",
+      "policy_node_id": "3bdcab720d0673ad50b615129fa7020e2c04c9edf50fe58c25596f02884f4596",
+      "policy_observation_id": "4fe7b26e0ee1b49ffff9f3ba3616064f41475d6e45b1a083776c213c3b0d8846",
+      "promoted_head": "3bdcab720d0673ad50b615129fa7020e2c04c9edf50fe58c25596f02884f4596",
+      "promotion_decision_id": "af929fce392b91589bbde0cec306e8f1eee1c9c4c89a5e4af5cf5410f2736505",
+      "rewind_exact": true,
+      "rewound_head": "b4a010203e3272946ed23e1930f0f6358ad1792ba2bbfe8478970bebd036dad3",
+      "root_head": "b4a010203e3272946ed23e1930f0f6358ad1792ba2bbfe8478970bebd036dad3",
+      "selector_manifest_ref": {
+        "bytes": 28668,
+        "media_type": "application/json",
+        "metadata": {
+          "kind": "native-state-selector-manifest"
+        },
+        "schema": "saturn-future-object-reference-v1",
+        "sha256": "8e7ec7ec153232737bd703a3eed78933259a1f7cd173618bc75d733c8e42d6db"
+      },
+      "selector_package_ref": {
+        "bytes": 8782,
+        "media_type": "application/octet-stream",
+        "metadata": {
+          "kind": "native-state-route-selector",
+          "schema": "saturn-native-state-route-selector-v6"
+        },
+        "schema": "saturn-future-object-reference-v1",
+        "sha256": "36edcdee1dd9a7556fee8fd278f5aa66d9ce48a9538f0a3eacfa098027255431"
+      }
+    },
+    "heldout_outcomes_visible_at_compile": false,
+    "leave_one_family_out": {
+      "negative_red_apples": {
+        "accuracy": 0.0,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "native",
+          "native"
+        ],
+        "predictions": [
+          "joint3_gain2",
+          "joint3_gain2"
+        ]
+      },
+      "negative_red_squares": {
+        "accuracy": 1.0,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "native",
+          "native"
+        ],
+        "predictions": [
+          "native",
+          "native"
+        ]
+      },
+      "positive_red_apples": {
+        "accuracy": 0.0,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "joint3_gain2",
+          "joint4_gain2"
+        ],
+        "predictions": [
+          "native",
+          "native"
+        ]
+      },
+      "positive_red_squares": {
+        "accuracy": 0.5,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "native",
+          "native"
+        ],
+        "predictions": [
+          "native",
+          "joint4_gain2"
+        ]
+      }
+    },
+    "majority_constant_policy": "native",
+    "majority_constant_policy_fit_accuracy": 0.75,
+    "objective_mad_weight": 0.001,
+    "package_bytes": 8782,
+    "package_sha256": "36edcdee1dd9a7556fee8fd278f5aa66d9ce48a9538f0a3eacfa098027255431",
+    "persist_serving_features": true,
+    "pool_bins": 16,
+    "ridge_lambda": 1.0,
+    "route_action_ids": [
+      "native",
+      "joint3_gain2",
+      "joint4_gain2"
+    ],
+    "schema": "saturn-native-state-route-selector-v6",
+    "selector_version": "v6-calibrated-support-aware-three-route",
+    "serving_inputs": [
+      "earlier-native-state-only"
+    ],
+    "source_site": "joint.1",
+    "source_step": 0,
+    "source_stream": "text",
+    "support_metric": "standardized-nearest-development-native-state",
+    "support_radius": 8.11496114730835,
+    "support_radius_multiplier": 3.0
+  },
+  "selector_diagnostics": {
+    "abstain_margin": 0.1,
+    "abstention_count": 2,
+    "development_fit_accuracy": 1.0,
+    "fit_gain_over_majority": 0.25,
+    "heldout_dispatch_constant": false,
+    "leave_one_family_out": {
+      "negative_red_apples": {
+        "accuracy": 0.0,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "native",
+          "native"
+        ],
+        "predictions": [
+          "joint3_gain2",
+          "joint3_gain2"
+        ]
+      },
+      "negative_red_squares": {
+        "accuracy": 1.0,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "native",
+          "native"
+        ],
+        "predictions": [
+          "native",
+          "native"
+        ]
+      },
+      "positive_red_apples": {
+        "accuracy": 0.0,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "joint3_gain2",
+          "joint4_gain2"
+        ],
+        "predictions": [
+          "native",
+          "native"
+        ]
+      },
+      "positive_red_squares": {
+        "accuracy": 0.5,
+        "fit_rows": 6,
+        "heldout_rows": 2,
+        "labels": [
+          "native",
+          "native"
+        ],
+        "predictions": [
+          "native",
+          "joint4_gain2"
+        ]
+      }
+    },
+    "majority_constant_policy": "native",
+    "majority_constant_policy_fit_accuracy": 0.75,
+    "route_action_ids": [
+      "native",
+      "joint3_gain2",
+      "joint4_gain2"
+    ],
+    "selector_matches_constant_atlas_outcomes": {
+      "fixed_joint3": false,
+      "joint4_control": false,
+      "native": true
+    },
+    "selector_matches_constant_outcomes": {
+      "fixed_joint3": false,
+      "joint4_control": false,
+      "native": true
+    },
+    "support_metric": "standardized-nearest-development-native-state",
+    "support_nearest_distance_max": 13.630912780761719,
+    "support_nearest_distance_min": 2.8050310611724854,
+    "support_out_of_support_count": 2,
+    "support_radius": 8.11496114730835,
+    "support_radius_multiplier": 3.0,
+    "support_rows": 6
+  },
+  "selector_dispatch_actions": {
+    "abstain": 2,
+    "native": 4
+  },
+  "selector_schema_identity": {
+    "expected": "saturn-native-state-route-selector-v6",
+    "matches": true,
+    "observed": "saturn-native-state-route-selector-v6",
+    "raw_report_preserved": true,
+    "selector_version": "v6-calibrated-support-aware-three-route"
+  }
+}

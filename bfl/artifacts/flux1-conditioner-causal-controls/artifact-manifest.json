@@ -1,0 +1,564 @@
+{
+  "items": [
+    {
+      "group": "semantic-contrast",
+      "kind": "png",
+      "path": "images/semantic-contrast/00_red_native.png",
+      "prompt": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+      "role": "native",
+      "seed": 4242,
+      "sha256": "2d3b033529605b18ab099743e0cc51c9afb19c2ba2c254aa3a73253751cd00f9"
+    },
+    {
+      "group": "semantic-contrast",
+      "kind": "png",
+      "path": "images/semantic-contrast/00_red_adapted.png",
+      "prompt": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+      "role": "adapted",
+      "seed": 4242,
+      "sha256": "b8f82be542c98d74ce2d0985f293460e1fba92b2f7ee3284e8a6bb88674d1c5b"
+    },
+    {
+      "group": "semantic-contrast",
+      "kind": "png",
+      "path": "images/semantic-contrast/01_blue_native.png",
+      "prompt": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light",
+      "role": "native",
+      "seed": 4242,
+      "sha256": "69ad3b3dc5b7682c77dd4fd594e134255532fd1b977bcd2df90b75fda086b9dd"
+    },
+    {
+      "group": "semantic-contrast",
+      "kind": "png",
+      "path": "images/semantic-contrast/01_blue_adapted.png",
+      "prompt": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light",
+      "role": "adapted",
+      "seed": 4242,
+      "sha256": "e5259b6f53ee2dbbf9b1011ed57a2007a1f47a54be01039973c48edbe8f369d4"
+    },
+    {
+      "group": "semantic-contrast",
+      "kind": "contact_sheet",
+      "path": "images/semantic-contrast/contact-sheet.png",
+      "sha256": "e60a576a3f967f779725905ea1ddb0d514ee1c6a63d5727379aced6b77ecf175"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/00_held-out-00_native.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "native",
+      "seed": 93002,
+      "sha256": "76ac17a1aef882e6f47d45f564c38b8d4d3769c2f87eb98fc8ed251c5c6f3483"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/00_held-out-00_adapted.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "adapted",
+      "seed": 93002,
+      "sha256": "79bb7dbf73a77b66ae37043564a026651012f27d49a6db0d22bc930b82f93d35"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/01_held-out-01_native.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "native",
+      "seed": 93003,
+      "sha256": "f53cf596b2c7a2f552fe3d5ad46988252ea34f4524b0f7468ef0c5c3be494c23"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/01_held-out-01_adapted.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "adapted",
+      "seed": 93003,
+      "sha256": "9abc715adf27c03f45a75245ceceb766fe1dcb33c9775d01851651acd1ff1031"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/02_held-out-02_native.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "native",
+      "seed": 93004,
+      "sha256": "ef1a614d7dde377660f2f5af308fafe1b3d522cb758fa98dfa1353390da843e8"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/02_held-out-02_adapted.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "adapted",
+      "seed": 93004,
+      "sha256": "9a62f9d955a71da98a7b30cd486cbc61ce5e4dcdc2cfdacf9b17d6f59a34f932"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/03_held-out-03_native.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "native",
+      "seed": 93005,
+      "sha256": "3131572c2b9451f0ce107463bcd40352c8c51bfc19decee32bd3292eba5d561b"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/03_held-out-03_adapted.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "adapted",
+      "seed": 93005,
+      "sha256": "23eee5e7f4ea7d75356e378b2f9381a166887942eb5510d4c3d20066cb2afd10"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/04_held-out-04_native.png",
+      "prompt": "a white rabbit under a red umbrella in a rainy garden, photorealistic",
+      "role": "native",
+      "seed": 93006,
+      "sha256": "2674d0691158d2adc91ca6855f4eab9dc5ac5f65ab98cfc3bafffe5a981e592c"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/04_held-out-04_adapted.png",
+      "prompt": "a white rabbit under a red umbrella in a rainy garden, photorealistic",
+      "role": "adapted",
+      "seed": 93006,
+      "sha256": "d7888bdb8d357ca1020e1b62cdea6ba5a0aafa1de0c1c7f48d9717419189ab52"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/05_held-out-05_native.png",
+      "prompt": "three yellow pears on a blue ceramic plate, studio photograph",
+      "role": "native",
+      "seed": 93007,
+      "sha256": "1e4a77645a49f18beb6d076db851d15f6d660c1098ecf24a39520d80623a5474"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/05_held-out-05_adapted.png",
+      "prompt": "three yellow pears on a blue ceramic plate, studio photograph",
+      "role": "adapted",
+      "seed": 93007,
+      "sha256": "07367f291574fba5ebe9e7d95fdec47641eaeb7947a43e9f69c2c6e59aec955f"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/06_held-out-06_native.png",
+      "prompt": "a black cat beneath a wooden table in a quiet room, soft window light",
+      "role": "native",
+      "seed": 93008,
+      "sha256": "e66610003a968a56ece45502133e03d063d1ace6881decdd36bed1b8986c58d5"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/06_held-out-06_adapted.png",
+      "prompt": "a black cat beneath a wooden table in a quiet room, soft window light",
+      "role": "adapted",
+      "seed": 93008,
+      "sha256": "d2ae5f188edac9bd7faae968cbf11d59f2d4600123231f7b89b20eae912cb450"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/07_held-out-07_native.png",
+      "prompt": "a red sailboat crossing a turquoise bay at noon, travel photograph",
+      "role": "native",
+      "seed": 93009,
+      "sha256": "774b444c4a52427e179eb4236edd47af107d4204d29fead99ce5dbd3a80a9c1f"
+    },
+    {
+      "group": "held-out",
+      "kind": "png",
+      "path": "images/held-out/07_held-out-07_adapted.png",
+      "prompt": "a red sailboat crossing a turquoise bay at noon, travel photograph",
+      "role": "adapted",
+      "seed": 93009,
+      "sha256": "37f5efaad0cf9c5e53c745300ec1d6ac411a5a1bbbb9268635dd0fce35faf3d4"
+    },
+    {
+      "group": "held-out",
+      "kind": "contact_sheet",
+      "path": "images/held-out/contact-sheet.png",
+      "sha256": "7b4c1781587f0f73f03a9019bd26d262a99a8c0fb516749cdea91bdea990a40e"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/00_held-out-lighthouse-from-corgi_native.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "native",
+      "seed": 4242,
+      "sha256": "94f0ff96f6911dfad6dd2f7a0548a5c43de836637d5e29fa3784489ae1c92be4"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/00_held-out-lighthouse-from-corgi_adapted.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "adapted",
+      "seed": 4242,
+      "sha256": "41ad1eb8bda2988a2388d6c15ebc5fd5360e1d29b196436192d0f21ba046ef56"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/00_held-out-lighthouse-from-corgi_zero.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "zero",
+      "seed": 4242,
+      "sha256": "eb4e3f54ff127259fd4c02207d8bf6db3afd8386d8a815d0d493f6da2c30c2f1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/00_held-out-lighthouse-from-corgi_wrong_source.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "wrong_source",
+      "seed": 4242,
+      "sha256": "2990226a29d9101d378b2e9ac5d6066642b6de27e04601f51d48aa5844437b2b"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/00_held-out-lighthouse-from-corgi_native_wrong_source.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "native_wrong_source",
+      "seed": 4242,
+      "sha256": "415ed39215f0d9cf73347656712e3cb3a36a00a78c45c6592e2475dc95cb462d"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/01_held-out-lighthouse-from-corgi_native.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "native",
+      "seed": 9001,
+      "sha256": "f467fee56b554f4ce0395cf0a2c4b50c319771ea3dab67fefef3dc15c326bf32"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/01_held-out-lighthouse-from-corgi_adapted.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "adapted",
+      "seed": 9001,
+      "sha256": "9c1e7a459b67ded47adb29b5e5410064e0a1d7f753fac644f7422cae9437c66e"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/01_held-out-lighthouse-from-corgi_zero.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "zero",
+      "seed": 9001,
+      "sha256": "ab3d34a58623b04f0237fccc8f698fd6e2c7616cb71f934837aada4350fcff56"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/01_held-out-lighthouse-from-corgi_wrong_source.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "wrong_source",
+      "seed": 9001,
+      "sha256": "43ac19266c0a198462c52793f9e2123a0e7d9ef2fb3b3210d2a9149764dedf66"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/01_held-out-lighthouse-from-corgi_native_wrong_source.png",
+      "prompt": "a lighthouse in a storm with waves breaking over the rocks, dramatic matte painting",
+      "role": "native_wrong_source",
+      "seed": 9001,
+      "sha256": "7fa68c849f35d733be8f8403366e17bc7d60d60c2ebe1dcc6ff77720b705f2e2"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/02_held-out-corgi-from-lighthouse_native.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "native",
+      "seed": 4242,
+      "sha256": "4979e85f526ba0092e1b05d75b276be0b29ebffa03a2b11f265fedfd8eaf5add"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/02_held-out-corgi-from-lighthouse_adapted.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "adapted",
+      "seed": 4242,
+      "sha256": "2990226a29d9101d378b2e9ac5d6066642b6de27e04601f51d48aa5844437b2b"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/02_held-out-corgi-from-lighthouse_zero.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "zero",
+      "seed": 4242,
+      "sha256": "eb4e3f54ff127259fd4c02207d8bf6db3afd8386d8a815d0d493f6da2c30c2f1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/02_held-out-corgi-from-lighthouse_wrong_source.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "wrong_source",
+      "seed": 4242,
+      "sha256": "41ad1eb8bda2988a2388d6c15ebc5fd5360e1d29b196436192d0f21ba046ef56"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/02_held-out-corgi-from-lighthouse_native_wrong_source.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "native_wrong_source",
+      "seed": 4242,
+      "sha256": "2f3ee2c0aee1c82b339e171cf2f74e680b7032c198a7a5534d14fac23fa0180f"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/03_held-out-corgi-from-lighthouse_native.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "native",
+      "seed": 9001,
+      "sha256": "fc2de61609f7bc490049a08a57596a41a7891f4b3ae5ee251f84226dd08860e1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/03_held-out-corgi-from-lighthouse_adapted.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "adapted",
+      "seed": 9001,
+      "sha256": "43ac19266c0a198462c52793f9e2123a0e7d9ef2fb3b3210d2a9149764dedf66"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/03_held-out-corgi-from-lighthouse_zero.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "zero",
+      "seed": 9001,
+      "sha256": "ab3d34a58623b04f0237fccc8f698fd6e2c7616cb71f934837aada4350fcff56"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/03_held-out-corgi-from-lighthouse_wrong_source.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "wrong_source",
+      "seed": 9001,
+      "sha256": "9c1e7a459b67ded47adb29b5e5410064e0a1d7f753fac644f7422cae9437c66e"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/03_held-out-corgi-from-lighthouse_native_wrong_source.png",
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "role": "native_wrong_source",
+      "seed": 9001,
+      "sha256": "0979954afcf11ae184b5cb9cf5eaeaf9302e87385bda95468a38cec0034c375a"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/04_held-out-oranges-from-cabin_native.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "native",
+      "seed": 4242,
+      "sha256": "23ad74906a6d262bef54a145457c10bdc6913ef01291cd13ca3ffd4a29d53c57"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/04_held-out-oranges-from-cabin_adapted.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "adapted",
+      "seed": 4242,
+      "sha256": "5c1720cbfe0fd2f7c096823465fdcb26fc99491a63141a3ac57138e3d92a6990"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/04_held-out-oranges-from-cabin_zero.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "zero",
+      "seed": 4242,
+      "sha256": "eb4e3f54ff127259fd4c02207d8bf6db3afd8386d8a815d0d493f6da2c30c2f1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/04_held-out-oranges-from-cabin_wrong_source.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "wrong_source",
+      "seed": 4242,
+      "sha256": "03f8a7723a45c45b5640c3f98eb43a5f6a3b24b357279c8bc8e3b161cb4c8815"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/04_held-out-oranges-from-cabin_native_wrong_source.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "native_wrong_source",
+      "seed": 4242,
+      "sha256": "b3e047d3d01a277989dbbf1274919fb42621e54a538910711173e996a1609b3f"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/05_held-out-oranges-from-cabin_native.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "native",
+      "seed": 9001,
+      "sha256": "cbe6165b674d9b8fe8d4f94e68f1720693b893df970e6c2020efa0cb333f0069"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/05_held-out-oranges-from-cabin_adapted.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "adapted",
+      "seed": 9001,
+      "sha256": "ee967d638ef90ce1285fbaf0a78f20dca0ababce1b5f25b69cfe0c54a279013c"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/05_held-out-oranges-from-cabin_zero.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "zero",
+      "seed": 9001,
+      "sha256": "ab3d34a58623b04f0237fccc8f698fd6e2c7616cb71f934837aada4350fcff56"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/05_held-out-oranges-from-cabin_wrong_source.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "wrong_source",
+      "seed": 9001,
+      "sha256": "1e95e7b2778134035a0fa0227c1ebd80034c371a78d63a45fba78fa46efe52c1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/05_held-out-oranges-from-cabin_native_wrong_source.png",
+      "prompt": "a bowl of oranges beside a linen napkin, natural window light, photograph",
+      "role": "native_wrong_source",
+      "seed": 9001,
+      "sha256": "2062c7f74c6e6432b3f223f07efedcb6a09c832077c70c3621c1e00de5843ec1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/06_held-out-cabin-from-oranges_native.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "native",
+      "seed": 4242,
+      "sha256": "0ea62836b791411ae42bee5df3f46bc57f373774853fa4a2bb26329011d3927d"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/06_held-out-cabin-from-oranges_adapted.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "adapted",
+      "seed": 4242,
+      "sha256": "03f8a7723a45c45b5640c3f98eb43a5f6a3b24b357279c8bc8e3b161cb4c8815"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/06_held-out-cabin-from-oranges_zero.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "zero",
+      "seed": 4242,
+      "sha256": "eb4e3f54ff127259fd4c02207d8bf6db3afd8386d8a815d0d493f6da2c30c2f1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/06_held-out-cabin-from-oranges_wrong_source.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "wrong_source",
+      "seed": 4242,
+      "sha256": "5c1720cbfe0fd2f7c096823465fdcb26fc99491a63141a3ac57138e3d92a6990"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/06_held-out-cabin-from-oranges_native_wrong_source.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "native_wrong_source",
+      "seed": 4242,
+      "sha256": "edd4d25cc4c016a106d82c08a80fc615f92d160b1ea42b415dd2551018cc5558"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/07_held-out-cabin-from-oranges_native.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "native",
+      "seed": 9001,
+      "sha256": "98399bda743549486ca79a41bfd09050183618c0cdf901f0b3f4b90ab9905e6c"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/07_held-out-cabin-from-oranges_adapted.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "adapted",
+      "seed": 9001,
+      "sha256": "1e95e7b2778134035a0fa0227c1ebd80034c371a78d63a45fba78fa46efe52c1"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/07_held-out-cabin-from-oranges_zero.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "zero",
+      "seed": 9001,
+      "sha256": "ab3d34a58623b04f0237fccc8f698fd6e2c7616cb71f934837aada4350fcff56"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/07_held-out-cabin-from-oranges_wrong_source.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "wrong_source",
+      "seed": 9001,
+      "sha256": "ee967d638ef90ce1285fbaf0a78f20dca0ababce1b5f25b69cfe0c54a279013c"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "png",
+      "path": "images/causal-controls/07_held-out-cabin-from-oranges_native_wrong_source.png",
+      "prompt": "a snowy cabin under the northern lights, wide landscape photograph",
+      "role": "native_wrong_source",
+      "seed": 9001,
+      "sha256": "8ccb5c781ba5925782413a78977d76a9c43ee67227966d0882b4cab85645cfa5"
+    },
+    {
+      "group": "causal-controls",
+      "kind": "contact_sheet",
+      "path": "images/causal-controls/contact-sheet.png",
+      "sha256": "6499290d253995d6b4515f402dcfe78d80c38861f35551913ffb4a8fbb7c1f98"
+    }
+  ],
+  "root": "images",
+  "schema": "saturn-flux1-smol-artifacts-v1"
+}

@@ -1,0 +1,176 @@
+{
+  "base_worker_sha256": "be180bc50084bb435e2d77cbdc144182d0aceddf9bfd823f02d255e5ddff11b6",
+  "claim_boundary": "4 fixed-seed prompt-paired living-room specimens in one frozen model; prompt-level couch translation, not portable capability packaging",
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "SATURN_LIVING_ROOM_CONFIG=config.json",
+    "PYTHONPATH=saturn_src:mrun_src:mstack_experiments:common_src:.",
+    "uv",
+    "run",
+    "--project",
+    "generative-image-model-atlas",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "Pillow>=9.0",
+    "python",
+    "-u",
+    "run_living_room_hotpatch.py"
+  ],
+  "config_sha256": "8fbd7999e195a4d3929ced526fc7cb3656d7e1482b6c409c0b58364272135010",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "experiment": "saturn-flux-living-room-hotpatch-cinema-20260817-v2",
+  "instrument": "same-parent couch translation with native consumer and collateral ROIs",
+  "log_sha256": "98a6ab8379cc69a468cc772c112a1db3178b5c3a544f81eebbfcfa5364d3a344",
+  "model_id": "black-forest-labs/FLUX.2-klein-4B",
+  "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+  "mrun_job_id": "job-2cfbe0f01096",
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "SATURN_LIVING_ROOM_CONFIG=config.json",
+        "PYTHONPATH=saturn_src:mrun_src:mstack_experiments:common_src:.",
+        "uv",
+        "run",
+        "--project",
+        "generative-image-model-atlas",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "Pillow>=9.0",
+        "python",
+        "-u",
+        "run_living_room_hotpatch.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-2cfbe0f01096",
+      "log_path": "/mnt/big/mrun-work/job-2cfbe0f01096/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787029265.8955545
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787029266.6466067
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787029266.682876
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787029266.7217603
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787029331.040531
+        },
+        {
+          "name": "finished",
+          "ts": 1787029331.4578958
+        }
+      ]
+    },
+    "elapsed_s": 65.6,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "0d3f630ab074859eaa832c62c832bc83bc016cde3fd962aa9c0448da77306f31",
+      "size_bytes": 3881474
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 18955.1,
+    "peak_vram_mb": 9634.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "payload": {
+    "cached_prefixes_per_specimen": 2,
+    "contexts": [
+      "controlled daylight"
+    ],
+    "exact_scalar_suffixes": 20,
+    "hard_runtime_limit_seconds": 840,
+    "logical_batched_suffixes": 48,
+    "one_model_load": true,
+    "physical_batched_suffix_calls": 8,
+    "specimens": 4
+  },
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "basis": "measured prior real-hotpatch panel; same 256x256/4-step geometry",
+    "est_wall_s": 240,
+    "ram_mb": 26000,
+    "vram_mb": 10000
+  },
+  "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "capture source cut-0/cut-2 once per specimen; batch target doses, opposite direction, and same-norm sham; scalar-confirm endpoints and replay native parent before/after; retain every rejected branch",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "estimated_from_prior_job_seconds": 47.45,
+    "execution_model": "finite_local_program",
+    "hard_timeout_seconds": 840,
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "logical_branches": 68,
+    "logical_checkpoint_replays": 68,
+    "logical_operations": 68,
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1",
+    "stop_condition": "all 4 specimens complete and certificate gates evaluated"
+  },
+  "schema": "saturn-living-room-hotpatch-mrun-request-v1",
+  "task_family": "saturn-flux-living-room-hotpatch",
+  "worker_sha256": "957e4763eef976919eea71864ec35d6db7826a870d89d3df1c5ef1c9df5bf9b6"
+}

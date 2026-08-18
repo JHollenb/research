@@ -1,0 +1,1587 @@
+{
+  "candidate_count": 16,
+  "candidate_scores": {
+    "joint.2|step=0|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 1.3229162644869037e-05,
+          "metrics": {
+            "continuation_rms": 1.0273396968841553,
+            "progress_to_target": 0.004172623157501221,
+            "return_alignment": 0.07821542024612427,
+            "return_progress": 0.00874196644872427,
+            "rgb_mad_vs_source": 2.5906474590301514,
+            "rgb_mad_vs_target": 83.24151611328125
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 4.4998635766891e-05,
+          "metrics": {
+            "continuation_rms": 0.9401942491531372,
+            "progress_to_target": 0.015576660633087158,
+            "return_alignment": 0.21333761513233185,
+            "return_progress": 0.05553710460662842,
+            "rgb_mad_vs_source": 5.523416996002197,
+            "rgb_mad_vs_target": 75.69976806640625
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 1.590434705851301e-05,
+          "metrics": {
+            "continuation_rms": 0.9083561301231384,
+            "progress_to_target": 0.0063898563385009766,
+            "return_alignment": 0.11044768989086151,
+            "return_progress": 0.026608586311340332,
+            "rgb_mad_vs_source": 4.890340328216553,
+            "rgb_mad_vs_target": 41.90311813354492
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": -2.0522676687687524e-05,
+          "metrics": {
+            "continuation_rms": 0.9531917572021484,
+            "progress_to_target": -0.007827520370483398,
+            "return_alignment": 0.05513043329119682,
+            "return_progress": 0.0071596321649849415,
+            "rgb_mad_vs_source": 2.2354023456573486,
+            "rgb_mad_vs_target": 40.82685470581055
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.03165450361155558
+    },
+    "joint.2|step=1|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 0.0001369445824127194,
+          "metrics": {
+            "continuation_rms": 0.8684288859367371,
+            "progress_to_target": 0.10448205471038818,
+            "return_alignment": 0.5518807172775269,
+            "return_progress": 0.37342140078544617,
+            "rgb_mad_vs_source": 38.18806076049805,
+            "rgb_mad_vs_target": 74.85662078857422
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 6.904011704219602e-05,
+          "metrics": {
+            "continuation_rms": 0.8708749413490295,
+            "progress_to_target": 0.05025064945220947,
+            "return_alignment": 0.46319660544395447,
+            "return_progress": 0.30166512727737427,
+            "rgb_mad_vs_source": 21.740365982055664,
+            "rgb_mad_vs_target": 73.0334243774414
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 6.295641167754879e-05,
+          "metrics": {
+            "continuation_rms": 0.8268682956695557,
+            "progress_to_target": 0.053243279457092285,
+            "return_alignment": 0.42912259697914124,
+            "return_progress": 0.2397162765264511,
+            "rgb_mad_vs_source": 14.999476432800293,
+            "rgb_mad_vs_target": 39.927188873291016
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.0001877355387969718,
+          "metrics": {
+            "continuation_rms": 0.837641179561615,
+            "progress_to_target": 0.14170867204666138,
+            "return_alignment": 0.514132559299469,
+            "return_progress": 0.36526286602020264,
+            "rgb_mad_vs_source": 23.840805053710938,
+            "rgb_mad_vs_target": 34.76918029785156
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.20013373716496952
+    },
+    "joint.2|step=2|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 0.00025564347494197285,
+          "metrics": {
+            "continuation_rms": 0.7111874222755432,
+            "progress_to_target": 0.17758792638778687,
+            "return_alignment": 0.7233828902244568,
+            "return_progress": 0.5156668424606323,
+            "rgb_mad_vs_source": 36.44633483886719,
+            "rgb_mad_vs_target": 68.74568176269531
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00016850699154371938,
+          "metrics": {
+            "continuation_rms": 0.7438440918922424,
+            "progress_to_target": 0.10429376363754272,
+            "return_alignment": 0.6337240934371948,
+            "return_progress": 0.4147389829158783,
+            "rgb_mad_vs_source": 23.536401748657227,
+            "rgb_mad_vs_target": 68.87763977050781
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.00068206158724374,
+          "metrics": {
+            "continuation_rms": 0.5252496004104614,
+            "progress_to_target": 0.47137224674224854,
+            "return_alignment": 0.8194722533226013,
+            "return_progress": 0.6005473732948303,
+            "rgb_mad_vs_source": 24.33403968811035,
+            "rgb_mad_vs_target": 22.293603897094727
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.0008194302112885791,
+          "metrics": {
+            "continuation_rms": 0.5026293992996216,
+            "progress_to_target": 0.5329437255859375,
+            "return_alignment": 0.8499794006347656,
+            "return_progress": 0.692717969417572,
+            "rgb_mad_vs_source": 29.041259765625,
+            "rgb_mad_vs_target": 18.920339584350586
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.499595797494346
+    },
+    "joint.2|step=3|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 0.0004902109909639868,
+          "metrics": {
+            "continuation_rms": 0.5072022080421448,
+            "progress_to_target": 0.39106279611587524,
+            "return_alignment": 0.8863642811775208,
+            "return_progress": 0.6368938684463501,
+            "rgb_mad_vs_source": 43.27334213256836,
+            "rgb_mad_vs_target": 50.901248931884766
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.000481077958538797,
+          "metrics": {
+            "continuation_rms": 0.4905323386192322,
+            "progress_to_target": 0.34839099645614624,
+            "return_alignment": 0.8729186654090881,
+            "return_progress": 0.6313414573669434,
+            "rgb_mad_vs_source": 36.38774108886719,
+            "rgb_mad_vs_target": 50.10715103149414
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.0008495315919087934,
+          "metrics": {
+            "continuation_rms": 0.29740941524505615,
+            "progress_to_target": 0.639122724533081,
+            "return_alignment": 0.9713979363441467,
+            "return_progress": 0.7235466241836548,
+            "rgb_mad_vs_source": 28.202926635742188,
+            "rgb_mad_vs_target": 15.219131469726562
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.000828535912035065,
+          "metrics": {
+            "continuation_rms": 0.30027368664741516,
+            "progress_to_target": 0.6536054015159607,
+            "return_alignment": 0.9755899310112,
+            "return_progress": 0.7308987379074097,
+            "rgb_mad_vs_source": 27.792444229125977,
+            "rgb_mad_vs_target": 14.032363891601562
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.7263877531652357
+    },
+    "joint.3|step=0|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 8.61675156611323e-06,
+          "metrics": {
+            "continuation_rms": 1.0275471210479736,
+            "progress_to_target": 0.0034207701683044434,
+            "return_alignment": 0.07522653788328171,
+            "return_progress": 0.008118560537695885,
+            "rgb_mad_vs_source": 2.4160308837890625,
+            "rgb_mad_vs_target": 83.30436706542969
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 2.952211420361471e-05,
+          "metrics": {
+            "continuation_rms": 0.9435140490531921,
+            "progress_to_target": 0.012951135635375977,
+            "return_alignment": 0.1975267082452774,
+            "return_progress": 0.04885313659906387,
+            "rgb_mad_vs_source": 5.066131591796875,
+            "rgb_mad_vs_target": 75.90166473388672
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 1.0432450116764183e-05,
+          "metrics": {
+            "continuation_rms": 0.9071369767189026,
+            "progress_to_target": 0.0057356953620910645,
+            "return_alignment": 0.11902526021003723,
+            "return_progress": 0.029360730201005936,
+            "rgb_mad_vs_source": 4.754099369049072,
+            "rgb_mad_vs_target": 41.93070602416992
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": -1.68369365556809e-05,
+          "metrics": {
+            "continuation_rms": 0.9510844349861145,
+            "progress_to_target": -0.008429408073425293,
+            "return_alignment": 0.09266705811023712,
+            "return_progress": 0.016175350174307823,
+            "rgb_mad_vs_source": 3.460052490234375,
+            "rgb_mad_vs_target": 40.85123825073242
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.032158541704582815
+    },
+    "joint.3|step=1|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 9.248377681863138e-05,
+          "metrics": {
+            "continuation_rms": 0.8707248568534851,
+            "progress_to_target": 0.1030542254447937,
+            "return_alignment": 0.5483189821243286,
+            "return_progress": 0.36871933937072754,
+            "rgb_mad_vs_source": 37.9361686706543,
+            "rgb_mad_vs_target": 74.9759750366211
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 4.919342988992634e-05,
+          "metrics": {
+            "continuation_rms": 0.8731880784034729,
+            "progress_to_target": 0.05018913745880127,
+            "return_alignment": 0.4595550298690796,
+            "return_progress": 0.29884061217308044,
+            "rgb_mad_vs_source": 21.80987548828125,
+            "rgb_mad_vs_target": 73.03815460205078
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 4.1865541182601126e-05,
+          "metrics": {
+            "continuation_rms": 0.8228937983512878,
+            "progress_to_target": 0.050806522369384766,
+            "return_alignment": 0.4404430687427521,
+            "return_progress": 0.2541036307811737,
+            "rgb_mad_vs_source": 15.317683219909668,
+            "rgb_mad_vs_target": 40.02995300292969
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00013551476900272813,
+          "metrics": {
+            "continuation_rms": 0.8379563689231873,
+            "progress_to_target": 0.144567608833313,
+            "return_alignment": 0.5134829878807068,
+            "return_progress": 0.36435723304748535,
+            "rgb_mad_vs_source": 23.874719619750977,
+            "rgb_mad_vs_target": 34.65336608886719
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.20006703007016696
+    },
+    "joint.3|step=2|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 0.00016255534709120597,
+          "metrics": {
+            "continuation_rms": 0.7115129828453064,
+            "progress_to_target": 0.17955678701400757,
+            "return_alignment": 0.7230581045150757,
+            "return_progress": 0.516446590423584,
+            "rgb_mad_vs_source": 36.507808685302734,
+            "rgb_mad_vs_target": 68.58110046386719
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00010552427714951726,
+          "metrics": {
+            "continuation_rms": 0.7444325685501099,
+            "progress_to_target": 0.10228341817855835,
+            "return_alignment": 0.632970929145813,
+            "return_progress": 0.41367655992507935,
+            "rgb_mad_vs_source": 23.49741554260254,
+            "rgb_mad_vs_target": 69.0322265625
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.00045215173078090885,
+          "metrics": {
+            "continuation_rms": 0.5245712399482727,
+            "progress_to_target": 0.48116886615753174,
+            "return_alignment": 0.8198820352554321,
+            "return_progress": 0.6021139025688171,
+            "rgb_mad_vs_source": 24.5742130279541,
+            "rgb_mad_vs_target": 21.880456924438477
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.0005208861270493734,
+          "metrics": {
+            "continuation_rms": 0.5019909143447876,
+            "progress_to_target": 0.5376671552658081,
+            "return_alignment": 0.8503949642181396,
+            "return_progress": 0.6934255957603455,
+            "rgb_mad_vs_source": 29.06838035583496,
+            "rgb_mad_vs_target": 18.728994369506836
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.5031712408217729
+    },
+    "joint.3|step=3|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 0.0002939187723162713,
+          "metrics": {
+            "continuation_rms": 0.5102006793022156,
+            "progress_to_target": 0.3839799761772156,
+            "return_alignment": 0.8847161531448364,
+            "return_progress": 0.6343642473220825,
+            "rgb_mad_vs_source": 42.86879348754883,
+            "rgb_mad_vs_target": 51.49330520629883
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00028837711909165953,
+          "metrics": {
+            "continuation_rms": 0.490818053483963,
+            "progress_to_target": 0.34376925230026245,
+            "return_alignment": 0.8728634715080261,
+            "return_progress": 0.6306496858596802,
+            "rgb_mad_vs_source": 36.22799301147461,
+            "rgb_mad_vs_target": 50.46255111694336
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.0005235242728458412,
+          "metrics": {
+            "continuation_rms": 0.29812175035476685,
+            "progress_to_target": 0.6399725079536438,
+            "return_alignment": 0.9712061285972595,
+            "return_progress": 0.7229086756706238,
+            "rgb_mad_vs_source": 28.246374130249023,
+            "rgb_mad_vs_target": 15.183293342590332
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.0005108505473739954,
+          "metrics": {
+            "continuation_rms": 0.30221399664878845,
+            "progress_to_target": 0.6570160388946533,
+            "return_alignment": 0.9749006032943726,
+            "return_progress": 0.7298282384872437,
+            "rgb_mad_vs_source": 27.89764976501465,
+            "rgb_mad_vs_target": 13.894200325012207
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.7244059381356427
+    },
+    "joint.4|step=0|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 7.698440781312164e-06,
+          "metrics": {
+            "continuation_rms": 1.025785207748413,
+            "progress_to_target": 0.005689680576324463,
+            "return_alignment": 0.09346790611743927,
+            "return_progress": 0.01127131562680006,
+            "rgb_mad_vs_source": 2.7581889629364014,
+            "rgb_mad_vs_target": 83.11470794677734
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 3.26534938198405e-05,
+          "metrics": {
+            "continuation_rms": 0.9308318495750427,
+            "progress_to_target": 0.026407957077026367,
+            "return_alignment": 0.2697353661060333,
+            "return_progress": 0.10038712620735168,
+            "rgb_mad_vs_source": 10.061203002929688,
+            "rgb_mad_vs_target": 74.86686706542969
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": -7.068054266754157e-06,
+          "metrics": {
+            "continuation_rms": 0.908244788646698,
+            "progress_to_target": -0.008006930351257324,
+            "return_alignment": 0.013330085203051567,
+            "return_progress": 0.0010968834394589067,
+            "rgb_mad_vs_source": 1.9398040771484375,
+            "rgb_mad_vs_target": 42.51026916503906
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": -1.322805410126367e-05,
+          "metrics": {
+            "continuation_rms": 0.9561004042625427,
+            "progress_to_target": -0.013683319091796875,
+            "return_alignment": 0.08612062782049179,
+            "return_progress": 0.01834108680486679,
+            "rgb_mad_vs_source": 4.33129358291626,
+            "rgb_mad_vs_target": 41.06407165527344
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.02964610450051944
+    },
+    "joint.4|step=1|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 5.4275695223242193e-05,
+          "metrics": {
+            "continuation_rms": 0.8620379567146301,
+            "progress_to_target": 0.1085008978843689,
+            "return_alignment": 0.5606926083564758,
+            "return_progress": 0.3829116225242615,
+            "rgb_mad_vs_source": 38.26301574707031,
+            "rgb_mad_vs_target": 74.52068328857422
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 2.8954328921159716e-05,
+          "metrics": {
+            "continuation_rms": 0.8686549663543701,
+            "progress_to_target": 0.051851749420166016,
+            "return_alignment": 0.4682973027229309,
+            "return_progress": 0.3080849051475525,
+            "rgb_mad_vs_source": 22.02803611755371,
+            "rgb_mad_vs_target": 72.9103012084961
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 6.651417281001072e-05,
+          "metrics": {
+            "continuation_rms": 0.7898971438407898,
+            "progress_to_target": 0.14260971546173096,
+            "return_alignment": 0.5061676502227783,
+            "return_progress": 0.3203011453151703,
+            "rgb_mad_vs_source": 17.977426528930664,
+            "rgb_mad_vs_target": 36.15837478637695
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 9.498064607210818e-05,
+          "metrics": {
+            "continuation_rms": 0.8185985684394836,
+            "progress_to_target": 0.17740142345428467,
+            "return_alignment": 0.5461598634719849,
+            "return_progress": 0.4043296277523041,
+            "rgb_mad_vs_source": 26.033432006835938,
+            "rgb_mad_vs_target": 33.32327651977539
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.23994760811328886
+    },
+    "joint.4|step=2|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 8.656278845664118e-05,
+          "metrics": {
+            "continuation_rms": 0.7131925225257874,
+            "progress_to_target": 0.18148273229599,
+            "return_alignment": 0.7215158343315125,
+            "return_progress": 0.5131730437278748,
+            "rgb_mad_vs_source": 36.51841735839844,
+            "rgb_mad_vs_target": 68.42011260986328
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 5.7108401538345694e-05,
+          "metrics": {
+            "continuation_rms": 0.7420834302902222,
+            "progress_to_target": 0.10353940725326538,
+            "return_alignment": 0.6360101699829102,
+            "return_progress": 0.41874316334724426,
+            "rgb_mad_vs_source": 23.465988159179688,
+            "rgb_mad_vs_target": 68.9356460571289
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.0002379101141857165,
+          "metrics": {
+            "continuation_rms": 0.5217922329902649,
+            "progress_to_target": 0.47981059551239014,
+            "return_alignment": 0.821701169013977,
+            "return_progress": 0.6076650619506836,
+            "rgb_mad_vs_source": 25.144495010375977,
+            "rgb_mad_vs_target": 21.9377384185791
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.0002720495279042072,
+          "metrics": {
+            "continuation_rms": 0.48888322710990906,
+            "progress_to_target": 0.5480070114135742,
+            "return_alignment": 0.8590583801269531,
+            "return_progress": 0.7025421261787415,
+            "rgb_mad_vs_source": 29.57877540588379,
+            "rgb_mad_vs_target": 18.310129165649414
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.5068569331280157
+    },
+    "joint.4|step=3|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 0.00015768905388479889,
+          "metrics": {
+            "continuation_rms": 0.5120136737823486,
+            "progress_to_target": 0.37640076875686646,
+            "return_alignment": 0.8837812542915344,
+            "return_progress": 0.6326215267181396,
+            "rgb_mad_vs_source": 42.78558349609375,
+            "rgb_mad_vs_target": 52.12685012817383
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00015324882657343576,
+          "metrics": {
+            "continuation_rms": 0.4929744303226471,
+            "progress_to_target": 0.3337709307670593,
+            "return_alignment": 0.8717304468154907,
+            "return_progress": 0.6279209852218628,
+            "rgb_mad_vs_source": 35.635921478271484,
+            "rgb_mad_vs_target": 51.23139953613281
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.0002786178897491198,
+          "metrics": {
+            "continuation_rms": 0.2978459298610687,
+            "progress_to_target": 0.6346080899238586,
+            "return_alignment": 0.9710379242897034,
+            "return_progress": 0.7237508296966553,
+            "rgb_mad_vs_source": 27.936147689819336,
+            "rgb_mad_vs_target": 15.409525871276855
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.0002740537350897752,
+          "metrics": {
+            "continuation_rms": 0.3052673637866974,
+            "progress_to_target": 0.6608880758285522,
+            "return_alignment": 0.9736083149909973,
+            "return_progress": 0.728618323802948,
+            "rgb_mad_vs_source": 28.055898666381836,
+            "rgb_mad_vs_target": 13.737345695495605
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.7194990384432616
+    },
+    "single.0|step=0|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 8.696808794699387e-06,
+          "metrics": {
+            "continuation_rms": 1.0089695453643799,
+            "progress_to_target": 0.022224843502044678,
+            "return_alignment": 0.21360336244106293,
+            "return_progress": 0.06127624213695526,
+            "rgb_mad_vs_source": 8.314387321472168,
+            "rgb_mad_vs_target": 81.73252868652344
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 1.4294531436141456e-05,
+          "metrics": {
+            "continuation_rms": 0.9183564782142639,
+            "progress_to_target": 0.03531825542449951,
+            "return_alignment": 0.32147836685180664,
+            "return_progress": 0.14415915310382843,
+            "rgb_mad_vs_source": 13.560969352722168,
+            "rgb_mad_vs_target": 74.18168640136719
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": -2.3471643836700452e-06,
+          "metrics": {
+            "continuation_rms": 0.9038048982620239,
+            "progress_to_target": -0.007855653762817383,
+            "return_alignment": 0.1447131633758545,
+            "return_progress": 0.039086565375328064,
+            "rgb_mad_vs_source": 7.094533443450928,
+            "rgb_mad_vs_target": 42.50388717651367
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": -2.2159371116844103e-05,
+          "metrics": {
+            "continuation_rms": 0.956576943397522,
+            "progress_to_target": -0.07186412811279297,
+            "return_alignment": 0.23426921665668488,
+            "return_progress": 0.1144065409898758,
+            "rgb_mad_vs_source": 12.840153694152832,
+            "rgb_mad_vs_target": 43.420963287353516
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.047485812192454055
+    },
+    "single.0|step=1|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 2.896928247205481e-05,
+          "metrics": {
+            "continuation_rms": 0.8482416868209839,
+            "progress_to_target": 0.11577844619750977,
+            "return_alignment": 0.5781460404396057,
+            "return_progress": 0.3990788161754608,
+            "rgb_mad_vs_source": 38.216033935546875,
+            "rgb_mad_vs_target": 73.912353515625
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 1.7304109554711168e-05,
+          "metrics": {
+            "continuation_rms": 0.847153902053833,
+            "progress_to_target": 0.058840930461883545,
+            "return_alignment": 0.4880737364292145,
+            "return_progress": 0.2978522777557373,
+            "rgb_mad_vs_source": 20.351242065429688,
+            "rgb_mad_vs_target": 72.37284851074219
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 5.218039228534483e-05,
+          "metrics": {
+            "continuation_rms": 0.7524355053901672,
+            "progress_to_target": 0.20738309621810913,
+            "return_alignment": 0.5690858960151672,
+            "return_progress": 0.3895481526851654,
+            "rgb_mad_vs_source": 20.908044815063477,
+            "rgb_mad_vs_target": 33.42671203613281
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 5.576901708909663e-05,
+          "metrics": {
+            "continuation_rms": 0.8068513870239258,
+            "progress_to_target": 0.20210307836532593,
+            "return_alignment": 0.5612421035766602,
+            "return_progress": 0.4174538552761078,
+            "rgb_mad_vs_source": 26.2521915435791,
+            "rgb_mad_vs_target": 32.32261657714844
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.27294518145129965
+    },
+    "single.0|step=2|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 4.960667648370025e-05,
+          "metrics": {
+            "continuation_rms": 0.7046914100646973,
+            "progress_to_target": 0.180783212184906,
+            "return_alignment": 0.7294000387191772,
+            "return_progress": 0.5222059488296509,
+            "rgb_mad_vs_source": 36.7050895690918,
+            "rgb_mad_vs_target": 68.47858428955078
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 3.6969089660867216e-05,
+          "metrics": {
+            "continuation_rms": 0.7205384373664856,
+            "progress_to_target": 0.11337798833847046,
+            "return_alignment": 0.6620871424674988,
+            "return_progress": 0.44874587655067444,
+            "rgb_mad_vs_source": 24.797983169555664,
+            "rgb_mad_vs_target": 68.17908477783203
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.00015067674964379125,
+          "metrics": {
+            "continuation_rms": 0.49439817667007446,
+            "progress_to_target": 0.5158603191375732,
+            "return_alignment": 0.84186190366745,
+            "return_progress": 0.6414267420768738,
+            "rgb_mad_vs_source": 26.34218406677246,
+            "rgb_mad_vs_target": 20.417428970336914
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00016002925193970167,
+          "metrics": {
+            "continuation_rms": 0.4732166528701782,
+            "progress_to_target": 0.5549939870834351,
+            "return_alignment": 0.8689026236534119,
+            "return_progress": 0.7153571844100952,
+            "rgb_mad_vs_source": 30.30106544494629,
+            "rgb_mad_vs_target": 18.027090072631836
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.5235616356981736
+    },
+    "single.0|step=3|stream=image": {
+      "rows": [
+        {
+          "dose_efficiency": 9.720148535568631e-05,
+          "metrics": {
+            "continuation_rms": 0.5163049697875977,
+            "progress_to_target": 0.37044596672058105,
+            "return_alignment": 0.8812055587768555,
+            "return_progress": 0.6295232176780701,
+            "rgb_mad_vs_source": 42.029476165771484,
+            "rgb_mad_vs_target": 52.62461853027344
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 9.553558143652928e-05,
+          "metrics": {
+            "continuation_rms": 0.4966440498828888,
+            "progress_to_target": 0.3293677568435669,
+            "return_alignment": 0.8691425323486328,
+            "return_progress": 0.6254690885543823,
+            "rgb_mad_vs_source": 35.220760345458984,
+            "rgb_mad_vs_target": 51.56999206542969
+          },
+          "pair_id": "lighting__identity",
+          "seed": 52019
+        },
+        {
+          "dose_efficiency": 0.00017424746198995415,
+          "metrics": {
+            "continuation_rms": 0.2991081178188324,
+            "progress_to_target": 0.6348447203636169,
+            "return_alignment": 0.970341145992279,
+            "return_progress": 0.7234929203987122,
+            "rgb_mad_vs_source": 27.99857521057129,
+            "rgb_mad_vs_target": 15.39954662322998
+          },
+          "pair_id": "weather__fur",
+          "seed": 52013
+        },
+        {
+          "dose_efficiency": 0.00017041851133983688,
+          "metrics": {
+            "continuation_rms": 0.30928564071655273,
+            "progress_to_target": 0.6582992076873779,
+            "return_alignment": 0.9716710448265076,
+            "return_progress": 0.7275488972663879,
+            "rgb_mad_vs_source": 28.311315536499023,
+            "rgb_mad_vs_target": 13.842219352722168
+          },
+          "pair_id": "weather__fur",
+          "seed": 52019
+        }
+      ],
+      "score": 0.71591780040194
+    }
+  },
+  "checkpoint_contract": {
+    "checkpoint_fingerprint": "356b0cde7be4bdbdb08c368bf486bbc5fcca5b8a5e5eb5310bdc3759b8a6fca5",
+    "exact_scalar_suffix": true,
+    "replay_rgb_mad_vs_native_source": 0.0,
+    "telemetry": {
+      "checkpoint_fingerprint": "356b0cde7be4bdbdb08c368bf486bbc5fcca5b8a5e5eb5310bdc3759b8a6fca5",
+      "checkpoint_id": "traj-956f22c9d80b75395f2410487f98a5d1",
+      "execution_mode": "exact_scalar_suffix",
+      "numerical_contract": "scalar-authority"
+    }
+  },
+  "claim_boundary": "sparse native-donor image-stream temporal carrier map with pair-disjoint downstream selection; variable-length text slots are intentionally excluded, so this is not a donor-free semantic compiler or universal phase ABI",
+  "discovery_cells": [
+    {
+      "pair_id": "lighting__identity",
+      "seed": 52013
+    },
+    {
+      "pair_id": "lighting__identity",
+      "seed": 52019
+    },
+    {
+      "pair_id": "weather__fur",
+      "seed": 52013
+    },
+    {
+      "pair_id": "weather__fur",
+      "seed": 52019
+    }
+  ],
+  "dose_scan": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "execution": {
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "elapsed_s": 74.467344596982,
+    "model_loads": 1,
+    "mrun_job_id": "job-c1ef16fda6e6",
+    "native_scheduler_and_vae": true,
+    "one_resident_model": true,
+    "peak_rss_mb": 19547.12890625,
+    "peak_vram_mb": 7990.7763671875
+  },
+  "execution_receipt": {
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "SATURN_TEMPORAL_CONFIG=temporal_config.json",
+      "SATURN_TEMPORAL_PAIR_SOURCE=pair_source.json",
+      "PYTHONPATH=saturn_src:mrun_src:mstack_experiments:common_src:.",
+      "uv",
+      "run",
+      "--project",
+      "generative-image-model-atlas",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "--with",
+      "Pillow>=9.0",
+      "python",
+      "-u",
+      "run_saturn_temporal_carrier_compiler.py"
+    ],
+    "config_sha256": "35fa34a14a65c8d41e1eb1471b5deb617fa32c002c581e19b1b92481413bbde5",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "experiment": "saturn-flux-temporal-carrier-compiler-bfl-next-20260814",
+    "host_selection": "prefer_beast_softly",
+    "instrument": "phase-specific sparse native-donor carrier Act with held-out consumer controls",
+    "log_sha256": "109fca9d6d28d5609c428c64432d25b7d448ba353ea0812f3042fdd1cbcf25ce",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+    "mrun_job_id": "job-c1ef16fda6e6",
+    "mrun_result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "DIFFUSERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "TQDM_DISABLE=1",
+          "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+          "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+          "SATURN_TEMPORAL_CONFIG=temporal_config.json",
+          "SATURN_TEMPORAL_PAIR_SOURCE=pair_source.json",
+          "PYTHONPATH=saturn_src:mrun_src:mstack_experiments:common_src:.",
+          "uv",
+          "run",
+          "--project",
+          "generative-image-model-atlas",
+          "--offline",
+          "--with",
+          "diffusers==0.39.0",
+          "--with",
+          "transformers==5.14.1",
+          "--with",
+          "accelerate==1.14.0",
+          "--with",
+          "safetensors>=0.5",
+          "--with",
+          "numpy>=2.0",
+          "--with",
+          "Pillow>=9.0",
+          "python",
+          "-u",
+          "run_saturn_temporal_carrier_compiler.py"
+        ],
+        "cwd": "/mnt/big/mrun-work/job-c1ef16fda6e6",
+        "log_path": "/mnt/big/mrun-work/job-c1ef16fda6e6/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1786699445.3906934
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1786699446.1879811
+          },
+          {
+            "name": "process.launch",
+            "ts": 1786699446.2203615
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1786699446.2686083
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1786699532.074711
+          },
+          {
+            "name": "finished",
+            "ts": 1786699532.090194
+          }
+        ]
+      },
+      "elapsed_s": 86.74,
+      "executed_payload": {
+        "host": "beast",
+        "sha256": "f315ca507fe2d2dd9562ae514aa47d7547cdf142b36221d1bde37b8c4469eaa0",
+        "size_bytes": 3524659
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 19986.8,
+      "peak_vram_mb": 8318.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "pair_source_sha256": "bbfb60249a7b1e0991be201e3bd906b54f90bf0d145b4ed0d2a6ad54de2854a9",
+    "payload": {
+      "controls": [
+        "zero-dose",
+        "wrong-time",
+        "sign-flip",
+        "energy-matched-sham"
+      ],
+      "discovery_pairs": [
+        "lighting__identity",
+        "weather__fur"
+      ],
+      "heldout_pairs": [
+        "lighting__relation",
+        "orientation__relation"
+      ],
+      "route": [
+        "joint.2",
+        "joint.3",
+        "joint.4",
+        "single.0"
+      ],
+      "steps": 4,
+      "streams": [
+        "image"
+      ]
+    },
+    "preflight": "strict",
+    "report_present": true,
+    "reservation": {
+      "ram_mb": 36000,
+      "vram_mb": 10000
+    },
+    "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "candidate_coordinates": 16,
+      "checkpoint_policy": "all coordinate interventions and exact replay remain in one resident Klein worker",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_local_program",
+      "heldout_sealed": true,
+      "interactive": false,
+      "lease_scope": "entire-worker",
+      "logical_branches": 100,
+      "logical_checkpoint_replays": 1,
+      "logical_operations": 100,
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "replay_policy": "local_checkpoint_restore",
+      "schema": "saturn-single-lease-scheduling-contract-v1"
+    },
+    "schema": "saturn-temporal-carrier-compiler-mrun-request-v1",
+    "staging_contract": {
+      "heldout_sealed": true,
+      "native_donor_reference": true,
+      "native_scheduler_and_vae": true,
+      "one_model_lease": true,
+      "phase_specific_act": true,
+      "real_model": true
+    },
+    "task_family": "saturn-flux-rosetta-manalysis",
+    "worker_sha256": "3e65e90d614a0b2d1f13106c04342614f400883978d1ecc5560dbaec30256410"
+  },
+  "heldout_cells": [
+    {
+      "pair_id": "lighting__relation",
+      "seed": 52013
+    },
+    {
+      "pair_id": "lighting__relation",
+      "seed": 52019
+    },
+    {
+      "pair_id": "orientation__relation",
+      "seed": 52013
+    },
+    {
+      "pair_id": "orientation__relation",
+      "seed": 52019
+    }
+  ],
+  "heldout_controls": [
+    {
+      "branch": "zero_dose",
+      "metrics": {
+        "continuation_rms": 1.022688865661621,
+        "progress_to_target": 0.0,
+        "return_alignment": 0.0,
+        "return_progress": 0.0,
+        "rgb_mad_vs_source": 0.0,
+        "rgb_mad_vs_target": 76.9887466430664
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "sign_flip",
+      "metrics": {
+        "continuation_rms": 0.9495347738265991,
+        "progress_to_target": 0.10701274871826172,
+        "return_alignment": 0.3923208713531494,
+        "return_progress": 0.10433851927518845,
+        "rgb_mad_vs_source": 12.356903076171875,
+        "rgb_mad_vs_target": 68.74996948242188
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "wrong_time",
+      "metrics": {
+        "continuation_rms": 1.0021488666534424,
+        "progress_to_target": 0.018590867519378662,
+        "return_alignment": 0.24414917826652527,
+        "return_progress": 0.09399989992380142,
+        "rgb_mad_vs_source": 7.946370601654053,
+        "rgb_mad_vs_target": 75.55745697021484
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 0,
+      "stream": "image"
+    },
+    {
+      "branch": "energy_matched_sham",
+      "metrics": {
+        "continuation_rms": 1.060604453086853,
+        "progress_to_target": 0.007816791534423828,
+        "return_alignment": 0.057468120008707047,
+        "return_progress": 0.019437193870544434,
+        "rgb_mad_vs_source": 5.382578372955322,
+        "rgb_mad_vs_target": 76.3869400024414
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "zero_dose",
+      "metrics": {
+        "continuation_rms": 0.8847049474716187,
+        "progress_to_target": 0.0,
+        "return_alignment": 0.0,
+        "return_progress": 0.0,
+        "rgb_mad_vs_source": 0.0,
+        "rgb_mad_vs_target": 66.50943756103516
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "sign_flip",
+      "metrics": {
+        "continuation_rms": 0.8458051085472107,
+        "progress_to_target": -0.0049250125885009766,
+        "return_alignment": 0.29386454820632935,
+        "return_progress": 0.09185270965099335,
+        "rgb_mad_vs_source": 10.69452953338623,
+        "rgb_mad_vs_target": 66.83699798583984
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "wrong_time",
+      "metrics": {
+        "continuation_rms": 0.8950629234313965,
+        "progress_to_target": -0.008573293685913086,
+        "return_alignment": -0.009350994601845741,
+        "return_progress": -0.0013503055088222027,
+        "rgb_mad_vs_source": 2.6496124267578125,
+        "rgb_mad_vs_target": 67.07964324951172
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 0,
+      "stream": "image"
+    },
+    {
+      "branch": "energy_matched_sham",
+      "metrics": {
+        "continuation_rms": 0.9169405102729797,
+        "progress_to_target": -0.002861499786376953,
+        "return_alignment": 0.04610782861709595,
+        "return_progress": 0.014864196069538593,
+        "rgb_mad_vs_source": 4.514984130859375,
+        "rgb_mad_vs_target": 66.69975280761719
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "zero_dose",
+      "metrics": {
+        "continuation_rms": 1.020707130432129,
+        "progress_to_target": 0.0,
+        "return_alignment": 0.0,
+        "return_progress": 0.0,
+        "rgb_mad_vs_source": 0.0,
+        "rgb_mad_vs_target": 56.7784538269043
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "sign_flip",
+      "metrics": {
+        "continuation_rms": 0.9453537464141846,
+        "progress_to_target": 0.005407929420471191,
+        "return_alignment": 0.40151703357696533,
+        "return_progress": 0.10584782063961029,
+        "rgb_mad_vs_source": 10.736414909362793,
+        "rgb_mad_vs_target": 56.47140121459961
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "wrong_time",
+      "metrics": {
+        "continuation_rms": 1.0215715169906616,
+        "progress_to_target": -0.00325167179107666,
+        "return_alignment": 0.0077262450940907,
+        "return_progress": 0.0003832814982160926,
+        "rgb_mad_vs_source": 1.1343841552734375,
+        "rgb_mad_vs_target": 56.963077545166016
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 0,
+      "stream": "image"
+    },
+    {
+      "branch": "energy_matched_sham",
+      "metrics": {
+        "continuation_rms": 1.065285563468933,
+        "progress_to_target": -0.019538044929504395,
+        "return_alignment": 0.03729254752397537,
+        "return_progress": 0.012618537992238998,
+        "rgb_mad_vs_source": 5.75726842880249,
+        "rgb_mad_vs_target": 57.88779067993164
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "zero_dose",
+      "metrics": {
+        "continuation_rms": 1.0199859142303467,
+        "progress_to_target": 0.0,
+        "return_alignment": 0.0,
+        "return_progress": 0.0,
+        "rgb_mad_vs_source": 0.0,
+        "rgb_mad_vs_target": 52.49428939819336
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "sign_flip",
+      "metrics": {
+        "continuation_rms": 0.9259143471717834,
+        "progress_to_target": 0.07980823516845703,
+        "return_alignment": 0.4680497646331787,
+        "return_progress": 0.12187949568033218,
+        "rgb_mad_vs_source": 10.14881420135498,
+        "rgb_mad_vs_target": 48.304813385009766
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "wrong_time",
+      "metrics": {
+        "continuation_rms": 1.0190138816833496,
+        "progress_to_target": -0.0015938282012939453,
+        "return_alignment": 0.07353364676237106,
+        "return_progress": 0.009758920408785343,
+        "rgb_mad_vs_source": 2.62396240234375,
+        "rgb_mad_vs_target": 52.57795715332031
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 0,
+      "stream": "image"
+    },
+    {
+      "branch": "energy_matched_sham",
+      "metrics": {
+        "continuation_rms": 1.0640486478805542,
+        "progress_to_target": -0.01890110969543457,
+        "return_alignment": 0.041945166885852814,
+        "return_progress": 0.014344576746225357,
+        "rgb_mad_vs_source": 6.0587921142578125,
+        "rgb_mad_vs_target": 53.48649215698242
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    }
+  ],
+  "heldout_positive": [
+    {
+      "branch": "positive_selected",
+      "metrics": {
+        "continuation_rms": 0.34936589002609253,
+        "progress_to_target": 0.4420878291130066,
+        "return_alignment": 0.969631552696228,
+        "return_progress": 0.7089328169822693,
+        "rgb_mad_vs_source": 45.33099365234375,
+        "rgb_mad_vs_target": 42.95296096801758
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "positive_selected",
+      "metrics": {
+        "continuation_rms": 0.31116750836372375,
+        "progress_to_target": 0.37887144088745117,
+        "return_alignment": 0.966460645198822,
+        "return_progress": 0.7018062472343445,
+        "rgb_mad_vs_source": 31.909997940063477,
+        "rgb_mad_vs_target": 41.3109130859375
+      },
+      "pair_id": "lighting__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "positive_selected",
+      "metrics": {
+        "continuation_rms": 0.300137996673584,
+        "progress_to_target": 0.7002366185188293,
+        "return_alignment": 0.9871201515197754,
+        "return_progress": 0.7308760285377502,
+        "rgb_mad_vs_source": 42.35976028442383,
+        "rgb_mad_vs_target": 17.02010154724121
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52013,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    },
+    {
+      "branch": "positive_selected",
+      "metrics": {
+        "continuation_rms": 0.3038448691368103,
+        "progress_to_target": 0.6579189896583557,
+        "return_alignment": 0.9876830577850342,
+        "return_progress": 0.7251628041267395,
+        "rgb_mad_vs_source": 36.1843376159668,
+        "rgb_mad_vs_target": 17.957300186157227
+      },
+      "pair_id": "orientation__relation",
+      "seed": 52019,
+      "site": "joint.2",
+      "step": 3,
+      "stream": "image"
+    }
+  ],
+  "route": [
+    "joint.2",
+    "joint.3",
+    "joint.4",
+    "single.0"
+  ],
+  "schema": "saturn-temporal-carrier-compiler-report-v1",
+  "selected_act": {
+    "coordinate": "joint.2|step=3|stream=image",
+    "discovery_rows": [
+      {
+        "dose_efficiency": 0.0004902109909639868,
+        "metrics": {
+          "continuation_rms": 0.5072022080421448,
+          "progress_to_target": 0.39106279611587524,
+          "return_alignment": 0.8863642811775208,
+          "return_progress": 0.6368938684463501,
+          "rgb_mad_vs_source": 43.27334213256836,
+          "rgb_mad_vs_target": 50.901248931884766
+        },
+        "pair_id": "lighting__identity",
+        "seed": 52013
+      },
+      {
+        "dose_efficiency": 0.000481077958538797,
+        "metrics": {
+          "continuation_rms": 0.4905323386192322,
+          "progress_to_target": 0.34839099645614624,
+          "return_alignment": 0.8729186654090881,
+          "return_progress": 0.6313414573669434,
+          "rgb_mad_vs_source": 36.38774108886719,
+          "rgb_mad_vs_target": 50.10715103149414
+        },
+        "pair_id": "lighting__identity",
+        "seed": 52019
+      },
+      {
+        "dose_efficiency": 0.0008495315919087934,
+        "metrics": {
+          "continuation_rms": 0.29740941524505615,
+          "progress_to_target": 0.639122724533081,
+          "return_alignment": 0.9713979363441467,
+          "return_progress": 0.7235466241836548,
+          "rgb_mad_vs_source": 28.202926635742188,
+          "rgb_mad_vs_target": 15.219131469726562
+        },
+        "pair_id": "weather__fur",
+        "seed": 52013
+      },
+      {
+        "dose_efficiency": 0.000828535912035065,
+        "metrics": {
+          "continuation_rms": 0.30027368664741516,
+          "progress_to_target": 0.6536054015159607,
+          "return_alignment": 0.9755899310112,
+          "return_progress": 0.7308987379074097,
+          "rgb_mad_vs_source": 27.792444229125977,
+          "rgb_mad_vs_target": 14.032363891601562
+        },
+        "pair_id": "weather__fur",
+        "seed": 52019
+      }
+    ],
+    "score": 0.7263877531652357,
+    "site": "joint.2",
+    "step": 3,
+    "stream": "image"
+  },
+  "status": "raw_exploratory",
+  "steps": 4,
+  "streams": [
+    "image"
+  ],
+  "temporal_summary": {
+    "early_authority": {
+      "0": 0.03523624050227797,
+      "1": 0.22827338919993126,
+      "2": 0.5082964017855771,
+      "3": 0.7215526325365199
+    },
+    "selected_dose_efficiency": 0.0006623391133616605,
+    "selection_metric": "progress + 0.25*return_alignment - 0.10*source_mad/255"
+  }
+}
