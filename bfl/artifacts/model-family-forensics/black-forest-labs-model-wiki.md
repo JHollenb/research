@@ -54,7 +54,7 @@ related:
 # Black Forest Labs Model Wiki
 
 This is the model-specific knowledge base for the Black Forest Labs FLUX family. It records what
-we know about the exact pinned subjects in our custody, how the family changes across FLUX.1 and
+We know about the exact pinned subjects in our custody, how the family changes across FLUX.1 and
 FLUX.2, what the conditioner and denoiser actually do in the measured assays, and where the
 mechanism claims stop.
 

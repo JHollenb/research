@@ -140,7 +140,7 @@ exact-tensor identity gate (passed: agreement 1.0, drift 0.0).
     the separable-phase-clock shape from the spectral-tokenizer lineage. That
     factorization is the next panel, not this one.
 
-> [!note] On "my spectral tokenizer"
+> [!note] On "our spectral tokenizer"
 > The workspace holds four spectral-token lineages (sin-token-encoding's sinusoidal
 > token IDs, SpectralMapper's learned amplitude/phase bands, the embedding rFFT split
 > with its documented rank confound, and the token phase-clock store). This panel

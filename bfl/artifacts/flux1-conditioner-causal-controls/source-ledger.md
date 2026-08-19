@@ -13,13 +13,13 @@ that every object store has retention locks or versioning enabled.
 
 ## Operating rule
 
-For each miss I follow the typed causal chain:
+For each miss we follow the typed causal chain:
 
 `producer → typed write → carrier trajectory → native consumer → rendered behavior`.
 
 The first replay is the smallest informative one: exact checkpoint resume, native duplicate,
 candidate intervention, zero/no-op, and the relevant wrong-site, wrong-time, wrong-source, dose,
-sign, or norm-matched-sham control. Only after locating the failing boundary do I change the
+sign, or norm-matched-sham control. Only after locating the failing boundary do we change the
 intervention or fit a replacement. Saturn’s controller must record the candidate, promotion or
 rejection, exact rollback, and downstream consumer score in the same resident lease.
 

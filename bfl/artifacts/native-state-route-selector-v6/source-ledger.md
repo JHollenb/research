@@ -63,8 +63,8 @@ We started with a useful suspicion: a model's coding capability may not live in 
 isolated “coding block.” It may be carried by a distributed route through the model, while a
 separate control-plane capability decides when and where to use that route. A diffusion model is
 a good organism for testing this because the final RGB image is an observable native consumer. If
-we cannot see the effect in the image after the model's own scheduler, denoiser, and VAE have run,
-we have not established an image capability.
+We cannot see the effect in the image after the model's own scheduler, denoiser, and VAE have run,
+We have not established an image capability.
 
 This report is about what the Saturn replay actually supports. It is intentionally written as a
 research log, not as a victory lap. The useful result is not that we found a magical block. The
@@ -698,7 +698,7 @@ blue-circle `joint4`/selector images at seeds `3141` and `4242`.
 
 ### The evaluator disagreement has two different causes
 
-The disagreement table is not one homogeneous failure. I replayed the frozen v4 PNGs through the
+The disagreement table is not one homogeneous failure. We replayed the frozen v4 PNGs through the
 image-atlas hue mask at `160`, `256`, `384`, and `512` pixels, without loading the model. The atlas
 implementation nominally downsamples to `160×160`; the independent RGB evaluator measures
 full-resolution connected components.
@@ -799,7 +799,7 @@ those.
 The fixed-route controls are important: `joint4` repaired the same branch without any selector.
 The selector's added value is conditional choice—choosing native on the eight cases that already
 worked and repair on the one visible miss—not payload creation. That is exactly the architecture
-we wanted to probe. v4 supplied the blind-family/seed split and showed the missing term: the state
+We wanted to probe. v4 supplied the blind-family/seed split and showed the missing term: the state
 can prefer a route for a family while failing to predict which parent benefits. The selector lost
 to native on the clean split, fixed `joint3` won, and the abstention margin never fired. The
 control-plane hypothesis remains live, but its next version must predict utility and uncertainty,

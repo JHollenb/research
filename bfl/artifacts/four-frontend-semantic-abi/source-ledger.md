@@ -12,14 +12,14 @@ therefore not one more isolated activation patch. It was a five-part attempt to
 turn the strongest observations into interfaces that could be searched,
 compiled, substituted, and falsified.
 
-This post records what I ran, what the measurements say, and what I explicitly
+This post records what we ran, what the measurements say, and what we explicitly
 did not do. Every result below is marked as exploratory. None should be read as
 a terminal claim about the architecture of FLUX.2 or about Black Forest Labs'
 training code.
 
 ## The experimental contract
 
-I used Saturn for the execution and analysis rather than wrapping the model in
+We used Saturn for the execution and analysis rather than wrapping the model in
 a conventional training loop.
 
 Each real-model job was admitted through `mrun` with one CUDA lease and one
@@ -226,7 +226,7 @@ a stronger held-out claim.
 
 ### The native interaction panel
 
-I also ran a fresh native interaction residual panel on the lighting × color
+We also ran a fresh native interaction residual panel on the lighting × color
 pair with two seeds. The algebraic reconstruction was exact: dose-1 native
 interaction matched the native AB image with MAD 0.0 and the native AB return
 with RMS 0.0.
@@ -276,7 +276,7 @@ and evaluated two pair-disjoint held-out pairs. The Act copied a native target
 image-stream boundary into a source branch, then measured progress, return
 alignment, continuation RMS, collateral, and dose efficiency.
 
-I intentionally kept this run image-stream-only. Text sequence lengths differed
+We intentionally kept this run image-stream-only. Text sequence lengths differed
 between some prompts, and direct cross-prompt text replacement would have been
 a shape error disguised as a scientific result. The runtime rejected that
 initial attempt; the repaired run made the stream contract explicit instead.
@@ -366,7 +366,7 @@ Artifact: `saturn/results/rosetta-structured-frontend-bfl-next/`.
 
 ## What changed after reading the recent BFL posts
 
-I refreshed against the current `bfl-saturn-founder-ledger`,
+We refreshed against the current `bfl-saturn-founder-ledger`,
 `we-treated-klein-like-an-executable-machine`,
 `the-route-carried-pairs-the-snake-needed-a-better-donor`,
 `flux-capability-cherry-pick`, and the three-day Saturn summary. The posts did
@@ -390,43 +390,43 @@ on either side of that surface: one shows that non-language state can work for
 some compositions, and the other shows that distinct conditioner families can
 reach the same consumer boundary without tensor identity.
 
-## What I did not do
+## What we did not do
 
 This is the most important section.
 
-I did not close donor-free SmolLM/Mamba generalization. The fresh cross-family
+We did not close donor-free SmolLM/Mamba generalization. The fresh cross-family
 run used a small held-out semantic panel and native donor packages for its
 strongest rescue branches. It did not train independent Qwen, SmolLM, and Mamba
 frontends to a common held-out contract.
 
-I did not learn a nonlinear composer that beats additive composition. The new
+We did not learn a nonlinear composer that beats additive composition. The new
 held-out result goes the other way. The native interaction residual is a strong
 oracle target, not a learned compiler result.
 
-I did not prove a universal seam between Base and distilled Klein. The seam run
+We did not prove a universal seam between Base and distilled Klein. The seam run
 was split-load and exact, but the selected Act reached only one of four held-out
 cases exactly, and several controls were not yet perfectly discriminative.
 
-I did not run all four frontends on the identical semantic examples in one
+We did not run all four frontends on the identical semantic examples in one
 physical job. The Qwen/SmolLM/Mamba map and the structured frontend are two
 one-load experiments joined at the report level. That is useful evidence of a
 shared consumer contract, but it is not the explosive four-frontend closure
 described in the proposal.
 
-I did not build real CAD, robot, or image encoders. The structured inputs were
+We did not build real CAD, robot, or image encoders. The structured inputs were
 typed JSON-like states. “Image-derived” means a structured state derived from
 an image, not raw pixels entering a learned vision frontend.
 
-I did not update Klein's weights. The denoiser and native consumer stayed
+We did not update Klein's weights. The denoiser and native consumer stayed
 frozen. The learned mixer was a tiny proposal object; the structured compiler
 was an additive teacher-built codebook, not a trained universal semantic
 frontend.
 
-I did not establish a universal BFL internal architecture from these outputs.
+We did not establish a universal BFL internal architecture from these outputs.
 All claims are about measured behavior at the tested boundary, prompts, seeds,
 revision, scheduler, and VAE.
 
-I did not run terminal certification. These are exploratory trends with strong
+We did not run terminal certification. These are exploratory trends with strong
 execution receipts, not preregistered multi-seed release gates.
 
 ## Bottom line

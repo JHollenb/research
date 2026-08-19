@@ -62,7 +62,7 @@ The image program can remain healthy while its conditioner argument is wrong.
 
 ### What counted as Black Forest Labs work
 
-I treated an artifact as in scope when it explicitly named Black Forest Labs,
+We treated an artifact as in scope when it explicitly named Black Forest Labs,
 FLUX.1, FLUX.2, Klein, or Rosetta/SATURN work directly tied to a FLUX run.
 AR-only architecture and Pythia proof work are included below as adjacent
 methodology when they clarify the SATURN abstraction, but are not counted as

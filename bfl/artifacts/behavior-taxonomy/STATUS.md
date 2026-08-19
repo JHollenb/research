@@ -45,7 +45,7 @@ processor/tokenizer classes at load.
 certificate's 30/30 value 0.8864866068260312, presence/substitution/append admission rules,
 summaries + confirmation gate, all-fail analysis, selection policy incl. NO_FAMILY_SELECTED and
 tampered-report rejection). `uvx ruff@0.12.5 check` on all workspace sources -> clean
-(E, F, I, UP, B, line 100). One real bug was caught by the tests before submission (atlas path
+(E, F, we, UP, B, line 100). One real bug was caught by the tests before submission (atlas path
 bootstrap used parents[2] instead of parents[1]) and fixed.
 
 ### Beast env prep [MEASURED]
@@ -149,7 +149,7 @@ Additive cache population only; no tenant state touched. TrOCR snapshot confirme
 
 ## 2026-07-31 later-3 — hand-rolled two-phase abandoned for engine phase-cuda [MEASURED]
 
-- Parity job `job-a70371475e10` (my hand-rolled two-phase) FAILED: device mismatch in
+- Parity job `job-a70371475e10` (our hand-rolled two-phase) FAILED: device mismatch in
   `linear_1` — the manual phase swap left a module path (timestep/guidance embedder) on CPU.
   Not debugged further: a parallel track landed the same idea properly inside mrun.
 - Switched to `mrun.diffusion.PhasePipeline` via the image_atlas opt-in
@@ -178,7 +178,7 @@ Additive cache population only; no tenant state touched. TrOCR snapshot confirme
 
 ## 2026-07-31 later-4 — parity PASS bitwise; discovery running on measured envelope [MEASURED]
 
-- Parity job **`job-5a13d598c7fb`** SUCCEEDED (total wall 29.7s). I verified the sealed report
+- Parity job **`job-5a13d598c7fb`** SUCCEEDED (total wall 29.7s). We verified the sealed report
   myself (`.../parity/job-5a13d598c7fb/report.json`, content seal
   `02669eac58fb350b41cf...`, canonical recomputation matches): **parity all_match TRUE — 7/7
   salvaged pairs, both arms, pixel_sha256 equal bitwise** against the model_cpu_offload

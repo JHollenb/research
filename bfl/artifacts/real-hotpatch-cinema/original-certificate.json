@@ -1,0 +1,60 @@
+{
+  "act": "trajectory.route-hotpatch:v1",
+  "capabilities": {
+    "native_consumer": "frozen FLUX.2 suffix + scheduler + VAE",
+    "reads": [
+      "checkpoint",
+      "route_text_state",
+      "dose",
+      "scheduler_state"
+    ],
+    "writes": [
+      "route_text_state"
+    ]
+  },
+  "certificate_sha256": "6ae3aa18a6b895aed1fc1f0c255dc5a541681d8a9141df9baebc081b77a5a714",
+  "checks": {
+    "correct_endpoint_progress": 0.942360079888416,
+    "dose_curve": [
+      -0.0006265349191112435,
+      -0.01452336639389884,
+      0.06047714060489395,
+      0.484788326743396,
+      0.942360079888416
+    ],
+    "dose_monotonic_with_tolerance": true,
+    "parent_and_resumed_suffix_exact": true,
+    "scalar_confirmations_present": true,
+    "sham_scene_progress": 0.10856799180560905,
+    "wrong_donor_color_progress": 0.9259984246838967,
+    "wrong_donor_scene_progress": -0.42976404936273016
+  },
+  "claim_boundary": "Admits one prompt-pair/seed native FLUX route-state hot patch. It is not a portable learned-capability patch or evidence of prompt-independent semantics.",
+  "gates": {
+    "correct": true,
+    "dose": true,
+    "rollback": true,
+    "scalar_confirmation": true,
+    "sham": true,
+    "wrong": true
+  },
+  "patch_id": "flux2-scene-route-hotpatch-seed4242",
+  "payload": {
+    "kind": "cached-native-route-delta",
+    "sha256": "8605a2a8c757c6affa50a41b011c3dd93da3176cc932baa9dee26115219b86b3"
+  },
+  "rollback": "discard branch; replay immutable parent checkpoint",
+  "schema": "saturn-proof-carrying-generative-hotpatch-v1",
+  "status": "admitted",
+  "target": {
+    "checkpoint_fingerprint": "b0414562992a264cbf9575c727facff5f80f4851f00c4a7e53a047b390d47553",
+    "cut_step": 0,
+    "program_fingerprint": "6dbfc0b9c455ba84d28524164ef550688555cb348b14873176f517033ce07e7e",
+    "route": [
+      "joint.2",
+      "joint.3",
+      "joint.4",
+      "single.0"
+    ]
+  }
+}

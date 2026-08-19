@@ -45,7 +45,11 @@ Keeping those two planes separate is the central accounting decision in this exp
 
 ## What we were trying to prove
 
-The initial request was broader: extend Hotpatch Cinema with more movable objects. We removed the living-room example from the active demonstration and narrowed the scene to one wall picture. That reduction was deliberate. A couch, chair, television, wall, floor, lighting, and camera would make it harder to tell whether a successful-looking image represented object motion or a complete redraw. A single framed picture gives us a visible identity test:
+The initial request was broader: extend Hotpatch Cinema with more movable objects. We narrowed the
+active demonstration to one wall picture. That reduction was deliberate. A multi-object scene with
+several surfaces, lighting, and camera relationships would make it harder to tell whether a
+successful-looking image represented object motion or a complete redraw. A single framed picture
+gives us a visible identity test:
 
 - the frame should move horizontally;
 - the old location should be empty;

@@ -269,7 +269,7 @@ and pixels. For Dev, it also makes component lifetimes and paging visible.
 The recorder is an observation instrument. It captures selected runtime states and their addresses,
 routes, or time positions so that we can compare trajectories and consumers. The decoder is another
 observation instrument. It takes a compatible latent at a declared boundary and renders it so that
-we can inspect the corresponding image-space effect.
+We can inspect the corresponding image-space effect.
 
 Neither tool is an architecture theory. Neither should be used as a single scalar gate that deletes
 near misses or heterogeneous rows. They make the model’s internal and output-facing state visible;
