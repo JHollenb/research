@@ -11,6 +11,3 @@ The main research path has seven connected results: exact phase-resident serving
 The durable claim is deliberately bounded. FLUX execution can be made typed, branchable, replayable, and consumer-closed across the pinned models in the tracer cohort. The shared `joint.*` vocabulary is a useful instrumentation grammar and search order, while payloads, semantic meanings, and causal effects remain checkpoint- and topology-local.
 
 Start with the [BFL research README](bfl/README.md) for the main-branch narrative, model/checkpoint scope, `joint.*` mapping, and speed accounting. The [demo reports](bfl/demos/) contain the native-consumer experiments, [tracer documentation](bfl/docs/tracer/README.md) contains the checkpoint-scoped instrumentation cards, and [artifacts](bfl/artifacts/) contains receipts, proof sheets, and verification scripts.
-
-# About Me
-My name is Jacob Hollenbeck. I have a B.S. in Electrical and Computer Engineering from Boise State and an M.S. in Machine Learning from Georgia Tech OMSCS. I have been a full-stack software engineer for 10+ years. This portfolio contains a sample of my research into decomposing models and treating them as software.
