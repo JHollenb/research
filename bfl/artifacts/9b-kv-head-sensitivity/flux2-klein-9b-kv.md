@@ -5,9 +5,18 @@ status: wip
 updated: 2026-08-06
 model_id: flux2-klein-9b-kv
 claim_status: exploratory-anatomy-and-internal-physiology
-tags: [wip, black-forest-labs, flux2, klein, kv, tracer, manalysis, diffusion, circuit-discovery]
+tags:
+  - wip
+  - black-forest-labs
+  - flux2
+  - klein
+  - kv
+  - tracer
+  - manalysis
+  - diffusion
+  - circuit-discovery
 related:
-  - "[[README|Tracer Profiles for Seven Black Forest Labs Components]]"
+  - "[[bfl/artifacts/9b-kv-head-sensitivity/README|Tracer Profiles for Seven Black Forest Labs Components]]"
   - "[[flux2-klein-9b|FLUX.2 Klein 9B profile]]"
 ---
 

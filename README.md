@@ -1,16 +1,15 @@
-# Research
 
-This is where we keep our public-facing research notes, standalone demos, and evidence-backed experiment reports. We organize the work so that a reader can move from the question we are asking, to the experiment we ran, to the artifacts that show what happened.
+# Research Portfolio
+
+This is where public-facing research notes, standalone demos, and evidence-backed experiment reports are kept. The work is organized such that a reader can move from the question posed, to the experiment ran, to the artifacts that show what happened.
 
 # Black Forest Labs
 
-We study Black Forest Labs image generators as controllable systems rather than as opaque image makers. We want to understand what information the models use, where that information enters the generation process, which interventions reach the final image, and which explanations fail when we add native-consumer controls, wrong-source tests, shams, dose sweeps, held-out prompts, exact replay, and collateral measurements.
+Black Forest Labs image generators are framed as controllable systems rather than as opaque image makers. I want to understand what information the models use, where that information enters the generation process, which interventions reach the final image, and which explanations fail when we add native-consumer controls, wrong-source tests, shams, dose sweeps, held-out prompts, exact replay, and collateral measurements.
 
-We work outward from broad behavior to model structure and then to practical control. We begin with counting, typography, context, model lineage, and decoder boundaries. We then trace distributed semantic routes and denoising-time authority. From there we test trajectory branching, object-level edits, capability repair, foreign and structured conditioners, exact serving, and learned approximations. The reports preserve both successful effects and failed or incomplete transfers because the boundary of an intervention is part of what we are trying to learn.
+The work is done outward from broad behavior to model structure and then to practical control. We begin with counting, typography, context, model lineage, and decoder boundaries. We then trace distributed semantic routes and denoising-time authority. From there we test trajectory branching, object-level edits, capability repair, foreign and structured conditioners, exact serving, and learned approximations. The reports preserve both successful effects and failed or incomplete transfers because the boundary of an intervention is part of what we are trying to learn.
 
 ## Strongest experiments
-
-We currently organize the strongest line of work in this order:
 
 1. [Semantic Circuit Objects](bfl/demos/semantic-circuit-object-interface.md) — we compile a causal semantic route into a typed object symbol and use it to read, edit, isolate, and write object state back into the model. The blue-mug value write works at both tested seeds, while the durable manifest readback passes 11/11 checks.
 2. [Objects Become Debugger I/O](bfl/demos/objects-debugger-io-structs-stress-isolation.md) — we map image objects to lexical addresses, test those addresses with controlled edits, and preserve them as durable model-facing records. Fox recolor progress reaches 0.92/0.94 across the two seeds, with isolation progress above 0.91 for the fox and 0.99 for the ball.
@@ -23,3 +22,9 @@ We currently organize the strongest line of work in this order:
 ## How to navigate this research
 
 Start with the [Black Forest Labs README](bfl/README.md) for the overall story, then use the [experiment index](bfl/index.md) for the executive summary of every demo. Each [standalone report](bfl/demos/) links to its own local proof bundle, receipts, representative images, and verifier. The detailed reports distinguish observations, trends, working inferences, and bounded claims so that a compelling image is never mistaken for a general capability without the controls to support it.
+
+---
+
+# About the Author
+
+My name is Jacob Hollenbeck. I have a B.S. in Electrical and Computer Engineering from Boise State University and an M.S. in Machine Learning from Georgia Tech OMSCS. I have 10+ years of experience in software and cyber engineering. 
