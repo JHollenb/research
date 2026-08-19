@@ -1,0 +1,233 @@
+{
+  "case": "object-multimodel-base4b",
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "SATURN_RESIDENT_WORKER=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+    "SATURN_RUN_CONFIG=saturn_run_config.json",
+    "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+    "uv",
+    "run",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "mlflow>=2.9",
+    "--with",
+    "boto3>=1.34",
+    "--with",
+    "python-dotenv>=1.0",
+    "--with",
+    "trackio>=0.1",
+    "python",
+    "-u",
+    "run_saturn_object_multimodel_flux2.py"
+  ],
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "experiment": "saturn-object-multimodel-flux2-20260819",
+  "guidance": 4.0,
+  "host_selection": "prefer_beast_softly",
+  "instrument": "multi-model semantic-object battery: native __call__ renders with forward hooks (exact scalar contract per branch, no batched floor); auto-extracted token rows; zero-rows ROI probes; route-band certification; donor row addressing + shams; in-scene displacement, wrong-address, scale x2; cross-scene displacement port foxball->catmug with norm-matched sham; CFG cond/uncond split by deterministic call order with pointer check",
+  "log_sha256": "16fad2ef75b3775598cf6c44ac981ad542520965cf2299a23a8ed263f8cfb18a",
+  "model_id": "flux2-klein-base-4b",
+  "model_path": "/mnt/big/llm-models/FLUX.2-klein-base-4B",
+  "mrun_job_id": "job-17788d5a1b0d",
+  "mrun_ok": true,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_saturn_object_multimodel_flux2.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-17788d5a1b0d",
+      "log_path": "/mnt/big/mrun-work/job-17788d5a1b0d/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787166163.352375
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787166164.0969512
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787166164.1389215
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787166164.1953108
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787166573.5828946
+        },
+        {
+          "name": "finished",
+          "ts": 1787166573.6109002
+        }
+      ]
+    },
+    "elapsed_s": 410.31,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "7ebabe47f753616def6a3305b5a9f206026c991683148438aba81976d936f255",
+      "size_bytes": 3854806
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 24624.9,
+    "peak_vram_mb": 8334.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "needs": {
+    "cuda": true
+  },
+  "offload": "model",
+  "payload": {
+    "guidance": 4.0,
+    "height": 256,
+    "object_multimodel": {
+      "cert_bands": {
+        "all_joint": [
+          "joint.0",
+          "joint.1",
+          "joint.2",
+          "joint.3",
+          "joint.4"
+        ],
+        "all_joint_s0": [
+          "joint.0",
+          "joint.1",
+          "joint.2",
+          "joint.3",
+          "joint.4",
+          "single.0"
+        ],
+        "joint01": [
+          "joint.0",
+          "joint.1"
+        ],
+        "joint24_s0": [
+          "joint.2",
+          "joint.3",
+          "joint.4",
+          "single.0"
+        ],
+        "s0_only": [
+          "single.0"
+        ]
+      },
+      "default_route": [
+        "joint.2",
+        "joint.3",
+        "joint.4",
+        "single.0"
+      ],
+      "default_route_band": [
+        "joint.2",
+        "joint.3",
+        "joint.4",
+        "single.0"
+      ],
+      "guidance": 4.0,
+      "joint_blocks": 5,
+      "model_id": "flux2-klein-base-4b",
+      "model_path": "/mnt/big/llm-models/FLUX.2-klein-base-4B",
+      "note": "object-multimodel base4b: ~45 native 256px 50-step CFG renders (object battery), single lease, stops after catmug port branches",
+      "offload": "model",
+      "seeds": [
+        7217,
+        31337
+      ],
+      "single_blocks": 20,
+      "steps": 50
+    },
+    "steps": 50,
+    "width": 256
+  },
+  "pipeline_class": "Flux2KleinPipeline",
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": "server-sized",
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "no checkpoint replay: every branch is a full native pipeline call inside the single lease; hooks capture/patch text rows in-process; no per-branch submissions",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1"
+  },
+  "schema": "saturn-object-multimodel-flux2-mrun-request-v1",
+  "steps": 50,
+  "task_family": "saturn-flux-rosetta-manalysis",
+  "worker_sha256": "2bed82cd2ed59e15b7e99ec142b668d86e42d69d6592adb93cbe92db785695b3"
+}

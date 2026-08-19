@@ -4,7 +4,7 @@ This is the single narrative entry point for the Black Forest Labs work committe
 
 The research treats FLUX as an executable image program. We capture typed state from conditioner through denoiser, scheduler, and VAE; fork matched futures from one parent; intervene at a declared route, phase, or carrier; and let the native RGB consumer decide whether the intervention mattered.
 
-The main-branch program is strongest where systems and causal evidence meet: exact phase-resident serving, consumer-closed route promotion, cross-family conditioner compilation, model-family tracer breadth, recipient-native repair, typed topology and interaction controls, and timing-sensitive hotpatches. Supporting main-branch demos extend the same execution surface to semantic circuit objects, debugger I/O, and a twenty-axis route panel.
+The main-branch program is strongest where systems and causal evidence meet: exact phase-resident serving, consumer-closed route promotion, cross-family conditioner compilation, model-family tracer breadth, recipient-native repair, typed topology and interaction controls, and timing-sensitive hotpatches. Supporting main-branch demos extend the same execution surface to semantic circuit objects, debugger I/O, a twenty-axis route panel, and multi-model object-register portability.
 
 ## Main-branch research map
 
@@ -19,6 +19,7 @@ The main-branch program is strongest where systems and causal evidence meet: exa
 | 7 | [Real FLUX Hotpatch Cinema](demos/real-hotpatch-cinema.md) and [Counterfactual Diffusion Futures](demos/counterfactual-diffusion-futures.md) | The same intervention has much more authority at early denoising cuts than at late cuts, hostile donors steer toward their own factor, and exact parent rollback remains available. |
 | supporting | [Twenty-Axis Native Semantic Route Circuit](demos/twenty-axis-semantic-route-circuit.md) | One typed route is tested against many visual factors with strict, carrier-level, and open rows kept separate. |
 | supporting | [Semantic Circuit Objects](demos/semantic-circuit-object-interface.md) and [Objects Become Debugger I/O](demos/objects-debugger-io-structs-stress-isolation.md) | Route-level values can be recorded as typed object/debugger state and stressed with property, dose, wrong-address, composition, and isolation controls. |
+| supporting | [Multi-Model Object Registers](demos/multi-model-object-registers.md) | The object-register interface replicates across the FLUX.2 family and degrades to noun-phrase-window locality on FLUX.1's T5 conditioner; a cross-conditioner wrong-object failure is register-borne and row-portable, while prompt-disjoint scheduler closure is a measured negative. |
 
 The order above is the main-branch presentation order. This page describes only reports and evidence committed on `main`.
 
@@ -28,10 +29,10 @@ The main tracer and instrumentation cohort is explicitly pinned:
 
 | model/checkpoint | revision | topology or boundary | main-branch evidence |
 |---|---|---|---|
-| `black-forest-labs/FLUX.1-schnell` | `741f7c3ce8b383c54771c7003378a50191e9efe9` | 19 joint + 38 single | Static tracer profile and family comparison |
-| `black-forest-labs/FLUX.2-klein-base-4B` | `a3b4f4849157f664bdbc776fd7453c2783562f4d` | 5 joint + 20 single | Matched base/distilled diagnosis and tracer profile |
-| `black-forest-labs/FLUX.2-klein-4B` | `e7b7dc27f91deacad38e78976d1f2b499d76a294` | 5 joint + 20 single | Primary serving, route, patch, object, snake, and hotpatch specimen |
-| `black-forest-labs/FLUX.2-klein-9B` | `92196c8e11f7b6cf2b7493e037d8c5345c559216` | 8 joint + 24 single | Tracer profile and bounded trajectory/readout evidence |
+| `black-forest-labs/FLUX.1-schnell` | `741f7c3ce8b383c54771c7003378a50191e9efe9` | 19 joint + 38 single | Static tracer profile, family comparison, and NP-window-local object-register evidence |
+| `black-forest-labs/FLUX.2-klein-base-4B` | `a3b4f4849157f664bdbc776fd7453c2783562f4d` | 5 joint + 20 single | Matched base/distilled diagnosis, tracer profile, and native-CFG object-register replication |
+| `black-forest-labs/FLUX.2-klein-4B` | `e7b7dc27f91deacad38e78976d1f2b499d76a294` | 5 joint + 20 single | Primary serving, route, patch, object, snake, and hotpatch specimen; cross-conditioner wrong-object diagnosis |
+| `black-forest-labs/FLUX.2-klein-9B` | `92196c8e11f7b6cf2b7493e037d8c5345c559216` | 8 joint + 24 single | Tracer profile, bounded trajectory/readout evidence, and object-register replication under sequential offload |
 | `black-forest-labs/FLUX.2-klein-9b-kv` | `a6dfb36eca3a3906eb2fd460795adfb844e5fcce` | 8 joint + 24 single | Native reference-K/V tracer and cache-path evidence |
 | `black-forest-labs/FLUX.2-dev` | `26afe3a78bb242c0a8bb181dcc8937bb16e5c66c` | 8 joint + 48 merged/single | Component-decoupled runtime and forward-only tracer evidence |
 | `black-forest-labs/FLUX.2-small-decoder` | `a3efc24f613ef42d9428af62fdbd6f5fd8856c4a` | Decoder-only boundary | Decoder compatibility and efficiency boundary |

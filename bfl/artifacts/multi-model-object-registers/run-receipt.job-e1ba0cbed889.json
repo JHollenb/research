@@ -1,0 +1,182 @@
+{
+  "case": "object-xcond-diagnosis",
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "SATURN_RESIDENT_WORKER=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+    "SATURN_RUN_CONFIG=saturn_run_config.json",
+    "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+    "uv",
+    "run",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "mlflow>=2.9",
+    "--with",
+    "boto3>=1.34",
+    "--with",
+    "python-dotenv>=1.0",
+    "--with",
+    "trackio>=0.1",
+    "python",
+    "-u",
+    "run_saturn_object_xcond_diagnosis.py"
+  ],
+  "device": "cuda",
+  "dtype": "bfloat16 suffix / float32 TECM",
+  "experiment": "saturn-object-xcond-diagnosis-20260819",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "cross-conditioner wrong-object diagnosis mapped to object structs: in-job TECM v3 residual warm start (Smol->Qwen, 900 steps) renders the known wrong-object scene; E1 reads the foreign carrier at the subject-register rows against an 8-animal native dictionary (template-residual cosines, scaffold floor in-table); E2a repairs by overwriting subject/color/window/active carrier rows with native rows + norm-matched sham; E2b repairs at the certified route via hooks; E3 transplants foreign subject rows into the native carrier; exact scalar native-call branches, 2 seeds",
+  "launcher_attempt": 1,
+  "log_sha256": "4653a49fba449078c8b9e51171ff9edbe71828bd36505d51683d516777730406",
+  "model_id": "black-forest-labs/FLUX.2-klein-4B",
+  "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+  "mrun_job_id": "job-e1ba0cbed889",
+  "mrun_ok": true,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_saturn_object_xcond_diagnosis.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-e1ba0cbed889",
+      "log_path": "/mnt/big/mrun-work/job-e1ba0cbed889/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787171246.3254218
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787171247.099329
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787171247.138047
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787171247.205582
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787171595.3399177
+        },
+        {
+          "name": "finished",
+          "ts": 1787171595.366564
+        }
+      ]
+    },
+    "elapsed_s": 349.07,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "c58232e1c685b9c5142127357c60565ec301a194276fc77284a1944cd0887297",
+      "size_bytes": 3879272
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 22316.8,
+    "peak_vram_mb": 8314.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "needs": {
+    "cuda": true
+  },
+  "payload": {
+    "height": 256,
+    "mapper_steps": 900,
+    "seeds": [
+      7217,
+      31337
+    ],
+    "steps": 4,
+    "width": 256
+  },
+  "pipeline_class": "Flux2KleinPipeline",
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 38000.0,
+    "vram_mb": 12000.0
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "one model load + one TECM warm start inside the lease; every branch is a native pipeline call in-process; no per-branch submissions",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1"
+  },
+  "schema": "saturn-object-xcond-diagnosis-mrun-request-v1",
+  "task_family": "saturn-flux-rosetta-manalysis",
+  "worker_sha256": "063398dcf7782da0c82389b366342fdfe02547f4992c7ba8ea7f92d39409af9e"
+}
