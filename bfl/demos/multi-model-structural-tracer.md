@@ -83,7 +83,6 @@ fresh recipient-local validation.
 
 ## Evidence
 
-- [Tracer campaign synthesis](../../obsidian/blog/2026-08-06-tracer-seven-bfl-models.md)
-- [FLUX.1 cross-compiled capture/resume follow-up](../../obsidian/blog/2026-08-09-saturn-flux1-cross-compiled-conditioner.md)
+- [Tracer campaign synthesis](../../../obsidian/blog/2026-08-06-tracer-seven-bfl-models.md)
 - [BFL model/checkpoint README](../README.md#models-checkpoints-and-portability)
-- [Model ledger](../../obsidian/experiments/bfl-tracer-2026-08-06/README.md)
+- [Model ledger](../../../obsidian/experiments/bfl-tracer-2026-08-06/README.md)
