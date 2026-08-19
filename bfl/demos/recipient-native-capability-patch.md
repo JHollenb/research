@@ -4,6 +4,11 @@ type: experiment-report
 status: bounded-developmental-result
 rank_in_bfl_survey: 1
 model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+comparison_model_id: "black-forest-labs/FLUX.2-klein-base-4B"
+comparison_revision: "a3b4f4849157f664bdbc776fd7453c2783562f4d"
+checkpoint_role: "distilled recipient; matched against full-capacity base"
 tags: [bfl, flux, distilled-models, capability-repair, causal-intervention, image-counting]
 ---
 
@@ -33,6 +38,13 @@ The experiment has four distinct questions:
 4. Does the package actually serve without the model used to construct its payload?
 
 ## Specimens and task
+
+The full-capacity comparison specimen is `black-forest-labs/FLUX.2-klein-base-4B` at revision
+`a3b4f4849157f664bdbc776fd7453c2783562f4d` (50 steps, guidance 4). The frozen recipient and
+patch target is `black-forest-labs/FLUX.2-klein-4B` at revision
+`e7b7dc27f91deacad38e78976d1f2b499d76a294` (four steps, guidance 1). The patch package is bound
+to the latter recipient revision; the base checkpoint supplies the diagnostic comparison, not a
+runtime donor payload.
 
 The matched specimens are:
 
@@ -174,6 +186,14 @@ when the write is calibrated against the recipient's native image consumer.
 
 **Terminal status:** bounded developmental repair trend. The package is not a general counting
 module, not a universal capability compiler, and not approved for deployment because the collateral gate fails.
+
+This is nevertheless a clean existence proof for a very small recipient-local repair: 55,297 FP16
+values, no donor payload at serving time, successful fresh-process execution with the donor path
+unavailable, and exact uninstall/zero-dose behavior. Its portability boundary is explicit. The
+package is compiled for the declared distilled recipient revision, route, stream, step, and
+numerical ABI; the matched base checkpoint diagnoses the gap but does not make the package a
+cross-checkpoint artifact. The held-out collateral failure is part of the result and is why this
+remains supporting evidence rather than a deployment claim.
 
 Open axes are paraphrase robustness beyond the tested panel, broader count ranges, unrelated
 compositions, more recipient revisions, and a transferable abstention boundary.

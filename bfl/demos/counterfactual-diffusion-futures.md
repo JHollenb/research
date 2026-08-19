@@ -4,6 +4,9 @@ type: experiment-report
 status: replicated-native-consumer-trend
 rank_in_bfl_survey: 3
 model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+checkpoint_role: "distilled native generator"
 tags: [bfl, flux, diffusion, counterfactuals, trajectory-editing, timing, rollback]
 ---
 
@@ -143,6 +146,13 @@ state-space difference has strong downstream image authority.
 edit package, not a universal semantic editor, and not a general timing law. The donor factor is
 constructed from a paired native trajectory, so portability to unseen prompts, models, or object
 families remains open.
+
+The practical value is a controlled future surface: a captured parent can produce early and late
+counterfactuals, a hostile donor can test factor specificity, and shams plus exact rollback keep
+the comparison honest while the unchanged denoiser, scheduler, and VAE consume every branch. The
+timing and donor-specificity findings belong to the declared Klein 4B trajectory; they are not a
+claim that the same state difference or address transfers unchanged to another family member or a
+newer checkpoint.
 
 The norm-matched sham controls perturbation magnitude but not plausible-manifold membership. Its destructive images should not be interpreted as evidence that arbitrary same-norm edits are unsafe in every regime; they only delimit this experiment's control.
 

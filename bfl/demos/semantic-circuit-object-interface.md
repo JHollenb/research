@@ -4,6 +4,9 @@ type: experiment-report
 status: exploratory-synthesis
 priority: highest-value-synthesis
 model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+checkpoint_role: "distilled native generator"
 tags: [bfl, flux, semantic-circuit, object-addressing, debugger-io, manifests, value-level-editing, isolation]
 ---
 

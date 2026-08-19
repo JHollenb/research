@@ -3,7 +3,10 @@ title: "Route Cartographer with Consumer-Closed Promotion"
 type: experiment-report
 status: consumer-closed-route-trend
 rank_in_bfl_survey: 13
-model: "FLUX.2 native route and image consumers"
+model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+checkpoint_role: "distilled native generator"
 tags: [bfl, flux, route-cartography, address, consumer-closure, rollback, future-prediction]
 ---
 
@@ -21,6 +24,13 @@ The competing interpretations are a local program, a distributed carrier route, 
 ## Capture and representation
 
 The capture contains 685 native states, 85 logical branches, and 325 observations across 56 nodes and 54 edges. It records the source state, 25 carrier candidates, and two native consumers: packed return and RGB endpoint. Two role-conditioned chains separate subject return from lighting return. A route signature is a structured record of address, state carrier, consumer, timing, dose, and endpoint response.
+
+This cartography is native to `black-forest-labs/FLUX.2-klein-4B@e7b7dc27f91deacad38e78976d1f2b499d76a294`.
+The address register is deliberately useful beyond one report, but its entries are local ordinal
+coordinates: `joint.i` and `single.i` refer to the tested checkpoint's own topology. The same typed
+route schema can be re-enumerated for Klein 9B, 9B-KV, Dev, or FLUX.1; an address, carrier value, or
+semantic interpretation must not be copied across those models without a fresh native-consumer
+promotion test.
 
 Parallel route entropy lies between 0.975 and 0.994, indicating broad participation across candidate carriers. Serial corridor entropy is lower: the subject-return corridor at `single.18` is 0.114, RGB subject return is 0.374, and lighting is 0.299 for subject return and 0.455 for RGB. These values describe route concentration under the cartographer's instrumentation; they do not directly translate into semantic ownership.
 
@@ -55,6 +65,11 @@ The route map is instrument- and consumer-specific. Entropy depends on the candi
 **Working inference:** the route address register is a cartographic selector for a typed temporal coalition, not a catalog of independent local programs.
 
 **Terminal status:** consumer-closed route-mapping trend. It is not a universal route topology, a proof of local semantic ownership, or a guarantee that address selection alone is sufficient for native execution.
+
+The methodological result is the admission rule: route prediction is only a proposal. A candidate
+enters the promoted state only when the native image consumer improves; otherwise the update is
+rejected and the prior state is restored exactly. This keeps internal route utility separate from
+actual image capability and makes negative futures part of the evidence rather than discarded noise.
 
 ## Local proof bundle
 

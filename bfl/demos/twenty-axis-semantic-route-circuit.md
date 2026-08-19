@@ -4,6 +4,9 @@ type: experiment-report
 status: convergent-native-consumer-trend
 rank_in_bfl_survey: 4
 model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+checkpoint_role: "distilled native generator"
 tags: [bfl, flux, mechanistic-interpretability, semantic-circuit, causal-intervention, editing]
 ---
 

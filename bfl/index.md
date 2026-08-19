@@ -1,10 +1,41 @@
 # Black Forest Labs Experiment Index
 
-This is the primary demo path for product and research discussion. It contains the eight individual experiments represented by the six recommended narrative groups, followed by the Typed Snake supporting experiment. Each entry states what was attempted, what changed in the image or execution, and what capability or boundary the result opens.
+This index leads with six main narrative reports for product and research discussion, followed by
+the existing demo reports and proof bundles. Each entry states what was attempted, what changed in
+the image or execution, and what capability or boundary the result opens.
 
-The remaining supporting and exploratory reports are preserved on the `additional-experiments` branch. They are not part of the first-look path, but their evidence remains available for follow-up review.
+The supporting and exploratory reports remain available in this repository on `main`. They are not
+part of the first-look sequence, but their evidence remains available for follow-up review.
 
-## Primary demo path
+## Model/checkpoint scope
+
+The primary demo path uses distilled `black-forest-labs/FLUX.2-klein-4B`, revision
+`e7b7dc27f91deacad38e78976d1f2b499d76a294`, unless a report explicitly names a comparison model.
+The recipient-patch report also uses full-capacity `black-forest-labs/FLUX.2-klein-base-4B`,
+revision `a3b4f4849157f664bdbc776fd7453c2783562f4d`, as its 50-step diagnostic reference. The
+broader circuit/instrumentation record includes FLUX.1 Schnell, Klein 9B, Klein 9B-KV, Dev, and
+Small Decoder; see the [BFL README](README.md#models-checkpoints-and-portability) for the exact
+revision table and the `joint.*` address-mapping boundary.
+
+The model-specific tracer cards are collected in the [BFL tracer documentation](docs/tracer/README.md).
+They separate forward-free anatomy, live internal physiology, paged execution, and the one
+checkpoint with additional prompt/image route evidence.
+
+## Main narrative
+
+| report | why it leads the narrative |
+| --- | --- |
+| [Exact Phase-Resident Serving](demos/exact-phase-resident-serving.md) | Byte-exact pixel/PNG parity, explicit phase-residency contracts, and speedups reported with both prepared-phase and setup-plus-generation denominators. |
+| [Route Cartographer with Consumer-Closed Promotion](demos/route-cartographer-consumer-closure.md) | A route is promoted only when the native image consumer improves; otherwise it is rejected and the prior state is restored exactly. |
+| [Multi-Model Structural Tracer](demos/multi-model-structural-tracer.md) | The FLUX.2 line shows a stable coarse role grammar and useful search order, while concrete addresses remain topology-local. |
+| [Recipient-Native Capability Patch](demos/recipient-native-capability-patch.md) | A 55,297-value donor-free recipient patch survives a fresh process and uninstalls exactly, with collateral failure reported rather than hidden. |
+| [Typed Snake Topology and Interaction Residuals](demos/typed-snake-topology-interaction.md) | Route necessity and non-additive composition are tested with ablations, wrong-axis and dose controls, held-out cases, and shams. |
+| [Real Hotpatch Cinema and Counterfactual Futures](demos/real-hotpatch-cinema.md) · [futures report](demos/counterfactual-diffusion-futures.md) | Early-versus-late timing and hostile-donor specificity are visible through the native consumer, with exact parent rollback. |
+
+These six reports are additive to the existing record. The remaining reports and detailed entries
+below retain their original proof bundles and remain on `main`.
+
+## Additional demo reports
 
 | experiment | why it matters |
 | --- | --- |
@@ -17,13 +48,13 @@ The remaining supporting and exploratory reports are preserved on the `additiona
 | [Recipient-Native Capability Patch](#recipient-native-capability-patch) | Repairs a distilled counting regression with a 55,297-parameter recipient-local patch that survives a fresh process and uninstalls exactly, while held-out collateral remains visible. |
 | [Route Cartographer with Consumer-Closed Promotion](#route-cartographer-with-consumer-closed-promotion) | Promotes only interventions that improve the native image consumer. One update was promoted, three rejected, and rollback succeeded 5/5 across 685 states and 85 branches. |
 
-## Supporting experiment
+## Supporting report detail
 
 ### [Typed Snake Topology Repair and Interaction Residual](demos/typed-snake-topology-interaction.md)
 
 A typed route changes a closed green coil into an open S-shaped snake, reaching 0.9008 progress while ablation, wrong-axis, dose, and held-out controls reject generic image movement. A paired lighting×color panel shows a real nonlinear interaction that addition alone misses, while the first learned mixer fails to beat a held-out linear baseline. Structured shape editing and native interaction measurement are opened, but not a general algebra for combining arbitrary edits.
 
-## Primary reports
+## Additional report details
 
 ### [Exact Phase-Resident Serving, Replay, and Edit Caching](demos/exact-phase-resident-serving.md)
 

@@ -4,6 +4,9 @@ type: experiment-report
 status: native-consumer-trend-with-causal-controls
 rank_in_bfl_survey: 7
 model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+checkpoint_role: "distilled native generator"
 tags: [bfl, flux, topology, typed-route, interaction, residual]
 ---
 
@@ -61,6 +64,13 @@ The interaction controls show that the native paired endpoint is not well explai
 **Working inference:** typed route state can carry a topology-specific correction, while semantic composition is computed by a native interaction mechanism that is not captured by simple addition.
 
 **Terminal status:** native-consumer causal trend for the declared Klein 4B panels. It is not evidence for a universal topology editor, a learned interaction module, or a general factorization law.
+
+The snake panel is valuable as a compact control demonstration: route necessity, dose dependence,
+wrong-axis selectivity, held-out seeds, wrong time/site, sign reversal, and a norm-matched sham all
+survive into the native image consumer. The interaction panel adds a separate point: the paired
+lighting×color endpoint contains a non-additive residual that simple vector addition misses. Both
+effects are native to the pinned Klein 4B recipe and should be treated as route/interaction trends,
+not as a portable compositor or topology editor for other FLUX checkpoints.
 
 ## Local proof bundle
 

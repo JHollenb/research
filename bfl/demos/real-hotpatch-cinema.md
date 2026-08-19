@@ -3,6 +3,9 @@ title: "Real FLUX Hotpatch Cinema: Counterfactual Futures Through the Native Con
 type: experiment-report
 status: replicated-native-consumer-trend
 model: "FLUX.2 Klein 4B"
+model_id: "black-forest-labs/FLUX.2-klein-4B"
+revision: "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+checkpoint_role: "distilled native generator"
 tags: [bfl, flux, hotpatch, counterfactuals, trajectory-editing, rollback, native-consumer]
 ---
 
@@ -91,6 +94,13 @@ This experiment demonstrates that a real FLUX.2 trajectory can be paused, modifi
 It does not demonstrate a prompt-independent learned editor. The route and donor factor are supplied from paired native trajectories for the declared prompts and seeds. No optimizer learns a reusable edit package in this run, and the donor is present during discovery and intervention. Portability to unseen prompts, objects, model revisions, and donor-free serving remains open.
 
 The correct status is a **replicated native-consumer trend**. The evidence is stronger than a single attractive image because it includes the opposite direction, sham, dose, timing, scalar, and rollback controls, but it remains bounded to the measured FLUX.2 organism and prompt panel.
+
+The supporting result is specifically the conjunction of timing and donor specificity: the same
+route state has strong authority at the early cut, much weaker authority at the later cut, and a
+hostile donor steers the branch toward its own factor. That exposes a time-local native editing
+window in the pinned Klein 4B checkpoint. It does not provide a checkpoint-independent address or
+a reusable editor; a different FLUX family member or revision needs its own trajectory capture,
+route validation, and native-consumer check.
 
 ## Local proof bundle
 
