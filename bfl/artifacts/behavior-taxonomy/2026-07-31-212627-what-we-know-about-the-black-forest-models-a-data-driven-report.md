@@ -213,52 +213,55 @@ Workspace: `experiments/2026-07-31-weights-predict-ports-retrodiction/`.
   CLOSE-WAIT) held 17.2GB of swapped anon in **zram** — kernel-resident, invisible to
   per-process RSS. Diagnosis chain preserved in memory; margins now honest.
 
-## Is any of this valuable to Black Forest Labs?
+## Practical implications and open research directions
 
-Sorted honestly, per the standing assessment in
-[[2026-07-31-145130-the-conditioners-were-stock-checkpoints|the conditioners post]]:
+This section translates the measured results into model-development, evaluation, and systems
+implications. It separates observed capabilities from plausible follow-on uses; it does not make
+claims about private training choices, internal tooling, or product plans. The distinction is
+important because the public residual-facing screen cannot reveal private ancestry, and a useful
+method is not the same thing as proof of a particular lineage or mechanism.
 
-- **Things they already know:** their own lineage choices and stock
-  conditioners—the public residual-facing screen does not reveal private ancestry—the existence of counting/text
-  weaknesses.
-- **Things they plausibly don't have:** (a) a *validated, third-party-auditable* lineage
-  instrument — and the zero-rotation regularity means any finetune/distill of *their*
-  weights is fingerprintable: derivative detection and license compliance, working
-  today; (b) the mechanistic *shape* of their failure modes — seed-gated redundancy in
-  counting, lexical gating in typography — which is diagnostic information a benchmark
-  score cannot carry; (c) the KV delta map: what their own finetune did geometrically.
-- **The transferable asset is the method**, not the facts: frozen plans, physics
-  controls, refusal gates, and custody separation caught two wrong claims *inside this
-  program* (the universal counting circuit; an early RAM misattribution) before either
-  shipped.
+- **The method is the transferable result.** Frozen plans, physics controls, refusal gates, and
+  custody separation caught two wrong claims *inside this program* (the universal counting circuit
+  and an early RAM misattribution) before either shipped. The individual model facts are bounded to
+  the measured cohort and revision custody.
+- **The new evidence is diagnostic rather than merely descriptive.** The experiments expose
+  seed-gated redundancy in counting, lexical gating in typography, and the geometric shape of a
+  measured KV adaptation. Those distinctions carry information that an aggregate benchmark score
+  cannot carry.
+- **The measurements support reproducible engineering workflows.** The results below describe
+  concrete ways to use the instruments for comparison, diagnosis, and prioritization while keeping
+  the remaining uncertainty visible.
 
-### What they could concretely do with it
+### What the measurements enable
 
 1. **Derivative screening.** The measured near-zero-rotation pairs (`0.9977 / 0.9991`) show that
    some finetune/distill relations retain a strong residual-facing fingerprint. The calibrated
    lineup can triage candidate relations with analytic nulls and known-related anchors. It is not
    universal IP proof: fully rotated ancestry and unmeasured interfaces remain observationally open.
-2. **Fix text rendering with a scalpel.** The atlas decomposes the failure: spelling
-   robust (0.94), substitution dead (push↔pull 0.125), presence gated by the *word*
-   (open ~1.0 / exit ~0.0). Lexical gating points conditioner-side; substitution
-   failure points at the joint stream — targeted work instead of "more text data."
-3. **Audit the distillation recipe.** The certified base/distilled pair + frozen
-   capture plan measures what step-distillation costs representationally — where
-   readability relocates, which site classes survive — and could be regularized
-   against in the next distill run.
-4. **Geometric changelog per finetune.** The KV delta template says where an adaptation moved the
-   weights (here: larger Q/K than V/output relative deltas) before evaluation. Causal cache purpose
-   and semantic payload ownership remain separate experiments.
-5. **Seed-resolved evals.** Per-seed bimodality (exactly 1.0 / exactly 0.0) means
-   mean-based internal evals mask all-or-nothing routing; their model cards under-report
-   variance that is structural, not noise.
-6. **Adopt the harness.** Behavior certificates with Wilson admission + sealed causal
-   panels + refusal gates would let them publish capability claims that survive
-   adversarial replication — nobody in image generation does this today.
-7. **Read the cliff as convergence data.** Independent labs (theirs, Alibaba's)
-   crossing the same bias→QK-norm transition in the same generation is evidence about
-   the optimization landscape their architects can use — and our forecast registry
-   bets they won't cross back.
+2. **Targeted text-rendering diagnosis.** The atlas decomposes the failure: spelling is robust
+   (0.94), substitution is weak (push↔pull 0.125), and presence is gated by the *word* (open ~1.0 /
+   exit ~0.0). Lexical gating points conditioner-side; substitution failure points at the joint
+   stream. That turns a broad quality complaint into separable hypotheses instead of a generic
+   prescription to add more text data.
+3. **Distillation auditing.** The certified base/distilled pair plus frozen capture plan measures
+   what step-distillation costs representationally—where readability relocates and which site
+   classes survive. The same measurements can be used to compare or regularize later distillation
+   runs.
+4. **A geometric changelog for adaptations.** The KV delta template identifies where an adaptation
+   moved the weights (here: larger Q/K than V/output relative deltas) before downstream evaluation.
+   Causal cache purpose and semantic payload ownership remain separate questions and require their
+   own interventions.
+5. **Seed-resolved evaluation.** Per-seed bimodality (exactly 1.0 / exactly 0.0) shows how
+   mean-based evaluations can mask all-or-nothing routing. Reporting the seed distribution exposes
+   structural variance rather than treating it as measurement noise.
+6. **Adversarially reproducible capability claims.** Behavior certificates with Wilson admission,
+   sealed causal panels, and refusal gates provide a concrete evaluation harness for claims that
+   need to survive independent replication.
+7. **Convergence data for optimization hypotheses.** Independent model families crossing the same
+   bias→QK-norm transition in the same generation provide evidence about the optimization
+   landscape. The observation is a hypothesis generator, not a forecast that the transition is
+   universal or irreversible.
 
 ## Big picture
 
