@@ -1,65 +1,57 @@
 # Black Forest Labs Experiments
 
-This directory contains standalone reports on experiments with Black Forest Labs image generators. Together they form one investigation rather than a collection of unrelated demos: first we measure the model's behavioral limits and artifact boundaries, then trace where information travels, then intervene on those routes, and finally test whether the discovered interfaces support editing, repair, substitution, or efficient execution.
+I am studying Black Forest Labs image generators as systems that can be measured, interrupted, replayed, and controlled. My central question is not only whether a prompt produces a convincing image. I want to know what information the model carries, where that information is consumed, whether I can change it without changing the model weights, and how reliably the change reaches the final image.
 
-## New highest-value experiment
-
-### Objects Become Debugger I/O
-
-The object experiment is currently the strongest because it closes the loop from a rendered object to a durable, inspectable control interface. The first stage discovers lexical and spatial addresses, the second proves that those addresses support selective edits and exposes contextual limits for size, movement, and layering, and the third turns the result into a fingerprinted manifest before testing conditioner depth, route redundancy, dose tolerance, out-of-distribution attributes, composition, wrong-address payload portability, and isolation. The most important findings are that property payloads remain row-local and route-redundant, the address selects the target while the payload selects the transform, and text-route object rows can re-bind an object in a void context while image-side complement writes remove it. The evidence is still bounded to one scene family and two seeds, but it is the collection's clearest demonstration of a useful model-facing object interface and its failure modes.
-
-## How the experiments fit together
-
-The foundation is measurement. Behavior taxonomy reports separate counting, typography, lexical presence, and semantic substitution, while model-family forensics and decoder-boundary studies establish which artifacts are actually being compared. The empty-context scaffold and image-stream timing experiments add an important constraint: both positional structure and denoising phase affect the final image, so a successful intervention must respect shape, route, and time rather than treating the model as a static latent space.
-
-The next layer is causal route mapping. Distributed K/V interventions, the twenty-axis semantic circuit, the route cartographer, and the typed snake experiment use native targets, route ablations, wrong-axis donors, dose changes, shams, and held-out cases to show that useful information is often distributed across several sites and is consumed nonlinearly. These experiments support each other by moving from one narrow binding effect, to many semantic factors, to a broader route map, while repeatedly testing whether internal movement survives into the rendered image.
-
-Once route behavior is established, the reports test operations on saved trajectories. Counterfactual diffusion futures, wall-picture hotpatching, living-room couch movement, and scene certificates show that an early trajectory can be forked and steered toward a requested scene or object change. The timing and collateral results keep the claim bounded: early edits can be powerful, late edits are weaker, and scene movement does not automatically preserve identity or every unrelated object.
-
-The interface experiments ask whether the same downstream image process can accept new sources of conditioning. Cross-family conditioner repair, the four-frontend semantic ABI, FLUX.1 causal controls, and the textless Klein renderer show that shape-compatible inputs can reach the consumer, while held-out semantic interchange remains difficult. Complete native-state donors often work where compact token or channel slices fail, which ties the interface results back to the distributed-carrier findings.
-
-The repair and control experiments turn those observations into practical tests. The recipient-native capability patch shows that a small local operation can restore a bounded capability in a distilled model; Klein seam bisection probes where that mismatch enters; the nonlinear interaction compiler tests whether native composition can be learned; and the native-state selector tests whether an earlier state can decide when to intervene. Their partial or negative results are useful because they identify the missing pieces: generalization, uncertainty calibration, collateral control, and consumer-closed training.
-
-The object-address experiment now provides the clearest bridge across these layers. It uses the causal route and checkpoint controls established by the earlier panels, turns the resulting addresses into a durable manifest, and then uses the edit battery, dose sweep, wrong-address control, and isolation test to distinguish a real object-facing interface from a visually convenient but unstable mask. Its results support the broader route findings while adding a concrete unit of state—an object with lexical, route, spatial, and evidence fields—that later editing and composition experiments can compile against.
-
-The systems experiments make the scientific loop affordable and reproducible. Exact phase-resident serving, suffix replay, reference caching, closed-loop students, and guarded FLUX.2 Dev paging reduce the cost of branching and preserve exactness where it matters. This lets the causal experiments retain alternative futures, replay controls, and failure cases instead of relying on a single winning image.
+I move from broad behavior to causal routes, then from routes to practical interfaces. I use native target images, exact replay, route ablations, wrong-source and wrong-site controls, norm-matched shams, dose sweeps, held-out prompts, and collateral measurements. A successful image is useful evidence, but I treat it as a working result until the native consumer and the controls support the interpretation.
 
 ## Strongest experiments
 
-### Objects Become Debugger I/O
+The strongest experiments below are ordered the same way as the top of [the experiment index](index.md). Together they describe the main arc of my current work.
 
-This is the strongest integrated experiment because it demonstrates discovery, a live write path, durable typed state, and stress-tested boundaries in one chain. It shows selective property edits, route redundancy, useful dose through roughly 4×, visually clean novel attributes and compositions, target/payload separation under a wrong-address control, and text-route isolation of individual objects. Its importance is not that every address is solved; it is that the experiment defines a plausible object interface and measures exactly where that interface stops working.
+### 1. Semantic Circuit Objects
 
-### Exact phase-resident serving and replay
+In [Semantic Circuit Objects](demos/semantic-circuit-object-interface.md), I take a causal semantic route and compile it into a typed object symbol. I localize lexical rows, join them to spatial probes, record route, timing, payload, dose, and evidence fields, and use the resulting symbol to edit, isolate, delete, compose, and numerically steer objects. The blue-mug result works at both tested seeds, while durable manifest readback passes 11/11 checks. This is still exploratory, but it is the clearest statement of the interface I am trying to build.
 
-This is one of the strongest engineering results because it combines a large speed improvement with exact output parity rather than trading fidelity for throughput. It shows that prompt encoding, denoising, suffix replay, and reference caching can be separated into auditable phases, making the much more expensive causal experiments practical and reproducible.
+### 2. Objects Become Debugger I/O
 
-### Counterfactual diffusion futures and hotpatch cinema
+In [Objects Become Debugger I/O](demos/objects-debugger-io-structs-stress-isolation.md), I map a fox and ball to lexical and spatial addresses, test those addresses through property edits, movement, layering, dose, wrong-address writes, and isolation, and preserve the result as a fingerprinted manifest. Fox recolor progress reaches 0.92/0.94 across the two seeds; isolation progress is above 0.91 for the fox and 0.99 for the ball. The failures show where size, pose, relations, and image-side deletion still depend on context, turning a promising route effect into a durable object-facing control record.
 
-These experiments are strong because they use same-parent branches, hostile donors, dose controls, shams, multiple cut points, and exact rollback. Early trajectory edits move toward the intended scene or subject while late edits weaken, showing that image generation can be studied as a time-dependent program whose future can be compared under controlled interventions.
+### 3. Counterfactual Diffusion Futures
 
-### Twenty-axis route circuit and distributed K/V route
+In [Counterfactual Diffusion Futures](demos/counterfactual-diffusion-futures.md), I pause a generation, fork its trajectory, apply a controlled route intervention, and resume the unchanged image process. Early branches reach 0.904–0.971 target progress, while later cut points fall to 0.095–0.358; exact replay, hostile donors, and shams show when the effect is real and when it fades. This opens controlled image editing and counterfactual exploration without requiring me to regenerate every branch from scratch.
 
-Together these are important because they broaden the evidence beyond one successful feature. The twenty-axis panel finds several independently testable visual factors, while the distributed K/V panel shows that a narrow binding behavior can depend on a multi-site route. Their ablations and held-out controls support the conclusion that useful information is distributed and consumer-dependent rather than stored in one obvious token or unit.
+### 4. Exact Phase-Resident Serving
 
-### Recipient-native capability patch
+In [Exact Phase-Resident Serving](demos/exact-phase-resident-serving.md), I separate reusable generation phases, suffix replay, and reference-edit caching while preserving exact pixels. Eight 512² generations run 10.66× faster per image and 6.25× faster end-to-end with exact parity, while the reference-edit cache reaches a median 4,696× cache-hit improvement. This is the systems layer that lets the scientific work scale.
 
-The capability patch is strong because the intervention is tiny, recipient-local, donor-independent at serving time, and tested with zero-dose, wrong-time, fresh-process, and uninstall controls. It shows that a distilled model can have a bounded capability gap that is repairable without changing the whole model, while the later collateral and generalization failures define why this is a research result rather than a deployable universal hotfix.
+### 5. Route Cartographer with Consumer-Closed Promotion
 
-### Route cartographer with consumer-closed promotion
+In [Route Cartographer with Consumer-Closed Promotion](demos/route-cartographer-consumer-closure.md), I map 685 native states and 85 branches, predict which addresses may matter, and promote an intervention only when the actual image consumer improves. One update was promoted, three were rejected, and exact rollback succeeded 5/5; full text-state transfers close routes that single-token operations cannot. This gives me a safe way to distinguish an internally interesting signal from a route that can actually control the output image.
 
-This experiment is important because it turns route discovery into a measured decision process. Candidate updates are promoted only when the native image consumer improves and are rejected with exact rollback otherwise. The result shows that whole-edge or coalition-level transfers can work where single-token interventions are weak, and that internal alignment alone is not enough to justify a route claim.
+### 6. Twenty-Axis Native Semantic Route Circuit
 
-### Cross-family conditioner repair and structured frontends
+In [Twenty-Axis Native Semantic Route Circuit](demos/twenty-axis-semantic-route-circuit.md), I test one typed route against twenty independent visual factors. Six rows pass the strict 9/9 gate, eleven pass the relaxed 7/9 gate, and three remain candidates; ablations and empty controls keep the interpretation bounded to route-level control rather than single-token semantic ownership. This broadens the object work beyond one scene and helps identify which kinds of visual information are worth compiling into future symbols.
 
-These experiments establish a valuable boundary: a frozen image suffix can accept foreign or structured conditioning in the correct tensor contract, but high hidden-state similarity does not guarantee held-out semantic equivalence. The combination of exact native-donor rescue, compact-mask failures, held-out controls, and partial structured transfer shows both what is portable and where a learned consumer-facing compiler is still missing.
+## How the program fits together
 
-### Typed snake repair and native interaction residual
+I start with behavioral measurement so I know which user-visible behaviors are reliable and which fail under counting, typography, lexical, or substitution tests. Model-family forensics and decoder-boundary work tell me which artifacts and output stages I am actually comparing. Context and denoising-time experiments show that positional structure and timing can affect the image even when a prompt looks empty or unchanged.
 
-The snake experiment is strong because it tests a discrete topology change with route ablation, wrong-axis, dose, and held-out controls. Its paired interaction panel shows that native composition contains a nonlinear term that simple addition misses, while the failed learned mixer prevents overclaiming a universal composition rule. This connects causal route evidence to the harder problem of composing multiple edits.
+I then map causal routes. Distributed K/V interventions, semantic route panels, route cartography, and typed topology edits test whether a visual effect is local or distributed, whether it survives into the image, and whether composition is linear or nonlinear. These experiments give me the route and consumer vocabulary needed to create an object symbol instead of guessing at a token or hidden unit.
+
+Once a route is understood, I use saved trajectories as controlled parents. Counterfactual futures, wall-picture edits, living-room movement, and scene certificates test whether a branch can change one requested aspect while preserving the rest. The results are useful precisely because they expose the limits: early edits are stronger, spatial movement is not automatically metric, and scene changes can carry collateral.
+
+The interface experiments test how conditioning reaches the image consumer. Cross-family conditioners, structured frontends, textless rendering, and FLUX.1 controls show that tensor compatibility is easy to establish but semantic interchange is much harder. Complete native state often transfers where compact slices fail, which supports the distributed, consumer-dependent picture behind the object symbols.
+
+Finally, repair, selection, serving, and approximation experiments turn the findings into practical infrastructure. Recipient-native patches, seam bisection, nonlinear interaction compilers, native-state selectors, exact replay, paged execution, and closed-loop students test whether I can repair, accelerate, or safely abstain without losing the native consumer as the authority.
+
+## What I believe the experiments show
+
+My current working inference is that FLUX.2 conditioning behaves like a distributed, time-dependent state interface. Some lexical rows are compact enough to act like object addresses. Their values can carry property changes, but the meaning of a write depends on the base context, route, timing, decoder priors, dose, and downstream consumer. Relations, pose, size, and composition are more contextual than simple color or noun identity.
+
+This is why I use the word “object” carefully. I am not claiming that the model contains a conventional object database. I am creating a typed, measured record that tells me where a model-state write is allowed, what payload it represents, what image region it should affect, and which controls establish that interpretation. The record becomes useful when the native image consumer confirms it.
+
+The evidence remains exploratory. I keep failed transfers, noisy metrics, instrument bugs, collateral, and held-out failures in the record. The goal is to find interfaces that survive stronger tests, not to turn a clean visualization into a broader claim than the experiment earned.
 
 ## Reading the reports
 
-Each report is standalone and links only to its own local proof bundle. The reports distinguish observations, directional trends, convergent evidence, working interpretations, and bounded claims. A failed gate is retained as evidence about the instrument, specimen, or claim boundary; it is not silently converted into a claim that the underlying mechanism does not exist.
-
-Start with the [experiment index](index.md), then open any [standalone demo report](demos/). Each artifact directory contains the raw result files, representative images or receipts, a short README, and a verifier that checks the evidence bundle locally.
+Start with [the experiment index](index.md) for the executive summary of every demo. Open the strongest reports first, then follow the route, editing, compatibility, and systems sections outward. Each [standalone demo](demos/) links to its own proof bundle, receipts, representative images, and verifier, so the reader can move from the high-level story to the evidence without needing the original notebook context.
