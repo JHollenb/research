@@ -96,7 +96,7 @@ def main() -> None:
     ):
         assert (ROOT / image).exists(), image
 
-    print("multi-model-object-registers: PASS")
+    print("semantic-object-registers: PASS")
 
 
 if __name__ == "__main__":

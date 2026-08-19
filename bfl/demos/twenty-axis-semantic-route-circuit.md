@@ -156,6 +156,10 @@ carrier even when no single token or channel provides a complete semantic addres
 **Terminal status:** bounded route-level trend. This is not a proof of minimality, universality,
 or a tokenizer-addressed circuit, and the candidate rows remain open.
 
+The object interface compiled from this circuit — typed object symbols addressed by lexical rows
+and consumed by the native suffix — is reported in
+[Semantic Circuit Objects](semantic-circuit-object-interface.md).
+
 ## Local proof bundle
 
 The full compact evidence is in [the local artifact bundle](../artifacts/twenty-axis-semantic-route-circuit/):

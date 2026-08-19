@@ -1,4 +1,4 @@
-# Multi-model object registers: evidence bundle
+# Semantic object registers: evidence bundle
 
 This bundle contains the compact execution receipts and proof panes for the 2026-08-19 campaign
 that tested whether the object-register interface found on distilled `FLUX.2-klein-4B` (2026-08-18)
@@ -10,7 +10,7 @@ Every job's exact no-op and determinism gates read `0.0`, and evidence-plane swe
 
 The full per-branch reports (`report.json`, 2.6–5.1 MB each) are not copied here; they are
 reproducible from the proof sheets via the analyzer and referenced by their `saturn/results/`
-paths in the [parent demo](../../demos/multi-model-object-registers.md#local-proof-bundle-and-reproduction).
+paths in the [parent demo](../../demos/semantic-object-registers.md#local-proof-bundle-and-reproduction).
 
 ## Files
 

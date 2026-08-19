@@ -183,6 +183,10 @@ The strongest next test is a preregistered value-arithmetic battery that predict
 
 These results use two seeds, one pinned FLUX.2 Klein 4B recipe, 256×256 images, four denoising steps, and a small set of related scene grammars. ROI scalars sometimes understate visually clean edits, a value-level mug sham was missing, the complement collateral was non-trivial, and the sparsity result was seed-inconsistent. Those limits narrow the claim; they do not erase the convergent causal trend.
 
+## Follow-up
+
+The preregistered follow-up battery ran on 2026-08-19 across the FLUX.2 family and FLUX.1-schnell: the object-register interface replicated on base-4B and klein-9B, degraded to noun-phrase-window addressing on the T5 conditioner, and factored the cross-conditioner wrong-object failure along the same register axes. See [Semantic Object Registers](semantic-object-registers.md).
+
 ## Local proof bundle
 
 The complete local bundle is [semantic-circuit-object-interface](../artifacts/semantic-circuit-object-interface/README.md). It contains route-circuit ledgers, the inverse map, object edit battery, source-address registry, manifest proof, deep-map and isolation summaries, held-out reports and panes, value-level reports and panes, and representative proof images.

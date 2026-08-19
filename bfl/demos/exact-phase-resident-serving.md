@@ -149,16 +149,29 @@ one reference state → many exact edits
 declared FLUX.2 Klein 4B configuration, and its measured speedup is directly actionable for that
 configuration.
 
+**Cross-model extension (2026-08-19, `saturn/results/phase-parity-crossmodel/`):** the same
+bitwise panel passed on three further pinned cells on the Beast RTX 4080 —
+`FLUX.2-klein-base-4B@a3b4f484` (resident lane, 12.38× per image), `FLUX.2-klein-9B@92196c8e`
+(bf16 sequential lane, 1.18×), and `FLUX.1-schnell@741f7c3c` (fp8-e4m3 layerwise + sequential
+lane, 1.43×) — 32/32 candidate images pixel- and PNG-exact against each model's own offload
+reference, `encode_calls=4` and `unplanned_swaps=0` throughout. The sequential-lane cells certify
+the contract half that survives when the denoiser cannot be resident: typed phase boundaries,
+exact-dtype conditioner custody, and encoder detach under external sequential offload; their
+speedups are encoder-stream removal only and are telemetry, not the claim.
+
 The reusable part is the explicit execution contract—conditioner preparation, typed state identity,
 resident denoising, scheduler custody, and native-consumer parity. The measured result itself is
-bound to `black-forest-labs/FLUX.2-klein-4B@e7b7dc27f91deacad38e78976d1f2b499d76a294`, BF16,
-512×512, four steps, and the declared pipeline. A different FLUX topology or reference-conditioned
-pipeline must earn its own ABI inspection, cache identity, and parity panel.
+bound to the pinned revisions above, BF16 (fp8 storage only where declared), 512×512, four steps,
+and the declared pipeline. A different FLUX topology or reference-conditioned pipeline must still
+earn its own ABI inspection, cache identity, and parity panel.
 
 **Bounded replay result:** the tested cut positions and reference-edit rows replay exactly.
 
 **Not established:** exact parity for batch sizes greater than one, compile modes, FP16 variants,
-or other model families. Those faster lanes have separate numerical contracts and must be measured independently. The result also does not claim a quality improvement; the model and outputs are the same, only the execution schedule is more efficient.
+1024² panels, FLUX.2-dev, klein-9b-kv reference conditioning, and hosts other than the Beast
+RTX 4080. Those faster or wider lanes have separate numerical contracts and must be measured
+independently. The result also does not claim a quality improvement; the model and outputs are
+the same, only the execution schedule is more efficient.
 
 ## Local proof bundle
 
@@ -169,5 +182,9 @@ The complete compact evidence is in [the local artifact bundle](../artifacts/exa
 - [edit-cache receipt](../artifacts/exact-phase-resident-serving/edit-cache-receipt.json)
 - [cache run receipt](../artifacts/exact-phase-resident-serving/edit-cache-run-receipt.json)
 - [receipt verifier](../artifacts/exact-phase-resident-serving/verify.py)
+- [cross-model parity analysis](../../../saturn/results/phase-parity-crossmodel/analysis.md)
+- [cross-model v1 report (resident cells)](../../../saturn/results/phase-parity-crossmodel/job-4bc506e9fe64/report.json)
+- [cross-model seq-v2 report (sequential cells)](../../../saturn/results/phase-parity-crossmodel/job-6a7f7b0603dd/report.json)
+- [cross-model preregistration](../../../saturn/experiments/2026-08-19-phase-parity-crossmodel/README.md)
 
 Run `python ../artifacts/exact-phase-resident-serving/verify.py` from this directory to verify the 8/8 parity, zero replay error, saved-forward counts, exact edit rows, and cache statistics.
