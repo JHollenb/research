@@ -18,10 +18,10 @@ The bundle is intentionally compact: large per-branch `report.json` files remain
 
 ## Proof panes
 
-- FLUX.2 replication: `zoom-fox-base4b-seed31337.png`, `zoom-fox-9b-512-seed7217.png`, `zoom-mug-port-9b-512.png`, and `proof-sheet-foxball-9b-512-seed7217.png`.
+- FLUX.2 replication: `zoom-fox-base4b-seed31337.png`, `zoom-mug-port-base4b.png`, `zoom-fox-klein9b-seed7217.png`, `zoom-mug-port-klein9b.png`, `zoom-fox-9b-512-seed7217.png`, `zoom-mug-port-9b-512.png`, `proof-sheet-foxball-9b-512-seed7217.png`, and `proof-sheet-catmug-9b-512.png`.
 - FLUX.1 address grain and route: `locality-strip-flux1.png`, `rows-pooled-interaction-strip.png`.
 - Wrong-object register diagnosis: `xcond-diagnosis-strip.png`.
-- Value-level algebra: `window-algebra-strip.png`, `pure-color-port-strip.png`, `pure-color-debug-strip.png`, `species-prior-strip.png`, and `zoom-mug-pure-color.png`.
+- Value-level algebra: `window-algebra-strip.png`, `zoom-mug-window-port.png`, `pure-color-port-strip.png`, `pure-color-debug-strip.png`, `species-prior-strip.png`, and `zoom-mug-pure-color.png`.
 - Struct write-back: `struct-write-strip-seed7217.png`, `struct-write-strip-seed31337.png`, and `zoom-ball-remove-vs-translate.png`.
 
 The source reports and the reproducible analyzer are in `saturn/experiments/2026-08-19-object-multimodel/`. The bundle does not replace those immutable source artifacts; it makes the cross-model proof legible from the standalone BFL demo.
