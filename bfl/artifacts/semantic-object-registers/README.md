@@ -1,6 +1,6 @@
-# Semantic object registers: cross-model evidence bundle
+# Semantic circuit object Part III proof bundle
 
-This is the compact proof bundle for the consolidated [Semantic Object Registers Across FLUX](../../demos/semantic-object-registers.md) report. It joins the original FLUX.2 object interface to the 2026-08-19 multi-model, value-algebra, cross-conditioner, and struct-write follow-ups.
+This is the compact proof bundle for [Semantic Circuit Object Part III: Semantic Object Registers Across FLUX](../../demos/semantic-circuit-object-part-III.md). It joins the original FLUX.2 object interface to the 2026-08-19 multi-model, value-algebra, cross-conditioner, and struct-write follow-ups.
 
 The bundle is intentionally compact: large per-branch `report.json` files remain immutable under `saturn/results/`, while this directory holds the run receipts and human-facing proof panes used by the report. Every copied CUDA arm passed its declared mrun success, strict-preflight, single-lease, and exact no-op/determinism checks in the source receipt. The visual panes are the corrected analyzer outputs; panes are primary when ROI scalars are diluted by background or donor-pose mismatch.
 

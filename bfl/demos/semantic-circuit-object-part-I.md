@@ -1,5 +1,5 @@
 ---
-title: "Semantic Circuit Objects: Creating Symbols and Using Them Directly in FLUX.2"
+title: "Semantic Circuit Object Part I: Creating Symbols and Using Them Directly in FLUX.2"
 type: experiment-report
 status: exploratory-synthesis
 priority: highest-value-synthesis
@@ -10,7 +10,7 @@ checkpoint_role: "distilled native generator"
 tags: [bfl, flux, semantic-circuit, object-addressing, debugger-io, manifests, value-level-editing, isolation]
 ---
 
-# Semantic Circuit Objects
+# Semantic Circuit Object Part I: Creating Symbols and Using Them Directly in FLUX.2
 
 > [!summary] This synthesis explains how a causal semantic circuit becomes a usable object symbol. We first establish a route that changes the native image consumer, then localize the lexical rows and spatial effects that carry one object, package them as a fingerprinted typed record, and use that record to edit, isolate, delete, compose, and numerically steer the object in the model's own state. The strongest result is value-level: reading two captured register values, subtracting them, and writing the displacement into another object's row produces a blue mug without a blue-mug render or edit prompt. The evidence is exploratory, but it is now a coherent model-facing object interface rather than a collection of visual tricks.
 
@@ -184,11 +184,11 @@ These results use two seeds, one pinned FLUX.2 Klein 4B recipe, 256×256 images,
 
 ## Follow-up
 
-The preregistered follow-up battery ran on 2026-08-19 across the FLUX.2 family and FLUX.1-schnell: the object-register interface replicated on base-4B and klein-9B, degraded to noun-phrase-window addressing on the T5 conditioner, and factored the cross-conditioner wrong-object failure along the same register axes. See [Semantic Object Registers](semantic-object-registers.md).
+The preregistered follow-up battery ran on 2026-08-19 across the FLUX.2 family and FLUX.1-schnell: the object-register interface replicated on base-4B and klein-9B, degraded to noun-phrase-window addressing on the T5 conditioner, and factored the cross-conditioner wrong-object failure along the same register axes. See [Part III: Semantic Object Registers Across FLUX](semantic-circuit-object-part-III.md).
 
 ## Local proof bundle
 
-The complete local bundle is [semantic-circuit-object-interface](../artifacts/semantic-circuit-object-interface/README.md). It contains route-circuit ledgers, the inverse map, object edit battery, source-address registry, manifest proof, deep-map and isolation summaries, held-out reports and panes, value-level reports and panes, and representative proof images.
+The complete local Part I evidence bundle is [semantic-circuit-object-interface](../artifacts/semantic-circuit-object-interface/README.md). It contains route-circuit ledgers, the inverse map, object edit battery, source-address registry, manifest proof, deep-map and isolation summaries, held-out reports and panes, value-level reports and panes, and representative proof images.
 
 - [Route circuit panel](../artifacts/semantic-circuit-object-interface/circuit-panel-ledger.json) and [route certificate](../artifacts/semantic-circuit-object-interface/route-certificate.json)
 - [Inverse object map](../artifacts/semantic-circuit-object-interface/inverse-object-map.json) and [source-address registry](../artifacts/semantic-circuit-object-interface/source-address-registry.json)

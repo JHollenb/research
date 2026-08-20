@@ -139,7 +139,7 @@ The ledger uses the primary 20-row evidence counts. Older editorial summaries us
 
 **Terminal status:** bounded route-level trend. This is not a proof of minimality, universality, or a tokenizer-addressed circuit, and the candidate rows remain open.
 
-The object interface compiled from this circuit — typed object symbols addressed by lexical rows and consumed by the native suffix — is reported in [Semantic Circuit Objects](semantic-circuit-object-interface.md).
+The object interface compiled from this circuit — typed object symbols addressed by lexical rows and consumed by the native suffix — is reported in [Part I: Creating Symbols](semantic-circuit-object-part-I.md).
 
 ## Local proof bundle
 

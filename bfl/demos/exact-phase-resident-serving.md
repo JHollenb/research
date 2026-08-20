@@ -58,15 +58,15 @@ No weights, scheduler equations, latent initialization, VAE decode operation, or
 
 The cross-model phase panel covered two pipeline classes, two conditioner ABIs, resident and sequential memory lanes, and BF16 plus fp8-e4m3 storage with BF16 compute. The source analysis records 64/64 candidate images bitwise identical to their offload-reference twins across the full exact panel; the table below shows the principal and fast-substrate cells.
 
-| cell | lane | pixel/PNG parity | per-image speedup | end-to-end speedup | reading |
-|---|---|---:|---:|---:|---|
-| klein-4B, same-day control | resident BF16 | 8/8 exact | 12.73× | 7.02× | resident phase split works |
-| klein-base-4B | resident BF16 | 8/8 exact | 12.38× | 7.19× | new checkpoint, same ABI |
-| klein-9B | BF16 sequential | 8/8 exact | 1.18× | 1.06× | only encoder streaming is removed |
-| FLUX.1 Schnell | fp8-e4m3 + sequential | 8/8 exact | 1.43× | 1.36× | T5 + pooled-CLIP conditioner boundary holds |
-| klein-9B fp8-seq | fp8-e4m3 + BF16, streamed | 8/8 exact | 1.18× | 1.06× | parity stable; speed varies by session |
-| klein-9B-KV fp8-seq | fp8-e4m3 + BF16, streamed | 8/8 exact | 2.49× | 2.24× | prompt-only KV cell now has parity |
-| klein-9B fp8-resident hybrid | fp8 denoiser resident, Qwen encoder streamed | 0/8 exact; median ΔRGB 4.6 | 6.40× | 4.36× | useful throughput contract, not parity |
+| cell                         | lane                                         |           pixel/PNG parity | per-image speedup | end-to-end speedup | reading                                     |
+| ---------------------------- | -------------------------------------------- | -------------------------: | ----------------: | -----------------: | ------------------------------------------- |
+| klein-4B, same-day control   | resident BF16                                |                  8/8 exact |            12.73× |              7.02× | resident phase split works                  |
+| klein-base-4B                | resident BF16                                |                  8/8 exact |            12.38× |              7.19× | new checkpoint, same ABI                    |
+| klein-9B                     | BF16 sequential                              |                  8/8 exact |             1.18× |              1.06× | only encoder streaming is removed           |
+| FLUX.1 Schnell               | fp8-e4m3 + sequential                        |                  8/8 exact |             1.43× |              1.36× | T5 + pooled-CLIP conditioner boundary holds |
+| klein-9B fp8-seq             | fp8-e4m3 + BF16, streamed                    |                  8/8 exact |             1.18× |              1.06× | parity stable; speed varies by session      |
+| klein-9B-KV fp8-seq          | fp8-e4m3 + BF16, streamed                    |                  8/8 exact |             2.49× |              2.24× | prompt-only KV cell now has parity          |
+| klein-9B fp8-resident hybrid | fp8 denoiser resident, Qwen encoder streamed | 0/8 exact; median ΔRGB 4.6 |             6.40× |              4.36× | useful throughput contract, not parity      |
 
 Every exact cell records `encode_calls=4` and `unplanned_swaps=0`. Resident lanes remove per-image weight transfers and therefore show roughly 12× denoise-loop speedups. Sequential lanes still stream the oversized denoiser, so their 1.06–1.43× gains are encoder-stream removal only. Parity, not speed, is the portable claim.
 

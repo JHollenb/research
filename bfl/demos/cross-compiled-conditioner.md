@@ -1,5 +1,5 @@
 ---
-title: Cross-Family Conditioner Compilation: FLUX.2 Rosetta to FLUX.1 Replay
+title: "Cross-Family Conditioner Compilation: FLUX.2 Rosetta to FLUX.1 Replay"
 status: convergent-portability-trend
 rank_in_bfl_survey: 3
 model_scope: "FLUX.2 Klein 4B primary; FLUX.1 Schnell extension"

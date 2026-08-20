@@ -1,6 +1,6 @@
-# Semantic-circuit object interface proof bundle
+# Semantic circuit object Part I proof bundle
 
-This bundle is the local evidence package for the standalone demo [Semantic Circuit Objects](../../demos/semantic-circuit-object-interface.md). It synthesizes the route-circuit, object-address, held-out algebra, isolation, and value-level debugger results into one inspectable proof set.
+This bundle is the local evidence package for [Semantic Circuit Object Part I: Creating Symbols](../../demos/semantic-circuit-object-part-I.md). It synthesizes the route-circuit, object-address, held-out algebra, isolation, and value-level debugger results into one inspectable proof set.
 
 The central chain is: a native semantic circuit identifies a causal route; controlled donor/base contrasts localize lexical rows on that route; image probes join those rows to spatial effects; a typed manifest records the address and its evidence; and native suffix replay uses the record to read, transform, write, isolate, or delete an object without changing model weights.
 

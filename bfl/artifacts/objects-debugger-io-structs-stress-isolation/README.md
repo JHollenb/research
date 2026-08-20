@@ -1,6 +1,6 @@
-# Objects Become Debugger I/O proof bundle
+# Semantic circuit object Part II proof bundle
 
-This bundle contains the local proof artifacts for the integrated object-address experiment. It covers three stages: inverse object mapping, a live object registry and edit battery, and typed manifest plus deep-map, stress, and isolation tests.
+This bundle contains the local proof artifacts for [Semantic Circuit Object Part II: Objects Become Debugger I/O](../../demos/semantic-circuit-object-part-II.md). It covers three stages: inverse object mapping, a live object registry and edit battery, and typed manifest plus deep-map, stress, and isolation tests.
 
 The PNG files are the retained visual proof panes and zooms. The JSON files are compact metric ledgers that preserve the measurements used by the standalone report. The copied run receipts preserve the execution contract, model, seed, route, and resource metadata. The source-address registry is the concrete per-object address artifact used by the edit battery.
 

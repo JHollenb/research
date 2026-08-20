@@ -1,5 +1,5 @@
 ---
-title: "Semantic Object Registers Across FLUX: Addressing, Algebra, and Debugger I/O"
+title: "Semantic Circuit Object Part III: Semantic Object Registers Across FLUX"
 type: experiment-report
 status: convergent-portability-trend
 priority: highest-value-synthesis
@@ -20,13 +20,13 @@ consumer: "native FLUX denoiser, scheduler, VAE, and decoded RGB image"
 tags: [bfl, flux, flux2, flux1, semantic-object, object-registers, semantic-circuit, value-algebra, debugger-io, cross-family, portability, causal-route]
 ---
 
-# Semantic Object Registers Across FLUX
+# Semantic Circuit Object Part III: Semantic Object Registers Across FLUX
 
 > [!summary] The semantic object is present across the tested FLUX models, but it is not one universally portable tensor. In FLUX.2's causal Qwen-conditioned denoiser, object identity and compact properties are carried by sharp lexical register rows: donor writes change the intended object, norm-matched shams stay inert, and a value displacement ports across scenes. In FLUX.1's bidirectional T5 conditioner, the same object survives at noun-phrase-window grain rather than single-row grain. A wrong-object cross-conditioner failure is row-portable in both directions, and a manifest diff can write color or remove an object through the native consumer. The same evidence also gives a useful negative: image-stream coordinate writes do not relocate the ball, and cross-scene T5 attribute algebra rotates into the new context instead of preserving color exactly.
 
 ## Research question
 
-The original `semantic-object-registers.md` result was bound to one distilled `FLUX.2-klein-4B` checkpoint at 256², four steps, and guidance 1. It showed a convincing local interface — object rows, a cross-scene displacement, shams, and role backfill — but it did not follow the object through other checkpoints, conditioner families, value-level debugging, or write-back.
+The original single-model object-register result was bound to one distilled `FLUX.2-klein-4B` checkpoint at 256², four steps, and guidance 1. It showed a convincing local interface — object rows, a cross-scene displacement, shams, and role backfill — but it did not follow the object through other checkpoints, conditioner families, value-level debugging, or write-back.
 
 The follow-up campaign asks the stronger question:
 
@@ -204,4 +204,4 @@ Representative proof artifacts:
 
 The full per-branch reports remain immutable at the corresponding `saturn/results/` paths: `object-multimodel-flux2`, `object-multimodel-flux1`, `object-xcond-diagnosis`, `object-struct-write`, and `rosetta-cross-family-manalysis/tecm-scheduler-closure`. The bundle README maps each local receipt to its source job.
 
-Related context: [Semantic Circuit Objects](semantic-circuit-object-interface.md), [Objects Become Debugger I/O](objects-debugger-io-structs-stress-isolation.md), and [Multi-Model Structural Tracer](multi-model-structural-tracer.md).
+Related context: [Part I: Creating Symbols](semantic-circuit-object-part-I.md), [Part II: Objects Become Debugger I/O](semantic-circuit-object-part-II.md), and [Multi-Model Structural Tracer](multi-model-structural-tracer.md).
