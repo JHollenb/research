@@ -1,0 +1,94 @@
+{
+  "model": "flux2-klein-4b",
+  "num_steps": 8,
+  "guidance": 1.0,
+  "eps": 0.15,
+  "prompt": "a person hiking on a rocky mountain trail at sunrise",
+  "seed": 5101,
+  "k_set": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+  ],
+  "loop_parity_rel": 0.0,
+  "t_full_pipe_s": 6.122,
+  "per_k": [
+    {
+      "k": 1,
+      "cheap_exact_rel": 0.0,
+      "n_forwards_cheap": 7,
+      "n_forwards_full": 8,
+      "forwards_saved": 1,
+      "t_cheap_s": 0.8683,
+      "t_full_s": 0.992,
+      "speedup": 1.143,
+      "edit_exact_rel": 0.0
+    },
+    {
+      "k": 2,
+      "cheap_exact_rel": 0.0,
+      "n_forwards_cheap": 6,
+      "n_forwards_full": 8,
+      "forwards_saved": 2,
+      "t_cheap_s": 0.7451,
+      "t_full_s": 0.9937,
+      "speedup": 1.334,
+      "edit_exact_rel": 0.0
+    },
+    {
+      "k": 3,
+      "cheap_exact_rel": 0.0,
+      "n_forwards_cheap": 5,
+      "n_forwards_full": 8,
+      "forwards_saved": 3,
+      "t_cheap_s": 0.6212,
+      "t_full_s": 0.9939,
+      "speedup": 1.6,
+      "edit_exact_rel": 0.0
+    },
+    {
+      "k": 4,
+      "cheap_exact_rel": 0.0,
+      "n_forwards_cheap": 4,
+      "n_forwards_full": 8,
+      "forwards_saved": 4,
+      "t_cheap_s": 0.497,
+      "t_full_s": 0.9938,
+      "speedup": 2.0,
+      "edit_exact_rel": 0.0
+    },
+    {
+      "k": 6,
+      "cheap_exact_rel": 0.0,
+      "n_forwards_cheap": 2,
+      "n_forwards_full": 8,
+      "forwards_saved": 6,
+      "t_cheap_s": 0.2486,
+      "t_full_s": 0.9938,
+      "speedup": 3.998,
+      "edit_exact_rel": 0.0
+    },
+    {
+      "k": 7,
+      "cheap_exact_rel": 0.0,
+      "n_forwards_cheap": 1,
+      "n_forwards_full": 8,
+      "forwards_saved": 7,
+      "t_cheap_s": 0.1243,
+      "t_full_s": 0.9938,
+      "speedup": 7.993,
+      "edit_exact_rel": 0.0
+    }
+  ],
+  "gates": {
+    "G_LOOP_PARITY": true,
+    "G_CHEAP_EXACT": true,
+    "G_CHEAP_SPEEDUP": true,
+    "G_CHEAP_EDIT_EXACT": true
+  },
+  "reading": "Hand-driven denoise reproduces the pipeline bit-exact (loop_parity_rel~0). Cheap-deep resume-at-k (run only steps k..N-1 from the cached entering-k latent) reproduces the golden final bit-exact for every k while running N-k forwards instead of N -> the denoise prefix is genuinely cacheable/skippable. Editing at k via cheap-deep equals full-recompute-then-inject bit-exact -> a faithful interactive editor: edit at k, re-render only the tail.",
+  "source": "beast job-0283d9597b87 (mrun --pin beast --gpu, PhasePipeline stitch)"
+}

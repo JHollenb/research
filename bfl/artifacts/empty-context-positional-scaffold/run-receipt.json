@@ -1,0 +1,736 @@
+{
+  "log_sha256": "1ca229b7daf0d7648a7c634d028540e0e551ad8dc1a2250b5f0301db9d06dc79",
+  "mrun_guarded_receipt": {
+    "admission": {
+      "claim_key": "mrun:e7e5e95ba0fb40f0e6c220f99866b97419731f6a61e7c8faab63a7bc484f4b37",
+      "fencing_epoch": 1,
+      "idempotency_key": "mrun:e7e5e95ba0fb40f0e6c220f99866b97419731f6a61e7c8faab63a7bc484f4b37",
+      "scope_sha256": "5d7eb5f618b6e35795fd1585dcdffbad05b0ad9ad0625375158593103211c67e"
+    },
+    "assigned_host": "beast",
+    "created": null,
+    "created_ts": 1786614268.4099288,
+    "finished_ts": 1786614366.8711836,
+    "idempotent_replay": null,
+    "job_id": "job-79ff59eb54d2",
+    "payload_custody": {
+      "declared": {
+        "sha256": "7870cb6e40d6677bea8184e9b77cbb658437f58a3a9c20c6155a88eb268a3f45",
+        "size_bytes": 3165250
+      },
+      "executed": {
+        "host": "beast",
+        "reported_ts": 1786614308.0193925,
+        "sha256": "7870cb6e40d6677bea8184e9b77cbb658437f58a3a9c20c6155a88eb268a3f45",
+        "size_bytes": 3165250
+      },
+      "required": true,
+      "sealed": {
+        "sealed_ts": 1786614268.9181948,
+        "sha256": "7870cb6e40d6677bea8184e9b77cbb658437f58a3a9c20c6155a88eb268a3f45",
+        "size_bytes": 3165250
+      }
+    },
+    "resolved_execution": {
+      "plan_binding": {
+        "assigned_host": "beast",
+        "binding_status": "explicit_no_submitted_plan",
+        "matches_submitted_plan": true,
+        "selected_plan": null,
+        "submitted_plan": null,
+        "submitted_plan_present": false
+      },
+      "plans": null,
+      "reservation": {
+        "cpu_threads": 4,
+        "disk_gb": 1.0,
+        "est_wall_s": null,
+        "ram_mb": 28000.0,
+        "source": "declared",
+        "vram_mb": 11264.0
+      }
+    },
+    "result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "TQDM_DISABLE=1",
+          "SATURN_RESIDENT_WORKER=1",
+          "SATURN_PAD_CONFIG=context-pad-occupancy.json",
+          "LLM_MODELS_EXTRA_ROOT=/mnt/big/llm-models",
+          "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+          "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+          "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+          "uv",
+          "run",
+          "--project",
+          "generative-image-model-atlas",
+          "--offline",
+          "--with",
+          "transformers==5.14.1",
+          "--with",
+          "diffusers==0.39.0",
+          "--with",
+          "accelerate==1.14.0",
+          "--with",
+          "safetensors>=0.5",
+          "--with",
+          "sentencepiece>=0.2",
+          "--with",
+          "pillow>=10",
+          "--with",
+          "numpy>=1.26",
+          "--with",
+          "boto3>=1.34",
+          "--with",
+          "python-dotenv>=1.0",
+          "python",
+          "-u",
+          "run_saturn_context_pad_occupancy.py"
+        ],
+        "cwd": "/mnt/big/mrun-work/job-79ff59eb54d2",
+        "log_path": "/mnt/big/mrun-work/job-79ff59eb54d2/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1786614308.3671467
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1786614308.9787931
+          },
+          {
+            "name": "process.launch",
+            "ts": 1786614309.0045977
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1786614309.0685534
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1786614367.2808473
+          },
+          {
+            "name": "finished",
+            "ts": 1786614367.2968862
+          }
+        ]
+      },
+      "elapsed_s": 58.96,
+      "executed_payload": {
+        "host": "beast",
+        "sha256": "7870cb6e40d6677bea8184e9b77cbb658437f58a3a9c20c6155a88eb268a3f45",
+        "size_bytes": 3165250
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 17827.3,
+      "peak_vram_mb": 8318.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "schema": "mrun.guarded-job-receipt.v2",
+    "started_ts": 1786614308.588842,
+    "state": "succeeded",
+    "submitted_request": {
+      "client_estimate": null,
+      "client_run_id": "dd5af5b7cb182bac",
+      "cmd": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "SATURN_PAD_CONFIG=context-pad-occupancy.json",
+        "LLM_MODELS_EXTRA_ROOT=/mnt/big/llm-models",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "uv",
+        "run",
+        "--project",
+        "generative-image-model-atlas",
+        "--offline",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "sentencepiece>=0.2",
+        "--with",
+        "pillow>=10",
+        "--with",
+        "numpy>=1.26",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "python",
+        "-u",
+        "run_saturn_context_pad_occupancy.py"
+      ],
+      "config": {
+        "arms_per_cell": 7,
+        "cells": 6,
+        "device": "cuda",
+        "dtype": "bfloat16",
+        "experiment": "saturn-context-pad-occupancy",
+        "frozen_config_sha256": "033e142e42b8f8c87a4158821eed37e77d0849b60e65c13bc25cd142f4646ada",
+        "frozen_gates": {
+          "ea_all_arms_complete": "every (prompt, seed, arm) renders",
+          "ea_noop_override_exact": "noop_override RGB max-abs vs baseline == 0.0 for every prompt and seed (replay + typed-override contract)"
+        },
+        "kind": "context-pad-occupancy",
+        "model": "flux2-klein-4b",
+        "model_id": "black-forest-labs/FLUX.2-klein-4B",
+        "mrun_guarded_request_sha256": "e7e5e95ba0fb40f0e6c220f99866b97419731f6a61e7c8faab63a7bc484f4b37",
+        "retry_on_kill": false,
+        "saturn_request_sha256": "0e9f54cb2983a9cdc2b781154510eaeaef99bdf39fbcef32e45c3b2dde8d9f7c",
+        "scheduling_contract": {
+          "additional_scheduler_submissions": 0,
+          "branch_execution": "in_process",
+          "checkpoint_policy": "one resident CUDA lease; per (prompt, seed) capture one cut-step-0 checkpoint in-process and render typed conditioner-override branches against it; no durable checkpoints",
+          "collection_policy": "direct_job_only",
+          "control_plane": "mrun_outer_lease",
+          "data_plane": "resident_worker",
+          "execution_model": "finite_local_program",
+          "interactive": false,
+          "lease_scope": "entire-worker",
+          "logical_checkpoint_replays": 42,
+          "logical_operations": 54,
+          "max_local_work_items": 256,
+          "max_mrun_submissions": 1,
+          "model_loads": 1,
+          "mrun_retry_policy": "none_for_finite_lease",
+          "native_pad_row_ablation": true,
+          "per_branch_mrun_submissions": 0,
+          "per_transition_mrun_submissions": 0,
+          "replay_policy": "local_checkpoint_restore",
+          "resident_model_concurrency": 1,
+          "schema": "saturn-single-lease-scheduling-contract-v1"
+        },
+        "schema": "saturn-context-pad-occupancy-request-v1",
+        "worker_sha256": "6e870b59343756c368eb18661236607def4c84987ced5e059f0f39af0c95824c"
+      },
+      "env_alias": null,
+      "experiment": "saturn-context-pad-occupancy",
+      "needs": {
+        "cuda": true,
+        "payload_custody_v2": true,
+        "prefer_host": "beast"
+      },
+      "payload": {
+        "sha256": "7870cb6e40d6677bea8184e9b77cbb658437f58a3a9c20c6155a88eb268a3f45",
+        "size_bytes": 3165250
+      },
+      "payload_kind": "shipped",
+      "plans": null,
+      "priority": 0,
+      "reservation": {
+        "ram_mb": 28000.0,
+        "vram_mb": 11264.0
+      },
+      "schema": "mrun.normalized-job-request.v2",
+      "timeout_s": 3600.0
+    },
+    "submitted_request_sha256": "465666a4ca4843b4da2ebc7491dfbf7762a687304f4c1dae6f5dc4570b38afb7"
+  },
+  "mrun_job_id": "job-79ff59eb54d2",
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "SATURN_PAD_CONFIG=context-pad-occupancy.json",
+        "LLM_MODELS_EXTRA_ROOT=/mnt/big/llm-models",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "uv",
+        "run",
+        "--project",
+        "generative-image-model-atlas",
+        "--offline",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "sentencepiece>=0.2",
+        "--with",
+        "pillow>=10",
+        "--with",
+        "numpy>=1.26",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "python",
+        "-u",
+        "run_saturn_context_pad_occupancy.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-79ff59eb54d2",
+      "log_path": "/mnt/big/mrun-work/job-79ff59eb54d2/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1786614308.3671467
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1786614308.9787931
+        },
+        {
+          "name": "process.launch",
+          "ts": 1786614309.0045977
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1786614309.0685534
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1786614367.2808473
+        },
+        {
+          "name": "finished",
+          "ts": 1786614367.2968862
+        }
+      ]
+    },
+    "elapsed_s": 58.96,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "7870cb6e40d6677bea8184e9b77cbb658437f58a3a9c20c6155a88eb268a3f45",
+      "size_bytes": 3165250
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 17827.3,
+    "peak_vram_mb": 8318.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "report": {
+    "cells": [
+      {
+        "active_in_both": 18,
+        "active_tokens": 18,
+        "arms": {
+          "active_swap": {
+            "rgb_mad_vs_baseline": 39.67572021484375,
+            "rgb_mad_vs_donor_full": 15.491938273111979,
+            "rgb_max_abs_vs_baseline": 255.0
+          },
+          "baseline": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 43.5184071858724,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "donor_full": {
+            "rgb_mad_vs_baseline": 43.5184071858724,
+            "rgb_mad_vs_donor_full": 0.0,
+            "rgb_max_abs_vs_baseline": 254.0
+          },
+          "noise_pads": {
+            "rgb_mad_vs_baseline": 39.56102498372396,
+            "rgb_mad_vs_donor_full": 48.3045908610026,
+            "rgb_max_abs_vs_baseline": 252.0
+          },
+          "noop_override": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 43.5184071858724,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "pad_swap": {
+            "rgb_mad_vs_baseline": 15.998504638671875,
+            "rgb_mad_vs_donor_full": 43.5799306233724,
+            "rgb_max_abs_vs_baseline": 242.0
+          },
+          "zero_pads": {
+            "rgb_mad_vs_baseline": 41.90172322591146,
+            "rgb_mad_vs_donor_full": 44.09293111165365,
+            "rgb_max_abs_vs_baseline": 252.0
+          }
+        },
+        "capacity_tokens": 512,
+        "donor_active_tokens": 18,
+        "donor_prompt": "a blue wolf sitting in snow",
+        "elapsed_seconds": 7.69,
+        "gates": {
+          "noop_override_exact": true
+        },
+        "occupancy_percent": 3.516,
+        "pad_tokens": 494,
+        "pads_in_both": 494,
+        "prompt": "a red fox sitting in snow",
+        "rung": "short",
+        "seed": 4242
+      },
+      {
+        "active_in_both": 18,
+        "active_tokens": 18,
+        "arms": {
+          "active_swap": {
+            "rgb_mad_vs_baseline": 29.988174438476562,
+            "rgb_mad_vs_donor_full": 10.610326131184896,
+            "rgb_max_abs_vs_baseline": 253.0
+          },
+          "baseline": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 31.683858235677082,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "donor_full": {
+            "rgb_mad_vs_baseline": 31.683858235677082,
+            "rgb_mad_vs_donor_full": 0.0,
+            "rgb_max_abs_vs_baseline": 252.0
+          },
+          "noise_pads": {
+            "rgb_mad_vs_baseline": 54.4363047281901,
+            "rgb_mad_vs_donor_full": 62.52052307128906,
+            "rgb_max_abs_vs_baseline": 251.0
+          },
+          "noop_override": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 31.683858235677082,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "pad_swap": {
+            "rgb_mad_vs_baseline": 21.384862263997395,
+            "rgb_mad_vs_donor_full": 34.2711435953776,
+            "rgb_max_abs_vs_baseline": 248.0
+          },
+          "zero_pads": {
+            "rgb_mad_vs_baseline": 53.24034118652344,
+            "rgb_mad_vs_donor_full": 58.47396341959635,
+            "rgb_max_abs_vs_baseline": 253.0
+          }
+        },
+        "capacity_tokens": 512,
+        "donor_active_tokens": 18,
+        "donor_prompt": "a blue wolf sitting in snow",
+        "elapsed_seconds": 8.34,
+        "gates": {
+          "noop_override_exact": true
+        },
+        "occupancy_percent": 3.516,
+        "pad_tokens": 494,
+        "pads_in_both": 494,
+        "prompt": "a red fox sitting in snow",
+        "rung": "short",
+        "seed": 7217
+      },
+      {
+        "active_in_both": 67,
+        "active_tokens": 67,
+        "arms": {
+          "active_swap": {
+            "rgb_mad_vs_baseline": 58.1820068359375,
+            "rgb_mad_vs_donor_full": 5.908162434895833,
+            "rgb_max_abs_vs_baseline": 253.0
+          },
+          "baseline": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 58.39684041341146,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "donor_full": {
+            "rgb_mad_vs_baseline": 58.39684041341146,
+            "rgb_mad_vs_donor_full": 0.0,
+            "rgb_max_abs_vs_baseline": 254.0
+          },
+          "noise_pads": {
+            "rgb_mad_vs_baseline": 28.096450805664062,
+            "rgb_mad_vs_donor_full": 58.73805236816406,
+            "rgb_max_abs_vs_baseline": 237.0
+          },
+          "noop_override": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 58.39684041341146,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "pad_swap": {
+            "rgb_mad_vs_baseline": 8.59814453125,
+            "rgb_mad_vs_donor_full": 58.186503092447914,
+            "rgb_max_abs_vs_baseline": 241.0
+          },
+          "zero_pads": {
+            "rgb_mad_vs_baseline": 23.264658610026043,
+            "rgb_mad_vs_donor_full": 59.341888427734375,
+            "rgb_max_abs_vs_baseline": 254.0
+          }
+        },
+        "capacity_tokens": 512,
+        "donor_active_tokens": 67,
+        "donor_prompt": "a blue wolf sitting alertly in fresh deep snow at the edge of a pine forest at dusk, soft violet light on its fur, breath visible in the cold air, snowflakes drifting, paw prints leading toward frosted trees, cinematic natural lighting, shallow depth of field",
+        "elapsed_seconds": 8.08,
+        "gates": {
+          "noop_override_exact": true
+        },
+        "occupancy_percent": 13.086,
+        "pad_tokens": 445,
+        "pads_in_both": 445,
+        "prompt": "a red fox sitting alertly in fresh deep snow at the edge of a pine forest at dawn, soft golden light on its fur, breath visible in the cold air, snowflakes drifting, paw prints leading toward frosted trees, cinematic natural lighting, shallow depth of field",
+        "rung": "medium",
+        "seed": 4242
+      },
+      {
+        "active_in_both": 67,
+        "active_tokens": 67,
+        "arms": {
+          "active_swap": {
+            "rgb_mad_vs_baseline": 59.734222412109375,
+            "rgb_mad_vs_donor_full": 5.5597178141276045,
+            "rgb_max_abs_vs_baseline": 251.0
+          },
+          "baseline": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 59.1033681233724,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "donor_full": {
+            "rgb_mad_vs_baseline": 59.1033681233724,
+            "rgb_mad_vs_donor_full": 0.0,
+            "rgb_max_abs_vs_baseline": 250.0
+          },
+          "noise_pads": {
+            "rgb_mad_vs_baseline": 32.49512736002604,
+            "rgb_mad_vs_donor_full": 55.36263529459635,
+            "rgb_max_abs_vs_baseline": 237.0
+          },
+          "noop_override": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 59.1033681233724,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "pad_swap": {
+            "rgb_mad_vs_baseline": 12.138437906901041,
+            "rgb_mad_vs_donor_full": 58.84774271647135,
+            "rgb_max_abs_vs_baseline": 228.0
+          },
+          "zero_pads": {
+            "rgb_mad_vs_baseline": 30.43047587076823,
+            "rgb_mad_vs_donor_full": 62.94017537434896,
+            "rgb_max_abs_vs_baseline": 245.0
+          }
+        },
+        "capacity_tokens": 512,
+        "donor_active_tokens": 67,
+        "donor_prompt": "a blue wolf sitting alertly in fresh deep snow at the edge of a pine forest at dusk, soft violet light on its fur, breath visible in the cold air, snowflakes drifting, paw prints leading toward frosted trees, cinematic natural lighting, shallow depth of field",
+        "elapsed_seconds": 7.79,
+        "gates": {
+          "noop_override_exact": true
+        },
+        "occupancy_percent": 13.086,
+        "pad_tokens": 445,
+        "pads_in_both": 445,
+        "prompt": "a red fox sitting alertly in fresh deep snow at the edge of a pine forest at dawn, soft golden light on its fur, breath visible in the cold air, snowflakes drifting, paw prints leading toward frosted trees, cinematic natural lighting, shallow depth of field",
+        "rung": "medium",
+        "seed": 7217
+      },
+      {
+        "active_in_both": 205,
+        "active_tokens": 205,
+        "arms": {
+          "active_swap": {
+            "rgb_mad_vs_baseline": 42.057230631510414,
+            "rgb_mad_vs_donor_full": 7.375101725260417,
+            "rgb_max_abs_vs_baseline": 229.0
+          },
+          "baseline": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 42.547444661458336,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "donor_full": {
+            "rgb_mad_vs_baseline": 42.547444661458336,
+            "rgb_mad_vs_donor_full": 0.0,
+            "rgb_max_abs_vs_baseline": 229.0
+          },
+          "noise_pads": {
+            "rgb_mad_vs_baseline": 14.088129679361979,
+            "rgb_mad_vs_donor_full": 40.95294698079427,
+            "rgb_max_abs_vs_baseline": 255.0
+          },
+          "noop_override": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 42.547444661458336,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "pad_swap": {
+            "rgb_mad_vs_baseline": 4.580118815104167,
+            "rgb_mad_vs_donor_full": 42.555745442708336,
+            "rgb_max_abs_vs_baseline": 173.0
+          },
+          "zero_pads": {
+            "rgb_mad_vs_baseline": 16.36175537109375,
+            "rgb_mad_vs_donor_full": 43.35368855794271,
+            "rgb_max_abs_vs_baseline": 250.0
+          }
+        },
+        "capacity_tokens": 512,
+        "donor_active_tokens": 206,
+        "donor_prompt": "a blue wolf sitting alertly in fresh deep snow at the edge of a dense pine forest at dusk, its thick winter coat glowing soft silver in the last violet light, pale ear tips and grey stockings sharp against the white drifts, breath condensing in small clouds in the bitter cold air, fine snowflakes drifting down and settling on its whiskers and brows, a meandering line of neat paw prints stitched across the untouched snowfield behind it leading toward the frosted treeline, heavy snow bending the boughs of the nearest pines, a cold winter moon climbing through thin mist between the trunks, long violet shadows stretching across the sparkling crust, the wolf's tail wrapped around its forepaws with its dark tip just touching the snow, alert ice-blue eyes fixed on something beyond the frame, cinematic composition with shallow depth of field, crisp foreground detail dissolving into softly blurred forest bokeh, natural color grading, quiet stillness of deep winter evening",
+        "elapsed_seconds": 8.09,
+        "gates": {
+          "noop_override_exact": true
+        },
+        "occupancy_percent": 40.039,
+        "pad_tokens": 307,
+        "pads_in_both": 306,
+        "prompt": "a red fox sitting alertly in fresh deep snow at the edge of a dense pine forest at dawn, its thick winter coat glowing soft amber in the first golden light, dark ear tips and black stockings sharp against the white drifts, breath condensing in small clouds in the bitter cold air, fine snowflakes drifting down and settling on its whiskers and brows, a meandering line of neat paw prints stitched across the untouched snowfield behind it leading toward the frosted treeline, heavy snow bending the boughs of the nearest pines, a pale winter sun climbing through thin mist between the trunks, long blue shadows stretching across the sparkling crust, the fox's tail wrapped around its forepaws with its white tip just touching the snow, alert amber eyes fixed on something beyond the frame, cinematic composition with shallow depth of field, crisp foreground detail dissolving into softly blurred forest bokeh, natural color grading, quiet stillness of deep winter morning",
+        "rung": "long",
+        "seed": 4242
+      },
+      {
+        "active_in_both": 205,
+        "active_tokens": 205,
+        "arms": {
+          "active_swap": {
+            "rgb_mad_vs_baseline": 61.7940419514974,
+            "rgb_mad_vs_donor_full": 7.5960235595703125,
+            "rgb_max_abs_vs_baseline": 234.0
+          },
+          "baseline": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 62.55408732096354,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "donor_full": {
+            "rgb_mad_vs_baseline": 62.55408732096354,
+            "rgb_mad_vs_donor_full": 0.0,
+            "rgb_max_abs_vs_baseline": 238.0
+          },
+          "noise_pads": {
+            "rgb_mad_vs_baseline": 18.627304077148438,
+            "rgb_mad_vs_donor_full": 58.50809224446615,
+            "rgb_max_abs_vs_baseline": 223.0
+          },
+          "noop_override": {
+            "rgb_mad_vs_baseline": 0.0,
+            "rgb_mad_vs_donor_full": 62.55408732096354,
+            "rgb_max_abs_vs_baseline": 0.0
+          },
+          "pad_swap": {
+            "rgb_mad_vs_baseline": 6.1938120524088545,
+            "rgb_mad_vs_donor_full": 62.3107655843099,
+            "rgb_max_abs_vs_baseline": 198.0
+          },
+          "zero_pads": {
+            "rgb_mad_vs_baseline": 22.060679117838543,
+            "rgb_mad_vs_donor_full": 60.705281575520836,
+            "rgb_max_abs_vs_baseline": 218.0
+          }
+        },
+        "capacity_tokens": 512,
+        "donor_active_tokens": 206,
+        "donor_prompt": "a blue wolf sitting alertly in fresh deep snow at the edge of a dense pine forest at dusk, its thick winter coat glowing soft silver in the last violet light, pale ear tips and grey stockings sharp against the white drifts, breath condensing in small clouds in the bitter cold air, fine snowflakes drifting down and settling on its whiskers and brows, a meandering line of neat paw prints stitched across the untouched snowfield behind it leading toward the frosted treeline, heavy snow bending the boughs of the nearest pines, a cold winter moon climbing through thin mist between the trunks, long violet shadows stretching across the sparkling crust, the wolf's tail wrapped around its forepaws with its dark tip just touching the snow, alert ice-blue eyes fixed on something beyond the frame, cinematic composition with shallow depth of field, crisp foreground detail dissolving into softly blurred forest bokeh, natural color grading, quiet stillness of deep winter evening",
+        "elapsed_seconds": 7.99,
+        "gates": {
+          "noop_override_exact": true
+        },
+        "occupancy_percent": 40.039,
+        "pad_tokens": 307,
+        "pads_in_both": 306,
+        "prompt": "a red fox sitting alertly in fresh deep snow at the edge of a dense pine forest at dawn, its thick winter coat glowing soft amber in the first golden light, dark ear tips and black stockings sharp against the white drifts, breath condensing in small clouds in the bitter cold air, fine snowflakes drifting down and settling on its whiskers and brows, a meandering line of neat paw prints stitched across the untouched snowfield behind it leading toward the frosted treeline, heavy snow bending the boughs of the nearest pines, a pale winter sun climbing through thin mist between the trunks, long blue shadows stretching across the sparkling crust, the fox's tail wrapped around its forepaws with its white tip just touching the snow, alert amber eyes fixed on something beyond the frame, cinematic composition with shallow depth of field, crisp foreground detail dissolving into softly blurred forest bokeh, natural color grading, quiet stillness of deep winter morning",
+        "rung": "long",
+        "seed": 7217
+      }
+    ],
+    "configuration": {
+      "cut_step": 0,
+      "dtype": "bfloat16",
+      "guidance_scale": 1.0,
+      "model_id": "black-forest-labs/FLUX.2-klein-4B",
+      "resolution": [
+        256,
+        256
+      ],
+      "seeds": [
+        4242,
+        7217
+      ],
+      "steps": 4
+    },
+    "execution": {
+      "peak_rss_mb": 18400.5,
+      "peak_vram_mb": 7990.8,
+      "wall_seconds": 54.008
+    },
+    "failures": [],
+    "frozen_config": "configs/context-pad-occupancy.json",
+    "gates": {
+      "ea_all_arms_complete": true,
+      "ea_noop_override_exact": true
+    },
+    "schema": "saturn-context-pad-occupancy-v1",
+    "status": "completed"
+  },
+  "request": {
+    "arms_per_cell": 7,
+    "cells": 6,
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "experiment": "saturn-context-pad-occupancy",
+    "frozen_config_sha256": "033e142e42b8f8c87a4158821eed37e77d0849b60e65c13bc25cd142f4646ada",
+    "frozen_gates": {
+      "ea_all_arms_complete": "every (prompt, seed, arm) renders",
+      "ea_noop_override_exact": "noop_override RGB max-abs vs baseline == 0.0 for every prompt and seed (replay + typed-override contract)"
+    },
+    "kind": "context-pad-occupancy",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "checkpoint_policy": "one resident CUDA lease; per (prompt, seed) capture one cut-step-0 checkpoint in-process and render typed conditioner-override branches against it; no durable checkpoints",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_local_program",
+      "interactive": false,
+      "lease_scope": "entire-worker",
+      "logical_checkpoint_replays": 42,
+      "logical_operations": 54,
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "native_pad_row_ablation": true,
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "replay_policy": "local_checkpoint_restore",
+      "resident_model_concurrency": 1,
+      "schema": "saturn-single-lease-scheduling-contract-v1"
+    },
+    "schema": "saturn-context-pad-occupancy-request-v1",
+    "worker_sha256": "6e870b59343756c368eb18661236607def4c84987ced5e059f0f39af0c95824c"
+  },
+  "retry_lineage": null
+}

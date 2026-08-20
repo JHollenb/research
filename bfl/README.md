@@ -2,6 +2,8 @@
 
 This is the single narrative entry point for the Black Forest Labs work committed on `main`. It follows the original main-path survey order rather than maintaining separate “main,” “additional,” and “index” experiment catalogs.
 
+On the `additional-experiments` branch, the broader historical demo and artifact catalog is retained alongside this main-path narrative. Use the [experiment index](index.md) to navigate those additional reports and their local proof bundles.
+
 The research treats FLUX as an executable image program. We capture typed state from conditioner through denoiser, scheduler, and VAE; fork matched futures from one parent; intervene at a declared route, phase, or carrier; and let the native RGB consumer decide whether the intervention mattered.
 
 The main-branch program is strongest where systems and causal evidence meet: exact phase-resident serving, consumer-closed route promotion, cross-family conditioner compilation, model-family tracer breadth, recipient-native repair, typed topology and interaction controls, and timing-sensitive hotpatches. Supporting main-branch demos extend the same execution surface to the three-part semantic circuit object series, a twenty-axis route panel, and semantic-object register portability.

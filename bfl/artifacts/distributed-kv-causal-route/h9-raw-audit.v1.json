@@ -1,0 +1,586 @@
+{
+  "adjudication": {
+    "cluster_level_all_six_bonferroni_positive": true,
+    "cluster_level_all_six_unadjusted_positive": true,
+    "instance_level_reproduced": true,
+    "raw_scientific_verdict": "NATIVE_SPECIFICITY_SUPPORTED_FOR_ASSAY",
+    "raw_technical_pass": true,
+    "strict_scorer_all_six_bonferroni_positive": true,
+    "strict_scorer_complete": true
+  },
+  "custody_audit": {
+    "arm_rows": 1152,
+    "arms_expected": 12,
+    "dimensions_checked": 1152,
+    "failures": [],
+    "hashes_checked": 1152,
+    "pair_cluster_sizes": [
+      2
+    ],
+    "pair_clusters": 48,
+    "pass": true,
+    "unique_images_expected": 1152,
+    "unique_images_observed": 1152,
+    "wrong_world_color_safe": true,
+    "wrong_world_permutation": true
+  },
+  "notes": [
+    "The original H9 adjudicator treats 96 instance rows as bootstrap units.",
+    "The cluster sensitivity analysis preserves the two base-seed observations per prompt pair and resamples 48 prompt-pair clusters.",
+    "The six primary contrasts are checked jointly with a Bonferroni-adjusted lower percentile (0.8333%).",
+    "The strict all-palette scorer is a sensitivity analysis, not a replacement for the frozen H9 decision rule."
+  ],
+  "published_adjudication_reproduction": {
+    "contrasts": {
+      "forward:native_S4_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.6808960035739835,
+          "ci95_high": 10.313334482359988,
+          "ci95_low": 3.6808960035739835,
+          "clusters": 48,
+          "mean": 6.739932161829084,
+          "observations": 96
+        },
+        "endpoint_count": 0,
+        "endpoint_rate": 0.0,
+        "instance_level": {
+          "bonferroni_lower_6": 4.414360739484441,
+          "ci95_high": 9.254226048770862,
+          "ci95_low": 4.414360739484441,
+          "mean": 6.739932161829084,
+          "n": 96
+        }
+      },
+      "forward:native_S4_minus_scrambled_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.4602543290943824,
+          "ci95_high": 9.548544583555282,
+          "ci95_low": 3.4602543290943824,
+          "clusters": 48,
+          "mean": 6.285173355875853,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.134918167395944,
+          "ci95_high": 8.643653499267627,
+          "ci95_low": 4.134918167395944,
+          "mean": 6.285173355875853,
+          "n": 96
+        }
+      },
+      "forward:native_S4_minus_wrong-token_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 2.775377319534039,
+          "ci95_high": 8.252511489508667,
+          "ci95_low": 2.775377319534039,
+          "clusters": 48,
+          "mean": 5.292490192419817,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 3.331551865127599,
+          "ci95_high": 7.419307176183553,
+          "ci95_low": 3.331551865127599,
+          "mean": 5.292490192419817,
+          "n": 96
+        }
+      },
+      "forward:native_S4_minus_wrong-world_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.957877823516468,
+          "ci95_high": 10.187644553449003,
+          "ci95_low": 3.957877823516468,
+          "clusters": 48,
+          "mean": 6.910456040650877,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.522912542813874,
+          "ci95_high": 9.403965490148202,
+          "ci95_low": 4.522912542813874,
+          "mean": 6.910456040650877,
+          "n": 96
+        }
+      },
+      "reverse:native_S4_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 5.2762387567130045,
+          "ci95_high": 12.94887098253525,
+          "ci95_low": 5.2762387567130045,
+          "clusters": 48,
+          "mean": 8.82967220901085,
+          "observations": 96
+        },
+        "endpoint_count": 0,
+        "endpoint_rate": 0.0,
+        "instance_level": {
+          "bonferroni_lower_6": 5.9881545114997365,
+          "ci95_high": 11.80408051905066,
+          "ci95_low": 5.9881545114997365,
+          "mean": 8.82967220901085,
+          "n": 96
+        }
+      },
+      "reverse:native_S4_minus_scrambled_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 4.949941003949588,
+          "ci95_high": 12.534083686975983,
+          "ci95_low": 4.949941003949588,
+          "clusters": 48,
+          "mean": 8.450234445692045,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 5.639944600893979,
+          "ci95_high": 11.364660485328649,
+          "ci95_low": 5.639944600893979,
+          "mean": 8.450234445692045,
+          "n": 96
+        }
+      },
+      "reverse:native_S4_minus_wrong-token_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 4.039717219245354,
+          "ci95_high": 11.107130747834944,
+          "ci95_low": 4.039717219245354,
+          "clusters": 48,
+          "mean": 7.310877466225718,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.7622471266845015,
+          "ci95_high": 10.080428939101527,
+          "ci95_low": 4.7622471266845015,
+          "mean": 7.310877466225718,
+          "n": 96
+        }
+      },
+      "reverse:native_S4_minus_wrong-world_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 2.6779028576948254,
+          "ci95_high": 10.159583896002097,
+          "ci95_low": 2.6779028576948254,
+          "clusters": 48,
+          "mean": 6.1709095861958945,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 3.2695187638072523,
+          "ci95_high": 9.090268320333273,
+          "ci95_low": 3.2695187638072523,
+          "mean": 6.1709095861958945,
+          "n": 96
+        }
+      }
+    },
+    "primary_cluster_simultaneous": {
+      "all_positive": true,
+      "alpha_familywise": 0.05,
+      "clusters": 48,
+      "contrasts": [
+        "forward:native_S4_minus_wrong-token_S4",
+        "forward:native_S4_minus_wrong-world_S4",
+        "forward:native_S4_minus_scrambled_S4",
+        "reverse:native_S4_minus_wrong-token_S4",
+        "reverse:native_S4_minus_wrong-world_S4",
+        "reverse:native_S4_minus_scrambled_S4"
+      ],
+      "lower_bounds": {
+        "forward:native_S4_minus_scrambled_S4": 2.949168862344935,
+        "forward:native_S4_minus_wrong-token_S4": 2.3449672121864156,
+        "forward:native_S4_minus_wrong-world_S4": 3.4313751154208028,
+        "reverse:native_S4_minus_scrambled_S4": 4.269425634573393,
+        "reverse:native_S4_minus_wrong-token_S4": 3.5098184292150205,
+        "reverse:native_S4_minus_wrong-world_S4": 1.9497567966108604
+      },
+      "method": "paired prompt-pair cluster bootstrap with Bonferroni six-contrast lower bounds",
+      "resamples": 10000
+    },
+    "route_effects": {
+      "forward:native_S4_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.6808960035739835,
+          "ci95_high": 10.313334482359988,
+          "ci95_low": 3.6808960035739835,
+          "clusters": 48,
+          "mean": 6.739932161829084,
+          "observations": 96
+        },
+        "endpoint_count": 0,
+        "endpoint_rate": 0.0,
+        "instance_level": {
+          "bonferroni_lower_6": 4.414360739484441,
+          "ci95_high": 9.254226048770862,
+          "ci95_low": 4.414360739484441,
+          "mean": 6.739932161829084,
+          "n": 96
+        }
+      },
+      "forward:native_full20_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 183.38699177525982,
+          "ci95_high": 220.32378451741542,
+          "ci95_low": 183.38699177525982,
+          "clusters": 48,
+          "mean": 202.15372938685178,
+          "observations": 96
+        },
+        "endpoint_count": 83,
+        "endpoint_rate": 0.8645833333333334,
+        "instance_level": {
+          "bonferroni_lower_6": 188.50773268135944,
+          "ci95_high": 215.7845217326637,
+          "ci95_low": 188.50773268135944,
+          "mean": 202.15372938685178,
+          "n": 96
+        }
+      },
+      "reverse:native_S4_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 5.2762387567130045,
+          "ci95_high": 12.94887098253525,
+          "ci95_low": 5.2762387567130045,
+          "clusters": 48,
+          "mean": 8.82967220901085,
+          "observations": 96
+        },
+        "endpoint_count": 0,
+        "endpoint_rate": 0.0,
+        "instance_level": {
+          "bonferroni_lower_6": 5.9881545114997365,
+          "ci95_high": 11.80408051905066,
+          "ci95_low": 5.9881545114997365,
+          "mean": 8.82967220901085,
+          "n": 96
+        }
+      },
+      "reverse:native_full20_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 182.3786827262392,
+          "ci95_high": 219.8673895510515,
+          "ci95_low": 182.3786827262392,
+          "clusters": 48,
+          "mean": 201.53676686957655,
+          "observations": 96
+        },
+        "endpoint_count": 88,
+        "endpoint_rate": 0.9166666666666666,
+        "instance_level": {
+          "bonferroni_lower_6": 187.76193600201393,
+          "ci95_high": 215.2753766617171,
+          "ci95_low": 187.76193600201393,
+          "mean": 201.53676686957655,
+          "n": 96
+        }
+      }
+    }
+  },
+  "report_scorer_audit": {
+    "failures": [],
+    "pass": true,
+    "rows_checked": 1152
+  },
+  "schema": "bfl-three-claims.h9-raw-audit.v1",
+  "source": {
+    "image_dir": "/Users/jakeholl/domains/experiments/2026-07-31-211500-flux-arbitration-harness/outputs/h9-specificity-replication/images",
+    "model_identity": {
+      "artifact_sha256": "d8748455892323f72a681448f626ee418f49671dccfb57f79fd0359fdce22c2f",
+      "device": "cuda",
+      "dtype": "bfloat16",
+      "pipeline": "Flux2KleinPipeline",
+      "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294"
+    },
+    "report": "/Users/jakeholl/domains/experiments/2026-07-31-211500-flux-arbitration-harness/outputs/h9-specificity-replication/h9-specificity-replication.v1.json",
+    "report_schema": "flux-arbitration.h9-specificity-replication.v1",
+    "runtime": {
+      "base_seeds": [
+        20100,
+        21100
+      ],
+      "batch": 4,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 20260811,
+      "cuda_version": "13.0",
+      "height": 512,
+      "hostname": "pop-os",
+      "numerics": {
+        "cudnn_benchmark": false,
+        "diffusers": "0.39.0",
+        "numpy": "2.4.6",
+        "sdpa_backend_pinned": "math-off-flash-off-efficient-on (see pinned_sdpa)",
+        "tf32_cudnn": false,
+        "tf32_matmul": false,
+        "torch": "2.13.0+cu130",
+        "transformers": "5.14.1"
+      },
+      "run_label": "H9",
+      "scramble_seed": 20260811,
+      "steps": 4,
+      "torch_version": "2.13.0+cu130",
+      "width": 512,
+      "workload_seed": 20260811
+    }
+  },
+  "strict_all_palette_sensitivity": {
+    "arm_summary": {
+      "clean_baseline": {
+        "ambiguous_or_missing": 0,
+        "mean": -104.11399300715014,
+        "n": 96,
+        "positive": 0
+      },
+      "clean_control_scrambled_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -103.7463406464379,
+        "n": 96,
+        "positive": 0
+      },
+      "clean_control_wrong-token_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -102.79913585211864,
+        "n": 96,
+        "positive": 0
+      },
+      "clean_control_wrong-world_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -102.15845434267708,
+        "n": 96,
+        "positive": 0
+      },
+      "clean_native_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -95.73975371977023,
+        "n": 96,
+        "positive": 0
+      },
+      "clean_native_full20": {
+        "ambiguous_or_missing": 0,
+        "mean": 46.649266952925984,
+        "n": 96,
+        "positive": 94
+      },
+      "corrupt_baseline": {
+        "ambiguous_or_missing": 0,
+        "mean": -101.22740431539417,
+        "n": 96,
+        "positive": 0
+      },
+      "corrupt_control_scrambled_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -100.77024540108255,
+        "n": 96,
+        "positive": 0
+      },
+      "corrupt_control_wrong-token_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -99.7966640467273,
+        "n": 96,
+        "positive": 0
+      },
+      "corrupt_control_wrong-world_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -101.40700265037628,
+        "n": 96,
+        "positive": 0
+      },
+      "corrupt_native_S4": {
+        "ambiguous_or_missing": 0,
+        "mean": -94.54110986895499,
+        "n": 96,
+        "positive": 1
+      },
+      "corrupt_native_full20": {
+        "ambiguous_or_missing": 0,
+        "mean": 44.01413776953721,
+        "n": 96,
+        "positive": 93
+      }
+    },
+    "contrasts": {
+      "forward:strict_native_S4_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.62853556484877,
+          "ci95_high": 10.266103797827267,
+          "ci95_low": 3.62853556484877,
+          "clusters": 48,
+          "mean": 6.686294446439182,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.381467968246422,
+          "ci95_high": 9.204155663697955,
+          "ci95_low": 4.381467968246422,
+          "mean": 6.686294446439182,
+          "n": 96
+        }
+      },
+      "forward:strict_native_S4_minus_scrambled_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.409784448419145,
+          "ci95_high": 9.519279701850385,
+          "ci95_low": 3.409784448419145,
+          "clusters": 48,
+          "mean": 6.22913553212755,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.080398161952468,
+          "ci95_high": 8.589495971341414,
+          "ci95_low": 4.080398161952468,
+          "mean": 6.22913553212755,
+          "n": 96
+        }
+      },
+      "forward:strict_native_S4_minus_wrong-token_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 2.7342670707084524,
+          "ci95_high": 8.22194139123706,
+          "ci95_low": 2.7342670707084524,
+          "clusters": 48,
+          "mean": 5.255554177772324,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 3.2907636285927073,
+          "ci95_high": 7.397810974644923,
+          "ci95_low": 3.2907636285927073,
+          "mean": 5.255554177772324,
+          "n": 96
+        }
+      },
+      "forward:strict_native_S4_minus_wrong-world_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.9126433300357717,
+          "ci95_high": 10.161387701105433,
+          "ci95_low": 3.9126433300357717,
+          "clusters": 48,
+          "mean": 6.865892781421297,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.479967137372207,
+          "ci95_high": 9.360652935524627,
+          "ci95_low": 4.479967137372207,
+          "mean": 6.865892781421297,
+          "n": 96
+        }
+      },
+      "primary_cluster_simultaneous": {
+        "all_positive": true,
+        "alpha_familywise": 0.05,
+        "clusters": 48,
+        "contrasts": [
+          "forward:strict_native_S4_minus_wrong-token_S4",
+          "forward:strict_native_S4_minus_wrong-world_S4",
+          "forward:strict_native_S4_minus_scrambled_S4",
+          "reverse:strict_native_S4_minus_wrong-token_S4",
+          "reverse:strict_native_S4_minus_wrong-world_S4",
+          "reverse:strict_native_S4_minus_scrambled_S4"
+        ],
+        "lower_bounds": {
+          "forward:strict_native_S4_minus_scrambled_S4": 2.887259506971795,
+          "forward:strict_native_S4_minus_wrong-token_S4": 2.316540296861606,
+          "forward:strict_native_S4_minus_wrong-world_S4": 3.3881726621672534,
+          "reverse:strict_native_S4_minus_scrambled_S4": 3.720641900622307,
+          "reverse:strict_native_S4_minus_wrong-token_S4": 3.174004626348036,
+          "reverse:strict_native_S4_minus_wrong-world_S4": 2.247494701174954
+        },
+        "method": "paired prompt-pair cluster bootstrap with Bonferroni six-contrast lower bounds",
+        "resamples": 10000
+      },
+      "reverse:strict_native_S4_minus_baseline": {
+        "cluster_level": {
+          "bonferroni_lower_6": 4.709900822849542,
+          "ci95_high": 12.592687380051348,
+          "ci95_low": 4.709900822849542,
+          "clusters": 48,
+          "mean": 8.374239287379924,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 5.503470431701964,
+          "ci95_high": 11.411456112494418,
+          "ci95_low": 5.503470431701964,
+          "mean": 8.374239287379924,
+          "n": 96
+        }
+      },
+      "reverse:strict_native_S4_minus_scrambled_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 4.412096246532577,
+          "ci95_high": 12.15478059807209,
+          "ci95_low": 4.412096246532577,
+          "clusters": 48,
+          "mean": 8.006586926667696,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 5.208997397717384,
+          "ci95_high": 10.964872866076947,
+          "ci95_low": 5.208997397717384,
+          "mean": 8.006586926667696,
+          "n": 96
+        }
+      },
+      "reverse:strict_native_S4_minus_wrong-token_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 3.7179376777165927,
+          "ci95_high": 10.925888919396492,
+          "ci95_low": 3.7179376777165927,
+          "clusters": 48,
+          "mean": 7.0593821323484205,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 4.456012713273659,
+          "ci95_high": 9.866338715226346,
+          "ci95_low": 4.456012713273659,
+          "mean": 7.0593821323484205,
+          "n": 96
+        }
+      },
+      "reverse:strict_native_S4_minus_wrong-world_S4": {
+        "cluster_level": {
+          "bonferroni_lower_6": 2.913294958828181,
+          "ci95_high": 10.387029165921255,
+          "ci95_low": 2.913294958828181,
+          "clusters": 48,
+          "mean": 6.418700622906858,
+          "observations": 96
+        },
+        "instance_level": {
+          "bonferroni_lower_6": 3.494436107482836,
+          "ci95_high": 9.34315206852255,
+          "ci95_low": 3.494436107482836,
+          "mean": 6.418700622906858,
+          "n": 96
+        }
+      }
+    },
+    "description": "Re-read PNGs with the same left-half circular mean hue but require the target to beat every frozen palette hue, not only color_a versus distractor.",
+    "image_failures": [],
+    "primary_cluster_simultaneous": {
+      "all_positive": true,
+      "alpha_familywise": 0.05,
+      "clusters": 48,
+      "contrasts": [
+        "forward:strict_native_S4_minus_wrong-token_S4",
+        "forward:strict_native_S4_minus_wrong-world_S4",
+        "forward:strict_native_S4_minus_scrambled_S4",
+        "reverse:strict_native_S4_minus_wrong-token_S4",
+        "reverse:strict_native_S4_minus_wrong-world_S4",
+        "reverse:strict_native_S4_minus_scrambled_S4"
+      ],
+      "lower_bounds": {
+        "forward:strict_native_S4_minus_scrambled_S4": 2.887259506971795,
+        "forward:strict_native_S4_minus_wrong-token_S4": 2.316540296861606,
+        "forward:strict_native_S4_minus_wrong-world_S4": 3.3881726621672534,
+        "reverse:strict_native_S4_minus_scrambled_S4": 3.720641900622307,
+        "reverse:strict_native_S4_minus_wrong-token_S4": 3.174004626348036,
+        "reverse:strict_native_S4_minus_wrong-world_S4": 2.247494701174954
+      },
+      "method": "paired prompt-pair cluster bootstrap with Bonferroni six-contrast lower bounds",
+      "resamples": 10000
+    }
+  }
+}

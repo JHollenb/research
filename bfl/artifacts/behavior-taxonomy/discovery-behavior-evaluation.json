@@ -1,0 +1,2515 @@
+{
+  "by_lexicalization": {
+    "dis-lex-0": {
+      "exact_count_accuracy": 0.6041666666666666,
+      "exact_count_successes": 29,
+      "mean_absolute_error": 0.7708333333333334,
+      "record_count": 48
+    },
+    "dis-lex-1": {
+      "exact_count_accuracy": 0.5416666666666666,
+      "exact_count_successes": 26,
+      "mean_absolute_error": 0.7083333333333334,
+      "record_count": 48
+    }
+  },
+  "by_paired_color_shape_cluster": {
+    "dis-0-red-circles": {
+      "exact_count_accuracy": 0.5833333333333334,
+      "exact_count_successes": 14,
+      "mean_absolute_error": 0.6666666666666666,
+      "record_count": 24
+    },
+    "dis-1-blue-squares": {
+      "exact_count_accuracy": 0.625,
+      "exact_count_successes": 15,
+      "mean_absolute_error": 0.7916666666666666,
+      "record_count": 24
+    },
+    "dis-2-green-triangles": {
+      "exact_count_accuracy": 0.5416666666666666,
+      "exact_count_successes": 13,
+      "mean_absolute_error": 0.75,
+      "record_count": 24
+    },
+    "dis-3-yellow-diamonds": {
+      "exact_count_accuracy": 0.5416666666666666,
+      "exact_count_successes": 13,
+      "mean_absolute_error": 0.75,
+      "record_count": 24
+    }
+  },
+  "by_target_count": {
+    "2": {
+      "exact_count_accuracy": 1.0,
+      "exact_count_successes": 16,
+      "mean_absolute_error": 0.0,
+      "record_count": 16
+    },
+    "3": {
+      "exact_count_accuracy": 0.875,
+      "exact_count_successes": 14,
+      "mean_absolute_error": 0.125,
+      "record_count": 16
+    },
+    "4": {
+      "exact_count_accuracy": 0.875,
+      "exact_count_successes": 14,
+      "mean_absolute_error": 0.25,
+      "record_count": 16
+    },
+    "5": {
+      "exact_count_accuracy": 0.4375,
+      "exact_count_successes": 7,
+      "mean_absolute_error": 1.125,
+      "record_count": 16
+    },
+    "6": {
+      "exact_count_accuracy": 0.1875,
+      "exact_count_successes": 3,
+      "mean_absolute_error": 1.5,
+      "record_count": 16
+    },
+    "7": {
+      "exact_count_accuracy": 0.0625,
+      "exact_count_successes": 1,
+      "mean_absolute_error": 1.4375,
+      "record_count": 16
+    }
+  },
+  "claim_boundary": {
+    "behavior_metric_is_not_mechanistic_evidence": true,
+    "color_and_shape_are_paired_within_cluster": true,
+    "independent_color_vs_shape_causal_claim_allowed": false,
+    "objective_count_metric_only": true,
+    "shape_identity_independently_scored": false
+  },
+  "content_sha256": "4bb2bdc67c44146dab842db70afae4594947e14e9472a7c1524ab08f33cbdc7f",
+  "evaluator_source_sha256s": {
+    "image_atlas/count_confirmation_evaluator.py": "ad53b22810913bc5fae0aab352db9569eddfa6b3576c5811a54a77954d8ebbc8",
+    "image_atlas/evaluate.py": "092ad146ca3b0cc8aa7b9e59dfe76b83567c7c8c6529f2d3e07f05d1ba993e9a",
+    "scripts/evaluate_flux2_count_confirmation_behavior.py": "5a2b6b1d48707f4bdaeff18fb5345c202fd38766ff3875c4914bd3d5134b708a"
+  },
+  "factorial_panel_sha256": "28f4bab1b22d8d26dfa2eaa939dd837770a2a10668bff6b6e6e419b65a990ccc",
+  "failure_tail": {
+    "endpoint": "exact_count_accuracy_and_mean_absolute_error_by_target_count",
+    "predeclared_high_count_band": [
+      5,
+      6,
+      7
+    ]
+  },
+  "image_manifest_content_sha256": "6319d3f7a4302630f1004e630b25369f614ac3d2effa80ff07e95c5325e680d7",
+  "overall": {
+    "exact_count_accuracy": 0.5729166666666666,
+    "exact_count_successes": 55,
+    "mean_absolute_error": 0.7395833333333334,
+    "record_count": 96
+  },
+  "panel": "discovery",
+  "records": [
+    {
+      "content_sha256": "dfa5c359cb18f633bf80d2a66b7c47047f02b1f5d53acba29bf1e31cb7be137b",
+      "image": {
+        "path": "screen--dis-c0-l0-n2-s0.png",
+        "sha256": "7286d875266ca22aa5077e5f50f7db3ca6f9ec1c388732618c29f5f9db56ba2f",
+        "size_bytes": 102253
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "c53281afe057ceaa44be09dbd54c5bc6b40d03a920116f1ba99731df67ca2b37",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "86e3571b57711157ca24092918bdc27780719cfe3e012d501149e8c8c9233203",
+        "record_id": "dis-c0-l0-n2-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "b9f3a8eb2ce926d2d381ab5b33e66a58b2bf46da05f1fa72c9c486b7e3a2642d",
+      "image": {
+        "path": "screen--dis-c0-l0-n2-s1.png",
+        "sha256": "fff61af3e126a10e792a9909e6e9958b5997a4da4a1383eb41cd94ff8ac71871",
+        "size_bytes": 78528
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "a963d8eead85da4c11233edbf2378cd87193716ea3e4c0059e77336aeb3b2775",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "86e3571b57711157ca24092918bdc27780719cfe3e012d501149e8c8c9233203",
+        "record_id": "dis-c0-l0-n2-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "0ec70c0af6dcda59a27f9dd64b3e1bb924420e4171e2917247287c59f170905a",
+      "image": {
+        "path": "screen--dis-c0-l0-n3-s0.png",
+        "sha256": "9a226e154d63b9b9e3a5cb8216f347d4334aa5b7eda0734ef08801c5af6825a5",
+        "size_bytes": 90151
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "62f7bef675c58a0175d04122ecb2f225a0bceb0ff6d589cc336cb5fc45a74fe0",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "e331c87bd2aa59bc288025e44d1516e956bdfc7b369795d294cd9abbda194fb8",
+        "record_id": "dis-c0-l0-n3-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "18d31d25888f24d4273ada9b78f17cb536e7941f591d2cde145e77627540c7fc",
+      "image": {
+        "path": "screen--dis-c0-l0-n3-s1.png",
+        "sha256": "3a39552cb1ff0ddb6e2d2e803e1f8ad67be2d2a9f2268b957befaf9859e322d9",
+        "size_bytes": 88826
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "c8066bd3854eeceb6650cde6d1ec7dfec35724250105b08e6448d650f7e44bd7",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "e331c87bd2aa59bc288025e44d1516e956bdfc7b369795d294cd9abbda194fb8",
+        "record_id": "dis-c0-l0-n3-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "44cf13b53a1e8352afcf077106ac2aee55f07898a8939fc3b5c5420f4e840001",
+      "image": {
+        "path": "screen--dis-c0-l0-n4-s0.png",
+        "sha256": "364ae766511c2cd0d8bcf59eaef7c13b25043b59fd462a2ddb610d26ad1393e6",
+        "size_bytes": 95457
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "9d75e9b94785df00104ee398fdf388524337f0d8a1cdebe0a2a4a1b2c41a4add",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "d877cebd81dce05e6d10d6226951df3a99fb486c5a4dbc4907a0ae09977e7ff5",
+        "record_id": "dis-c0-l0-n4-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "677ed5750ba96bf6ce7bd690808ccd5c622312500bbb88048cadcf45e0aed5e8",
+      "image": {
+        "path": "screen--dis-c0-l0-n4-s1.png",
+        "sha256": "b2d29b4bb211bb8c2f3749c0be1b532d3aa49263d6e12dc3bc94eeca24134ade",
+        "size_bytes": 103491
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "9f12ae6d2dfdcd7957ed27a470fbb96ad8b9deac4b48573c731caa93b72b7697",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "d877cebd81dce05e6d10d6226951df3a99fb486c5a4dbc4907a0ae09977e7ff5",
+        "record_id": "dis-c0-l0-n4-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "b06a2fbaff8bd5a17c2ed191c57ba505f17331de05e39693d11fb014fad0d077",
+      "image": {
+        "path": "screen--dis-c0-l0-n5-s0.png",
+        "sha256": "952bb3f91d536d2dc6423482ba3bafc5f7fb77d389dffef9851e0d6238944081",
+        "size_bytes": 80055
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "f1b00f655948d35c92d1e70436eb6229c86c7215ca137358c2f16ef8fa25520b",
+        "count_absolute_error": 3.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "02adc164d7e86c2e6c270e5e56e77de3119adc1dda4fb723fc04dcf327976e6d",
+        "record_id": "dis-c0-l0-n5-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "18f9f4cf8a79ed68307513be66b88af5be9fb41672240dd1ef288126e4fa9d54",
+      "image": {
+        "path": "screen--dis-c0-l0-n5-s1.png",
+        "sha256": "ccf78176cde1da2db0b195a7cca690d676bcd33d435d92de932246dac31c8d8d",
+        "size_bytes": 111204
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "e0e4ff71e5c0ab60d2e7131db901cf515df24857d8a1010f66e6877e51141f45",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "02adc164d7e86c2e6c270e5e56e77de3119adc1dda4fb723fc04dcf327976e6d",
+        "record_id": "dis-c0-l0-n5-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "8dc349714170ed9b6ff4d2be8c84cf833099526bca73aff4cb07408aee98551c",
+      "image": {
+        "path": "screen--dis-c0-l0-n6-s0.png",
+        "sha256": "735fab0b62bf6484d839d6fbeaa5e72223738d3a61f961969a17304064f2de1f",
+        "size_bytes": 84402
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "e8940b5e250e5d42774df9f84ebf02ae20687d45c6cee8ef0dbcc1c8030865f6",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "12a2ae757f1423e9169ab0e35053a08196ae29136e42c8cb2e2fc40698d13693",
+        "record_id": "dis-c0-l0-n6-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "0fc443afa46a986f5045b996649b507bf07ef770461f3b4ef70487bb4b4aa831",
+      "image": {
+        "path": "screen--dis-c0-l0-n6-s1.png",
+        "sha256": "4f0523639607644dee748284b7f2e7dada4f3226ba83744a0615b04a34852de2",
+        "size_bytes": 81266
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "aff6d73e8580e5c63424dce5e337ee639c1f6419161622bdcec340fddb9f7592",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "12a2ae757f1423e9169ab0e35053a08196ae29136e42c8cb2e2fc40698d13693",
+        "record_id": "dis-c0-l0-n6-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "f864907de906385151a207337cfff5ae73887bc204c226212765421d9e2f6408",
+      "image": {
+        "path": "screen--dis-c0-l0-n7-s0.png",
+        "sha256": "efbb2717e7a3ed70fedc0867b14a91cb549d4d6ade4bb3535d0e8e495a59ff69",
+        "size_bytes": 90379
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "3eba8121236f858958ddddb9daeaf4308ee30b6b4d81bd87ffb128282e3021ef",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "fecd96b0da21993057c69c8aa1d700273d282169434e41ac77fa4ba5d981d70e",
+        "record_id": "dis-c0-l0-n7-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "f9036dd4e63d5d5cc7e8062137ae7e452874355697475a6c4c5cb2ee6c1a3e05",
+      "image": {
+        "path": "screen--dis-c0-l0-n7-s1.png",
+        "sha256": "86250f0e5676173b8979e16190cf257e1e2f45d55af5919644bb69c116fccb99",
+        "size_bytes": 97021
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "f6b5b18935c8c403494457df7dd37cbeb156cff0fed8061b6cb8e61191e495e0",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 7,
+        "panel": "discovery",
+        "prompt_sha256": "fecd96b0da21993057c69c8aa1d700273d282169434e41ac77fa4ba5d981d70e",
+        "record_id": "dis-c0-l0-n7-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "91e67e37e5b16ae72249f941d8eef7a6ab39e07805a0898b3880ac2f9beee615",
+      "image": {
+        "path": "screen--dis-c0-l1-n2-s0.png",
+        "sha256": "db817f000df89c9fd184814c8da8dc25869d98026f0f2be053c09c4e2c325d8a",
+        "size_bytes": 97056
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "5640a2f1f0cde738caed33fa1a3bc9cb5f69f4d8f09c30194525c6d3c073b0cc",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "34f8544150f91fd068ec5d55f6db6bd5a5133671c024caf0ff8d9409bd4e021f",
+        "record_id": "dis-c0-l1-n2-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "a13527f285dad3c7953611faad9d21bee27ae3d16a6e57fdb11631ad52541d42",
+      "image": {
+        "path": "screen--dis-c0-l1-n2-s1.png",
+        "sha256": "ede8759c55d7c7cbe7dd05309e865688b5fe3114db869ae78bd32c6f5192cbb1",
+        "size_bytes": 69299
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "375f4bb3459ceb43d5559c42fa0ff9ea34fe4c6974bc30d6093ff182e8f28641",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "34f8544150f91fd068ec5d55f6db6bd5a5133671c024caf0ff8d9409bd4e021f",
+        "record_id": "dis-c0-l1-n2-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "8a9b148ace777a6a875cf48e724db374eeaa6d169f1a55bf47add44c456f957d",
+      "image": {
+        "path": "screen--dis-c0-l1-n3-s0.png",
+        "sha256": "c362e6ded427b2afe604ef2d864cf286287c83cfce5d63047f519f88ae68934b",
+        "size_bytes": 87222
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "389eec93648855a0aeec517868fcc11e9c822b255e9a2574ab51a61202f6d675",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "b9ff6f3831b01c541ddd7e75e39be6a3ffb435af4d5ee41bb2a2459bbdc17d07",
+        "record_id": "dis-c0-l1-n3-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "a45838513f00f7d9d24f8ac36bc8f5fae550dce1b108976b6f78542f3a1fdba6",
+      "image": {
+        "path": "screen--dis-c0-l1-n3-s1.png",
+        "sha256": "72c6d40553b7d21b72a380dcbb85ca8222296e4acd25bcb127b4a73a90e5479a",
+        "size_bytes": 97893
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "bbcb3fa64328eed305b77eac1e865948e17379c08f3aa793c6eef2e865add3b8",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "b9ff6f3831b01c541ddd7e75e39be6a3ffb435af4d5ee41bb2a2459bbdc17d07",
+        "record_id": "dis-c0-l1-n3-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "b3ff961e4410cb5b8836470fc1f6286984664d80adf561ef0ceba787b725e32e",
+      "image": {
+        "path": "screen--dis-c0-l1-n4-s0.png",
+        "sha256": "05f3b2adcdf7eeffdf864fe2401779787a0a711807e2b99781400a98c593a49c",
+        "size_bytes": 129568
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "87e5f6504ba3a7e66c6d13b1534ee6c94b30bc49ce4639ee54deb8440e6266ec",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "fc9e26f056d6e39b72ed8726c546895bf1edebb8fbcac5bf24e5b98bcf9fd967",
+        "record_id": "dis-c0-l1-n4-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "af2d2bc7795481e5360320146b8fc8ea33f8ba14387003be25bdd0bf8b822afd",
+      "image": {
+        "path": "screen--dis-c0-l1-n4-s1.png",
+        "sha256": "b9fe8640b317f6a902f82cee6bd400dc0c28f4f6eb8f2835370d45dcd847dd0b",
+        "size_bytes": 117156
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "2757e4d3b814c3e29105f0601f84b902ea05248243195b8c45a629be1e7c75fa",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "fc9e26f056d6e39b72ed8726c546895bf1edebb8fbcac5bf24e5b98bcf9fd967",
+        "record_id": "dis-c0-l1-n4-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "903418231189c35821e2effd985a42ac966fe4fa168556d632e8b2f428194b51",
+      "image": {
+        "path": "screen--dis-c0-l1-n5-s0.png",
+        "sha256": "492b5871160cdd5b60522f404945eb2c5fa7e430691c3657cee5f48a9b956427",
+        "size_bytes": 148407
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "6d815d4e86449271b4e9a02b3021ddcb2347a040df2862f223d5f9df45c35294",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 7,
+        "panel": "discovery",
+        "prompt_sha256": "e032f1cc325fe946fab94363a8458eed45d2f1271e1abd689c47206a1a0c0c25",
+        "record_id": "dis-c0-l1-n5-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "b418471650f6dc049dca314d44e614d383c4487bf79286396be7f79257e47d92",
+      "image": {
+        "path": "screen--dis-c0-l1-n5-s1.png",
+        "sha256": "4d6b0942c6e5deec1425083b993072d2e4c8edbc6f6631c2b6a3e5a377c4c87b",
+        "size_bytes": 113867
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "2323b25678f87ac08f670fe7f167ca85d473a3988f0b5cd93a80b5714da35e69",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "e032f1cc325fe946fab94363a8458eed45d2f1271e1abd689c47206a1a0c0c25",
+        "record_id": "dis-c0-l1-n5-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "4a8edf398800a78035aa14d24b175fe936329f5970c5c95ad3239bc7657dafdf",
+      "image": {
+        "path": "screen--dis-c0-l1-n6-s0.png",
+        "sha256": "51050ab319a0bd6ca4c5b73f5a6a7d20046ba627ec25c318a1cc7fba81cf4373",
+        "size_bytes": 152787
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "fc148f2aed9e134b6f1dbc12f294685e87377417558390b9fdef5c30a546268d",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 7,
+        "panel": "discovery",
+        "prompt_sha256": "ad221739587279b2725e302765ea77d05a12e3298bd310de27f8907834ddfef3",
+        "record_id": "dis-c0-l1-n6-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "7e7388e3d5e73056c1c8a60f2ed96cec6e1348716bb5e7acfed82cd9d8b6bff4",
+      "image": {
+        "path": "screen--dis-c0-l1-n6-s1.png",
+        "sha256": "171a747a06b5804504251c173c8359b90a389139383f2dde8605a6aa34d40f19",
+        "size_bytes": 114730
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "9eb5ac2ad6992a06c35fc6e66207c59f5f97a2ccbf311725f5b3d5c5ef811cee",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "ad221739587279b2725e302765ea77d05a12e3298bd310de27f8907834ddfef3",
+        "record_id": "dis-c0-l1-n6-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "8bc5605ecfaeddddbcf4cb26a1883238982b61fe796b3b9839e39f8ddebdd39c",
+      "image": {
+        "path": "screen--dis-c0-l1-n7-s0.png",
+        "sha256": "eac5f94c23d5f96a4d0df646b3d5aa300e1558b9cf2a8614a0de9ff7a173bb18",
+        "size_bytes": 144739
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "7f724b1eb0a8782ad757133d5d0d555f477bc56213c6031076867b075e475350",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 9,
+        "panel": "discovery",
+        "prompt_sha256": "86f594ff0f16080f3237d2ddbcfb428800926ceec02f6ef9220ade6759e2f1f5",
+        "record_id": "dis-c0-l1-n7-s0",
+        "seed": 41041,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "0a5f431756043cb040e8051d85aa0849d92bc06f47679c5d9da52496a880b47e",
+      "image": {
+        "path": "screen--dis-c0-l1-n7-s1.png",
+        "sha256": "9c363fffd2eb63db3b4d514c55952549b9d9095d0c7edfa849b0ecae9f5f17ab",
+        "size_bytes": 124571
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "red",
+        "components": null,
+        "content_sha256": "38dea4965f2bae42a9f4f03df50609327e7fc4ee77598120fb887478f1cc4afc",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 8,
+        "panel": "discovery",
+        "prompt_sha256": "86f594ff0f16080f3237d2ddbcfb428800926ceec02f6ef9220ade6759e2f1f5",
+        "record_id": "dis-c0-l1-n7-s1",
+        "seed": 41083,
+        "shape": "circles"
+      }
+    },
+    {
+      "content_sha256": "999bab435b8ef3866987ba5ed450c4392e0402318040594d87cfbfc4b896cfe9",
+      "image": {
+        "path": "screen--dis-c1-l0-n2-s0.png",
+        "sha256": "8c92ec70b2833a1343757d1e01aff854663ead244e1f189bc324af96d96a4aea",
+        "size_bytes": 48498
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "1063fa4307e637161f9cb414b986a2916d3e8b48464d82072cf3ed2644c10a5f",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "9bc20028c5ea94449d347ea50c98ead8a0ad50e25c2d7056fd5270f9883ccea5",
+        "record_id": "dis-c1-l0-n2-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "1cb9d544dba998f187110f712b3c28d311eace85b118bdff1cd5e3ed19b42c34",
+      "image": {
+        "path": "screen--dis-c1-l0-n2-s1.png",
+        "sha256": "7d554e588e31b6dd8aa790bf8752027c657508dea834b7ed96cc335bc9fb941d",
+        "size_bytes": 53471
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "78664091a3208289f0f117facb1a4d1268aefc30d8e3b5c362fc88e54ec32f10",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "9bc20028c5ea94449d347ea50c98ead8a0ad50e25c2d7056fd5270f9883ccea5",
+        "record_id": "dis-c1-l0-n2-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "690a08dc0c743829edce51ebf3b1b176f65fe552b68d9200c3e2b6de2bde443d",
+      "image": {
+        "path": "screen--dis-c1-l0-n3-s0.png",
+        "sha256": "578c17e68b6d8861f3a78c2afa2aa08dea4328e3332da8aa26302b2fd248599b",
+        "size_bytes": 57514
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "16e51e8e65d13b2be564597f27599942f7d4e3bc8abe332913696de5ee54371a",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "939d5a1b435babb68280534495b7515bc4915ce4c8e288fe2285278c2c5d8f10",
+        "record_id": "dis-c1-l0-n3-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "6b90fefb03832e155f5ebd54df46a2e010093ff0b749dacc61b29b3012d3a9b8",
+      "image": {
+        "path": "screen--dis-c1-l0-n3-s1.png",
+        "sha256": "e58709551fc106568559dab558a0f5200b01a97893b01d0fa0135ad64cbcab1f",
+        "size_bytes": 56308
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "da60f8a874ce126590a2990207a2a6f708f8f2096f7787455369f578d0707480",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "939d5a1b435babb68280534495b7515bc4915ce4c8e288fe2285278c2c5d8f10",
+        "record_id": "dis-c1-l0-n3-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "c18b486d9e7f74b51b547069452d1ee7f810bca56856ee93537041b8c4d7d2c2",
+      "image": {
+        "path": "screen--dis-c1-l0-n4-s0.png",
+        "sha256": "e335abdbf413bf07233c8ee30dea1f610d75de7d0a8fbadaa86872f5de2c4caf",
+        "size_bytes": 61030
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "9d9d7b7000607943d1806baf755e0cf14c0cf151f40df35b6b4358cc2c78b0c7",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "2af9e635dfd08817e5cdbee19923cc0273c742a3beb83d3cdeb843bbe4a19cdd",
+        "record_id": "dis-c1-l0-n4-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "8608565500429fcaa72255c7c5cd75119a83035b7a7a71027a953c377923e9d5",
+      "image": {
+        "path": "screen--dis-c1-l0-n4-s1.png",
+        "sha256": "7f27f3b65fb66b795de9ac9e78cb07fa7c0c71f803576eb723d3ef8309a1609d",
+        "size_bytes": 56279
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "207a84b2b806adcfaf94b8edc34574161f6ffabc934edcb8da4b6421c56b1d60",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "2af9e635dfd08817e5cdbee19923cc0273c742a3beb83d3cdeb843bbe4a19cdd",
+        "record_id": "dis-c1-l0-n4-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "99353582aea2b9b8e4328a80187d7021edc6cd1cc5b8cc62a9955f4649f4868d",
+      "image": {
+        "path": "screen--dis-c1-l0-n5-s0.png",
+        "sha256": "27a7617b22bf17a04710cb319f6799bf070dbf202ed67f18e0a8231fed865f3b",
+        "size_bytes": 57254
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "13aaa988f60f36a940841354d3465b73a0712ef29b68cb3f1e348201e9556065",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "fb8e61f53f19ac55b7e5be10b918e52215b739479081a455527913d431ca1d21",
+        "record_id": "dis-c1-l0-n5-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "05d41b382cc6ebfb2f8fad2c6eafaa980f9e19c64998b8b64b7ee3681d61ebaf",
+      "image": {
+        "path": "screen--dis-c1-l0-n5-s1.png",
+        "sha256": "127d2d4f97ef99fc4545ed10a893370ce6a29ef1335c9c3445b8599399700674",
+        "size_bytes": 81360
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "85051f180d91426c5fa76221ac70712d2cd09dd2b54b13fa2ea91186385541eb",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "fb8e61f53f19ac55b7e5be10b918e52215b739479081a455527913d431ca1d21",
+        "record_id": "dis-c1-l0-n5-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "80ffa6c430619a6f673a2590ac10f654c22e61e43acf1e6da6fca350465e696d",
+      "image": {
+        "path": "screen--dis-c1-l0-n6-s0.png",
+        "sha256": "166105751cddf5c5d781c3620f45b303e2f406139fddfe49e6cf2567242db2b9",
+        "size_bytes": 56768
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "8c520028235017da8ee8d5cc314064693d68844e1b83b3cc06315ebb28fea510",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "8d4e4c72af623260de0753a90306d5740653cf5c6124b5ef7113efa6f0a2abec",
+        "record_id": "dis-c1-l0-n6-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "7e820b76445424ac2dab0f469807c7459055c22f07370d0f250a51e84c34e05c",
+      "image": {
+        "path": "screen--dis-c1-l0-n6-s1.png",
+        "sha256": "904fc86040f0b8a83e03448b551ef50701c8ca5c47af596667381416ec785c15",
+        "size_bytes": 85757
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "38b8eda5f8043e30dae0a8df923bf16a7ddd70a04dc4df3460b2c6c4bafddd38",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "8d4e4c72af623260de0753a90306d5740653cf5c6124b5ef7113efa6f0a2abec",
+        "record_id": "dis-c1-l0-n6-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "4c5f67606c1377011b43761351d8ef950f27a7ec5efdd473c97819251b0cf334",
+      "image": {
+        "path": "screen--dis-c1-l0-n7-s0.png",
+        "sha256": "d20a3120011bcd72df8fd1f9e5138faba821be3ee2085a59f6c68dc3836482ef",
+        "size_bytes": 52868
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "364c2ea05e693e33395860d06fdec2f4d50d51e7026132c924fa60a9b9a750d4",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "f8e808559b5b837e922827c827e6261cee8c4531ab44299c8b687855b0db1f8d",
+        "record_id": "dis-c1-l0-n7-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "c32a174a6edea4bc84d3890bb5e2e806bc613265e6f9572116914775e3b59d0b",
+      "image": {
+        "path": "screen--dis-c1-l0-n7-s1.png",
+        "sha256": "f4859ad9afc6aa8a72652711eb1a122b5820101342bd825446d26b78c4cb510d",
+        "size_bytes": 83127
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "1761f2871dc0d6f0d232cd7218f45234db731660043ab560ec0401864bfaef43",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "f8e808559b5b837e922827c827e6261cee8c4531ab44299c8b687855b0db1f8d",
+        "record_id": "dis-c1-l0-n7-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "94b72a3606b206d60cba5760007a52aea1724e9ad3315742cca4ed040a060fb2",
+      "image": {
+        "path": "screen--dis-c1-l1-n2-s0.png",
+        "sha256": "b459fb3c50d1a99413721037d38b7454e86174331b2b2bf07757bc4f4c6899e1",
+        "size_bytes": 53571
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "12ac8c03a34bfc68a2cbd6d54012d0b716674b33cb2cea05c4a6bf51ef8e04cf",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "4002160eba5fa2c28d9b197c2c1d7316df878692e9979f45c7c65198d6fcbee5",
+        "record_id": "dis-c1-l1-n2-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "1f5c73883e44c98986529ed29025afe4e06c39a995529193c9ea2f8aaef042e3",
+      "image": {
+        "path": "screen--dis-c1-l1-n2-s1.png",
+        "sha256": "00a7ce653123173e11d5e21e0b920ede800aa87d702c32557a02b6f209621e60",
+        "size_bytes": 62077
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "2f56022f3556fbd66ad1debd749db2623242dd3c6cf623299e94aea70b507b09",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "4002160eba5fa2c28d9b197c2c1d7316df878692e9979f45c7c65198d6fcbee5",
+        "record_id": "dis-c1-l1-n2-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "379ed83ea5c14c8f79e8a85caea526c36efc9dbf6aae617c6d4f5122a52993ef",
+      "image": {
+        "path": "screen--dis-c1-l1-n3-s0.png",
+        "sha256": "b3e4283535c53fc1815677cbd874af0fdaf5aef3468d3994da0de02976cad514",
+        "size_bytes": 61272
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "2e8938ae9db92dd9f505d1d75f39c21045dd4d84d7d4e2ffd1155328d1ac1cb1",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "6b9bb2001314595c68d8df58fb993d09949847f9a6adbcb6dfacb0100069b528",
+        "record_id": "dis-c1-l1-n3-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "42b3bd9c55a7a1c891f6d0ef65e684f5ce3087244f33b5d5dde361219b087786",
+      "image": {
+        "path": "screen--dis-c1-l1-n3-s1.png",
+        "sha256": "fe4bb4ed7dc2a4dfc1926d783e34214f720cf59a5052a3d81faf570df5768ecc",
+        "size_bytes": 58302
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "e759b45b91e1d54fc3ffce744ccefdc91ac5210c7ad9fd4984f5f392c705cfa7",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "6b9bb2001314595c68d8df58fb993d09949847f9a6adbcb6dfacb0100069b528",
+        "record_id": "dis-c1-l1-n3-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "0ff5b1ae59fa44b14c779be14746a73873f9518666b331a6a8b7fe4e130689c9",
+      "image": {
+        "path": "screen--dis-c1-l1-n4-s0.png",
+        "sha256": "a4c2d7f50b542857311b413e8547fe458243a3e9cb292f985b557ade7794c814",
+        "size_bytes": 51427
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "e68f7e971f0b8ac1210f1e65442399368d517af16b1f4195d846efb5cf3db67b",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "e283a5892c198e094ee48cec80551b5d4a9c405e3b4616633606661d93f3817a",
+        "record_id": "dis-c1-l1-n4-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "440294e211aeec76ee88f1ba9093aba0d83be996fc06ad30e2a4c4b7c6bcefdf",
+      "image": {
+        "path": "screen--dis-c1-l1-n4-s1.png",
+        "sha256": "d2358e894d233b6bc285020886849903f4b7118a94c59a21cc2ef5073c04eaaf",
+        "size_bytes": 78851
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "d08675f552651c467600761978463d73ef1ce50cd9c170ffbb86ed3256c6e0b5",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "e283a5892c198e094ee48cec80551b5d4a9c405e3b4616633606661d93f3817a",
+        "record_id": "dis-c1-l1-n4-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "dbb2ddbbfac457c298c0bd1ec75b6e8029332db928eefd46d90c576a1ab01010",
+      "image": {
+        "path": "screen--dis-c1-l1-n5-s0.png",
+        "sha256": "fbc5b93407225352c73df6cd4cbef1826a2a6ecfdfac93670a04f4f1e66dd2a7",
+        "size_bytes": 57252
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "f29d0019ed72fe7a6c5d0754f6d2a358190f797ec0e1103dc13066ece2300bec",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "654dfd226276c49db854dd5fad94613d78e640c0645da4bbed2f3d232fbaa01f",
+        "record_id": "dis-c1-l1-n5-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "3c83ec751c0c86ff447844b9a0124e7f2e2c14eccfa57ff5993b8a8c7a362489",
+      "image": {
+        "path": "screen--dis-c1-l1-n5-s1.png",
+        "sha256": "29922a94cbd09b3e6eec7c679a9f2d15382a14aa54eaba5008a5b6619fb98f55",
+        "size_bytes": 64487
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "eb01411862e34aea731ee3c34f86b66c958210fcc6bc4e1e012ffd2a01f31697",
+        "count_absolute_error": 3.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 8,
+        "panel": "discovery",
+        "prompt_sha256": "654dfd226276c49db854dd5fad94613d78e640c0645da4bbed2f3d232fbaa01f",
+        "record_id": "dis-c1-l1-n5-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "b099aa1324c840d67d629706e8d49f96a83efdc485377743ef933297e7b3a520",
+      "image": {
+        "path": "screen--dis-c1-l1-n6-s0.png",
+        "sha256": "1993835099d78f3edf543f1c48be9731eab2c4a1dcbdce1677903e0201b2b205",
+        "size_bytes": 71720
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "ab136af8d65b4b01d3ad1071f43aa5f3dbddd654fc723f04cf05942b058515f4",
+        "count_absolute_error": 3.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 9,
+        "panel": "discovery",
+        "prompt_sha256": "b8672036ee7cea9e9cc67bb0935f03bf4868dd3c8daaf7ec73db1ae4b59cc9d2",
+        "record_id": "dis-c1-l1-n6-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "841ca10fc500974f59a7caa3b971529cf22ffb16d6bee833ddba31654cde911c",
+      "image": {
+        "path": "screen--dis-c1-l1-n6-s1.png",
+        "sha256": "55e506ef7a77a2e9c78099cbabdce1ada50994864634fa8d4655df2184869fab",
+        "size_bytes": 71505
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "932141684600c29ad2fcd20136e46bea6b09460f05359d5e2f8b536289862378",
+        "count_absolute_error": 3.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 9,
+        "panel": "discovery",
+        "prompt_sha256": "b8672036ee7cea9e9cc67bb0935f03bf4868dd3c8daaf7ec73db1ae4b59cc9d2",
+        "record_id": "dis-c1-l1-n6-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "00145cb7d70e5cb4505cb353bf82ab7dd256bc88ed2fcb2e52a548b6ddf97fa1",
+      "image": {
+        "path": "screen--dis-c1-l1-n7-s0.png",
+        "sha256": "93132af4fa4eaa7cdc28c69621996340af55b245473b9a544bf96e72e8c64a75",
+        "size_bytes": 65385
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "26329b8dfbf52df5cd732c48a63ad7263aea2501789061c5e1b29474d8ecbd5e",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 9,
+        "panel": "discovery",
+        "prompt_sha256": "5d1a0aec88692f34b51ef0c0b3a208caae0f51c916ade970e6fc5496db0b892d",
+        "record_id": "dis-c1-l1-n7-s0",
+        "seed": 41041,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "fa18dd5424b204ec3d5654b662fa64c95a70f3b4d1c4476fe1a7e6665ef94298",
+      "image": {
+        "path": "screen--dis-c1-l1-n7-s1.png",
+        "sha256": "43bce302a597a7e4c2c786859164706eb0cc0132d9494b30455d7f2c098ee970",
+        "size_bytes": 67346
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "blue",
+        "components": null,
+        "content_sha256": "6021ce49776d3f4328d63f41783d4d28fcb177f5041b5e4f5d3a7b0d27d2abee",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 9,
+        "panel": "discovery",
+        "prompt_sha256": "5d1a0aec88692f34b51ef0c0b3a208caae0f51c916ade970e6fc5496db0b892d",
+        "record_id": "dis-c1-l1-n7-s1",
+        "seed": 41083,
+        "shape": "squares"
+      }
+    },
+    {
+      "content_sha256": "1ca09eba5582110831588f4d54b9375b8efb8ca8548eeac1217af8c99ea24b19",
+      "image": {
+        "path": "screen--dis-c2-l0-n2-s0.png",
+        "sha256": "e903bd857a9afd9abf0642418b851d37419a66e8d9e5c839e78f1c1455b29f4c",
+        "size_bytes": 89988
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "820a6c6da55770ba42eb866e26a13a90d740b5817216e515784dcc961342306e",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "18e10431169d9bbe0bdb41c3150a16cc30d0195bf975834c3706c4b2609db50a",
+        "record_id": "dis-c2-l0-n2-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "5c0145af6adfc429ababff6240c585d14b4a64313deb6ec96f3e2e0b4c1b630f",
+      "image": {
+        "path": "screen--dis-c2-l0-n2-s1.png",
+        "sha256": "21a9e08eef0eba137dbac741dd6a81acb6ee41c5aeb684e8c245402dc2c269d9",
+        "size_bytes": 93013
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "46dce5af6b073bad6a58287c55cdf29200273b9f85f583721483403de8bd6d09",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "18e10431169d9bbe0bdb41c3150a16cc30d0195bf975834c3706c4b2609db50a",
+        "record_id": "dis-c2-l0-n2-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "97782425af9c91daa9b13b14130ef165fabdc587c54ccd6fa667da5d04c55395",
+      "image": {
+        "path": "screen--dis-c2-l0-n3-s0.png",
+        "sha256": "dfaf7f0cb3b94fc586b4ffe9f2ab6e3e8dae5d9675ea3f6fce323e032bdedee0",
+        "size_bytes": 94810
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "e1a1309b74ca61aa45857144079ba62833fc49921c7f837bac2262137fb5f009",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "6cb17f8c2e6283a0c9201b8b9dca52e4ae9608c6ff023f05702f959e5cdbe21c",
+        "record_id": "dis-c2-l0-n3-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "e258c894908029e1fd02ed09eec6411db395f55b6b80e1f5781ab54a59f3401d",
+      "image": {
+        "path": "screen--dis-c2-l0-n3-s1.png",
+        "sha256": "648ef1b29875212696667648c190c6d19617b3d0b78d288d4cec8f2783526399",
+        "size_bytes": 95777
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "878f2698d9797fb864a121e60bb641a5c7d2b3db1aab2dbfb824888e0a32cba8",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "6cb17f8c2e6283a0c9201b8b9dca52e4ae9608c6ff023f05702f959e5cdbe21c",
+        "record_id": "dis-c2-l0-n3-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "737582c4f8aa9e397472a8225aff627227419226c1e5b2b602575e7d3f1f86f4",
+      "image": {
+        "path": "screen--dis-c2-l0-n4-s0.png",
+        "sha256": "d8563149150c093f66407a3990025817c3f45d2837507041f4ee8725d6f1cb94",
+        "size_bytes": 100904
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "d464dad725b066058b388859c166e7fbe4d08508da80bdcae7b80fb10811152d",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "c66378cca8739214fe8f5ddf194f0436b384d000db9d995d17f46f46c5e372e9",
+        "record_id": "dis-c2-l0-n4-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "d931c6bc4804e9649a0fb29c9705e7539ad9b877e6194d4cb0ed8b58c0c8cd0a",
+      "image": {
+        "path": "screen--dis-c2-l0-n4-s1.png",
+        "sha256": "a3e0b230930e0c737a51592ef44c8e9f11dd80c889823c6c714c1cfef4987a98",
+        "size_bytes": 92315
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "f6e50178ff4f10cb5b23067d8f0ce5851e5a25adc1cf87430d9fc3aa31339253",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "c66378cca8739214fe8f5ddf194f0436b384d000db9d995d17f46f46c5e372e9",
+        "record_id": "dis-c2-l0-n4-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "bc775e42fa4ee2c5a3fe80182918d1e0615721fb1fb247c7d8dd4cc5222177ee",
+      "image": {
+        "path": "screen--dis-c2-l0-n5-s0.png",
+        "sha256": "555f615449cfa9a0244d34ace72819fe78c71539afdae9bf09fcf21426333a17",
+        "size_bytes": 89308
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "16803f7585068a744571cf2832341bcb6e28f9e049552540af2ff2d6ebd7920c",
+        "count_absolute_error": 4.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 1,
+        "panel": "discovery",
+        "prompt_sha256": "443a5f86362c20b0bc4245430368c00ddfc24ab6d09ed2e293a9ab15ef479306",
+        "record_id": "dis-c2-l0-n5-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "33ed42a08c3438720bd5a60ed58c946e6f54c40663bf974d1ca91427a5f93296",
+      "image": {
+        "path": "screen--dis-c2-l0-n5-s1.png",
+        "sha256": "7ebd2a0b77b8f8a56b0fea99d11d71b5a2d6fed73a5f6753bb5d90a57e0e82cd",
+        "size_bytes": 63928
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "f232ab4f1cc4daff2755ab237a81bda27827fa5545f0a2b2ff1b5484db1602b5",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "443a5f86362c20b0bc4245430368c00ddfc24ab6d09ed2e293a9ab15ef479306",
+        "record_id": "dis-c2-l0-n5-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "a885e6486818872dfe92034cbf3766bb05e18e983dc57c80062c40483880c139",
+      "image": {
+        "path": "screen--dis-c2-l0-n6-s0.png",
+        "sha256": "9ab33894ef76b30d251cc35ca3802a28962a5d936fe7f2feb59e55d243763868",
+        "size_bytes": 79972
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "631350392bdb8ae23591611911b332acd80f3c756504714fe77a03407c8eae09",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "fd9a0f5ffec2251ea9108c370768647d1aefb08500b230af8b1c3ebe4617adc0",
+        "record_id": "dis-c2-l0-n6-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "b6372feb2d96ad0d0c33d2e7856540f03d0e9f27cf9d0806b57e5395f1963638",
+      "image": {
+        "path": "screen--dis-c2-l0-n6-s1.png",
+        "sha256": "dbb6ef39dffe11afc36774c783e077e4058853757cbcfa0cb2ff319567b1a175",
+        "size_bytes": 64276
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "6cd2f58d3b31b4964bf3386a46a94f0047d6af3261d199b1988db24a1ad8dfd1",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "fd9a0f5ffec2251ea9108c370768647d1aefb08500b230af8b1c3ebe4617adc0",
+        "record_id": "dis-c2-l0-n6-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "9a817565d7218ae381fc22cf940f97d7f125eeaa6770fec5ad7c4482337c1571",
+      "image": {
+        "path": "screen--dis-c2-l0-n7-s0.png",
+        "sha256": "6883787cb3c6246031eb0ba3a25f24cd59f13d81982dc3ca3a15f1d07bf9c273",
+        "size_bytes": 93665
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "8e22bac30d5e704bedddc0242f867154ae54532e739e715dff668365ff083080",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "9e5d1cd821e8e5b1721b12901e8f0912de4da22ef480d3d2357f8f37a19b70d2",
+        "record_id": "dis-c2-l0-n7-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "2461dae52ef0b49d125067e17bf34fc705a78b4440eb6effbd6b98baca0f328c",
+      "image": {
+        "path": "screen--dis-c2-l0-n7-s1.png",
+        "sha256": "526b23252fea0a5f98bd63e617c42980b18df36b2c77df8f39fe44fb9e9ea856",
+        "size_bytes": 67815
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "bd9f1abd33937f780888f7ad4c07593048d9d5bb01b0f88219e932612d54dde7",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "9e5d1cd821e8e5b1721b12901e8f0912de4da22ef480d3d2357f8f37a19b70d2",
+        "record_id": "dis-c2-l0-n7-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "a2f126f74d60b4bd843958142ecf4826e60c23da2103bc88ed316e31b78f11bd",
+      "image": {
+        "path": "screen--dis-c2-l1-n2-s0.png",
+        "sha256": "eb5c14afa4bdbf971dbc6ccf0445cf46c1cf92e1999d4db7de115c1dc74ed79f",
+        "size_bytes": 94134
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "ae132a8cdaa873a699c88704d71e399702310f14dfad733a483aac5be485f265",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "b9b0086937a000f2e6eefc05e708de28e97a49996f14e2e11a3b1507b029a927",
+        "record_id": "dis-c2-l1-n2-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "d57ef84da1b02279651b6b0d96e1e60c06047a7429afe2338abf46f7f36043de",
+      "image": {
+        "path": "screen--dis-c2-l1-n2-s1.png",
+        "sha256": "eb11ff9d5788794e80a72f51f629cb5d372a84fc8c0711afc1c65f931dd2db54",
+        "size_bytes": 97224
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "0ae6a4536a0336fac2766d2b563f081ae257b1606ac9c106beddd7bac230df45",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "b9b0086937a000f2e6eefc05e708de28e97a49996f14e2e11a3b1507b029a927",
+        "record_id": "dis-c2-l1-n2-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "ec7f8f632e381fca3e297c7c7b33e87b4563124706976cae3cd382ffa1a752b8",
+      "image": {
+        "path": "screen--dis-c2-l1-n3-s0.png",
+        "sha256": "643fce44b3e3b4fa0122549d9dcf63ce1fb4498e2a5431e3a4ee8c3d61491bdd",
+        "size_bytes": 90914
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "a9b700be45cc8d7d249949c5c7bc7941759e75b0d35ed9dfd5fa1292933ef124",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "ea227f4459cb2107895e5d8e58d04ef17759207ca5ede3396bfe142d62e24dae",
+        "record_id": "dis-c2-l1-n3-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "2bfd4a435231df470df4b8a11a94d8aa6df70bb1171146f3e391f17a81df77d4",
+      "image": {
+        "path": "screen--dis-c2-l1-n3-s1.png",
+        "sha256": "6d157b6b04cac510b238cca0f53942884d0f66a080f9beb19352407164fba00e",
+        "size_bytes": 101776
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "88828b3905ee99b939b05ca544b91bd01de606ee1847e1f88debc3a9be43ea95",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "ea227f4459cb2107895e5d8e58d04ef17759207ca5ede3396bfe142d62e24dae",
+        "record_id": "dis-c2-l1-n3-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "4650215b9c718bce3f513fdea6a9be0d977a219c7625e5c00a849824fb83480f",
+      "image": {
+        "path": "screen--dis-c2-l1-n4-s0.png",
+        "sha256": "f911e5cb7911f7f95bef3a822f4b4e8bc4225a102ec2fc8fc0e83773882e7d3c",
+        "size_bytes": 130677
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "3dfaed1884d360dee73cb0462285232291974e9c8ac5437199f6dfffb0930cf8",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "11834b0d7315e49252425a8be674c3ca1e07bdad77d8f44ea5eb7169aea48ff3",
+        "record_id": "dis-c2-l1-n4-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "9c2ca319dfa9f3bb9a459283a7ac11e1faa20fe3cdfd266fc46d81692f7758bc",
+      "image": {
+        "path": "screen--dis-c2-l1-n4-s1.png",
+        "sha256": "1c6d34cb4c48b65b5830148c0a0034e2399a396bc44222bc69bb4ec63ed0955b",
+        "size_bytes": 124140
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "be6458e12180a8e0a7d98bcb8a3ca187e1e4e7203bdd28019bf84d26856b4761",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "11834b0d7315e49252425a8be674c3ca1e07bdad77d8f44ea5eb7169aea48ff3",
+        "record_id": "dis-c2-l1-n4-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "4f8da9ddc2dfc3112826cb34303d22e56e4b95bee5e6aba189203a38f36db893",
+      "image": {
+        "path": "screen--dis-c2-l1-n5-s0.png",
+        "sha256": "20c10d3ad9ac074b2fd373ca8cbb15cf4c2c5cb37ea43ee3fbd44f6b8e1cfd98",
+        "size_bytes": 127399
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "8ef03437bbd8207ada38945cbc8454fdb785875ce86de0a64cb095104e4f1b50",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "d0bf8462fa8fcb9c7c52d3bd6aa1b6060dceca49c1a5c5742794e44735cb54f7",
+        "record_id": "dis-c2-l1-n5-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "d0da1f2c6fc456142c05dc97ae6f25ba0e324500dfb8103daac6790b74dfa65b",
+      "image": {
+        "path": "screen--dis-c2-l1-n5-s1.png",
+        "sha256": "bc3c27ed2172c74cf0eb76144799007447bc38049e0fa279446551e9d7023082",
+        "size_bytes": 137709
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "4fff67c0014b72de7603d23fe2cfa5d2de5f50ebc68b53acb34c85dc30b42aa0",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "d0bf8462fa8fcb9c7c52d3bd6aa1b6060dceca49c1a5c5742794e44735cb54f7",
+        "record_id": "dis-c2-l1-n5-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "29bfdd7ab9f18ac9b9d6bfd11fb1b17c6858782263aee206b466ae4aa531c961",
+      "image": {
+        "path": "screen--dis-c2-l1-n6-s0.png",
+        "sha256": "f2fb30a3bf3c025845c64ca8c416535f972bf9525dbe4f4a169841c02a7d92f0",
+        "size_bytes": 148222
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "faf2bfb85937ddecbd42bf94188170565a2d90f85f0fab23261d08a167ac3bd9",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "1bc049861f08c2b05bf32b9ad14cb363495467ded81b65b274dba7f451005963",
+        "record_id": "dis-c2-l1-n6-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "547e309624568a51e386310da4e2dc3f49630d2add604b871835a6cac9f70749",
+      "image": {
+        "path": "screen--dis-c2-l1-n6-s1.png",
+        "sha256": "e6bab0201528fd79b6c445739e6dd6f82e3ed906ba66d26a6a1e6ed06b095631",
+        "size_bytes": 128033
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "3783d23bc174bf03e9e3f862bd3cff1ba980fb76d4fe6cfe8c2b21d06f77ac6d",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "1bc049861f08c2b05bf32b9ad14cb363495467ded81b65b274dba7f451005963",
+        "record_id": "dis-c2-l1-n6-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "c84c2f1cbe713e8c46ff7253dfdc6fd8c4008c8efac923d028d13b4e6dadc649",
+      "image": {
+        "path": "screen--dis-c2-l1-n7-s0.png",
+        "sha256": "3f843818b9dd8c37c332d08479188f4c66a5437d91fcecec9e068ccf50b12cb7",
+        "size_bytes": 104523
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "cfbf5abfceb73f50ecfcaa647240da836328c7f49ae9c566b5f10d2e8b04342e",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "58c3102b5cba9dc93dd3f5c98f603614ad41ba9b90fa0facbea21df454e09e2c",
+        "record_id": "dis-c2-l1-n7-s0",
+        "seed": 41041,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "93decb882a93072966154c8c66dc933725c4363f92d90146556424753ce8acc6",
+      "image": {
+        "path": "screen--dis-c2-l1-n7-s1.png",
+        "sha256": "28d02b8721480d9af9c589b6ff173887f0a973ddd031e8ab349b07d9a1bd56a4",
+        "size_bytes": 120326
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "green",
+        "components": null,
+        "content_sha256": "759017b8c6af6d8b94d4109ca3ef07ee2b478d1ac2bcb9c5f4a657d7e6e5a2cf",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 8,
+        "panel": "discovery",
+        "prompt_sha256": "58c3102b5cba9dc93dd3f5c98f603614ad41ba9b90fa0facbea21df454e09e2c",
+        "record_id": "dis-c2-l1-n7-s1",
+        "seed": 41083,
+        "shape": "triangles"
+      }
+    },
+    {
+      "content_sha256": "e03f68349892bf634e6bce9800d5268f906c71c679216109747faf526a4b6f18",
+      "image": {
+        "path": "screen--dis-c3-l0-n2-s0.png",
+        "sha256": "d7d070948d93a33eb65a9bb4e95160b432e3e2631da6053ae00ed0b5814ed131",
+        "size_bytes": 85993
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "9ca23cb3ebeba87d89aed4fc3f7e4c77a0ce02231a328aad3a66485eabbc0213",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "689de298e8c2d0e8fae149121dc4c86ec62dfa927e75dd5ad4d29e1a27457616",
+        "record_id": "dis-c3-l0-n2-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "11a1b105fd3c5387c9c837e45ea5d8cc3ea5e4ee822d98120c2a7a5378ee07ea",
+      "image": {
+        "path": "screen--dis-c3-l0-n2-s1.png",
+        "sha256": "3ac42d932c5eb7fb49182652adb59300ab0782b768a2d772071b32dfaa6a964c",
+        "size_bytes": 80822
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "18919a00ab2114fc496fb18b3956ce7d28a415bc2483eafffd74edf55421168d",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "689de298e8c2d0e8fae149121dc4c86ec62dfa927e75dd5ad4d29e1a27457616",
+        "record_id": "dis-c3-l0-n2-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "4d30919c4dcbb99853734d76d29bb05de53859ad882dac00224657621c0422d6",
+      "image": {
+        "path": "screen--dis-c3-l0-n3-s0.png",
+        "sha256": "ecf4eb7ece6d146f111e27e4aba0ab9a11755c7855b2383c99c5d4fb2c9d7677",
+        "size_bytes": 71053
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "692dcec71e20dac547156ada14f2bf0df7024aaae4c06fac85c6ad53fe71207a",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "74aec578f43a97e811d8047ae9ff926d464e08f1a2f18e09d091c82c97f50650",
+        "record_id": "dis-c3-l0-n3-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "a9f7dc8e6d964aac014379495ca7425351510915bc3b666aaf5786f931e920bf",
+      "image": {
+        "path": "screen--dis-c3-l0-n3-s1.png",
+        "sha256": "16ea8e141c76e382f710271af906938fa3aa2e8f18328827c1894082931633c5",
+        "size_bytes": 72224
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "6ba36ceae4af518025ab6f05fb34728ec57bd6fe6ac672f362c53517fd8b9544",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "74aec578f43a97e811d8047ae9ff926d464e08f1a2f18e09d091c82c97f50650",
+        "record_id": "dis-c3-l0-n3-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "a10b5bec1e7ed42f322dbdda9b13752b7dd0b0efbd50927220491753a95d89c9",
+      "image": {
+        "path": "screen--dis-c3-l0-n4-s0.png",
+        "sha256": "00db6214ce2fe213d7842f709ec68a5c225bf9ef2e21fc9b57d07e548e44c441",
+        "size_bytes": 71634
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "8241f14ac0d2a9414b907b3aee56919f61128b5e955697d1c93f200c295702b7",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "265cd8086d5df1b4c4d6204ab2425660aa32d58060b1b39871ca28d38ff903f7",
+        "record_id": "dis-c3-l0-n4-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "7e9a842c208530f319d159a718e2fb290e72475b6444af0efcbf6f818872e79c",
+      "image": {
+        "path": "screen--dis-c3-l0-n4-s1.png",
+        "sha256": "e3cb45fa57ae859312bb6058bf44c5646c6c0869f4b3d920d47c02cf81a70d51",
+        "size_bytes": 70841
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "af6bca82ed6e2356d05ad8858c573855778c9d15ea9343a7d19bfc425906f282",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "265cd8086d5df1b4c4d6204ab2425660aa32d58060b1b39871ca28d38ff903f7",
+        "record_id": "dis-c3-l0-n4-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "12b57ce14158f83ce62236899db9f99f488c46ebea34ac42512b5c66c9230fd1",
+      "image": {
+        "path": "screen--dis-c3-l0-n5-s0.png",
+        "sha256": "2ee87be42ed264e047442b33fe9de950e3d92c132822d34f17c6571f1b6d968d",
+        "size_bytes": 92850
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "210b502959d0f271a5ffacc7956ed72cce0f12a165fec62c9903881d7803565c",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "2006082733dacfd1a9d3bdc96dcfda7bd4a82d96bc79fad72cbfa3c3426ce018",
+        "record_id": "dis-c3-l0-n5-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "3c1f9982cc9952091056848f4b224c681c6b192731e96ff8ce4528002d988b85",
+      "image": {
+        "path": "screen--dis-c3-l0-n5-s1.png",
+        "sha256": "d5f08916b4959a3ad76b4fe170a25d47a183bf485d5a531d45a21e15a5156ac5",
+        "size_bytes": 74454
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "427c7f20fca329636b5c35da9b096951cb8409df3bd45b5c702176c35da39045",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "2006082733dacfd1a9d3bdc96dcfda7bd4a82d96bc79fad72cbfa3c3426ce018",
+        "record_id": "dis-c3-l0-n5-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "ffad427e5434576c619efca20c47c0086f8c963fca4cb03be734a946addfca27",
+      "image": {
+        "path": "screen--dis-c3-l0-n6-s0.png",
+        "sha256": "465a6ffc6bb9e5fab92aa3db4c9783ef5b2ec7169becec4188a3dc7039e0caa1",
+        "size_bytes": 87334
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "c42006cb5d2c9cc729e184bd1b6777dccff2f1450e9384a7dc2f61dad0ba2739",
+        "count_absolute_error": 4.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "5414fd1f26275dedd21d4e6f950366f31b91d039419cf72189e48f803d5305f7",
+        "record_id": "dis-c3-l0-n6-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "088af8b5db65b11401b464c8c9ec9b43cb73d911f6c373877eb87a77c1927b0e",
+      "image": {
+        "path": "screen--dis-c3-l0-n6-s1.png",
+        "sha256": "633085bf8f01846aa5b9fde7975d5444183f28fc12e058a1076a5c55bcfbf21d",
+        "size_bytes": 68362
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "387607756aabb235b119f4682aa94ee444e2f142626a622010d36e65e735fd42",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "5414fd1f26275dedd21d4e6f950366f31b91d039419cf72189e48f803d5305f7",
+        "record_id": "dis-c3-l0-n6-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "41334bd036e8cde59e8f128b2809eb6ba740218abe390d4f09c438351f3f72d5",
+      "image": {
+        "path": "screen--dis-c3-l0-n7-s0.png",
+        "sha256": "d4e4acbda604b4b64411a794579f118b579390af1a0705fcc92fe07414ff951d",
+        "size_bytes": 80492
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "e1e1b27b2b48fa93ca59a3b860d36d67c455b3d7890d23f6494c7b6ef6b180cb",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "a1c6c344c56dc4d938455b6aa2997b3f6645fa4e33f931d21fbc0926bd76699c",
+        "record_id": "dis-c3-l0-n7-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "48a879e2e0bed02bcf928e47514b59d624ab29a4578aa463e5025c867dedcb30",
+      "image": {
+        "path": "screen--dis-c3-l0-n7-s1.png",
+        "sha256": "737e6be8a819f186644114b22e730a4bd37b64e25c79801e0f4e7908076cc0e7",
+        "size_bytes": 65202
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "c18540b656c45f41d2cad3991de1fd31a7b970f95fe919a10408c85605aa257e",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 5,
+        "panel": "discovery",
+        "prompt_sha256": "a1c6c344c56dc4d938455b6aa2997b3f6645fa4e33f931d21fbc0926bd76699c",
+        "record_id": "dis-c3-l0-n7-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "b10a6b63dea330160c122b61c5605bce8ba89affc08c28c3ae5b39371b520503",
+      "image": {
+        "path": "screen--dis-c3-l1-n2-s0.png",
+        "sha256": "8db69df1b8d0b45b689b05942ad08f80901d549b8fbad709572e27b62dfec14d",
+        "size_bytes": 102398
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "766ef264cd5edfbd39f97158a7135901b3ec469a3ad9c80eb8f95bf414bcf14d",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "cca19845ceabbe49ee0c950e3988c43771d367999febac95753d1eb783d23e1d",
+        "record_id": "dis-c3-l1-n2-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "a9c4c19bc429d7b8248cc951e19f1749ea943f21cfc0c19a5a60b88048a145e1",
+      "image": {
+        "path": "screen--dis-c3-l1-n2-s1.png",
+        "sha256": "729cba932d5c4d75f0c9fb435e4930d26741d006c9d7f8a96b2ca84e49b596ff",
+        "size_bytes": 115710
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "43c8d9b16a6500f8f5eadde1101449ee570a34906a64e397913b86e38619e636",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 2,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 2,
+        "panel": "discovery",
+        "prompt_sha256": "cca19845ceabbe49ee0c950e3988c43771d367999febac95753d1eb783d23e1d",
+        "record_id": "dis-c3-l1-n2-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "41aadfacf865a8c4288de6e82278c28e95274d7001462fd6f754868dc2e488b8",
+      "image": {
+        "path": "screen--dis-c3-l1-n3-s0.png",
+        "sha256": "44bcef438a5ec59d0337c5d8ad310c90fbfa491d9054c6f12c6d3d5049d1a094",
+        "size_bytes": 98364
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "a53b6f0c30e68ea3628e4d37fb4ba76fd061fb8f01d58c4ec7097a16cd83158e",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 3,
+        "panel": "discovery",
+        "prompt_sha256": "7b11b746f54e7d9b531a75066a3efc0ec01830d40ac3e73aae8cb1cd407c42fa",
+        "record_id": "dis-c3-l1-n3-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "ea975549bfa1c662ee7a83ee4d365bd9bb16e8a55905c322a99c37948400e543",
+      "image": {
+        "path": "screen--dis-c3-l1-n3-s1.png",
+        "sha256": "ac48cc0906a802743feed12cbe7c2dd5731ddc6c938ad597942b8b738b3e7aaa",
+        "size_bytes": 122649
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "974fca7a16f490fc5fe67040f5de53c7ed9ff0ce939f4402b61a34aaeee60c89",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 3,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "7b11b746f54e7d9b531a75066a3efc0ec01830d40ac3e73aae8cb1cd407c42fa",
+        "record_id": "dis-c3-l1-n3-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "7d61a71a8cb156e6caef220e649618c08f472df93f0c8f7a3330cdc70d9ae470",
+      "image": {
+        "path": "screen--dis-c3-l1-n4-s0.png",
+        "sha256": "4d43046c31e6d680bf582c0c9d578564394ab3b71b589098f129d130b721a1fe",
+        "size_bytes": 113523
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "a16a3cd65606114276ea463acda3334d299c88be524f9a1b16b8308a690340a6",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "7e92d750937f4cb65d47c186508bd9f1086971237eb3e770b7254321e633ab47",
+        "record_id": "dis-c3-l1-n4-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "d42b067e727e9f646451f801eb2fb782df9658b56ee8e1febeddbed11c736206",
+      "image": {
+        "path": "screen--dis-c3-l1-n4-s1.png",
+        "sha256": "0d544bbbd177027087db9eec894de36c800967f640d58210b71f266e716d9369",
+        "size_bytes": 176820
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "79e349435fea452c346ee6d2c86d3c84e240b992176a40554cc9be7c9a441e17",
+        "count_absolute_error": 0.0,
+        "count_exact": 1.0,
+        "expected_count": 4,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 4,
+        "panel": "discovery",
+        "prompt_sha256": "7e92d750937f4cb65d47c186508bd9f1086971237eb3e770b7254321e633ab47",
+        "record_id": "dis-c3-l1-n4-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "cac9641af0540e9192199471ad821501c41e905ca8e09a0c4bc4517b8963f164",
+      "image": {
+        "path": "screen--dis-c3-l1-n5-s0.png",
+        "sha256": "eeed3238b24f3576c597f398508a186049b8e4ba5260b35b09e8c3480638e514",
+        "size_bytes": 141522
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "f1ceb7ee614efcff5e99e652482ebee3a8fae98189639176dd41e124dd9c1a4d",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 7,
+        "panel": "discovery",
+        "prompt_sha256": "9cc99253aedaa853ed2b5e00ae6c7073233266a9ce052564521aea3da1d42042",
+        "record_id": "dis-c3-l1-n5-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "1a23a07364ddc460fc664818ea4c2b6600541f89a9bddd37e8ab8059ae092810",
+      "image": {
+        "path": "screen--dis-c3-l1-n5-s1.png",
+        "sha256": "88ab34875a027db7470da7c712d4454926304db01b93a48a2ed5697e79590ef0",
+        "size_bytes": 169448
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "4fcb3696e79978e19d363747e2ddabf3a02d854aa9fd28e8a2b37f16be1ada32",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 5,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 6,
+        "panel": "discovery",
+        "prompt_sha256": "9cc99253aedaa853ed2b5e00ae6c7073233266a9ce052564521aea3da1d42042",
+        "record_id": "dis-c3-l1-n5-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "806402f329747011c9c0492b3d5aef420a5870109a27eb42de66cf21d2c983ac",
+      "image": {
+        "path": "screen--dis-c3-l1-n6-s0.png",
+        "sha256": "cc42df6dc56b5a717549c9233b34e31ad9174dc302eae3e447415186784f2088",
+        "size_bytes": 138901
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "531eb04c80140da0457e62e29f1b514437b3515c1dc79f916cdbae97a7a39991",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 7,
+        "panel": "discovery",
+        "prompt_sha256": "900f0b21b95cc2e5e53371e081e600b6b8e962103efa6b5e6aad43310c8e59d1",
+        "record_id": "dis-c3-l1-n6-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "624545682d6c6b49cd1595b1359af86ce0eef86d351bc536d62b176c42aa04cb",
+      "image": {
+        "path": "screen--dis-c3-l1-n6-s1.png",
+        "sha256": "abb2fc8a229c92d2940b273ba46d844a31cf516cf1be02c504971afb2a884829",
+        "size_bytes": 139556
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "bae786922b8c84012db0f61334527ef1fcbb89b994cc97def756bec4e555743c",
+        "count_absolute_error": 2.0,
+        "count_exact": 0.0,
+        "expected_count": 6,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 8,
+        "panel": "discovery",
+        "prompt_sha256": "900f0b21b95cc2e5e53371e081e600b6b8e962103efa6b5e6aad43310c8e59d1",
+        "record_id": "dis-c3-l1-n6-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "5a123de01fd6ad3f563147f1bcb6464d634347081623e453823d9d8ff9939601",
+      "image": {
+        "path": "screen--dis-c3-l1-n7-s0.png",
+        "sha256": "91e60514f0039434e74fa27a1483b9f948180db66fcb2eb6db4c54d49b979fde",
+        "size_bytes": 164194
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "9d75f1935004219bcbf898eb90fb9d86ea3ba79d0679d08078f642a31447aac3",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 8,
+        "panel": "discovery",
+        "prompt_sha256": "c96f6f68cf7e10e1504d204dcfd39f24fdcc0e66d9e18ab5025b7e81dec66c64",
+        "record_id": "dis-c3-l1-n7-s0",
+        "seed": 41041,
+        "shape": "diamonds"
+      }
+    },
+    {
+      "content_sha256": "b80cc729c627ba6bd6507ee902f08bd0715dc7babd69412003fe2355c54407a9",
+      "image": {
+        "path": "screen--dis-c3-l1-n7-s1.png",
+        "sha256": "18dc61c89270c46e2309358788a9a99a2bd7678e4e7011c93dad1598d5988ccc",
+        "size_bytes": 125416
+      },
+      "metrics": {
+        "claim_boundary": "component counting uses the prompted color mask; it does not independently identify shape, so paired color/shape factors cannot support separate causal claims",
+        "color": "yellow",
+        "components": null,
+        "content_sha256": "47864f7497e630d09eb54d39176ef39ce466b5165d5f22addf97b16538c25435",
+        "count_absolute_error": 1.0,
+        "count_exact": 0.0,
+        "expected_count": 7,
+        "implementation_route": "image_atlas.evaluate.controlled_geometry_metrics",
+        "mask_sha256": null,
+        "observed_color_component_count": 8,
+        "panel": "discovery",
+        "prompt_sha256": "c96f6f68cf7e10e1504d204dcfd39f24fdcc0e66d9e18ab5025b7e81dec66c64",
+        "record_id": "dis-c3-l1-n7-s1",
+        "seed": 41083,
+        "shape": "diamonds"
+      }
+    }
+  ],
+  "schema": "image-atlas.count-confirmation-behavior-evaluation.v1",
+  "source_report_content_sha256": "f95583315d764fb766f85941d9d795c70993291ceeb5a486b0f3e70c9f015660",
+  "status": "COMPLETE_OBJECTIVE_COLOR_COMPONENT_COUNT_EVALUATION"
+}
