@@ -12,17 +12,13 @@ tags: [bfl, flux, mechanistic-interpretability, semantic-circuit, causal-interve
 
 # Twenty-Axis Native Semantic Route Circuit in FLUX.2 Klein 4B
 
-> [!summary]
-> A single typed route through the FLUX.2 Klein 4B denoiser was tested against twenty semantic contrasts. Each row used a native source image, a native target image, a route-mediated transfer, and a route-write ablation. Six rows pass the strict 9/9 gate, eleven pass a less strict carrier-level 7/9 gate, three remain candidates, and none are unknown. The strongest strict rows are lighting, identity, weather, fur, orientation, and relation. An independent promptless control shows the route is structurally active even with an empty-string conditioner, but does not assign a semantic label by itself.
+> [!summary] A single typed route through the FLUX.2 Klein 4B denoiser was tested against twenty semantic contrasts. Each row used a native source image, a native target image, a route-mediated transfer, and a route-write ablation. Six rows pass the strict 9/9 gate, eleven pass a less strict carrier-level 7/9 gate, three remain candidates, and none are unknown. The strongest strict rows are lighting, identity, weather, fur, orientation, and relation. An independent promptless control shows the route is structurally active even with an empty-string conditioner, but does not assign a semantic label by itself.
 
 ## Research question
 
-Does one internal route carry many independently defined image variables to final pixels, or do
-route interventions only produce generic disturbances that happen to correlate with a few prompts?
+Does one internal route carry many independently defined image variables to final pixels, or do route interventions only produce generic disturbances that happen to correlate with a few prompts?
 
-The experiment targets a route-level causal claim. It does not attempt to prove minimality, assign
-meaning to a single token, or claim that every block in the route is necessary for every semantic
-variable.
+The experiment targets a route-level causal claim. It does not attempt to prove minimality, assign meaning to a single token, or claim that every block in the route is necessary for every semantic variable.
 
 ## Specimen and route
 
@@ -32,8 +28,7 @@ The specimen is FLUX.2 Klein 4B with native Qwen conditioning, 256×256 output, 
 joint.2 → joint.3 → joint.4 → single.0 → scheduler return → VAE → RGB
 ```
 
-The route is treated as an ordered sequence of typed boundaries. A state write at an earlier
-boundary is followed by the unchanged downstream computation. The final image, not the size or cosine of an intermediate activation, is the semantic authority.
+The route is treated as an ordered sequence of typed boundaries. A state write at an earlier boundary is followed by the unchanged downstream computation. The final image, not the size or cosine of an intermediate activation, is the semantic authority.
 
 ## Proof protocol
 
@@ -41,15 +36,13 @@ For each semantic axis, construct two prompts that differ in one declared variab
 
 1. **Native source:** source prompt, native generation.
 2. **Native target:** target prompt, native generation.
-3. **Typed transfer:** source generation with the target-directed state difference written through
-   the tested route.
+3. **Typed transfer:** source generation with the target-directed state difference written through the tested route.
 4. **Route ablation:** the same transfer with the route write removed or clamped.
 
 Two complementary conditions are required:
 
 - **Sufficiency:** typed transfer should approach the native target rather than remain source-like.
-- **Necessity:** route ablation should return toward the native source rather than preserve the
-  target change.
+- **Necessity:** route ablation should return toward the native source rather than preserve the target change.
 
 The row score is a normalized target-progress measure. Gate summaries also record exact scalar branch counts, maximum ablation progress, and minimum mediation rescue. A strict certificate requires all nine declared gates; a carrier certificate requires the seven carrier/causal gates while leaving two promotion gates open. The categories are evidence labels, not claims that the route is a minimal circuit.
 
@@ -87,9 +80,7 @@ The aggregate evidence counts are:
 | Carrier-candidate | 3 |
 | Unknown | 0 |
 
-The six strict rows all pass nine of nine gates. The carrier-certified rows show strong route-level
-effects but retain one or more unresolved promotion conditions. The three candidate rows are
-positive trends with open gates, not null results.
+The six strict rows all pass nine of nine gates. The carrier-certified rows show strong route-level effects but retain one or more unresolved promotion conditions. The three candidate rows are positive trends with open gates, not null results.
 
 ![Full proof sheet](../artifacts/twenty-axis-semantic-route-circuit/circuit-panel-proof-sheet.png)
 
@@ -112,8 +103,7 @@ The promptless procedure uses an empty-string conditioner, two seeds (4242 and 9
 h'(s,t) = h(s,t) + u(s,t)
 ```
 
-The native suffix and VAE then produce the final image. The control is not semantic labeling: it
-only asks whether a boundary has downstream causal sensitivity.
+The native suffix and VAE then produce the final image. The control is not semantic labeling: it only asks whether a boundary has downstream causal sensitivity.
 
 The strongest promptless route effects reach RGB MAD 35.89, while norm-matched sham controls are bounded around 1.89–3.41. No-op branches are exact at zero. The promptless result therefore supports structural activity of the route independently of the twenty semantic labels, while leaving the semantic interpretation to the labeled source/target panel.
 
@@ -137,28 +127,19 @@ The promptless controls add a fourth demand: a route candidate should remain dis
 
 The route address is hand-selected and model-specific. The experiment does not establish a unique semantic address, a minimal set of blocks, or a universal image-editing interface. Several semantic variables may share a distributed carrier, and a successful transfer can depend on the paired prompt geometry, seed, dose, and denoising step.
 
-The ledger uses the primary 20-row evidence counts. Older editorial summaries used a different
-held-out denominator; they are not substituted for this ledger. The independent recheck is kept
-in the local bundle as an audit artifact, but the row-level claims remain bounded to the declared
-panel and controls.
+The ledger uses the primary 20-row evidence counts. Older editorial summaries used a different held-out denominator; they are not substituted for this ledger. The independent recheck is kept in the local bundle as an audit artifact, but the row-level claims remain bounded to the declared panel and controls.
 
 ## Working inference and claim boundary
 
-**Observation:** one route carries target-directed changes in at least twenty tested semantic
-contrasts, with six strict rows and eleven additional carrier-certified rows.
+**Observation:** one route carries target-directed changes in at least twenty tested semantic contrasts, with six strict rows and eleven additional carrier-certified rows.
 
-**Convergent trend:** necessity/sufficiency contrasts, promptless fixed-norm controls, and exact
-no-op branches agree that the route is causally active in the native image consumer.
+**Convergent trend:** necessity/sufficiency contrasts, promptless fixed-norm controls, and exact no-op branches agree that the route is causally active in the native image consumer.
 
-**Working inference:** a dense diffusion model can expose a broad, reusable route-level semantic
-carrier even when no single token or channel provides a complete semantic address.
+**Working inference:** a dense diffusion model can expose a broad, reusable route-level semantic carrier even when no single token or channel provides a complete semantic address.
 
-**Terminal status:** bounded route-level trend. This is not a proof of minimality, universality,
-or a tokenizer-addressed circuit, and the candidate rows remain open.
+**Terminal status:** bounded route-level trend. This is not a proof of minimality, universality, or a tokenizer-addressed circuit, and the candidate rows remain open.
 
-The object interface compiled from this circuit — typed object symbols addressed by lexical rows
-and consumed by the native suffix — is reported in
-[Semantic Circuit Objects](semantic-circuit-object-interface.md).
+The object interface compiled from this circuit — typed object symbols addressed by lexical rows and consumed by the native suffix — is reported in [Semantic Circuit Objects](semantic-circuit-object-interface.md).
 
 ## Local proof bundle
 

@@ -11,8 +11,7 @@ tags: [bfl, flux, hotpatch, counterfactuals, trajectory-editing, rollback, nativ
 
 # Real FLUX Hotpatch Cinema: Counterfactual Futures Through the Native Consumer
 
-> [!summary]
-> We pause real FLUX.2 generations, apply a content-specific route-state difference at a declared denoising cut, and resume the unchanged image process. The latest four-specimen replication passes `4/4`: early full-dose edits reach `0.904–0.971` progress toward the intended scene or subject, hostile donors move toward their own incompatible factor at `0.926–0.953`, and the same edit installed halfway through denoising falls to `0.095–0.358`. The parent checkpoint, native latent, and image are exactly recoverable after every branch. This is a replicated, donor-assisted causal editing trend—not a portable learned image editor.
+> [!summary] We pause real FLUX.2 generations, apply a content-specific route-state difference at a declared denoising cut, and resume the unchanged image process. The latest four-specimen replication passes `4/4`: early full-dose edits reach `0.904–0.971` progress toward the intended scene or subject, hostile donors move toward their own incompatible factor at `0.926–0.953`, and the same edit installed halfway through denoising falls to `0.095–0.358`. The parent checkpoint, native latent, and image are exactly recoverable after every branch. This is a replicated, donor-assisted causal editing trend—not a portable learned image editor.
 
 ## What we are testing
 
@@ -95,12 +94,7 @@ It does not demonstrate a prompt-independent learned editor. The route and donor
 
 The correct status is a **replicated native-consumer trend**. The evidence is stronger than a single attractive image because it includes the opposite direction, sham, dose, timing, scalar, and rollback controls, but it remains bounded to the measured FLUX.2 organism and prompt panel.
 
-The supporting result is specifically the conjunction of timing and donor specificity: the same
-route state has strong authority at the early cut, much weaker authority at the later cut, and a
-hostile donor steers the branch toward its own factor. That exposes a time-local native editing
-window in the pinned Klein 4B checkpoint. It does not provide a checkpoint-independent address or
-a reusable editor; a different FLUX family member or revision needs its own trajectory capture,
-route validation, and native-consumer check.
+The supporting result is specifically the conjunction of timing and donor specificity: the same route state has strong authority at the early cut, much weaker authority at the later cut, and a hostile donor steers the branch toward its own factor. That exposes a time-local native editing window in the pinned Klein 4B checkpoint. It does not provide a checkpoint-independent address or a reusable editor; a different FLUX family member or revision needs its own trajectory capture, route validation, and native-consumer check.
 
 ## Local proof bundle
 

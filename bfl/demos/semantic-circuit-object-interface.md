@@ -12,8 +12,7 @@ tags: [bfl, flux, semantic-circuit, object-addressing, debugger-io, manifests, v
 
 # Semantic Circuit Objects
 
-> [!summary]
-> This synthesis explains how a causal semantic circuit becomes a usable object symbol. We first establish a route that changes the native image consumer, then localize the lexical rows and spatial effects that carry one object, package them as a fingerprinted typed record, and use that record to edit, isolate, delete, compose, and numerically steer the object in the model's own state. The strongest result is value-level: reading two captured register values, subtracting them, and writing the displacement into another object's row produces a blue mug without a blue-mug render or edit prompt. The evidence is exploratory, but it is now a coherent model-facing object interface rather than a collection of visual tricks.
+> [!summary] This synthesis explains how a causal semantic circuit becomes a usable object symbol. We first establish a route that changes the native image consumer, then localize the lexical rows and spatial effects that carry one object, package them as a fingerprinted typed record, and use that record to edit, isolate, delete, compose, and numerically steer the object in the model's own state. The strongest result is value-level: reading two captured register values, subtracting them, and writing the displacement into another object's row produces a blue mug without a blue-mug render or edit prompt. The evidence is exploratory, but it is now a coherent model-facing object interface rather than a collection of visual tricks.
 
 ## Research question
 

@@ -18,8 +18,7 @@ tags: [bfl, flux, flux1, flux2, conditioner, cross-family, checkpoint-replay, ca
 
 # Cross-Family Conditioner Compilation: FLUX.2 Rosetta to FLUX.1 Replay
 
-> [!summary]
-> The original experiment was FLUX.2 Klein 4B: native Qwen was the reference conditioner, while family-local SmolLM2 and Mamba lowerings drove the same frozen denoiser, scheduler, and VAE. Full-state interventions reached `.751` and `.817` normalized rescue, and scheduler closure repaired the three seen prompts substantially, although the held-out corgi remained wrong. FLUX.1 Schnell then extended the result with cross-family checkpoint/replay/debugger parity, 40 batched branches, and four exact scalar validations. This is near-closure and strong portability evidence—not a universal semantic compiler or proof of identical FLUX.1/FLUX.2 circuits.
+> [!summary] The original experiment was FLUX.2 Klein 4B: native Qwen was the reference conditioner, while family-local SmolLM2 and Mamba lowerings drove the same frozen denoiser, scheduler, and VAE. Full-state interventions reached `.751` and `.817` normalized rescue, and scheduler closure repaired the three seen prompts substantially, although the held-out corgi remained wrong. FLUX.1 Schnell then extended the result with cross-family checkpoint/replay/debugger parity, 40 batched branches, and four exact scalar validations. This is near-closure and strong portability evidence—not a universal semantic compiler or proof of identical FLUX.1/FLUX.2 circuits.
 
 ## The promoted result
 

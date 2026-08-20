@@ -1,0 +1,1616 @@
+{
+  "log_sha256": "5744bcae2a9ed9efd6d5c74ea7414c876ee52087fe7b8c779aacbbb8c21c609c",
+  "mrun_guarded_receipt": null,
+  "mrun_job_id": "job-0a318a2d8c9d",
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_saturn_tecm_scheduler_closure.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-0a318a2d8c9d",
+      "log_path": "/mnt/big/mrun-work/job-0a318a2d8c9d/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787166952.4168086
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787166953.3502913
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787166953.3859386
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787166953.4299479
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787167255.640829
+        },
+        {
+          "name": "finished",
+          "ts": 1787167255.6659377
+        }
+      ]
+    },
+    "elapsed_s": 303.29,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "b637e17dc22d81c7dfb488977c4fc8e95f921af7110ec3edb28502ac5e4b16d5",
+      "size_bytes": 3875349
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 21529.8,
+    "peak_vram_mb": 11722.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "report": {
+    "architecture": {
+      "closure": {
+        "action_field": "flux2.transformer.noise_pred",
+        "continuation_field": "flux2.scheduler.next_packed_register",
+        "default_component_weights": {
+          "joint.4.image": 0.5,
+          "joint.4.text": 1.0,
+          "noise_action": 1.0,
+          "scheduler_continuation": 1.0,
+          "semantic_residual": 0.25,
+          "single.0.image": 0.25,
+          "single.0.text": 0.5
+        },
+        "frozen_consumers": [
+          "flux2.transformer",
+          "flux2.scheduler",
+          "flux2.vae"
+        ],
+        "optional_render_loss": {
+          "component": "rendered_image",
+          "default_weight": 0.15,
+          "observable": "frozen_flux2_vae_decode_of_final_packed_register"
+        },
+        "producer": "cross-family-conditioner-compiler",
+        "route_fields": [
+          "joint.4.text",
+          "joint.4.image",
+          "single.0.text",
+          "single.0.image"
+        ],
+        "scheduler": "real-configured-flowmatch-scheduler",
+        "schema": "saturn-conditioner-scheduler-closure-v1",
+        "terminal_acceptance": "exact-scalar-checkpoint-suffix-plus-rendered-image",
+        "terminal_observables": [
+          "typed_route_fields",
+          "noise_action",
+          "next_packed_register",
+          "frozen_vae_render"
+        ]
+      },
+      "compiler": {
+        "blocks": 1,
+        "feed_forward_multiplier": 4,
+        "heads": 8,
+        "hidden_dim": 768,
+        "parameter_count": 21074176,
+        "position_policy": "source-preserving-plus-target-position",
+        "schema": "saturn-tecm-carrier-mapper-v2",
+        "source_dim": 8192,
+        "source_len": 512,
+        "source_mask_policy": "cross-attention-keys-only",
+        "target_anchor_policy": "learned-target-queries-plus-source-seed",
+        "target_dim": 7680,
+        "target_len": 512,
+        "target_output_policy": "contextualize-all-target-slots",
+        "target_template_policy": "native-per-position-mean-plus-learned-residual",
+        "timestep_count": 1,
+        "timestep_policy": "single-cut-default-zero-v1"
+      },
+      "frozen_suffix": "real Flux2Klein transformer + FlowMatch scheduler + VAE",
+      "source": "real SmolLM2 multilayer hidden sequence"
+    },
+    "checkpoint_control": {
+      "checkpoint_fingerprint": "7fa1244e93f4ef66c5958aea6b7479a6bd3ac09e9720e5301a8c0d6224d57f4a",
+      "checkpoint_id": "traj-41ae05f05547bad43078e6a046982286",
+      "same_process_native_duplicate": {
+        "rgb_cosine": 1.0,
+        "rgb_mad": 0.0,
+        "rgb_rms": 0.0
+      },
+      "same_process_native_duplicate_exact": true,
+      "scheduler_parity": {
+        "all_exact_bfloat16": true,
+        "max_abs": 0.0,
+        "rows": [
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 0,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 0,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 0,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 0,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 1,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 1,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 1,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 1,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 2,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 2,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 2,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 2,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 3,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 3,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 3,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 3,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 4,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 4,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 4,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 4,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 5,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 5,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 5,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 5,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 6,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 6,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 6,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 6,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 7,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 7,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 7,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 7,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 8,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 8,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 8,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 8,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 9,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 9,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 9,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 9,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 10,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 10,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 10,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 10,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 11,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 11,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 11,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 11,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 30,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 30,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 30,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 30,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 31,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 31,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 31,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 31,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 32,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 32,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 32,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 32,
+            "step": 3
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 33,
+            "step": 0
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 33,
+            "step": 1
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 33,
+            "step": 2
+          },
+          {
+            "exact": true,
+            "max_abs": 0.0,
+            "prompt_index": 33,
+            "step": 3
+          }
+        ],
+        "transition": "checkpoint noise_pred -> real scheduler.step -> next packed register"
+      }
+    },
+    "claim_boundary": "All four eval prompts (fox, blue_fox, cat, corgi) are held out from both carrier warm-start and downstream closure fitting; closure trains only on the train-panel prompts. Held-out recovery here is a prompt-disjoint generalization trend, not a cross-family equivalence certificate.",
+    "closure_policy": "prompt-disjoint",
+    "collection": {
+      "image_files": {
+        "native_mean_template": "native_mean_template.png",
+        "native_qwen_blue_fox": "native_qwen_blue_fox.png",
+        "native_qwen_cat": "native_qwen_cat.png",
+        "native_qwen_corgi": "native_qwen_corgi.png",
+        "native_qwen_fox": "native_qwen_fox.png",
+        "scheduler_closed_blue_fox": "scheduler_closed_blue_fox.png",
+        "scheduler_closed_cat": "scheduler_closed_cat.png",
+        "scheduler_closed_corgi": "scheduler_closed_corgi.png",
+        "scheduler_closed_fox": "scheduler_closed_fox.png",
+        "seed_panel_native_qwen_7218": "seed_panel_native_qwen_7218.png",
+        "seed_panel_native_qwen_7219": "seed_panel_native_qwen_7219.png",
+        "seed_panel_scheduler_closed_7218": "seed_panel_scheduler_closed_7218.png",
+        "seed_panel_scheduler_closed_7219": "seed_panel_scheduler_closed_7219.png",
+        "seed_panel_tecm_v3_7218": "seed_panel_tecm_v3_7218.png",
+        "seed_panel_tecm_v3_7219": "seed_panel_tecm_v3_7219.png",
+        "tecm_v3_blue_fox": "tecm_v3_blue_fox.png",
+        "tecm_v3_cat": "tecm_v3_cat.png",
+        "tecm_v3_corgi": "tecm_v3_corgi.png",
+        "tecm_v3_fox": "tecm_v3_fox.png"
+      }
+    },
+    "comparisons": {
+      "blue_fox": {
+        "carrier_after_cosine": 0.9964266280472461,
+        "carrier_before_cosine": 0.9962504631816839,
+        "scheduler_closed_vs_native": {
+          "rgb_cosine": 0.8857395882522043,
+          "rgb_mad": 64.57298278808594,
+          "rgb_rms": 81.67266845703125
+        },
+        "scheduler_closed_vs_tecm_v3": {
+          "rgb_cosine": 0.9317849677668427,
+          "rgb_mad": 57.3516960144043,
+          "rgb_rms": 74.81298065185547
+        },
+        "semantic_residual_after_cosine": 0.02128190165686657,
+        "semantic_residual_before_cosine": -0.019328971857196398,
+        "split": "downstream_held_out",
+        "tecm_v3_vs_native": {
+          "rgb_cosine": 0.8956702475464987,
+          "rgb_mad": 64.2505111694336,
+          "rgb_rms": 82.9789047241211
+        },
+        "template_vs_native": {
+          "rgb_cosine": 0.8521830401267545,
+          "rgb_mad": 72.02161407470703,
+          "rgb_rms": 93.08860778808594
+        }
+      },
+      "cat": {
+        "carrier_after_cosine": 0.9962911504846298,
+        "carrier_before_cosine": 0.9962552335427616,
+        "scheduler_closed_vs_native": {
+          "rgb_cosine": 0.8039230786035402,
+          "rgb_mad": 73.5311050415039,
+          "rgb_rms": 90.06122589111328
+        },
+        "scheduler_closed_vs_tecm_v3": {
+          "rgb_cosine": 0.9107797854507698,
+          "rgb_mad": 57.65263748168945,
+          "rgb_rms": 75.30323028564453
+        },
+        "semantic_residual_after_cosine": 0.03110507753078908,
+        "semantic_residual_before_cosine": 0.04618826285153558,
+        "split": "downstream_held_out",
+        "tecm_v3_vs_native": {
+          "rgb_cosine": 0.8451564959871161,
+          "rgb_mad": 74.4252700805664,
+          "rgb_rms": 90.81932830810547
+        },
+        "template_vs_native": {
+          "rgb_cosine": 0.839659676320586,
+          "rgb_mad": 75.8889389038086,
+          "rgb_rms": 91.8664779663086
+        }
+      },
+      "corgi": {
+        "carrier_after_cosine": 0.9921423446115181,
+        "carrier_before_cosine": 0.9918433442682711,
+        "scheduler_closed_vs_native": {
+          "rgb_cosine": 0.6713031203747035,
+          "rgb_mad": 87.60437774658203,
+          "rgb_rms": 108.19509887695312
+        },
+        "scheduler_closed_vs_tecm_v3": {
+          "rgb_cosine": 0.952928567136375,
+          "rgb_mad": 39.11307907104492,
+          "rgb_rms": 51.71992874145508
+        },
+        "semantic_residual_after_cosine": -0.006010013409283344,
+        "semantic_residual_before_cosine": -0.06372043616247179,
+        "split": "downstream_held_out",
+        "tecm_v3_vs_native": {
+          "rgb_cosine": 0.7006852323610514,
+          "rgb_mad": 96.23400115966797,
+          "rgb_rms": 117.56024169921875
+        },
+        "template_vs_native": {
+          "rgb_cosine": 0.7168014023095399,
+          "rgb_mad": 97.23443603515625,
+          "rgb_rms": 117.32835388183594
+        }
+      },
+      "fox": {
+        "carrier_after_cosine": 0.9962194253508119,
+        "carrier_before_cosine": 0.9961380334731913,
+        "scheduler_closed_vs_native": {
+          "rgb_cosine": 0.84309291718977,
+          "rgb_mad": 71.0605239868164,
+          "rgb_rms": 87.57745361328125
+        },
+        "scheduler_closed_vs_tecm_v3": {
+          "rgb_cosine": 0.9118155543202541,
+          "rgb_mad": 55.344757080078125,
+          "rgb_rms": 73.41075134277344
+        },
+        "semantic_residual_after_cosine": 0.08598613053298171,
+        "semantic_residual_before_cosine": 0.014025144102056186,
+        "split": "downstream_held_out",
+        "tecm_v3_vs_native": {
+          "rgb_cosine": 0.8703645779979823,
+          "rgb_mad": 70.42073822021484,
+          "rgb_rms": 83.67863464355469
+        },
+        "template_vs_native": {
+          "rgb_cosine": 0.8685721516927557,
+          "rgb_mad": 71.57543182373047,
+          "rgb_rms": 84.75250244140625
+        }
+      }
+    },
+    "downstream_diagnostics": {
+      "after": {
+        "mean_components": {
+          "joint.4.image": 0.004438395597389899,
+          "joint.4.text": 0.4799818500177935,
+          "noise_action": 0.02693787612952292,
+          "scheduler_continuation": 0.020352747873403132,
+          "semantic_residual": 1.1395859606564045,
+          "single.0.image": 0.010803047975059599,
+          "single.0.text": 0.48072298272745684
+        },
+        "mean_total": 0.23498898232355714,
+        "rows": [
+          {
+            "components": {
+              "joint.4.image": 0.0032082186080515385,
+              "joint.4.text": 0.28608691692352295,
+              "noise_action": 0.020561276003718376,
+              "scheduler_continuation": 0.015572300180792809,
+              "semantic_residual": 1.1521174907684326,
+              "single.0.image": 0.008861374109983444,
+              "single.0.text": 0.2874172627925873
+            },
+            "prompt_index": 0,
+            "step": 3,
+            "total": 0.16839510202407837
+          },
+          {
+            "components": {
+              "joint.4.image": 0.003075535874813795,
+              "joint.4.text": 0.31112921237945557,
+              "noise_action": 0.018557120114564896,
+              "scheduler_continuation": 0.014312115497887135,
+              "semantic_residual": 1.0180901288986206,
+              "single.0.image": 0.007763568311929703,
+              "single.0.text": 0.3123682141304016
+            },
+            "prompt_index": 1,
+            "step": 3,
+            "total": 0.16848526895046234
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0044615622609853745,
+              "joint.4.text": 0.11532682180404663,
+              "noise_action": 0.023575186729431152,
+              "scheduler_continuation": 0.01841789484024048,
+              "semantic_residual": 1.1301759481430054,
+              "single.0.image": 0.010668606497347355,
+              "single.0.text": 0.11503402143716812
+            },
+            "prompt_index": 2,
+            "step": 3,
+            "total": 0.11161751300096512
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004329551011323929,
+              "joint.4.text": 0.10950382053852081,
+              "noise_action": 0.019070615991950035,
+              "scheduler_continuation": 0.015068990178406239,
+              "semantic_residual": 1.1421623229980469,
+              "single.0.image": 0.01006188616156578,
+              "single.0.text": 0.10984381288290024
+            },
+            "prompt_index": 3,
+            "step": 3,
+            "total": 0.10861914604902267
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0037581210490316153,
+              "joint.4.text": 0.3848806917667389,
+              "noise_action": 0.018487581983208656,
+              "scheduler_continuation": 0.013426357880234718,
+              "semantic_residual": 1.1758280992507935,
+              "single.0.image": 0.008412026800215244,
+              "single.0.text": 0.3838095963001251
+            },
+            "prompt_index": 4,
+            "step": 3,
+            "total": 0.20147521793842316
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004057498183101416,
+              "joint.4.text": 0.07731270045042038,
+              "noise_action": 0.017358703538775444,
+              "scheduler_continuation": 0.013177995570003986,
+              "semantic_residual": 1.0132300853729248,
+              "single.0.image": 0.008910180069506168,
+              "single.0.text": 0.07693495601415634
+            },
+            "prompt_index": 5,
+            "step": 3,
+            "total": 0.08975126594305038
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0036612728144973516,
+              "joint.4.text": 0.2009401172399521,
+              "noise_action": 0.026271838694810867,
+              "scheduler_continuation": 0.019503841176629066,
+              "semantic_residual": 1.0020266771316528,
+              "single.0.image": 0.010403696447610855,
+              "single.0.text": 0.200956329703331
+            },
+            "prompt_index": 6,
+            "step": 3,
+            "total": 0.13380715250968933
+          },
+          {
+            "components": {
+              "joint.4.image": 0.002730182372033596,
+              "joint.4.text": 0.02301696687936783,
+              "noise_action": 0.01903264969587326,
+              "scheduler_continuation": 0.01447233185172081,
+              "semantic_residual": 1.1461907625198364,
+              "single.0.image": 0.007086485158652067,
+              "single.0.text": 0.022529374808073044
+            },
+            "prompt_index": 7,
+            "step": 3,
+            "total": 0.07943800836801529
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0048280805349349976,
+              "joint.4.text": 0.451327383518219,
+              "noise_action": 0.02456759847700596,
+              "scheduler_continuation": 0.01945830136537552,
+              "semantic_residual": 0.9672777056694031,
+              "single.0.image": 0.01123037375509739,
+              "single.0.text": 0.4529913365840912
+            },
+            "prompt_index": 8,
+            "step": 3,
+            "total": 0.21530890464782715
+          },
+          {
+            "components": {
+              "joint.4.image": 0.003966097719967365,
+              "joint.4.text": 0.10893435031175613,
+              "noise_action": 0.018064819276332855,
+              "scheduler_continuation": 0.01430315338075161,
+              "semantic_residual": 1.205786943435669,
+              "single.0.image": 0.009631449356675148,
+              "single.0.text": 0.10865894705057144
+            },
+            "prompt_index": 9,
+            "step": 3,
+            "total": 0.11143765598535538
+          },
+          {
+            "components": {
+              "joint.4.image": 0.003580081043764949,
+              "joint.4.text": 0.021791111677885056,
+              "noise_action": 0.02150852419435978,
+              "scheduler_continuation": 0.015537748113274574,
+              "semantic_residual": 1.0120984315872192,
+              "single.0.image": 0.008528945967555046,
+              "single.0.text": 0.02132418565452099
+            },
+            "prompt_index": 10,
+            "step": 3,
+            "total": 0.07254363596439362
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0034513380378484726,
+              "joint.4.text": 0.010868040844798088,
+              "noise_action": 0.015874238684773445,
+              "scheduler_continuation": 0.011728250421583652,
+              "semantic_residual": 1.179800271987915,
+              "single.0.image": 0.007550099398940802,
+              "single.0.text": 0.01044298242777586
+            },
+            "prompt_index": 11,
+            "step": 3,
+            "total": 0.07605673372745514
+          },
+          {
+            "components": {
+              "joint.4.image": 0.006046793889254332,
+              "joint.4.text": 0.8045439720153809,
+              "noise_action": 0.04613064229488373,
+              "scheduler_continuation": 0.037118393927812576,
+              "semantic_residual": 1.228006362915039,
+              "single.0.image": 0.014278958551585674,
+              "single.0.text": 0.8054119944572449
+            },
+            "prompt_index": 30,
+            "step": 3,
+            "total": 0.35646528005599976
+          },
+          {
+            "components": {
+              "joint.4.image": 0.005148258060216904,
+              "joint.4.text": 1.377335786819458,
+              "noise_action": 0.0368858277797699,
+              "scheduler_continuation": 0.02939639799296856,
+              "semantic_residual": 1.2875722646713257,
+              "single.0.image": 0.01232106052339077,
+              "single.0.text": 1.378383755683899
+            },
+            "prompt_index": 31,
+            "step": 3,
+            "total": 0.5467460751533508
+          },
+          {
+            "components": {
+              "joint.4.image": 0.006080924067646265,
+              "joint.4.text": 1.4120440483093262,
+              "noise_action": 0.029995838180184364,
+              "scheduler_continuation": 0.023682964965701103,
+              "semantic_residual": 1.261296272277832,
+              "single.0.image": 0.01555420458316803,
+              "single.0.text": 1.4147506952285767
+            },
+            "prompt_index": 32,
+            "step": 3,
+            "total": 0.5545225739479065
+          },
+          {
+            "components": {
+              "joint.4.image": 0.008630814030766487,
+              "joint.4.text": 1.9846676588058472,
+              "noise_action": 0.075063556432724,
+              "scheduler_continuation": 0.050466928631067276,
+              "semantic_residual": 1.3117156028747559,
+              "single.0.image": 0.021585851907730103,
+              "single.0.text": 1.9907102584838867
+            },
+            "prompt_index": 33,
+            "step": 3,
+            "total": 0.7651541829109192
+          }
+        ],
+        "source_mask_shape": [
+          34,
+          512
+        ],
+        "source_shape": [
+          34,
+          512,
+          8192
+        ]
+      },
+      "before": {
+        "mean_components": {
+          "joint.4.image": 0.005352327323635109,
+          "joint.4.text": 0.5408592247404158,
+          "noise_action": 0.038231155020184815,
+          "scheduler_continuation": 0.028758003376424313,
+          "semantic_residual": 1.1643616929650307,
+          "single.0.image": 0.013975797803141177,
+          "single.0.text": 0.5407667066901922
+        },
+        "mean_total": 0.2612205068580806,
+        "rows": [
+          {
+            "components": {
+              "joint.4.image": 0.004832012578845024,
+              "joint.4.text": 0.49631187319755554,
+              "noise_action": 0.03974050283432007,
+              "scheduler_continuation": 0.03007785603404045,
+              "semantic_residual": 1.1589007377624512,
+              "single.0.image": 0.013184876181185246,
+              "single.0.text": 0.49908703565597534
+            },
+            "prompt_index": 0,
+            "step": 3,
+            "total": 0.2469135969877243
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004100739490240812,
+              "joint.4.text": 0.4547881484031677,
+              "noise_action": 0.022794432938098907,
+              "scheduler_continuation": 0.017577039077878,
+              "semantic_residual": 1.017216444015503,
+              "single.0.image": 0.010363038629293442,
+              "single.0.text": 0.456364244222641
+            },
+            "prompt_index": 1,
+            "step": 3,
+            "total": 0.21828599274158478
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0054686893709003925,
+              "joint.4.text": 0.11864689737558365,
+              "noise_action": 0.03272659331560135,
+              "scheduler_continuation": 0.025572866201400757,
+              "semantic_residual": 1.1647307872772217,
+              "single.0.image": 0.014741376973688602,
+              "single.0.text": 0.11839976906776428
+            },
+            "prompt_index": 2,
+            "step": 3,
+            "total": 0.11861080676317215
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004631064832210541,
+              "joint.4.text": 0.14698736369609833,
+              "noise_action": 0.02642449550330639,
+              "scheduler_continuation": 0.020869551226496696,
+              "semantic_residual": 1.1423105001449585,
+              "single.0.image": 0.011956855654716492,
+              "single.0.text": 0.14732636511325836
+            },
+            "prompt_index": 3,
+            "step": 3,
+            "total": 0.1241837590932846
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0049546146765351295,
+              "joint.4.text": 0.3588874340057373,
+              "noise_action": 0.032303161919116974,
+              "scheduler_continuation": 0.02342752180993557,
+              "semantic_residual": 1.1987695693969727,
+              "single.0.image": 0.011551030911505222,
+              "single.0.text": 0.35689353942871094
+            },
+            "prompt_index": 4,
+            "step": 3,
+            "total": 0.1995827555656433
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004467801656574011,
+              "joint.4.text": 0.2602691948413849,
+              "noise_action": 0.023200416937470436,
+              "scheduler_continuation": 0.017603788524866104,
+              "semantic_residual": 1.0275800228118896,
+              "single.0.image": 0.010623735375702381,
+              "single.0.text": 0.2566610276699066
+            },
+            "prompt_index": 5,
+            "step": 3,
+            "total": 0.15359750390052795
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0055436547845602036,
+              "joint.4.text": 0.46693071722984314,
+              "noise_action": 0.07242428511381149,
+              "scheduler_continuation": 0.05369701236486435,
+              "semantic_residual": 1.0607200860977173,
+              "single.0.image": 0.017156146466732025,
+              "single.0.text": 0.4664188027381897
+            },
+            "prompt_index": 6,
+            "step": 3,
+            "total": 0.24411161243915558
+          },
+          {
+            "components": {
+              "joint.4.image": 0.0034994331654161215,
+              "joint.4.text": 0.21137873828411102,
+              "noise_action": 0.02412799559533596,
+              "scheduler_continuation": 0.018343957141041756,
+              "semantic_residual": 1.1588048934936523,
+              "single.0.image": 0.010365456342697144,
+              "single.0.text": 0.209320530295372
+            },
+            "prompt_index": 7,
+            "step": 3,
+            "total": 0.14501184225082397
+          },
+          {
+            "components": {
+              "joint.4.image": 0.005809449125081301,
+              "joint.4.text": 0.5588625073432922,
+              "noise_action": 0.05276654288172722,
+              "scheduler_continuation": 0.04178363084793091,
+              "semantic_residual": 1.0027426481246948,
+              "single.0.image": 0.016251200810074806,
+              "single.0.text": 0.55882328748703
+            },
+            "prompt_index": 8,
+            "step": 3,
+            "total": 0.2645505666732788
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004885747563093901,
+              "joint.4.text": 0.17997446656227112,
+              "noise_action": 0.029635978862643242,
+              "scheduler_continuation": 0.023455196991562843,
+              "semantic_residual": 1.2077302932739258,
+              "single.0.image": 0.01362335029989481,
+              "single.0.text": 0.17964093387126923
+            },
+            "prompt_index": 9,
+            "step": 3,
+            "total": 0.1401483118534088
+          },
+          {
+            "components": {
+              "joint.4.image": 0.004776012152433395,
+              "joint.4.text": 0.2602797746658325,
+              "noise_action": 0.029129892587661743,
+              "scheduler_continuation": 0.021034490317106247,
+              "semantic_residual": 1.0302906036376953,
+              "single.0.image": 0.012134218588471413,
+              "single.0.text": 0.2587072551250458
+            },
+            "prompt_index": 10,
+            "step": 3,
+            "total": 0.15617600083351135
+          },
+          {
+            "components": {
+              "joint.4.image": 0.00416529830545187,
+              "joint.4.text": 0.14069297909736633,
+              "noise_action": 0.02311163768172264,
+              "scheduler_continuation": 0.01706630364060402,
+              "semantic_residual": 1.2092485427856445,
+              "single.0.image": 0.009737936779856682,
+              "single.0.text": 0.14020203053951263
+            },
+            "prompt_index": 11,
+            "step": 3,
+            "total": 0.12395583093166351
+          },
+          {
+            "components": {
+              "joint.4.image": 0.006404951214790344,
+              "joint.4.text": 0.561042070388794,
+              "noise_action": 0.038743216544389725,
+              "scheduler_continuation": 0.03116762638092041,
+              "semantic_residual": 1.2675572633743286,
+              "single.0.image": 0.016618087887763977,
+              "single.0.text": 0.5607849955558777
+            },
+            "prompt_index": 30,
+            "step": 3,
+            "total": 0.2745759189128876
+          },
+          {
+            "components": {
+              "joint.4.image": 0.005977822467684746,
+              "joint.4.text": 1.2640899419784546,
+              "noise_action": 0.03456678241491318,
+              "scheduler_continuation": 0.027548253536224365,
+              "semantic_residual": 1.3492629528045654,
+              "single.0.image": 0.016079595312476158,
+              "single.0.text": 1.2650120258331299
+            },
+            "prompt_index": 31,
+            "step": 3,
+            "total": 0.5117856860160828
+          },
+          {
+            "components": {
+              "joint.4.image": 0.00623514037579298,
+              "joint.4.text": 1.2302327156066895,
+              "noise_action": 0.029643969610333443,
+              "scheduler_continuation": 0.02341182343661785,
+              "semantic_residual": 1.2674719095230103,
+              "single.0.image": 0.015061973594129086,
+              "single.0.text": 1.229096531867981
+            },
+            "prompt_index": 32,
+            "step": 3,
+            "total": 0.4936861991882324
+          },
+          {
+            "components": {
+              "joint.4.image": 0.009884805418550968,
+              "joint.4.text": 1.9443727731704712,
+              "noise_action": 0.10035857558250427,
+              "scheduler_continuation": 0.06749113649129868,
+              "semantic_residual": 1.3664498329162598,
+              "single.0.image": 0.024163885042071342,
+              "single.0.text": 1.9495289325714111
+            },
+            "prompt_index": 33,
+            "step": 3,
+            "total": 0.7643517255783081
+          }
+        ],
+        "source_mask_shape": [
+          34,
+          512
+        ],
+        "source_shape": [
+          34,
+          512,
+          8192
+        ]
+      }
+    },
+    "execution": {
+      "additional_scheduler_submissions": 0,
+      "checkpoint_advances": 64,
+      "checkpoint_captures": 3,
+      "checkpoint_suffix_replays": 23,
+      "device": "cuda",
+      "dtype": "bfloat16 frozen suffix / float32 TECM",
+      "elapsed_seconds": 283.52063512802124,
+      "execution_model": "finite_local_program",
+      "model_loads": 1,
+      "mrun_job_id": "job-0a318a2d8c9d",
+      "mrun_submissions": 1,
+      "numerical_contract": "exact-scalar-suffix-authority",
+      "peak_vram_mb": 11164.52783203125,
+      "process_peak_rss_mb": 19814.70703125,
+      "scheduler_jobs": 1,
+      "trainable_mapper_fits": 2
+    },
+    "mapper_fit": {
+      "batch_size": 4,
+      "contract": {
+        "blocks": 1,
+        "feed_forward_multiplier": 4,
+        "heads": 8,
+        "hidden_dim": 768,
+        "parameter_count": 21074176,
+        "position_policy": "source-preserving-plus-target-position",
+        "schema": "saturn-tecm-carrier-mapper-v2",
+        "source_dim": 8192,
+        "source_len": 512,
+        "source_mask_policy": "cross-attention-keys-only",
+        "target_anchor_policy": "learned-target-queries-plus-source-seed",
+        "target_dim": 7680,
+        "target_len": 512,
+        "target_output_policy": "contextualize-all-target-slots",
+        "target_template_policy": "native-per-position-mean-plus-learned-residual",
+        "timestep_count": 1,
+        "timestep_policy": "single-cut-default-zero-v1"
+      },
+      "loss_final": 2.0427815914154053,
+      "loss_first": 3.0187649726867676,
+      "loss_weights": {
+        "absolute_carrier_mse": 0.05,
+        "minimal_pair_direction_cosine": 1.0,
+        "minimal_pair_direction_scale": 0.1,
+        "normalized_residual_mse": 1.0,
+        "per_token_scale": 0.05,
+        "residual_cosine": 0.25
+      },
+      "objective": "contrast-centered-native-template-residual-v1",
+      "parameter_count": 21074176,
+      "steps": 900,
+      "target_template": {
+        "dtype": "torch.float32",
+        "fingerprint": "482bf1e3108f4fa9652daeea",
+        "mean": 0.03018651343882084,
+        "norm": 29453.78125,
+        "shape": [
+          1,
+          512,
+          7680
+        ],
+        "std": 14.85806655883789
+      },
+      "template_token_cosine": 0.8623981475830078,
+      "template_token_mse": 0.920342206954956,
+      "train_token_cosine": 0.870463490486145,
+      "train_token_mse": 0.870490312576294
+    },
+    "recipe": {
+      "carrier_shape": [
+        512,
+        7680
+      ],
+      "checkpoint_advances": 64,
+      "checkpoint_suffix_replays": 23,
+      "closure_steps": 240,
+      "closure_train_prompt_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "mapper_steps": 900,
+      "same_prompt_panel_prompt": "corgi",
+      "same_prompt_panel_seeds": [
+        7217,
+        7218,
+        7219
+      ],
+      "seed": 7217,
+      "source_mask_policy": "cross-attention-keys-only",
+      "target_output_policy": "all-512-contextual-rows",
+      "target_prompt_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    "scheduler_closure_fit": {
+      "denoiser_frozen": true,
+      "final_components": {
+        "joint.4.image": 0.0034344939049333334,
+        "joint.4.text": 0.011486923322081566,
+        "noise_action": 0.016516054049134254,
+        "rendered_image": 0.024675443768501282,
+        "scheduler_continuation": 0.012202910147607327,
+        "semantic_residual": 1.1793876886367798,
+        "single.0.image": 0.007532943971455097,
+        "single.0.text": 0.01107549387961626
+      },
+      "first_components": {
+        "joint.4.image": 0.019553279504179955,
+        "joint.4.text": 0.7240886092185974,
+        "noise_action": 0.48449134826660156,
+        "scheduler_continuation": 0.002405851613730192,
+        "semantic_residual": 1.1589007377624512,
+        "single.0.image": 0.060537826269865036,
+        "single.0.text": 0.7252458930015564
+      },
+      "gradient_clip": 0.5,
+      "learning_rate": 2e-05,
+      "loss_final": 0.08018821477890015,
+      "loss_first": 0.41961002349853516,
+      "mean_components": {
+        "joint.4.image": 0.011681017177761533,
+        "joint.4.text": 0.26414500502869487,
+        "noise_action": 0.11068299307177464,
+        "rendered_image": 0.011758308741264045,
+        "scheduler_continuation": 0.006103471974590017,
+        "semantic_residual": 1.105673128614823,
+        "single.0.image": 0.027538465927743044,
+        "single.0.text": 0.26449226289987565
+      },
+      "objective": {
+        "action_field": "flux2.transformer.noise_pred",
+        "continuation_field": "flux2.scheduler.next_packed_register",
+        "default_component_weights": {
+          "joint.4.image": 0.5,
+          "joint.4.text": 1.0,
+          "noise_action": 1.0,
+          "scheduler_continuation": 1.0,
+          "semantic_residual": 0.25,
+          "single.0.image": 0.25,
+          "single.0.text": 0.5
+        },
+        "frozen_consumers": [
+          "flux2.transformer",
+          "flux2.scheduler",
+          "flux2.vae"
+        ],
+        "optional_render_loss": {
+          "component": "rendered_image",
+          "default_weight": 0.15,
+          "observable": "frozen_flux2_vae_decode_of_final_packed_register"
+        },
+        "producer": "cross-family-conditioner-compiler",
+        "route_fields": [
+          "joint.4.text",
+          "joint.4.image",
+          "single.0.text",
+          "single.0.image"
+        ],
+        "scheduler": "real-configured-flowmatch-scheduler",
+        "schema": "saturn-conditioner-scheduler-closure-v1",
+        "terminal_acceptance": "exact-scalar-checkpoint-suffix-plus-rendered-image",
+        "terminal_observables": [
+          "typed_route_fields",
+          "noise_action",
+          "next_packed_register",
+          "frozen_vae_render"
+        ]
+      },
+      "render_loss_observable": "frozen_flux2_vae_decode_of_final_packed_register",
+      "render_loss_weight": 0.15,
+      "scheduler_in_graph": true,
+      "seconds": 38.19022864289582,
+      "steps": 240,
+      "target_count": 48,
+      "target_prompts": [
+        "a photorealistic blue dog sitting in a foggy forest at dawn, soft blue light",
+        "a photorealistic blue dog sitting in a sandy beach at sunset, soft blue light",
+        "a photorealistic blue dog sitting in a sunlit desert at noon, soft blue light",
+        "a photorealistic blue wolf sitting in a foggy forest at dawn, soft blue light",
+        "a photorealistic blue wolf sitting in a sandy beach at sunset, soft blue light",
+        "a photorealistic blue wolf sitting in a sunlit desert at noon, soft blue light",
+        "a photorealistic red dog sitting in a foggy forest at dawn, soft red light",
+        "a photorealistic red dog sitting in a sandy beach at sunset, soft red light",
+        "a photorealistic red dog sitting in a sunlit desert at noon, soft red light",
+        "a photorealistic red wolf sitting in a foggy forest at dawn, soft red light",
+        "a photorealistic red wolf sitting in a sandy beach at sunset, soft red light",
+        "a photorealistic red wolf sitting in a sunlit desert at noon, soft red light"
+      ],
+      "target_steps": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "schema": "saturn-tecm-scheduler-closure-v1",
+    "seed_panel": {
+      "prompt": "a corgi astronaut floating in a space station, editorial illustration",
+      "prompt_name": "corgi",
+      "rows": [
+        {
+          "checkpoint_fingerprint": "7fa1244e93f4ef66c5958aea6b7479a6bd3ac09e9720e5301a8c0d6224d57f4a",
+          "checkpoint_id": "traj-41ae05f05547bad43078e6a046982286",
+          "image_labels": {
+            "native_qwen": "native_qwen_corgi",
+            "scheduler_closed": "scheduler_closed_corgi",
+            "tecm_v3": "tecm_v3_corgi"
+          },
+          "native_duplicate": {
+            "rgb_cosine": 1.0,
+            "rgb_mad": 0.0,
+            "rgb_rms": 0.0
+          },
+          "native_duplicate_exact": true,
+          "scheduler_closed_vs_native": {
+            "rgb_cosine": 0.6713031203747035,
+            "rgb_mad": 87.60437774658203,
+            "rgb_rms": 108.19509887695312
+          },
+          "seed": 7217,
+          "tecm_v3_vs_native": {
+            "rgb_cosine": 0.7006852323610514,
+            "rgb_mad": 96.23400115966797,
+            "rgb_rms": 117.56024169921875
+          }
+        },
+        {
+          "checkpoint_fingerprint": "8af96d9ddb114a62382e638f221366c4dcaa277c743eec18f37eb49a61bba0fc",
+          "checkpoint_id": "traj-c4f81935eb38286f7363933cf84a97aa",
+          "image_labels": {
+            "native_qwen": "seed_panel_native_qwen_7218",
+            "scheduler_closed": "seed_panel_scheduler_closed_7218",
+            "tecm_v3": "seed_panel_tecm_v3_7218"
+          },
+          "native_duplicate": {
+            "rgb_cosine": 1.0,
+            "rgb_mad": 0.0,
+            "rgb_rms": 0.0
+          },
+          "native_duplicate_exact": true,
+          "scheduler_closed_vs_native": {
+            "rgb_cosine": 0.671333074981754,
+            "rgb_mad": 82.35608673095703,
+            "rgb_rms": 101.79219055175781
+          },
+          "seed": 7218,
+          "tecm_v3_vs_native": {
+            "rgb_cosine": 0.6980521569747717,
+            "rgb_mad": 93.00240325927734,
+            "rgb_rms": 112.12310028076172
+          }
+        },
+        {
+          "checkpoint_fingerprint": "90dfc67751fc54cf9000c620059bbf6e52d827bd0caa464731fff0232991940d",
+          "checkpoint_id": "traj-1f5b43352a18283f227b3b9328dc1b31",
+          "image_labels": {
+            "native_qwen": "seed_panel_native_qwen_7219",
+            "scheduler_closed": "seed_panel_scheduler_closed_7219",
+            "tecm_v3": "seed_panel_tecm_v3_7219"
+          },
+          "native_duplicate": {
+            "rgb_cosine": 0.9999999999999998,
+            "rgb_mad": 0.0,
+            "rgb_rms": 0.0
+          },
+          "native_duplicate_exact": true,
+          "scheduler_closed_vs_native": {
+            "rgb_cosine": 0.6891016365882743,
+            "rgb_mad": 84.15350341796875,
+            "rgb_rms": 102.74445343017578
+          },
+          "seed": 7219,
+          "tecm_v3_vs_native": {
+            "rgb_cosine": 0.7066442268184856,
+            "rgb_mad": 94.32098388671875,
+            "rgb_rms": 114.38668060302734
+          }
+        }
+      ],
+      "same_initial_latent_within_seed": true,
+      "same_prompt_and_conditioners": true,
+      "seeds": [
+        7217,
+        7218,
+        7219
+      ]
+    },
+    "source_features": {
+      "device": "cpu",
+      "dtype": "float32",
+      "sequence_length": 512,
+      "source_family": "SmolLM2-1.7B",
+      "source_feature_shape": [
+        34,
+        512,
+        8192
+      ],
+      "source_feature_width": 8192,
+      "source_hidden_size_per_layer": 2048,
+      "source_layers_requested": [
+        6,
+        12,
+        18,
+        -1
+      ],
+      "source_layers_resolved": [
+        6,
+        12,
+        18,
+        24
+      ]
+    },
+    "status": "exploratory"
+  },
+  "request": {
+    "backend": "flux2-native",
+    "command": "submit_saturn_tecm_scheduler_closure",
+    "config_sha256": "1a4f3097e814a1d28db9b8599fa79abcad3696d089775836c8b99b6f4196087b",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "experiment": {
+      "name": "saturn-rosetta-cross-family-manalysis-20260806",
+      "task_family": "saturn-flux-rosetta-manalysis"
+    },
+    "host_selection": "prefer_beast_softly",
+    "kind": "tecm-scheduler-closure",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+    "payload": {
+      "carrier": "prompt_embeds[512,7680]",
+      "closure_policy": "prompt-disjoint",
+      "closure_steps": 240,
+      "closure_train_count": 12,
+      "continuation": "real-flowmatch-scheduler-next-packed-register",
+      "height": 256,
+      "launcher_attempt": 1,
+      "mapper_steps": 900,
+      "mode": "tecm-v4-scheduler-closure",
+      "panel_prompt": "corgi",
+      "panel_seeds": [
+        7217,
+        7218,
+        7219
+      ],
+      "route_fields": [
+        "joint.4.text",
+        "joint.4.image",
+        "single.0.text",
+        "single.0.image"
+      ],
+      "seed": 7217,
+      "source_family": "flux2-smol",
+      "steps": 4,
+      "width": 256
+    },
+    "pipeline_class": "Flux2KleinPipeline",
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "checkpoint_advances": 36,
+      "checkpoint_captures": 3,
+      "checkpoint_policy": "one cut-0 checkpoint; native targets use local advance_checkpoint; all rendered acceptance and matched-seed arms are exact scalar local suffixes",
+      "checkpoint_suffix_replays": 23,
+      "collection_policy": "direct_job_only",
+      "conditioner_policy": "one Smol source extraction, one TECM warm start, one scheduler-closed fit",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_local_program",
+      "interactive": false,
+      "lease_scope": "entire-worker",
+      "logical_branches": 23,
+      "logical_operations": 3,
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "numerical_contract": "exact-scalar-suffix-authority",
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "replay_policy": "local_checkpoint_restore",
+      "schema": "saturn-single-lease-scheduling-contract-v1",
+      "trainable_mapper_fits": 2
+    },
+    "schema": "saturn-tecm-scheduler-closure-mrun-request-v1",
+    "staging_contract": {
+      "all_512_target_rows": true,
+      "exact_scalar_render_acceptance": true,
+      "frozen_denoiser_scheduler_vae": true,
+      "joint4_semantic_route": true,
+      "local_checkpoint_advance": true,
+      "native_noise_action": true,
+      "next_packed_register_loss": true,
+      "no_nested_mrun_submissions": true,
+      "one_cut0_checkpoint": true,
+      "one_mrun_cuda_lease": true,
+      "optional_same_prompt_multi_seed_panel": true,
+      "real_model": true,
+      "real_scheduler_in_training_graph": true,
+      "saturn_phase_pipeline": true,
+      "source_mask_keys_only": true
+    },
+    "worker_sha256": "046d4084c294b7c91174a4c09ba4da3d7a016343f4e26b1a62ba185cdb58ce1d"
+  },
+  "retry_lineage": {}
+}

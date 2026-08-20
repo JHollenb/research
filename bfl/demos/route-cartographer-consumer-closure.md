@@ -12,8 +12,7 @@ tags: [bfl, flux, route-cartography, address, consumer-closure, rollback, future
 
 # Route Cartographer with Consumer-Closed Promotion
 
-> [!summary]
-> A route cartographer captures 685 native states, 85 logical branches, and 325 observations across 56 nodes and 54 edges, spanning two consumers and two role-conditioned chains. Parallel routes have entropy 0.975–0.994, while serial corridors are far more selective. A held-out address selector reaches 0.990→0.977 accuracy. Address-driven updates are promoted only when the native endpoint improves: one update is promoted, three are rejected, and exact rollback succeeds 5/5. A fresh confirmation rejects the stronger interpretation that each local address is a standalone program; whole text-state transfers close every joint edge with weakest return alignment 0.911, while single-token QKV routes reach only 0.001–0.227.
+> [!summary] A route cartographer captures 685 native states, 85 logical branches, and 325 observations across 56 nodes and 54 edges, spanning two consumers and two role-conditioned chains. Parallel routes have entropy 0.975–0.994, while serial corridors are far more selective. A held-out address selector reaches 0.990→0.977 accuracy. Address-driven updates are promoted only when the native endpoint improves: one update is promoted, three are rejected, and exact rollback succeeds 5/5. A fresh confirmation rejects the stronger interpretation that each local address is a standalone program; whole text-state transfers close every joint edge with weakest return alignment 0.911, while single-token QKV routes reach only 0.001–0.227.
 
 ## Research question
 
@@ -25,12 +24,7 @@ The competing interpretations are a local program, a distributed carrier route, 
 
 The capture contains 685 native states, 85 logical branches, and 325 observations across 56 nodes and 54 edges. It records the source state, 25 carrier candidates, and two native consumers: packed return and RGB endpoint. Two role-conditioned chains separate subject return from lighting return. A route signature is a structured record of address, state carrier, consumer, timing, dose, and endpoint response.
 
-This cartography is native to `black-forest-labs/FLUX.2-klein-4B@e7b7dc27f91deacad38e78976d1f2b499d76a294`.
-The address register is deliberately useful beyond one report, but its entries are local ordinal
-coordinates: `joint.i` and `single.i` refer to the tested checkpoint's own topology. The same typed
-route schema can be re-enumerated for Klein 9B, 9B-KV, Dev, or FLUX.1; an address, carrier value, or
-semantic interpretation must not be copied across those models without a fresh native-consumer
-promotion test.
+This cartography is native to `black-forest-labs/FLUX.2-klein-4B@e7b7dc27f91deacad38e78976d1f2b499d76a294`. The address register is deliberately useful beyond one report, but its entries are local ordinal coordinates: `joint.i` and `single.i` refer to the tested checkpoint's own topology. The same typed route schema can be re-enumerated for Klein 9B, 9B-KV, Dev, or FLUX.1; an address, carrier value, or semantic interpretation must not be copied across those models without a fresh native-consumer promotion test.
 
 Parallel route entropy lies between 0.975 and 0.994, indicating broad participation across candidate carriers. Serial corridor entropy is lower: the subject-return corridor at `single.18` is 0.114, RGB subject return is 0.374, and lighting is 0.299 for subject return and 0.455 for RGB. These values describe route concentration under the cartographer's instrumentation; they do not directly translate into semantic ownership.
 
@@ -66,10 +60,7 @@ The route map is instrument- and consumer-specific. Entropy depends on the candi
 
 **Terminal status:** consumer-closed route-mapping trend. It is not a universal route topology, a proof of local semantic ownership, or a guarantee that address selection alone is sufficient for native execution.
 
-The methodological result is the admission rule: route prediction is only a proposal. A candidate
-enters the promoted state only when the native image consumer improves; otherwise the update is
-rejected and the prior state is restored exactly. This keeps internal route utility separate from
-actual image capability and makes negative futures part of the evidence rather than discarded noise.
+The methodological result is the admission rule: route prediction is only a proposal. A candidate enters the promoted state only when the native image consumer improves; otherwise the update is rejected and the prior state is restored exactly. This keeps internal route utility separate from actual image capability and makes negative futures part of the evidence rather than discarded noise.
 
 ## Local proof bundle
 

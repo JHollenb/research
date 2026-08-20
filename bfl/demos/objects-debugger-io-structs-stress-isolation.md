@@ -13,8 +13,7 @@ tags: [bfl, flux, object-addressing, debugger-io, manifests, isolation, causal-e
 
 # Objects Become Debugger I/O
 
-> [!summary]
-> This integrated experiment turns an image object into an addressable, typed control record. A red fox and a blue ball are first localized to lexical rows and image coordinates, then edited through those addresses, and finally published as a fingerprinted manifest attached to a durable trajectory checkpoint. The stress battery shows row-local property control, route redundancy, useful dose through roughly 4×, out-of-distribution attribute transfer, composition, and payload portability. The isolation battery shows that an object can re-bind alone in a white context through text-route state, while an image-side complement destroys the object. The result is exploratory and limited to one scene family and two seeds, but it is the strongest experiment in this set because it connects discovery, a usable interface, causal edits, durable evidence, and sharply defined failure modes.
+> [!summary] This integrated experiment turns an image object into an addressable, typed control record. A red fox and a blue ball are first localized to lexical rows and image coordinates, then edited through those addresses, and finally published as a fingerprinted manifest attached to a durable trajectory checkpoint. The stress battery shows row-local property control, route redundancy, useful dose through roughly 4×, out-of-distribution attribute transfer, composition, and payload portability. The isolation battery shows that an object can re-bind alone in a white context through text-route state, while an image-side complement destroys the object. The result is exploratory and limited to one scene family and two seeds, but it is the strongest experiment in this set because it connects discovery, a usable interface, causal edits, durable evidence, and sharply defined failure modes.
 
 ## Research question
 

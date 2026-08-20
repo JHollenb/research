@@ -12,8 +12,7 @@ tags: [bfl, flux, topology, typed-route, interaction, residual]
 
 # Typed Snake Topology Repair and Native Interaction Residuals
 
-> [!summary]
-> A typed donor relay changes a closed green coil into an open S-shaped snake through a four-site native route, reaching 0.9008 progress with mean absolute deviation 4.53 and zero topology holes. Route ablation, wrong-axis, half-dose, and held-out-seed controls separate the effect from a generic image perturbation. A paired interaction panel then shows that native lighting×color composition reaches 0.901 at full dose while naive additive composition reaches 0.396. The learned mixer fails to beat a linear held-out baseline, so the result is a native interaction residual and causal route repair, not a learned universal compositor.
+> [!summary] A typed donor relay changes a closed green coil into an open S-shaped snake through a four-site native route, reaching 0.9008 progress with mean absolute deviation 4.53 and zero topology holes. Route ablation, wrong-axis, half-dose, and held-out-seed controls separate the effect from a generic image perturbation. A paired interaction panel then shows that native lighting×color composition reaches 0.901 at full dose while naive additive composition reaches 0.396. The learned mixer fails to beat a linear held-out baseline, so the result is a native interaction residual and causal route repair, not a learned universal compositor.
 
 ## Research question
 
@@ -65,12 +64,7 @@ The interaction controls show that the native paired endpoint is not well explai
 
 **Terminal status:** native-consumer causal trend for the declared Klein 4B panels. It is not evidence for a universal topology editor, a learned interaction module, or a general factorization law.
 
-The snake panel is valuable as a compact control demonstration: route necessity, dose dependence,
-wrong-axis selectivity, held-out seeds, wrong time/site, sign reversal, and a norm-matched sham all
-survive into the native image consumer. The interaction panel adds a separate point: the paired
-lighting×color endpoint contains a non-additive residual that simple vector addition misses. Both
-effects are native to the pinned Klein 4B recipe and should be treated as route/interaction trends,
-not as a portable compositor or topology editor for other FLUX checkpoints.
+The snake panel is valuable as a compact control demonstration: route necessity, dose dependence, wrong-axis selectivity, held-out seeds, wrong time/site, sign reversal, and a norm-matched sham all survive into the native image consumer. The interaction panel adds a separate point: the paired lighting×color endpoint contains a non-additive residual that simple vector addition misses. Both effects are native to the pinned Klein 4B recipe and should be treated as route/interaction trends, not as a portable compositor or topology editor for other FLUX checkpoints.
 
 ## Local proof bundle
 

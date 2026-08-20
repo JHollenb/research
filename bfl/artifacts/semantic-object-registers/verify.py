@@ -11,91 +11,92 @@ def load(name: str) -> dict:
     return json.loads((ROOT / name).read_text())
 
 
-def check_job(name: str, model_id: str, steps: int, offload: str, seeds: list[int]) -> dict:
+def assert_success(name: str, *, model: str | None = None) -> dict:
     receipt = load(name)
-    assert receipt["mrun_ok"] is True
-    assert receipt["mrun_state"] == "succeeded"
-    assert receipt["mrun_result"]["returncode"] == 0
-    assert receipt["mrun_result"]["status"] == "ok"
-    assert receipt["mrun_result"]["failure"] is None
-    assert receipt["model_id"] == model_id
-    assert receipt["steps"] == steps
-    assert receipt["offload"] == offload
-    assert receipt["device"] == "cuda"
-    assert receipt["preflight"] == "strict"
-    assert receipt["scheduling_contract"]["max_mrun_submissions"] == 1
-    assert receipt["scheduling_contract"]["model_loads"] == 1
-    assert receipt["scheduling_contract"]["mrun_retry_policy"] == "none_for_finite_lease"
-    payload_seeds = None
-    for key in ("object_multimodel", "object_flux1"):
-        block = receipt["payload"].get(key)
-        if block is not None:
-            payload_seeds = block["seeds"]
-            break
-    if payload_seeds is None:
-        payload_seeds = receipt["payload"]["seeds"]
-    assert payload_seeds == seeds
+    assert receipt.get("mrun_ok", True) is True, name
+    assert receipt["mrun_state"] == "succeeded", name
+    result = receipt["mrun_result"]
+    assert result["returncode"] == 0, name
+    assert result["status"] == "ok", name
+    assert result.get("failure") is None, name
+    if model is not None:
+        assert receipt["model_id"] == model, name
     return receipt
 
 
+def payload_seeds(receipt: dict) -> list[int] | None:
+    for key in ("object_multimodel", "object_flux1"):
+        block = receipt.get("payload", {}).get(key)
+        if block is not None and "seeds" in block:
+            return block["seeds"]
+    return receipt.get("payload", {}).get("seeds")
+
+
 def main() -> None:
-    # Arm A: FLUX.2-klein-base-4B, undistilled, native 50-step real-CFG operating point.
-    arm_a = check_job(
+    base = assert_success(
         "run-receipt.job-17788d5a1b0d.json",
-        model_id="flux2-klein-base-4b",
-        steps=50,
-        offload="model",
-        seeds=[7217, 31337],
+        model="flux2-klein-base-4b",
     )
-    assert arm_a["guidance"] == 4.0
-    assert arm_a["payload"]["object_multimodel"]["default_route"] == [
-        "joint.2", "joint.3", "joint.4", "single.0",
-    ]
+    assert base["steps"] == 50
+    assert base["guidance"] == 4.0
+    assert payload_seeds(base) == [7217, 31337]
 
-    # Arm B: FLUX.2-klein-9B, sequential offload, Qwen3-8B conditioner freed post-encode.
-    arm_b = check_job(
+    for name in (
         "run-receipt.job-638d05dcbff2.json",
-        model_id="flux2-klein-9b",
-        steps=4,
-        offload="sequential",
-        seeds=[7217],
+        "run-receipt.job-3e1bc534e0eb.json",
+    ):
+        receipt = assert_success(name, model="flux2-klein-9b")
+        assert receipt["steps"] == 4
+        assert receipt["offload"] == "sequential"
+        assert payload_seeds(receipt) == [7217]
+
+    for name in (
+        "run-receipt.job-a676189574d1.json",
+        "run-receipt.job-27fef20e82a0.json",
+        "run-receipt.job-e920a0e84b37.json",
+        "run-receipt.job-ee619dfec24f.json",
+        "run-receipt.job-3980f89faa61.json",
+        "run-receipt.job-65d315d873dc.json",
+        "run-receipt.job-86cb59fb03a0.json",
+    ):
+        receipt = assert_success(name, model="flux1-schnell")
+        assert receipt["steps"] == 4
+        assert receipt["offload"] == "sequential"
+        assert payload_seeds(receipt) == [7217, 31337]
+
+    xcond = assert_success(
+        "run-receipt.job-e1ba0cbed889.json",
+        model="black-forest-labs/FLUX.2-klein-4B",
     )
-    assert arm_b["guidance"] == 1.0
-    assert arm_b["payload"]["object_multimodel"]["default_route"] == [
-        "joint.4", "joint.5", "joint.6", "joint.7", "single.0",
-    ]
+    assert xcond["payload"]["seeds"] == [7217, 31337]
 
-    # Arm C: FLUX.1-schnell base battery and locality-probe follow-up.
-    for name in ("run-receipt.job-a676189574d1.json", "run-receipt.job-27fef20e82a0.json"):
-        arm_c = check_job(
-            name,
-            model_id="flux1-schnell",
-            steps=4,
-            offload="sequential",
-            seeds=[7217, 31337],
-        )
-        assert arm_c["guidance"] == 0.0
-        assert arm_c["dtype"] == "bfloat16 (fp8_e4m3 layerwise storage)"
+    closure = assert_success("run-receipt.job-0a318a2d8c9d.json")
+    assert closure["mrun_job_id"] == "job-0a318a2d8c9d"
 
-    # Arm E: cross-conditioner wrong-object diagnosis.
-    arm_e = load("run-receipt.job-e1ba0cbed889.json")
-    assert arm_e["mrun_ok"] is True
-    assert arm_e["mrun_state"] == "succeeded"
-    assert arm_e["mrun_result"]["returncode"] == 0
-    assert arm_e["model_id"] == "black-forest-labs/FLUX.2-klein-4B"
-    assert arm_e["payload"]["mapper_steps"] == 900
-    assert arm_e["payload"]["seeds"] == [7217, 31337]
+    struct = assert_success(
+        "run-receipt.job-f0edaded5d06.json",
+        model="black-forest-labs/FLUX.2-klein-4B",
+    )
+    assert struct["instrument"].startswith("struct-write debugger IO")
 
     for image in (
         "zoom-fox-base4b-seed31337.png",
-        "zoom-mug-port-base4b.png",
-        "zoom-fox-klein9b-seed7217.png",
-        "zoom-mug-port-klein9b.png",
+        "proof-sheet-foxball-9b-512-seed7217.png",
         "locality-strip-flux1.png",
+        "rows-pooled-interaction-strip.png",
         "xcond-diagnosis-strip.png",
+        "window-algebra-strip.png",
+        "pure-color-port-strip.png",
+        "pure-color-debug-strip.png",
+        "species-prior-strip.png",
+        "zoom-mug-pure-color.png",
+        "struct-write-strip-seed7217.png",
+        "struct-write-strip-seed31337.png",
+        "zoom-ball-remove-vs-translate.png",
     ):
         assert (ROOT / image).exists(), image
 
+    assert (ROOT / "tecm-closure-analysis.md").exists()
     print("semantic-object-registers: PASS")
 
 

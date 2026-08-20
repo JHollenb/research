@@ -1,30 +1,7 @@
 # Correction: seed-31337 latent move refuted; translate/removal ladders vacuous
 
-Additive correction; `report.json`, `run-receipt.json`, and embedded PNGs are
-immutable. Verified by an independent review pass with block overlays and
-per-block blueness measurements.
+Additive correction; `report.json`, `run-receipt.json`, and embedded PNGs are immutable. Verified by an independent review pass with block overlays and per-block blueness measurements.
 
-1. **Seed-31337 "translate" did not move the ball.** This worker derived
-   `ball_blocks` from the presence contrast (base vs no-ball pixel diff),
-   which the registry run had already measured as disagreeing with the
-   attribute-contrast instrument (Jaccard 0.0 on this seed). On seed 31337
-   those blocks sit on the fox's flank. The translate branches erased the
-   flank to snow (source-region MAD 123.4) and pasted fur-colored block
-   artifacts at the mirrored positions; the actual ball (block 218) is
-   untouched in every translate pane. The branch is retained as a
-   demonstration that a polluted address executes cleanly against the wrong
-   object — not as a ball move.
-2. **Seed-7217 translate is a real (artifacty) relocation.** Ball core
-   blocks (cols 4–5) mirror ≈112 px to cols 10–11; blueness rises at the
-   destination (+35/+44), glassy blue fragments render there, translucent
-   ghost at the source. The 215↔216 self-mirror pair are spurious central
-   blocks; they also explain the duplicate control's 21.1 source
-   disturbance (src∩dst ≠ ∅ on this seed).
-3. **The site ladders carry no information.** `translate_spec`/`removal_spec`
-   replace the entire recorded image-stream state at each written site, so
-   every rung ending at `single.19` computes the same result
-   (last-write-wins): the four translate PNGs are byte-identical per seed.
-   The 3rd-decimal difference between `ball_remove@full_band` and
-   `@s15_s19` in the registry job is the exact-vs-batched numerics gap, not
-   an effect. Ladder "convergence" must not be cited as evidence that
-   early-band writes are immaterial.
+1. **Seed-31337 "translate" did not move the ball.** This worker derived `ball_blocks` from the presence contrast (base vs no-ball pixel diff), which the registry run had already measured as disagreeing with the attribute-contrast instrument (Jaccard 0.0 on this seed). On seed 31337 those blocks sit on the fox's flank. The translate branches erased the flank to snow (source-region MAD 123.4) and pasted fur-colored block artifacts at the mirrored positions; the actual ball (block 218) is untouched in every translate pane. The branch is retained as a demonstration that a polluted address executes cleanly against the wrong object — not as a ball move.
+2. **Seed-7217 translate is a real (artifacty) relocation.** Ball core blocks (cols 4–5) mirror ≈112 px to cols 10–11; blueness rises at the destination (+35/+44), glassy blue fragments render there, translucent ghost at the source. The 215↔216 self-mirror pair are spurious central blocks; they also explain the duplicate control's 21.1 source disturbance (src∩dst ≠ ∅ on this seed).
+3. **The site ladders carry no information.** `translate_spec`/`removal_spec` replace the entire recorded image-stream state at each written site, so every rung ending at `single.19` computes the same result (last-write-wins): the four translate PNGs are byte-identical per seed. The 3rd-decimal difference between `ball_remove@full_band` and `@s15_s19` in the registry job is the exact-vs-batched numerics gap, not an effect. Ladder "convergence" must not be cited as evidence that early-band writes are immaterial.
