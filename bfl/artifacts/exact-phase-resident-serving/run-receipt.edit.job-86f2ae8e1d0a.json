@@ -1,0 +1,289 @@
+{
+  "case": "crossmodel-edit-reuse-v1",
+  "cells": [
+    "flux2-klein-4b",
+    "flux2-klein-base-4b",
+    "flux2-klein-9b",
+    "flux2-klein-9b-kv"
+  ],
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "SATURN_RESIDENT_WORKER=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+    "SATURN_RUN_CONFIG=saturn_run_config.json",
+    "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+    "uv",
+    "run",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "mlflow>=2.9",
+    "--with",
+    "boto3>=1.34",
+    "--with",
+    "python-dotenv>=1.0",
+    "--with",
+    "trackio>=0.1",
+    "python",
+    "-u",
+    "run_edit_reuse_crossmodel.py"
+  ],
+  "device": "cuda",
+  "dtypes": {
+    "flux2-klein-4b": "bfloat16",
+    "flux2-klein-9b": "bfloat16 (sequential offload lane)",
+    "flux2-klein-9b-kv": "bfloat16 (sequential offload lane)",
+    "flux2-klein-base-4b": "bfloat16"
+  },
+  "experiment": "saturn-edit-reuse-crossmodel-20260819",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "cross-model reference-edit reuse: per cell one own-model reference and four edits through TrajectoryCache-keyed capture/resume with dependency invalidation; native vs replay pixel comparison; cache-hit/miss timing (reference-capture lookup, not full render)",
+  "log_sha256": "1fa5ad923e6103c9b66ef3e156779c55fecef04e227f69738a4dc6e76f96ad2b",
+  "mrun_job_id": "job-86f2ae8e1d0a",
+  "mrun_ok": false,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_edit_reuse_crossmodel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-86f2ae8e1d0a",
+      "log_path": "/mnt/big/mrun-work/job-86f2ae8e1d0a/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787174540.8910806
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787174541.6878705
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787174541.723695
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787174541.7689881
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787174609.263324
+        },
+        {
+          "name": "finished",
+          "ts": 1787174609.3159664
+        }
+      ]
+    },
+    "elapsed_s": 68.46,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "c8d1079c63e4320ac9241c7f3e458719449a95ae4d01f2b172e0973c362071b0",
+      "size_bytes": 3851169
+    },
+    "failure": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_edit_reuse_crossmodel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-86f2ae8e1d0a",
+      "kind": "process_exit",
+      "log_tail": "<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour\nSATURN_EDIT_REUSE_PHASE=cell:flux2-klein-9b-kv\nTraceback (most recent call last):\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/run_edit_reuse_crossmodel.py\", line 462, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/run_edit_reuse_crossmodel.py\", line 384, in main\n    report = run_cell(cell)\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/run_edit_reuse_crossmodel.py\", line 291, in run_cell\n    replay, replay_seconds = _timed(\n                             ~~~~~~^\n        lambda hit=hit: phase.resume_checkpoint(hit, output_type=\"pil\")\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/run_edit_reuse_crossmodel.py\", line 92, in _timed\n    value = function()\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/run_edit_reuse_crossmodel.py\", line 292, in <lambda>\n    lambda hit=hit: phase.resume_checkpoint(hit, output_type=\"pil\")\n                    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/mrun_src/mrun/diffusion/phase.py\", line 1191, in resume_checkpoint\n    return resume(\n        self,\n    ...<4 lines>...\n        step_observer=step_observer,\n    )\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/mrun_src/mrun/diffusion/phase.py\", line 2840, in _resume_flux2_checkpoint\n    images = _flux2_decode(\n        pipeline,\n    ...<4 lines>...\n        output_type=output_type,\n    )\n  File \"/mnt/big/mrun-work/job-86f2ae8e1d0a/mrun_src/mrun/diffusion/phase.py\", line 1644, in _flux2_decode\n    latents = pipeline._unpack_latents_with_ids(\n        latents,\n    ...<2 lines>...\n        latent_width // 2,\n    )\nTypeError: Flux2KleinKVPipeline._unpack_latents_with_ids() takes 2 positional arguments but 4 were given\n{\"cell\": \"flux2-klein-9b-kv\", \"error\": 1}\nSATURN_EDIT_REUSE_CROSSMODEL_B64=H4sIAAAAAAAC/4WNQQqDMBBFrxKybkriQrRXKUXSZIrBiZGZaAXx7jVCu+3u82be/5tk10O08iYk2zzTqMCHrAhmBuUoMcfkAdVi5EVIWCegEGHMf4VKV7VuTFs0B4h8GPftjMV94bxWakAIo2qfaljOeqJE5er6gF7AGrIwcn98KzqX4oSQwR9P+kc9OLR0QnPAt0XsuMsp2zJV11fd7B8ajacL6QAAAA==\n",
+      "message": "child exited with return code 1",
+      "observed_ts": 1787174609.2889693,
+      "phase": "process.finalize",
+      "resources": {
+        "peak_rss_mb": 35203.0,
+        "peak_vram_mb": 1684.0,
+        "ram_ceiling_mb": 50600.00000000001,
+        "vram_ceiling_mb": 14300.000000000002
+      },
+      "returncode": 1
+    },
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 35203.0,
+    "peak_vram_mb": 1684.0,
+    "returncode": 1,
+    "status": "failed"
+  },
+  "mrun_state": "failed",
+  "needs": {
+    "cuda": true
+  },
+  "open_measurement": "klein-9b-kv exactness: native loop is ref-first tokens + kv_cache_mode extract/cached; generic Flux2 capture ABI is target-first without kv-cache args",
+  "payload": {
+    "edit_reuse_crossmodel": {
+      "cells": [
+        {
+          "id": "flux2-klein-4b",
+          "joint_blocks": 5,
+          "lane": "resident",
+          "model_id": "black-forest-labs/FLUX.2-klein-4B",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+          "single_blocks": 20
+        },
+        {
+          "id": "flux2-klein-base-4b",
+          "joint_blocks": 5,
+          "lane": "resident",
+          "model_id": "black-forest-labs/FLUX.2-klein-base-4B",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-base-4B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d",
+          "single_blocks": 20
+        },
+        {
+          "id": "flux2-klein-9b",
+          "joint_blocks": 8,
+          "lane": "sequential",
+          "model_id": "black-forest-labs/FLUX.2-klein-9B",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "revision": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+          "single_blocks": 24
+        },
+        {
+          "id": "flux2-klein-9b-kv",
+          "joint_blocks": 8,
+          "lane": "sequential",
+          "model_id": "black-forest-labs/FLUX.2-klein-9b-kv",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B-KV",
+          "no_guidance_param": true,
+          "pipeline_class": "Flux2KleinKVPipeline",
+          "revision": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce",
+          "single_blocks": 24,
+          "unpack_shim": true
+        }
+      ],
+      "experiment": "saturn-edit-reuse-crossmodel-20260819"
+    }
+  },
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 46000.0,
+    "vram_mb": 13000.0
+  },
+  "revisions": {
+    "flux2-klein-4b": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "flux2-klein-9b": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+    "flux2-klein-9b-kv": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce",
+    "flux2-klein-base-4b": "a3b4f4849157f664bdbc776fd7453c2783562f4d"
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "one outer lease, peak resident model concurrency 1: 4 specimen cells run sequentially as child processes (one model load per cell), each running its own reference/edit/cache program and freeing before the next cell",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1"
+  },
+  "schema": "saturn-edit-reuse-crossmodel-mrun-request-v1",
+  "task_family": "saturn-reference-edit-reuse",
+  "worker_sha256": "c4b460856758ad7289a0b013544d6fc2d90daca5ff8ce69d44af365a6b05a5bf"
+}

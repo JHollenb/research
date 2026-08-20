@@ -1,0 +1,118 @@
+{
+  "case": "crossmodel-edit-reuse-v1",
+  "cells": [
+    "flux2-klein-9b-kv"
+  ],
+  "device": "cuda",
+  "dtypes": {
+    "flux2-klein-9b-kv": "bfloat16 (sequential offload lane)"
+  },
+  "experiment": "saturn-edit-reuse-crossmodel-20260819-kv-v3",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "cross-model reference-edit reuse (kv-v3 corrected specimen; kv-only)",
+  "log_sha256": "de5d74fd15596fb39eac417585bee6e7c7c845d1d560fddb3632db1793c03209",
+  "mrun_job_id": "job-df22ad4e5c17",
+  "mrun_ok": true,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_edit_reuse_crossmodel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-df22ad4e5c17",
+      "log_path": "/mnt/big/mrun-work/job-df22ad4e5c17/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787175306.3639348
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787175307.1580434
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787175307.2053952
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787175307.2626379
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787175398.2497454
+        },
+        {
+          "name": "finished",
+          "ts": 1787175398.2758987
+        }
+      ]
+    },
+    "elapsed_s": 91.95,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "3bf69042824631bc59a15ea8dd76032ea0eca07c555b75b2c0984f914f57a6ec",
+      "size_bytes": 3851549
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 35256.9,
+    "peak_vram_mb": 1660.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "needs": {
+    "cuda": true
+  },
+  "open_measurement": "klein-9b-kv exactness: native loop is ref-first tokens + kv_cache_mode extract/cached; generic Flux2 capture ABI is target-first without kv-cache args",
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 46000.0,
+    "vram_mb": 13000.0
+  },
+  "revisions": {
+    "flux2-klein-9b-kv": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce"
+  },
+  "schema": "saturn-edit-reuse-crossmodel-mrun-request-v1",
+  "supersedes": "job-86f2ae8e1d0a (replay decode TypeError: KV id-scatter unpack vs Klein 4-arg call; worker-side shim drops unused h/w)",
+  "task_family": "saturn-reference-edit-reuse"
+}

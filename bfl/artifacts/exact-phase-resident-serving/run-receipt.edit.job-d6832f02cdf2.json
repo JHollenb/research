@@ -1,0 +1,288 @@
+{
+  "case": "crossmodel-edit-reuse-v1",
+  "cells": [
+    "flux2-klein-4b",
+    "flux2-klein-base-4b",
+    "flux2-klein-9b",
+    "flux2-klein-9b-kv"
+  ],
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "SATURN_RESIDENT_WORKER=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+    "SATURN_RUN_CONFIG=saturn_run_config.json",
+    "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+    "uv",
+    "run",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "mlflow>=2.9",
+    "--with",
+    "boto3>=1.34",
+    "--with",
+    "python-dotenv>=1.0",
+    "--with",
+    "trackio>=0.1",
+    "python",
+    "-u",
+    "run_edit_reuse_crossmodel.py"
+  ],
+  "device": "cuda",
+  "dtypes": {
+    "flux2-klein-4b": "bfloat16",
+    "flux2-klein-9b": "bfloat16 (sequential offload lane)",
+    "flux2-klein-9b-kv": "bfloat16 (sequential offload lane)",
+    "flux2-klein-base-4b": "bfloat16"
+  },
+  "experiment": "saturn-edit-reuse-crossmodel-20260819",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "cross-model reference-edit reuse: per cell one own-model reference and four edits through TrajectoryCache-keyed capture/resume with dependency invalidation; native vs replay pixel comparison; cache-hit/miss timing (reference-capture lookup, not full render)",
+  "log_sha256": "964a76009e5b45c9f685ada50a6cee2dda31a0e0b54de0cb40af3d6de2acd424",
+  "mrun_job_id": "job-d6832f02cdf2",
+  "mrun_ok": false,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_edit_reuse_crossmodel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-d6832f02cdf2",
+      "log_path": "/mnt/big/mrun-work/job-d6832f02cdf2/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787174083.1867383
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787174083.9486794
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787174083.982825
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787174084.0230854
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787174286.3908095
+        },
+        {
+          "name": "finished",
+          "ts": 1787174286.447225
+        }
+      ]
+    },
+    "elapsed_s": 203.3,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "1d3da8e5b213613f9fb87f6f26073a93ecde43cebd1e230e04ac595831d39b75",
+      "size_bytes": 3851437
+    },
+    "failure": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_edit_reuse_crossmodel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-d6832f02cdf2",
+      "kind": "process_exit",
+      "log_tail": "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\n{\"cell\": \"flux2-klein-9b\", \"exact_count\": 4, \"cache_hits\": 4, \"cache_speedup_median\": 57324.4, \"invalidated\": 4, \"reference_token_count\": 256}\nSATURN_EDIT_REUSE_PHASE=cell:flux2-klein-9b-kv\nTraceback (most recent call last):\n  File \"/mnt/big/mrun-work/job-d6832f02cdf2/run_edit_reuse_crossmodel.py\", line 456, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/mnt/big/mrun-work/job-d6832f02cdf2/run_edit_reuse_crossmodel.py\", line 378, in main\n    report = run_cell(cell)\n  File \"/mnt/big/mrun-work/job-d6832f02cdf2/run_edit_reuse_crossmodel.py\", line 155, in run_cell\n    raise RuntimeError(\n    ...<2 lines>...\n    )\nRuntimeError: pipeline class mismatch for flux2-klein-9b-kv: Flux2KleinPipeline != Flux2KleinKVPipeline\n{\"cell\": \"flux2-klein-9b-kv\", \"error\": 1}\nSATURN_EDIT_REUSE_CROSSMODEL_B64=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\n",
+      "message": "child exited with return code 3",
+      "observed_ts": 1787174286.4196138,
+      "phase": "process.finalize",
+      "resources": {
+        "peak_rss_mb": 35249.1,
+        "peak_vram_mb": 8556.0,
+        "ram_ceiling_mb": 50600.00000000001,
+        "vram_ceiling_mb": 14300.000000000002
+      },
+      "returncode": 3
+    },
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 35249.1,
+    "peak_vram_mb": 8556.0,
+    "returncode": 3,
+    "status": "failed"
+  },
+  "mrun_state": "failed",
+  "needs": {
+    "cuda": true
+  },
+  "open_measurement": "klein-9b-kv exactness: native loop is ref-first tokens + kv_cache_mode extract/cached; generic Flux2 capture ABI is target-first without kv-cache args",
+  "payload": {
+    "edit_reuse_crossmodel": {
+      "cells": [
+        {
+          "id": "flux2-klein-4b",
+          "joint_blocks": 5,
+          "lane": "resident",
+          "model_id": "black-forest-labs/FLUX.2-klein-4B",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+          "single_blocks": 20
+        },
+        {
+          "id": "flux2-klein-base-4b",
+          "joint_blocks": 5,
+          "lane": "resident",
+          "model_id": "black-forest-labs/FLUX.2-klein-base-4B",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-base-4B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d",
+          "single_blocks": 20
+        },
+        {
+          "id": "flux2-klein-9b",
+          "joint_blocks": 8,
+          "lane": "sequential",
+          "model_id": "black-forest-labs/FLUX.2-klein-9B",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "revision": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+          "single_blocks": 24
+        },
+        {
+          "id": "flux2-klein-9b-kv",
+          "joint_blocks": 8,
+          "lane": "sequential",
+          "model_id": "black-forest-labs/FLUX.2-klein-9b-kv",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B-KV",
+          "no_guidance_param": true,
+          "pipeline_class": "Flux2KleinKVPipeline",
+          "revision": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce",
+          "single_blocks": 24
+        }
+      ],
+      "experiment": "saturn-edit-reuse-crossmodel-20260819"
+    }
+  },
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 46000.0,
+    "vram_mb": 13000.0
+  },
+  "revisions": {
+    "flux2-klein-4b": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "flux2-klein-9b": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+    "flux2-klein-9b-kv": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce",
+    "flux2-klein-base-4b": "a3b4f4849157f664bdbc776fd7453c2783562f4d"
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "one outer lease, peak resident model concurrency 1: 4 specimen cells run sequentially as child processes (one model load per cell), each running its own reference/edit/cache program and freeing before the next cell",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1"
+  },
+  "schema": "saturn-edit-reuse-crossmodel-mrun-request-v1",
+  "task_family": "saturn-reference-edit-reuse",
+  "worker_sha256": "f53c3fbf139a007733dce1da52a73e1320234b29345de2ad5afc789ce2b8173e"
+}

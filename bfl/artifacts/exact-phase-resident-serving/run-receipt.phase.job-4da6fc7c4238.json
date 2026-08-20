@@ -1,0 +1,302 @@
+{
+  "case": "crossmodel-exact-parity-v1",
+  "cells": [
+    "flux2-klein-4b",
+    "flux2-klein-base-4b",
+    "flux2-klein-9b",
+    "flux1-schnell",
+    "flux2-klein-9b-fp8seq",
+    "flux2-klein-9b-kv-fp8seq",
+    "flux2-klein-9b-fp8resident"
+  ],
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "SATURN_RESIDENT_WORKER=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+    "SATURN_RUN_CONFIG=saturn_run_config.json",
+    "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+    "uv",
+    "run",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "mlflow>=2.9",
+    "--with",
+    "boto3>=1.34",
+    "--with",
+    "python-dotenv>=1.0",
+    "--with",
+    "trackio>=0.1",
+    "python",
+    "-u",
+    "run_phase_parity_crossmodel.py"
+  ],
+  "deferred_cells": {
+    "flux2-dev": "28 steps x 64 GB bf16 sequential; separate run",
+    "flux2-klein-9b-kv-bf16": "prompt-only KV parity covered by the fp8-seq fast cell; reference/KV conditioning panel remains separate",
+    "small-decoder": "decoder boundary, not a phase serving specimen"
+  },
+  "device": "cuda",
+  "dtypes": {
+    "flux1-schnell": "bfloat16 compute, fp8_e4m3 layerwise storage",
+    "flux2-klein-4b": "bfloat16",
+    "flux2-klein-9b": "bfloat16 (sequential offload lane)",
+    "flux2-klein-9b-fp8resident": "fp8_e4m3 storage + bf16 compute denoiser resident; accelerate-hook encoder streaming",
+    "flux2-klein-9b-fp8seq": "fp8_e4m3 storage + bf16 compute (sequential offload lane)",
+    "flux2-klein-9b-kv-fp8seq": "fp8_e4m3 storage + bf16 compute (sequential offload lane)",
+    "flux2-klein-base-4b": "bfloat16"
+  },
+  "experiment": "saturn-phase-parity-crossmodel-20260819",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "cross-model exact phase-resident serving parity: per-cell offload reference arm vs PhasePipeline candidate arm over the certified 4-prompt x 2-seed 512x512 4-step panel; bitwise pixel+PNG parity, phase walls, per-phase VRAM peaks, RSS, embed-cache telemetry",
+  "log_sha256": "0f8a66ea1cc6ada5c1aec92c71524b657f555f5c4a7733cd459be7b4b8ba7cc5",
+  "mrun_job_id": "job-4da6fc7c4238",
+  "mrun_ok": true,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_phase_parity_crossmodel.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-4da6fc7c4238",
+      "log_path": "/mnt/big/mrun-work/job-4da6fc7c4238/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787180525.8637655
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787180526.6426075
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787180526.6780484
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787180526.7237878
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787180968.5040371
+        },
+        {
+          "name": "finished",
+          "ts": 1787180968.5625658
+        }
+      ]
+    },
+    "elapsed_s": 442.74,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "51dc2939c2d0575b7f595bf001d6ed526b4edf0bc6ae66a6d10df3637e44ce12",
+      "size_bytes": 3852626
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 35187.9,
+    "peak_vram_mb": 10302.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "needs": {
+    "cuda": true
+  },
+  "payload": {
+    "phase_parity_crossmodel": {
+      "cells": [
+        {
+          "encode_params": {},
+          "guidance": 1.0,
+          "id": "flux2-klein-4b",
+          "joint_blocks": 5,
+          "lane": "resident",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "reference_strategy": "model_cpu_offload",
+          "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+          "single_blocks": 20,
+          "steps": 4
+        },
+        {
+          "encode_params": {},
+          "guidance": 1.0,
+          "id": "flux2-klein-base-4b",
+          "joint_blocks": 5,
+          "lane": "resident",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-base-4B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "reference_strategy": "model_cpu_offload",
+          "revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d",
+          "single_blocks": 20,
+          "steps": 4
+        },
+        {
+          "encode_params": {},
+          "guidance": 1.0,
+          "id": "flux2-klein-9b",
+          "joint_blocks": 8,
+          "lane": "sequential",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "reference_strategy": "sequential_cpu_offload",
+          "revision": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+          "single_blocks": 24,
+          "steps": 4
+        },
+        {
+          "encode_params": {
+            "max_sequence_length": 256
+          },
+          "guidance": 0.0,
+          "id": "flux1-schnell",
+          "joint_blocks": 19,
+          "lane": "sequential_fp8",
+          "model_path": "/mnt/big/llm-models/FLUX.1-schnell",
+          "pipeline_class": "FluxPipeline",
+          "reference_strategy": "sequential_cpu_offload+fp8_e4m3_layerwise",
+          "revision": "741f7c3ce8b383c54771c7003378a50191e9efe9",
+          "single_blocks": 38,
+          "steps": 4
+        },
+        {
+          "encode_params": {},
+          "guidance": 1.0,
+          "id": "flux2-klein-9b-fp8seq",
+          "joint_blocks": 8,
+          "lane": "sequential_fp8",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "reference_strategy": "sequential_cpu_offload+fp8_e4m3_layerwise",
+          "revision": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+          "single_blocks": 24,
+          "steps": 4
+        },
+        {
+          "encode_params": {},
+          "guidance": 1.0,
+          "id": "flux2-klein-9b-kv-fp8seq",
+          "joint_blocks": 8,
+          "lane": "sequential_fp8",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B-KV",
+          "no_guidance_param": true,
+          "pipeline_class": "Flux2KleinKVPipeline",
+          "reference_strategy": "sequential_cpu_offload+fp8_e4m3_layerwise",
+          "revision": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce",
+          "single_blocks": 24,
+          "steps": 4
+        },
+        {
+          "candidate_lane": "fp8_resident",
+          "encode_params": {},
+          "guidance": 1.0,
+          "id": "flux2-klein-9b-fp8resident",
+          "joint_blocks": 8,
+          "lane": "fp8_resident",
+          "model_path": "/mnt/big/llm-models/FLUX.2-klein-9B",
+          "pipeline_class": "Flux2KleinPipeline",
+          "reference_lane": "sequential_fp8",
+          "reference_strategy": "sequential_cpu_offload+fp8_e4m3_layerwise",
+          "revision": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+          "single_blocks": 24,
+          "steps": 4
+        }
+      ],
+      "experiment": "saturn-phase-parity-crossmodel-20260819"
+    }
+  },
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 46000.0,
+    "vram_mb": 13000.0
+  },
+  "revisions": {
+    "flux1-schnell": "741f7c3ce8b383c54771c7003378a50191e9efe9",
+    "flux2-klein-4b": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+    "flux2-klein-9b": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+    "flux2-klein-9b-fp8resident": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+    "flux2-klein-9b-fp8seq": "92196c8e11f7b6cf2b7493e037d8c5345c559216",
+    "flux2-klein-9b-kv-fp8seq": "a6dfb36eca3a3906eb2fd460795adfb844e5fcce",
+    "flux2-klein-base-4b": "a3b4f4849157f664bdbc776fd7453c2783562f4d"
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "one outer lease, peak resident model concurrency 1: 7 specimen cells run sequentially as child processes (2 checkpoint loads per cell \u2014 reference + candidate arm), each loading its pinned checkpoint, running its arms, and freeing before the next load; arms share nothing across cells",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1"
+  },
+  "schema": "saturn-phase-parity-crossmodel-mrun-request-v1",
+  "task_family": "saturn-phase-serving-parity",
+  "worker_sha256": "42ceeb7f73131c64516509a2776e2540fa7410d5c31b99ab0b63c69124d54b1a"
+}
