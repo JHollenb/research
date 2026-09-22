@@ -1,0 +1,31 @@
+{
+  "case-1": {
+    "community": "no necessary component",
+    "saturn": "the 4-site route is jointly necessary as a time-accumulated object"
+  },
+  "case-2": {
+    "community": "decodable: deer",
+    "saturn": "register carries content (transplant moves the subject region on both seeds, sham flat, exact gates)"
+  },
+  "case-2-probe": {
+    "community_strengthened": "no decodable content"
+  },
+  "case-3": {
+    "community": {
+      "Qwen3-4B-Base": "representations differ across families",
+      "Qwen3.5-0.8B-Base": "no representational difference detected"
+    },
+    "saturn": {
+      "Qwen3-4B-Base": "the split is an artifact of fitted-direction transfer (collapses under centering/whitening); native geometry not divergent",
+      "Qwen3.5-0.8B-Base": "no representational difference (consistent with raw)"
+    }
+  },
+  "case-4": {
+    "community": "state recovered",
+    "saturn": "state not recovered (consumer contradicts the cosine; content-free template matches it)"
+  },
+  "case-5": {
+    "community": "mediation holds at the measured step; no claim about other steps",
+    "saturn": "not a step artifact: 17/18 axis x step cells hold; failure localized"
+  }
+}

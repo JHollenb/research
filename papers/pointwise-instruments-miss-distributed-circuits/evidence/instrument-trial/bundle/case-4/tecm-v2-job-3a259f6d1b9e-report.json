@@ -1,0 +1,666 @@
+{
+  "architecture": {
+    "frozen_suffix": "real Flux2KleinPipeline transformer + scheduler + VAE",
+    "losses": [
+      "whole-carrier MSE",
+      "whole-carrier token cosine",
+      "per-token log-RMS scale alignment",
+      "minimal-pair semantic-axis cosine"
+    ],
+    "name": "SATURN Time-Expanded Carrier Mapper (TECM v2)",
+    "position_policy": "source-preserving-plus-target-position",
+    "schema": "saturn-tecm-carrier-mapper-v2",
+    "source_layers": [
+      6,
+      12,
+      18,
+      -1
+    ],
+    "source_mask_policy": "cross-attention-keys-only",
+    "target_anchor": "native per-position training mean plus learned prompt residual",
+    "target_output_policy": "contextualize-all-512-target-slots"
+  },
+  "checkpoint_control": {
+    "checkpoint_fingerprint": "7fa1244e93f4ef66c5958aea6b7479a6bd3ac09e9720e5301a8c0d6224d57f4a",
+    "checkpoint_id": "traj-41ae05f05547bad43078e6a046982286",
+    "same_process_native_duplicate": {
+      "rgb_cosine": 0.9999463558197021,
+      "rgb_mad": 0.0,
+      "rgb_rms": 0.0
+    },
+    "same_process_native_duplicate_exact": true,
+    "step_index": 0
+  },
+  "claim_boundary": "One real FLUX.2 suffix, two foreign conditioner families, a prompt-disjoint axis-rich source panel, cut-0 checkpoint, and native/legacy/template/TECM image arms. All 512 target rows are supervised. This is a repair trend, not a semantic-equivalence certificate.",
+  "collection": {
+    "image_files": {
+      "legacy_flux2-mamba_blue_fox": "legacy_flux2-mamba_blue_fox.png",
+      "legacy_flux2-mamba_cat": "legacy_flux2-mamba_cat.png",
+      "legacy_flux2-mamba_corgi": "legacy_flux2-mamba_corgi.png",
+      "legacy_flux2-mamba_fox": "legacy_flux2-mamba_fox.png",
+      "legacy_flux2-smol_blue_fox": "legacy_flux2-smol_blue_fox.png",
+      "legacy_flux2-smol_cat": "legacy_flux2-smol_cat.png",
+      "legacy_flux2-smol_corgi": "legacy_flux2-smol_corgi.png",
+      "legacy_flux2-smol_fox": "legacy_flux2-smol_fox.png",
+      "native_qwen_blue_fox": "native_qwen_blue_fox.png",
+      "native_qwen_cat": "native_qwen_cat.png",
+      "native_qwen_corgi": "native_qwen_corgi.png",
+      "native_qwen_fox": "native_qwen_fox.png",
+      "tecm_flux2-mamba_blue_fox": "tecm_flux2-mamba_blue_fox.png",
+      "tecm_flux2-mamba_cat": "tecm_flux2-mamba_cat.png",
+      "tecm_flux2-mamba_corgi": "tecm_flux2-mamba_corgi.png",
+      "tecm_flux2-mamba_fox": "tecm_flux2-mamba_fox.png",
+      "tecm_flux2-smol_blue_fox": "tecm_flux2-smol_blue_fox.png",
+      "tecm_flux2-smol_cat": "tecm_flux2-smol_cat.png",
+      "tecm_flux2-smol_corgi": "tecm_flux2-smol_corgi.png",
+      "tecm_flux2-smol_fox": "tecm_flux2-smol_fox.png",
+      "template_native_mean": "template_native_mean.png"
+    }
+  },
+  "comparisons": {
+    "flux2-mamba": {
+      "blue_fox": {
+        "legacy_carrier_cosine": 0.1867726445198059,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.8548938632011414,
+          "rgb_mad": 76.30635070800781,
+          "rgb_rms": 95.75312805175781
+        },
+        "tecm_carrier_cosine": 0.996934711933136,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9379146695137024,
+          "rgb_mad": 48.71355056762695,
+          "rgb_rms": 62.89908981323242
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.8710677623748779,
+          "rgb_mad": 68.95024108886719,
+          "rgb_rms": 88.38700103759766
+        },
+        "template_carrier_cosine": 0.9972502589225769,
+        "template_vs_native": {
+          "rgb_cosine": 0.8521466255187988,
+          "rgb_mad": 72.02161407470703,
+          "rgb_rms": 93.08860778808594
+        }
+      },
+      "cat": {
+        "legacy_carrier_cosine": 0.19109103083610535,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.8537783026695251,
+          "rgb_mad": 85.37479400634766,
+          "rgb_rms": 103.36888122558594
+        },
+        "tecm_carrier_cosine": 0.9969526529312134,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9493721127510071,
+          "rgb_mad": 49.3902473449707,
+          "rgb_rms": 65.34471130371094
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.8382620811462402,
+          "rgb_mad": 75.03282928466797,
+          "rgb_rms": 90.60301208496094
+        },
+        "template_carrier_cosine": 0.9970443844795227,
+        "template_vs_native": {
+          "rgb_cosine": 0.8396255970001221,
+          "rgb_mad": 75.8889389038086,
+          "rgb_rms": 91.8664779663086
+        }
+      },
+      "corgi": {
+        "legacy_carrier_cosine": 0.17235900461673737,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.7927320003509521,
+          "rgb_mad": 99.33526611328125,
+          "rgb_rms": 117.8324203491211
+        },
+        "tecm_carrier_cosine": 0.9925963878631592,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9368481040000916,
+          "rgb_mad": 50.271697998046875,
+          "rgb_rms": 65.26090240478516
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.7115005850791931,
+          "rgb_mad": 98.57868194580078,
+          "rgb_rms": 119.12914276123047
+        },
+        "template_carrier_cosine": 0.9933006763458252,
+        "template_vs_native": {
+          "rgb_cosine": 0.7167772054672241,
+          "rgb_mad": 97.23443603515625,
+          "rgb_rms": 117.32835388183594
+        }
+      },
+      "fox": {
+        "legacy_carrier_cosine": 0.1954095959663391,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.8904833793640137,
+          "rgb_mad": 69.09864807128906,
+          "rgb_rms": 82.24462127685547
+        },
+        "tecm_carrier_cosine": 0.9967261552810669,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9418243765830994,
+          "rgb_mad": 47.82285690307617,
+          "rgb_rms": 62.530433654785156
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.8720715641975403,
+          "rgb_mad": 67.67125701904297,
+          "rgb_rms": 80.37225341796875
+        },
+        "template_carrier_cosine": 0.9969123601913452,
+        "template_vs_native": {
+          "rgb_cosine": 0.8685307502746582,
+          "rgb_mad": 71.57543182373047,
+          "rgb_rms": 84.75250244140625
+        }
+      }
+    },
+    "flux2-smol": {
+      "blue_fox": {
+        "legacy_carrier_cosine": 0.19651252031326294,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.817821204662323,
+          "rgb_mad": 82.01592254638672,
+          "rgb_rms": 101.10369110107422
+        },
+        "tecm_carrier_cosine": 0.9972278475761414,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9056910872459412,
+          "rgb_mad": 56.99202346801758,
+          "rgb_rms": 73.05565643310547
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.8690853714942932,
+          "rgb_mad": 68.85741424560547,
+          "rgb_rms": 88.53512573242188
+        },
+        "template_carrier_cosine": 0.9972502589225769,
+        "template_vs_native": {
+          "rgb_cosine": 0.8521466255187988,
+          "rgb_mad": 72.02161407470703,
+          "rgb_rms": 93.08860778808594
+        }
+      },
+      "cat": {
+        "legacy_carrier_cosine": 0.2003457397222519,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.8375464677810669,
+          "rgb_mad": 74.8731918334961,
+          "rgb_rms": 88.48453521728516
+        },
+        "tecm_carrier_cosine": 0.9970141053199768,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9226787686347961,
+          "rgb_mad": 50.98421859741211,
+          "rgb_rms": 65.80847930908203
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.8426098823547363,
+          "rgb_mad": 75.81591796875,
+          "rgb_rms": 92.22312927246094
+        },
+        "template_carrier_cosine": 0.9970443844795227,
+        "template_vs_native": {
+          "rgb_cosine": 0.8396255970001221,
+          "rgb_mad": 75.8889389038086,
+          "rgb_rms": 91.8664779663086
+        }
+      },
+      "corgi": {
+        "legacy_carrier_cosine": 0.14717289805412292,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.7566808462142944,
+          "rgb_mad": 63.65327835083008,
+          "rgb_rms": 80.28314208984375
+        },
+        "tecm_carrier_cosine": 0.9931708574295044,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.8392395973205566,
+          "rgb_mad": 77.74848175048828,
+          "rgb_rms": 96.29981231689453
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.7239232063293457,
+          "rgb_mad": 97.32231903076172,
+          "rgb_rms": 117.16224670410156
+        },
+        "template_carrier_cosine": 0.9933006763458252,
+        "template_vs_native": {
+          "rgb_cosine": 0.7167772054672241,
+          "rgb_mad": 97.23443603515625,
+          "rgb_rms": 117.32835388183594
+        }
+      },
+      "fox": {
+        "legacy_carrier_cosine": 0.19974686205387115,
+        "legacy_vs_native": {
+          "rgb_cosine": 0.8614251017570496,
+          "rgb_mad": 69.72686004638672,
+          "rgb_rms": 83.6568832397461
+        },
+        "tecm_carrier_cosine": 0.9969594478607178,
+        "tecm_vs_legacy": {
+          "rgb_cosine": 0.9122170805931091,
+          "rgb_mad": 52.97116470336914,
+          "rgb_rms": 68.33079528808594
+        },
+        "tecm_vs_native": {
+          "rgb_cosine": 0.870664656162262,
+          "rgb_mad": 70.67491912841797,
+          "rgb_rms": 83.5785140991211
+        },
+        "template_carrier_cosine": 0.9969123601913452,
+        "template_vs_native": {
+          "rgb_cosine": 0.8685307502746582,
+          "rgb_mad": 71.57543182373047,
+          "rgb_rms": 84.75250244140625
+        }
+      }
+    }
+  },
+  "execution": {
+    "additional_scheduler_submissions": 0,
+    "checkpoint_captures": 1,
+    "checkpoint_suffix_replays": 22,
+    "device": "cuda",
+    "dtype": "bfloat16 frozen suffix / float32 TECM and legacy adapters",
+    "elapsed_seconds": 596.4681495960103,
+    "execution_mode": "exact_scalar_cut0_checkpoint_full_carrier",
+    "execution_model": "finite_local_program",
+    "logical_local_evaluations": 22,
+    "model_loads": 1,
+    "mrun_job_id": "job-3a259f6d1b9e",
+    "mrun_submissions": 1,
+    "numerical_contract": "scalar-authority",
+    "peak_vram_mb": 8934.48388671875,
+    "process_peak_rss_mb": 38135.0234375,
+    "scheduler_jobs": 1
+  },
+  "family_reports": {
+    "flux2-mamba": {
+      "legacy_fidelity": {
+        "axes": [
+          {
+            "axis": "color",
+            "direction_cosine": 0.07644562423229218,
+            "direction_magnitude_ratio": 0.629279613494873
+          },
+          {
+            "axis": "subject",
+            "direction_cosine": 0.08761217445135117,
+            "direction_magnitude_ratio": 0.38576051592826843
+          }
+        ],
+        "mean_direction_cosine": 0.08202889934182167,
+        "mean_global_cosine": 0.18640806898474693,
+        "per_prompt": {
+          "blue_fox": {
+            "global_cosine": 0.1867726445198059,
+            "mapped_norm": 3205.37646484375,
+            "native_norm": 29506.638671875
+          },
+          "cat": {
+            "global_cosine": 0.19109103083610535,
+            "mapped_norm": 3278.6943359375,
+            "native_norm": 29523.3125
+          },
+          "corgi": {
+            "global_cosine": 0.17235900461673737,
+            "mapped_norm": 3252.008544921875,
+            "native_norm": 29580.5703125
+          },
+          "fox": {
+            "global_cosine": 0.1954095959663391,
+            "mapped_norm": 3106.05322265625,
+            "native_norm": 29515.044921875
+          }
+        }
+      },
+      "legacy_fit": {
+        "adapter_fingerprint": "ffe1ae7306483078eee938fb",
+        "batch_size": 2,
+        "initialization_seed": 7217,
+        "loss": "masked_token_mse_plus_0.1_masked_token_cosine",
+        "loss_final": 214.02481079101562,
+        "loss_first": 222.05780029296875,
+        "parameter_count": 14966272,
+        "steps": 700,
+        "train_token_cosine": 0.8624127507209778,
+        "train_token_mse": 214.15054321289062
+      },
+      "source_features": {
+        "device": "cpu",
+        "dtype": "float32",
+        "sequence_length": 512,
+        "source_family": "Mamba-1.4B",
+        "source_feature_shape": [
+          34,
+          512,
+          8192
+        ],
+        "source_feature_width": 8192,
+        "source_hidden_size_per_layer": 2048,
+        "source_layers_requested": [
+          6,
+          12,
+          18,
+          -1
+        ],
+        "source_layers_resolved": [
+          6,
+          12,
+          18,
+          48
+        ]
+      },
+      "tecm_fidelity": {
+        "axes": [
+          {
+            "axis": "color",
+            "direction_cosine": 0.11334468424320221,
+            "direction_magnitude_ratio": 0.7631086707115173
+          },
+          {
+            "axis": "subject",
+            "direction_cosine": 0.16416727006435394,
+            "direction_magnitude_ratio": 0.4362308084964752
+          }
+        ],
+        "mean_direction_cosine": 0.13875597715377808,
+        "mean_global_cosine": 0.9958024770021439,
+        "per_prompt": {
+          "blue_fox": {
+            "global_cosine": 0.996934711933136,
+            "mapped_norm": 29463.828125,
+            "native_norm": 29506.638671875
+          },
+          "cat": {
+            "global_cosine": 0.9969526529312134,
+            "mapped_norm": 29465.033203125,
+            "native_norm": 29523.3125
+          },
+          "corgi": {
+            "global_cosine": 0.9925963878631592,
+            "mapped_norm": 29467.70703125,
+            "native_norm": 29580.5703125
+          },
+          "fox": {
+            "global_cosine": 0.9967261552810669,
+            "mapped_norm": 29467.81640625,
+            "native_norm": 29515.044921875
+          }
+        }
+      },
+      "tecm_fit": {
+        "batch_size": 4,
+        "contract": {
+          "hidden_dim": 768,
+          "parameter_count": 21074176,
+          "position_policy": "source-preserving-plus-target-position",
+          "schema": "saturn-tecm-carrier-mapper-v2",
+          "source_dim": 8192,
+          "source_len": 512,
+          "source_mask_policy": "cross-attention-keys-only",
+          "target_anchor_policy": "learned-target-queries-plus-source-seed",
+          "target_dim": 7680,
+          "target_len": 512,
+          "target_output_policy": "contextualize-all-target-slots",
+          "target_template_policy": "native-per-position-mean-plus-learned-residual"
+        },
+        "loss_final": 1.1739740371704102,
+        "loss_first": 1.11814284324646,
+        "parameter_count": 21074176,
+        "steps": 900,
+        "target_template": {
+          "dtype": "torch.float32",
+          "fingerprint": "482bf1e3108f4fa9652daeea",
+          "mean": 0.03018651343882084,
+          "norm": 29453.78125,
+          "shape": [
+            1,
+            512,
+            7680
+          ],
+          "std": 14.85806655883789
+        },
+        "template_token_cosine": 0.8623981475830078,
+        "template_token_mse": 0.920342206954956,
+        "train_token_cosine": 0.8780440092086792,
+        "train_token_mse": 0.8226490020751953
+      }
+    },
+    "flux2-smol": {
+      "legacy_fidelity": {
+        "axes": [
+          {
+            "axis": "color",
+            "direction_cosine": 0.10077113658189774,
+            "direction_magnitude_ratio": 0.5611661076545715
+          },
+          {
+            "axis": "subject",
+            "direction_cosine": 0.09220696240663528,
+            "direction_magnitude_ratio": 0.2858661711215973
+          }
+        ],
+        "mean_direction_cosine": 0.09648904949426651,
+        "mean_global_cosine": 0.18594450503587723,
+        "per_prompt": {
+          "blue_fox": {
+            "global_cosine": 0.19651252031326294,
+            "mapped_norm": 3075.708984375,
+            "native_norm": 29506.638671875
+          },
+          "cat": {
+            "global_cosine": 0.2003457397222519,
+            "mapped_norm": 3134.291259765625,
+            "native_norm": 29523.3125
+          },
+          "corgi": {
+            "global_cosine": 0.14717289805412292,
+            "mapped_norm": 3822.91162109375,
+            "native_norm": 29580.5703125
+          },
+          "fox": {
+            "global_cosine": 0.19974686205387115,
+            "mapped_norm": 3058.8486328125,
+            "native_norm": 29515.044921875
+          }
+        }
+      },
+      "legacy_fit": {
+        "adapter_fingerprint": "8bd3658284756fc5d0dd880b",
+        "batch_size": 2,
+        "initialization_seed": null,
+        "loss": "masked_token_mse_plus_0.1_masked_token_cosine",
+        "loss_final": 213.9585418701172,
+        "loss_first": 222.0585479736328,
+        "parameter_count": 14966272,
+        "steps": 700,
+        "train_token_cosine": 0.8667162656784058,
+        "train_token_mse": 214.10299682617188
+      },
+      "source_features": {
+        "device": "cpu",
+        "dtype": "float32",
+        "sequence_length": 512,
+        "source_family": "SmolLM2-1.7B",
+        "source_feature_shape": [
+          34,
+          512,
+          8192
+        ],
+        "source_feature_width": 8192,
+        "source_hidden_size_per_layer": 2048,
+        "source_layers_requested": [
+          6,
+          12,
+          18,
+          -1
+        ],
+        "source_layers_resolved": [
+          6,
+          12,
+          18,
+          24
+        ]
+      },
+      "tecm_fidelity": {
+        "axes": [
+          {
+            "axis": "color",
+            "direction_cosine": 0.12126823514699936,
+            "direction_magnitude_ratio": 0.17637614905834198
+          },
+          {
+            "axis": "subject",
+            "direction_cosine": 0.1564662903547287,
+            "direction_magnitude_ratio": 0.1974337100982666
+          }
+        ],
+        "mean_direction_cosine": 0.13886726275086403,
+        "mean_global_cosine": 0.9960930645465851,
+        "per_prompt": {
+          "blue_fox": {
+            "global_cosine": 0.9972278475761414,
+            "mapped_norm": 29450.55859375,
+            "native_norm": 29506.638671875
+          },
+          "cat": {
+            "global_cosine": 0.9970141053199768,
+            "mapped_norm": 29458.2734375,
+            "native_norm": 29523.3125
+          },
+          "corgi": {
+            "global_cosine": 0.9931708574295044,
+            "mapped_norm": 29461.275390625,
+            "native_norm": 29580.5703125
+          },
+          "fox": {
+            "global_cosine": 0.9969594478607178,
+            "mapped_norm": 29453.3671875,
+            "native_norm": 29515.044921875
+          }
+        }
+      },
+      "tecm_fit": {
+        "batch_size": 4,
+        "contract": {
+          "hidden_dim": 768,
+          "parameter_count": 21074176,
+          "position_policy": "source-preserving-plus-target-position",
+          "schema": "saturn-tecm-carrier-mapper-v2",
+          "source_dim": 8192,
+          "source_len": 512,
+          "source_mask_policy": "cross-attention-keys-only",
+          "target_anchor_policy": "learned-target-queries-plus-source-seed",
+          "target_dim": 7680,
+          "target_len": 512,
+          "target_output_policy": "contextualize-all-target-slots",
+          "target_template_policy": "native-per-position-mean-plus-learned-residual"
+        },
+        "loss_final": 1.2159169912338257,
+        "loss_first": 1.11814284324646,
+        "parameter_count": 21074176,
+        "steps": 900,
+        "target_template": {
+          "dtype": "torch.float32",
+          "fingerprint": "482bf1e3108f4fa9652daeea",
+          "mean": 0.03018651343882084,
+          "norm": 29453.78125,
+          "shape": [
+            1,
+            512,
+            7680
+          ],
+          "std": 14.85806655883789
+        },
+        "template_token_cosine": 0.8623981475830078,
+        "template_token_mse": 0.920342206954956,
+        "train_token_cosine": 0.8742619752883911,
+        "train_token_mse": 0.8477882146835327
+      }
+    }
+  },
+  "recipe": {
+    "eval_prompts": {
+      "blue_fox": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light",
+      "cat": "a photorealistic red cat sitting in fresh snow at dawn, soft red light",
+      "corgi": "a corgi astronaut floating in a space station, editorial illustration",
+      "fox": "a photorealistic red fox sitting in fresh snow at dawn, soft red light"
+    },
+    "families": [
+      "flux2-smol",
+      "flux2-mamba"
+    ],
+    "full_carrier_shape": [
+      512,
+      7680
+    ],
+    "logical_branches": 22,
+    "mapper_steps": 900,
+    "native_nonzero_rows_per_prompt": [
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512,
+      512
+    ],
+    "pair_count": 24,
+    "resolution": [
+      256,
+      256
+    ],
+    "seed": 7217,
+    "steps": 4,
+    "train_prompt_count": 30
+  },
+  "schema": "saturn-tecm-conditioner-repair-v2",
+  "status": "exploratory",
+  "target_template": {
+    "dtype": "torch.float32",
+    "fingerprint": "482bf1e3108f4fa9652daeea",
+    "mean": 0.03018651343882084,
+    "norm": 29453.78125,
+    "shape": [
+      1,
+      512,
+      7680
+    ],
+    "std": 14.85806655883789
+  }
+}

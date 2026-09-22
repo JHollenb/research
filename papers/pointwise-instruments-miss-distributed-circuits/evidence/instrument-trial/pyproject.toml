@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "instrument-trial"
+version = "0.1.0"
+description = "When the reading contradicts the consumer: an executable benchmark for verdict-grade interpretability"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+instrument-trial-verify = "instrument_trial.verify:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/instrument_trial"]

@@ -1,0 +1,249 @@
+{
+  "claim_status": "development_observation_only",
+  "content_sha256": "24e0e81ead246aced149931c4e0cf516ef585c7d000ddd91020fffebe3add64f",
+  "execution_receipt": {
+    "launch_config": {
+      "base_worker_sha256": "86526adf1404b76442a6e395d668b8a316dcba73bce5e1284f3b0fcacd43a0e6",
+      "experiment": "qwen-address-whitening",
+      "kind": "one-model-validation-lease",
+      "model": "Qwen3.5-0.8B-Base",
+      "model_root": "/mnt/big/llm-models",
+      "mrun_guarded_request_sha256": "afecfe8d72e5197e2c3a09fd025881789cff7d407871f2f1e9a3d098ffc52ed7",
+      "out_path": "/mnt/big/saturn-observatory/qwen-address-whitening/Qwen3.5-0.8B-Base-seed1811.jsonl",
+      "program_sha256": "75103d26074cc0a4e35556a247c46a5b4461787fef4398f5ae483d4937ee4b2c",
+      "queue_note": "E11 confirmation: re-score the discovery-fit source direction for Qwen3.5-0.8B-Base under raw/centered/diagonal/ZCA(lambda=0.1) candidate transforms; raw parity vs shipped cross-fitted selected_cosine, then negative-selection fraction per (layer, transform). Replay-only; no training, no terminal data.",
+      "reservation": {
+        "ram_mb": 11000.0,
+        "vram_mb": 7000.0
+      },
+      "retry_on_kill": false,
+      "saturn_request_sha256": "0ca23b6631d56dc2c001793cbe7150a0db9da1e8b947f7f0f65c82a4ba0cb79f",
+      "scheduling_contract": {
+        "additional_scheduler_submissions": 0,
+        "branch_execution": "in_process",
+        "checkpoint_policy": "one Beast lease; one explicit Qwen specimen load; discovery + eval capture forwards, direction fit, and all whitening transforms in process",
+        "collection_policy": "direct_job_only",
+        "control_plane": "mrun_outer_lease",
+        "data_plane": "resident_worker",
+        "execution_model": "finite_local_program",
+        "interactive": false,
+        "lease_scope": "entire-worker",
+        "logical_checkpoint_replays": 1,
+        "logical_operations": 1,
+        "max_local_work_items": 256,
+        "max_mrun_submissions": 1,
+        "model_loads": 1,
+        "mrun_retry_policy": "none_for_finite_lease",
+        "one_model_load_per_lease": true,
+        "one_model_per_lease": true,
+        "per_branch_mrun_submissions": 0,
+        "per_transition_mrun_submissions": 0,
+        "physical_forward_accounting": true,
+        "replay_policy": "local_checkpoint_restore",
+        "retain_full_logits": false,
+        "schema": "saturn-single-lease-scheduling-contract-v1",
+        "terminal_opened": false
+      },
+      "schema": "saturn-qwen-address-whitening-request-v1",
+      "task_family": "validation-Qwen3.5-0.8B-Base",
+      "worker_sha256": "cc2022fbff7d6377ca9e3263bf1451585d0a793410d429e70913c882e9437a99"
+    },
+    "log_sha256": "0c555f70f85035b276fe8e08000adf02d7351c4d3bc3665c2bf8090a27b69b63",
+    "mrun_job_id": "job-9863fc324498",
+    "mrun_ok": true,
+    "mrun_result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "PYTHONPATH=saturn_src:mrun_src:.",
+          "/home/beast/domains/mrun/.venv/bin/python",
+          "run_qwen_address_whitening.py",
+          "--model-root",
+          "/mnt/big/llm-models",
+          "--model",
+          "Qwen3.5-0.8B-Base",
+          "--program",
+          "qwen-generational-program-v1.json",
+          "--out",
+          "/mnt/big/saturn-observatory/qwen-address-whitening/Qwen3.5-0.8B-Base-seed1811.jsonl",
+          "--splits",
+          "discovery,heldout,external",
+          "--workload-seed",
+          "1811",
+          "--rows-per-capability",
+          "1",
+          "--max-context",
+          "512",
+          "--zca-lambda",
+          "0.1"
+        ],
+        "cwd": "/mnt/big/mrun-work/job-9863fc324498",
+        "log_path": "/mnt/big/mrun-work/job-9863fc324498/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1787285759.3765485
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1787285760.1177974
+          },
+          {
+            "name": "process.launch",
+            "ts": 1787285760.1613
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1787285760.2223115
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1787285770.4609807
+          },
+          {
+            "name": "finished",
+            "ts": 1787285770.4820297
+          }
+        ]
+      },
+      "elapsed_s": 11.13,
+      "executed_payload": {
+        "host": "beast",
+        "sha256": "97339dafba6c3173d1d1514900335eff339d0d6d002b96bce4b7fbfd542053ed",
+        "size_bytes": 3983415
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 1924.2,
+      "peak_vram_mb": 2170.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "report_present": true,
+    "schema": "saturn-qwen-address-whitening-collect-v1"
+  },
+  "experiment": "qwen-address-whitening",
+  "gates": {
+    "all_transforms_computed": true,
+    "finite": true,
+    "parity_reproduced": true
+  },
+  "max_context": 512,
+  "model_reports": [
+    {
+      "all_transforms_computed": true,
+      "discovery_task_count": 3,
+      "eval_task_count": 6,
+      "final_layer_index": 23,
+      "hidden_size": 1024,
+      "layers_with_direction": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "model": "Qwen3.5-0.8B-Base",
+      "num_hidden_layers": 24,
+      "parity_abs_delta_max": 0.0,
+      "parity_position_match_fraction": 1.0,
+      "parity_within_tolerance": true,
+      "specimen": {
+        "architecture": "Qwen3_5ForConditionalGeneration",
+        "architecture_profile": {
+          "architectures": [
+            "Qwen3_5ForConditionalGeneration"
+          ],
+          "attention_ratio": null,
+          "model_type": "qwen3_5",
+          "parameter_count": null,
+          "tie_word_embeddings": true
+        },
+        "complete": true,
+        "config_sha256": "b90b86f35c8e6925ef74ee04d0e758f0a845c83a42089ad82bbaa948de9b4204",
+        "dense_or_moe": "dense",
+        "evidence_refs": [],
+        "family": "qwen3.5",
+        "generation": "qwen3.5",
+        "model_type": "qwen3_5",
+        "name": "Qwen3.5-0.8B-Base",
+        "path": "/mnt/big/llm-models/Qwen3.5-0.8B-Base",
+        "schema": "saturn-qwen-specimen-v1",
+        "specialization": "general",
+        "tokenizer_sha256": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927",
+        "weight_index_sha256": "ce9a885efdf27d3664fdef5d512ad365216f1074051ef840c7cd8e5431495d0a",
+        "weight_manifest": [
+          {
+            "bytes": 1746942600,
+            "name": "model.safetensors-00001-of-00001.safetensors",
+            "sha256": "c2b1e5a17d9c1e27685d92ed9b382911ebb99955ecd89052d1721241adfbab6c"
+          }
+        ],
+        "weight_sha256": "49719f055993eccfe3f8c6c86f2fb07c274e6e8109efe6458150cce8ca365875"
+      },
+      "transform_negative_fraction_overall": {
+        "centered": 0.0,
+        "diagonal": 0.0,
+        "raw": 0.0,
+        "zca": 0.0
+      },
+      "zca_shrinkage_lambda": 0.1
+    }
+  ],
+  "models": [
+    "Qwen3.5-0.8B-Base"
+  ],
+  "models_completed": [
+    "Qwen3.5-0.8B-Base"
+  ],
+  "output_path": "/mnt/big/saturn-observatory/qwen-address-whitening/Qwen3.5-0.8B-Base-seed1811.jsonl",
+  "output_sha256": "e0b91b9c96846c34de9f4c8ed3e0531e51d9b061d0b63b872a500870646fcf42",
+  "parity_tolerance": 0.001,
+  "per_model_parity_within_tolerance": {
+    "Qwen3.5-0.8B-Base": true
+  },
+  "program_schema": "saturn-qwen-generational-program-v1",
+  "row_count": 840,
+  "rows_per_capability": 1,
+  "schema": "saturn-qwen-address-whitening-report-v1",
+  "splits": [
+    "discovery",
+    "heldout",
+    "external"
+  ],
+  "terminal_opened": false,
+  "transforms": [
+    "raw",
+    "centered",
+    "diagonal",
+    "zca"
+  ],
+  "workload_seed": 1811,
+  "zca_shrinkage_lambda": 0.1
+}

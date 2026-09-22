@@ -1,0 +1,602 @@
+{
+  "e1_own_template": {
+    "cat": 0.05267247557640076,
+    "coyote": 0.053975868970155716,
+    "deer": 0.19867068529129028,
+    "dog": 0.003106845309957862,
+    "fox": 0.12574465572834015,
+    "horse": -0.023929063230752945,
+    "resid_floor_deer_vs_tiger": 0.186477392911911,
+    "tiger": 0.10811936110258102,
+    "wolf": 0.10440473258495331
+  },
+  "execution_receipt": {
+    "archived_report_sha256": "ee5c6f71b65da12612eb2339762ddcab8b500d96b0ac16757b8a53169311e700",
+    "case": "instrument-trial-case2-probe",
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "SATURN_RESIDENT_WORKER=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+      "SATURN_RUN_CONFIG=saturn_run_config.json",
+      "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+      "uv",
+      "run",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "--with",
+      "mlflow>=2.9",
+      "--with",
+      "boto3>=1.34",
+      "--with",
+      "python-dotenv>=1.0",
+      "--with",
+      "trackio>=0.1",
+      "python",
+      "-u",
+      "run_saturn_instrument_trial_case2_probe.py"
+    ],
+    "device": "cuda",
+    "dtype": "bfloat16 encoder / float32 TECM",
+    "experiment": "saturn-instrument-trial-case2-probe",
+    "host_selection": "prefer_beast_softly",
+    "instrument": "Instrument Trial case 2 community arm, strengthened: rebuild the foreign fox carrier exactly as job-e1ba0cbed889 (TECM v3 warm start, 900 steps, seed 7217) with archived own-template E1 parity gate; fit held-out nearest-class-mean probe on an independent 8-animal x 4-template native bank; G1-validate on 2 held-out templates per animal; score the foreign subject rows with a frozen mechanical decision rule; robustness refit at seed 31337. Encoder+mapper only, no diffusion.",
+    "launcher_attempt": 1,
+    "log_sha256": "a56cddb979301ce894fe34d5a20a657ab06fdcbbca673e893c585be6b32b3ce5",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+    "mrun_job_id": "job-f58bcd26f295",
+    "mrun_ok": true,
+    "mrun_result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "DIFFUSERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "TQDM_DISABLE=1",
+          "SATURN_RESIDENT_WORKER=1",
+          "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+          "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+          "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+          "SATURN_RUN_CONFIG=saturn_run_config.json",
+          "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+          "uv",
+          "run",
+          "--offline",
+          "--with",
+          "diffusers==0.39.0",
+          "--with",
+          "transformers==5.14.1",
+          "--with",
+          "accelerate==1.14.0",
+          "--with",
+          "safetensors>=0.5",
+          "--with",
+          "numpy>=2.0",
+          "--with",
+          "mlflow>=2.9",
+          "--with",
+          "boto3>=1.34",
+          "--with",
+          "python-dotenv>=1.0",
+          "--with",
+          "trackio>=0.1",
+          "python",
+          "-u",
+          "run_saturn_instrument_trial_case2_probe.py"
+        ],
+        "cwd": "/mnt/big/mrun-work/job-f58bcd26f295",
+        "log_path": "/mnt/big/mrun-work/job-f58bcd26f295/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1787285770.5830054
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1787285771.4327934
+          },
+          {
+            "name": "process.launch",
+            "ts": 1787285771.468695
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1787285771.5265615
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1787286155.5127726
+          },
+          {
+            "name": "finished",
+            "ts": 1787286155.5390668
+          }
+        ]
+      },
+      "elapsed_s": 384.98,
+      "executed_payload": {
+        "host": "beast",
+        "sha256": "0f7545652eb8dcba75d02a21808cae5c48644b501bf35e3c18e8bec47e627eb1",
+        "size_bytes": 4012188
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 23509.5,
+      "peak_vram_mb": 8314.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "needs": {
+      "cuda": true
+    },
+    "payload": {
+      "fit_reference": {
+        "batch_size": 4.0,
+        "loss_final": 1.9915603399276733,
+        "loss_first": 3.0175435543060303,
+        "parameter_count": 21074176.0,
+        "steps": 900.0,
+        "template_token_cosine": 0.8622464537620544,
+        "template_token_mse": 0.943676233291626,
+        "train_token_cosine": 0.8602403402328491,
+        "train_token_mse": 0.9526237845420837
+      },
+      "mapper_seeds": [
+        7217,
+        31337
+      ],
+      "mapper_steps": 900,
+      "parity_reference": {
+        "cat": 0.05267247557640076,
+        "coyote": 0.053975868970155716,
+        "deer": 0.19867068529129028,
+        "dog": 0.003106845309957862,
+        "fox": 0.12574465572834015,
+        "horse": -0.023929063230752945,
+        "resid_floor_deer_vs_tiger": 0.186477392911911,
+        "tiger": 0.10811936110258102,
+        "wolf": 0.10440473258495331
+      },
+      "parity_tolerance": 0.005
+    },
+    "pipeline_class": "Flux2KleinPipeline",
+    "preflight": "strict",
+    "report_present": true,
+    "reservation": {
+      "ram_mb": 34000.0,
+      "vram_mb": 10000.0
+    },
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "checkpoint_policy": "one model load + two TECM warm starts inside the lease; all probe scoring is in-process tensor math; no renders, no per-branch submissions",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_local_program",
+      "interactive": false,
+      "lease_scope": "entire-worker",
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "replay_policy": "local_checkpoint_restore",
+      "schema": "saturn-single-lease-scheduling-contract-v1"
+    },
+    "schema": "saturn-instrument-trial-case2-probe-mrun-request-v1",
+    "task_family": "saturn-flux-rosetta-manalysis",
+    "worker_sha256": "a9c4eb17b3b6a041f71c76240708a5c20c65c451b98bca9e9a5ef1ed1cce3047"
+  },
+  "foreign_fingerprints": {
+    "31337": {
+      "dtype": "torch.float32",
+      "fingerprint": "e2d5ea6da5a61be650eac256",
+      "mean": 0.019395146518945694,
+      "norm": 29480.8828125,
+      "shape": [
+        512,
+        7680
+      ],
+      "std": 14.872712135314941
+    },
+    "7217": {
+      "dtype": "torch.float32",
+      "fingerprint": "f96a9fb2c07a8462cfa5da62",
+      "mean": 0.021688807755708694,
+      "norm": 29466.431640625,
+      "shape": [
+        512,
+        7680
+      ],
+      "std": 14.865018844604492
+    }
+  },
+  "foreign_scores": {
+    "31337": {
+      "cosines": {
+        "cat": 0.062491606920957565,
+        "coyote": 0.1608612835407257,
+        "deer": 0.17011404037475586,
+        "dog": 0.06945746392011642,
+        "fox": 0.198511004447937,
+        "horse": 0.08593106269836426,
+        "tiger": 0.22189673781394958,
+        "wolf": 0.21767421066761017
+      },
+      "margin": 0.0042225271463394165,
+      "margin_floor": 0.3524046838283539,
+      "top1": "tiger",
+      "top1_cos": 0.22189673781394958,
+      "verdict": "no decodable content"
+    },
+    "7217": {
+      "cosines": {
+        "cat": 0.04788537323474884,
+        "coyote": 0.10844074934720993,
+        "deer": 0.11622622609138489,
+        "dog": 0.05348070710897446,
+        "fox": 0.12953998148441315,
+        "horse": 0.06262633204460144,
+        "tiger": 0.18480461835861206,
+        "wolf": 0.14943388104438782
+      },
+      "margin": 0.03537073731422424,
+      "margin_floor": 0.3524046838283539,
+      "top1": "tiger",
+      "top1_cos": 0.18480461835861206,
+      "verdict": "no decodable content"
+    }
+  },
+  "fox_prompt": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+  "gates": {
+    "environment": {
+      "cuda_device": "NVIDIA GeForce RTX 4080",
+      "torch_version": "2.13.0+cu130"
+    },
+    "fit_canary": {
+      "batch_size": {
+        "abs_delta": 0.0,
+        "archived": 4.0,
+        "recomputed": 4.0
+      },
+      "loss_final": {
+        "abs_delta": 0.0,
+        "archived": 1.9915603399276733,
+        "recomputed": 1.9915603399276733
+      },
+      "loss_first": {
+        "abs_delta": 0.0,
+        "archived": 3.0175435543060303,
+        "recomputed": 3.0175435543060303
+      },
+      "parameter_count": {
+        "abs_delta": 0.0,
+        "archived": 21074176.0,
+        "recomputed": 21074176.0
+      },
+      "steps": {
+        "abs_delta": 0.0,
+        "archived": 900.0,
+        "recomputed": 900.0
+      },
+      "template_token_cosine": {
+        "abs_delta": 0.0,
+        "archived": 0.8622464537620544,
+        "recomputed": 0.8622464537620544
+      },
+      "template_token_mse": {
+        "abs_delta": 0.0,
+        "archived": 0.943676233291626,
+        "recomputed": 0.943676233291626
+      },
+      "train_token_cosine": {
+        "abs_delta": 0.0,
+        "archived": 0.8602403402328491,
+        "recomputed": 0.8602403402328491
+      },
+      "train_token_mse": {
+        "abs_delta": 0.0,
+        "archived": 0.9526237845420837,
+        "recomputed": 0.9526237845420837
+      }
+    },
+    "g1_animals_fully_correct": 8,
+    "g1_item_accuracy": "16/16",
+    "g1_ok": true,
+    "native_fox_probe_says_fox": true,
+    "parity_max_abs_delta": 0.0,
+    "parity_ok": true,
+    "parity_tolerance": 0.005,
+    "verdict_valid": true
+  },
+  "model": {
+    "mapper_fits": {
+      "31337": {
+        "batch_size": 4,
+        "loss_final": 2.0678250789642334,
+        "loss_first": 3.0175435543060303,
+        "objective": "contrast-centered-native-template-residual-v1",
+        "parameter_count": 21074176,
+        "steps": 900,
+        "template_token_cosine": 0.8622464537620544,
+        "template_token_mse": 0.943676233291626,
+        "train_token_cosine": 0.8686076402664185,
+        "train_token_mse": 0.9017521142959595
+      },
+      "7217": {
+        "batch_size": 4,
+        "loss_final": 1.9915603399276733,
+        "loss_first": 3.0175435543060303,
+        "objective": "contrast-centered-native-template-residual-v1",
+        "parameter_count": 21074176,
+        "steps": 900,
+        "template_token_cosine": 0.8622464537620544,
+        "template_token_mse": 0.943676233291626,
+        "train_token_cosine": 0.8602403402328491,
+        "train_token_mse": 0.9526237845420837
+      }
+    },
+    "mapper_seeds": [
+      7217,
+      31337
+    ],
+    "mapper_steps": 900,
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B"
+  },
+  "parity": {
+    "deltas": {
+      "cat": 0.0,
+      "coyote": 0.0,
+      "deer": 0.0,
+      "dog": 0.0,
+      "fox": 0.0,
+      "horse": 0.0,
+      "resid_floor_deer_vs_tiger": 0.0,
+      "tiger": 0.0,
+      "wolf": 0.0
+    },
+    "reference": {
+      "cat": 0.05267247557640076,
+      "coyote": 0.053975868970155716,
+      "deer": 0.19867068529129028,
+      "dog": 0.003106845309957862,
+      "fox": 0.12574465572834015,
+      "horse": -0.023929063230752945,
+      "resid_floor_deer_vs_tiger": 0.186477392911911,
+      "tiger": 0.10811936110258102,
+      "wolf": 0.10440473258495331
+    }
+  },
+  "peak_rss_mb": 23489.9,
+  "peak_vram_mb": 7998.3,
+  "preregistration": "experiments/2026-08-20-instrument-trial/PREREGISTRATION.md",
+  "probe": {
+    "margin_floor": 0.3524046838283539,
+    "native_fox_score": {
+      "cosines": {
+        "cat": 0.007377368398010731,
+        "coyote": 0.14950759708881378,
+        "deer": 0.044107288122177124,
+        "dog": -0.004989025183022022,
+        "fox": 0.4265100955963135,
+        "horse": -0.08052711188793182,
+        "tiger": 0.06101725250482559,
+        "wolf": 0.1509312242269516
+      },
+      "margin": 0.2755788713693619,
+      "top1": "fox",
+      "top1_cos": 0.4265100955963135
+    },
+    "templates_fit": [
+      "a photorealistic {animal} sitting in fresh snow at dawn, soft light",
+      "a photorealistic {animal} walking through a foggy forest at dawn, soft light",
+      "a photograph of a {animal} standing in a sunlit meadow",
+      "a {animal} resting beside a mountain river, golden hour photo"
+    ],
+    "templates_val": [
+      "a close-up photograph of a {animal} at dusk in tall grass",
+      "a photorealistic {animal} standing on a rocky hillside under an overcast sky"
+    ],
+    "validation": [
+      {
+        "animal": "fox",
+        "correct": true,
+        "margin": 0.365526407957077,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "fox",
+        "top1_cos": 0.7389585971832275
+      },
+      {
+        "animal": "fox",
+        "correct": true,
+        "margin": 0.5719340443611145,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "fox",
+        "top1_cos": 0.9002726674079895
+      },
+      {
+        "animal": "wolf",
+        "correct": true,
+        "margin": 0.3524046838283539,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "wolf",
+        "top1_cos": 0.7387608289718628
+      },
+      {
+        "animal": "wolf",
+        "correct": true,
+        "margin": 0.5752148032188416,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "wolf",
+        "top1_cos": 0.9134762287139893
+      },
+      {
+        "animal": "dog",
+        "correct": true,
+        "margin": 0.39218634366989136,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "dog",
+        "top1_cos": 0.6806086897850037
+      },
+      {
+        "animal": "dog",
+        "correct": true,
+        "margin": 0.5939244627952576,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "dog",
+        "top1_cos": 0.8869374394416809
+      },
+      {
+        "animal": "cat",
+        "correct": true,
+        "margin": 0.388083815574646,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "cat",
+        "top1_cos": 0.7094026207923889
+      },
+      {
+        "animal": "cat",
+        "correct": true,
+        "margin": 0.5847942233085632,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "cat",
+        "top1_cos": 0.9004241824150085
+      },
+      {
+        "animal": "deer",
+        "correct": true,
+        "margin": 0.4523684084415436,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "deer",
+        "top1_cos": 0.7364634275436401
+      },
+      {
+        "animal": "deer",
+        "correct": true,
+        "margin": 0.8002284690737724,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "deer",
+        "top1_cos": 0.9211256504058838
+      },
+      {
+        "animal": "horse",
+        "correct": true,
+        "margin": 0.44260093569755554,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "horse",
+        "top1_cos": 0.7066539525985718
+      },
+      {
+        "animal": "horse",
+        "correct": true,
+        "margin": 0.69465272128582,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "horse",
+        "top1_cos": 0.9076862335205078
+      },
+      {
+        "animal": "tiger",
+        "correct": true,
+        "margin": 0.38963985443115234,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "tiger",
+        "top1_cos": 0.752237856388092
+      },
+      {
+        "animal": "tiger",
+        "correct": true,
+        "margin": 0.6350619196891785,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "tiger",
+        "top1_cos": 0.924402117729187
+      },
+      {
+        "animal": "coyote",
+        "correct": true,
+        "margin": 0.48810017108917236,
+        "template": "a close-up photograph of a {animal} at dusk in tall grass",
+        "top1": "coyote",
+        "top1_cos": 0.7894411087036133
+      },
+      {
+        "animal": "coyote",
+        "correct": true,
+        "margin": 0.8341833129525185,
+        "template": "a photorealistic {animal} standing on a rocky hillside under an overcast sky",
+        "top1": "coyote",
+        "top1_cos": 0.9411217570304871
+      }
+    ]
+  },
+  "robustness_disclosure": "mapper_seeds[1] is a mapper REFIT, not an arbiter-matched state: the archived consumer ground truth (transplant renders) adjudicated only the seed-7217 carrier; the second score is informational robustness, not a second graded seed.",
+  "rows": {
+    "by_animal": {
+      "cat": [
+        7,
+        8
+      ],
+      "coyote": [
+        7,
+        8,
+        9
+      ],
+      "deer": [
+        7,
+        8
+      ],
+      "dog": [
+        7,
+        8
+      ],
+      "fox": [
+        7,
+        8
+      ],
+      "horse": [
+        7,
+        8
+      ],
+      "tiger": [
+        7,
+        8
+      ],
+      "wolf": [
+        7,
+        8
+      ]
+    },
+    "fox": [
+      7,
+      8
+    ]
+  },
+  "schema": "saturn-instrument-trial-case2-probe-v1",
+  "wall_s_total": 311.29
+}

@@ -1,0 +1,3211 @@
+{
+  "axis_count": 20,
+  "counts": {
+    "carrier_candidate": 1,
+    "carrier_certified": 14,
+    "certified": 5,
+    "unknown": 0
+  },
+  "interpretation": "Each row is one full native-Qwen checkpoint-replay contrast. Certified and carrier-certified are bounded route claims; carrier-candidate is a causal trend with one or more promotion gates open. No row establishes minimality, universality, or a token/channel semantic address.",
+  "proof_seed": 31337,
+  "results_root": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout",
+  "route": [
+    "joint.2",
+    "joint.3",
+    "joint.4",
+    "single.0"
+  ],
+  "rows": [
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.06586444846664052,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.9022082028992814,
+        "min_target_progress": 0.9218419936605677
+      },
+      "axis_id": "lighting_dawn_sunset",
+      "category": "lighting",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [],
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-19f6aedb7306",
+      "label": "lighting/dawn to sunset",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting in fresh snow at sunset, warm orange light",
+        "source": "a photorealistic black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic black cat sitting in fresh snow at midnight, silver moonlight"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.928804,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.5311674150808585e-10,
+                0.11827317702221252,
+                0.564263300154578,
+                0.8059227853460087,
+                0.9397130672362543
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.20731620490550995,
+                0.7159516215324402,
+                0.8749788403511047,
+                0.9759618639945984
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9756000555372977,
+                "joint.3->joint.4": 0.9513846667013122,
+                "joint.4->single.0": 0.9095405987199103
+              },
+              "necessity_route_ablation_scene_progress": 0.06586444846664052,
+              "scene_return_alignment": 0.9873995184898376,
+              "scene_return_progress": 0.9759618639945984,
+              "sham_scene_progress": -0.09075597310156547,
+              "sufficiency_scene_progress": 0.9397130672362543,
+              "wrong_color_margin": 0.9126619218121821,
+              "wrong_color_progress": 0.8699316927721077,
+              "wrong_color_scene_progress": -0.0427302290400744
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.5311674150808585e-10,
+            "scene_dose_025": 0.11827317702221252,
+            "scene_dose_050": 0.564263300154578,
+            "scene_dose_075": 0.8059227853460087,
+            "scene_dose_100": 0.9397130672362543
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4241231381893158,
+            "joint3_joint4": 0.8457539677619934,
+            "joint4_single0": 1.5328623056411743
+          },
+          "route_ablation_progress": 0.06586444846664052,
+          "seed": 31337,
+          "sham_progress": -0.09075597310156547,
+          "source_target_mad": 65.30962371826172,
+          "target_progress": 0.9397130672362543,
+          "target_return_alignment": 0.9873995184898376,
+          "target_return_progress": 0.9759618639945984,
+          "wrong_axis_color_progress": 0.8699316927721077,
+          "wrong_axis_margin": 0.9126619218121821,
+          "wrong_axis_progress": -0.0427302290400744
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.8639922938490372e-10,
+                0.08036424597511949,
+                0.3679796326153656,
+                0.7542750850526078,
+                0.9218419936605677
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.08090036362409592,
+                0.4318253993988037,
+                0.8460209965705872,
+                0.9594055414199829
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9699165636201748,
+                "joint.3->joint.4": 0.9360703917639392,
+                "joint.4->single.0": 0.9022082028992814
+              },
+              "necessity_route_ablation_scene_progress": 0.009824738977961878,
+              "scene_return_alignment": 0.9817162156105042,
+              "scene_return_progress": 0.9594055414199829,
+              "sham_scene_progress": -0.46692506432604963,
+              "sufficiency_scene_progress": 0.9218419936605677,
+              "wrong_color_margin": 1.2177085012587772,
+              "wrong_color_progress": 0.8984712944777371,
+              "wrong_color_scene_progress": -0.31923720678104006
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.8639922938490372e-10,
+            "scene_dose_025": 0.08036424597511949,
+            "scene_dose_050": 0.3679796326153656,
+            "scene_dose_075": 0.7542750850526078,
+            "scene_dose_100": 0.9218419936605677
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.5388743281364441,
+            "joint3_joint4": 1.147552490234375,
+            "joint4_single0": 1.7537384033203125
+          },
+          "route_ablation_progress": 0.009824738977961878,
+          "seed": 60660,
+          "sham_progress": -0.46692506432604963,
+          "source_target_mad": 53.64830017089844,
+          "target_progress": 0.9218419936605677,
+          "target_return_alignment": 0.9817162156105042,
+          "target_return_progress": 0.9594055414199829,
+          "wrong_axis_color_progress": 0.8984712944777371,
+          "wrong_axis_margin": 1.2177085012587772,
+          "wrong_axis_progress": -0.31923720678104006
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.0013330407005516243,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.7849049727839315,
+        "min_target_progress": 0.9112289503387431
+      },
+      "axis_id": "identity_cat_fox",
+      "category": "identity",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [],
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-ecd876ddbd33",
+      "label": "identity/cat to fox",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic red fox sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.916701,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.4012136723428057e-10,
+                0.044726425116174306,
+                0.2015725171164694,
+                0.5828414619911314,
+                0.9112289503387431
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.08045240491628647,
+                0.329633504152298,
+                0.6832382678985596,
+                0.9834698438644409
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9700190516939946,
+                "joint.3->joint.4": 0.9265168223739961,
+                "joint.4->single.0": 0.7849049727839315
+              },
+              "necessity_route_ablation_scene_progress": 0.0013330407005516243,
+              "scene_return_alignment": 0.9871345162391663,
+              "scene_return_progress": 0.9834698438644409,
+              "sham_scene_progress": -0.5446411458332172,
+              "sufficiency_scene_progress": 0.9112289503387431,
+              "wrong_color_margin": 0.8003439460718288,
+              "wrong_color_progress": 0.9511841657176577,
+              "wrong_color_scene_progress": 0.15084021964582894
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.4012136723428057e-10,
+            "scene_dose_025": 0.044726425116174306,
+            "scene_dose_050": 0.2015725171164694,
+            "scene_dose_075": 0.5828414619911314,
+            "scene_dose_100": 0.9112289503387431
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.5169525146484375,
+            "joint3_joint4": 1.2768453359603882,
+            "joint4_single0": 3.66778564453125
+          },
+          "route_ablation_progress": 0.0013330407005516243,
+          "seed": 31337,
+          "sham_progress": -0.5446411458332172,
+          "source_target_mad": 41.64561462402344,
+          "target_progress": 0.9112289503387431,
+          "target_return_alignment": 0.9871345162391663,
+          "target_return_progress": 0.9834698438644409,
+          "wrong_axis_color_progress": 0.9511841657176577,
+          "wrong_axis_margin": 0.8003439460718288,
+          "wrong_axis_progress": 0.15084021964582894
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                3.0008218132593356e-10,
+                0.04484181736888604,
+                0.1618399059904806,
+                0.5996528229316191,
+                0.9216751833307929
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.04550934210419655,
+                0.1888471096754074,
+                0.6606231331825256,
+                0.9739108085632324
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9766375963175715,
+                "joint.3->joint.4": 0.9360861339245478,
+                "joint.4->single.0": 0.8969538396705466
+              },
+              "necessity_route_ablation_scene_progress": -0.0012727022670684374,
+              "scene_return_alignment": 0.9818292260169983,
+              "scene_return_progress": 0.9739108085632324,
+              "sham_scene_progress": -0.9400080651331564,
+              "sufficiency_scene_progress": 0.9216751833307929,
+              "wrong_color_margin": 0.8951700572284488,
+              "wrong_color_progress": 0.9699538108247835,
+              "wrong_color_scene_progress": 0.07478375359633471
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 3.0008218132593356e-10,
+            "scene_dose_025": 0.04484181736888604,
+            "scene_dose_050": 0.1618399059904806,
+            "scene_dose_075": 0.5996528229316191,
+            "scene_dose_100": 0.9216751833307929
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4030914306640625,
+            "joint3_joint4": 1.0980072021484375,
+            "joint4_single0": 1.7529398202896118
+          },
+          "route_ablation_progress": -0.0012727022670684374,
+          "seed": 60660,
+          "sham_progress": -0.9400080651331564,
+          "source_target_mad": 33.3242073059082,
+          "target_progress": 0.9216751833307929,
+          "target_return_alignment": 0.9818292260169983,
+          "target_return_progress": 0.9739108085632324,
+          "wrong_axis_color_progress": 0.9699538108247835,
+          "wrong_axis_margin": 0.8951700572284488,
+          "wrong_axis_progress": 0.07478375359633471
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.012499324142080437,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5986375568044038,
+        "min_target_progress": 0.9283395356004196
+      },
+      "axis_id": "pose_sitting_lying",
+      "category": "pose",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [],
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-fc5e74bcc30e",
+      "label": "pose/sitting to lying",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic small black cat lying on its side in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic small black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic small black cat sitting beside a red ball in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.884355,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.9884838220463052e-10,
+                0.19982814393668646,
+                0.5209928414673901,
+                0.780411292126195,
+                0.9283395356004196
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.3080574572086334,
+                0.6480205059051514,
+                0.9144150018692017,
+                0.9673060774803162
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9058994527772793,
+                "joint.3->joint.4": 0.7247319918874016,
+                "joint.4->single.0": 0.5986375568044038
+              },
+              "necessity_route_ablation_scene_progress": 0.012499324142080437,
+              "scene_return_alignment": 0.9774612784385681,
+              "scene_return_progress": 0.9673060774803162,
+              "sham_scene_progress": -0.3864421852687998,
+              "sufficiency_scene_progress": 0.9283395356004196,
+              "wrong_color_margin": 1.1202168819660723,
+              "wrong_color_progress": 0.9158690927266966,
+              "wrong_color_scene_progress": -0.2043477892393757
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.9884838220463052e-10,
+            "scene_dose_025": 0.19982814393668646,
+            "scene_dose_050": 0.5209928414673901,
+            "scene_dose_075": 0.780411292126195,
+            "scene_dose_100": 0.9283395356004196
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3680928647518158,
+            "joint3_joint4": 1.0694020986557007,
+            "joint4_single0": 1.4423269033432007
+          },
+          "route_ablation_progress": 0.012499324142080437,
+          "seed": 31337,
+          "sham_progress": -0.3864421852687998,
+          "source_target_mad": 50.28958511352539,
+          "target_progress": 0.9283395356004196,
+          "target_return_alignment": 0.9774612784385681,
+          "target_return_progress": 0.9673060774803162,
+          "wrong_axis_color_progress": 0.9158690927266966,
+          "wrong_axis_margin": 1.1202168819660723,
+          "wrong_axis_progress": -0.2043477892393757
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.6868273444714532e-10,
+                0.0738320233238492,
+                0.4055282741659455,
+                0.8214532624569588,
+                0.9537343382644607
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.23385508358478546,
+                0.6039555072784424,
+                0.9114156365394592,
+                0.9863770604133606
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9275724153674315,
+                "joint.3->joint.4": 0.6963781343774218,
+                "joint.4->single.0": 0.6599781307575245
+              },
+              "necessity_route_ablation_scene_progress": 0.0017965782405394704,
+              "scene_return_alignment": 0.9890767931938171,
+              "scene_return_progress": 0.9863770604133606,
+              "sham_scene_progress": -0.44212518688688185,
+              "sufficiency_scene_progress": 0.9537343382644607,
+              "wrong_color_margin": 0.8860190481363606,
+              "wrong_color_progress": 0.8450217415703833,
+              "wrong_color_scene_progress": -0.04099730656597722
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.6868273444714532e-10,
+            "scene_dose_025": 0.0738320233238492,
+            "scene_dose_050": 0.4055282741659455,
+            "scene_dose_075": 0.8214532624569588,
+            "scene_dose_100": 0.9537343382644607
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.309539794921875,
+            "joint3_joint4": 1.2613677978515625,
+            "joint4_single0": 1.2137197256088257
+          },
+          "route_ablation_progress": 0.0017965782405394704,
+          "seed": 60660,
+          "sham_progress": -0.44212518688688185,
+          "source_target_mad": 59.282894134521484,
+          "target_progress": 0.9537343382644607,
+          "target_return_alignment": 0.9890767931938171,
+          "target_return_progress": 0.9863770604133606,
+          "wrong_axis_color_progress": 0.8450217415703833,
+          "wrong_axis_margin": 0.8860190481363606,
+          "wrong_axis_progress": -0.04099730656597722
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": -0.004452463576337218,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5434982283640143,
+        "min_target_progress": 0.9235127456249831
+      },
+      "axis_id": "orientation_left_right",
+      "category": "pose",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [],
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-fc5e74bcc30e",
+      "label": "pose/orientation",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat facing right while sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic black cat facing left while sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat facing left while sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.875393,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.8659462863723775e-10,
+                -0.0031972007796352564,
+                0.10924679906812707,
+                0.7536707628720483,
+                0.9640943345718539
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.06583692133426666,
+                0.2817709743976593,
+                0.8050283789634705,
+                0.9911098480224609
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.808596322218841,
+                "joint.3->joint.4": 0.6855460470767469,
+                "joint.4->single.0": 0.5718766945354344
+              },
+              "necessity_route_ablation_scene_progress": -0.004452463576337218,
+              "scene_return_alignment": 0.9943020343780518,
+              "scene_return_progress": 0.9911098480224609,
+              "sham_scene_progress": -0.5515579171515652,
+              "sufficiency_scene_progress": 0.9640943345718539,
+              "wrong_color_margin": 1.249536804906679,
+              "wrong_color_progress": 0.9608547627509328,
+              "wrong_color_scene_progress": -0.2886820421557461
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.8659462863723775e-10,
+            "scene_dose_025": -0.0031972007796352564,
+            "scene_dose_050": 0.10924679906812707,
+            "scene_dose_075": 0.7536707628720483,
+            "scene_dose_100": 0.9640943345718539
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3280385434627533,
+            "joint3_joint4": 0.5310313105583191,
+            "joint4_single0": 0.7378947138786316
+          },
+          "route_ablation_progress": -0.004452463576337218,
+          "seed": 31337,
+          "sham_progress": -0.5515579171515652,
+          "source_target_mad": 53.59211349487305,
+          "target_progress": 0.9640943345718539,
+          "target_return_alignment": 0.9943020343780518,
+          "target_return_progress": 0.9911098480224609,
+          "wrong_axis_color_progress": 0.9608547627509328,
+          "wrong_axis_margin": 1.249536804906679,
+          "wrong_axis_progress": -0.2886820421557461
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.7340141262044426e-10,
+                -0.001801163171311515,
+                0.03200439063965943,
+                0.12192791886794463,
+                0.9235127456249831
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.016882913187146187,
+                0.050976600497961044,
+                0.18607676029205322,
+                0.9667421579360962
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.7603214420613393,
+                "joint.3->joint.4": 0.7103489391868985,
+                "joint.4->single.0": 0.5434982283640143
+              },
+              "necessity_route_ablation_scene_progress": -0.007086592299925476,
+              "scene_return_alignment": 0.979665219783783,
+              "scene_return_progress": 0.9667421579360962,
+              "sham_scene_progress": -1.1035496889562473,
+              "sufficiency_scene_progress": 0.9235127456249831,
+              "wrong_color_margin": 1.5431680746187018,
+              "wrong_color_progress": 0.9655954488963474,
+              "wrong_color_scene_progress": -0.5775726257223543
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.7340141262044426e-10,
+            "scene_dose_025": -0.001801163171311515,
+            "scene_dose_050": 0.03200439063965943,
+            "scene_dose_075": 0.12192791886794463,
+            "scene_dose_100": 0.9235127456249831
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3005320131778717,
+            "joint3_joint4": 0.3757222592830658,
+            "joint4_single0": 0.5814564824104309
+          },
+          "route_ablation_progress": -0.007086592299925476,
+          "seed": 60660,
+          "sham_progress": -1.1035496889562473,
+          "source_target_mad": 36.57625961303711,
+          "target_progress": 0.9235127456249831,
+          "target_return_alignment": 0.979665219783783,
+          "target_return_progress": 0.9667421579360962,
+          "wrong_axis_color_progress": 0.9655954488963474,
+          "wrong_axis_margin": 1.5431680746187018,
+          "wrong_axis_progress": -0.5775726257223543
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.11359084122042917,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6799870583178187,
+        "min_target_progress": 0.9050707659482986
+      },
+      "axis_id": "size_small_large",
+      "category": "appearance",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [],
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-ecd876ddbd33",
+      "label": "appearance/size",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic large black cat sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic small black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic small white cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.864882,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.581609370722049e-10,
+                0.3696288574128819,
+                0.6420129991341038,
+                0.7742164713870977,
+                0.9050707659482986
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.38200539350509644,
+                0.7120809555053711,
+                0.8773170709609985,
+                0.9780418872833252
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9300653359309703,
+                "joint.3->joint.4": 0.8178772354706997,
+                "joint.4->single.0": 0.7539190738475003
+              },
+              "necessity_route_ablation_scene_progress": 0.11359084122042917,
+              "scene_return_alignment": 0.9818643927574158,
+              "scene_return_progress": 0.9780418872833252,
+              "sham_scene_progress": -0.9069823410546658,
+              "sufficiency_scene_progress": 0.9050707659482986,
+              "wrong_color_margin": 1.69981990218937,
+              "wrong_color_progress": 0.9467004566385103,
+              "wrong_color_scene_progress": -0.7531194455508596
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.581609370722049e-10,
+            "scene_dose_025": 0.3696288574128819,
+            "scene_dose_050": 0.6420129991341038,
+            "scene_dose_075": 0.7742164713870977,
+            "scene_dose_100": 0.9050707659482986
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3194681704044342,
+            "joint3_joint4": 0.840484619140625,
+            "joint4_single0": 1.0511270761489868
+          },
+          "route_ablation_progress": 0.11359084122042917,
+          "seed": 31337,
+          "sham_progress": -0.9069823410546658,
+          "source_target_mad": 38.735530853271484,
+          "target_progress": 0.9050707659482986,
+          "target_return_alignment": 0.9818643927574158,
+          "target_return_progress": 0.9780418872833252,
+          "wrong_axis_color_progress": 0.9467004566385103,
+          "wrong_axis_margin": 1.69981990218937,
+          "wrong_axis_progress": -0.7531194455508596
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                4.050514368358904e-10,
+                0.18217337663723088,
+                0.37120415985584854,
+                0.6143186117539035,
+                0.9315196433827774
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.1750786155462265,
+                0.4011710584163666,
+                0.6957846283912659,
+                0.9819533824920654
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8911268367664636,
+                "joint.3->joint.4": 0.8262135962704449,
+                "joint.4->single.0": 0.6799870583178187
+              },
+              "necessity_route_ablation_scene_progress": 0.024587791513594803,
+              "scene_return_alignment": 0.9908269643783569,
+              "scene_return_progress": 0.9819533824920654,
+              "sham_scene_progress": -2.2331747045192616,
+              "sufficiency_scene_progress": 0.9315196433827774,
+              "wrong_color_margin": 2.280405982194001,
+              "wrong_color_progress": 0.9694337533859734,
+              "wrong_color_scene_progress": -1.3109722288080277
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 4.050514368358904e-10,
+            "scene_dose_025": 0.18217337663723088,
+            "scene_dose_050": 0.37120415985584854,
+            "scene_dose_075": 0.6143186117539035,
+            "scene_dose_100": 0.9315196433827774
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.2980550229549408,
+            "joint3_joint4": 0.4657948911190033,
+            "joint4_single0": 0.8613840937614441
+          },
+          "route_ablation_progress": 0.024587791513594803,
+          "seed": 60660,
+          "sham_progress": -2.2331747045192616,
+          "source_target_mad": 24.6882266998291,
+          "target_progress": 0.9315196433827774,
+          "target_return_alignment": 0.9908269643783569,
+          "target_return_progress": 0.9819533824920654,
+          "wrong_axis_color_progress": 0.9694337533859734,
+          "wrong_axis_margin": 2.280405982194001,
+          "wrong_axis_progress": -1.3109722288080277
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.005921484097489271,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.8436510707522117,
+        "min_target_progress": 0.8605439026950518
+      },
+      "axis_id": "material_robot_metal_wood",
+      "category": "material",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-ab73418b53f2",
+      "label": "material/robot metal to wood",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic carved wooden robot standing in a snowy field at dawn, soft blue light",
+        "source": "a photorealistic silver metal robot standing in a snowy field at dawn, soft blue light",
+        "wrong_axis": "a photorealistic silver metal robot standing on a sandy beach at noon, bright sunlight"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.871161,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.946566324268929e-10,
+                0.10138415950238788,
+                0.3632737683900914,
+                0.6804932440239553,
+                0.8605439026950518
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.12149713933467865,
+                0.4955114424228668,
+                0.7952880859375,
+                0.9371930360794067
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9431940273311187,
+                "joint.3->joint.4": 0.8953619862721691,
+                "joint.4->single.0": 0.8436510707522117
+              },
+              "necessity_route_ablation_scene_progress": -0.005942162725117939,
+              "scene_return_alignment": 0.9651192426681519,
+              "scene_return_progress": 0.9371930360794067,
+              "sham_scene_progress": -0.7457027359941588,
+              "sufficiency_scene_progress": 0.8605439026950518,
+              "wrong_color_margin": 1.6880548363511678,
+              "wrong_color_progress": 0.6911160091277608,
+              "wrong_color_scene_progress": -0.996938827223407
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.946566324268929e-10,
+            "scene_dose_025": 0.10138415950238788,
+            "scene_dose_050": 0.3632737683900914,
+            "scene_dose_075": 0.6804932440239553,
+            "scene_dose_100": 0.8605439026950518
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.6371663212776184,
+            "joint3_joint4": 1.1703439950942993,
+            "joint4_single0": 1.7678018808364868
+          },
+          "route_ablation_progress": -0.005942162725117939,
+          "seed": 31337,
+          "sham_progress": -0.7457027359941588,
+          "source_target_mad": 33.93780517578125,
+          "target_progress": 0.8605439026950518,
+          "target_return_alignment": 0.9651192426681519,
+          "target_return_progress": 0.9371930360794067,
+          "wrong_axis_color_progress": 0.6911160091277608,
+          "wrong_axis_margin": 1.6880548363511678,
+          "wrong_axis_progress": -0.996938827223407
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                3.1603430983295766e-10,
+                0.11315932330642009,
+                0.3127331283134184,
+                0.5944699244035746,
+                0.8795712396441934
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.10089565813541412,
+                0.35737475752830505,
+                0.6647037863731384,
+                0.9505783319473267
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9547959799904645,
+                "joint.3->joint.4": 0.9339509687286206,
+                "joint.4->single.0": 0.8975132109961579
+              },
+              "necessity_route_ablation_scene_progress": 0.005921484097489271,
+              "scene_return_alignment": 0.9678381681442261,
+              "scene_return_progress": 0.9505783319473267,
+              "sham_scene_progress": -0.8729517874930461,
+              "sufficiency_scene_progress": 0.8795712396441934,
+              "wrong_color_margin": 2.1780303317442247,
+              "wrong_color_progress": 0.9181117039593152,
+              "wrong_color_scene_progress": -1.2599186277849097
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 3.1603430983295766e-10,
+            "scene_dose_025": 0.11315932330642009,
+            "scene_dose_050": 0.3127331283134184,
+            "scene_dose_075": 0.5944699244035746,
+            "scene_dose_100": 0.8795712396441934
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.5403493046760559,
+            "joint3_joint4": 0.7910715937614441,
+            "joint4_single0": 1.2468923330307007
+          },
+          "route_ablation_progress": 0.005921484097489271,
+          "seed": 60660,
+          "sham_progress": -0.8729517874930461,
+          "source_target_mad": 31.642135620117188,
+          "target_progress": 0.8795712396441934,
+          "target_return_alignment": 0.9678381681442261,
+          "target_return_progress": 0.9505783319473267,
+          "wrong_axis_color_progress": 0.9181117039593152,
+          "wrong_axis_margin": 2.1780303317442247,
+          "wrong_axis_progress": -1.2599186277849097
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.024917448071142156,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.7913735763844553,
+        "min_target_progress": 0.8784025010061464
+      },
+      "axis_id": "scene_snow_forest",
+      "category": "scene",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-19f6aedb7306",
+      "label": "scene/snow to forest",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting in a green autumn forest at noon, golden sunlight",
+        "source": "a photorealistic black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic black cat sitting in fresh snow during a heavy snowstorm, gray light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.863993,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.0477385625762281e-10,
+                0.06330061531051301,
+                0.22564448306189255,
+                0.7424267919290422,
+                0.8784025010061464
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.15770447254180908,
+                0.4286935031414032,
+                0.8357945680618286,
+                0.9201290011405945
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9740638238272824,
+                "joint.3->joint.4": 0.9069863324821502,
+                "joint.4->single.0": 0.8450799285275665
+              },
+              "necessity_route_ablation_scene_progress": 0.024917448071142156,
+              "scene_return_alignment": 0.9407805800437927,
+              "scene_return_progress": 0.9201290011405945,
+              "sham_scene_progress": 0.10394837287022973,
+              "sufficiency_scene_progress": 0.8784025010061464,
+              "wrong_color_margin": 0.877127194704207,
+              "wrong_color_progress": 0.9127605594708758,
+              "wrong_color_scene_progress": 0.035633364766668785
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.0477385625762281e-10,
+            "scene_dose_025": 0.06330061531051301,
+            "scene_dose_050": 0.22564448306189255,
+            "scene_dose_075": 0.7424267919290422,
+            "scene_dose_100": 0.8784025010061464
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.8202717900276184,
+            "joint3_joint4": 2.995234251022339,
+            "joint4_single0": 4.58722448348999
+          },
+          "route_ablation_progress": 0.024917448071142156,
+          "seed": 31337,
+          "sham_progress": 0.10394837287022973,
+          "source_target_mad": 95.44364166259766,
+          "target_progress": 0.8784025010061464,
+          "target_return_alignment": 0.9407805800437927,
+          "target_return_progress": 0.9201290011405945,
+          "wrong_axis_color_progress": 0.9127605594708758,
+          "wrong_axis_margin": 0.877127194704207,
+          "wrong_axis_progress": 0.035633364766668785
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.022039120002205e-10,
+                0.02013442819825262,
+                0.14670174426523275,
+                0.6655798320298567,
+                0.9118439312312414
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.06717506796121597,
+                0.29139435291290283,
+                0.8209496736526489,
+                0.964973509311676
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9637894250971829,
+                "joint.3->joint.4": 0.9076801794742975,
+                "joint.4->single.0": 0.7913735763844553
+              },
+              "necessity_route_ablation_scene_progress": 0.010734644924149661,
+              "scene_return_alignment": 0.9781819581985474,
+              "scene_return_progress": 0.964973509311676,
+              "sham_scene_progress": 0.19893655544353706,
+              "sufficiency_scene_progress": 0.9118439312312414,
+              "wrong_color_margin": 0.9360662797270194,
+              "wrong_color_progress": 0.9636443213500416,
+              "wrong_color_scene_progress": 0.027578041623022242
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.022039120002205e-10,
+            "scene_dose_025": 0.02013442819825262,
+            "scene_dose_050": 0.14670174426523275,
+            "scene_dose_075": 0.6655798320298567,
+            "scene_dose_100": 0.9118439312312414
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.9400380253791809,
+            "joint3_joint4": 2.4327495098114014,
+            "joint4_single0": 5.475473880767822
+          },
+          "route_ablation_progress": 0.010734644924149661,
+          "seed": 60660,
+          "sham_progress": 0.19893655544353706,
+          "source_target_mad": 97.84355926513672,
+          "target_progress": 0.9118439312312414,
+          "target_return_alignment": 0.9781819581985474,
+          "target_return_progress": 0.964973509311676,
+          "wrong_axis_color_progress": 0.9636443213500416,
+          "wrong_axis_margin": 0.9360662797270194,
+          "wrong_axis_progress": 0.027578041623022242
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.00465359151205913,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.7870534216710916,
+        "min_target_progress": 0.8433921173754855
+      },
+      "axis_id": "scene_snow_beach",
+      "category": "scene",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-19f6aedb7306",
+      "label": "scene/snow to beach",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting on a sunny sandy beach at noon, bright blue sky",
+        "source": "a photorealistic black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.85244,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.812788807953325e-10,
+                -0.18634348231431686,
+                0.11273228907646915,
+                0.5134866862138816,
+                0.8923158093544983
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.1941220760345459,
+                0.554652988910675,
+                0.8383215665817261,
+                0.9701581001281738
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9465714826804549,
+                "joint.3->joint.4": 0.8795154564004272,
+                "joint.4->single.0": 0.7870534216710916
+              },
+              "necessity_route_ablation_scene_progress": -0.010546568520361843,
+              "scene_return_alignment": 0.9759305119514465,
+              "scene_return_progress": 0.9701581001281738,
+              "sham_scene_progress": -0.5633373962136305,
+              "sufficiency_scene_progress": 0.8923158093544983,
+              "wrong_color_margin": 1.5607937746201497,
+              "wrong_color_progress": 0.9511841657176577,
+              "wrong_color_scene_progress": -0.6096096089024918
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.812788807953325e-10,
+            "scene_dose_025": -0.18634348231431686,
+            "scene_dose_050": 0.11273228907646915,
+            "scene_dose_075": 0.5134866862138816,
+            "scene_dose_100": 0.8923158093544983
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.591644287109375,
+            "joint3_joint4": 1.3897247314453125,
+            "joint4_single0": 2.498438596725464
+          },
+          "route_ablation_progress": -0.010546568520361843,
+          "seed": 31337,
+          "sham_progress": -0.5633373962136305,
+          "source_target_mad": 55.163639068603516,
+          "target_progress": 0.8923158093544983,
+          "target_return_alignment": 0.9759305119514465,
+          "target_return_progress": 0.9701581001281738,
+          "wrong_axis_color_progress": 0.9511841657176577,
+          "wrong_axis_margin": 1.5607937746201497,
+          "wrong_axis_progress": -0.6096096089024918
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.0499257846751107e-10,
+                -0.0173584974986305,
+                0.20264611147444678,
+                0.5228669939521123,
+                0.8433921173754855
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.09516686201095581,
+                0.5961145758628845,
+                0.8728578090667725,
+                0.9607172012329102
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9571129271171613,
+                "joint.3->joint.4": 0.8760665065731288,
+                "joint.4->single.0": 0.8428377009575966
+              },
+              "necessity_route_ablation_scene_progress": 0.00465359151205913,
+              "scene_return_alignment": 0.9712494015693665,
+              "scene_return_progress": 0.9607172012329102,
+              "sham_scene_progress": -0.6789635070076154,
+              "sufficiency_scene_progress": 0.8433921173754855,
+              "wrong_color_margin": 1.513643181763658,
+              "wrong_color_progress": 0.9699538108247835,
+              "wrong_color_scene_progress": -0.5436893709388744
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.0499257846751107e-10,
+            "scene_dose_025": -0.0173584974986305,
+            "scene_dose_050": 0.20264611147444678,
+            "scene_dose_075": 0.5228669939521123,
+            "scene_dose_100": 0.8433921173754855
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.5876057744026184,
+            "joint3_joint4": 1.7490590810775757,
+            "joint4_single0": 2.122344970703125
+          },
+          "route_ablation_progress": 0.00465359151205913,
+          "seed": 60660,
+          "sham_progress": -0.6789635070076154,
+          "source_target_mad": 48.78224563598633,
+          "target_progress": 0.8433921173754855,
+          "target_return_alignment": 0.9712494015693665,
+          "target_return_progress": 0.9607172012329102,
+          "wrong_axis_color_progress": 0.9699538108247835,
+          "wrong_axis_margin": 1.513643181763658,
+          "wrong_axis_progress": -0.5436893709388744
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.015133416559939383,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6830756704739783,
+        "min_target_progress": 0.8912733854590643
+      },
+      "axis_id": "action_sitting_jumping",
+      "category": "action",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-fc5e74bcc30e",
+      "label": "action/sitting to jumping",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic small black cat leaping through fresh snow at dawn, soft blue light",
+        "source": "a photorealistic small black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic small black cat standing alert in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.850571,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.8914891874999284e-10,
+                -0.08318623997135832,
+                0.004496818928232393,
+                0.5222045668846418,
+                0.929081556425573
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.10023724287748337,
+                0.341665655374527,
+                0.7513044476509094,
+                0.9855554103851318
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9634253511142775,
+                "joint.3->joint.4": 0.8905658990508365,
+                "joint.4->single.0": 0.7268168449387801
+              },
+              "necessity_route_ablation_scene_progress": 0.015133416559939383,
+              "scene_return_alignment": 0.986880898475647,
+              "scene_return_progress": 0.9855554103851318,
+              "sham_scene_progress": -0.38377882396612795,
+              "sufficiency_scene_progress": 0.929081556425573,
+              "wrong_color_margin": 0.5983985676948834,
+              "wrong_color_progress": 0.8808941297817773,
+              "wrong_color_scene_progress": 0.28249556208689386
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.8914891874999284e-10,
+            "scene_dose_025": -0.08318623997135832,
+            "scene_dose_050": 0.004496818928232393,
+            "scene_dose_075": 0.5222045668846418,
+            "scene_dose_100": 0.929081556425573
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4227040708065033,
+            "joint3_joint4": 1.2750396728515625,
+            "joint4_single0": 2.952306032180786
+          },
+          "route_ablation_progress": 0.015133416559939383,
+          "seed": 31337,
+          "sham_progress": -0.38377882396612795,
+          "source_target_mad": 52.86838912963867,
+          "target_progress": 0.929081556425573,
+          "target_return_alignment": 0.986880898475647,
+          "target_return_progress": 0.9855554103851318,
+          "wrong_axis_color_progress": 0.8808941297817773,
+          "wrong_axis_margin": 0.5983985676948834,
+          "wrong_axis_progress": 0.28249556208689386
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                3.296994899315564e-10,
+                -0.23673550456017756,
+                -0.15503571839669772,
+                0.23326707357690157,
+                0.8912733854590643
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.13074412941932678,
+                0.29459530115127563,
+                0.5635151863098145,
+                0.9653738141059875
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9699610535151659,
+                "joint.3->joint.4": 0.8797142652620721,
+                "joint.4->single.0": 0.6830756704739783
+              },
+              "necessity_route_ablation_scene_progress": -0.0005698022106737088,
+              "scene_return_alignment": 0.9765695929527283,
+              "scene_return_progress": 0.9653738141059875,
+              "sham_scene_progress": -1.6013168146372534,
+              "sufficiency_scene_progress": 0.8912733854590643,
+              "wrong_color_margin": 0.7785815558001724,
+              "wrong_color_progress": 0.9016364548441743,
+              "wrong_color_scene_progress": 0.12305489904400191
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 3.296994899315564e-10,
+            "scene_dose_025": -0.23673550456017756,
+            "scene_dose_050": -0.15503571839669772,
+            "scene_dose_075": 0.23326707357690157,
+            "scene_dose_100": 0.8912733854590643
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4438527524471283,
+            "joint3_joint4": 1.7748006582260132,
+            "joint4_single0": 2.6781513690948486
+          },
+          "route_ablation_progress": -0.0005698022106737088,
+          "seed": 60660,
+          "sham_progress": -1.6013168146372534,
+          "source_target_mad": 30.330657958984375,
+          "target_progress": 0.8912733854590643,
+          "target_return_alignment": 0.9765695929527283,
+          "target_return_progress": 0.9653738141059875,
+          "wrong_axis_color_progress": 0.9016364548441743,
+          "wrong_axis_margin": 0.7785815558001724,
+          "wrong_axis_progress": 0.12305489904400191
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.01566132877434001,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.731708925976343,
+        "min_target_progress": 0.8691601299430728
+      },
+      "axis_id": "marking_solid_tuxedo",
+      "category": "appearance",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-ecd876ddbd33",
+      "label": "appearance/marking",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black-and-white tuxedo cat sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic solid black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a watercolor illustration of a solid black cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.850215,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                3.2042413167232553e-10,
+                -0.11818833446005672,
+                -0.37594388330125184,
+                0.4898396420674841,
+                0.8815036633027744
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.2956346869468689,
+                0.3362475633621216,
+                0.8045093417167664,
+                0.9968944787979126
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9616143820294578,
+                "joint.3->joint.4": 0.9045122959132283,
+                "joint.4->single.0": 0.731708925976343
+              },
+              "necessity_route_ablation_scene_progress": -0.016044671098414787,
+              "scene_return_alignment": 0.962940514087677,
+              "scene_return_progress": 0.9968944787979126,
+              "sham_scene_progress": -1.2083422530208847,
+              "sufficiency_scene_progress": 0.8815036633027744,
+              "wrong_color_margin": 2.2663341102775645,
+              "wrong_color_progress": 0.9370715744283964,
+              "wrong_color_scene_progress": -1.329262535849168
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 3.2042413167232553e-10,
+            "scene_dose_025": -0.11818833446005672,
+            "scene_dose_050": -0.37594388330125184,
+            "scene_dose_075": 0.4898396420674841,
+            "scene_dose_100": 0.8815036633027744
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4233347475528717,
+            "joint3_joint4": 1.0559844970703125,
+            "joint4_single0": 2.853795289993286
+          },
+          "route_ablation_progress": -0.016044671098414787,
+          "seed": 31337,
+          "sham_progress": -1.2083422530208847,
+          "source_target_mad": 31.208642959594727,
+          "target_progress": 0.8815036633027744,
+          "target_return_alignment": 0.962940514087677,
+          "target_return_progress": 0.9968944787979126,
+          "wrong_axis_color_progress": 0.9370715744283964,
+          "wrong_axis_margin": 2.2663341102775645,
+          "wrong_axis_progress": -1.329262535849168
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                3.9552816577526073e-10,
+                -0.15307525067386285,
+                -0.3954547839134557,
+                0.05219469643397334,
+                0.8691601299430728
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.15118086338043213,
+                0.24930432438850403,
+                0.5116755366325378,
+                0.9408224821090698
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9800556577900141,
+                "joint.3->joint.4": 0.9384213675915151,
+                "joint.4->single.0": 0.9081691194228331
+              },
+              "necessity_route_ablation_scene_progress": 0.01566132877434001,
+              "scene_return_alignment": 0.96369868516922,
+              "scene_return_progress": 0.9408224821090698,
+              "sham_scene_progress": -1.9617988566364701,
+              "sufficiency_scene_progress": 0.8691601299430728,
+              "wrong_color_margin": 2.8953671762877233,
+              "wrong_color_progress": 0.9694079317374845,
+              "wrong_color_scene_progress": -1.925959244550239
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 3.9552816577526073e-10,
+            "scene_dose_025": -0.15307525067386285,
+            "scene_dose_050": -0.3954547839134557,
+            "scene_dose_075": 0.05219469643397334,
+            "scene_dose_100": 0.8691601299430728
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3464762270450592,
+            "joint3_joint4": 1.0804595947265625,
+            "joint4_single0": 1.535369873046875
+          },
+          "route_ablation_progress": 0.01566132877434001,
+          "seed": 60660,
+          "sham_progress": -1.9617988566364701,
+          "source_target_mad": 25.28264808654785,
+          "target_progress": 0.8691601299430728,
+          "target_return_alignment": 0.96369868516922,
+          "target_return_progress": 0.9408224821090698,
+          "wrong_axis_color_progress": 0.9694079317374845,
+          "wrong_axis_margin": 2.8953671762877233,
+          "wrong_axis_progress": -1.925959244550239
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.00557322515023817,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6471372587626436,
+        "min_target_progress": 0.8836093592934618
+      },
+      "axis_id": "ears_upright_folded",
+      "category": "pose",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-fc5e74bcc30e",
+      "label": "pose/ear position",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat with folded-back ears sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic black cat with upright ears sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic black cat with upright ears sitting on a wooden porch in rain at night, warm porch light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.842325,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                9.81889791695778e-10,
+                -0.290612006434114,
+                -0.5050767540694083,
+                -0.01663501056588501,
+                0.8836093592934618
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.17461368441581726,
+                0.9056990146636963,
+                0.9980713129043579,
+                1.0206466913223267
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8531166090666179,
+                "joint.3->joint.4": 0.7144788701364976,
+                "joint.4->single.0": 0.6471372587626436
+              },
+              "necessity_route_ablation_scene_progress": -0.012120799110112213,
+              "scene_return_alignment": 0.9859237670898438,
+              "scene_return_progress": 1.0206466913223267,
+              "sham_scene_progress": -6.645429882457253,
+              "sufficiency_scene_progress": 0.8836093592934618,
+              "wrong_color_margin": 8.353971588284208,
+              "wrong_color_progress": 0.8028295268384981,
+              "wrong_color_scene_progress": -7.551142061445711
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 9.81889791695778e-10,
+            "scene_dose_025": -0.290612006434114,
+            "scene_dose_050": -0.5050767540694083,
+            "scene_dose_075": -0.01663501056588501,
+            "scene_dose_100": 0.8836093592934618
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3430633544921875,
+            "joint3_joint4": 0.6680399775505066,
+            "joint4_single0": 0.79132080078125
+          },
+          "route_ablation_progress": -0.012120799110112213,
+          "seed": 31337,
+          "sham_progress": -6.645429882457253,
+          "source_target_mad": 10.184443473815918,
+          "target_progress": 0.8836093592934618,
+          "target_return_alignment": 0.9859237670898438,
+          "target_return_progress": 1.0206466913223267,
+          "wrong_axis_color_progress": 0.8028295268384981,
+          "wrong_axis_margin": 8.353971588284208,
+          "wrong_axis_progress": -7.551142061445711
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                8.630597347902835e-10,
+                -0.06096002055019678,
+                -0.3721062219423008,
+                -0.010709640331629577,
+                0.9575397217705085
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.29293665289878845,
+                0.5972214341163635,
+                0.8859700560569763,
+                0.9864280819892883
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8634811815905815,
+                "joint.3->joint.4": 0.782899817125067,
+                "joint.4->single.0": 0.6922064084722213
+              },
+              "necessity_route_ablation_scene_progress": 0.00557322515023817,
+              "scene_return_alignment": 0.9983288049697876,
+              "scene_return_progress": 0.9864280819892883,
+              "sham_scene_progress": -6.207092948892479,
+              "sufficiency_scene_progress": 0.9575397217705085,
+              "wrong_color_margin": 8.451463557649868,
+              "wrong_color_progress": 0.8191765282459164,
+              "wrong_color_scene_progress": -7.632287029403951
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 8.630597347902835e-10,
+            "scene_dose_025": -0.06096002055019678,
+            "scene_dose_050": -0.3721062219423008,
+            "scene_dose_075": -0.010709640331629577,
+            "scene_dose_100": 0.9575397217705085
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.302032470703125,
+            "joint3_joint4": 0.4822133481502533,
+            "joint4_single0": 0.6645660400390625
+          },
+          "route_ablation_progress": 0.00557322515023817,
+          "seed": 60660,
+          "sham_progress": -6.207092948892479,
+          "source_target_mad": 11.586685180664062,
+          "target_progress": 0.9575397217705085,
+          "target_return_alignment": 0.9983288049697876,
+          "target_return_progress": 0.9864280819892883,
+          "wrong_axis_color_progress": 0.8191765282459164,
+          "wrong_axis_margin": 8.451463557649868,
+          "wrong_axis_progress": -7.632287029403951
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.022833838451208566,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5389524524048547,
+        "min_target_progress": 0.9333486055664686
+      },
+      "axis_id": "geometry_snake_straight_coil",
+      "category": "geometry",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response"
+      ],
+      "gate_summary": {
+        "failed": [
+          "dose_response"
+        ],
+        "passed": 8,
+        "total": 9
+      },
+      "group": "job-ecd876ddbd33",
+      "label": "geometry/snake topology",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic green snake tightly coiled in fresh snow at dawn, soft red light",
+        "source": "a photorealistic green snake stretched in a straight line across fresh snow at dawn, soft red light",
+        "wrong_axis": "a photorealistic brown rope stretched in a straight line across fresh snow at dawn, soft red light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.838756,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.0426127456119048e-10,
+                -0.40351572698264326,
+                0.14704373482408695,
+                0.6697548887360927,
+                0.9333486055664686
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.14193598926067352,
+                0.6757439374923706,
+                0.8622391819953918,
+                0.9913407564163208
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9049863698204258,
+                "joint.3->joint.4": 0.7279064653266841,
+                "joint.4->single.0": 0.6179944877588345
+              },
+              "necessity_route_ablation_scene_progress": 0.022833838451208566,
+              "scene_return_alignment": 0.9877264499664307,
+              "scene_return_progress": 0.9913407564163208,
+              "sham_scene_progress": -0.13014214049798345,
+              "sufficiency_scene_progress": 0.9333486055664686,
+              "wrong_color_margin": 0.7772206288896037,
+              "wrong_color_progress": 0.7683902473525164,
+              "wrong_color_scene_progress": -0.008830381537087373
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.0426127456119048e-10,
+            "scene_dose_025": -0.40351572698264326,
+            "scene_dose_050": 0.14704373482408695,
+            "scene_dose_075": 0.6697548887360927,
+            "scene_dose_100": 0.9333486055664686
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.6730499267578125,
+            "joint3_joint4": 1.9401804208755493,
+            "joint4_single0": 2.6085407733917236
+          },
+          "route_ablation_progress": 0.022833838451208566,
+          "seed": 31337,
+          "sham_progress": -0.13014214049798345,
+          "source_target_mad": 48.9569091796875,
+          "target_progress": 0.9333486055664686,
+          "target_return_alignment": 0.9877264499664307,
+          "target_return_progress": 0.9913407564163208,
+          "wrong_axis_color_progress": 0.7683902473525164,
+          "wrong_axis_margin": 0.7772206288896037,
+          "wrong_axis_progress": -0.008830381537087373
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.3230750656466626e-10,
+                -0.45761171074279017,
+                0.09369042381029635,
+                0.6301055754599758,
+                0.9436556797129922
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.1204453706741333,
+                0.48349466919898987,
+                0.8275216221809387,
+                0.9874241352081299
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.891881172205139,
+                "joint.3->joint.4": 0.717602594559533,
+                "joint.4->single.0": 0.5389524524048547
+              },
+              "necessity_route_ablation_scene_progress": 0.0026032504839325066,
+              "scene_return_alignment": 0.9947038292884827,
+              "scene_return_progress": 0.9874241352081299,
+              "sham_scene_progress": -0.45441303434599,
+              "sufficiency_scene_progress": 0.9436556797129922,
+              "wrong_color_margin": 0.9347243721638314,
+              "wrong_color_progress": 0.9508967632822467,
+              "wrong_color_scene_progress": 0.016172391118415286
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.3230750656466626e-10,
+            "scene_dose_025": -0.45761171074279017,
+            "scene_dose_050": 0.09369042381029635,
+            "scene_dose_075": 0.6301055754599758,
+            "scene_dose_100": 0.9436556797129922
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3978220522403717,
+            "joint3_joint4": 1.0379995107650757,
+            "joint4_single0": 1.5627187490463257
+          },
+          "route_ablation_progress": 0.0026032504839325066,
+          "seed": 60660,
+          "sham_progress": -0.45441303434599,
+          "source_target_mad": 43.0463981628418,
+          "target_progress": 0.9436556797129922,
+          "target_return_alignment": 0.9947038292884827,
+          "target_return_progress": 0.9874241352081299,
+          "wrong_axis_color_progress": 0.9508967632822467,
+          "wrong_axis_margin": 0.9347243721638314,
+          "wrong_axis_progress": 0.016172391118415286
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.014457410199962384,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6707754970604529,
+        "min_target_progress": 0.857203120636798
+      },
+      "axis_id": "eyes_green_blue",
+      "category": "appearance",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-ecd876ddbd33",
+      "label": "appearance/eye color",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat with blue eyes sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic black cat with green eyes sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic black cat with green eyes standing alert in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.832949,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.3787009311982956e-09,
+                0.32008966983120934,
+                0.6136898180550004,
+                0.7243222079141682,
+                0.9170653210200613
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.5398817658424377,
+                0.8772994875907898,
+                0.9408014416694641,
+                0.9869391918182373
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8368684338756522,
+                "joint.3->joint.4": 0.77118929973372,
+                "joint.4->single.0": 0.6734060731368483
+              },
+              "necessity_route_ablation_scene_progress": 0.011092973640443149,
+              "scene_return_alignment": 0.9974087476730347,
+              "scene_return_progress": 0.9869391918182373,
+              "sham_scene_progress": -9.204407932984477,
+              "sufficiency_scene_progress": 0.9170653210200613,
+              "wrong_color_margin": 1.959661470466182,
+              "wrong_color_progress": 0.7769720482988499,
+              "wrong_color_scene_progress": -1.182689422167332
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.3787009311982956e-09,
+            "scene_dose_025": 0.32008966983120934,
+            "scene_dose_050": 0.6136898180550004,
+            "scene_dose_075": 0.7243222079141682,
+            "scene_dose_100": 0.9170653210200613
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3119710385799408,
+            "joint3_joint4": 0.4353790283203125,
+            "joint4_single0": 0.5953369140625
+          },
+          "route_ablation_progress": 0.011092973640443149,
+          "seed": 31337,
+          "sham_progress": -9.204407932984477,
+          "source_target_mad": 7.253204345703125,
+          "target_progress": 0.9170653210200613,
+          "target_return_alignment": 0.9974087476730347,
+          "target_return_progress": 0.9869391918182373,
+          "wrong_axis_color_progress": 0.7769720482988499,
+          "wrong_axis_margin": 1.959661470466182,
+          "wrong_axis_progress": -1.182689422167332
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.641682317339189e-09,
+                0.18233045594914243,
+                0.1984929918687327,
+                0.40804805881142003,
+                0.857203120636798
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.3236713707447052,
+                0.5751394629478455,
+                0.8406327366828918,
+                0.9572412967681885
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8198012949659557,
+                "joint.3->joint.4": 0.8203229596437062,
+                "joint.4->single.0": 0.6707754970604529
+              },
+              "necessity_route_ablation_scene_progress": 0.014457410199962384,
+              "scene_return_alignment": 0.9888855814933777,
+              "scene_return_progress": 0.9572412967681885,
+              "sham_scene_progress": -10.582530279629179,
+              "sufficiency_scene_progress": 0.857203120636798,
+              "wrong_color_margin": 5.065386158883805,
+              "wrong_color_progress": 0.777960784420389,
+              "wrong_color_scene_progress": -4.287425374463416
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.641682317339189e-09,
+            "scene_dose_025": 0.18233045594914243,
+            "scene_dose_050": 0.1984929918687327,
+            "scene_dose_075": 0.40804805881142003,
+            "scene_dose_100": 0.857203120636798
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.2887369692325592,
+            "joint3_joint4": 0.301025390625,
+            "joint4_single0": 0.5060322880744934
+          },
+          "route_ablation_progress": 0.014457410199962384,
+          "seed": 60660,
+          "sham_progress": -10.582530279629179,
+          "source_target_mad": 3.785466432571411,
+          "target_progress": 0.857203120636798,
+          "target_return_alignment": 0.9888855814933777,
+          "target_return_progress": 0.9572412967681885,
+          "wrong_axis_color_progress": 0.777960784420389,
+          "wrong_axis_margin": 5.065386158883805,
+          "wrong_axis_progress": -4.287425374463416
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": -0.003627456379554639,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5802420748054028,
+        "min_target_progress": 0.8869814546727285
+      },
+      "axis_id": "style_photo_oil",
+      "category": "style",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-ab73418b53f2",
+      "label": "material/style/photo to oil",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "an oil painting of a black cat sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.832764,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                3.077099686166207e-10,
+                -0.04269137228819897,
+                0.09345017724409388,
+                0.5648930087666304,
+                0.8869814546727285
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.10204333811998367,
+                0.5000591278076172,
+                0.852605402469635,
+                0.986874520778656
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9305483048935722,
+                "joint.3->joint.4": 0.8334577362757617,
+                "joint.4->single.0": 0.7043405905905906
+              },
+              "necessity_route_ablation_scene_progress": -0.003627456379554639,
+              "scene_return_alignment": 0.9874788522720337,
+              "scene_return_progress": 0.986874520778656,
+              "sham_scene_progress": -1.2935508430831932,
+              "sufficiency_scene_progress": 0.8869814546727285,
+              "wrong_color_margin": 2.120257710992128,
+              "wrong_color_progress": 0.9511841657176577,
+              "wrong_color_scene_progress": -1.16907354527447
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 3.077099686166207e-10,
+            "scene_dose_025": -0.04269137228819897,
+            "scene_dose_050": 0.09345017724409388,
+            "scene_dose_075": 0.5648930087666304,
+            "scene_dose_100": 0.8869814546727285
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.9410247802734375,
+            "joint3_joint4": 2.213078737258911,
+            "joint4_single0": 4.39422082901001
+          },
+          "route_ablation_progress": -0.003627456379554639,
+          "seed": 31337,
+          "sham_progress": -1.2935508430831932,
+          "source_target_mad": 32.498138427734375,
+          "target_progress": 0.8869814546727285,
+          "target_return_alignment": 0.9874788522720337,
+          "target_return_progress": 0.986874520778656,
+          "wrong_axis_color_progress": 0.9511841657176577,
+          "wrong_axis_margin": 2.120257710992128,
+          "wrong_axis_progress": -1.16907354527447
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.239360918920852e-10,
+                -0.04853804358283331,
+                0.05286045474563261,
+                0.27014635595322334,
+                0.9185394582574193
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.06285840272903442,
+                0.26605409383773804,
+                0.5833319425582886,
+                0.9922582507133484
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9580764655948499,
+                "joint.3->joint.4": 0.8065104625593619,
+                "joint.4->single.0": 0.5802420748054028
+              },
+              "necessity_route_ablation_scene_progress": -0.007724624992135443,
+              "scene_return_alignment": 0.9944254755973816,
+              "scene_return_progress": 0.9922582507133484,
+              "sham_scene_progress": -0.6327040054350659,
+              "sufficiency_scene_progress": 0.9185394582574193,
+              "wrong_color_margin": 1.6395217034962926,
+              "wrong_color_progress": 0.9699538108247835,
+              "wrong_color_scene_progress": -0.6695678926715092
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.239360918920852e-10,
+            "scene_dose_025": -0.04853804358283331,
+            "scene_dose_050": 0.05286045474563261,
+            "scene_dose_075": 0.27014635595322334,
+            "scene_dose_100": 0.9185394582574193
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.5952402949333191,
+            "joint3_joint4": 2.767451047897339,
+            "joint4_single0": 5.6481170654296875
+          },
+          "route_ablation_progress": -0.007724624992135443,
+          "seed": 60660,
+          "sham_progress": -0.6327040054350659,
+          "source_target_mad": 44.65560531616211,
+          "target_progress": 0.9185394582574193,
+          "target_return_alignment": 0.9944254755973816,
+          "target_return_progress": 0.9922582507133484,
+          "wrong_axis_color_progress": 0.9699538108247835,
+          "wrong_axis_margin": 1.6395217034962926,
+          "wrong_axis_progress": -0.6695678926715092
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.009741003931184933,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.8180143708856217,
+        "min_target_progress": 0.786913434762353
+      },
+      "axis_id": "weather_clear_snowstorm",
+      "category": "weather",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-19f6aedb7306",
+      "label": "weather/clear to snowstorm",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting in fresh snow during a heavy snowstorm at dawn, diffuse gray light",
+        "source": "a photorealistic black cat sitting in fresh snow under a clear sky at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat sitting in fresh snow under a clear sky at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.831945,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.1787749382440325e-10,
+                0.17248652059961822,
+                0.3914846901398351,
+                0.6851356502837789,
+                0.786913434762353
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.137533500790596,
+                0.6380826830863953,
+                0.8827954530715942,
+                0.9387010931968689
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.973146786053405,
+                "joint.3->joint.4": 0.9195753822614556,
+                "joint.4->single.0": 0.8257715872437381
+              },
+              "necessity_route_ablation_scene_progress": 0.009741003931184933,
+              "scene_return_alignment": 0.9439200758934021,
+              "scene_return_progress": 0.9387010931968689,
+              "sham_scene_progress": -0.5328337589707077,
+              "sufficiency_scene_progress": 0.786913434762353,
+              "wrong_color_margin": 1.5248470214020138,
+              "wrong_color_progress": 0.970995314623449,
+              "wrong_color_scene_progress": -0.5538517067785647
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.1787749382440325e-10,
+            "scene_dose_025": 0.17248652059961822,
+            "scene_dose_050": 0.3914846901398351,
+            "scene_dose_075": 0.6851356502837789,
+            "scene_dose_100": 0.786913434762353
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.372406005859375,
+            "joint3_joint4": 1.1033223867416382,
+            "joint4_single0": 2.4678547382354736
+          },
+          "route_ablation_progress": 0.009741003931184933,
+          "seed": 31337,
+          "sham_progress": -0.5328337589707077,
+          "source_target_mad": 45.89735794067383,
+          "target_progress": 0.786913434762353,
+          "target_return_alignment": 0.9439200758934021,
+          "target_return_progress": 0.9387010931968689,
+          "wrong_axis_color_progress": 0.970995314623449,
+          "wrong_axis_margin": 1.5248470214020138,
+          "wrong_axis_progress": -0.5538517067785647
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.5517166157840165e-10,
+                0.12091964352296669,
+                0.5656255707679761,
+                0.8141358270559165,
+                0.955941342030375
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.1597832590341568,
+                0.712037205696106,
+                0.9370189309120178,
+                0.999065101146698
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9684627878070025,
+                "joint.3->joint.4": 0.9243314339724183,
+                "joint.4->single.0": 0.8180143708856217
+              },
+              "necessity_route_ablation_scene_progress": -0.06126662592828058,
+              "scene_return_alignment": 0.9968701601028442,
+              "scene_return_progress": 0.999065101146698,
+              "sham_scene_progress": -0.9239973269355186,
+              "sufficiency_scene_progress": 0.955941342030375,
+              "wrong_color_margin": 1.6307110065974495,
+              "wrong_color_progress": 0.9745015370610163,
+              "wrong_color_scene_progress": -0.6562094695364333
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.5517166157840165e-10,
+            "scene_dose_025": 0.12091964352296669,
+            "scene_dose_050": 0.5656255707679761,
+            "scene_dose_075": 0.8141358270559165,
+            "scene_dose_100": 0.955941342030375
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.2885335385799408,
+            "joint3_joint4": 0.6964569091796875,
+            "joint4_single0": 1.7332814931869507
+          },
+          "route_ablation_progress": -0.06126662592828058,
+          "seed": 60660,
+          "sham_progress": -0.9239973269355186,
+          "source_target_mad": 39.18931579589844,
+          "target_progress": 0.955941342030375,
+          "target_return_alignment": 0.9968701601028442,
+          "target_return_progress": 0.999065101146698,
+          "wrong_axis_color_progress": 0.9745015370610163,
+          "wrong_axis_margin": 1.6307110065974495,
+          "wrong_axis_progress": -0.6562094695364333
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.024550784624178812,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6873854487564426,
+        "min_target_progress": 0.7315614834315418
+      },
+      "axis_id": "fur_short_long",
+      "category": "appearance",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-ecd876ddbd33",
+      "label": "appearance/fur length",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic long-haired black cat sitting in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic short-haired black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic short-haired white cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.777209,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                7.877141161571899e-10,
+                0.2233074808666745,
+                0.33298479157132366,
+                0.5445226779688641,
+                0.7315614834315418
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.3126884400844574,
+                0.6287141442298889,
+                0.7897820472717285,
+                0.9593477249145508
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8887737992415549,
+                "joint.3->joint.4": 0.8514635515025185,
+                "joint.4->single.0": 0.695799456133822
+              },
+              "necessity_route_ablation_scene_progress": 0.024550784624178812,
+              "scene_return_alignment": 0.9486003518104553,
+              "scene_return_progress": 0.9593477249145508,
+              "sham_scene_progress": -5.135424411947792,
+              "sufficiency_scene_progress": 0.7315614834315418,
+              "wrong_color_margin": 4.917842462039671,
+              "wrong_color_progress": 0.9630982242147563,
+              "wrong_color_scene_progress": -3.9547442378249142
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 7.877141161571899e-10,
+            "scene_dose_025": 0.2233074808666745,
+            "scene_dose_050": 0.33298479157132366,
+            "scene_dose_075": 0.5445226779688641,
+            "scene_dose_100": 0.7315614834315418
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.5123087763786316,
+            "joint3_joint4": 0.6852925419807434,
+            "joint4_single0": 1.3731790781021118
+          },
+          "route_ablation_progress": 0.024550784624178812,
+          "seed": 31337,
+          "sham_progress": -5.135424411947792,
+          "source_target_mad": 12.694961547851562,
+          "target_progress": 0.7315614834315418,
+          "target_return_alignment": 0.9486003518104553,
+          "target_return_progress": 0.9593477249145508,
+          "wrong_axis_color_progress": 0.9630982242147563,
+          "wrong_axis_margin": 4.917842462039671,
+          "wrong_axis_progress": -3.9547442378249142
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                8.547829111194005e-10,
+                0.21475006146359543,
+                0.42629493926311524,
+                0.6865618198182121,
+                0.9219957632679971
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.2944282591342926,
+                0.5931220650672913,
+                0.8668826818466187,
+                0.9868947863578796
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8972498245542662,
+                "joint.3->joint.4": 0.7994529856620468,
+                "joint.4->single.0": 0.6873854487564426
+              },
+              "necessity_route_ablation_scene_progress": 0.009989189055449654,
+              "scene_return_alignment": 0.9971036314964294,
+              "scene_return_progress": 0.9868947863578796,
+              "sham_scene_progress": -6.01885773641403,
+              "sufficiency_scene_progress": 0.9219957632679971,
+              "wrong_color_margin": 5.044621246634267,
+              "wrong_color_progress": 0.9725298472768713,
+              "wrong_color_scene_progress": -4.0720913993573955
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 8.547829111194005e-10,
+            "scene_dose_025": 0.21475006146359543,
+            "scene_dose_050": 0.42629493926311524,
+            "scene_dose_075": 0.6865618198182121,
+            "scene_dose_100": 0.9219957632679971
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3083038330078125,
+            "joint3_joint4": 0.6142425537109375,
+            "joint4_single0": 0.8857014775276184
+          },
+          "route_ablation_progress": 0.009989189055449654,
+          "seed": 60660,
+          "sham_progress": -6.01885773641403,
+          "source_target_mad": 11.698878288269043,
+          "target_progress": 0.9219957632679971,
+          "target_return_alignment": 0.9971036314964294,
+          "target_return_progress": 0.9868947863578796,
+          "wrong_axis_color_progress": 0.9725298472768713,
+          "wrong_axis_margin": 5.044621246634267,
+          "wrong_axis_progress": -4.0720913993573955
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": -0.0005130997167235307,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5918636132429291,
+        "min_target_progress": 0.7479816907096377
+      },
+      "axis_id": "count_one_two_birds",
+      "category": "count",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-19f6aedb7306",
+      "label": "relations/count",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "two photorealistic blue birds perched side by side on a branch in a snowy forest at dawn",
+        "source": "one photorealistic blue bird perched on a branch in a snowy forest at dawn",
+        "wrong_axis": "one photorealistic red bird perched on a branch in a snowy forest at dawn"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.771759,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.403611754075996e-10,
+                -0.12274889515777776,
+                -0.23333669807770718,
+                0.06341873315979918,
+                0.8399581657959775
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.2718994617462158,
+                0.6238403916358948,
+                0.7647793292999268,
+                0.969538152217865
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9059868630829606,
+                "joint.3->joint.4": 0.799685743239052,
+                "joint.4->single.0": 0.5918636132429291
+              },
+              "necessity_route_ablation_scene_progress": -0.0005130997167235307,
+              "scene_return_alignment": 0.9766234755516052,
+              "scene_return_progress": 0.969538152217865,
+              "sham_scene_progress": -0.46845164167234854,
+              "sufficiency_scene_progress": 0.8399581657959775,
+              "wrong_color_margin": 0.9741815721415311,
+              "wrong_color_progress": 0.8199035281733641,
+              "wrong_color_scene_progress": -0.15427804396816702
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.403611754075996e-10,
+            "scene_dose_025": -0.12274889515777776,
+            "scene_dose_050": -0.23333669807770718,
+            "scene_dose_075": 0.06341873315979918,
+            "scene_dose_100": 0.8399581657959775
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.7462565302848816,
+            "joint3_joint4": 1.6476186513900757,
+            "joint4_single0": 3.0642902851104736
+          },
+          "route_ablation_progress": -0.0005130997167235307,
+          "seed": 31337,
+          "sham_progress": -0.46845164167234854,
+          "source_target_mad": 41.604068756103516,
+          "target_progress": 0.8399581657959775,
+          "target_return_alignment": 0.9766234755516052,
+          "target_return_progress": 0.969538152217865,
+          "wrong_axis_color_progress": 0.8199035281733641,
+          "wrong_axis_margin": 0.9741815721415311,
+          "wrong_axis_progress": -0.15427804396816702
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.479817462486267e-10,
+                -0.050967354130123876,
+                -0.08629839819435392,
+                0.020264684145294032,
+                0.7479816907096377
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.07864231616258621,
+                0.5795604586601257,
+                0.7665719389915466,
+                0.9635716676712036
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8334016090093114,
+                "joint.3->joint.4": 0.6451855204709137,
+                "joint.4->single.0": 0.6371614139067004
+              },
+              "necessity_route_ablation_scene_progress": -0.010992706279359998,
+              "scene_return_alignment": 0.9668261408805847,
+              "scene_return_progress": 0.9635716676712036,
+              "sham_scene_progress": -0.5359669283209463,
+              "sufficiency_scene_progress": 0.7479816907096377,
+              "wrong_color_margin": 0.9119870607487812,
+              "wrong_color_progress": 0.8122032163884987,
+              "wrong_color_scene_progress": -0.09978384436028254
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.479817462486267e-10,
+            "scene_dose_025": -0.050967354130123876,
+            "scene_dose_050": -0.08629839819435392,
+            "scene_dose_075": 0.020264684145294032,
+            "scene_dose_100": 0.7479816907096377
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 1.1253204345703125,
+            "joint3_joint4": 2.431849241256714,
+            "joint4_single0": 2.3528645038604736
+          },
+          "route_ablation_progress": -0.010992706279359998,
+          "seed": 60660,
+          "sham_progress": -0.5359669283209463,
+          "source_target_mad": 40.32554626464844,
+          "target_progress": 0.7479816907096377,
+          "target_return_alignment": 0.9668261408805847,
+          "target_return_progress": 0.9635716676712036,
+          "wrong_axis_color_progress": 0.8122032163884987,
+          "wrong_axis_margin": 0.9119870607487812,
+          "wrong_axis_progress": -0.09978384436028254
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.0013993424600829973,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5426520969648653,
+        "min_target_progress": 0.74280477432484
+      },
+      "axis_id": "scene_snow_greenhouse",
+      "category": "scene",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-19f6aedb7306",
+      "label": "scene/snow to greenhouse",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting inside a glass greenhouse among tropical plants, warm daylight",
+        "source": "a photorealistic black cat sitting in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.759109,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                9.852330062898318e-11,
+                -0.030020637846847054,
+                0.1384496193171415,
+                0.5042147462598106,
+                0.74280477432484
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.07297524064779282,
+                0.355019748210907,
+                0.6568394303321838,
+                0.8835433721542358
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9502351713211818,
+                "joint.3->joint.4": 0.7589967794250506,
+                "joint.4->single.0": 0.6333792637056839
+              },
+              "necessity_route_ablation_scene_progress": -0.0024923238111842494,
+              "scene_return_alignment": 0.8862473964691162,
+              "scene_return_progress": 0.8835433721542358,
+              "sham_scene_progress": 0.2889446564530266,
+              "sufficiency_scene_progress": 0.74280477432484,
+              "wrong_color_margin": 1.0951049909304595,
+              "wrong_color_progress": 0.9511841657176577,
+              "wrong_color_scene_progress": -0.14392082521280192
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 9.852330062898318e-11,
+            "scene_dose_025": -0.030020637846847054,
+            "scene_dose_050": 0.1384496193171415,
+            "scene_dose_075": 0.5042147462598106,
+            "scene_dose_100": 0.74280477432484
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 1.6691080331802368,
+            "joint3_joint4": 8.129694938659668,
+            "joint4_single0": 12.04218578338623
+          },
+          "route_ablation_progress": -0.0024923238111842494,
+          "seed": 31337,
+          "sham_progress": 0.2889446564530266,
+          "source_target_mad": 101.498779296875,
+          "target_progress": 0.74280477432484,
+          "target_return_alignment": 0.8862473964691162,
+          "target_return_progress": 0.8835433721542358,
+          "wrong_axis_color_progress": 0.9511841657176577,
+          "wrong_axis_margin": 1.0951049909304595,
+          "wrong_axis_progress": -0.14392082521280192
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.020726836387098e-10,
+                -0.0007076533014132025,
+                0.17213756659784785,
+                0.6584913502627843,
+                0.8586586051016195
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.039744019508361816,
+                0.3708171844482422,
+                0.7620410919189453,
+                0.9559290409088135
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9284491101023687,
+                "joint.3->joint.4": 0.6627423865971448,
+                "joint.4->single.0": 0.5426520969648653
+              },
+              "necessity_route_ablation_scene_progress": 0.0013993424600829973,
+              "scene_return_alignment": 0.9584534168243408,
+              "scene_return_progress": 0.9559290409088135,
+              "sham_scene_progress": 0.3324828565862096,
+              "sufficiency_scene_progress": 0.8586586051016195,
+              "wrong_color_margin": 1.128480944662741,
+              "wrong_color_progress": 0.9699538108247835,
+              "wrong_color_scene_progress": -0.1585271338379577
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.020726836387098e-10,
+            "scene_dose_025": -0.0007076533014132025,
+            "scene_dose_050": 0.17213756659784785,
+            "scene_dose_075": 0.6584913502627843,
+            "scene_dose_100": 0.8586586051016195
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 1.7751516103744507,
+            "joint3_joint4": 8.547688484191895,
+            "joint4_single0": 11.287689208984375
+          },
+          "route_ablation_progress": 0.0013993424600829973,
+          "seed": 60660,
+          "sham_progress": 0.3324828565862096,
+          "source_target_mad": 97.96929931640625,
+          "target_progress": 0.8586586051016195,
+          "target_return_alignment": 0.9584534168243408,
+          "target_return_progress": 0.9559290409088135,
+          "wrong_axis_color_progress": 0.9699538108247835,
+          "wrong_axis_margin": 1.128480944662741,
+          "wrong_axis_progress": -0.1585271338379577
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.012357620769312239,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.528909616911893,
+        "min_target_progress": 0.5425043611536762
+      },
+      "axis_id": "relation_on_under_furniture",
+      "category": "relation",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-fc5e74bcc30e",
+      "label": "relation/on to under",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting under a wooden table in a quiet room, soft window light",
+        "source": "a photorealistic black cat sitting on a wooden chair in a quiet room, soft window light",
+        "wrong_axis": "a photorealistic white cat sitting on a wooden chair in a quiet room, soft window light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.663486,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                2.0704038483643217e-10,
+                0.08829087972117589,
+                0.04992556582330587,
+                -0.09124700871590696,
+                0.5425043611536762
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.2144056260585785,
+                0.225692018866539,
+                0.4408923089504242,
+                0.8304943442344666
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9428998743656275,
+                "joint.3->joint.4": 0.8561745821784834,
+                "joint.4->single.0": 0.5600928119293471
+              },
+              "necessity_route_ablation_scene_progress": -0.10087968303839379,
+              "scene_return_alignment": 0.8399127125740051,
+              "scene_return_progress": 0.8304943442344666,
+              "sham_scene_progress": -0.3008374446788946,
+              "sufficiency_scene_progress": 0.5425043611536762,
+              "wrong_color_margin": 1.068719245924627,
+              "wrong_color_progress": 0.877333935960147,
+              "wrong_color_scene_progress": -0.19138530996448
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 2.0704038483643217e-10,
+            "scene_dose_025": 0.08829087972117589,
+            "scene_dose_050": 0.04992556582330587,
+            "scene_dose_075": -0.09124700871590696,
+            "scene_dose_100": 0.5425043611536762
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4753316342830658,
+            "joint3_joint4": 1.2027536630630493,
+            "joint4_single0": 2.8414409160614014
+          },
+          "route_ablation_progress": -0.10087968303839379,
+          "seed": 31337,
+          "sham_progress": -0.3008374446788946,
+          "source_target_mad": 48.299747467041016,
+          "target_progress": 0.5425043611536762,
+          "target_return_alignment": 0.8399127125740051,
+          "target_return_progress": 0.8304943442344666,
+          "wrong_axis_color_progress": 0.877333935960147,
+          "wrong_axis_margin": 1.068719245924627,
+          "wrong_axis_progress": -0.19138530996448
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                1.8955170766332685e-10,
+                0.002796882402896994,
+                0.09505870902860403,
+                0.46717079972514053,
+                0.7524263749065144
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.07492796331644058,
+                0.22857517004013062,
+                0.6056408882141113,
+                0.8625968098640442
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.9460738540803739,
+                "joint.3->joint.4": 0.8440107835463954,
+                "joint.4->single.0": 0.528909616911893
+              },
+              "necessity_route_ablation_scene_progress": 0.012357620769312239,
+              "scene_return_alignment": 0.8806226253509521,
+              "scene_return_progress": 0.8625968098640442,
+              "sham_scene_progress": 0.0537976824837596,
+              "sufficiency_scene_progress": 0.7524263749065144,
+              "wrong_color_margin": 1.1071229918625518,
+              "wrong_color_progress": 0.8826851252885692,
+              "wrong_color_scene_progress": -0.22443786657398257
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 1.8955170766332685e-10,
+            "scene_dose_025": 0.002796882402896994,
+            "scene_dose_050": 0.09505870902860403,
+            "scene_dose_075": 0.46717079972514053,
+            "scene_dose_100": 0.7524263749065144
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.4519449770450592,
+            "joint3_joint4": 1.368499755859375,
+            "joint4_single0": 2.83837890625
+          },
+          "route_ablation_progress": 0.012357620769312239,
+          "seed": 60660,
+          "sham_progress": 0.0537976824837596,
+          "source_target_mad": 52.75606155395508,
+          "target_progress": 0.7524263749065144,
+          "target_return_alignment": 0.8806226253509521,
+          "target_return_progress": 0.8625968098640442,
+          "wrong_axis_color_progress": 0.8826851252885692,
+          "wrong_axis_margin": 1.1071229918625518,
+          "wrong_axis_progress": -0.22443786657398257
+        }
+      ]
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.15217937924875136,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6478061768931991,
+        "min_target_progress": 0.8674922365620072
+      },
+      "axis_id": "relation_beside_behind_ball",
+      "category": "relation",
+      "claim_boundary": "Certified is intentionally route-level and experiment-bounded. It does not establish a minimal token/channel subcircuit, universal prompt generalization, or that the four addresses are standalone semantic functions. Those are separate promotion targets.",
+      "failed_gates": [
+        "dose_response",
+        "necessity",
+        "sufficiency"
+      ],
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "necessity",
+          "dose_response"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-fc5e74bcc30e",
+      "label": "relation/beside to behind",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic black cat sitting behind a red ball in fresh snow at dawn, soft blue light",
+        "source": "a photorealistic black cat sitting beside a red ball in fresh snow at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white cat sitting beside a red ball in fresh snow at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__scene_dose_100.png",
+        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__montage.png",
+        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__route_ablation.png",
+        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__source.png",
+        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__target.png",
+        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__wrong_color_full.png"
+      },
+      "rank_score": 0.765221,
+      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "seed_metrics": [
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "31337": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                4.109147466735408e-10,
+                0.009060864509278121,
+                0.13528446671989947,
+                0.5434350981667061,
+                0.9188361614381835
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.04745744168758392,
+                0.2676239013671875,
+                0.6933702230453491,
+                0.9820584654808044
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.871680546491703,
+                "joint.3->joint.4": 0.7599313422962285,
+                "joint.4->single.0": 0.6478061768931991
+              },
+              "necessity_route_ablation_scene_progress": 0.15217937924875136,
+              "scene_return_alignment": 0.9868835210800171,
+              "scene_return_progress": 0.9820584654808044,
+              "sham_scene_progress": -2.1635748986455536,
+              "sufficiency_scene_progress": 0.9188361614381835,
+              "wrong_color_margin": 2.086096129937811,
+              "wrong_color_progress": 0.9521643515784814,
+              "wrong_color_scene_progress": -1.13393177835933
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 4.109147466735408e-10,
+            "scene_dose_025": 0.009060864509278121,
+            "scene_dose_050": 0.13528446671989947,
+            "scene_dose_075": 0.5434350981667061,
+            "scene_dose_100": 0.9188361614381835
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3236592710018158,
+            "joint3_joint4": 0.5833333134651184,
+            "joint4_single0": 0.82568359375
+          },
+          "route_ablation_progress": 0.15217937924875136,
+          "seed": 31337,
+          "sham_progress": -2.1635748986455536,
+          "source_target_mad": 24.335952758789062,
+          "target_progress": 0.9188361614381835,
+          "target_return_alignment": 0.9868835210800171,
+          "target_return_progress": 0.9820584654808044,
+          "wrong_axis_color_progress": 0.9521643515784814,
+          "wrong_axis_margin": 2.086096129937811,
+          "wrong_axis_progress": -1.13393177835933
+        },
+        {
+          "branch_count": 18,
+          "certificate_seed_metrics": {
+            "60660": {
+              "branch_count": 18,
+              "dose_scene_progress": [
+                4.1670877859445454e-10,
+                0.09025705186275546,
+                0.24225031690795795,
+                0.4056023925584564,
+                0.8674922365620072
+              ],
+              "dose_scene_return_progress": [
+                0.0,
+                0.137316033244133,
+                0.400499552488327,
+                0.5987889170646667,
+                0.9191228151321411
+              ],
+              "exact_scalar_branch_count": 18,
+              "mediation_rescue_fraction": {
+                "joint.2->joint.3": 0.8258984478265795,
+                "joint.3->joint.4": 0.7636160513965261,
+                "joint.4->single.0": 0.698731936456268
+              },
+              "necessity_route_ablation_scene_progress": 0.014138694379482342,
+              "scene_return_alignment": 0.9594280123710632,
+              "scene_return_progress": 0.9191228151321411,
+              "sham_scene_progress": -0.979229420960612,
+              "sufficiency_scene_progress": 0.8674922365620072,
+              "wrong_color_margin": 2.410428177438529,
+              "wrong_color_progress": 0.9610992633087558,
+              "wrong_color_scene_progress": -1.4493289141297732
+            }
+          },
+          "dose_progress": {
+            "scene_dose_000": 4.1670877859445454e-10,
+            "scene_dose_025": 0.09025705186275546,
+            "scene_dose_050": 0.24225031690795795,
+            "scene_dose_075": 0.4056023925584564,
+            "scene_dose_100": 0.8674922365620072
+          },
+          "exact_scalar_branch_count": 18,
+          "mediation_rescue_mad": {
+            "joint2_joint3": 0.3572133481502533,
+            "joint3_joint4": 0.472564697265625,
+            "joint4_single0": 0.6538645625114441
+          },
+          "route_ablation_progress": 0.014138694379482342,
+          "seed": 60660,
+          "sham_progress": -0.979229420960612,
+          "source_target_mad": 23.99757957458496,
+          "target_progress": 0.8674922365620072,
+          "target_return_alignment": 0.9594280123710632,
+          "target_return_progress": 0.9191228151321411,
+          "wrong_axis_color_progress": 0.9610992633087558,
+          "wrong_axis_margin": 2.410428177438529,
+          "wrong_axis_progress": -1.4493289141297732
+        }
+      ]
+    }
+  ],
+  "schema": "saturn-circuit-panel-ledger-v1"
+}

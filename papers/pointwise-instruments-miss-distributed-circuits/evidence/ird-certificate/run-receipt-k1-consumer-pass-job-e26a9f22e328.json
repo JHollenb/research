@@ -1,0 +1,185 @@
+{
+  "case": "symbol-table-kshot",
+  "command": [
+    "/usr/bin/env",
+    "PYTHONUNBUFFERED=1",
+    "PYTHONNOUSERSITE=1",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "DIFFUSERS_OFFLINE=1",
+    "TOKENIZERS_PARALLELISM=false",
+    "TQDM_DISABLE=1",
+    "SATURN_RESIDENT_WORKER=1",
+    "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+    "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+    "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+    "SATURN_RUN_CONFIG=saturn_run_config.json",
+    "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+    "uv",
+    "run",
+    "--offline",
+    "--with",
+    "diffusers==0.39.0",
+    "--with",
+    "transformers==5.14.1",
+    "--with",
+    "accelerate==1.14.0",
+    "--with",
+    "safetensors>=0.5",
+    "--with",
+    "numpy>=2.0",
+    "--with",
+    "mlflow>=2.9",
+    "--with",
+    "boto3>=1.34",
+    "--with",
+    "python-dotenv>=1.0",
+    "--with",
+    "trackio>=0.1",
+    "python",
+    "-u",
+    "run_saturn_symbol_table_bridge.py"
+  ],
+  "design_sha256": "e208eb0f0d0a797e68fafeb02663e45d3d6465bf3eaf34913777a83258a7a7e4",
+  "device": "cuda encoder / cuda source (fp32) / offloaded diffusion",
+  "dtype": "bfloat16 encoder / float32 source / float64 ridge",
+  "experiment": "saturn-symbol-table-kshot",
+  "host_selection": "prefer_beast_softly",
+  "instrument": "k-shot anchoring consumer rung (Wall A A2-i'): per target (lion, wolf) a rank-40 ridge bridge fit on the 54 fit pairs PLUS one anchor template (t3), authored from SmolLM2 features (deployment: all-6 source mean; strict: 5 unseen-template mean); controls: native positive, 10-animal shuffled-roster sham (seed 1903), single-native-example (no bridge); all norm-matched, written at fox subject rows, rendered through the unchanged native suffix at 256^2/4 steps, seeds 7217/31337; no-op gates. Offline-predicted fidelities frozen in the experiment README before submission.",
+  "launcher_attempt": 1,
+  "log_sha256": "8976982bb5b0ba12860d0e476949bf9178e6c303133397e23ee87f6709bae7a9",
+  "model_id": "black-forest-labs/FLUX.2-klein-4B",
+  "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+  "mrun_job_id": "job-e26a9f22e328",
+  "mrun_ok": true,
+  "mrun_result": {
+    "diagnostics": {
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "--with",
+        "mlflow>=2.9",
+        "--with",
+        "boto3>=1.34",
+        "--with",
+        "python-dotenv>=1.0",
+        "--with",
+        "trackio>=0.1",
+        "python",
+        "-u",
+        "run_saturn_symbol_table_bridge.py"
+      ],
+      "cwd": "/mnt/big/mrun-work/job-e26a9f22e328",
+      "log_path": "/mnt/big/mrun-work/job-e26a9f22e328/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1787295696.5232172
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1787295697.4338865
+        },
+        {
+          "name": "process.launch",
+          "ts": 1787295697.4673543
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1787295697.5079296
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1787295863.048914
+        },
+        {
+          "name": "finished",
+          "ts": 1787295863.0810103
+        }
+      ]
+    },
+    "elapsed_s": 166.58,
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "9e605e167df16c3f931ef3600656659c6fe878719f3be0011193c75ca7c430be",
+      "size_bytes": 4017457
+    },
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 22648.1,
+    "peak_vram_mb": 9516.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "mrun_state": "succeeded",
+  "needs": {
+    "cuda": true
+  },
+  "payload": {
+    "anchor_template": 3,
+    "kshot_leg": true,
+    "seeds": [
+      7217,
+      31337
+    ],
+    "targets": [
+      "lion",
+      "wolf"
+    ]
+  },
+  "pipeline_class": "Flux2KleinPipeline",
+  "preflight": "strict",
+  "report_present": true,
+  "reservation": {
+    "ram_mb": 38000.0,
+    "vram_mb": 12000.0
+  },
+  "scheduling_contract": {
+    "additional_scheduler_submissions": 0,
+    "branch_execution": "in_process",
+    "checkpoint_policy": "one model load; 109 native encodes + chunked CUDA fp32 source-feature passes + closed-form ridge + 32 consumer renders in process; no training, no nested submissions",
+    "collection_policy": "direct_job_only",
+    "control_plane": "mrun_outer_lease",
+    "data_plane": "resident_worker",
+    "execution_model": "finite_local_program",
+    "interactive": false,
+    "lease_scope": "entire-worker",
+    "max_local_work_items": 256,
+    "max_mrun_submissions": 1,
+    "model_loads": 1,
+    "mrun_retry_policy": "none_for_finite_lease",
+    "per_branch_mrun_submissions": 0,
+    "per_transition_mrun_submissions": 0,
+    "replay_policy": "local_checkpoint_restore",
+    "schema": "saturn-single-lease-scheduling-contract-v1"
+  },
+  "schema": "saturn-symbol-table-kshot-mrun-request-v1",
+  "task_family": "saturn-flux-rosetta-manalysis",
+  "worker_sha256": "146d2c32c65cd409f473c9a6772edb7f7bff966f88d4729d8fecbd793c077a04"
+}

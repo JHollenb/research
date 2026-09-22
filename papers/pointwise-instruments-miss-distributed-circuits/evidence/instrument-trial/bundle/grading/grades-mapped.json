@@ -1,0 +1,32 @@
+{
+  "case-1-flux-identity": {
+    "community": "MISREPORT",
+    "saturn": "MATCH"
+  },
+  "case-2-wolf-register": {
+    "community_strengthened": "MISREPORT",
+    "saturn": "MATCH"
+  },
+  "case-3-e11-family-split": {
+    "community": {
+      "Qwen3-4B-Base": "MISREPORT",
+      "Qwen3.5-0.8B-Base": "MATCH"
+    },
+    "saturn": {
+      "Qwen3-4B-Base": "MATCH",
+      "Qwen3.5-0.8B-Base": "MATCH"
+    }
+  },
+  "case-4-cosine-wrong-animal": {
+    "community": "MISREPORT",
+    "saturn": "MATCH"
+  },
+  "case-5-mediation-steps": {
+    "community": "INCONCLUSIVE",
+    "saturn": "MATCH"
+  },
+  "case-6-zero-write": {
+    "community": "MISREPORT",
+    "saturn": "MATCH"
+  }
+}
