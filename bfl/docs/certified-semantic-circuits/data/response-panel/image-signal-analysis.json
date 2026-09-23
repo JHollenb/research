@@ -1,0 +1,3258 @@
+{
+  "claim_boundary": "Synthetic envelopes measure finite-horizon response of the real native suffix. They do not establish an LTI system or a learned semantic formula.",
+  "model": "flux2-klein-4b",
+  "recipe": {
+    "candidate_sites": [
+      "joint.4",
+      "single.0",
+      "single.10",
+      "single.19"
+    ],
+    "height": 256,
+    "input_signal": "target_state - source_state",
+    "intervention_stream": "image",
+    "seed": 4242,
+    "steps": 4,
+    "suffix_execution": "exact scalar checkpoint replay",
+    "waveforms": [
+      {
+        "at": 0,
+        "id": "impulse_t0",
+        "kind": "impulse"
+      },
+      {
+        "at": 1,
+        "id": "impulse_t1",
+        "kind": "impulse"
+      },
+      {
+        "at": 2,
+        "id": "impulse_t2",
+        "kind": "impulse"
+      },
+      {
+        "at": 3,
+        "id": "impulse_t3",
+        "kind": "impulse"
+      },
+      {
+        "id": "step_t0",
+        "kind": "step",
+        "start": 0
+      },
+      {
+        "id": "step_t1",
+        "kind": "step",
+        "start": 1
+      },
+      {
+        "id": "step_t2",
+        "kind": "step",
+        "start": 2
+      },
+      {
+        "id": "step_t3",
+        "kind": "step",
+        "start": 3
+      },
+      {
+        "id": "ramp_up",
+        "kind": "ramp_up"
+      },
+      {
+        "id": "ramp_down",
+        "kind": "ramp_down"
+      },
+      {
+        "id": "sine_positive",
+        "kind": "sine_positive"
+      },
+      {
+        "id": "sine_signed",
+        "kind": "sine_signed"
+      },
+      {
+        "id": "alternating",
+        "kind": "alternating"
+      }
+    ],
+    "width": 256
+  },
+  "schema": "saturn-image-signal-analysis-v1",
+  "source_report": "<host-path>",
+  "status": "exploratory",
+  "waveforms": [
+    {
+      "envelope": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.9999999997728168,
+      "mean_return_progress": 1.0,
+      "mean_target_rgb_mad": 0.0,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.9999999996646838,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 1.0,
+          "site": "single.19",
+          "target_rgb_mad": 0.0,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.9999999998347369,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 1.0,
+          "site": "single.19",
+          "target_rgb_mad": 0.0,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.9999999998190298,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 1.0,
+          "site": "single.19",
+          "target_rgb_mad": 0.0,
+          "waveform": "step_t0"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "step_t0"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.9141804698661063,
+      "mean_return_progress": 0.9793705145517985,
+      "mean_target_rgb_mad": 2.290695150693258,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.883078366795159,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9785573482513428,
+          "site": "single.19",
+          "target_rgb_mad": 2.0728657245635986,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.9037072553501343,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9740033149719238,
+          "site": "single.19",
+          "target_rgb_mad": 3.298497438430786,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.9557557874530258,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9855508804321289,
+          "site": "single.19",
+          "target_rgb_mad": 1.5007222890853882,
+          "waveform": "step_t1"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "step_t1"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.7862779486566912,
+      "mean_return_progress": 0.9198740720748901,
+      "mean_target_rgb_mad": 5.317289670308431,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.7380274264660751,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9181845784187317,
+          "site": "single.19",
+          "target_rgb_mad": 4.24597692489624,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.7913176190467718,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9123682379722595,
+          "site": "single.19",
+          "target_rgb_mad": 6.6979217529296875,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.8294888004572267,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9290693998336792,
+          "site": "single.19",
+          "target_rgb_mad": 5.007970333099365,
+          "waveform": "step_t2"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "step_t2"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "formula_kind": "ramp_up",
+      "mean_contrast_progress": 0.7246763272961602,
+      "mean_return_progress": 0.8850900729497274,
+      "mean_target_rgb_mad": 6.7406463623046875,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.6764174128972609,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8840282559394836,
+          "site": "single.19",
+          "target_rgb_mad": 5.12359094619751,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.7403231205563767,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8789363503456116,
+          "site": "single.19",
+          "target_rgb_mad": 8.165644645690918,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.7572884484348432,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8923056125640869,
+          "site": "single.19",
+          "target_rgb_mad": 6.932703495025635,
+          "waveform": "ramp_up"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "ramp_up"
+    },
+    {
+      "envelope": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.5887051830242792,
+      "mean_return_progress": 0.9054101308186849,
+      "mean_target_rgb_mad": 12.305708090464273,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.3666916692639913,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8718466758728027,
+          "site": "single.10",
+          "target_rgb_mad": 13.76678466796875,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.6077543483462089,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9453805685043335,
+          "site": "single.10",
+          "target_rgb_mad": 15.444890022277832,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.7916695314626375,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8990031480789185,
+          "site": "single.10",
+          "target_rgb_mad": 7.70544958114624,
+          "waveform": "step_t0"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "step_t0"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.5615957259652972,
+      "mean_return_progress": 0.8951595226923624,
+      "mean_target_rgb_mad": 12.985702196756998,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.342708820353614,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8604047298431396,
+          "site": "single.10",
+          "target_rgb_mad": 14.182510375976562,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.5678513959532143,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9313865303993225,
+          "site": "single.10",
+          "target_rgb_mad": 16.69498634338379,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.7742269615890631,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8936873078346252,
+          "site": "single.10",
+          "target_rgb_mad": 8.079609870910645,
+          "waveform": "step_t1"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "step_t1"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.47526981022334813,
+      "mean_return_progress": 0.8439005613327026,
+      "mean_target_rgb_mad": 14.765884399414062,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.2889970164611717,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8082929849624634,
+          "site": "single.10",
+          "target_rgb_mad": 14.726882934570312,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.5058609086318026,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8727301359176636,
+          "site": "single.10",
+          "target_rgb_mad": 17.979522705078125,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.6309515055770701,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.850678563117981,
+          "site": "single.10",
+          "target_rgb_mad": 11.59124755859375,
+          "waveform": "step_t2"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "step_t2"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": 0.4531086312817525,
+      "mean_return_progress": 0.7515813906987509,
+      "mean_target_rgb_mad": 13.502602259318033,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.4007820405276069,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.7512849569320679,
+          "site": "single.19",
+          "target_rgb_mad": 9.469334602355957,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.4995577540168687,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.7433375716209412,
+          "site": "single.19",
+          "target_rgb_mad": 15.6387939453125,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.45898609930078194,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.7601216435432434,
+          "site": "single.19",
+          "target_rgb_mad": 15.399678230285645,
+          "waveform": "impulse_t3"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "impulse_t3"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.4531086312817525,
+      "mean_return_progress": 0.7515813906987509,
+      "mean_target_rgb_mad": 13.502602259318033,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.4007820405276069,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7512849569320679,
+          "site": "single.19",
+          "target_rgb_mad": 9.469334602355957,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.4995577540168687,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7433375716209412,
+          "site": "single.19",
+          "target_rgb_mad": 15.6387939453125,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.45898609930078194,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7601216435432434,
+          "site": "single.19",
+          "target_rgb_mad": 15.399678230285645,
+          "waveform": "step_t3"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "step_t3"
+    },
+    {
+      "envelope": [
+        0.6180339887498948,
+        0.9999999999999999,
+        1.0,
+        0.6180339887498949
+      ],
+      "formula_kind": "sine_positive",
+      "mean_contrast_progress": 0.45043643864908983,
+      "mean_return_progress": 0.7130976319313049,
+      "mean_target_rgb_mad": 13.41705322265625,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.40541178622485324,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.7121759653091431,
+          "site": "single.19",
+          "target_rgb_mad": 9.161829948425293,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.5277663441612755,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.7166283130645752,
+          "site": "single.19",
+          "target_rgb_mad": 14.649846076965332,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.41813118556114076,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.7104886174201965,
+          "site": "single.19",
+          "target_rgb_mad": 16.439483642578125,
+          "waveform": "sine_positive"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "sine_positive"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.44641132927798166,
+      "mean_return_progress": 0.8250798583030701,
+      "mean_target_rgb_mad": 17.312160809834797,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.2949710634308547,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8355082869529724,
+          "site": "joint.4",
+          "target_rgb_mad": 16.194299697875977,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.40062731455363987,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8963149785995483,
+          "site": "joint.4",
+          "target_rgb_mad": 22.637802124023438,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.6436356098494503,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7434163093566895,
+          "site": "joint.4",
+          "target_rgb_mad": 13.10438060760498,
+          "waveform": "step_t1"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "step_t1"
+    },
+    {
+      "envelope": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.44525107811808234,
+      "mean_return_progress": 0.8261302709579468,
+      "mean_target_rgb_mad": 17.417358080546062,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.2937956072680442,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8364434838294983,
+          "site": "joint.4",
+          "target_rgb_mad": 16.24566078186035,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.3961296138548088,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8972377181053162,
+          "site": "joint.4",
+          "target_rgb_mad": 22.939279556274414,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.645828013231394,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7447096109390259,
+          "site": "joint.4",
+          "target_rgb_mad": 13.067133903503418,
+          "waveform": "step_t0"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "step_t0"
+    },
+    {
+      "envelope": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.44511675110502485,
+      "mean_return_progress": 0.8361593882242838,
+      "mean_target_rgb_mad": 17.589005788167317,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.30808198212804977,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8421807885169983,
+          "site": "single.0",
+          "target_rgb_mad": 15.951542854309082,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.35978715073964695,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.9094200730323792,
+          "site": "single.0",
+          "target_rgb_mad": 24.181161880493164,
+          "waveform": "step_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.6674811204473777,
+          "envelope": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7568773031234741,
+          "site": "single.0",
+          "target_rgb_mad": 12.634312629699707,
+          "waveform": "step_t0"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "step_t0"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.4426424621359723,
+      "mean_return_progress": 0.8336994647979736,
+      "mean_target_rgb_mad": 17.581973393758137,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.3067779414603516,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8405396342277527,
+          "site": "single.0",
+          "target_rgb_mad": 15.971054077148438,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.3602442747631,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.905410647392273,
+          "site": "single.0",
+          "target_rgb_mad": 24.014307022094727,
+          "waveform": "step_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.6609051701844653,
+          "envelope": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7551481127738953,
+          "site": "single.0",
+          "target_rgb_mad": 12.76055908203125,
+          "waveform": "step_t1"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "step_t1"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "formula_kind": "ramp_up",
+      "mean_contrast_progress": 0.4017569162664687,
+      "mean_return_progress": 0.8048030535380045,
+      "mean_target_rgb_mad": 16.56649939219157,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.22084527819803731,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.7702315449714661,
+          "site": "single.10",
+          "target_rgb_mad": 15.757060050964355,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.43647574203098766,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8400207161903381,
+          "site": "single.10",
+          "target_rgb_mad": 20.125757217407227,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.547949728570381,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8041568994522095,
+          "site": "single.10",
+          "target_rgb_mad": 13.816680908203125,
+          "waveform": "ramp_up"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "ramp_up"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.40167604757603037,
+      "mean_return_progress": 0.7916971246401469,
+      "mean_target_rgb_mad": 17.893410682678223,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.26657265907782884,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7988103032112122,
+          "site": "joint.4",
+          "target_rgb_mad": 16.081533432006836,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.39059227279316366,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8598800897598267,
+          "site": "joint.4",
+          "target_rgb_mad": 22.135284423828125,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.5478632108570987,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7164009809494019,
+          "site": "joint.4",
+          "target_rgb_mad": 15.463414192199707,
+          "waveform": "step_t2"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "step_t2"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.40059003308164987,
+      "mean_return_progress": 0.7963863213857015,
+      "mean_target_rgb_mad": 17.964975992838543,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.27886048984383666,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8003703951835632,
+          "site": "single.0",
+          "target_rgb_mad": 16.096099853515625,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.3672768041386655,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.8640333414077759,
+          "site": "single.0",
+          "target_rgb_mad": 22.570709228515625,
+          "waveform": "step_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.5556328052624475,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7247552275657654,
+          "site": "single.0",
+          "target_rgb_mad": 15.228118896484375,
+          "waveform": "step_t2"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "step_t2"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "formula_kind": "ramp_up",
+      "mean_contrast_progress": 0.38140928159659465,
+      "mean_return_progress": 0.7738914688428243,
+      "mean_target_rgb_mad": 18.30220826466878,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.2392023551555761,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.782550036907196,
+          "site": "joint.4",
+          "target_rgb_mad": 16.359521865844727,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.35382562556659597,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8356673717498779,
+          "site": "joint.4",
+          "target_rgb_mad": 23.37613868713379,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.5511998640676119,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.7034569978713989,
+          "site": "joint.4",
+          "target_rgb_mad": 15.170964241027832,
+          "waveform": "ramp_up"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "ramp_up"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "formula_kind": "ramp_up",
+      "mean_contrast_progress": 0.3787370469966973,
+      "mean_return_progress": 0.7794329722722372,
+      "mean_target_rgb_mad": 18.430579503377277,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.24301345789705908,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.7786068916320801,
+          "site": "single.0",
+          "target_rgb_mad": 16.436269760131836,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.3403141149450926,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.8500279784202576,
+          "site": "single.0",
+          "target_rgb_mad": 23.748703002929688,
+          "waveform": "ramp_up"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.5528835681479403,
+          "envelope": [
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            1.0
+          ],
+          "formula_kind": "ramp_up",
+          "return_progress": 0.7096640467643738,
+          "site": "single.0",
+          "target_rgb_mad": 15.106765747070312,
+          "waveform": "ramp_up"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "ramp_up"
+    },
+    {
+      "envelope": [
+        0.6180339887498948,
+        0.9999999999999999,
+        1.0,
+        0.6180339887498949
+      ],
+      "formula_kind": "sine_positive",
+      "mean_contrast_progress": 0.2919901008465009,
+      "mean_return_progress": 0.7069024046262106,
+      "mean_target_rgb_mad": 19.197696050008137,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.037533116653245505,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.6424775719642639,
+          "site": "single.10",
+          "target_rgb_mad": 18.26188087463379,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.36039753203809854,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.7878901958465576,
+          "site": "single.10",
+          "target_rgb_mad": 22.93532371520996,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.4780396538481586,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.6903394460678101,
+          "site": "single.10",
+          "target_rgb_mad": 16.395883560180664,
+          "waveform": "sine_positive"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "sine_positive"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": 0.21495517863965566,
+      "mean_return_progress": 0.6687451799710592,
+      "mean_target_rgb_mad": 21.459813435872395,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.13549564221578075,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.6798660159111023,
+          "site": "joint.4",
+          "target_rgb_mad": 16.678171157836914,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.2636183052424037,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.7178564071655273,
+          "site": "joint.4",
+          "target_rgb_mad": 24.540929794311523,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.24575158846078254,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.6085131168365479,
+          "site": "joint.4",
+          "target_rgb_mad": 23.16033935546875,
+          "waveform": "impulse_t3"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "impulse_t3"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.21495517863965566,
+      "mean_return_progress": 0.6687451799710592,
+      "mean_target_rgb_mad": 21.459813435872395,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.13549564221578075,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.6798660159111023,
+          "site": "joint.4",
+          "target_rgb_mad": 16.678171157836914,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.2636183052424037,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7178564071655273,
+          "site": "joint.4",
+          "target_rgb_mad": 24.540929794311523,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.24575158846078254,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.6085131168365479,
+          "site": "joint.4",
+          "target_rgb_mad": 23.16033935546875,
+          "waveform": "step_t3"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "step_t3"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": 0.2053161439112171,
+      "mean_return_progress": 0.6931079824765524,
+      "mean_target_rgb_mad": 20.78293736775716,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.07005396389686809,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.6640885472297668,
+          "site": "single.10",
+          "target_rgb_mad": 16.856237411499023,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.2784447960656994,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.713721513748169,
+          "site": "single.10",
+          "target_rgb_mad": 23.99684715270996,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.2674496717710838,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.7015138864517212,
+          "site": "single.10",
+          "target_rgb_mad": 21.4957275390625,
+          "waveform": "impulse_t3"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "impulse_t3"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.2053161439112171,
+      "mean_return_progress": 0.6931079824765524,
+      "mean_target_rgb_mad": 20.78293736775716,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.07005396389686809,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.6640885472297668,
+          "site": "single.10",
+          "target_rgb_mad": 16.856237411499023,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.2784447960656994,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.713721513748169,
+          "site": "single.10",
+          "target_rgb_mad": 23.99684715270996,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.2674496717710838,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7015138864517212,
+          "site": "single.10",
+          "target_rgb_mad": 21.4957275390625,
+          "waveform": "step_t3"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "step_t3"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": 0.19985473574339743,
+      "mean_return_progress": 0.6673870881398519,
+      "mean_target_rgb_mad": 21.948766708374023,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.1414778756150214,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.6761288046836853,
+          "site": "single.0",
+          "target_rgb_mad": 16.67830467224121,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.2239414404275513,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.7152579426765442,
+          "site": "single.0",
+          "target_rgb_mad": 25.64032554626465,
+          "waveform": "impulse_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.2341448911876197,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.6107745170593262,
+          "site": "single.0",
+          "target_rgb_mad": 23.52766990661621,
+          "waveform": "impulse_t3"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "impulse_t3"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "formula_kind": "step",
+      "mean_contrast_progress": 0.19985473574339743,
+      "mean_return_progress": 0.6673870881398519,
+      "mean_target_rgb_mad": 21.948766708374023,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": 0.1414778756150214,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.6761288046836853,
+          "site": "single.0",
+          "target_rgb_mad": 16.67830467224121,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.2239414404275513,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.7152579426765442,
+          "site": "single.0",
+          "target_rgb_mad": 25.64032554626465,
+          "waveform": "step_t3"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.2341448911876197,
+          "envelope": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "formula_kind": "step",
+          "return_progress": 0.6107745170593262,
+          "site": "single.0",
+          "target_rgb_mad": 23.52766990661621,
+          "waveform": "step_t3"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "step_t3"
+    },
+    {
+      "envelope": [
+        0.6180339887498948,
+        0.9999999999999999,
+        1.0,
+        0.6180339887498949
+      ],
+      "formula_kind": "sine_positive",
+      "mean_contrast_progress": 0.15491543985797648,
+      "mean_return_progress": 0.6318321824073792,
+      "mean_target_rgb_mad": 24.462581634521484,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.09762387599606909,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.5826842784881592,
+          "site": "single.0",
+          "target_rgb_mad": 21.908187866210938,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.1616123812446094,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.7509006261825562,
+          "site": "single.0",
+          "target_rgb_mad": 31.425058364868164,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.40075781432538915,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.5619116425514221,
+          "site": "single.0",
+          "target_rgb_mad": 20.05449867248535,
+          "waveform": "sine_positive"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "sine_positive"
+    },
+    {
+      "envelope": [
+        0.6180339887498948,
+        0.9999999999999999,
+        1.0,
+        0.6180339887498949
+      ],
+      "formula_kind": "sine_positive",
+      "mean_contrast_progress": 0.14269081273537684,
+      "mean_return_progress": 0.6156741182009379,
+      "mean_target_rgb_mad": 24.8594544728597,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.10013576678416326,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.5898671746253967,
+          "site": "joint.4",
+          "target_rgb_mad": 22.138967514038086,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": 0.1465874944343041,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.7071734070777893,
+          "site": "joint.4",
+          "target_rgb_mad": 31.87095069885254,
+          "waveform": "sine_positive"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": 0.38162071055598973,
+          "envelope": [
+            0.6180339887498948,
+            0.9999999999999999,
+            1.0,
+            0.6180339887498949
+          ],
+          "formula_kind": "sine_positive",
+          "return_progress": 0.5499817728996277,
+          "site": "joint.4",
+          "target_rgb_mad": 20.568445205688477,
+          "waveform": "sine_positive"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "sine_positive"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.6007164936343745,
+      "mean_return_progress": 0.16762332618236542,
+      "mean_target_rgb_mad": 39.447388331095375,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.6657057576252616,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.15944425761699677,
+          "site": "single.10",
+          "target_rgb_mad": 26.0764102935791,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.5305059676787475,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.1741899698972702,
+          "site": "single.10",
+          "target_rgb_mad": 47.08573532104492,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.6059377555991144,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.16923575103282928,
+          "site": "single.10",
+          "target_rgb_mad": 45.18001937866211,
+          "waveform": "impulse_t2"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "impulse_t2"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.6384164017192065,
+      "mean_return_progress": 0.16828480859597525,
+      "mean_target_rgb_mad": 39.96814155578613,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.6670371236994325,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.16689687967300415,
+          "site": "single.19",
+          "target_rgb_mad": 25.15706443786621,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.5980337960618044,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.1690216362476349,
+          "site": "single.19",
+          "target_rgb_mad": 48.66230773925781,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.6501782853963828,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.16893590986728668,
+          "site": "single.19",
+          "target_rgb_mad": 46.085052490234375,
+          "waveform": "impulse_t2"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "impulse_t2"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.6926424334746942,
+      "mean_return_progress": 0.13199509183565775,
+      "mean_target_rgb_mad": 41.93267250061035,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7486861417609936,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.12870776653289795,
+          "site": "single.0",
+          "target_rgb_mad": 27.487085342407227,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.6758186402346545,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.1518600732088089,
+          "site": "single.0",
+          "target_rgb_mad": 51.59193420410156,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.6534225184284346,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.11541743576526642,
+          "site": "single.0",
+          "target_rgb_mad": 46.718997955322266,
+          "waveform": "impulse_t2"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "impulse_t2"
+    },
+    {
+      "envelope": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "formula_kind": "alternating",
+      "mean_contrast_progress": -0.6956947959985884,
+      "mean_return_progress": 0.21226259072621664,
+      "mean_target_rgb_mad": 47.518332163492836,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.6636298421784721,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.20003849267959595,
+          "site": "single.0",
+          "target_rgb_mad": 33.16969299316406,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.7659716491057776,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.2526797652244568,
+          "site": "single.0",
+          "target_rgb_mad": 60.90654373168945,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.6574828967115156,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.18406951427459717,
+          "site": "single.0",
+          "target_rgb_mad": 48.478759765625,
+          "waveform": "alternating"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "alternating"
+    },
+    {
+      "envelope": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.6985909366882105,
+      "mean_return_progress": 0.12859043727318445,
+      "mean_target_rgb_mad": 42.11748059590658,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7501546305302548,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.12846632301807404,
+          "site": "joint.4",
+          "target_rgb_mad": 27.518346786499023,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.6839039228949592,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.1444808542728424,
+          "site": "joint.4",
+          "target_rgb_mad": 51.82060623168945,
+          "waveform": "impulse_t2"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.6617142566394177,
+          "envelope": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.11282413452863693,
+          "site": "joint.4",
+          "target_rgb_mad": 47.01348876953125,
+          "waveform": "impulse_t2"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "impulse_t2"
+    },
+    {
+      "envelope": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "formula_kind": "alternating",
+      "mean_contrast_progress": -0.6990350857643751,
+      "mean_return_progress": 0.20947888990243277,
+      "mean_target_rgb_mad": 47.450705210367836,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.6710078618172892,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.20014941692352295,
+          "site": "joint.4",
+          "target_rgb_mad": 32.853515625,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.7609934669913145,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.2438376396894455,
+          "site": "joint.4",
+          "target_rgb_mad": 60.66719055175781,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.6651039284845217,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.18444961309432983,
+          "site": "joint.4",
+          "target_rgb_mad": 48.8314094543457,
+          "waveform": "alternating"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "alternating"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.6666666666666667,
+        0.33333333333333337,
+        0.0
+      ],
+      "formula_kind": "ramp_down",
+      "mean_contrast_progress": -0.7028047668519145,
+      "mean_return_progress": 0.11506752918163936,
+      "mean_target_rgb_mad": 41.503166834513344,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7058493220036974,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.1160971075296402,
+          "site": "single.19",
+          "target_rgb_mad": 25.67084312438965,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.6442780124990772,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.12280580401420593,
+          "site": "single.19",
+          "target_rgb_mad": 49.95460891723633,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.7582869660529687,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.10629967600107193,
+          "site": "single.19",
+          "target_rgb_mad": 48.88404846191406,
+          "waveform": "ramp_down"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "ramp_down"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.6666666666666667,
+        0.33333333333333337,
+        0.0
+      ],
+      "formula_kind": "ramp_down",
+      "mean_contrast_progress": -0.7393303509538959,
+      "mean_return_progress": 0.08699305107196172,
+      "mean_target_rgb_mad": 43.096439361572266,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7585129431303581,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.08997313678264618,
+          "site": "single.10",
+          "target_rgb_mad": 27.24737548828125,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.7123905794835041,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.08877026289701462,
+          "site": "single.10",
+          "target_rgb_mad": 52.59344482421875,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.7470875302478251,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.08223575353622437,
+          "site": "single.10",
+          "target_rgb_mad": 49.4484977722168,
+          "waveform": "ramp_down"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "ramp_down"
+    },
+    {
+      "envelope": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "formula_kind": "alternating",
+      "mean_contrast_progress": -0.793922754279432,
+      "mean_return_progress": 0.18489821751912436,
+      "mean_target_rgb_mad": 50.378709157307945,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7206067203565513,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.1681944876909256,
+          "site": "single.10",
+          "target_rgb_mad": 32.099456787109375,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8468447439992021,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.21663928031921387,
+          "site": "single.10",
+          "target_rgb_mad": 63.23939895629883,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.814316798482543,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": 0.16986088454723358,
+          "site": "single.10",
+          "target_rgb_mad": 55.797271728515625,
+          "waveform": "alternating"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "alternating"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.2246467991473532e-16,
+        -1.0
+      ],
+      "formula_kind": "sine_signed",
+      "mean_contrast_progress": -0.8039591190770005,
+      "mean_return_progress": 0.11840319881836574,
+      "mean_target_rgb_mad": 52.03497441609701,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7299000127512096,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.11649750173091888,
+          "site": "single.0",
+          "target_rgb_mad": 34.20561218261719,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8784739312399436,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.13706789910793304,
+          "site": "single.0",
+          "target_rgb_mad": 68.1495132446289,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8035034132398482,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.10164419561624527,
+          "site": "single.0",
+          "target_rgb_mad": 53.74979782104492,
+          "waveform": "sine_signed"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "sine_signed"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.2246467991473532e-16,
+        -1.0
+      ],
+      "formula_kind": "sine_signed",
+      "mean_contrast_progress": -0.8089256684235943,
+      "mean_return_progress": 0.117123544216156,
+      "mean_target_rgb_mad": 51.94426345825195,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7362557839772578,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.11463984102010727,
+          "site": "joint.4",
+          "target_rgb_mad": 33.85776901245117,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8794972907754156,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.13479305803775787,
+          "site": "joint.4",
+          "target_rgb_mad": 67.7703857421875,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8110239305181094,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.10193773359060287,
+          "site": "joint.4",
+          "target_rgb_mad": 54.20463562011719,
+          "waveform": "sine_signed"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "sine_signed"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.6666666666666667,
+        0.33333333333333337,
+        0.0
+      ],
+      "formula_kind": "ramp_down",
+      "mean_contrast_progress": -0.82721761203644,
+      "mean_return_progress": 0.06461156159639359,
+      "mean_target_rgb_mad": 45.422956466674805,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.8187295768221904,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.07246474176645279,
+          "site": "single.0",
+          "target_rgb_mad": 28.12957191467285,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8559221090392573,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.06497491896152496,
+          "site": "single.0",
+          "target_rgb_mad": 57.14398193359375,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8070011502478721,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.056395024061203,
+          "site": "single.0",
+          "target_rgb_mad": 50.99531555175781,
+          "waveform": "ramp_down"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "ramp_down"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.8348222457647969,
+      "mean_return_progress": 0.0591869888206323,
+      "mean_target_rgb_mad": 45.16690762837728,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.8510291346418332,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.05938144773244858,
+          "site": "single.10",
+          "target_rgb_mad": 28.34671974182129,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.820932625230168,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.062033940106630325,
+          "site": "single.10",
+          "target_rgb_mad": 55.69769287109375,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8325049774223898,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.05614557862281799,
+          "site": "single.10",
+          "target_rgb_mad": 51.4563102722168,
+          "waveform": "impulse_t1"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "impulse_t1"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.6666666666666667,
+        0.33333333333333337,
+        0.0
+      ],
+      "formula_kind": "ramp_down",
+      "mean_contrast_progress": -0.8358992190431968,
+      "mean_return_progress": 0.059990218530098595,
+      "mean_target_rgb_mad": 45.57666905721029,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.8282671270120385,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.07016211748123169,
+          "site": "joint.4",
+          "target_rgb_mad": 28.206497192382812,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8653486135059276,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.05380646511912346,
+          "site": "joint.4",
+          "target_rgb_mad": 57.367431640625,
+          "waveform": "ramp_down"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8140819166116241,
+          "envelope": [
+            1.0,
+            0.6666666666666667,
+            0.33333333333333337,
+            0.0
+          ],
+          "formula_kind": "ramp_down",
+          "return_progress": 0.05600207298994064,
+          "site": "joint.4",
+          "target_rgb_mad": 51.15607833862305,
+          "waveform": "ramp_down"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "ramp_down"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.8541328462335597,
+      "mean_return_progress": 0.05951447784900665,
+      "mean_target_rgb_mad": 45.22297922770182,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.854503954206644,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.06037803366780281,
+          "site": "single.19",
+          "target_rgb_mad": 27.871826171875,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8379340170883693,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.06167397275567055,
+          "site": "single.19",
+          "target_rgb_mad": 55.811222076416016,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8699605674056657,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.0564914271235466,
+          "site": "single.19",
+          "target_rgb_mad": 51.98588943481445,
+          "waveform": "impulse_t1"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "impulse_t1"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.2246467991473532e-16,
+        -1.0
+      ],
+      "formula_kind": "sine_signed",
+      "mean_contrast_progress": -0.8671682493992684,
+      "mean_return_progress": 0.08172709246476491,
+      "mean_target_rgb_mad": 54.98442586263021,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.7931985413727667,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.07712548971176147,
+          "site": "single.10",
+          "target_rgb_mad": 34.339107513427734,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9172185807831369,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.10291566699743271,
+          "site": "single.10",
+          "target_rgb_mad": 70.18990325927734,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.891087626041902,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": 0.06514012068510056,
+          "site": "single.10",
+          "target_rgb_mad": 60.42426681518555,
+          "waveform": "sine_signed"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "sine_signed"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.8917749019581177,
+      "mean_return_progress": 0.03997849921385447,
+      "mean_target_rgb_mad": 46.7783088684082,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.8813844314306583,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.04418104514479637,
+          "site": "single.0",
+          "target_rgb_mad": 28.713912963867188,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9179443975604458,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.04303979128599167,
+          "site": "single.0",
+          "target_rgb_mad": 59.02543258666992,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8759958768832491,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.032714661210775375,
+          "site": "single.0",
+          "target_rgb_mad": 52.5955810546875,
+          "waveform": "impulse_t1"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "impulse_t1"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.8980462506981276,
+      "mean_return_progress": 0.03610391356050968,
+      "mean_target_rgb_mad": 46.906005223592125,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.8803870301107263,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.04106711596250534,
+          "site": "joint.4",
+          "target_rgb_mad": 28.74332618713379,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9239216834569643,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.0375579334795475,
+          "site": "joint.4",
+          "target_rgb_mad": 59.014678955078125,
+          "waveform": "impulse_t1"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.8898300385266925,
+          "envelope": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.029686691239476204,
+          "site": "joint.4",
+          "target_rgb_mad": 52.96001052856445,
+          "waveform": "impulse_t1"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "impulse_t1"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.9100743432165439,
+      "mean_return_progress": 0.02061928529292345,
+      "mean_target_rgb_mad": 46.65723546346029,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.8975867425949946,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.021444495767354965,
+          "site": "single.19",
+          "target_rgb_mad": 28.606704711914062,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.8794656865846823,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.02598959021270275,
+          "site": "single.19",
+          "target_rgb_mad": 57.107269287109375,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.9531706004699549,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.014423769898712635,
+          "site": "single.19",
+          "target_rgb_mad": 54.25773239135742,
+          "waveform": "impulse_t0"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "impulse_t0"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.9319522567897623,
+      "mean_return_progress": 0.014189364078144232,
+      "mean_target_rgb_mad": 47.36211013793945,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.9365521006819404,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.012923636473715305,
+          "site": "single.10",
+          "target_rgb_mad": 29.209640502929688,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9013161841723284,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.020827079191803932,
+          "site": "single.10",
+          "target_rgb_mad": 58.26988220214844,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.9579884855150185,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.00881737656891346,
+          "site": "single.10",
+          "target_rgb_mad": 54.606807708740234,
+          "waveform": "impulse_t0"
+        }
+      ],
+      "site": "single.10",
+      "waveform": "impulse_t0"
+    },
+    {
+      "envelope": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "formula_kind": "alternating",
+      "mean_contrast_progress": -0.9474288090629107,
+      "mean_return_progress": -0.23687765995661417,
+      "mean_target_rgb_mad": 63.15082295735677,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.9231188413209136,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": -0.2527253031730652,
+          "site": "single.19",
+          "target_rgb_mad": 38.93205261230469,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.960286885355909,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": -0.2181522697210312,
+          "site": "single.19",
+          "target_rgb_mad": 77.04837799072266,
+          "waveform": "alternating"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.9588807005119095,
+          "envelope": [
+            1.0,
+            -1.0,
+            1.0,
+            -1.0
+          ],
+          "formula_kind": "alternating",
+          "return_progress": -0.23975540697574615,
+          "site": "single.19",
+          "target_rgb_mad": 73.47203826904297,
+          "waveform": "alternating"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "alternating"
+    },
+    {
+      "envelope": [
+        0.0,
+        1.0,
+        1.2246467991473532e-16,
+        -1.0
+      ],
+      "formula_kind": "sine_signed",
+      "mean_contrast_progress": -0.9627626719031664,
+      "mean_return_progress": -0.33496806025505066,
+      "mean_target_rgb_mad": 67.58768081665039,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.945174745417682,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": -0.34935715794563293,
+          "site": "single.19",
+          "target_rgb_mad": 41.15492630004883,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9728073301643253,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": -0.3185020983219147,
+          "site": "single.19",
+          "target_rgb_mad": 84.107421875,
+          "waveform": "sine_signed"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.9703059401274919,
+          "envelope": [
+            0.0,
+            1.0,
+            1.2246467991473532e-16,
+            -1.0
+          ],
+          "formula_kind": "sine_signed",
+          "return_progress": -0.33704492449760437,
+          "site": "single.19",
+          "target_rgb_mad": 77.50069427490234,
+          "waveform": "sine_signed"
+        }
+      ],
+      "site": "single.19",
+      "waveform": "sine_signed"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.9809634455857431,
+      "mean_return_progress": 0.0033756783232092857,
+      "mean_target_rgb_mad": 48.46989313761393,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.9789840699190991,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.002941886894404888,
+          "site": "single.0",
+          "target_rgb_mad": 29.752288818359375,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9778574855925934,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.004920477047562599,
+          "site": "single.0",
+          "target_rgb_mad": 60.4715576171875,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.986048781245537,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.00226467102766037,
+          "site": "single.0",
+          "target_rgb_mad": 55.18583297729492,
+          "waveform": "impulse_t0"
+        }
+      ],
+      "site": "single.0",
+      "waveform": "impulse_t0"
+    },
+    {
+      "envelope": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "formula_kind": "impulse",
+      "mean_contrast_progress": -0.9879260297520438,
+      "mean_return_progress": 0.0012873212496439617,
+      "mean_target_rgb_mad": 48.47564888000488,
+      "per_axis": [
+        {
+          "axis": "appearance",
+          "contrast_progress": -0.9841354027032803,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.0010828261729329824,
+          "site": "joint.4",
+          "target_rgb_mad": 29.76361656188965,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "scene",
+          "contrast_progress": -0.9892657069814015,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.001701413537375629,
+          "site": "joint.4",
+          "target_rgb_mad": 60.43710708618164,
+          "waveform": "impulse_t0"
+        },
+        {
+          "axis": "character",
+          "contrast_progress": -0.9903769795714497,
+          "envelope": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "formula_kind": "impulse",
+          "return_progress": 0.0010777240386232734,
+          "site": "joint.4",
+          "target_rgb_mad": 55.22622299194336,
+          "waveform": "impulse_t0"
+        }
+      ],
+      "site": "joint.4",
+      "waveform": "impulse_t0"
+    }
+  ]
+}

@@ -7,9 +7,9 @@
       "experiment": "qwen-address-whitening",
       "kind": "one-model-validation-lease",
       "model": "Qwen3-4B-Base",
-      "model_root": "/mnt/big/llm-models",
+      "model_root": "<host-path>",
       "mrun_guarded_request_sha256": "354d7e1a18edc5792fef24dada3a926545cd1d116f14e174903703ac76e8ac45",
-      "out_path": "/mnt/big/saturn-observatory/qwen-address-whitening/Qwen3-4B-Base-seed1811.jsonl",
+      "out_path": "<host-path>/Qwen3-4B-Base-seed1811.jsonl",
       "program_sha256": "75103d26074cc0a4e35556a247c46a5b4461787fef4398f5ae483d4937ee4b2c",
       "queue_note": "E11 confirmation: re-score the discovery-fit source direction for Qwen3-4B-Base under raw/centered/diagonal/ZCA(lambda=0.1) candidate transforms; raw parity vs shipped cross-fitted selected_cosine, then negative-selection fraction per (layer, transform). Replay-only; no training, no terminal data.",
       "reservation": {
@@ -21,7 +21,7 @@
       "scheduling_contract": {
         "additional_scheduler_submissions": 0,
         "branch_execution": "in_process",
-        "checkpoint_policy": "one Beast lease; one explicit Qwen specimen load; discovery + eval capture forwards, direction fit, and all whitening transforms in process",
+        "checkpoint_policy": "one gpu-host lease; one explicit Qwen specimen load; discovery + eval capture forwards, direction fit, and all whitening transforms in process",
         "collection_policy": "direct_job_only",
         "control_plane": "mrun_outer_lease",
         "data_plane": "resident_worker",
@@ -61,16 +61,16 @@
           "TRANSFORMERS_OFFLINE=1",
           "TOKENIZERS_PARALLELISM=false",
           "PYTHONPATH=saturn_src:mrun_src:.",
-          "/home/beast/domains/mrun/.venv/bin/python",
+          "<host-path>",
           "run_qwen_address_whitening.py",
           "--model-root",
-          "/mnt/big/llm-models",
+          "<host-path>",
           "--model",
           "Qwen3-4B-Base",
           "--program",
           "qwen-generational-program-v1.json",
           "--out",
-          "/mnt/big/saturn-observatory/qwen-address-whitening/Qwen3-4B-Base-seed1811.jsonl",
+          "<host-path>/Qwen3-4B-Base-seed1811.jsonl",
           "--splits",
           "discovery,heldout,external",
           "--workload-seed",
@@ -82,8 +82,8 @@
           "--zca-lambda",
           "0.1"
         ],
-        "cwd": "/mnt/big/mrun-work/job-a4efec86e403",
-        "log_path": "/mnt/big/mrun-work/job-a4efec86e403/job.log",
+        "cwd": "<host-path>",
+        "log_path": "<host-path>/job.log",
         "phase": "finished",
         "phases": [
           {
@@ -114,7 +114,7 @@
       },
       "elapsed_s": 19.43,
       "executed_payload": {
-        "host": "beast",
+        "host": "gpu-host",
         "sha256": "97339dafba6c3173d1d1514900335eff339d0d6d002b96bce4b7fbfd542053ed",
         "size_bytes": 3983415
       },
@@ -218,7 +218,7 @@
         "generation": "qwen3",
         "model_type": "qwen3",
         "name": "Qwen3-4B-Base",
-        "path": "/mnt/big/llm-models/Qwen3-4B-Base",
+        "path": "<host-path>",
         "schema": "saturn-qwen-specimen-v1",
         "specialization": "general",
         "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
@@ -257,7 +257,7 @@
   "models_completed": [
     "Qwen3-4B-Base"
   ],
-  "output_path": "/mnt/big/saturn-observatory/qwen-address-whitening/Qwen3-4B-Base-seed1811.jsonl",
+  "output_path": "<host-path>/Qwen3-4B-Base-seed1811.jsonl",
   "output_sha256": "2e72ef8eefe71e99e7eb8b41c89eafc26d294de98baad2ff7500ade82262fb62",
   "parity_tolerance": 0.001,
   "per_model_parity_within_tolerance": {

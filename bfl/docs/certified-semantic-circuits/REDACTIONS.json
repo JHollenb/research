@@ -1,0 +1,13 @@
+{
+  "bundle": "certified-semantic-circuits",
+  "generated": "2026-09-22",
+  "patterns": {
+    "path": "absolute local filesystem paths under a user, home, or mounted-volume directory root, replaced with a placeholder token (trailing real filename kept when present)",
+    "host": "the two internal machine nicknames used for these runs, replaced with a generic placeholder nickname (an underscore variant is used when the original appeared inside a snake_case identifier)",
+    "ip": "private-range IPv4 addresses, replaced with a placeholder token",
+    "s3": "object-storage bucket URIs, replaced with a placeholder token",
+    "ssh": "remote-shell URLs, replaced with a placeholder token",
+    "git": "SSH-style git remote URLs, replaced with a placeholder token"
+  },
+  "files": []
+}

@@ -8,7 +8,7 @@
   },
   "interpretation": "Each row is one full native-Qwen checkpoint-replay contrast. Certified and carrier-certified are bounded route claims; carrier-candidate is a causal trend with one or more promotion gates open. No row establishes minimality, universality, or a token/channel semantic address.",
   "proof_seed": 31337,
-  "results_root": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout",
+  "results_root": "<host-path>",
   "route": [
     "joint.2",
     "joint.3",
@@ -41,15 +41,15 @@
         "wrong_axis": "a photorealistic black cat sitting in fresh snow at midnight, silver moonlight"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-lighting_dawn_sunset__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-lighting_dawn_sunset__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-lighting_dawn_sunset__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-lighting_dawn_sunset__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-lighting_dawn_sunset__seed-31337__source.png",
+        "target": "<host-path>/axis-lighting_dawn_sunset__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-lighting_dawn_sunset__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.928804,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -196,15 +196,15 @@
         "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-identity_cat_fox__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-identity_cat_fox__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-identity_cat_fox__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-identity_cat_fox__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-identity_cat_fox__seed-31337__source.png",
+        "target": "<host-path>/axis-identity_cat_fox__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-identity_cat_fox__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.916701,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -351,15 +351,15 @@
         "wrong_axis": "a photorealistic small black cat sitting beside a red ball in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-pose_sitting_lying__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-pose_sitting_lying__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-pose_sitting_lying__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-pose_sitting_lying__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-pose_sitting_lying__seed-31337__source.png",
+        "target": "<host-path>/axis-pose_sitting_lying__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-pose_sitting_lying__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.884355,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -506,15 +506,15 @@
         "wrong_axis": "a photorealistic white cat facing left while sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-orientation_left_right__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-orientation_left_right__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-orientation_left_right__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-orientation_left_right__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-orientation_left_right__seed-31337__source.png",
+        "target": "<host-path>/axis-orientation_left_right__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-orientation_left_right__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.875393,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -661,15 +661,15 @@
         "wrong_axis": "a photorealistic small white cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-size_small_large__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-size_small_large__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-size_small_large__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-size_small_large__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-size_small_large__seed-31337__source.png",
+        "target": "<host-path>/axis-size_small_large__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-size_small_large__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.864882,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -822,15 +822,15 @@
         "wrong_axis": "a photorealistic silver metal robot standing on a sandy beach at noon, bright sunlight"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-material_robot_metal_wood__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-material_robot_metal_wood__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-material_robot_metal_wood__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-material_robot_metal_wood__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-material_robot_metal_wood__seed-31337__source.png",
+        "target": "<host-path>/axis-material_robot_metal_wood__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-material_robot_metal_wood__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.871161,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -983,15 +983,15 @@
         "wrong_axis": "a photorealistic black cat sitting in fresh snow during a heavy snowstorm, gray light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_forest__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-scene_snow_forest__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-scene_snow_forest__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-scene_snow_forest__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-scene_snow_forest__seed-31337__source.png",
+        "target": "<host-path>/axis-scene_snow_forest__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-scene_snow_forest__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.863993,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -1144,15 +1144,15 @@
         "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_beach__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-scene_snow_beach__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-scene_snow_beach__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-scene_snow_beach__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-scene_snow_beach__seed-31337__source.png",
+        "target": "<host-path>/axis-scene_snow_beach__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-scene_snow_beach__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.85244,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -1305,15 +1305,15 @@
         "wrong_axis": "a photorealistic small black cat standing alert in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-action_sitting_jumping__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-action_sitting_jumping__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-action_sitting_jumping__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-action_sitting_jumping__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-action_sitting_jumping__seed-31337__source.png",
+        "target": "<host-path>/axis-action_sitting_jumping__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-action_sitting_jumping__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.850571,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -1466,15 +1466,15 @@
         "wrong_axis": "a watercolor illustration of a solid black cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-marking_solid_tuxedo__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-marking_solid_tuxedo__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-marking_solid_tuxedo__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-marking_solid_tuxedo__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-marking_solid_tuxedo__seed-31337__source.png",
+        "target": "<host-path>/axis-marking_solid_tuxedo__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-marking_solid_tuxedo__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.850215,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -1627,15 +1627,15 @@
         "wrong_axis": "a photorealistic black cat with upright ears sitting on a wooden porch in rain at night, warm porch light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-ears_upright_folded__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-ears_upright_folded__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-ears_upright_folded__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-ears_upright_folded__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-ears_upright_folded__seed-31337__source.png",
+        "target": "<host-path>/axis-ears_upright_folded__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-ears_upright_folded__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.842325,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -1786,15 +1786,15 @@
         "wrong_axis": "a photorealistic brown rope stretched in a straight line across fresh snow at dawn, soft red light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-geometry_snake_straight_coil__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-geometry_snake_straight_coil__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-geometry_snake_straight_coil__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-geometry_snake_straight_coil__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-geometry_snake_straight_coil__seed-31337__source.png",
+        "target": "<host-path>/axis-geometry_snake_straight_coil__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-geometry_snake_straight_coil__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.838756,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -1947,15 +1947,15 @@
         "wrong_axis": "a photorealistic black cat with green eyes standing alert in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-eyes_green_blue__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-eyes_green_blue__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-eyes_green_blue__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-eyes_green_blue__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-eyes_green_blue__seed-31337__source.png",
+        "target": "<host-path>/axis-eyes_green_blue__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-eyes_green_blue__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.832949,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -2108,15 +2108,15 @@
         "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/axis-style_photo_oil__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-style_photo_oil__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-style_photo_oil__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-style_photo_oil__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-style_photo_oil__seed-31337__source.png",
+        "target": "<host-path>/axis-style_photo_oil__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-style_photo_oil__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.832764,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ab73418b53f2/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -2269,15 +2269,15 @@
         "wrong_axis": "a photorealistic white cat sitting in fresh snow under a clear sky at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-weather_clear_snowstorm__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-weather_clear_snowstorm__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-weather_clear_snowstorm__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-weather_clear_snowstorm__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-weather_clear_snowstorm__seed-31337__source.png",
+        "target": "<host-path>/axis-weather_clear_snowstorm__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-weather_clear_snowstorm__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.831945,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -2430,15 +2430,15 @@
         "wrong_axis": "a photorealistic short-haired white cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/axis-fur_short_long__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-fur_short_long__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-fur_short_long__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-fur_short_long__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-fur_short_long__seed-31337__source.png",
+        "target": "<host-path>/axis-fur_short_long__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-fur_short_long__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.777209,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-ecd876ddbd33/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -2591,15 +2591,15 @@
         "wrong_axis": "one photorealistic red bird perched on a branch in a snowy forest at dawn"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-count_one_two_birds__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-count_one_two_birds__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-count_one_two_birds__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-count_one_two_birds__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-count_one_two_birds__seed-31337__source.png",
+        "target": "<host-path>/axis-count_one_two_birds__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-count_one_two_birds__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.771759,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -2752,15 +2752,15 @@
         "wrong_axis": "a photorealistic white cat sitting in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/axis-scene_snow_greenhouse__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-scene_snow_greenhouse__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-scene_snow_greenhouse__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-scene_snow_greenhouse__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-scene_snow_greenhouse__seed-31337__source.png",
+        "target": "<host-path>/axis-scene_snow_greenhouse__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-scene_snow_greenhouse__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.759109,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-19f6aedb7306/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -2913,15 +2913,15 @@
         "wrong_axis": "a photorealistic white cat sitting on a wooden chair in a quiet room, soft window light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_on_under_furniture__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-relation_on_under_furniture__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-relation_on_under_furniture__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-relation_on_under_furniture__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-relation_on_under_furniture__seed-31337__source.png",
+        "target": "<host-path>/axis-relation_on_under_furniture__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-relation_on_under_furniture__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.663486,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,
@@ -3076,15 +3076,15 @@
         "wrong_axis": "a photorealistic white cat sitting beside a red ball in fresh snow at dawn, soft blue light"
       },
       "proof_images": {
-        "full_transfer": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__scene_dose_100.png",
-        "montage": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__montage.png",
-        "route_ablation": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__route_ablation.png",
-        "source": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__source.png",
-        "target": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__target.png",
-        "wrong_axis": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/axis-relation_beside_behind_ball__seed-31337__wrong_color_full.png"
+        "full_transfer": "<host-path>/axis-relation_beside_behind_ball__seed-31337__scene_dose_100.png",
+        "montage": "<host-path>/axis-relation_beside_behind_ball__seed-31337__montage.png",
+        "route_ablation": "<host-path>/axis-relation_beside_behind_ball__seed-31337__route_ablation.png",
+        "source": "<host-path>/axis-relation_beside_behind_ball__seed-31337__source.png",
+        "target": "<host-path>/axis-relation_beside_behind_ball__seed-31337__target.png",
+        "wrong_axis": "<host-path>/axis-relation_beside_behind_ball__seed-31337__wrong_color_full.png"
       },
       "rank_score": 0.765221,
-      "report": "/Users/jakeholl/domains/saturn/results/rosetta-20-circuit-confirmation-heldout/job-fc5e74bcc30e/report.json",
+      "report": "<host-path>/report.json",
       "seed_metrics": [
         {
           "branch_count": 18,

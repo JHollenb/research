@@ -1,0 +1,58 @@
+{
+ "identity": {
+  "n_items": 3,
+  "n_admitted": 3,
+  "usable_for_rules": false,
+  "items": [
+   {
+    "context_idx": 0,
+    "subject": "fox",
+    "admitted": true,
+    "clean_lp": -1.5487470626831055,
+    "filler_lp": -3.314826250076294
+   },
+   {
+    "context_idx": 0,
+    "subject": "cat",
+    "admitted": true,
+    "clean_lp": -1.6580291986465454,
+    "filler_lp": -4.109135627746582
+   },
+   {
+    "context_idx": 0,
+    "subject": "dog",
+    "admitted": true,
+    "clean_lp": -1.5479360818862915,
+    "filler_lp": -3.666724443435669
+   }
+  ]
+ },
+ "color": {
+  "n_items": 3,
+  "n_admitted": 3,
+  "usable_for_rules": false,
+  "items": [
+   {
+    "context_idx": 0,
+    "subject": "red",
+    "admitted": true,
+    "clean_lp": -1.6502735614776611,
+    "filler_lp": -3.160043239593506
+   },
+   {
+    "context_idx": 0,
+    "subject": "blue",
+    "admitted": true,
+    "clean_lp": -1.8448415994644165,
+    "filler_lp": -3.3484110832214355
+   },
+   {
+    "context_idx": 0,
+    "subject": "green",
+    "admitted": true,
+    "clean_lp": -1.904893159866333,
+    "filler_lp": -4.013150691986084
+   }
+  ]
+ }
+}

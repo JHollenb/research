@@ -1,0 +1,591 @@
+{
+  "axis_count": 16,
+  "counts": {
+    "carrier_candidate": 7,
+    "carrier_certified": 9,
+    "certified": 0,
+    "unknown": 0
+  },
+  "interpretation": "Each row is one full native-conditioner checkpoint-replay contrast. Certified and carrier-certified are bounded route claims; carrier-candidate is a causal trend with one or more promotion gates open. No row establishes minimality, universality, or a token/channel semantic address.",
+  "proof_seed": 4242,
+  "results_root": "<host-path>",
+  "route": [
+    "joint.2",
+    "joint.3",
+    "joint.4",
+    "single.0"
+  ],
+  "rows": [
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.004583253929879683,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.7038337158217184,
+        "min_target_progress": 0.8850593269751803
+      },
+      "axis_id": "identity_cat_fox__pb",
+      "category": "identity",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-6f32cbefcaef",
+      "label": "identity/cat to fox",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic gray rabbit perched on a tree stump in a forest clearing",
+        "source": "a photorealistic brown squirrel perched on a tree stump in a forest clearing",
+        "wrong_axis": "a photorealistic white squirrel perched on a tree stump in a forest clearing"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.854564
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.002516571048466365,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.8607393668432044,
+        "min_target_progress": 0.8124902445492699
+      },
+      "axis_id": "marking_solid_tuxedo__pa",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-3f3b24ab8459",
+      "label": "appearance/marking",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black-and-white spotted dog sitting on a grassy lawn at noon, bright light",
+        "source": "a photorealistic solid brown dog sitting on a grassy lawn at noon, bright light",
+        "wrong_axis": "a watercolor illustration of a solid brown dog sitting on a grassy lawn at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.853806
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.01653091090162817,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6367776358398393,
+        "min_target_progress": 0.8621034723050843
+      },
+      "axis_id": "eyes_green_blue__pa",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-3f3b24ab8459",
+      "label": "appearance/eye color",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic golden retriever with blue eyes sitting on a lawn at noon, bright light",
+        "source": "a photorealistic golden retriever with green eyes sitting on a lawn at noon, bright light",
+        "wrong_axis": "a photorealistic golden retriever with green eyes standing alert on a lawn at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.827836
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.021702015277984765,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6178659889739357,
+        "min_target_progress": 0.8702342231266263
+      },
+      "axis_id": "size_small_large__pa",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-3965f6d2c20b",
+      "label": "appearance/size",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic large brown dog sitting on a grassy lawn at noon, bright light",
+        "source": "a photorealistic small brown dog sitting on a grassy lawn at noon, bright light",
+        "wrong_axis": "a photorealistic small white dog sitting on a grassy lawn at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.82642
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.009074070727118744,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5532431199975381,
+        "min_target_progress": 0.8552086829000175
+      },
+      "axis_id": "eyes_green_blue__pb",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-3f3b24ab8459",
+      "label": "appearance/eye color",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic gray husky with blue eyes lying on a wooden floor, soft light",
+        "source": "a photorealistic gray husky with green eyes lying on a wooden floor, soft light",
+        "wrong_axis": "a photorealistic gray husky with green eyes standing alert on a wooden floor, soft light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.809891
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.012982734458674594,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.56660913505597,
+        "min_target_progress": 0.8251323480277097
+      },
+      "axis_id": "action_sitting_jumping__pa",
+      "category": "action",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-2baf28fddb02",
+      "label": "action/sitting to jumping",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic brown dog leaping across a grassy lawn at noon, bright light",
+        "source": "a photorealistic brown dog sitting on a grassy lawn at noon, bright light",
+        "wrong_axis": "a photorealistic brown dog standing alert on a grassy lawn at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.798052
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": -0.003036001790136522,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6767028836096357,
+        "min_target_progress": 0.6928563862968458
+      },
+      "axis_id": "marking_solid_tuxedo__pb",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-3f3b24ab8459",
+      "label": "appearance/marking",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic black-and-white pinto horse standing in a meadow at midday, warm light",
+        "source": "a photorealistic solid gray horse standing in a meadow at midday, warm light",
+        "wrong_axis": "a watercolor illustration of a solid gray horse standing in a meadow at midday, warm light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.764552
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.05419124029913602,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5995699428279536,
+        "min_target_progress": 0.7295845378281627
+      },
+      "axis_id": "action_sitting_jumping__pb",
+      "category": "action",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-2baf28fddb02",
+      "label": "action/sitting to jumping",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic red squirrel leaping across a forest floor at midday, dappled light",
+        "source": "a photorealistic red squirrel sitting on a forest floor at midday, dappled light",
+        "wrong_axis": "a photorealistic red squirrel standing alert on a forest floor at midday, dappled light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.751346
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.08343589868649215,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.7361622328043296,
+        "min_target_progress": 0.6076548518711041
+      },
+      "axis_id": "fur_short_long__pb",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-3965f6d2c20b",
+      "label": "appearance/fur length",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic long-haired gray rabbit on a green lawn at midday, bright light",
+        "source": "a photorealistic short-haired gray rabbit on a green lawn at midday, bright light",
+        "wrong_axis": "a photorealistic short-haired brown rabbit on a green lawn at midday, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.716485
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.014057225687103436,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.4686366685012561,
+        "min_target_progress": 0.8772517504595235
+      },
+      "axis_id": "identity_cat_fox__pa",
+      "category": "identity",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-6f32cbefcaef",
+      "label": "identity/cat to fox",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic small beagle dog sitting on a windowsill in a sunlit room",
+        "source": "a photorealistic orange tabby cat sitting on a windowsill in a sunlit room",
+        "wrong_axis": "a photorealistic black cat sitting on a windowsill in a sunlit room"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.76831
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.006476831204042632,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.4981603172008807,
+        "min_target_progress": 0.8426093597914066
+      },
+      "axis_id": "size_small_large__pb",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-3965f6d2c20b",
+      "label": "appearance/size",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic large gray elephant standing in a savanna at midday, warm light",
+        "source": "a photorealistic small gray elephant standing in a savanna at midday, warm light",
+        "wrong_axis": "a photorealistic small brown elephant standing in a savanna at midday, warm light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.76052
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": -0.0023017313052533517,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.43877002225647344,
+        "min_target_progress": 0.8076227230917181
+      },
+      "axis_id": "fur_short_long__pa",
+      "category": "appearance",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-3965f6d2c20b",
+      "label": "appearance/fur length",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic long-haired brown dog sitting on a wooden porch at noon, warm light",
+        "source": "a photorealistic short-haired brown dog sitting on a wooden porch at noon, warm light",
+        "wrong_axis": "a photorealistic short-haired white dog sitting on a wooden porch at noon, warm light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.735093
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.16389056489955456,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.3456361825376042,
+        "min_target_progress": 0.7905462705969486
+      },
+      "axis_id": "pose_sitting_lying__pa",
+      "category": "pose",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "necessity",
+          "specificity_wrong_axis",
+          "specificity_sham",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 3,
+        "total": 9
+      },
+      "group": "job-2baf28fddb02",
+      "label": "pose/sitting to lying",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic brown dog lying on its side on a grassy lawn at noon, bright light",
+        "source": "a photorealistic brown dog sitting on a grassy lawn at noon, bright light",
+        "wrong_axis": "a photorealistic brown dog sitting beside a blue bucket on a grassy lawn at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.667234
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.02036254922809988,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.4972855781874833,
+        "min_target_progress": 0.6383096166485622
+      },
+      "axis_id": "geometry_snake_straight_coil__pb",
+      "category": "geometry",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-6f32cbefcaef",
+      "label": "geometry/snake topology",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic green garden hose tightly coiled on a lawn at midday, bright light",
+        "source": "a photorealistic green garden hose stretched in a straight line across a lawn at midday, bright light",
+        "wrong_axis": "a photorealistic gray metal chain stretched in a straight line across a lawn at midday, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.664939
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.021243998684548848,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.1948407326684018,
+        "min_target_progress": 0.764714172686404
+      },
+      "axis_id": "pose_sitting_lying__pb",
+      "category": "pose",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-2baf28fddb02",
+      "label": "pose/sitting to lying",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic gray cat lying on its side on a wooden floor in a sunlit room",
+        "source": "a photorealistic gray cat sitting on a wooden floor in a sunlit room",
+        "wrong_axis": "a photorealistic gray cat sitting beside a yellow ball on a wooden floor in a sunlit room"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.661112
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.007796825288123532,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.44983726682418457,
+        "min_target_progress": 0.5156485389018144
+      },
+      "axis_id": "geometry_snake_straight_coil__pa",
+      "category": "geometry",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-6f32cbefcaef",
+      "label": "geometry/snake topology",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic yellow snake tightly coiled on a sandy desert at noon, harsh light",
+        "source": "a photorealistic yellow snake stretched in a straight line across a sandy desert at noon, harsh light",
+        "wrong_axis": "a photorealistic tan leather belt stretched in a straight line across a sandy desert at noon, harsh light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.603393
+    }
+  ],
+  "schema": "saturn-circuit-panel-ledger-v1"
+}

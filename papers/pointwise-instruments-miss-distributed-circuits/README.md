@@ -7,11 +7,13 @@ updated: 2026-09-22
 
 # Single-Site Tests Miss Distributed Stores
 
-[The paper](paper.md) shows measured cases where single-site activation patching reports "no necessary component" while the same components across all diffusion steps, or the same token's key/value entries across the second half of a language model, both remove and carry the behavior. It also reports a preregistered, blind-graded comparison in which four standard readouts gave the wrong verdict in 4 of 4 graded cases.
+[The paper](paper.md) shows measured cases where single-site activation patching reports "no necessary component" while the same components across all diffusion steps, or the same token's key/value entries across the second half of a language model, both remove and carry the behavior. It adds a preregistered comparison with a standard sparse-autoencoder workflow (SAELens, public GPT-2 and Gemma Scope SAEs, cross-checked in TransformerLens) and a blind-graded comparison in which four standard readouts gave the wrong verdict in 4 of 4 graded cases. Items marked `TODO-{…}` in the paper are queued runs.
 
 - [`paper.md`](paper.md): the paper.
+- [`appendix-execution-model.md`](appendix-execution-model.md): how the exact capture-and-replay experiments are run, how that compares with TransformerLens, nnsight and pyvene, and measured costs.
+- [`experiments/2026-09-22-sae-comparison/`](experiments/2026-09-22-sae-comparison/): preregistration, standalone script, requirements, and every result file for the SAE and language-model panel.
 - [`figures/`](figures/): Figures 1–3, decoded from the bundled receipts.
-- [`evidence/ird-certificate/`](evidence/ird-certificate/README.md): receipts and render panes for the four-quadrant tests; `python3 verify.py` re-checks 35 file hashes and re-derives the headline values.
+- [`evidence/four-quadrant-tests/`](evidence/four-quadrant-tests/README.md): receipts and render panes for the four-quadrant tests; `python3 verify.py` re-checks 37 file hashes and re-derives the headline values.
 - [`evidence/instrument-trial/`](evidence/instrument-trial/README.md): the blind-graded comparison; `pip install . && instrument-trial-verify` re-checks every receipt hash and re-derives every mechanical verdict.
 
-The receipts are unmodified scheduler records, so they include the original host paths; they are hash-pinned and are not edited here. The comparison arms are the author's implementations of standard recipes, not third-party libraries, and no sparse-autoencoder method was tested (see §5 and §6 of the paper).
+Host-specific paths in the receipts were replaced with placeholders after the runs; original file hashes are listed in each bundle's `REDACTIONS.json`. The blind-graded comparison arms are the author's implementations of standard recipes; the SAE comparison uses public libraries and SAEs (see §4.4, §5 and §6 of the paper).

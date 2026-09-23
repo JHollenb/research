@@ -4,7 +4,7 @@
 Checks, in order:
   1. Every bundled receipt matches its SHA-256 in bundle/manifest.json.
   2. Every case verdict re-derives from the receipts by the frozen mechanical
-     decision rules (the same rules preregistered in the saturn tree).
+     decision rules (the same rules frozen in the preregistration).
 
 Exit codes: 0 = all verified; 3 = a hash or verdict mismatch; 2 = structural
 error (missing files, malformed JSON).
@@ -37,30 +37,30 @@ def derive_case_1(bundle: Path) -> dict[str, str]:
                  if b["kind"] == "necessity"]
     passing = [b for b in necessity
                if b["donor_progress"] <= NECESSITY_THRESHOLD]
-    community = ("necessary component exists" if passing
+    standard = ("necessary component exists" if passing
                  else "no necessary component")
     ledger = _load(bundle / "case-1" / "circuit-panel-ledger.json")
     row = next(r for r in ledger["rows"] if r["axis_id"] == "identity_cat_fox")
-    saturn = (
+    output_check = (
         "the 4-site route is jointly necessary as a time-accumulated object"
         if (row["level"] == "certified"
             and row["aggregate"]["max_route_ablation_progress"]
             <= NECESSITY_THRESHOLD)
         else "route not certified")
-    return {"community": community, "saturn": saturn}
+    return {"standard": standard, "output_check": output_check}
 
 
 def derive_case_2_probe(bundle: Path) -> dict[str, str]:
     rep = _load(bundle / "case-2" / "probe-job-f58bcd26f295-report.json")
     gates = rep["gates"]
     if not (gates["parity_ok"] and gates["g1_ok"]):
-        return {"community_strengthened": "arm broken (gates failed)"}
+        return {"standard_strengthened": "arm broken (gates failed)"}
     primary = str(rep["model"]["mapper_seeds"][0])
-    return {"community_strengthened": rep["foreign_scores"][primary]["verdict"]}
+    return {"standard_strengthened": rep["foreign_scores"][primary]["verdict"]}
 
 
 def derive_case_3(bundle: Path) -> dict[str, Any]:
-    out: dict[str, Any] = {"community": {}, "saturn": {}}
+    out: dict[str, Any] = {"standard": {}, "output_check": {}}
     for path in sorted((bundle / "case-3").glob("whitening-job-*-report.json")):
         rep = _load(path)
         for mr in rep["model_reports"]:
@@ -68,22 +68,22 @@ def derive_case_3(bundle: Path) -> dict[str, Any]:
             fractions = mr["transform_negative_fraction_overall"]
             raw = fractions["raw"]
             if not mr["parity_within_tolerance"]:
-                out["community"][model] = "arm broken (parity gate failed)"
+                out["standard"][model] = "arm broken (parity gate failed)"
                 continue
-            out["community"][model] = (
+            out["standard"][model] = (
                 "representations differ across families" if raw > 0.30
                 else "no representational difference detected")
             transformed = min(fractions["centered"], fractions["zca"])
             if raw > 0.30 and transformed <= 0.5 * raw:
-                out["saturn"][model] = (
+                out["output_check"][model] = (
                     "the split is an artifact of fitted-direction transfer "
                     "(collapses under centering/whitening); native geometry "
                     "not divergent")
             elif raw <= 0.30:
-                out["saturn"][model] = ("no representational difference "
+                out["output_check"][model] = ("no representational difference "
                                         "(consistent with raw)")
             else:
-                out["saturn"][model] = ("split persists under whitening; "
+                out["output_check"][model] = ("split persists under whitening; "
                                         "representational difference not "
                                         "ruled out")
     return out
@@ -94,7 +94,7 @@ def derive_case_2(bundle: Path) -> dict[str, str]:
     resid = rep["readout"]["carrier_resid"]
     floor = rep["readout"]["resid_floor_deer_vs_tiger"]
     above = {a: c for a, c in resid.items() if c > floor}
-    community = ("no decodable content" if not above
+    standard = ("no decodable content" if not above
                  else "decodable: " + max(above, key=above.get))
     e3 = [b for b in rep["branches"]
           if b["label"] == "E3:transplant_foreign_subject_into_native"]
@@ -103,17 +103,17 @@ def derive_case_2(bundle: Path) -> dict[str, str]:
     moved = all(b["roi"]["fox"]["progress"] > 0.3 for b in e3)
     sham_flat = all(abs(b["roi"]["fox"]["progress"]) < 0.1 for b in sham)
     gates_exact = all(v == 0.0 for v in rep["gates"].values())
-    saturn = ("register carries content (transplant moves the subject region "
+    output_check = ("subject rows carry content (transplant moves the subject region "
               "on both seeds, sham flat, exact gates)"
               if moved and sham_flat and gates_exact else "not established")
-    return {"community": community, "saturn": saturn}
+    return {"standard": standard, "output_check": output_check}
 
 
 def derive_case_4(bundle: Path) -> dict[str, str]:
     rep = _load(bundle / "case-4" / "tecm-v2-job-3a259f6d1b9e-report.json")
     smol = rep["comparisons"]["flux2-smol"]
     tecm_cos = [smol[p]["tecm_carrier_cosine"] for p in smol]
-    community = ("state recovered"
+    standard = ("state recovered"
                  if all(c >= COSINE_RECOVERED_THRESHOLD for c in tecm_cos)
                  else "state not recovered")
     duplicate_mad = rep["checkpoint_control"][
@@ -123,10 +123,10 @@ def derive_case_4(bundle: Path) -> dict[str, str]:
     behaviorally_wrong = (min(render_mad) > 50.0 and duplicate_mad == 0.0
                           and all(c >= COSINE_RECOVERED_THRESHOLD
                                   for c in template_cos))
-    saturn = ("state not recovered (consumer contradicts the cosine; "
+    output_check = ("state not recovered (rendered output contradicts the cosine; "
               "content-free template matches it)"
               if behaviorally_wrong else "not established")
-    return {"community": community, "saturn": saturn}
+    return {"standard": standard, "output_check": output_check}
 
 
 def derive_case_5(bundle: Path) -> dict[str, str]:
@@ -138,13 +138,13 @@ def derive_case_5(bundle: Path) -> dict[str, str]:
                 if gate["id"] == "mediation":
                     cells.append(bool(gate["passed"]))
     n_pass = sum(cells)
-    saturn = (f"not a step artifact: {n_pass}/{len(cells)} axis x step cells "
+    output_check = (f"not a step artifact: {n_pass}/{len(cells)} axis x step cells "
               "hold; failure localized"
               if n_pass >= len(cells) - 1 and len(cells) >= 12
               else "step-generality not established")
-    return {"community": "mediation holds at the measured step; "
+    return {"standard": "mediation holds at the measured step; "
                          "no claim about other steps",
-            "saturn": saturn}
+            "output_check": output_check}
 
 
 def main() -> int:

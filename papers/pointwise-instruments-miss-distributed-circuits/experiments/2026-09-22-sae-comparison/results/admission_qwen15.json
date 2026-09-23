@@ -1,0 +1,520 @@
+{
+ "identity": {
+  "n_items": 42,
+  "n_admitted": 42,
+  "usable_for_rules": true,
+  "items": [
+   {
+    "context_idx": 0,
+    "subject": "fox",
+    "admitted": true,
+    "clean_lp": -1.1438790559768677,
+    "filler_lp": -4.282596111297607
+   },
+   {
+    "context_idx": 0,
+    "subject": "cat",
+    "admitted": true,
+    "clean_lp": -1.9340060949325562,
+    "filler_lp": -4.886307239532471
+   },
+   {
+    "context_idx": 0,
+    "subject": "dog",
+    "admitted": true,
+    "clean_lp": -2.0679523944854736,
+    "filler_lp": -5.721047878265381
+   },
+   {
+    "context_idx": 0,
+    "subject": "wolf",
+    "admitted": true,
+    "clean_lp": -1.5914943218231201,
+    "filler_lp": -3.9494242668151855
+   },
+   {
+    "context_idx": 0,
+    "subject": "bear",
+    "admitted": true,
+    "clean_lp": -1.5762898921966553,
+    "filler_lp": -3.00026273727417
+   },
+   {
+    "context_idx": 0,
+    "subject": "lion",
+    "admitted": true,
+    "clean_lp": -3.067633628845215,
+    "filler_lp": -4.468856334686279
+   },
+   {
+    "context_idx": 0,
+    "subject": "tiger",
+    "admitted": true,
+    "clean_lp": -2.097076416015625,
+    "filler_lp": -4.68722677230835
+   },
+   {
+    "context_idx": 0,
+    "subject": "deer",
+    "admitted": true,
+    "clean_lp": -1.5314104557037354,
+    "filler_lp": -3.44102144241333
+   },
+   {
+    "context_idx": 0,
+    "subject": "horse",
+    "admitted": true,
+    "clean_lp": -1.6131511926651,
+    "filler_lp": -4.7592549324035645
+   },
+   {
+    "context_idx": 0,
+    "subject": "rabbit",
+    "admitted": true,
+    "clean_lp": -2.2877707481384277,
+    "filler_lp": -6.207534313201904
+   },
+   {
+    "context_idx": 0,
+    "subject": "mouse",
+    "admitted": true,
+    "clean_lp": -1.2039470672607422,
+    "filler_lp": -6.335498332977295
+   },
+   {
+    "context_idx": 0,
+    "subject": "owl",
+    "admitted": true,
+    "clean_lp": -5.0318708419799805,
+    "filler_lp": -8.40310287475586
+   },
+   {
+    "context_idx": 0,
+    "subject": "pig",
+    "admitted": true,
+    "clean_lp": -1.9119417667388916,
+    "filler_lp": -6.2702717781066895
+   },
+   {
+    "context_idx": 0,
+    "subject": "sheep",
+    "admitted": true,
+    "clean_lp": -1.2273714542388916,
+    "filler_lp": -6.5633111000061035
+   },
+   {
+    "context_idx": 1,
+    "subject": "fox",
+    "admitted": true,
+    "clean_lp": -1.317786693572998,
+    "filler_lp": -4.319870948791504
+   },
+   {
+    "context_idx": 1,
+    "subject": "cat",
+    "admitted": true,
+    "clean_lp": -1.9452035427093506,
+    "filler_lp": -5.97818660736084
+   },
+   {
+    "context_idx": 1,
+    "subject": "dog",
+    "admitted": true,
+    "clean_lp": -2.2933084964752197,
+    "filler_lp": -5.390995025634766
+   },
+   {
+    "context_idx": 1,
+    "subject": "wolf",
+    "admitted": true,
+    "clean_lp": -1.6575636863708496,
+    "filler_lp": -3.451141595840454
+   },
+   {
+    "context_idx": 1,
+    "subject": "bear",
+    "admitted": true,
+    "clean_lp": -1.6850534677505493,
+    "filler_lp": -3.6837313175201416
+   },
+   {
+    "context_idx": 1,
+    "subject": "lion",
+    "admitted": true,
+    "clean_lp": -3.3323965072631836,
+    "filler_lp": -6.612854957580566
+   },
+   {
+    "context_idx": 1,
+    "subject": "tiger",
+    "admitted": true,
+    "clean_lp": -2.271531581878662,
+    "filler_lp": -6.145536422729492
+   },
+   {
+    "context_idx": 1,
+    "subject": "deer",
+    "admitted": true,
+    "clean_lp": -1.746161699295044,
+    "filler_lp": -3.3930418491363525
+   },
+   {
+    "context_idx": 1,
+    "subject": "horse",
+    "admitted": true,
+    "clean_lp": -1.9673713445663452,
+    "filler_lp": -4.706479072570801
+   },
+   {
+    "context_idx": 1,
+    "subject": "rabbit",
+    "admitted": true,
+    "clean_lp": -2.6386935710906982,
+    "filler_lp": -5.974924087524414
+   },
+   {
+    "context_idx": 1,
+    "subject": "mouse",
+    "admitted": true,
+    "clean_lp": -1.981926441192627,
+    "filler_lp": -7.278770446777344
+   },
+   {
+    "context_idx": 1,
+    "subject": "owl",
+    "admitted": true,
+    "clean_lp": -5.55405855178833,
+    "filler_lp": -9.391011238098145
+   },
+   {
+    "context_idx": 1,
+    "subject": "pig",
+    "admitted": true,
+    "clean_lp": -2.103055715560913,
+    "filler_lp": -6.492267608642578
+   },
+   {
+    "context_idx": 1,
+    "subject": "sheep",
+    "admitted": true,
+    "clean_lp": -1.4352778196334839,
+    "filler_lp": -4.765652656555176
+   },
+   {
+    "context_idx": 2,
+    "subject": "fox",
+    "admitted": true,
+    "clean_lp": -1.4240022897720337,
+    "filler_lp": -5.153707981109619
+   },
+   {
+    "context_idx": 2,
+    "subject": "cat",
+    "admitted": true,
+    "clean_lp": -2.1329855918884277,
+    "filler_lp": -5.440173625946045
+   },
+   {
+    "context_idx": 2,
+    "subject": "dog",
+    "admitted": true,
+    "clean_lp": -2.1591274738311768,
+    "filler_lp": -5.772326946258545
+   },
+   {
+    "context_idx": 2,
+    "subject": "wolf",
+    "admitted": true,
+    "clean_lp": -1.7987431287765503,
+    "filler_lp": -5.0152268409729
+   },
+   {
+    "context_idx": 2,
+    "subject": "bear",
+    "admitted": true,
+    "clean_lp": -1.8834809064865112,
+    "filler_lp": -5.0976243019104
+   },
+   {
+    "context_idx": 2,
+    "subject": "lion",
+    "admitted": true,
+    "clean_lp": -2.722663402557373,
+    "filler_lp": -5.138582706451416
+   },
+   {
+    "context_idx": 2,
+    "subject": "tiger",
+    "admitted": true,
+    "clean_lp": -2.4002883434295654,
+    "filler_lp": -6.039857387542725
+   },
+   {
+    "context_idx": 2,
+    "subject": "deer",
+    "admitted": true,
+    "clean_lp": -1.9070796966552734,
+    "filler_lp": -3.22621488571167
+   },
+   {
+    "context_idx": 2,
+    "subject": "horse",
+    "admitted": true,
+    "clean_lp": -1.8381595611572266,
+    "filler_lp": -3.7326197624206543
+   },
+   {
+    "context_idx": 2,
+    "subject": "rabbit",
+    "admitted": true,
+    "clean_lp": -2.5292465686798096,
+    "filler_lp": -5.727610111236572
+   },
+   {
+    "context_idx": 2,
+    "subject": "mouse",
+    "admitted": true,
+    "clean_lp": -1.8780184984207153,
+    "filler_lp": -6.063133716583252
+   },
+   {
+    "context_idx": 2,
+    "subject": "owl",
+    "admitted": true,
+    "clean_lp": -6.1984663009643555,
+    "filler_lp": -9.390371322631836
+   },
+   {
+    "context_idx": 2,
+    "subject": "pig",
+    "admitted": true,
+    "clean_lp": -1.7003602981567383,
+    "filler_lp": -5.792439937591553
+   },
+   {
+    "context_idx": 2,
+    "subject": "sheep",
+    "admitted": true,
+    "clean_lp": -1.29533851146698,
+    "filler_lp": -4.322935581207275
+   }
+  ]
+ },
+ "color": {
+  "n_items": 30,
+  "n_admitted": 22,
+  "usable_for_rules": true,
+  "items": [
+   {
+    "context_idx": 0,
+    "subject": "red",
+    "admitted": false,
+    "clean_lp": -1.544543981552124,
+    "filler_lp": -2.5247488021850586
+   },
+   {
+    "context_idx": 0,
+    "subject": "blue",
+    "admitted": true,
+    "clean_lp": -1.4276155233383179,
+    "filler_lp": -3.0497732162475586
+   },
+   {
+    "context_idx": 0,
+    "subject": "green",
+    "admitted": true,
+    "clean_lp": -1.3094121217727661,
+    "filler_lp": -3.5429563522338867
+   },
+   {
+    "context_idx": 0,
+    "subject": "black",
+    "admitted": false,
+    "clean_lp": -1.482502818107605,
+    "filler_lp": -2.1494855880737305
+   },
+   {
+    "context_idx": 0,
+    "subject": "white",
+    "admitted": true,
+    "clean_lp": -1.2343719005584717,
+    "filler_lp": -2.3232202529907227
+   },
+   {
+    "context_idx": 0,
+    "subject": "brown",
+    "admitted": true,
+    "clean_lp": -1.4464935064315796,
+    "filler_lp": -4.554892539978027
+   },
+   {
+    "context_idx": 0,
+    "subject": "pink",
+    "admitted": true,
+    "clean_lp": -1.0357683897018433,
+    "filler_lp": -5.584599494934082
+   },
+   {
+    "context_idx": 0,
+    "subject": "orange",
+    "admitted": false,
+    "clean_lp": -2.179004430770874,
+    "filler_lp": -4.64804744720459
+   },
+   {
+    "context_idx": 0,
+    "subject": "purple",
+    "admitted": true,
+    "clean_lp": -0.9560010433197021,
+    "filler_lp": -5.226632118225098
+   },
+   {
+    "context_idx": 0,
+    "subject": "yellow",
+    "admitted": true,
+    "clean_lp": -1.2202949523925781,
+    "filler_lp": -3.604121208190918
+   },
+   {
+    "context_idx": 1,
+    "subject": "red",
+    "admitted": true,
+    "clean_lp": -1.6193710565567017,
+    "filler_lp": -2.893803596496582
+   },
+   {
+    "context_idx": 1,
+    "subject": "blue",
+    "admitted": true,
+    "clean_lp": -1.9977796077728271,
+    "filler_lp": -3.6115503311157227
+   },
+   {
+    "context_idx": 1,
+    "subject": "green",
+    "admitted": true,
+    "clean_lp": -2.0739591121673584,
+    "filler_lp": -3.775017738342285
+   },
+   {
+    "context_idx": 1,
+    "subject": "black",
+    "admitted": false,
+    "clean_lp": -1.4371200799942017,
+    "filler_lp": -2.4069128036499023
+   },
+   {
+    "context_idx": 1,
+    "subject": "white",
+    "admitted": false,
+    "clean_lp": -1.7645741701126099,
+    "filler_lp": -2.2199220657348633
+   },
+   {
+    "context_idx": 1,
+    "subject": "brown",
+    "admitted": true,
+    "clean_lp": -1.9709546566009521,
+    "filler_lp": -4.366673469543457
+   },
+   {
+    "context_idx": 1,
+    "subject": "pink",
+    "admitted": true,
+    "clean_lp": -1.3756065368652344,
+    "filler_lp": -5.833671569824219
+   },
+   {
+    "context_idx": 1,
+    "subject": "orange",
+    "admitted": false,
+    "clean_lp": -2.5341036319732666,
+    "filler_lp": -4.739777565002441
+   },
+   {
+    "context_idx": 1,
+    "subject": "purple",
+    "admitted": true,
+    "clean_lp": -1.28583824634552,
+    "filler_lp": -5.441811561584473
+   },
+   {
+    "context_idx": 1,
+    "subject": "yellow",
+    "admitted": true,
+    "clean_lp": -2.0289855003356934,
+    "filler_lp": -4.081711769104004
+   },
+   {
+    "context_idx": 2,
+    "subject": "red",
+    "admitted": true,
+    "clean_lp": -1.8182364702224731,
+    "filler_lp": -3.3317055702209473
+   },
+   {
+    "context_idx": 2,
+    "subject": "blue",
+    "admitted": true,
+    "clean_lp": -1.8042511940002441,
+    "filler_lp": -3.055716037750244
+   },
+   {
+    "context_idx": 2,
+    "subject": "green",
+    "admitted": true,
+    "clean_lp": -1.7801399230957031,
+    "filler_lp": -4.078516483306885
+   },
+   {
+    "context_idx": 2,
+    "subject": "black",
+    "admitted": false,
+    "clean_lp": -1.9946800470352173,
+    "filler_lp": -2.733006000518799
+   },
+   {
+    "context_idx": 2,
+    "subject": "white",
+    "admitted": false,
+    "clean_lp": -2.061591386795044,
+    "filler_lp": -2.002087116241455
+   },
+   {
+    "context_idx": 2,
+    "subject": "brown",
+    "admitted": true,
+    "clean_lp": -2.047941207885742,
+    "filler_lp": -3.7669014930725098
+   },
+   {
+    "context_idx": 2,
+    "subject": "pink",
+    "admitted": true,
+    "clean_lp": -1.9916578531265259,
+    "filler_lp": -5.425171375274658
+   },
+   {
+    "context_idx": 2,
+    "subject": "orange",
+    "admitted": true,
+    "clean_lp": -2.811392068862915,
+    "filler_lp": -5.048946857452393
+   },
+   {
+    "context_idx": 2,
+    "subject": "purple",
+    "admitted": true,
+    "clean_lp": -1.6124376058578491,
+    "filler_lp": -4.939619541168213
+   },
+   {
+    "context_idx": 2,
+    "subject": "yellow",
+    "admitted": true,
+    "clean_lp": -1.967917561531067,
+    "filler_lp": -3.551140308380127
+   }
+  ]
+ }
+}

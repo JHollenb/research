@@ -1,0 +1,244 @@
+{
+ "openai-community/gpt2": {
+  "snapshot_dir": "<host-path>",
+  "commit": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "files": [
+   ".gitattributes",
+   "64-8bits.tflite",
+   "64-fp16.tflite",
+   "64.tflite",
+   "README.md",
+   "config.json",
+   "flax_model.msgpack",
+   "generation_config.json",
+   "merges.txt",
+   "model.safetensors",
+   "onnx",
+   "pytorch_model.bin",
+   "rust_model.ot",
+   "tf_model.h5",
+   "tokenizer.json",
+   "tokenizer_config.json",
+   "vocab.json"
+  ],
+  "safetensors": {
+   "model.safetensors": {
+    "sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "bytes": 548105171
+   }
+  }
+ },
+ "unsloth/gemma-2-2b": {
+  "snapshot_dir": "<host-path>",
+  "commit": "25319945f7fd83b8b903e12081777b7eef2ba993",
+  "files": [
+   ".gitattributes",
+   "README.md",
+   "config.json",
+   "generation_config.json",
+   "model.safetensors",
+   "special_tokens_map.json",
+   "tokenizer.json",
+   "tokenizer.model",
+   "tokenizer_config.json"
+  ],
+  "safetensors": {
+   "model.safetensors": {
+    "sha256": "40f7727761523db40b475358377c9a9b0f0d8fcf7ef8b869e71ae4f0ef12a555",
+    "bytes": 5228717512
+   }
+  }
+ },
+ "saes": {
+  "gpt2-small-res-jb/blocks.0.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.0.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.1.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.1.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.2.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.2.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.3.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.3.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.4.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.4.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.5.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.5.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.6.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.6.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.7.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.7.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.8.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.8.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.9.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.9.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.10.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.10.hook_resid_pre"
+  },
+  "gpt2-small-res-jb/blocks.11.hook_resid_pre": {
+   "d_in": 768,
+   "d_sae": 24576,
+   "hook_name": "blocks.11.hook_resid_pre"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_0/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.0.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_1/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.1.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_2/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.2.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_3/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.3.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_4/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.4.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_5/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.5.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_6/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.6.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_7/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.7.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_8/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.8.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_9/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.9.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_10/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.10.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_11/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.11.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_12/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.12.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_13/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.13.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_14/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.14.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_15/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.15.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_16/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.16.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_17/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.17.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_18/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.18.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_19/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.19.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_20/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.20.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_21/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.21.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_22/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.22.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_23/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.23.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_24/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.24.hook_resid_post"
+  },
+  "gemma-scope-2b-pt-res-canonical/layer_25/width_16k/canonical": {
+   "d_in": 2304,
+   "d_sae": 16384,
+   "hook_name": "blocks.25.hook_resid_post"
+  }
+ }
+}

@@ -1,0 +1,12 @@
+[12:54:23] loading smollm2 from <host-path> (fp32, eager)
+[12:54:50] loaded: 24 layers, hidden 2048
+[12:54:51] behavior identity
+[12:54:52]   context 0: kept 14 rows, admitted 13, subj_pos 4, seq_len 17, cache_parity 0.00e+00
+[12:54:53]   context 1: kept 14 rows, admitted 10, subj_pos 4, seq_len 18, cache_parity 0.00e+00
+[12:54:53]   context 2: kept 14 rows, admitted 11, subj_pos 4, seq_len 18, cache_parity 0.00e+00
+[12:55:00]   admitted 34/42; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L12': 0.0, 'L23': 0.0}, sae_noop=None
+[12:55:00] behavior color
+[12:55:00]   context 0: kept 10 rows, admitted 8, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[12:55:00]   context 1: kept 10 rows, admitted 9, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[12:55:00]   context 2: kept 10 rows, admitted 10, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[12:55:06]   admitted 27/30; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L12': 0.0, 'L23': 0.0}, sae_noop=None

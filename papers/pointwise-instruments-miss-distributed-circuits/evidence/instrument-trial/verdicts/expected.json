@@ -1,31 +1,31 @@
 {
   "case-1": {
-    "community": "no necessary component",
-    "saturn": "the 4-site route is jointly necessary as a time-accumulated object"
+    "standard": "no necessary component",
+    "output_check": "the 4-site route is jointly necessary as a time-accumulated object"
   },
   "case-2": {
-    "community": "decodable: deer",
-    "saturn": "register carries content (transplant moves the subject region on both seeds, sham flat, exact gates)"
+    "standard": "decodable: deer",
+    "output_check": "subject rows carry content (transplant moves the subject region on both seeds, sham flat, exact gates)"
   },
   "case-2-probe": {
-    "community_strengthened": "no decodable content"
+    "standard_strengthened": "no decodable content"
   },
   "case-3": {
-    "community": {
+    "standard": {
       "Qwen3-4B-Base": "representations differ across families",
       "Qwen3.5-0.8B-Base": "no representational difference detected"
     },
-    "saturn": {
+    "output_check": {
       "Qwen3-4B-Base": "the split is an artifact of fitted-direction transfer (collapses under centering/whitening); native geometry not divergent",
       "Qwen3.5-0.8B-Base": "no representational difference (consistent with raw)"
     }
   },
   "case-4": {
-    "community": "state recovered",
-    "saturn": "state not recovered (consumer contradicts the cosine; content-free template matches it)"
+    "standard": "state recovered",
+    "output_check": "state not recovered (rendered output contradicts the cosine; content-free template matches it)"
   },
   "case-5": {
-    "community": "mediation holds at the measured step; no claim about other steps",
-    "saturn": "not a step artifact: 17/18 axis x step cells hold; failure localized"
+    "standard": "mediation holds at the measured step; no claim about other steps",
+    "output_check": "not a step artifact: 17/18 axis x step cells hold; failure localized"
   }
 }

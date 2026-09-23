@@ -1,0 +1,807 @@
+{
+  "verdict": {
+    "certified_axes": 6,
+    "certified_replicate_literal_strict": 1,
+    "certified_route_replicate": 2,
+    "carrier_route_replicate": 5,
+    "open_route_replicate": 0,
+    "all20_route_replicate": 7,
+    "aggregate_survives_prompt_holdout_literal": false,
+    "baseline_certified_strict_ge_half": 0,
+    "baseline_available": false
+  },
+  "per_axis": {
+    "size_small_large": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_candidate"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "fur_short_long": {
+      "discovery_tier_published": "strict",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_candidate",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": false,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "eyes_green_blue": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 6,
+      "heldout_strict_pass": 2,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "marking_solid_tuxedo": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 6,
+      "heldout_strict_pass": 2,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "identity_cat_fox": {
+      "discovery_tier_published": "strict",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_candidate",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 3,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "geometry_snake_straight_coil": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_candidate",
+        "pb": "carrier_candidate"
+      },
+      "heldout_route_pass": 4,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "pose_sitting_lying": {
+      "discovery_tier_published": "open",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_candidate",
+        "pb": "carrier_candidate"
+      },
+      "heldout_route_pass": 1,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": false,
+      "literal_replicate": null,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "necessity",
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "specificity_wrong_axis",
+            "specificity_sham",
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "action_sitting_jumping": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 6,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
+      "baseline_cells": []
+    },
+    "orientation_left_right": {
+      "discovery_tier_published": "strict",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "ears_upright_folded": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "relation_beside_behind_ball": {
+      "discovery_tier_published": "strict",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "relation_on_under_furniture": {
+      "discovery_tier_published": "open",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": null,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "count_one_two_birds": {
+      "discovery_tier_published": "open",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": null,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "scene_snow_beach": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "scene_snow_forest": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "scene_snow_greenhouse": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "lighting_dawn_sunset": {
+      "discovery_tier_published": "strict",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "weather_clear_snowstorm": {
+      "discovery_tier_published": "strict",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "style_photo_oil": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    },
+    "material_robot_metal_wood": {
+      "discovery_tier_published": "carrier",
+      "baseline_currentenv_tier": null,
+      "baseline_route_pass": 0,
+      "baseline_strict_pass": 0,
+      "baseline_n": 0,
+      "heldout_variant_tiers": {},
+      "heldout_route_pass": 0,
+      "heldout_strict_pass": 0,
+      "heldout_n": 0,
+      "route_replicate": false,
+      "literal_replicate": false,
+      "heldout_cells": [],
+      "baseline_cells": []
+    }
+  },
+  "seeds": [
+    "4242",
+    "9001",
+    "20260922"
+  ]
+}

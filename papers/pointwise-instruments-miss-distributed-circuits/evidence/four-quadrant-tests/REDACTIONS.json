@@ -1,0 +1,278 @@
+{
+ "bundle": "four-quadrant-tests",
+ "generated": "2026-09-22",
+ "patterns": {
+  "path": "absolute local filesystem paths under a user, home, or mounted-volume directory root, replaced with a placeholder token (trailing real filename kept when present)",
+  "host": "the two internal machine nicknames used for these runs, replaced with a generic placeholder nickname (an underscore variant is used when the original appeared inside a snake_case identifier)",
+  "ip": "private-range IPv4 addresses, replaced with a placeholder token",
+  "s3": "object-storage bucket URIs, replaced with a placeholder token",
+  "ssh": "remote-shell URLs, replaced with a placeholder token",
+  "git": "SSH-style git remote URLs, replaced with a placeholder token"
+ },
+ "files": [
+  {
+   "file": "report-final-tests-attempt1-job-88891036c1ee.json",
+   "sha256_before": "a9e3a02d41069a72620b9468662d5e8ae947c61cc3abdca097986f3e41855cd0",
+   "sha256_after": "3bacfe79cdae4d12dd14e06e77291d3894c610627c7d3b016971e28599b38eb4",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "report-final-tests-rerun-job-69e2f6a6b492.json",
+   "sha256_before": "490c0a528f68851a2d9c30b16b9fcb56c9f12016bad6ab2fa109562a5ead138d",
+   "sha256_after": "44f89fc6ffc6f7a763793b8f8acf23894bb99481a40f2a0d80ea827f59c0f439",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "report-fp32-recheck-job-6299f2391d5c.json",
+   "sha256_before": "c1bc205dab1a2f2dcae0a478d9b4d2f031e21f44f054d43aa24dc43dc5ae572e",
+   "sha256_after": "c71544e404f935905c63fbb5ee56298d5276c2eb4cbab11d6f9ff56a7501f694",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "report-token-time-kernel-job-8a96572572cd.json",
+   "sha256_before": "41569096119c6d9a1ee0021d0ea0a0d6d06ab1e64b0fd9ae41c727baf687b65c",
+   "sha256_after": "2bd07b5e3bee7a48ceea5d638dbc89725e750faca16259fcfba0577db0484b82",
+   "replacements": {
+    "path": 11,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 13
+  },
+  {
+   "file": "run-receipt-anchored-authorship-parity-job-0706b0497903.json",
+   "sha256_before": "cb44c9060136ddd618a38bc37c00f221a71e1ffb0cad8f8259999cc7f8e086cb",
+   "sha256_after": "7a40e3c478da16463372462b21801dc5b9588c101dda4d0e6a61c1dfed925a71",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-final-tests-attempt1-prior-confound-job-88891036c1ee.json",
+   "sha256_before": "e19014b6395ddcfbec4a55fb1f688db93b3e1386ac148ecc78a046ec13d4bfb9",
+   "sha256_after": "72ddcca0275b798604a9c52a70fcfa39cab66b7d663147794dd60f085c189c9c",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "run-receipt-final-tests-rerun-floor-instrument-job-69e2f6a6b492.json",
+   "sha256_before": "e36b558685a35f9c6dac33382f379ae48a478714973819dc3077b7aed20b9970",
+   "sha256_after": "ac78244dc68c214db345fdf521114c4f534def7f9f53af313ad753789d044720",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "run-receipt-fp32-recheck-parity-0001-nats-job-6299f2391d5c.json",
+   "sha256_before": "8412be27352a66de913aeb4531ab767475846f855cea095767cfdd07e55bfbb1",
+   "sha256_after": "21f9b5ad803b649c03070006a99ccbaff8fddd8f59a0be2de76d61a5fdad28b9",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "run-receipt-grid-4of4-and-p1-path-dependence-job-72f0e98679d5.json",
+   "sha256_before": "38e6a43e2aaa20b8fe571a7984d6a5928a8ed2326ae66c99616f58d1a36d7eb2",
+   "sha256_after": "ef0ccae0279e524ca1e47b074615bf0d06ded28e7b30b4893ec2f87becab9140",
+   "replacements": {
+    "path": 9,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 11
+  },
+  {
+   "file": "run-receipt-k1-consumer-pass-job-e26a9f22e328.json",
+   "sha256_before": "bfb8c66445d3807701b6f1104354dcc735a572c8719d6ed8ec2e783096879802",
+   "sha256_after": "34019e425dd219657c7e42e0feeecda7e0942ffe92efba4c521a8166de0ca09a",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-p4-crossslot-attempt1-log-custody-job-0a07cb92d360.json",
+   "sha256_before": "9a272ff8a602630be3f0e1d082bd7caf1c48dfadc6741502982d094cf5991706",
+   "sha256_after": "9af6872e2809c45ebf710792dc9138a4ba79b616688a96ea746a0a3d306cdcca",
+   "replacements": {
+    "path": 10,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 12
+  },
+  {
+   "file": "run-receipt-reading-35of54-job-2f81d080712e.json",
+   "sha256_before": "4ab35e92f765c6c988455e54fe5f9ce848c355aa9155986061b4e260f606a637",
+   "sha256_after": "54deb90985ed754a2b0892ba0c3f26b678ac46f08a391d9ea68f11fc14c76025",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-relations-latent-probe-job-6f4ee8adecd9.json",
+   "sha256_before": "73271494f6c406a28f981553a65200f0181848d231726671232145a1b8fc28bf",
+   "sha256_after": "1232ac6937471770fa915aa71655d95c9ad8e86ac38ba7ee1e34f6ddbf91f088",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-sink-certificate-and-kernel-job-6650205b45eb.json",
+   "sha256_before": "76ae8336a7503bf77ff468e4ad2176d782268cefa2fa1586ab2cdc9af1c60f19",
+   "sha256_after": "5f900a93d1f088eb14883e788c52e968bd26b91cc8082a80fdd5b71e64620ae7",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-symbol-class-battery-job-9c6453d29ac1.json",
+   "sha256_before": "faae05a6c0d4505bad7e2e949358903cfb638a13177a29ace4441eaef0972eba",
+   "sha256_after": "0b6419ec30d6699650e48af38bb85652ac406d3253356ff02fa895e3539387ff",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-token-time-kernel-job-8a96572572cd.json",
+   "sha256_before": "ac5677e2bfa8bc51d1ed710456dedcf863bc9ed021ec0640db4ced203335a579",
+   "sha256_after": "119184f423fc6e0148981f80f08cf7fd6a8f5149ab3bbb25f7bdeaa1163ab1ab",
+   "replacements": {
+    "path": 9,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 11
+  },
+  {
+   "file": "run-receipt-v1-voided-refute-job-0b95e9b4326d.json",
+   "sha256_before": "a36be916a1add7b7dd803f003c0f970b6affbcdc7ba3c563c9b34d2315f35844",
+   "sha256_after": "4bcdd0218dfa0644820a86c9057c19f74641aeafbb4caec17e075951d4b04eb9",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "run-receipt-zeroshot-authorship-negative-job-d8c971ba6e6f.json",
+   "sha256_before": "a88ad58364540522a0f4ed89885c544394118070b372cffe601480ead11337a8",
+   "sha256_after": "56fe258a273bfa4256c8eed2d5986fd762669563c3cc6b0252f581d777a609ad",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "report-lm-necessity-and-write-schedule-job-6650205b45eb.json",
+   "sha256_before": "0c57670d8bb62afbf538f545eb842c7d04786a6973e95e7a68db89ca6bc05487",
+   "sha256_after": "3c1a4f6a6b40cca47a76d3bfb66824ff3ef76e601cab079b3b26d9209b32071d",
+   "note": "added 2026-09-22 as the source of the paper's language-model table and write-schedule figure"
+  },
+  {
+   "file": "report-lm-grid-job-72f0e98679d5.json",
+   "sha256_before": "2af22ec6d5d0840ca5a65b891be7c7dc3120dcfc75708a3bbf5a8a62c9557c70",
+   "sha256_after": "5d22a9d21134a0a81b25fd4a2961e55bae7712c2b574148efbaab5a3d4d8b285",
+   "note": "added 2026-09-22 as the source of the paper's language-model table and write-schedule figure"
+  }
+ ]
+}

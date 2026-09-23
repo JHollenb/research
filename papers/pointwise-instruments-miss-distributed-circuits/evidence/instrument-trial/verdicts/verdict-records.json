@@ -1,7 +1,7 @@
 {
   "case-1": {
     "case_id": "case-1-flux-identity",
-    "community": {
+    "standard": {
       "decision_rule": "necessary iff any single-cell ablation keeps donor_progress <= 0.15",
       "instrument": "single-site/single-step patching sweep, 4 sites x 4 steps x {sufficiency, necessity}, continuous effect metric vs matched baseline",
       "reading": {
@@ -14,7 +14,7 @@
       "source_receipts": [
         {
           "path": "results/rosetta-cross-family-manalysis/native-object-mediation/native-object-mediation.json",
-          "sha256": "96ad0acd842de621150724ec3687eb80aee295d3a89711354f0614888ec1aeb8"
+          "sha256": "c5aa57e5445ff17379b70df29eb262bfa698e8d72e0ee7c7afca51a2810c5f45"
         }
       ],
       "verdict": "no necessary component"
@@ -27,11 +27,11 @@
         "All measurements replay exactly (bit-identical unmodified path) and were re-derived by an auditor that imports nothing from the project."
       ]
     },
-    "notes": "Community sweep measured at seed 7217 only; certificate and arbiter carry seeds 31337/60660 (disclosed seed asymmetry, prereg Known boundaries).",
+    "notes": "Standard-arm sweep measured at seed 7217 only; certificate and arbiter carry seeds 31337/60660 (disclosed seed asymmetry, prereg Known boundaries).",
     "question": "Is there a necessary internal component for the fox-to-cat identity transition at the certified route?",
-    "saturn": {
+    "output_check": {
       "decision_rule": "route necessary iff all-step route-ablation scene progress <= 0.15 with all 9 gates passing on held-out seeds",
-      "instrument": "9-gate certificate, all-step route ablation/insertion, native consumer arbiter",
+      "instrument": "9-gate certificate, all-step route ablation/insertion, downstream-model arbiter",
       "reading": {
         "gates_passed": 9,
         "gates_total": 9,
@@ -46,7 +46,7 @@
       "source_receipts": [
         {
           "path": "results/rosetta-20-circuit-confirmation-heldout/consolidated/circuit-panel-ledger.json",
-          "sha256": "c7409669f5b222f565aa1c964a65c5cad348bfa2b5a6075c3f036027aacd5b26"
+          "sha256": "aa14ac22fcc7021a79f5f1360d6e1e71d00fdca395287ef358fa2748f0137483"
         }
       ],
       "verdict": "the 4-site route is jointly necessary as a time-accumulated object"
@@ -54,7 +54,7 @@
   },
   "case-2": {
     "case_id": "case-2-wolf-register",
-    "community": {
+    "standard": {
       "decision_rule": "decodable iff some animal's cosine exceeds the unrelated-animal floor; verdict = that animal",
       "instrument": "linear dictionary readout: template-residual cosines against 8 animal class directions",
       "reading": {
@@ -74,12 +74,12 @@
       "source_receipts": [
         {
           "path": "results/object-xcond-diagnosis/job-e1ba0cbed889/report.json",
-          "sha256": "ee5c6f71b65da12612eb2339762ddcab8b500d96b0ac16757b8a53169311e700"
+          "sha256": "a9d4a8ea0fd8b0b1b791a0b0adb68c79d69fbb5f3aed09ee080669e5c31f49a2"
         }
       ],
       "verdict": "decodable: deer"
     },
-    "community_strengthened": {
+    "standard_strengthened": {
       "decision_rule": "argmax animal iff margin over runner-up exceeds the minimum correct-validation margin; else no decodable content",
       "instrument": "held-out nearest-class-mean probe: directions fit on an independent 8-animal x 4-template bank, validated on 2 held-out templates per animal",
       "reading": {
@@ -163,7 +163,7 @@
       "source_receipts": [
         {
           "path": "results/instrument-trial-case2-probe/job-f58bcd26f295/report.json",
-          "sha256": "97aec4a8e5cee37a0d6f86ce1533d10503c0323a7fbd4eb3e43ad1b0b570d194"
+          "sha256": "e636b32467f917f623476696f47d7c0988fd9218562bd97047a00fd0c7dcf1e0"
         }
       ],
       "verdict": "no decodable content"
@@ -172,13 +172,13 @@
       "facts": [
         "Writing the 2 subject rows of the foreign state into the unmodified native run changes the rendered animal in the subject region on both seeds (subject-region progress {'7217': 0.5790146184147171, '31337': 0.4769199085619039} vs matched-noise sham {'7217': 0.031033337192991728, '31337': -0.007000558973086823}).",
         "The unmodified path replays exactly (gate 0.0) on both seeds.",
-        "The animal the consumer renders after the transplant is the same animal the foreign state renders in its own run (a gray wolf-like canid, not the prompted fox)."
+        "The animal the downstream model renders after the transplant is the same animal the foreign state renders in its own run (a gray wolf-like canid, not the prompted fox)."
       ]
     },
-    "question": "Does the foreign carrier's subject register carry decodable animal identity - and which animal?",
-    "saturn": {
-      "decision_rule": "register carries content iff transplant moves the subject region toward the foreign render far above norm-matched sham, both seeds",
-      "instrument": "causal transplant of the 2 subject rows into the native carrier; unchanged native consumer renders",
+    "question": "Do the foreign run's subject rows carry decodable animal identity - and which animal?",
+    "output_check": {
+      "decision_rule": "subject rows carry content iff transplant moves the subject region toward the foreign render far above norm-matched sham, both seeds",
+      "instrument": "causal transplant of the 2 subject rows into the native run; unchanged downstream model renders",
       "reading": {
         "determinism_gates": {
           "foreign_determinism_31337": 0.0,
@@ -197,7 +197,7 @@
       "source_receipts": [
         {
           "path": "results/object-xcond-diagnosis/job-e1ba0cbed889/report.json",
-          "sha256": "ee5c6f71b65da12612eb2339762ddcab8b500d96b0ac16757b8a53169311e700"
+          "sha256": "a9d4a8ea0fd8b0b1b791a0b0adb68c79d69fbb5f3aed09ee080669e5c31f49a2"
         }
       ],
       "verdict": "decodable: wolf (register-borne, row-portable)"
@@ -205,7 +205,7 @@
   },
   "case-3": {
     "case_id": "case-3-e11-family-split",
-    "community": {
+    "standard": {
       "decision_rule": "'representations differ' iff raw negative-selected-cosine fraction > 0.3",
       "instrument": "fitted difference-of-means direction, transferred cross-model, cosine-scored (raw lens, parity-gated vs archived shipped split)",
       "reading": {
@@ -221,11 +221,11 @@
       "source_receipts": [
         {
           "path": "results/qwen-address-whitening/job-9863fc324498/report.json",
-          "sha256": "fed62fc53e4a7f5dc0ee81d38d5d30143c4c10c5d8ce953c8da0a9739958bdc9"
+          "sha256": "66136b5649091a6a27e287695c77d24a45432ed0a79f79f0c515e5b9b50c33c9"
         },
         {
           "path": "results/qwen-address-whitening/job-a4efec86e403/report.json",
-          "sha256": "3ac5bf043b0ed93d25c050203149688e2f06bee1be046906696a375b57aecdc4"
+          "sha256": "f1de27adc785dd671f85ec3fda5740a141f43fd31b2cf7d3210286eee2ea10cf"
         }
       ],
       "verdict": {
@@ -239,9 +239,9 @@
         "Per-model transformed negative fractions in this run: {\"Qwen3-4B-Base\": {\"centered\": 0.0, \"diagonal\": 0.0, \"raw\": 0.9537037037037037, \"zca\": 0.0}, \"Qwen3.5-0.8B-Base\": {\"centered\": 0.0, \"diagonal\": 0.0, \"raw\": 0.0, \"zca\": 0.0}}"
       ]
     },
-    "notes": "G1 control: the low-split model must read 'no difference' under the community rule or the arm is suspect.",
+    "notes": "G1 control: the low-split model must read 'no difference' under the standard rule or the arm is suspect.",
     "question": "Does cross-fitted direction transfer report a real representational difference between sibling models?",
-    "saturn": {
+    "output_check": {
       "decision_rule": "artifact iff the raw negative fraction collapses to <= half under centering/whitening; ground truth anchored to raw native discovery cosines",
       "instrument": "same directions re-scored under centered/diagonal/ZCA whitening; native-geometry comparison (archived raw native cosines 0% negative in every model)",
       "reading": {
@@ -261,11 +261,11 @@
       "source_receipts": [
         {
           "path": "results/qwen-address-whitening/job-9863fc324498/report.json",
-          "sha256": "fed62fc53e4a7f5dc0ee81d38d5d30143c4c10c5d8ce953c8da0a9739958bdc9"
+          "sha256": "66136b5649091a6a27e287695c77d24a45432ed0a79f79f0c515e5b9b50c33c9"
         },
         {
           "path": "results/qwen-address-whitening/job-a4efec86e403/report.json",
-          "sha256": "3ac5bf043b0ed93d25c050203149688e2f06bee1be046906696a375b57aecdc4"
+          "sha256": "f1de27adc785dd671f85ec3fda5740a141f43fd31b2cf7d3210286eee2ea10cf"
         }
       ],
       "verdict": {
@@ -276,7 +276,7 @@
   },
   "case-4": {
     "case_id": "case-4-cosine-wrong-animal",
-    "community": {
+    "standard": {
       "decision_rule": "state recovered iff cosine >= 0.99 on held-out prompts",
       "instrument": "cosine-similarity reconstruction readout",
       "reading": {
@@ -298,14 +298,14 @@
     "ground_truth": {
       "facts": [
         "A content-free mean template (no prompt information at all) also scores cosine 0.9933-0.9973 against the native state - the same band as the reconstruction (0.9932-0.9972).",
-        "Rendered through the unchanged consumer, the reconstruction differs from the native render by mean pixel error 69-97, where an exact duplicate of the native state gives 0.0.",
+        "Rendered through the unchanged downstream model, the reconstruction differs from the native render by mean pixel error 69-97, where an exact duplicate of the native state gives 0.0.",
         "The reconstruction's renders for four different prompts (fox, blue fox, cat, corgi astronaut) all show the same wrong animal, matching the content-free template's renders."
       ]
     },
     "question": "Does a held-out whole-state cosine of ~0.996 mean the conditioner state was recovered?",
-    "saturn": {
-      "decision_rule": "recovered iff the consumer's render matches the native render at duplicate-level agreement",
-      "instrument": "consumer closure: render the reconstructed state through the frozen native suffix",
+    "output_check": {
+      "decision_rule": "recovered iff the downstream model's render matches the native render at duplicate-level agreement",
+      "instrument": "output check: render the reconstructed state through the frozen native suffix",
       "reading": {
         "content_free_template_cosine_vs_native": {
           "blue_fox": 0.9972502589225769,
@@ -338,12 +338,12 @@
           "sha256": "2c1e2eab7490b5a6b32d667bdec8675c0cf3603a1d23d85a7ddbadc1c9ed2012"
         }
       ],
-      "verdict": "state not recovered: reconstruction is behaviorally indistinguishable from the content-free mean template; consumer renders the wrong animal"
+      "verdict": "state not recovered: reconstruction is behaviorally indistinguishable from the content-free mean template; downstream model renders the wrong animal"
     }
   },
   "case-5": {
     "case_id": "case-5-mediation-steps",
-    "community": {
+    "standard": {
       "decision_rule": "mediation holds iff rescue fraction >= 0.5 at the read step; generality beyond that step is not measured",
       "instrument": "single-step mediation readout at the original timestep (standard practice: read where the effect is largest)",
       "reading": {
@@ -353,15 +353,15 @@
       "source_receipts": [
         {
           "path": "results/rosetta-strict-mediation-steps/job-3cd13239dd91/report.json",
-          "sha256": "91c305e40019f6e0acc8533c31e07bb8839860ab096b591fcd32dcd5b2734416"
+          "sha256": "74cb339c21610f4e79e19da167bab1134ca163eb9b9068da59314d04f0094e7b"
         },
         {
           "path": "results/rosetta-strict-mediation-steps/job-8a6bacbfdecc/report.json",
-          "sha256": "eadb466620df3f6b86430d5bd216e09fdf48f207ca4ba48d5618bc1ef6c2248c"
+          "sha256": "bb28fbbc9f6ee4029f614ced22dd38a75c5372ddd14f4bf97d2d02c2d881f91b"
         },
         {
           "path": "results/rosetta-strict-mediation-steps/job-90b5344defe7/report.json",
-          "sha256": "bfa7b476532295723e6160cbbaad8da000e4a51551170c61234321a56d533de7"
+          "sha256": "77ca1536b17b082dd1a7bdc9567da55b70f5f13c6f75cd4e4bfca437a84e4fd3"
         }
       ],
       "verdict": "mediation holds at the measured step; no claim about other steps"
@@ -372,9 +372,9 @@
         "The single failing cell is one axis at one step in one job with minimum rescue fraction 0.012."
       ]
     },
-    "notes": "Included as an honesty case: the expected outcome is that the community reading holds (the single-step read was not wrong, just unverified in scope).",
+    "notes": "Included as an honesty case: the expected outcome is that the standard reading holds (the single-step read was not wrong, just unverified in scope).",
     "question": "Is the certified route mediation an artifact of the single timestep at which it was originally read?",
-    "saturn": {
+    "output_check": {
       "decision_rule": "not a step artifact iff the mediation gate passes at (nearly) all axis x step cells; failures localized and reported",
       "instrument": "mediation gate swept across timesteps 0/1/3 under frozen-from-hash config, 6 axes x 2 seeds",
       "reading": {
@@ -392,15 +392,15 @@
       "source_receipts": [
         {
           "path": "results/rosetta-strict-mediation-steps/job-3cd13239dd91/report.json",
-          "sha256": "91c305e40019f6e0acc8533c31e07bb8839860ab096b591fcd32dcd5b2734416"
+          "sha256": "74cb339c21610f4e79e19da167bab1134ca163eb9b9068da59314d04f0094e7b"
         },
         {
           "path": "results/rosetta-strict-mediation-steps/job-8a6bacbfdecc/report.json",
-          "sha256": "eadb466620df3f6b86430d5bd216e09fdf48f207ca4ba48d5618bc1ef6c2248c"
+          "sha256": "bb28fbbc9f6ee4029f614ced22dd38a75c5372ddd14f4bf97d2d02c2d881f91b"
         },
         {
           "path": "results/rosetta-strict-mediation-steps/job-90b5344defe7/report.json",
-          "sha256": "bfa7b476532295723e6160cbbaad8da000e4a51551170c61234321a56d533de7"
+          "sha256": "77ca1536b17b082dd1a7bdc9567da55b70f5f13c6f75cd4e4bfca437a84e4fd3"
         }
       ],
       "verdict": "not a step artifact: 17/18 axis x step cells hold; failure localized"
@@ -408,7 +408,7 @@
   },
   "case-6": {
     "case_id": "case-6-zero-write",
-    "community": {
+    "standard": {
       "decision_rule": "a zeroed answer logit after an intervention is a maximal knockout effect at that site",
       "instrument": "ablation effect-magnitude readout",
       "reading": {
@@ -430,7 +430,7 @@
     },
     "notes": "Reserve case per preregistration.",
     "question": "Are the answer_logit == 0.0 records evidence of a circuit-level knockout effect?",
-    "saturn": {
+    "output_check": {
       "decision_rule": "mechanical artifact iff the zeros concentrate at the final layer where RMSNorm(0)=0 feeds a bias-free unembedding",
       "instrument": "mechanism decomposition: which layer, what dose, what the normalization does to an all-zero residual",
       "reading": {

@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "instrument-trial"
 version = "0.1.0"
-description = "When the reading contradicts the consumer: an executable benchmark for verdict-grade interpretability"
+description = "Offline verifier for a blind-graded comparison of standard interpretability readouts against the model's own output"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

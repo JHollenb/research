@@ -1,52 +1,62 @@
 ---
 title: "Single-Site Tests Miss Distributed Stores"
 type: research-paper
-status: published
+status: draft-pending-results
 date: 2026-08-21
 updated: 2026-09-22
-tags: [interpretability, activation-patching, causal-mediation, flux2, language-models, methods]
+tags: [interpretability, activation-patching, sparse-autoencoders, causal-mediation, flux2, language-models, methods]
 ---
 
 # Single-Site Tests Miss Distributed Stores
 
-**Evidence from a diffusion transformer and three language-model families, and a blind-graded comparison of standard readouts against the model's own output**
+**Evidence from a diffusion transformer and five language models, a sparse-autoencoder comparison, and a blind-graded comparison of standard readouts against the model's own output**
 
 Jacob Hollenbeck
 
 *2026-08-21; revised 2026-09-22*
 
+> **Status.** Items marked `TODO-{…}` are runs that are queued but not finished. Every other number in this paper is measured and traceable to a file in this folder.
+
 ---
 
 ## Abstract
 
-Activation patching usually asks one site at a time whether a component is necessary or sufficient for a behavior. We show measured cases where that question gets the wrong answer because the information the output depends on is spread across steps or layers, so no single site is necessary and no single site's slice is sufficient, while the whole path is both. In FLUX.2 Klein 4B, ablating any one of four route components at any one denoising step leaves at least 22% of an identity transition intact, which reads as "no necessary component"; ablating the same four components at every step leaves 0.13%, and inserting them carries 91% of the transition, on held-out seeds. In SmolLM2-1.7B and Qwen2.5-0.5B, replacing a subject token's key/value entries at a single layer changes the target log-probability by at most 0.4 nats and never changes the answer, while replacing them across the second half of the stack moves it by 0.8–3.4 nats and flips the top answer in four of four cells. Writing the same displacement into a single layer's KV slice does almost nothing (normalized effect ≤ 0.11); writing it into all layers' KV restores the full effect. We package these results with a preregistered, blind-graded comparison of four standard readouts (single-step patching, a validated nearest-class-mean probe, a transferred difference-of-means direction, and a reconstruction cosine) against the unchanged downstream model on the same inputs; the standard readout gave the wrong verdict in 4 of 4 graded cases. The comparison uses our own implementations of these recipes on cases chosen because we expected them to fail, so it demonstrates that the failure modes exist, not how often they occur. Both evidence bundles ship with offline verifiers.
+Activation patching usually asks one site at a time whether a component is necessary or sufficient for a behavior. We show measured cases where that question gets the wrong answer because the information the output depends on is spread across steps or layers: no single site is necessary and no single site's slice is sufficient, while the whole path is both. In FLUX.2 Klein 4B, ablating any one of four route components at any one denoising step leaves at least 22% of an identity transition intact, while ablating the same four components at every step leaves 0.13% and inserting them carries 91%, on held-out seeds. In language models, replacing a subject token's cached keys and values at a single layer, with the subject token's own computation left untouched, removes at most 16% of the effect in GPT-2 small and 8–18% in Qwen2.5-1.5B, while replacing them across the second half of the layers removes 92–104% and flips the top answer in 90–95% of items. We then ran a standard sparse-autoencoder workflow (SAELens with public GPT-2 and Gemma Scope SAEs) on the same prompts. In Gemma-2-2B, ablating the 20 most-attributed SAE features at the best single layer removes 29% of the subject's effect, 57 times more than 20 random features but far from the whole effect; in GPT-2 small, which is below the scale where we see distributed storage, the same procedure removes all of it. Ranking features across all layers and positions removes more than the whole effect in GPT-2 (3–9×), but almost entirely by deleting features on the other prompt tokens, and 200 random features alone remove 3.3 times the effect. TransformerLens reproduces our implementation to within 1.5×10⁻⁴ nats. Finally, a preregistered, blind-graded comparison of four standard readouts against the model's own output gave the wrong verdict in 4 of 4 graded cases; those arms are our own implementations on cases chosen because we expected failures, so they show the failure modes exist, not how often they occur. All code, results and offline verifiers are included.
 
 ## 1. The problem
 
-Causal-intervention methods in interpretability, from activation patching and path patching to causal tracing, typically localize a behavior by intervening on one site (a layer, head, position, or step) at a time and measuring the change in output [1–4]. A null at every site is often read as "this behavior has no localized mechanism here." That reading assumes the relevant information is concentrated enough that removing one piece hurts. If instead the output reads from a store that is written redundantly across many layers or steps, single-site ablation will be compensated by the rest of the store and single-site insertion will be too small to matter. Self-repair in language models, where downstream components compensate for an ablated one, is a known instance of this [5, 6], and best-practice guides for activation patching already warn that metrics and patching granularity change conclusions [3, 4].
+Causal-intervention methods in interpretability, from activation patching and path patching to causal tracing, typically localize a behavior by intervening on one site (a layer, head, position or step) at a time and measuring the change in output [1–4, 8]. A null at every site is often read as "this behavior has no localized mechanism here." That reading assumes the relevant information is concentrated enough that removing one piece hurts. If instead the output reads from a store that is written redundantly across many layers or steps, single-site ablation is compensated by the rest of the store and single-site insertion is too small to matter. Self-repair in language models, where later components compensate for an ablated one, is a known instance [5, 6], and best-practice guides already warn that patching granularity changes conclusions [3, 4]. Sparse-autoencoder workflows [9–13] inherit the same question: a feature ablated at one layer can be rewritten or bypassed elsewhere.
 
-This paper contributes measured examples of the pattern in two very different architectures, a simple test that distinguishes it from "no mechanism," and a blind-graded demonstration of how four common readouts produce confident wrong verdicts in the same regimes.
+This paper contributes (i) measured examples of the pattern in a diffusion transformer and several language models, (ii) a test that separates it from "no mechanism," (iii) a preregistered comparison with a standard SAE workflow on the same prompts, and (iv) a blind-graded demonstration of four readouts that give confident wrong verdicts in the same regimes.
 
 ## 2. The four-quadrant test
 
-For a behavior with a clean source and target condition, we run four interventions and judge each by the unchanged downstream model (the rest of the network, run to completion, reading out its own answer):
+For a behavior with a clean source and target condition, we run four interventions and judge each by the unchanged rest of the model, run to completion and reading out its own answer:
 
 |  | one site | whole path |
 |---|---|---|
 | **necessity** (ablate in the target run) | behavior survives | behavior is removed |
 | **sufficiency** (write into the source run) | little or no transfer | full transfer |
 
-"Whole path" means the same component at every denoising step (diffusion) or the same token position's key/value entries across a contiguous range of layers (language models). A localized mechanism would pass at least one single-site quadrant. A behavior that the model does not actually depend on would fail the whole-path quadrants. The cross pattern above is what redundant, distributed storage predicts.
+"Whole path" means the same component at every denoising step (diffusion) or the same token position's cached keys and values across a contiguous range of layers (language models). A localized mechanism passes at least one single-site quadrant; a behavior the model does not depend on fails the whole-path quadrants. The cross pattern is what redundant, distributed storage predicts.
 
-Two limits apply to how this test should be read. First, the pattern is relative to the cut being intervened on. Writing the full hidden-state displacement into the residual stream at a single layer is sufficient in every language-model cell below (normalized effect 0.85–1.02), because the residual stream carries everything downstream; the single-site nulls hold for per-layer KV slices, not for the residual stream. Second, whole-path ablation of a token's KV at every layer is close to deleting that token from the context, so the informative part of the result is the single-site failure and the size of the gap, not the whole-path success on its own.
+Three points govern how the test should be read.
+
+1. **The cut matters.** Replacing the subject token's residual stream at a single early layer removes the whole effect in every language model we tested (median 1.00 of the path effect at layer 0), because the residual stream carries everything downstream of it. The single-site nulls hold for per-layer key/value slices and per-step diffusion components, not for the residual stream.
+2. **How the key/value swap is done matters.** If the swap is applied inside one forward pass, the subject token's own attention at that layer also reads the replaced entries, which changes the subject's residual stream from that layer onward, so a "single-layer" swap silently becomes a multi-layer one. We call this the *in-forward* swap. The *isolated* swap runs the prompt through the subject token normally, replaces the cached entries at the chosen layers, and then runs only the later tokens, so only later tokens' reads change. §4.3 shows the difference can be total. The isolated swap is the primary measurement in this paper.
+3. **Whole-path ablation is close to deleting the token.** Replacing a token's keys and values at every layer is nearly the same as removing it from the context, so the informative result is the single-site failure and the size of the gap, not the whole-path success by itself.
 
 ## 3. Setup
 
-**Diffusion.** FLUX.2 Klein 4B (revision `e7b7dc27f91deacad38e78976d1f2b499d76a294`), BF16, 256×256, 4 steps, guidance 1.0. The contrast is a fox → cat identity transition. The four components are the route sites `joint.2`, `joint.3`, `joint.4` and `single.0` found in our companion paper [7]. Effects are reported as the fraction of the source-to-target transition remaining (necessity) or carried (sufficiency), measured on the rendered image. Held-out seeds 31337 and 60660 were not used to choose the sites.
+**Diffusion.** FLUX.2 Klein 4B (revision `e7b7dc27f91deacad38e78976d1f2b499d76a294`), BF16, 256×256, 4 steps, guidance 1.0. The contrast is a fox → cat identity transition. The four components are the route sites `joint.2`, `joint.3`, `joint.4` and `single.0` identified in the companion paper [7]. Effects are the fraction of the source-to-target transition remaining (necessity) or carried (sufficiency), measured on the rendered image; held-out seeds 31337 and 60660 were not used to choose the sites.
 
-**Language models.** SmolLM2-1.7B, Qwen2.5-0.5B, Qwen3-8B. Prompts describe a scene and ask for the subject, its color, or its action (for example, a fox sitting in snow). Necessity replaces the subject position's keys and values with those computed for a generic filler word ("creature") at one layer, the first half, the second half, or all layers, and reports the change in log-probability of the original answer (Δlp) and the new top answer among a frozen candidate set. Sufficiency writes the source-to-target displacement into the hidden state at one layer (W1), one layer's KV (W2 single), or all layers' KV (W2 all), normalized so that 1.0 matches the native target. Every arm has an exact no-op gate (maximum absolute logit change 0.0).
+**Language models, first measurements.** SmolLM2-1.7B, Qwen2.5-0.5B and Qwen3-8B, with one to three prompts per cell, in-forward swaps, BF16 or FP32 (§4.2).
 
-**Execution.** All runs used exact-replay instrumentation: the unmodified parent computation is captured once, each intervention forks from it, and a no-op fork must reproduce the parent bit-for-bit before any intervention is scored.
+**Language models, preregistered panel.** GPT-2 small, Gemma-2-2B, SmolLM2-1.7B, Qwen2.5-0.5B and Qwen2.5-1.5B, FP32, with the design frozen before any code was written ([preregistration](experiments/2026-09-22-sae-comparison/PREREGISTRATION.md)). Two behaviors with templated prompts: *identity* ("A photorealistic {animal} {pose} in {scene}. The animal in this picture is a" → the animal; 14 animals × 3 pose/scene contexts = 42 items, scored among the 14 animals) and *color* ("A {color} {object} on a {surface}. The color of the {object} is" → the color; 10 colors × 3 object/surface contexts = 30 items, scored among the 10 colors). The filler replaces the subject or color word with "creature" or "plain" at the same token position. An item is admitted only if the clean answer is top-1 among candidates and the filler prompt lowers its log-probability by at least 1 nat, which removes items where the scene already implies the answer; cells with fewer than 12 admitted items are reported but not used for decisions. Each item's whole-path effect is the change in answer log-probability (Δlp) when the subject's keys and values are replaced at every layer; every arm is reported as a fraction of that effect (median over items, 95% bootstrap interval), together with the rate at which the top answer changes. Every arm has a no-op control that installs the hook and changes nothing; all were exactly 0.0 in FP32 (isolated-split no-ops ≤ 1.4×10⁻⁴ nats, used as the baseline for isolated arms).
+
+**SAE arms.** GPT-2 small uses `gpt2-small-res-jb` [11] (all 12 layers, `hook_resid_pre`); Gemma-2-2B uses Gemma Scope `gemma-scope-2b-pt-res-canonical`, width 16k [12] (all 26 layers, `hook_resid_post`), loaded through SAELens [10]. Features are ranked by attribution (activation × gradient of the answer log-probability [13]). *SAE-k* zeroes the top-k features at the subject position of one layer, keeping the SAE's reconstruction error so only the chosen features change. *SAE-global* zeroes the top-N features ranked over all layers and positions, propagating through the network; *SAE-global-subject* restricts the ranking to the subject position. Each has a random-feature control of the same size.
+
+**Execution.** The diffusion experiments and the first language-model measurements used an exact-replay runtime: the unmodified computation is captured once, each intervention forks from that captured state, and a no-op fork must reproduce the parent exactly before any intervention is scored ([Appendix](appendix-execution-model.md)). The preregistered panel uses a standalone script on Hugging Face Transformers, SAELens and TransformerLens so it can be rerun without that runtime ([`run_sae_comparison.py`](experiments/2026-09-22-sae-comparison/run_sae_comparison.py)).
 
 ## 4. Results
 
@@ -56,7 +66,7 @@ A sweep of every single component at every single step, in both directions, leav
 
 ![Figure 1. Single-component, single-step interventions at step 2 in FLUX.2 Klein 4B. Top-left: fox source and cat target. "sufficiency": inserting the cat-run state at one component into the fox run leaves a fox. "necessity": ablating one component in the cat run leaves a cat. "rescue": restoring one downstream edge after an upstream ablation also leaves a cat. Every single-site, single-step arm reads as "no effect." The same components across all steps remove (0.13% remaining) or carry (91.1%) the transition.](figures/fig1-single-step-patching.png)
 
-### 4.2 Language models: single-layer KV swaps do almost nothing; the second half of the stack does everything
+### 4.2 Language models, first measurements (in-forward swaps)
 
 | model, behavior | clean answer | one layer (L12 / L18) Δlp | first half Δlp | second half Δlp → top answer | all layers Δlp → top answer |
 |---|---|---:|---:|---:|---:|
@@ -66,11 +76,48 @@ A sweep of every single component at every single step, in both directions, leav
 | Qwen2.5-0.5B, color | red | −0.02 / −0.06 | −0.10 | −0.98 → white | −0.83 → white |
 | SmolLM2-1.7B, action | sitting | −0.00 / −0.08 | −0.10 | −0.71 → sitting | −0.95 → sitting |
 
-In the four identity and color cells, no single-layer swap changes the answer and the largest single-layer effect is under a fifth of the path effect, while the second-half swap flips the top answer. The effect is concentrated in the second half: first-half swaps are small in three of four cells. The action cell shows the same shape but a smaller effect that does not flip the answer. Sufficiency mirrors necessity: writing the displacement into one layer's KV gives a normalized effect between −0.002 and 0.005 in the four Qwen2.5 and SmolLM2 color/identity/action cells from the grid run, while writing it into every layer's KV gives 1.01–1.31. A separate SmolLM2 identity run (lion, wolf, tiger targets) gives 0.01–0.11 for a single layer's KV and 1.06–1.09 for the full KV trace.
+These swaps were made with hooks on the key and value projections inside a single forward pass, so they are in-forward swaps in the sense of §2. In-forward swaps overstate a single layer's reach, which makes the small single-layer effects here conservative. Sufficiency mirrors necessity: writing the source-to-target displacement into one layer's keys and values gives a normalized effect between −0.002 and 0.005, and into every layer's gives 1.01–1.31; a separate SmolLM2 identity run gives 0.01–0.11 and 1.06–1.09. Qwen3-8B identity and color cells were also run but are not counted: with the subject replaced by a generic word the model still predicts the answer (fox at a 1.44-logit margin; red within 0.03 nats), so no ablation could flip it. The preregistered panel's admission rule exists to exclude exactly this case.
 
-**Qwen3-8B.** We also ran identity and color cells on Qwen3-8B. We do not count them as evidence. In both, the answer is already predicted from the scene alone: with the subject replaced by a generic word, the model still answers "fox" at a 1.44-logit margin and "red" at a log-probability within 0.03 of the clean prompt. Whole-path ablation leaves the top answer unchanged in both. These cells passed a bar we amended after seeing this confound (ablation must land at the no-subject floor), and the identity cell needed an fp32 rerun to decide a 0.014-nat miss at BF16 resolution. The confound is informative in its own right: a necessity null can simply mean the context already determines the answer.
+### 4.3 Language models, preregistered panel
 
-### 4.3 What the diffusion time axis does and does not show
+| model | behavior (admitted items) | best single layer, isolated | first half, isolated | second half, isolated (flip rate) | best single layer, in-forward |
+|---|---|---:|---:|---:|---:|
+| GPT-2 small (124M) | identity (39) | 0.16 [0.11, 0.23] at L10 | −0.01 | 0.99 [0.97, 1.00] (92%) | 0.18 at L10 |
+| Qwen2.5-1.5B | identity (42) | 0.08 [0.06, 0.12] at L23 | −0.08 | 0.92 [0.89, 0.97] (90%) | **0.99 at L0** |
+| Qwen2.5-1.5B | color (22) | 0.18 [0.06, 0.23] at L23 | 0.29 | 1.04 [0.92, 1.24] (95%) | **0.97 at L0** |
+| Gemma-2-2B | identity (42) | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | 0.08 at L22 |
+| Gemma-2-2B | color (25) | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | 0.15 at L20 |
+| SmolLM2-1.7B | identity (34) | not rerun | — | — | 0.39 at L19 |
+| SmolLM2-1.7B | color (27) | not rerun | — | — | 0.09 at L18 |
+| Qwen2.5-0.5B | identity (42) | not rerun | — | — | 0.35 at L20 |
+
+Values are fractions of the whole-path effect (median, 95% bootstrap interval). With isolated swaps, the preregistered rule "the best single layer removes less than a quarter of the effect" holds in every cell measured so far, while the second half of the layers removes 92–104% and flips the answer in 90–95% of items.
+
+The in-forward column shows why the distinction in §2 matters. In the first run, Qwen2.5-1.5B appeared to store the subject entirely at layer 0: swapping layer 0's keys and values in-forward removed 99% of the identity effect and 97% of the color effect. With the subject token's own computation left untouched, layer 0 removes 0.00 (identity) and 0.03 (color). The in-forward swap at layer 0 had changed the subject token's own hidden state through self-attention, which then propagated through every later layer. A single-site test with this implementation detail would have reported a sharply localized, early mechanism that does not exist. The SmolLM2-1.7B and Qwen2.5-0.5B identity cells, which exceeded the 0.25 threshold in-forward (0.39 and 0.35), were not rerun with isolated swaps, so we do not count them either way.
+
+### 4.4 Sparse-autoencoder features
+
+| model, behavior | SAE-20 at best single layer (flip) | 20 random features, same layer | SAE-global-subject N = 10 / 50 / 200 | random, subject position | SAE-global N = 10 / 50 / 200 | random, all positions |
+|---|---|---|---|---|---|---|
+| GPT-2, identity | 1.25 [0.87, 1.38] at L6 (77%) | 0.28 | 0.73 / 0.46 / 0.45 | 0.06 / 0.30 / 0.84 | 3.08 / 8.02 / 9.36 | 0.09 / 0.66 / 3.31 |
+| Gemma-2-2B, identity | 0.29 [0.22, 0.33] at L17 (5%) | 0.005 | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global} | TODO-{gemma2-v2-sae-global} |
+| Gemma-2-2B, color | 0.52 [0.40, 0.65] at L17 (44%) | 0.51 | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global} | TODO-{gemma2-v2-sae-global} |
+
+Values are fractions of the whole-path key/value effect; values above 1 mean the ablation removed more answer log-probability than deleting the subject did.
+
+**Single-layer SAE ablation.** In Gemma-2-2B the attribution step finds the right features: the top 20 at layer 17 remove 29% of the identity effect, against 0.5% for 20 random features at the same layer. But 29% is not the effect; the rest is carried elsewhere and the answer changes in only 5% of items. This is the SAE version of the single-layer null. For color the top-20 ablation reaches 0.52, nominally passing the preregistered "necessary component" threshold of 0.5, but 20 random features at the same layer reach 0.51, so the layer is sensitive to any perturbation and the pass is not evidence of a located mechanism. GPT-2 small behaves differently: 20 features at layer 6 remove the whole effect (1.25, flip 77%), specifically (random: 0.28). That matches the scale floor in §6: in small models the store is concentrated.
+
+**Global SAE ablation.** Ranking features over every layer and position and ablating the top N removes 3–9 times the whole-path effect in GPT-2 and flips every answer, so by the preregistered rule it is "faithful." It is not locating the subject: of the 8,400 features selected across items at N = 200, 8,383 sit on neither the subject token nor the final position but on the rest of the prompt, and 200 random features remove 3.3 times the effect on their own. Restricted to the subject position, the global ranking removes 0.45–0.73 of the effect in GPT-2 against 0.06–0.84 for random subject-position features; the N = 200 random control exceeds the attributed set. Gemma-2-2B global results: TODO-{gemma2-v2-sae-global}.
+
+**Steering.** Adding the clean prompt's top-20 attributed feature directions to the filler prompt at a single layer recovers a median 0.91 of the answer log-probability in GPT-2 (layer 10) and 0.20–0.29 in Gemma-2-2B (layers 0–1, first run); writing the clean keys and values into the filler prompt at every layer recovers 1.00 in both.
+
+### 4.5 TransformerLens and cost
+
+Running the same arms through TransformerLens (`HookedTransformer` / `HookedSAETransformer`, version 3.9.0, weights loaded without processing so logits match Hugging Face) reproduces our implementation on GPT-2 to within 4.6×10⁻⁵–5.5×10⁻⁵ nats for the residual and key/value arms and 1.5×10⁻⁴ for SAE-20, over 504 item × layer cells per behavior, and gives the same verdicts on both applicable decision rules. Gemma-2-2B: TODO-{gemma2-transformerlens-agreement}. TransformerLens was not run on Qwen2.5-1.5B.
+
+On these short prompts (under 20 tokens), reusing a cached prefix instead of recomputing the whole prompt gave no speed-up: 0.31 ms vs 0.32 ms per intervention per item with Hugging Face, and 0.60 ms vs 1.24 ms with TransformerLens, whose key/value cache path was slower. The whole GPT-2 job, including every arm, both libraries and all bootstrap intervals, took 284 s on one RTX 4080; the Qwen2.5-1.5B job took 52 s. Prefix reuse pays off for long shared prefixes and diffusion trajectories (Appendix §2 and §4), not for prompts this short.
+
+### 4.6 What the diffusion time axis does and does not show
 
 Writing the target displacement at different subsets of the four FLUX steps and scoring pixel reproduction of the target render, early steps score far higher than late ones: step 0 alone 0.13, steps 0–1 0.37, all four 0.73, and steps 2–3 at double dose only 0.16 (lion, seed 7217; the other three seed/target cells are similar). That is a statement about reproducing the target image, not about identity. Figure 2 shows the difference: steps 0–1 still render a fox, while the late double-dose arm renders a recognizable lion in a different pose and coat, which pixel distance scores poorly. Early steps fix layout; late steps can still change what the animal is.
 
@@ -83,46 +130,48 @@ To make the practical consequence concrete, we preregistered six cases in which 
 | case | standard readout and its verdict | what the downstream model does | blind grade |
 |---|---|---|---|
 | 1. FLUX identity route | single-component, single-step patching sweep: "no necessary component" (≥ 22% of the transition survives every cell) | all-step ablation removes the transition (0.13% remains); all-step insertion carries it (91%) | misreport |
-| 2. Foreign-conditioner subject rows (FLUX) | nearest-class-mean probe, 16/16 correct on held-out native states: "no decodable content" (top-1 tiger, margin 0.035 vs floor 0.352) | transplanting the two subject rows into a native fox run renders a wolf on both seeds (Figure 3) | misreport |
+| 2. Foreign-encoder subject rows (FLUX) | nearest-class-mean probe, 16/16 correct on held-out native states: "no decodable content" (top-1 tiger, margin 0.035 vs floor 0.352) | transplanting the two subject rows into a native fox run renders a wolf on both seeds (Figure 3) | misreport |
 | 3. Cross-model direction transfer (Qwen) | transferred difference-of-means direction, bit-identical to the original pipeline: 95.4% negative cosines, "representations differ across families" | native cosines are 0% negative in every model; the split falls to 0.0 under mean-centering alone | misreport |
 | 4. Reconstruction cosine (FLUX) | cosine 0.993–0.997 on held-out prompts: "state recovered" | a content-free mean template scores the same; rendered, the reconstruction differs from native by pixel MAD 70–97 and shows the wrong animal for all four prompts | misreport |
 | 5. Mediation across steps (control case) | single-step mediation: "holds at the measured step" | holds in 17/18 step × axis cells | inconclusive |
 | 6. Zeroed answer logits (reserve) | "a zeroed logit is a maximal knockout" | all 76 zero records are at the final layer, where RMSNorm of a zero vector followed by a bias-free unembedding gives zero arithmetically | misreport |
 
-The criterion was met: 4 of 4 main cases graded as misreports, 5 counting the reserve. Case 5 was included because we expected the standard reading to be correct there; the grader instead declined to decide the generality question, and we report that disagreement as it stands.
+The criterion was met: 4 of 4 main cases graded as misreports, 5 counting the reserve. Case 5 was included because we expected the standard reading to be correct there; the grader declined to decide the generality question, and we report that disagreement as it stands.
 
 ![Figure 3. Case 2. Left to right: native fox run; a run with a foreign text encoder, whose subject rows a validated probe reads as containing no animal; the same two subject rows transplanted into the native fox run, which then renders a wolf; the native wolf prompt for reference.](figures/fig3-probe-vs-consumer.png)
 
-**How to read this table.** The standard arms are our own implementations of each recipe, not TransformerLens, nnsight, SAELens, or another library; the diffusion cases could not use those libraries because none supports FLUX. We made each arm as strong as we could (case 2's probe was 16/16 on held-out native states; case 3's pipeline reproduced the original bit-for-bit), and a reviewer checked each arm before it ran. But the cases were chosen because we already suspected the readout would fail there, and the ground truth in each case comes from the downstream-model arm. The trial therefore shows that these failure modes occur in real models under faithful implementations. It does not estimate how often they occur, and it does not test sparse autoencoders or any other dictionary method. Case 2 in particular is partly a distribution-shift failure: a probe trained on native states is being applied to states produced by a different text encoder.
+**How to read this table.** The standard arms are our own implementations of each recipe. TransformerLens does not load FLUX; nnsight and pyvene can hook a diffusion denoiser as a generic PyTorch module but were not used. We made each arm as strong as we could (case 2's probe was 16/16 on held-out native states; case 3's pipeline reproduced the original bit-for-bit), and a reviewer checked each arm before it ran. But the cases were chosen because we already suspected the readout would fail there, and the ground truth in each case comes from the downstream-model arm. The trial therefore shows that these failure modes occur in real models under faithful implementations; it does not estimate how often they occur. Case 2 is partly a distribution-shift failure: a probe trained on native states is applied to states produced by a different text encoder. The SAE comparison in §4.4, which uses public tools on public models, is the more direct test of a standard workflow.
 
 ## 6. What broke, and what this does not show
 
-- **Scale floor.** In 70M-parameter Pythia checkpoints that can do the task, about 80% of the effect is carried by a single layer. The distributed pattern appears at or above 410M in our tests, not below.
-- **Cut dependence.** At the hidden-state cut, the single-site quadrants fail in SmolLM2 and Qwen2.5 as well as in Mamba-2.8B (single-site necessity rises to 172–236% of the path effect when only the cut changes). The pattern is a property of per-layer KV and per-step diffusion interventions, not of an architecture.
-- **No constructive recipe.** Weighting a write by the measured per-layer or per-step profile did not produce a better edit than writing at the best single site in SmolLM2-1.7B (≈ sham vs 0.94–1.02), and only partly recovered at Qwen3-8B. Reading and writing are asymmetric.
+- **Scale floor.** In 70M-parameter Pythia checkpoints that can do the task, about 80% of the effect is carried by a single layer, and in GPT-2 small (124M) 20 SAE features at one layer remove the whole effect. The distributed pattern appears at or above roughly 400M parameters in our tests.
+- **Cut dependence.** Residual-stream swaps at an early layer remove the whole effect in every model (§2). The pattern is a property of per-layer key/value and per-step diffusion interventions.
+- **Implementation dependence.** In-forward and isolated key/value swaps can disagree completely (Qwen2.5-1.5B layer 0: 0.99 vs 0.00). The first run of our own preregistered experiment used in-forward swaps and a global SAE ablation that did not propagate between layers; both were found in code review after the first run, fixed, and rerun under a dated amendment. The first-run files are kept.
+- **No constructive recipe.** Weighting a write by the measured per-layer or per-step profile did not beat writing at the best single site in SmolLM2-1.7B, and only partly recovered at Qwen3-8B.
 - **Token time.** Unlike depth and diffusion steps, the token axis did not accumulate: ablating the scene suffix moves about 1% of the subject effect.
-- **Tools not tested.** No sparse autoencoder, attribution-patching, or path-patching implementation was compared. The comparison in §5 covers single-step patching, probing, direction transfer, and reconstruction cosine only.
-- **Breadth.** One lab, single-token readouts, a handful of prompts per cell, two to three seeds, models up to 8B plus one exploratory 30B mixture-of-experts identity cell. No external replication.
+- **Breadth.** One lab; single-token answers; two templated behaviors; five language models from 124M to 2.6B in the preregistered panel, of which three were rerun with isolated swaps; one diffusion model. Color admitted too few items in GPT-2 (4) and Qwen2.5-0.5B (8) to count. No external replication.
 
 ## 7. Related work
 
-Activation patching and causal tracing [1, 2] and path patching [8] are the standard tools this paper examines. Zhang and Nanda [3] and Heimersheim and Nanda [4] show that patching conclusions depend on metric and granularity. McGrath et al. [5] document the Hydra effect, in which ablating one attention layer causes later layers to compensate, and Rushing and Nanda [6] study self-repair more broadly; our single-layer KV nulls are consistent with, and likely an instance of, these compensation effects. Sparse dictionary methods [9] decompose activations into features; we did not evaluate them. Our companion paper [7] identifies and certifies the FLUX.2 route used in §4.1.
+Activation patching and causal tracing [1, 2] and path patching [8] are the tools this paper examines, and Zhang and Nanda [3] and Heimersheim and Nanda [4] show that conclusions depend on metric and granularity. McGrath et al. [5] document the Hydra effect, where later layers compensate for an ablated attention layer, and Rushing and Nanda [6] study self-repair more broadly; our single-layer nulls are consistent with these compensation effects and extend them to per-layer key/value caches and diffusion steps. Sparse autoencoders [9] and the public SAEs we use [11, 12], with SAELens [10] and TransformerLens [14], are the standard feature-level toolkit; sparse feature circuits [15] rank features across layers with attribution, and our SAE-global arm is a simplified version of that procedure. Attribution patching [13] supplies the ranking score. Our companion paper [7] identifies and certifies the FLUX.2 route used in §4.1.
 
 ## 8. Reproduce
 
-Both bundles run offline with Python and no GPU.
-
 ```bash
-# Four-quadrant certificate receipts and render panes
-cd evidence/ird-certificate && python3 verify.py
-# expect: 35/35 files hash-verified ... VERIFY OK
+# Four-quadrant receipts, render panes, and the first language-model table (offline, standard library)
+cd evidence/four-quadrant-tests && python3 verify.py
+# expect: 37/37 files hash-verified ... VERIFY OK
 
-# Blind-graded instrument comparison
+# Blind-graded readout comparison (offline, standard library)
 cd evidence/instrument-trial && pip install . && instrument-trial-verify
 # expect: RESULT: all hashes and all mechanical verdicts verified
+
+# Preregistered panel and SAE comparison (GPU; about 1-5 minutes per model on an RTX 4080)
+cd experiments/2026-09-22-sae-comparison && pip install -r requirements.txt
+python run_sae_comparison.py --model gpt2 --device cuda --out-dir results --out-tag _v2 --tl
 ```
 
-The receipts record the scheduler job ID, model path, and worker hash for every run. The grader's raw output is `evidence/instrument-trial/bundle/grading/grader-raw.json`.
+Every result file from the preregistered panel, first run and rerun, is in [`experiments/2026-09-22-sae-comparison/results/`](experiments/2026-09-22-sae-comparison/results/), with the environment, model commits and file hashes for each run.
 
 ## References
 
@@ -135,3 +184,9 @@ The receipts record the scheduler job ID, model path, and worker hash for every 
 [7] J. Hollenbeck. The Circuit That Survived Its Coordinates: Causal Evidence for Distributed Semantic Routes in a Production Diffusion Transformer. [bfl/docs/certified-semantic-circuits/paper.md](../../bfl/docs/certified-semantic-circuits/paper.md), 2026.
 [8] K. Wang, A. Variengien, A. Conmy, B. Shlegeris, J. Steinhardt. Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small. arXiv:2211.00593, 2022.
 [9] H. Cunningham, A. Ewart, L. Riggs, R. Huben, L. Sharkey. Sparse Autoencoders Find Highly Interpretable Features in Language Models. arXiv:2309.08600, 2023.
+[10] J. Bloom, C. Tigges, D. Chanin, and contributors. SAELens. https://github.com/jbloomAus/SAELens, 2024.
+[11] J. Bloom. Open Source Sparse Autoencoders for all Residual Stream Layers of GPT2-Small (`gpt2-small-res-jb`). 2024.
+[12] T. Lieberum, S. Rajamanoharan, A. Conmy, L. Smith, N. Sonnerat, V. Varma, J. Kramár, A. Dragan, R. Shah, N. Nanda. Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2. arXiv:2408.05147, 2024.
+[13] A. Syed, C. Rager, A. Conmy. Attribution Patching Outperforms Automated Circuit Discovery. arXiv:2310.10348, 2023.
+[14] N. Nanda, J. Bloom, and contributors. TransformerLens. https://github.com/TransformerLensOrg/TransformerLens, 2022.
+[15] S. Marks, C. Rager, E. J. Michaud, Y. Belinkov, D. Bau, A. Mueller. Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models. arXiv:2403.19647, 2024.

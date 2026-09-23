@@ -1,0 +1,611 @@
+{
+  "claim_boundary": "The controller is fit to scalar RGB and return-register observables from a four-step impulse screen. A nonzero superposition gap is evidence of local nonlinearity, not a failed circuit.",
+  "controllers": [
+    {
+      "axis": "appearance",
+      "control": [
+        3.5279729600466177e-16,
+        0.0,
+        0.2356250546582567,
+        0.7356250546582568
+      ],
+      "desired_output": [
+        0.2937956072680442,
+        0.8364434838294983
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000001,
+        "objective": 0.24314774338505332,
+        "predicted_output_l2": 0.5359681102507907,
+        "residual_l2": 0.4808476636488732,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.2937956072680442,
+        0.8364434838294983
+      ],
+      "impulse_response": [
+        [
+          -0.9841354027032803,
+          -0.8803870301107263,
+          -0.7501546305302548,
+          0.13549564221578075
+        ],
+        [
+          0.0010828261729329824,
+          0.04106711596250534,
+          0.12846632301807404,
+          0.6798660159111023
+        ]
+      ],
+      "linear_superposition_gap": 2.773012565395734,
+      "predicted_output": [
+        -0.07708123660989667,
+        0.5303963594977749
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "joint.4",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "appearance",
+      "control": [
+        6.207942034690616e-18,
+        0.0,
+        0.2381668438893626,
+        0.7381668438893627
+      ],
+      "desired_output": [
+        0.30808198212804977,
+        0.8421807885169983
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000001,
+        "objective": 0.2555387855455233,
+        "predicted_output_l2": 0.5348764231698484,
+        "residual_l2": 0.4934637887896205,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.30808198212804977,
+        0.8421807885169983
+      ],
+      "impulse_response": [
+        [
+          -0.9789840699190991,
+          -0.8813844314306583,
+          -0.7486861417609936,
+          0.1414778756150214
+        ],
+        [
+          0.002941886894404888,
+          0.04418104514479637,
+          0.12870776653289795,
+          0.6761288046836853
+        ]
+      ],
+      "linear_superposition_gap": 2.7756759748978235,
+      "predicted_output": [
+        -0.07387793852400758,
+        0.5297497883552326
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.0",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "appearance",
+      "control": [
+        2.361227486328579e-16,
+        0.0,
+        0.22086365268651503,
+        0.7208636526865153
+      ],
+      "desired_output": [
+        0.3666916692639913,
+        0.8718466758728027
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000002,
+        "objective": 0.35404599219059946,
+        "predicted_output_l2": 0.522919748105411,
+        "residual_l2": 0.5853866149936706,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.3666916692639913,
+        0.8718466758728027
+      ],
+      "impulse_response": [
+        [
+          -0.9365521006819404,
+          -0.8510291346418332,
+          -0.6657057576252616,
+          0.07005396389686809
+        ],
+        [
+          0.012923636473715305,
+          0.05938144773244858,
+          0.15944425761699677,
+          0.6640885472297668
+        ]
+      ],
+      "linear_superposition_gap": 2.7500293497923014,
+      "predicted_output": [
+        -0.09653084894369376,
+        0.5139327370005108
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.10",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "appearance",
+      "control": [
+        5.603337121395052e-16,
+        0.0,
+        0.3672874966659872,
+        0.8672874966659878
+      ],
+      "desired_output": [
+        0.9999999996646838,
+        1.0
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000007,
+        "objective": 0.9055089258955016,
+        "predicted_output_l2": 0.7202244513841217,
+        "residual_l2": 0.9422139734444056,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.9999999996646838,
+        1.0
+      ],
+      "impulse_response": [
+        [
+          -0.8975867425949946,
+          -0.854503954206644,
+          -0.6670371236994325,
+          0.4007820405276069
+        ],
+        [
+          0.021444495767354965,
+          0.06037803366780281,
+          0.16689687967300415,
+          0.7512849569320679
+        ]
+      ],
+      "linear_superposition_gap": 3.018345779641306,
+      "predicted_output": [
+        0.10259885729102916,
+        0.7128791867168898
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.19",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "scene",
+      "control": [
+        0.0,
+        1.8568291267579803e-16,
+        0.35731185319114667,
+        0.8573118531911469
+      ],
+      "desired_output": [
+        0.3961296138548088,
+        0.8972377181053162
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000002,
+        "objective": 0.2420436460361178,
+        "predicted_output_l2": 0.6673042588138036,
+        "residual_l2": 0.4741208058660358,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.3961296138548088,
+        0.8972377181053162
+      ],
+      "impulse_response": [
+        [
+          -0.9892657069814015,
+          -0.9239216834569643,
+          -0.6839039228949592,
+          0.2636183052424037
+        ],
+        [
+          0.001701413537375629,
+          0.0375579334795475,
+          0.1444808542728424,
+          0.7178564071655273
+        ]
+      ],
+      "linear_superposition_gap": 2.7296061022898686,
+      "predicted_output": [
+        -0.01836388029181857,
+        0.667051528543086
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "joint.4",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "scene",
+      "control": [
+        0.0,
+        0.0,
+        0.35788594096999005,
+        0.85788594096999
+      ],
+      "desired_output": [
+        0.35978715073964695,
+        0.9094200730323792
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5,
+        "objective": 0.2433052865356018,
+        "predicted_output_l2": 0.6698084467788018,
+        "residual_l2": 0.47542010248457417,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.35978715073964695,
+        0.9094200730323792
+      ],
+      "impulse_response": [
+        [
+          -0.9778574855925934,
+          -0.9179443975604458,
+          -0.6758186402346545,
+          0.2239414404275513
+        ],
+        [
+          0.004920477047562599,
+          0.04303979128599167,
+          0.1518600732088089,
+          0.7152579426765442
+        ]
+      ],
+      "linear_superposition_gap": 2.7074721461131146,
+      "predicted_output": [
+        -0.049749776642073695,
+        0.6679583183854325
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.0",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "scene",
+      "control": [
+        0.0,
+        0.0,
+        0.4422527387957422,
+        0.9422527387957421
+      ],
+      "desired_output": [
+        0.6077543483462089,
+        0.9453805685043335
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.49999999999999994,
+        "objective": 0.3964290473677362,
+        "predicted_output_l2": 0.7500554683118921,
+        "residual_l2": 0.6121768479719958,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.6077543483462089,
+        0.9453805685043335
+      ],
+      "impulse_response": [
+        [
+          -0.9013161841723284,
+          -0.820932625230168,
+          -0.5305059676787475,
+          0.2784447960656994
+        ],
+        [
+          0.020827079191803932,
+          0.062033940106630325,
+          0.1741899698972702,
+          0.713721513748169
+        ]
+      ],
+      "linear_superposition_gap": 2.5821891780613098,
+      "predicted_output": [
+        0.027747654542915584,
+        0.7495420423244707
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.10",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "scene",
+      "control": [
+        0.0,
+        0.0,
+        0.5000000000000002,
+        1.0
+      ],
+      "desired_output": [
+        0.9999999998347369,
+        1.0
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000002,
+        "objective": 0.6937710995968817,
+        "predicted_output_l2": 0.8517919882944274,
+        "residual_l2": 0.8177842622580124,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.9999999998347369,
+        1.0
+      ],
+      "impulse_response": [
+        [
+          -0.8794656865846823,
+          -0.8379340170883693,
+          -0.5980337960618044,
+          0.4995577540168687
+        ],
+        [
+          0.02598959021270275,
+          0.06167397275567055,
+          0.1690216362476349,
+          0.7433375716209412
+        ]
+      ],
+      "linear_superposition_gap": 2.8158757456447936,
+      "predicted_output": [
+        0.20054085598596638,
+        0.8278483897447586
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.19",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "character",
+      "control": [
+        8.294811833591342e-17,
+        1.7300106073176378e-16,
+        0.12297852630863085,
+        0.6229785263086309
+      ],
+      "desired_output": [
+        0.645828013231394,
+        0.7447096109390259
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000001,
+        "objective": 0.46138690042044367,
+        "predicted_output_l2": 0.3994569706833134,
+        "residual_l2": 0.6732921959869648,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.645828013231394,
+        0.7447096109390259
+      ],
+      "impulse_response": [
+        [
+          -0.9903769795714497,
+          -0.8898300385266925,
+          -0.6617142566394177,
+          0.24575158846078254
+        ],
+        [
+          0.0010777240386232734,
+          0.029686691239476204,
+          0.11282413452863693,
+          0.6085131168365479
+        ]
+      ],
+      "linear_superposition_gap": 2.942006986123403,
+      "predicted_output": [
+        0.07172131829837645,
+        0.39296555056268284
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "joint.4",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "character",
+      "control": [
+        0.0,
+        0.0,
+        0.11719649057991764,
+        0.6171964905799177
+      ],
+      "desired_output": [
+        0.6674811204473777,
+        0.7568773031234741
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5,
+        "objective": 0.5015858124001935,
+        "predicted_output_l2": 0.39635967106746706,
+        "residual_l2": 0.7026325368871166,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.6674811204473777,
+        0.7568773031234741
+      ],
+      "impulse_response": [
+        [
+          -0.986048781245537,
+          -0.8759958768832491,
+          -0.6534225184284346,
+          0.2341448911876197
+        ],
+        [
+          0.00226467102766037,
+          0.032714661210775375,
+          0.11541743576526642,
+          0.6107745170593262
+        ]
+      ],
+      "linear_superposition_gap": 2.9488065322158237,
+      "predicted_output": [
+        0.06793457910251147,
+        0.39049440688808246
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.0",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "character",
+      "control": [
+        0.0,
+        4.3051819045897996e-16,
+        0.26805909675732575,
+        0.7680590967573251
+      ],
+      "desired_output": [
+        0.7916695314626375,
+        0.8990031480789185
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.49999999999999933,
+        "objective": 0.672876760231636,
+        "predicted_output_l2": 0.5857490236482612,
+        "residual_l2": 0.8121830773429815,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.7916695314626375,
+        0.8990031480789185
+      ],
+      "impulse_response": [
+        [
+          -0.9579884855150185,
+          -0.8325049774223898,
+          -0.6059377555991144,
+          0.2674496717710838
+        ],
+        [
+          0.00881737656891346,
+          0.05614557862281799,
+          0.16923575103282928,
+          0.7015138864517212
+        ]
+      ],
+      "linear_superposition_gap": 2.9208817682469577,
+      "predicted_output": [
+        0.04299002587148151,
+        0.5841693045517375
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.10",
+      "smoothness_bound": 0.5
+    },
+    {
+      "axis": "character",
+      "control": [
+        0.0,
+        2.844062694968339e-16,
+        0.4455072931907184,
+        0.9455072931907189
+      ],
+      "desired_output": [
+        0.9999999998190298,
+        1.0
+      ],
+      "diagnostics": {
+        "max_adjacent_delta": 0.5000000000000004,
+        "objective": 0.7964964703214725,
+        "predicted_output_l2": 0.806971996257147,
+        "residual_l2": 0.880140474314307,
+        "solver": "scipy-slsqp"
+      },
+      "full_step_observed_output": [
+        0.9999999998190298,
+        1.0
+      ],
+      "impulse_response": [
+        [
+          -0.9531706004699549,
+          -0.8699605674056657,
+          -0.6501782853963828,
+          0.45898609930078194
+        ],
+        [
+          0.014423769898712635,
+          0.0564914271235466,
+          0.16893590986728668,
+          0.7601216435432434
+        ]
+      ],
+      "linear_superposition_gap": 3.014323353913419,
+      "predicted_output": [
+        0.14431553634372368,
+        0.7939627376099386
+      ],
+      "response_observables": [
+        "contrast_progress",
+        "return_progress"
+      ],
+      "ridge": 0.02,
+      "site": "single.19",
+      "smoothness_bound": 0.5
+    }
+  ],
+  "model": "flux2-klein-4b",
+  "ridge": 0.02,
+  "schema": "saturn-inverse-image-signal-analysis-v1",
+  "smoothness_bound": 0.5,
+  "source_report": "<host-path>",
+  "status": "exploratory"
+}

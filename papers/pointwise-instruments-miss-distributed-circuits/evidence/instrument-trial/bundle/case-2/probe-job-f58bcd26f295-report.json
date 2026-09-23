@@ -23,8 +23,8 @@
       "TOKENIZERS_PARALLELISM=false",
       "TQDM_DISABLE=1",
       "SATURN_RESIDENT_WORKER=1",
-      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
-      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "UV_CACHE_DIR=<host-path>",
+      "TORCH_HOME=<host-path>",
       "PYTHONPATH=saturn_src:mrun_src:common_src:.",
       "SATURN_RUN_CONFIG=saturn_run_config.json",
       "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
@@ -56,12 +56,12 @@
     "device": "cuda",
     "dtype": "bfloat16 encoder / float32 TECM",
     "experiment": "saturn-instrument-trial-case2-probe",
-    "host_selection": "prefer_beast_softly",
+    "host_selection": "prefer_gpu_host_softly",
     "instrument": "Instrument Trial case 2 community arm, strengthened: rebuild the foreign fox carrier exactly as job-e1ba0cbed889 (TECM v3 warm start, 900 steps, seed 7217) with archived own-template E1 parity gate; fit held-out nearest-class-mean probe on an independent 8-animal x 4-template native bank; G1-validate on 2 held-out templates per animal; score the foreign subject rows with a frozen mechanical decision rule; robustness refit at seed 31337. Encoder+mapper only, no diffusion.",
     "launcher_attempt": 1,
     "log_sha256": "a56cddb979301ce894fe34d5a20a657ab06fdcbbca673e893c585be6b32b3ce5",
     "model_id": "black-forest-labs/FLUX.2-klein-4B",
-    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B",
+    "model_path": "<host-path>",
     "mrun_job_id": "job-f58bcd26f295",
     "mrun_ok": true,
     "mrun_result": {
@@ -76,8 +76,8 @@
           "TOKENIZERS_PARALLELISM=false",
           "TQDM_DISABLE=1",
           "SATURN_RESIDENT_WORKER=1",
-          "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
-          "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+          "UV_CACHE_DIR=<host-path>",
+          "TORCH_HOME=<host-path>",
           "PYTHONPATH=saturn_src:mrun_src:common_src:.",
           "SATURN_RUN_CONFIG=saturn_run_config.json",
           "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
@@ -106,8 +106,8 @@
           "-u",
           "run_saturn_instrument_trial_case2_probe.py"
         ],
-        "cwd": "/mnt/big/mrun-work/job-f58bcd26f295",
-        "log_path": "/mnt/big/mrun-work/job-f58bcd26f295/job.log",
+        "cwd": "<host-path>",
+        "log_path": "<host-path>/job.log",
         "phase": "finished",
         "phases": [
           {
@@ -138,7 +138,7 @@
       },
       "elapsed_s": 384.98,
       "executed_payload": {
-        "host": "beast",
+        "host": "gpu-host",
         "sha256": "0f7545652eb8dcba75d02a21808cae5c48644b501bf35e3c18e8bec47e627eb1",
         "size_bytes": 4012188
       },
@@ -368,7 +368,7 @@
     ],
     "mapper_steps": 900,
     "model_id": "black-forest-labs/FLUX.2-klein-4B",
-    "model_path": "/mnt/big/llm-models/FLUX.2-klein-4B"
+    "model_path": "<host-path>"
   },
   "parity": {
     "deltas": {

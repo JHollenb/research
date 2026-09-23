@@ -1,0 +1,16 @@
+[14:59:18] loading gpt2 from openai-community/gpt2 (fp32, eager)
+[15:00:15] loaded: 12 layers, hidden 768
+[15:00:15] behavior identity
+[15:00:15]   context 0: kept 14 rows, admitted 13, subj_pos 4, seq_len 17, cache_parity 0.00e+00
+[15:00:15]   context 1: kept 14 rows, admitted 13, subj_pos 4, seq_len 18, cache_parity 0.00e+00
+[15:00:15]   context 2: kept 14 rows, admitted 13, subj_pos 4, seq_len 20, cache_parity 0.00e+00
+[15:02:00]   admitted 39/42; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L6': 0.0, 'L11': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0}
+[15:02:00] behavior color
+[15:02:00]   context 0: kept 10 rows, admitted 1, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[15:02:00]   context 1: kept 10 rows, admitted 1, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[15:02:00]   context 2: kept 10 rows, admitted 2, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[15:02:53]   admitted 4/30; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L6': 0.0, 'L11': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0}
+[15:02:53] TransformerLens cross-check
+[15:02:53]   building TransformerLens model
+[15:03:01]   TL[identity] clean_gate=2.03e-05 agreement={'resid1': 5e-05, 'kv1_inforward': 5e-05, 'kv1_isolated': 5e-05, 'sae_k20': 0.00015}
+[15:03:01]   TL[color] clean_gate=4.53e-05 agreement={'resid1': 7e-05, 'kv1_inforward': 5e-05, 'kv1_isolated': 5e-05, 'sae_k20': 0.00013}

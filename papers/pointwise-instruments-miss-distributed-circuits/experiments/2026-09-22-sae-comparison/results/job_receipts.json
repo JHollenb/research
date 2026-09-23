@@ -1,0 +1,598 @@
+{
+ "gpt2": {
+  "job_id": "job-64807f3387da",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 9000.0,
+   "vram_mb": 3000.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 143.46,
+   "peak_rss_mb": 5946.3,
+   "peak_vram_mb": 1444.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790106857.8518403
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790106857.900555
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790106857.965476
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790106858.011873
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790107001.0126538
+     },
+     {
+      "name": "finished",
+      "ts": 1790107001.028638
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "gpt2",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 100,
+  "timeout_s": 2400.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "gpt2",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>"
+  ],
+  "note": null,
+  "submitted_ts": 1790106586.322492,
+  "started_ts": 1790106857.8094027,
+  "finished_ts": 1790107000.8453636,
+  "host": "gpu-host"
+ },
+ "gemma2": {
+  "job_id": "job-7c80b4492560",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 30000.0,
+   "vram_mb": 12300.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 246.47,
+   "peak_rss_mb": 16636.4,
+   "peak_vram_mb": 12764.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790107001.4467168
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790107001.4644608
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790107001.4945042
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790107001.5341923
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790107247.8684404
+     },
+     {
+      "name": "finished",
+      "ts": 1790107247.8904626
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "gemma2",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 100,
+  "timeout_s": 6000.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "gemma2",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>"
+  ],
+  "note": null,
+  "submitted_ts": 1790106586.5906308,
+  "started_ts": 1790107001.3301606,
+  "finished_ts": 1790107247.7096908,
+  "host": "gpu-host"
+ },
+ "smollm2": {
+  "job_id": "job-a73d1f33cad2",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 18000.0,
+   "vram_mb": 9500.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 50.4,
+   "peak_rss_mb": 9082.5,
+   "peak_vram_mb": 7670.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790106859.0983899
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790106859.156473
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790106859.2126276
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790106859.3313746
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790106909.4391305
+     },
+     {
+      "name": "finished",
+      "ts": 1790106909.4572046
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "smollm2",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--model-path",
+     "<host-path>"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 100,
+  "timeout_s": 3000.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "smollm2",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--model-path",
+   "<host-path>"
+  ],
+  "note": null,
+  "submitted_ts": 1790106586.8577032,
+  "started_ts": 1790106859.1145432,
+  "finished_ts": 1790106909.2761242,
+  "host": "gpu-host"
+ },
+ "qwen05": {
+  "job_id": "job-9cee94d768d9",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 9000.0,
+   "vram_mb": 4000.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 38.97,
+   "peak_rss_mb": 2267.5,
+   "peak_vram_mb": 3054.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790107253.0015538
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790107253.0168798
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790107253.0473251
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790107253.0848355
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790107291.9298048
+     },
+     {
+      "name": "finished",
+      "ts": 1790107291.947203
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "qwen05",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--model-path",
+     "<host-path>"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 100,
+  "timeout_s": 2400.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "qwen05",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--model-path",
+   "<host-path>"
+  ],
+  "note": null,
+  "submitted_ts": 1790106587.154637,
+  "started_ts": 1790107252.8763788,
+  "finished_ts": 1790107291.7618217,
+  "host": "gpu-host"
+ },
+ "qwen15": {
+  "job_id": "job-4d4420004ced",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 15000.0,
+   "vram_mb": 9000.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 46.17,
+   "peak_rss_mb": 9059.9,
+   "peak_vram_mb": 7126.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790107254.6984272
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790107254.7155173
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790107254.7476213
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790107254.7857466
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790107300.8018277
+     },
+     {
+      "name": "finished",
+      "ts": 1790107300.8376477
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "qwen15",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--model-path",
+     "<host-path>"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 100,
+  "timeout_s": 3000.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "qwen15",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--model-path",
+   "<host-path>"
+  ],
+  "note": null,
+  "submitted_ts": 1790106587.429891,
+  "started_ts": 1790107254.577171,
+  "finished_ts": 1790107300.6532037,
+  "host": "gpu-host"
+ },
+ "gemma2_smoke": {
+  "job_id": "job-455d85d06760",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 30000.0,
+   "vram_mb": 12300.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 96.29,
+   "peak_rss_mb": 15467.6,
+   "peak_vram_mb": 11124.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790106411.3682785
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790106411.3877199
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790106411.4194586
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790106411.4640508
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790106507.594441
+     },
+     {
+      "name": "finished",
+      "ts": 1790106507.6327517
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "gemma2",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--smoke"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 100,
+  "timeout_s": 6000.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "gemma2",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--smoke"
+  ],
+  "note": null,
+  "submitted_ts": 1790106072.285364,
+  "started_ts": 1790106411.2657099,
+  "finished_ts": 1790106507.4570491,
+  "host": "gpu-host"
+ }
+}

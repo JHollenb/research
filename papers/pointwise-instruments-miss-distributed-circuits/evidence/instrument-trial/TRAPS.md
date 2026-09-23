@@ -1,15 +1,15 @@
 # Seven ways to be confidently wrong
 
 Seven measurement failure modes, each hit in practice during this program, each producing
-a clean-looking positive result, each now gated against. Condensed from §11 of the source
-whitepaper ("The Circuit That Survived Its Coordinates"); the gate that kills each trap is
+a clean-looking positive result, each now gated against. Condensed from §11 of
+[The Circuit That Survived Its Coordinates](../../../../bfl/docs/certified-semantic-circuits/paper.md); the gate that kills each trap is
 in bold.
 
 **1. The latent-only false positive.** Internal text positions of a late merged block
 showed 0.964 alignment cosine with intervention outcomes — while the rendered image never
 changed, because the architecture discards those positions before output. Activation-
 magnitude rankings reliably surface exactly these "disposal" sites. **Every internal claim
-must be confirmed at an observable the model actually serves (the two-consumer rule).**
+must be confirmed at an output the model actually produces.**
 
 **2. Contrast collapse inflates alignment.** When an intervention collapses the two
 contrast conditions toward each other, every subsequent patch scores a *higher* alignment

@@ -1,0 +1,429 @@
+{
+  "claim_boundary": "The comparison measures how a controller fit to impulse responses transfers to the real nonlinear suffix. Prediction error diagnoses model mismatch; it does not disprove the underlying carrier.",
+  "comparisons": [
+    {
+      "actual_minus_desired": [
+        -0.40181145206623886,
+        -0.27118754386901855
+      ],
+      "actual_minus_linear_prediction": [
+        -0.030934608188297977,
+        0.034859580462704876
+      ],
+      "actual_output": [
+        -0.10801584479819465,
+        0.5652559399604797
+      ],
+      "actual_return_progress": 0.5652559399604797,
+      "actual_rgb_progress": -0.10801584479819465,
+      "actual_target_rgb_mad": 21.008514404296875,
+      "axis": "appearance",
+      "control": [
+        3.5279729600466177e-16,
+        0.0,
+        0.2356250546582567,
+        0.7356250546582568
+      ],
+      "desired_output": [
+        0.2937956072680442,
+        0.8364434838294983
+      ],
+      "image_branch_id": "appearance:signal:joint.4:inverse_appearance_joint_4",
+      "linear_predicted_output": [
+        -0.07708123660989667,
+        0.5303963594977749
+      ],
+      "site": "joint.4",
+      "waveform": "inverse_appearance_joint_4"
+    },
+    {
+      "actual_minus_desired": [
+        -0.3959769901161616,
+        -0.2795831561088562
+      ],
+      "actual_minus_linear_prediction": [
+        -0.014017069464104248,
+        0.032847844052909525
+      ],
+      "actual_output": [
+        -0.08789500798811183,
+        0.5625976324081421
+      ],
+      "actual_return_progress": 0.5625976324081421,
+      "actual_rgb_progress": -0.08789500798811183,
+      "actual_target_rgb_mad": 20.62117576599121,
+      "axis": "appearance",
+      "control": [
+        6.207942034690616e-18,
+        0.0,
+        0.2381668438893626,
+        0.7381668438893627
+      ],
+      "desired_output": [
+        0.30808198212804977,
+        0.8421807885169983
+      ],
+      "image_branch_id": "appearance:signal:single.0:inverse_appearance_single_0",
+      "linear_predicted_output": [
+        -0.07387793852400758,
+        0.5297497883552326
+      ],
+      "site": "single.0",
+      "waveform": "inverse_appearance_single_0"
+    },
+    {
+      "actual_minus_desired": [
+        -0.5126857038661469,
+        -0.34777241945266724
+      ],
+      "actual_minus_linear_prediction": [
+        -0.049463185658461806,
+        0.010141519419624712
+      ],
+      "actual_output": [
+        -0.14599403460215557,
+        0.5240742564201355
+      ],
+      "actual_return_progress": 0.5240742564201355,
+      "actual_rgb_progress": -0.14599403460215557,
+      "actual_target_rgb_mad": 20.185373306274414,
+      "axis": "appearance",
+      "control": [
+        2.361227486328579e-16,
+        0.0,
+        0.22086365268651503,
+        0.7208636526865153
+      ],
+      "desired_output": [
+        0.3666916692639913,
+        0.8718466758728027
+      ],
+      "image_branch_id": "appearance:signal:single.10:inverse_appearance_single_10",
+      "linear_predicted_output": [
+        -0.09653084894369376,
+        0.5139327370005108
+      ],
+      "site": "single.10",
+      "waveform": "inverse_appearance_single_10"
+    },
+    {
+      "actual_minus_desired": [
+        -0.6492793829245856,
+        -0.27893781661987305
+      ],
+      "actual_minus_linear_prediction": [
+        0.24812175944906897,
+        0.008182996663237185
+      ],
+      "actual_output": [
+        0.35072061674009813,
+        0.721062183380127
+      ],
+      "actual_return_progress": 0.721062183380127,
+      "actual_rgb_progress": 0.35072061674009813,
+      "actual_target_rgb_mad": 10.104838371276855,
+      "axis": "appearance",
+      "control": [
+        5.603337121395052e-16,
+        0.0,
+        0.3672874966659872,
+        0.8672874966659878
+      ],
+      "desired_output": [
+        0.9999999996646838,
+        1.0
+      ],
+      "image_branch_id": "appearance:signal:single.19:inverse_appearance_single_19",
+      "linear_predicted_output": [
+        0.10259885729102916,
+        0.7128791867168898
+      ],
+      "site": "single.19",
+      "waveform": "inverse_appearance_single_19"
+    },
+    {
+      "actual_minus_desired": [
+        -0.1380709983799272,
+        -0.1721787452697754
+      ],
+      "actual_minus_linear_prediction": [
+        0.2764224957667002,
+        0.058007444292454746
+      ],
+      "actual_output": [
+        0.2580586154748816,
+        0.7250589728355408
+      ],
+      "actual_return_progress": 0.7250589728355408,
+      "actual_rgb_progress": 0.2580586154748816,
+      "actual_target_rgb_mad": 24.968481063842773,
+      "axis": "scene",
+      "control": [
+        0.0,
+        1.8568291267579803e-16,
+        0.35731185319114667,
+        0.8573118531911469
+      ],
+      "desired_output": [
+        0.3961296138548088,
+        0.8972377181053162
+      ],
+      "image_branch_id": "scene:signal:joint.4:inverse_scene_joint_4",
+      "linear_predicted_output": [
+        -0.01836388029181857,
+        0.667051528543086
+      ],
+      "site": "joint.4",
+      "waveform": "inverse_scene_joint_4"
+    },
+    {
+      "actual_minus_desired": [
+        -0.11655962821931351,
+        -0.17671328783035278
+      ],
+      "actual_minus_linear_prediction": [
+        0.2929772991624071,
+        0.06474846681659385
+      ],
+      "actual_output": [
+        0.24322752252033344,
+        0.7327067852020264
+      ],
+      "actual_return_progress": 0.7327067852020264,
+      "actual_rgb_progress": 0.24322752252033344,
+      "actual_target_rgb_mad": 25.329504013061523,
+      "axis": "scene",
+      "control": [
+        0.0,
+        0.0,
+        0.35788594096999005,
+        0.85788594096999
+      ],
+      "desired_output": [
+        0.35978715073964695,
+        0.9094200730323792
+      ],
+      "image_branch_id": "scene:signal:single.0:inverse_scene_single_0",
+      "linear_predicted_output": [
+        -0.049749776642073695,
+        0.6679583183854325
+      ],
+      "site": "single.0",
+      "waveform": "inverse_scene_single_0"
+    },
+    {
+      "actual_minus_desired": [
+        -0.2766254884736687,
+        -0.2090611457824707
+      ],
+      "actual_minus_linear_prediction": [
+        0.30338120532962465,
+        -0.013222619602607955
+      ],
+      "actual_output": [
+        0.3311288598725402,
+        0.7363194227218628
+      ],
+      "actual_return_progress": 0.7363194227218628,
+      "actual_rgb_progress": 0.3311288598725402,
+      "actual_target_rgb_mad": 22.40419578552246,
+      "axis": "scene",
+      "control": [
+        0.0,
+        0.0,
+        0.4422527387957422,
+        0.9422527387957421
+      ],
+      "desired_output": [
+        0.6077543483462089,
+        0.9453805685043335
+      ],
+      "image_branch_id": "scene:signal:single.10:inverse_scene_single_10",
+      "linear_predicted_output": [
+        0.027747654542915584,
+        0.7495420423244707
+      ],
+      "site": "single.10",
+      "waveform": "inverse_scene_single_10"
+    },
+    {
+      "actual_minus_desired": [
+        -0.34940943932953916,
+        -0.1715889573097229
+      ],
+      "actual_minus_linear_prediction": [
+        0.4500497045192313,
+        0.0005626529455184937
+      ],
+      "actual_output": [
+        0.6505905605051977,
+        0.8284110426902771
+      ],
+      "actual_return_progress": 0.8284110426902771,
+      "actual_rgb_progress": 0.6505905605051977,
+      "actual_target_rgb_mad": 10.942398071289062,
+      "axis": "scene",
+      "control": [
+        0.0,
+        0.0,
+        0.5000000000000002,
+        1.0
+      ],
+      "desired_output": [
+        0.9999999998347369,
+        1.0
+      ],
+      "image_branch_id": "scene:signal:single.19:inverse_scene_single_19",
+      "linear_predicted_output": [
+        0.20054085598596638,
+        0.8278483897447586
+      ],
+      "site": "single.19",
+      "waveform": "inverse_scene_single_19"
+    },
+    {
+      "actual_minus_desired": [
+        -0.6787525162775625,
+        -0.3281022012233734
+      ],
+      "actual_minus_linear_prediction": [
+        -0.10464582134454486,
+        0.023641859152969624
+      ],
+      "actual_output": [
+        -0.03292450304616842,
+        0.41660740971565247
+      ],
+      "actual_return_progress": 0.41660740971565247,
+      "actual_rgb_progress": -0.03292450304616842,
+      "actual_target_rgb_mad": 31.0836238861084,
+      "axis": "character",
+      "control": [
+        8.294811833591342e-17,
+        1.7300106073176378e-16,
+        0.12297852630863085,
+        0.6229785263086309
+      ],
+      "desired_output": [
+        0.645828013231394,
+        0.7447096109390259
+      ],
+      "image_branch_id": "character:signal:joint.4:inverse_character_joint_4",
+      "linear_predicted_output": [
+        0.07172131829837645,
+        0.39296555056268284
+      ],
+      "site": "joint.4",
+      "waveform": "inverse_character_joint_4"
+    },
+    {
+      "actual_minus_desired": [
+        -0.7207581173297258,
+        -0.34317710995674133
+      ],
+      "actual_minus_linear_prediction": [
+        -0.12121157598485957,
+        0.02320578627865033
+      ],
+      "actual_output": [
+        -0.0532769968823481,
+        0.4137001931667328
+      ],
+      "actual_return_progress": 0.4137001931667328,
+      "actual_rgb_progress": -0.0532769968823481,
+      "actual_target_rgb_mad": 31.72092628479004,
+      "axis": "character",
+      "control": [
+        0.0,
+        0.0,
+        0.11719649057991764,
+        0.6171964905799177
+      ],
+      "desired_output": [
+        0.6674811204473777,
+        0.7568773031234741
+      ],
+      "image_branch_id": "character:signal:single.0:inverse_character_single_0",
+      "linear_predicted_output": [
+        0.06793457910251147,
+        0.39049440688808246
+      ],
+      "site": "single.0",
+      "waveform": "inverse_character_single_0"
+    },
+    {
+      "actual_minus_desired": [
+        -0.6936884369037544,
+        -0.2908276915550232
+      ],
+      "actual_minus_linear_prediction": [
+        0.05499106868740161,
+        0.02400615197215772
+      ],
+      "actual_output": [
+        0.09798109455888313,
+        0.6081754565238953
+      ],
+      "actual_return_progress": 0.6081754565238953,
+      "actual_rgb_progress": 0.09798109455888313,
+      "actual_target_rgb_mad": 26.433349609375,
+      "axis": "character",
+      "control": [
+        0.0,
+        4.3051819045897996e-16,
+        0.26805909675732575,
+        0.7680590967573251
+      ],
+      "desired_output": [
+        0.7916695314626375,
+        0.8990031480789185
+      ],
+      "image_branch_id": "character:signal:single.10:inverse_character_single_10",
+      "linear_predicted_output": [
+        0.04299002587148151,
+        0.5841693045517375
+      ],
+      "site": "single.10",
+      "waveform": "inverse_character_single_10"
+    },
+    {
+      "actual_minus_desired": [
+        -0.44603798915166515,
+        -0.2019176483154297
+      ],
+      "actual_minus_linear_prediction": [
+        0.40964647432364093,
+        0.004119614074631683
+      ],
+      "actual_output": [
+        0.5539620106673646,
+        0.7980823516845703
+      ],
+      "actual_return_progress": 0.7980823516845703,
+      "actual_rgb_progress": 0.5539620106673646,
+      "actual_target_rgb_mad": 12.644062995910645,
+      "axis": "character",
+      "control": [
+        0.0,
+        2.844062694968339e-16,
+        0.4455072931907184,
+        0.9455072931907189
+      ],
+      "desired_output": [
+        0.9999999998190298,
+        1.0
+      ],
+      "image_branch_id": "character:signal:single.19:inverse_character_single_19",
+      "linear_predicted_output": [
+        0.14431553634372368,
+        0.7939627376099386
+      ],
+      "site": "single.19",
+      "waveform": "inverse_character_single_19"
+    }
+  ],
+  "schema": "saturn-inverse-image-signal-validation-v1",
+  "source_analysis": "<host-path>",
+  "status": "exploratory",
+  "validation_report": "<host-path>"
+}

@@ -1,18 +1,6 @@
-# The Instrument Trial
+# Blind-Graded Comparison: Standard Readouts vs. the Model's Own Output
 
-**When the reading contradicts the consumer: an executable benchmark for verdict-grade
-interpretability.**
-
-This repository ships the receipts for a preregistered head-to-head between the field's
-standard measurement instruments — single-step activation patching, linear/dictionary
-probes, cosine-similarity readouts — and consumer-gated causal certification, on matched
-models, prompts, seeds, and internal state. The arbiter in every case is the **unchanged
-native consumer**: the rest of the model, run to completion, deciding what the internal
-state actually does.
-
-The claim under test is narrow and falsifiable: *verdict-grade readings taken without
-consumer closure can invert, in specific measured regimes.* This bundle lets you check
-that claim on your laptop, with no GPU, from hash-verified receipts.
+Receipts and an offline verifier for §5 of [Single-Site Tests Miss Distributed Stores](../../paper.md). Each case pairs a standard interpretability readout with a check of what the unchanged downstream model actually produces from the same internal state, on the same model, prompts and seeds.
 
 ## Quickstart
 
@@ -21,59 +9,27 @@ pip install .
 instrument-trial-verify
 ```
 
-`instrument-trial-verify` checks every bundled receipt against its SHA-256 manifest, then
-re-derives every case verdict from the raw receipt scalars using the frozen mechanical
-decision rules (no interpretation layer), and compares them to the published verdicts.
-Exit 0 = everything reproduces. The verifier is stdlib-only Python.
+The verifier (standard-library Python, no GPU) checks every receipt against `bundle/manifest.json`, re-derives each case's verdict from the raw receipt values with the frozen decision rules, and compares the results with `verdicts/expected.json`. Exit code 0 means everything reproduces.
 
-## The cases
+## Cases
 
-| Case | Standard-instrument verdict | Consumer-level ground truth | Blind grade (standard arm) |
-|------|-----------------------------|------------------------------|----------------------------|
-| 1. Identity circuit (FLUX.2, diffusion) | Single-site/single-step patching sweep (4 sites × 4 steps, both directions): **"no necessary component"** — every single-cell ablation leaves the identity transition ≥ 0.22 of baseline | Ablating the same 4 components **across all steps** stops the transition (residual 0.0013 of baseline) and inserting them carries it (0.91), on held-out seeds, exact-replay gated | **MISREPORT** |
-| 2. Wolf register (FLUX.2, conditioner state) | Held-out nearest-class-mean probe, validated **16/16** on native carriers (8/8 animals): **"no decodable content"** on the foreign register (top1 *tiger*, margin 0.035 vs floor 0.352); the archived own-template dictionary rule reads "decodable: deer" | Transplanting the 2 subject rows into the native run renders a **wolf** on both seeds (sham flat, exact gates) — the consumer decodes what a validated-flawless probe cannot see | **MISREPORT** |
-| 3. Direction transfer (Qwen LMs) | Fitted difference-of-means direction transferred cross-model, bit-parity with the archived pipeline (delta 0.0): negative-cosine fraction **0.954** → **"representations differ across families"** | Raw native cosines 0% negative in every model; the split collapses to **0.0** under mean-centering alone (also diagonal/ZCA). Low-split control model reads 0.0 → the arm itself is validated | **MISREPORT** (control: MATCH) |
-| 4. 0.996 cosine (FLUX.2, reconstruction) | Cosine ≥ 0.99 on held-out prompts: **"state recovered"** | A **content-free mean template** scores the same 0.993–0.997; rendered through the consumer, the reconstruction differs from native by pixel MAD 70–97 (exact duplicate: 0.0) and shows the wrong animal for all four prompts | **MISREPORT** |
-| 5. Mediation across steps (honesty case) | Single-step mediation read: "holds at the measured step" | Swept across steps: holds in 17/18 axis×step cells — the standard reading was right in scope; included because an honest roster contains cases where the standard instrument reads correctly | INCONCLUSIVE (declines the generality question) |
-| 6. Zero-write records (reserve) | "A zeroed answer logit is a maximal knockout effect" | 76/76 exactly-zero records sit at the final layer, where a bias-free unembedding after RMSNorm(0)=0 produces zero by arithmetic | **MISREPORT** |
+| Case | Standard readout and verdict | Output check | Blind grade (standard arm) |
+|---|---|---|---|
+| 1. Identity route (FLUX.2) | single-component, single-step patching over 4 sites × 4 steps: "no necessary component" (≥ 22% of the transition survives every cell) | ablating the same 4 components at every step removes the transition (0.13% remains); inserting them carries it (91%), held-out seeds | misreport |
+| 2. Foreign-encoder subject rows (FLUX.2) | nearest-class-mean probe, 16/16 on held-out native states: "no decodable content" (top-1 tiger, margin 0.035 vs floor 0.352) | transplanting the 2 subject rows into a native fox run renders a wolf on both seeds; noise sham flat | misreport |
+| 3. Cross-model direction transfer (Qwen) | transferred difference-of-means direction, bit-identical to the original pipeline: 95.4% negative cosines, "representations differ" | native cosines 0% negative in every model; the split falls to 0.0 under mean-centering; a low-split control model reads 0.0 | misreport |
+| 4. Reconstruction cosine (FLUX.2) | cosine 0.993–0.997 on held-out prompts: "state recovered" | a content-free mean template scores the same; rendered, the reconstruction differs from native by pixel MAD 70–97 and shows the wrong animal | misreport |
+| 5. Step-wise mediation (control) | "mediation holds at the measured step" | holds in 17/18 step × axis cells | inconclusive |
+| 6. Zeroed logits (reserve) | "a zeroed answer logit is a maximal knockout" | all 76 zeros are at the final layer, where RMSNorm(0) followed by a bias-free unembedding is zero by arithmetic | misreport |
 
-**Blind-graded result: k = 4 of 4 non-reserve, non-honesty cases are standard-arm misreports
-with consumer-gated matches (5 counting the reserve), against a preregistered success
-criterion of k ≥ 3.** The grader was a context-free agent given only the rubric and
-anonymized instrument readings (deterministic arm-order, no arm identities); its raw output
-with per-grade deciding facts ships in `bundle/grading/grader-raw.json`. In every misreport
-case the standard arm was bit-faithful (case 3: parity delta 0.0 with the original pipeline),
-validated-flawless (case 2: 16/16 native validation), or threshold-matched to the certified
-arm (case 1) — the misreports are properties of the method, not of a weak implementation.
+The preregistered criterion (the standard arm misreports in at least 3 of cases 1–4) was met at 4 of 4. The grader was a fresh model instance with no project context, given only the rubric and anonymized readings; its raw output is `bundle/grading/grader-raw.json`. In the grading files the two arms appear under their original internal labels; `standard` and `output_check` in `verdicts/` are the same two arms.
 
-## What this is not
+## Limits
 
-- Not a claim that the standard tools are broken in general. The trial's claim is about
-  **verdict-grade** readings taken without consumer closure, in these measured regimes.
-- Not a strawman: each community arm implements the strongest faithful version of the
-  standard recipe (preregistered per case, adversarially reviewed before running), and
-  case 5 is included precisely because the standard reading survives it.
-- Not free of disclosed imperfections: the grading record carries two disclosures verbatim
-  (one grader/expectation disagreement on the honesty case; one X/Y-assignment transposition
-  relative to the preregistered ordering rule, with blinding unaffected) — see the source
-  tree's FINDINGS.md. Disagreements are reported, never reconciled.
+- The standard arms are the author's implementations of each recipe, not third-party libraries. TransformerLens does not load FLUX; nnsight and pyvene can hook a diffusion denoiser as a generic module but were not used. No sparse-autoencoder method is included here (see the paper's SAE experiment).
+- Cases were selected because the author expected the standard readout to fail there, and the ground truth comes from the output-check arm. This shows the failure modes exist; it does not estimate how often they occur.
+- Two grading disclosures are kept as they happened: the grader declined to decide case 5, where the author expected a match, and one arm-order assignment was transposed relative to the preregistered rule (blinding unaffected).
 
-## Vocabulary
+[TRAPS.md](TRAPS.md) lists seven measurement traps that produced confident wrong answers during this work.
 
-See [GLOSSARY.md](GLOSSARY.md) for the two-way mapping between this project's terms
-(Act, StateCut, route, carrier, native consumer) and the field's (intervention,
-checkpoint, circuit, prompt context, behavioral readout).
-
-## Seven ways to be confidently wrong
-
-The measurement traps that motivated the whole program, each hit in practice and now
-gated against: [TRAPS.md](TRAPS.md).
-
-## Provenance
-
-Receipts were produced by the SATURN transactional runtime (typed interventions,
-bit-exact replay, fail-closed replay contracts, hash-chained evidence ledgers) on
-FLUX.2-klein-4B (public weights) and Qwen-family models (public weights). Each receipt
-carries its scheduler job ID; `bundle/manifest.json` pins content hashes. The
-preregistration (case roster, decision rules, gates G1–G5, blind-grading protocol) was
-frozen before the new arms ran.
+Host-specific paths and hostnames in the receipts were replaced with placeholders after the runs; see `REDACTIONS.md`.
