@@ -1,0 +1,79 @@
+{
+ "cells": {
+  "qa1:512k": {
+   "arms": {
+    "ledger-h1m1-gated": {
+     "acc": 1.0,
+     "answer_sec_per_query": 0.010080453503178433,
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "n": 4
+    },
+    "ledger-h2m1-gated": {
+     "acc": 1.0,
+     "answer_sec_per_query": 0.012646505754673854,
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "n": 4
+    },
+    "long-context": {
+     "acc": 0.25,
+     "ci95": [
+      0.0,
+      0.75
+     ],
+     "n": 4,
+     "sec_per_query": 3.0147188440023456
+    },
+    "rag-bm25-k5": {
+     "acc": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "n": 4,
+     "sec_per_query": 0.014756052230950445
+    },
+    "rag-dense-k5": {
+     "acc": 0.75,
+     "ci95": [
+      0.25,
+      1.0
+     ],
+     "n": 4,
+     "sec_per_query": 0.013338822493096814
+    },
+    "rag-timestamps": {
+     "acc": 0.75,
+     "ci95": [
+      0.25,
+      1.0
+     ],
+     "n": 4,
+     "sec_per_query": 0.013062052516033873
+    }
+   },
+   "baselines_total_sec": 28.166228376096115,
+   "ledger_ingest_sec_per_doc": 16.843654664000496,
+   "ledger_read_ms_per_query": 0.033828255254775286,
+   "mean_chunks": 17037.0,
+   "mean_records": 178.75,
+   "n": 4
+  }
+ },
+ "errors": [],
+ "experiment": "2026-09-23-ledger-e5-length",
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "host": "pop-os",
+  "peak_rss_mb": 3995.5,
+  "peak_vram_reserved_mb": 5932.8,
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "smoke": true
+}

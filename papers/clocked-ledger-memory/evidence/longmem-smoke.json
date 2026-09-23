@@ -1,0 +1,904 @@
+{
+ "errors": [],
+ "experiment": "2026-09-23-longmemeval-ledger",
+ "items": [
+  {
+   "answer": "Business Administration",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 2111,
+    "long-context": 136508,
+    "oracle": 17928,
+    "rag-dense": 11195,
+    "rag-dense+time": 11471
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/23, 7 days before the question] Assistant: **Gradual adjustment**: Don't try to wake up at 7:00 am immediately.\n[2023/05/23, 7 days before the question] Assistant: Instead, start by setting your alarm 15 minutes earlier each day for a few days, and then gradually work your way up to 7:00 am.\n[2023/05/23, 7 days before the question] Assistant: **Use a wake-up light**: A wake-up light is a device that simulates a sunrise by gradually increasing the light in your room, helping you wake up more naturally.\n[2023/05/26, 4 days before the question] Assistant: Remember, it's always a good idea to gradually introduce new shoes into your running routine to allow your feet to adapt.\n[2023/05/27, 3 days before the question] Assistant: as it becomes more comfortable, you can gradually increase the duration of your sessions.\n[2023/05/27, 3 days before the question] Assistant: Instead of committing to a long meditation session every day, try starting with just a few minutes, and gradually increase the time as you feel more comfortable.\n[2023/05/28, 2 days before the question] Assistant: This will help you build your confidence and gradually increase your fitness level.\n[2023/05/30, same day as the question] Assistant: * Position your chair at a comfortable height, with your feet flat on the floor or on a footrest, and your arms at a 90-degree angle to the keyboard.\n[2023/05/30, same day as the question] User: I graduated with a degree in Business Administration, which has definitel",
+   "question": "What degree did I graduate with?",
+   "question_id": "e47becba",
+   "question_type": "single-session-user",
+   "responses": {
+    "ledger": "You graduated with a degree in Business Administration.",
+    "long-context": "You graduated with a degree in Business Administration.",
+    "oracle": "You graduated with a degree in Business Administration.",
+    "rag-dense": "You graduated with a degree in Business Administration.",
+    "rag-dense+time": "You graduated with a degree in Business Administration."
+   },
+   "sec": {
+    "ledger": 1.08,
+    "long-context": 6.43,
+    "oracle": 0.83,
+    "rag-dense": 0.59,
+    "rag-dense+time": 0.59
+   }
+  },
+  {
+   "answer": "45 minutes each way",
+   "correct": {
+    "ledger": true,
+    "long-context": false,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 2255,
+    "long-context": 139926,
+    "oracle": 13143,
+    "rag-dense": 13873,
+    "rag-dense+time": 14152
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/20, 10 days before the question] User: I'm looking for some advice on how to take care of my leather boots. I've been wearing my new boots almost daily since January 15th, and I want to make sure they last long. Do you have any tips on how to condition them?\n[2023/05/22, 8 days before the question] User: I'm looking for some new fiction audiobook recommendations. I've been enjoying audiobooks a lot lately, especially during my daily commute.\n[2023/05/22, 8 days before the question] User: I've been listening to audiobooks during my daily commute, which takes 45 minutes each way.\n[2023/05/24, 6 days before the question] Assistant: **Make it convenient**: Find ways to incorporate physical activity into your daily routine, such as taking the stairs instead of the elevator, walking to work, or doing a quick home workout during commercial breaks.\n[2023/05/26, 4 days before the question] Assistant: Winter can be tough on our shoes, and it's amazing that your boots have lasted this long with daily wear.\n[2023/05/30, same day as the question] Assistant: Park Sooyoung accepted the challenge and set to work, using her expert pottery skills to create a small, round clay pot with a narrow neck and sturdy handle.\n[2023/05/30, same day as the question] Assistant: Park Sooyoung said yes, and got to work right away.\n[2023/05/30, same day as the question] User: How does price elasticity work?\n[2023/05/30, same day as the question] Assistant: By addressing the various threats they face",
+   "question": "How long is my daily commute to work?",
+   "question_id": "118b2229",
+   "question_type": "single-session-user",
+   "responses": {
+    "ledger": "Your daily commute to work takes 45 minutes each way.",
+    "long-context": "I don't know. The memory does not contain information about your daily commute duration.",
+    "oracle": "Your daily commute takes 45 minutes each way.",
+    "rag-dense": "Based on our previous conversation, your daily commute to work takes 45 minutes each way.",
+    "rag-dense+time": "Based on the previous conversation, your daily commute to work takes 45 minutes each way."
+   },
+   "sec": {
+    "ledger": 0.36,
+    "long-context": 6.75,
+    "oracle": 0.68,
+    "rag-dense": 0.83,
+    "rag-dense+time": 0.85
+   }
+  },
+  {
+   "answer": "You did not mention this information. You mentioned your cat Luna but not your hamster.",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 1384,
+    "long-context": 126363,
+    "oracle": 12707,
+    "rag-dense": 10596,
+    "rag-dense+time": 10873
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/05/24, 6 days before the question] Assistant: Remember to take notes during the call, including the name of the person you spoke with, the date, and any important details they provide.\n[2023/05/24, 6 days before the question] Assistant: **American Veterinary Medical Association (AVMA)**: The AVMA website allows you to search for veterinarians by location, name, or specialty.\n[2023/05/24, 6 days before the question] User: By the way, my cat's name is Luna, and she's been such a sweetie throughout all the changes we've been making to her environment. I'm just glad I can provide her with a happy and healthy home.\n[2023/05/26, 4 days before the question] Assistant: You can do this by using the `df[df['date'].isin(dates)]` syntax, where `df` is the financial data dataframe, `'date'` is the column name of the date column, and `dates` is a list of dates that you want to include in the subset.\n[2023/05/26, 4 days before the question] Assistant: Restriction of rights: Governments may adopt laws and policies that restrict certain human rights, such as freedom of speech or the right to privacy, in the name of national security.\n[2023/05/26, 4 days before the question] Assistant: adopting legal and policy safeguards: governments should develop laws and policies that protect human rights and provide legal safeguards against their abuse in the name of national security.",
+   "question": "What is the name of my hamster?",
+   "question_id": "0862e8bf_abs",
+   "question_type": "single-session-user",
+   "responses": {
+    "ledger": "I don't know the name of your hamster from the conversation history provided.",
+    "long-context": "I don't know. The memory does not contain the name of your hamster.",
+    "oracle": "You didn't mention the name of your hamster in our previous conversation. If you'd like to share it, I'd be happy to use it in future discussions!",
+    "rag-dense": "I don't know the name of your hamster from our previous conversation. Could you tell me the name of your hamster?",
+    "rag-dense+time": "I don't know the name of your hamster from our previous conversation. Could you tell me the name of your hamster?"
+   },
+   "sec": {
+    "ledger": 0.38,
+    "long-context": 6.32,
+    "oracle": 1.04,
+    "rag-dense": 0.86,
+    "rag-dense+time": 0.86
+   }
+  },
+  {
+   "answer": "You did not mention this information. You mentioned collecting vintage cameras but not vintage films.",
+   "correct": {
+    "ledger": true,
+    "long-context": false,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 2881,
+    "long-context": 127478,
+    "oracle": 19279,
+    "rag-dense": 14566,
+    "rag-dense+time": 14840
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/05/28, 2 days before the question] User: I'm looking for some advice on how to properly store and maintain my growing collection of vintage cameras. Do you have any tips on how to keep them in good condition and prevent damage?\n[2023/05/28, 2 days before the question] Assistant: Congratulations on building a collection of vintage cameras.\n[2023/05/28, 2 days before the question] User: I've been collecting vintage cameras for three months now, and I've already amassed a pretty impressive collection. Do you have any advice on how to keep my cameras organized and easily accessible for maintenance and cleaning?\n[2023/05/28, 2 days before the question] Assistant: Congratulations on building your vintage camera collection!\n[2023/05/30, same day as the question] Assistant: **Etsy**: Etsy is an excellent platform for finding unique, handmade, and vintage display cases and shadow boxes.\n[2023/05/30, same day as the question] Assistant: Use keywords like \"antique jewelry display case,\" \"vintage shadow box,\" or \"custom jewelry display\" to find relevant listings.\n[2023/05/30, same day as the question] Assistant: **Ruby Lane**: Ruby Lane is an online marketplace featuring a wide range of antique and vintage items, including display cases and shadow boxes.\n[2023/05/30, same day as the question] Assistant: When shopping online, remember to:\n\n* Research the seller or dealer thoroughly\n* Read reviews and check ratings\n* Ask questions about the item's materials, construction, and conditi",
+   "question": "How long have I been collecting vintage films?",
+   "question_id": "15745da0_abs",
+   "question_type": "single-session-user",
+   "responses": {
+    "ledger": "I don't know how long you have been collecting vintage films, as that information wasn't provided in the previous conversation about vintage cameras. If you'd like, you can share the details, and I'll be happy to help!",
+    "long-context": "I don't know the specific duration you've been collecting vintage films from my current memory. Could you provide more context or details about when you started collecting them?",
+    "oracle": "I don't know how long you have been collecting vintage films, as there is no information in the provided conversation history about your collection of vintage films.",
+    "rag-dense": "I don't know how long you have been collecting vintage films, as there was no mention of a film collection in our previous conversations. If you have any other questions or need advice related to your collection, feel free to ask!",
+    "rag-dense+time": "I don't know how long you have been collecting vintage films, as there is no specific mention of a collection of vintage films in our conversation history. We discussed organizing and displaying a camera collection and a vinyl record collection, but not a vintage film collection."
+   },
+   "sec": {
+    "ledger": 0.85,
+    "long-context": 6.78,
+    "oracle": 1.14,
+    "rag-dense": 1.22,
+    "rag-dense+time": 1.3
+   }
+  },
+  {
+   "answer": "3",
+   "correct": {
+    "ledger": false,
+    "long-context": false,
+    "oracle": false,
+    "rag-dense": false,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 1031,
+    "long-context": 130402,
+    "oracle": 36627,
+    "rag-dense": 14276,
+    "rag-dense+time": 14536
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/02/15, same day as the question] Assistant: **Use storage containers**: Invest in storage bins, baskets, or shelves to store items like socks, accessories, and out-of-season clothing.\n[2023/02/15, same day as the question] User: I think I'll use some boxes I have at home to store my winter clothes. By the way, I just exchanged a pair of boots I got from Zara on 2/5, and I still need to pick up the new pair. Do you have any tips on how to keep track of items I need to pick up or return?\n[2023/02/15, same day as the question] Assistant: Now, about keeping track of items to pick up or return...\n[2023/02/15, same day as the question] Assistant: **Keep receipts organized**: Store receipts for items you need to return in a designated spot, like a folder or envelope, so you can easily find them when you need to return the item.\n[2023/02/15, same day as the question] Assistant: By implementing these strategies, you'll be more likely to remember to pick up your new boots and return any items that don't fit quite right.",
+   "question": "How many items of clothing do I need to pick up or return from a store?",
+   "question_id": "0a995998",
+   "question_type": "multi-session",
+   "responses": {
+    "ledger": "Based on the conversation, you need to pick up a new pair of boots from Zara and potentially return an item if it doesn't fit right. However, the exact number of items is not specified.",
+    "long-context": "I don't know. The memory provided does not contain information about picking up or returning items from a store.",
+    "oracle": "You mentioned exchanging a pair of boots from Zara on February 5th and needing to pick up the new pair. You didn't mention any other items to pick up or return. So, you need to pick up one pair of boots.",
+    "rag-dense": "You mentioned exchanging a pair of boots from Zara on February 5th and needing to pick up the new pair. However, the memory doesn't specify how many additional items you need to pick up or return. Based on the information provided, you need to pick up one pair of boots from Zara.",
+    "rag-dense+time": "Based on the conversation, you mentioned exchanging a pair of boots from Zara on February 5th and needing to pick up the new pair. However, you didn't mention anything about returning any items. So, you need to pick up one pair of boots from Zara."
+   },
+   "sec": {
+    "ledger": 0.72,
+    "long-context": 6.34,
+    "oracle": 2.22,
+    "rag-dense": 1.5,
+    "rag-dense+time": 1.43
+   }
+  },
+  {
+   "answer": "2",
+   "correct": {
+    "ledger": false,
+    "long-context": false,
+    "oracle": false,
+    "rag-dense": false,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 3198,
+    "long-context": 136405,
+    "oracle": 72162,
+    "rag-dense": 12738,
+    "rag-dense+time": 13015
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/21, 9 days before the question] User: I'm working on a project that involves analyzing customer data to identify trends and patterns. I was thinking of using clustering analysis, but I'm not sure which type of clustering method to use. Can you help me decide between k-means and hierarchical clustering? By the way, I've had some experience with data analysis from my Marketing Research class project, where I led the data analysis team and we did a comprehensive market analysis for a new product launch.\n[2023/05/28, 2 days before the question] User: I'm planning to launch a new product feature in June and I need to create a project timeline. Can you help me create a Gantt chart or recommend a tool to do so? By the way, I've been pretty busy lately, especially since I was promoted to a senior software engineer position three months ago and have been leading a team of five engineers.\n[2023/05/28, 2 days before the question] User: I think I'll try out Asana for creating a Gantt chart, since I've heard good things about it. Can you help me estimate the duration of each task based on my team's velocity? We've been doing pretty well lately, delivering features ahead of schedule, like that high-priority project I completed two months ahead of time, which led to a significant increase in company revenue.\n[2023/05/28, 2 days before the question] Assistant: By following this approach, you'll be able to create a clear and shared understanding of the project's goals and objectives,",
+   "question": "How many projects have I led or am currently leading?",
+   "question_id": "6d550036",
+   "question_type": "multi-session",
+   "responses": {
+    "ledger": "Based on the information provided in our conversation, you have led or are currently leading one project. This is the project for your Data Mining class where you are analyzing customer purchase data to identify patterns and trends.",
+    "long-context": "I don't know the exact number of projects you have led or are currently leading. The conversation history doesn't provide that specific information.",
+    "oracle": "I don't know the exact number of projects you have led or are currently leading. The conversation didn't provide that specific information.",
+    "rag-dense": "Based on the information in our conversation history, you mentioned being promoted to a senior software engineer position three months ago and leading a team of five engineers. However, you didn't specify how many projects you have led or are currently leading. Therefore, I don't have a specific number to provide.",
+    "rag-dense+time": "Based on the information in our conversation history, I don't have a record of how many projects you have led or are currently leading. If you'd like to provide that information, I'd be happy to help with any related questions or discussions!"
+   },
+   "sec": {
+    "ledger": 0.78,
+    "long-context": 6.63,
+    "oracle": 3.06,
+    "rag-dense": 1.33,
+    "rag-dense+time": 1.2
+   }
+  },
+  {
+   "answer": "The information provided is not enough. You did not mention baking egg tarts.",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 2410,
+    "long-context": 131831,
+    "oracle": 55507,
+    "rag-dense": 14771,
+    "rag-dense+time": 15055
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/05/25, 5 days before the question] Assistant: Serve with a fried egg on top!\n[2023/05/26, 4 days before the question] Assistant: **Infusion time**: Infusion times vary depending on the ingredients and desired flavor profile.\n[2023/05/27, 3 days before the question] User: I'll give Coffee Mate a try, thanks! I've had it before and it's not bad. Do you have any tips on how to make my morning commute more comfortable? I've been standing for the entire ride for the past two weeks, and it's been exhausting.\n[2023/05/28, 2 days before the question] Assistant: **Bake and broil**: Bake the chicken wings for 30-35 minutes, or until they're cooked through.\n[2023/05/28, 2 days before the question] User: I see! Thanks for the tips. I'll definitely try the dry brine method and baking powder trick. Do you have any recommendations for roasted vegetables that would pair well with the crispy chicken wings? I've been experimenting with different types of flour for baking, but I haven't tried roasting veggies with convection yet.  By the way, I just used my oven's convection setting for the first time last Thursday to bake a batch of cookies, and it turned out amazing!\n[2023/05/28, 2 days before the question] Assistant: The circulating hot air helps to distribute heat evenly and can lead to faster cooking times and crisper results.\n[2023/05/28, 2 days before the question] Assistant: **Bake with steam**: Bake the focaccia in a steamy oven (with the pan of water) for the first 10-15 minutes",
+   "question": "How many times did I bake egg tarts in the past two weeks?",
+   "question_id": "88432d0a_abs",
+   "question_type": "multi-session",
+   "responses": {
+    "ledger": "I don't know. The past conversations do not mention any baking of egg tarts.",
+    "long-context": "I don't know. The memory does not contain information about the number of times you baked egg tarts in the past two weeks.",
+    "oracle": "I don't know. The memory does not contain information about how many times egg tarts were baked in the past two weeks.",
+    "rag-dense": "I don't know. The conversation history provided does not include any information about baking egg tarts.",
+    "rag-dense+time": "I don't know. The conversation history provided does not include any information about baking egg tarts."
+   },
+   "sec": {
+    "ledger": 0.46,
+    "long-context": 6.62,
+    "oracle": 2.71,
+    "rag-dense": 0.93,
+    "rag-dense+time": 0.93
+   }
+  },
+  {
+   "answer": "0. You did not mention visitng any museum in December",
+   "correct": {
+    "ledger": false,
+    "long-context": false,
+    "oracle": false,
+    "rag-dense": true,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 3929,
+    "long-context": 129909,
+    "oracle": 34392,
+    "rag-dense": 13894,
+    "rag-dense+time": 14154
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/03/03, same day as the question] Assistant: 470 miles, 8 hours)\n* Stop in Redding, California for lunch and visit Turtle Bay Exploration Park, a 300-acre park with a museum, botanical gardens, and a wildlife center\n* Overnight at San Francisco RV Resort\n\nFor a luxurious destination in Oregon, I recommend Sunriver Resort.\n[2023/03/03, same day as the question] Assistant: 220 miles, 4 hours)\n* Visit the High Desert Museum, a wildlife and history museum: <https://www.highdesertmuseum.org/>\n* Explore downtown Bend and grab dinner at one of its many family-friendly restaurants: <https://www.visitbend.com/plan-your-trip/where-to-eat/>\n* Overnight at Crown Villa RV Resort: <https://crownvillarvresort.com/>\n\nDay 6: Bend to Sunriver Resort\n\n* Drive from Bend to Sunriver Resort (approx.\n[2023/03/03, same day as the question] Assistant: 470 miles, 8 hours)\n* Stop in Redding, California for lunch and visit Turtle Bay Exploration Park, a 300-acre park with a museum, botanical gardens, and a wildlife center: <https://www.turtlebay.org/>\n* Return home to San Francisco.\n[2023/03/03, same day as the question] Assistant: After soaking in the hot springs, visit Meiji Mura in Inuyama City, an open-air museum showcasing over 60 historical buildings from the Meiji period, including several automotive-related structures.\n[2023/03/03, same day as the question] Assistant: Here are some additional items you may want to consider packing for your trip:\n\n**Clothing:**\n\n* Comfortable hiking shoes or",
+   "question": "How many different museums or galleries did I visit in December?",
+   "question_id": "80ec1f4f_abs",
+   "question_type": "multi-session",
+   "responses": {
+    "ledger": "I don't know. The conversation doesn't mention any visits to museums or galleries in December.",
+    "long-context": "I don't know. The provided memory does not contain information about the number of museums or galleries visited in December.",
+    "oracle": "I don't know. The conversation doesn't mention any visits to museums or galleries in December.",
+    "rag-dense": "Based on the information provided in the conversation, you didn't mention visiting any specific museums or galleries in December. Therefore, I don't know how many different museums or galleries you visited in December.",
+    "rag-dense+time": "I don't know the exact number of museums or galleries you visited in December based on the information provided in our conversation. Our previous exchanges did not include specific details about visits to museums or galleries in December."
+   },
+   "sec": {
+    "ledger": 0.52,
+    "long-context": 6.32,
+    "oracle": 1.57,
+    "rag-dense": 1.11,
+    "rag-dense+time": 1.16
+   }
+  },
+  {
+   "answer": "The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 3712,
+    "long-context": 129532,
+    "oracle": 25680,
+    "rag-dense": 13196,
+    "rag-dense+time": 13479
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/20, 10 days before the question] User: I'm looking to learn more about photography, especially with antique cameras. I just got a 1950s Rolleiflex twin-lens reflex camera at an estate sale today and I'm still getting the hang of using it. Can you recommend some online resources or books on photography techniques and camera maintenance?\n[2023/05/20, 10 days before the question] Assistant: Here are some online resources and book recommendations to help you improve your photography skills and learn about camera maintenance:\n\n**Online Resources:**\n\n1.\n[2023/05/20, 10 days before the question] User: I'd like to learn more about the artistic and aesthetic aspects of early photography. Can you recommend some books or online resources that explore the artistic and aesthetic developments of photography during the 19th and early 20th centuries?\n[2023/05/21, 9 days before the question] User: I'm trying to learn more about some advanced settings for video editing with Adobe Premiere Pro, which I enjoy to use. Can you give me some tips on where to start?\n[2023/05/21, 9 days before the question] Assistant: To dive deeper into these topics, I recommend the following resources:\n\n* Adobe Premiere Pro's official documentation and tutorials\n* YouTube channels like Premiere Bro, Video Copilot, and Adobe Creative Cloud\n* Online courses on platforms like Udemy, LinkedIn Learning, and Skillshare\n* Premiere Pro communities and forums, such as Reddit's r/premierepro and Adobe's Premiere Pro ",
+   "question": "Can you recommend some resources where I can learn more about video editing?",
+   "question_id": "8a2466db",
+   "question_type": "single-session-preference",
+   "responses": {
+    "ledger": "Certainly! Here are some resources where you can learn more about video editing:\n\n1. **Online Tutorials and Courses:**\n   - **Udemy:** Offers courses on various aspects of video editing, from beginner to advanced levels.\n   - **LinkedIn Learning:** Provides comprehensive courses on video editing software like Adobe Premiere Pro.\n   - **Skillshare:** Features classes taught by industry professionals covering everything from",
+    "long-context": "I don't have specific resources stored in my memory regarding video editing. However, you can find plenty of resources online to learn about video editing. Websites like YouTube offer numerous tutorials and courses, and platforms like Udemy and LinkedIn Learning provide structured courses on video editing software such as Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve. Additionally, you can explore online communities and forums dedicated to",
+    "oracle": "Sure! Here are some resources where you can learn more about video editing:\n\n* Adobe Premiere Pro's official documentation and tutorials\n* YouTube channels like Premiere Bro, Video Copilot, and Adobe Creative Cloud\n* Online courses on platforms like Udemy, LinkedIn Learning, and Skillshare\n* Books such as \"Adobe Premiere Pro CC Classroom in a Book\" by Adobe Creative Team\n* Online communities and",
+    "rag-dense": "Certainly! Here are some resources where you can learn more about video editing:\n\n1. **Online Courses**:\n   - **LinkedIn Learning**: Offers courses on various video editing software, including Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve.\n   - **Udemy**: Provides a wide range of video editing courses, from beginner to advanced levels.\n   - **Coursera**:",
+    "rag-dense+time": "Certainly! Here are some resources where you can learn more about video editing:\n\n1. **Online Courses**:\n   - **LinkedIn Learning**: Offers courses on various video editing software, including Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve.\n   - **Udemy**: Provides a wide range of video editing courses, from beginner to advanced levels.\n   - **Coursera**:"
+   },
+   "sec": {
+    "ledger": 1.32,
+    "long-context": 7.32,
+    "oracle": 2.07,
+    "rag-dense": 1.62,
+    "rag-dense+time": 1.66
+   }
+  },
+  {
+   "answer": "The user would prefer suggestions of Sony-compatible accessories or high-quality photography gear that can enhance their photography experience. They may not prefer suggestions of other brands' equipment or low-quality gear.",
+   "correct": {
+    "ledger": false,
+    "long-context": false,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 3004,
+    "long-context": 124549,
+    "oracle": 19153,
+    "rag-dense": 15106,
+    "rag-dense+time": 15384
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/21, 9 days before the question] Assistant: Overall, it's likely that McCain would have approached current debates around healthcare reform with a focus on expanding access to care while maintaining choice and competition in the healthcare industry.\n[2023/05/21, 9 days before the question] Assistant: The issue of ensuring equitable access to quality healthcare while also balancing costs is a complex and challenging one.\n[2023/05/25, 5 days before the question] User: Cool, thanks for the suggestions! I actually just got back from a family road trip to my grandparents' house in the countryside, and we listened to some music along the way. Speaking of family, do you have any ideas on how to organize our family photos from the reunion? We took a ton of pictures over the weekend and I want to make sure they're easily accessible for everyone.\n[2023/05/27, 3 days before the question] Assistant: Instead, you can try using the `--legacy-peer-deps` flag, which instructs npm to install packages even if they have peer dependencies that are not compatible with your current setup.\n[2023/05/28, 2 days before the question] Assistant: They may have access to resources that you're not aware of, or they may suggest a different angle or perspective that you haven't considered.\n[2023/05/29, 1 day before the question] Assistant: Here's a more detailed breakdown:\n\n**Early Morning (before 8:00 am)**\n\n* Pros:\n\t+ Cooler temperatures (50s-60s Fahrenheit)\n\t+ Fewer people on the trails\n\t+ Better ",
+   "question": "Can you suggest some accessories that would complement my current photography setup?",
+   "question_id": "06878be2",
+   "question_type": "single-session-preference",
+   "responses": {
+    "ledger": "It seems like the previous conversation was about organizing family photos rather than photography accessories. Since I don't have specific information about your current photography setup, I can suggest some general accessories that might complement various setups:\n\n- Tripods: Useful for stabilizing your camera and allowing for longer exposures.\n- Lens Filters: Such as UV filters or polarizing filters to enhance image quality.\n- Camera Bags: To protect",
+    "long-context": "I don't have specific information about your current photography setup in the memory. Could you please provide more details about your camera and lenses, or the type of photography you do, so I can suggest appropriate accessories?",
+    "oracle": "Based on our previous conversation, you were looking to upgrade your camera flash and had considered the Godox V1. Since you've decided to go with the Godox V1, here are some accessories that could complement your current photography setup:\n\n1. **Camera Bag**: A durable and comfortable camera bag is essential. Brands like Think Tank Photo, Lowepro, F-Stop Gear, Peak Design",
+    "rag-dense": "Based on the information in the conversation, you're currently considering the Godox V1 flash and a new tripod, specifically the Gitzo GT3543LS. To complement these additions to your photography setup, here are some accessory recommendations:\n\n1. **Light Stands**: A set of light stands can help you position your Godox V1 flash in the perfect location for your shots.",
+    "rag-dense+time": "Based on the previous conversations, you were considering upgrading your camera flash and tripod. To complement your current photography setup, here are some accessories you might find useful:\n\n1. **Flash Accessories:**\n   - **Godox V1**: A compact and powerful flash with advanced features like wireless radio control and high-speed sync.\n   - **Godox AD200**: A portable flash with a guide"
+   },
+   "sec": {
+    "ledger": 1.3,
+    "long-context": 6.4,
+    "oracle": 1.94,
+    "rag-dense": 1.77,
+    "rag-dense+time": 1.79
+   }
+  },
+  {
+   "answer": "7 days. 8 days (including the last day) is also acceptable.",
+   "correct": {
+    "ledger": false,
+    "long-context": false,
+    "oracle": true,
+    "rag-dense": false,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 1068,
+    "long-context": 133260,
+    "oracle": 36925,
+    "rag-dense": 15139,
+    "rag-dense+time": 15429
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/01/15, 17 days before the question] User: That's fascinating! I had no idea that mummification was practiced in so many ancient cultures. I've always been interested in ancient civilizations, which is why I attended the \"Ancient Civilizations\" exhibit at the Metropolitan Museum of Art today. Speaking of which, I was wondering, are there any other exhibits or museums in New York City that you would recommend for someone interested in ancient cultures?\n[2023/01/15, 17 days before the question] Assistant: Some special exhibits and events to keep an eye out for:\n\n* **The Metropolitan Museum of Art's Temple of Dendur**: This ancient Egyptian temple, built around 15 BCE, is located in the Met's Sackler Wing.\n[2023/01/15, 17 days before the question] User: I'm looking for some inspiration for my next art-themed day trip. I visit an art museum in the city and see an incredible exhibit on modern art today. The installation that used recycled materials really stood out to me. Can you recommend some other museums or galleries in the area that I might enjoy?",
+   "question": "How many days passed between my visit to the Museum of Modern Art (MoMA) and the 'Ancient Civilizations' exhibit at the Metropolitan Museum of Art?",
+   "question_id": "gpt4_59149c77",
+   "question_type": "temporal-reasoning",
+   "responses": {
+    "ledger": "Based on the information provided in the memory, it appears that you visited the \"Ancient Civilizations\" exhibit at the Metropolitan Museum of Art on January 15, 2023, and you mentioned visiting an art museum in the city, likely MoMA, on a previous day. However, the exact date of your visit to MoMA is not specified in the given memory. Therefore",
+    "long-context": "I don't know. The memory does not provide information about the dates of your visits to the Museum of Modern Art (MoMA) and the 'Ancient Civilizations' exhibit at the Metropolitan Museum of Art.",
+    "oracle": "Based on the information provided in the conversation, you visited the Museum of Modern Art (MoMA) on 2023/01/08 and then attended the 'Ancient Civilizations' exhibit at the Metropolitan Museum of Art today, which is 2023/01/15. Therefore, 7 days passed between your visit to MoMA and the '",
+    "rag-dense": "Based on the information provided in the memory, there is no direct mention of when the visit to the Museum of Modern Art (MoMA) occurred in relation to the visit to the 'Ancient Civilizations' exhibit at the Metropolitan Museum of Art. Therefore, I don't have enough information to determine the number of days that passed between these visits.",
+    "rag-dense+time": "Based on the information provided in the memory, there is no direct mention of the dates of your visits to the Museum of Modern Art and the Metropolitan Museum of Art. Therefore, I don't have enough information to determine the exact number of days that passed between these visits."
+   },
+   "sec": {
+    "ledger": 1.24,
+    "long-context": 6.7,
+    "oracle": 2.56,
+    "rag-dense": 1.58,
+    "rag-dense+time": 1.39
+   }
+  },
+  {
+   "answer": "First, I helped my friend prepare the nursery, then I helped my cousin pick out stuff for her baby shower, and lastly, I ordered a customized phone case for my friend's birthday.",
+   "correct": {
+    "ledger": false,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 603,
+    "long-context": 131055,
+    "oracle": 33086,
+    "rag-dense": 14559,
+    "rag-dense+time": 14849
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/02/10, 40 days before the question] User: I'm thinking of getting a baby gift for a coworker's new baby, and I was wondering if you could give me some recommendations for essential items that new parents usually need. By the way, I just helped my cousin pick out some stuff for her baby shower, and we ended up getting diapers, wipes, and a baby monitor at Target.\n[2023/02/20, 30 days before the question] User: I'm looking for some gift ideas for my siblings. Do you have any suggestions? By the way, I just ordered a customized phone case for my friend's birthday today, which she really loves.",
+   "question": "Which three events happened in the order from first to last: the day I helped my friend prepare the nursery, the day I helped my cousin pick out stuff for her baby shower, and the day I ordered a customized phone case for my friend's birthday?",
+   "question_id": "gpt4_f49edff3",
+   "question_type": "temporal-reasoning",
+   "responses": {
+    "ledger": "Based on the information provided in the conversation memory, the order of events is as follows:\n\n1. The day you helped your cousin pick out stuff for her baby shower.\n2. The day you helped your friend prepare the nursery (this event is not mentioned in the conversation, but it would come after the baby shower preparation).\n3. The day you ordered a customized phone case for your friend's birthday",
+    "long-context": "The order of the events is as follows:\n\n1. The day you helped your friend prepare the nursery\n2. The day you helped your cousin pick out stuff for her baby shower\n3. The day you ordered a customized phone case for your friend's birthday\n\nThis order is based on the sequence of events provided in the conversation.",
+    "oracle": "Based on the memory provided, the events happened in the following order:\n\n1. The day you helped your friend prepare the nursery.\n2. The day you helped your cousin pick out stuff for her baby shower.\n3. The day you ordered a customized phone case for your friend's birthday.",
+    "rag-dense": "The events happened in the following order:\n\n1. The day you helped your friend prepare the nursery.\n2. The day you helped your cousin pick out stuff for her baby shower.\n3. The day you ordered a customized phone case for your friend's birthday.",
+    "rag-dense+time": "The events happened in the following order:\n\n1. The day you helped your friend prepare the nursery.\n2. The day you helped your cousin pick out stuff for her baby shower.\n3. The day you ordered a customized phone case for your friend's birthday."
+   },
+   "sec": {
+    "ledger": 1.23,
+    "long-context": 7.4,
+    "oracle": 2.16,
+    "rag-dense": 1.37,
+    "rag-dense+time": 1.37
+   }
+  },
+  {
+   "answer": "The information provided is not enough. You mentioned fixing the fence but did not mention purchasing cows from Peter.",
+   "correct": {
+    "ledger": true,
+    "long-context": false,
+    "oracle": false,
+    "rag-dense": false,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 3179,
+    "long-context": 146906,
+    "oracle": 33006,
+    "rag-dense": 14127,
+    "rag-dense+time": 14387
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/05/21, same day as the question] User: Wait, I think I can help you with that!\n\nSince you mentioned you worked on the proposal on Thursday, I can help you create a task to finish it and add it to your new project in Asana. Let's do that!\n\nHere's a suggested task:\n\n**Task:** Finish Proposal for New Project\n**Description:** Complete the proposal for the new project, including all necessary sections and information.\n**Due Date:** [Insert a realistic due date, e.g., today or tomorrow]\n**Priority:** High\n\nYou can then break down this task\n[2023/05/21, same day as the question] Assistant: I love the suggested task you created:\n\n**Task:** Finish Proposal for New Project\n**Description:** Complete the proposal for the new project, including all necessary sections and information.\n[2023/05/21, same day as the question] User: how can I market below training curriculum in series of social media posts which will convince trainees to purchase the E&M training workshop\n\n\u2022 Introduction to 2023 Guidelines.\n\u2022 History of E/M MDM table from 1995 to 2023 changes Overview\n\u2022 Types of MDM table\n\u2022 Detailed discussion on Data points - Amount and/or Complexity of Data to Be Reviewed and Analysed\n\u2022 New changes in Hospital coding (observation, Inpatient & consultation Services)\n\u2022 Time based coding concepts \u2013 Total Time\n\u2022 Prolonged Ser\n[2023/05/21, same day as the question] Assistant: Congratulations on fixing that broken fence!\n[2023/05/21, same day as the question] User: I'll try to troubleshoot t",
+   "question": "Which task did I complete first, fixing the fence or purchasing three cows from Peter?",
+   "question_id": "gpt4_70e84552_abs",
+   "question_type": "temporal-reasoning",
+   "responses": {
+    "ledger": "I don't know which task you completed first, fixing the fence or purchasing three cows from Peter, as those events were not included in the past conversations we have.",
+    "long-context": "I don't know when you fixed the fence or when you purchased the cows from Peter, as the memory does not provide specific dates for these events.",
+    "oracle": "I don't know when you fixed the fence or when you purchased the cows from Peter, as the specific dates or sequence of these events are not provided in the given memory.",
+    "rag-dense": "I don't know when exactly you fixed the fence or purchased the cows from Peter, as the specific dates are not provided in the memory. However, based on the information given, you mentioned fixing the fence three weeks ago, and purchasing cows from Peter is a separate event that wasn't specified in relation to the fence repair. Therefore, without additional context, I cannot determine which task came first.",
+    "rag-dense+time": "Based on the information provided in the conversation, you fixed the fence on the east side of your property three weeks ago, where your goats like to graze, before you purchased three cows from Peter. So, you completed fixing the fence first."
+   },
+   "sec": {
+    "ledger": 0.69,
+    "long-context": 7.06,
+    "oracle": 1.8,
+    "rag-dense": 1.69,
+    "rag-dense+time": 1.3
+   }
+  },
+  {
+   "answer": "The information provided is not enough. From the information provided, You haven't started working at Google yet.",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 2628,
+    "long-context": 148098,
+    "oracle": 33324,
+    "rag-dense": 14438,
+    "rag-dense+time": 14698
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/05/30, same day as the question] User: I'm looking to get some advice on managing my time more efficiently. Lately, I've been working long hours on a high-priority project and my commute has increased, leaving me with little time for personal life. Do you have any tips on how to prioritize tasks and make the most out of my time?\n[2023/05/30, same day as the question] User: I'm interested in learning more about the history of currency and coins. Can you tell me about the most valuable coins in the world? By the way, I've recently started collecting antique coins, about three months ago, and it's been a fascinating hobby so far.\n[2023/05/30, same day as the question] Assistant: For example, if the current user is named `user`, you can go to their home directory by entering the following command:\n```bash\ncd ~\n```\nThis will change the working directory to the home directory of the current user.\n[2023/05/30, same day as the question] Assistant: The `cd -` command in a Unix-like shell changes the current working directory to the previous working directory.\n[2023/05/30, same day as the question] Assistant: If you enter `cd -`, the shell will change the current working directory to `/var/log`, which was the previous working directory.\n[2023/05/30, same day as the question] Assistant: To display the long format with `ls`, you can use the `-l` option:\n```bash\nls -l\n```\nThis will display the files and directories in the current directory in the long format.\n[2023/05/30, same day a",
+   "question": "How long have I been working before I started my current job at Google?",
+   "question_id": "gpt4_93159ced_abs",
+   "question_type": "temporal-reasoning",
+   "responses": {
+    "ledger": "I don't know. The conversation history doesn't include information about your previous work experience before starting at Google.",
+    "long-context": "I don't know. The memory does not contain information about how long you have worked before starting your current job at Google.",
+    "oracle": "I don't know. The memory provided does not contain information about how long you have been working before starting your current job at Google.",
+    "rag-dense": "I don't know. The conversation history provided does not include information about your previous work experience before joining Google.",
+    "rag-dense+time": "I don't know. The conversation history provided does not include information about how long the user has been working before starting their current job at Google."
+   },
+   "sec": {
+    "ledger": 0.51,
+    "long-context": 6.88,
+    "oracle": 1.61,
+    "rag-dense": 0.91,
+    "rag-dense+time": 1.01
+   }
+  },
+  {
+   "answer": "25 minutes and 50 seconds (or 25:50)",
+   "correct": {
+    "ledger": false,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 953,
+    "long-context": 130553,
+    "oracle": 33860,
+    "rag-dense": 15132,
+    "rag-dense+time": 15422
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/23, 33 days before the question] User: That's really helpful, thanks! I've been doing some running lately, and I'm happy to say that I recently set a personal best time in a charity 5K run with a time of 27:12. Do you have any tips on how to improve my running technique to make me more efficient and effective on the soccer field?\n[2023/05/23, 33 days before the question] Assistant: Congratulations on your personal best time in the 5K run!\n[2023/05/30, 26 days before the question] User: I'm training for another charity 5K run coming up and I was wondering if you could give me some tips on how to improve my endurance. By the way, I'm hoping to beat my personal best time of 25:50 this time around.\n[2023/05/30, 26 days before the question] User: I'm getting ready for a charity 5K run and I was wondering if you could give me some tips on how to improve my endurance. By the way, I'm hoping to beat my personal best time this time around.",
+   "question": "What was my personal best time in the charity 5K run?",
+   "question_id": "6a1eabeb",
+   "question_type": "knowledge-update",
+   "responses": {
+    "ledger": "You mentioned that you were hoping to beat your personal best time of 25:50 in the upcoming charity 5K run. However, since you've already achieved a personal best time of 27:12 in a previous 5K run, it seems your personal best might be less than 25:50. The exact personal best time you've shared is",
+    "long-context": "Your personal best time in the charity 5K run was 25:50.",
+    "oracle": "Your personal best time in the charity 5K run was 25:50.",
+    "rag-dense": "Your personal best time in the charity 5K run was 25:50.",
+    "rag-dense+time": "Your personal best time in the charity 5K run was 25:50."
+   },
+   "sec": {
+    "ledger": 1.23,
+    "long-context": 6.16,
+    "oracle": 1.68,
+    "rag-dense": 0.95,
+    "rag-dense+time": 0.95
+   }
+  },
+  {
+   "answer": "four",
+   "correct": {
+    "ledger": true,
+    "long-context": false,
+    "oracle": true,
+    "rag-dense": false,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 1085,
+    "long-context": 134171,
+    "oracle": 22488,
+    "rag-dense": 13097,
+    "rag-dense+time": 13387
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/08/11, 72 days before the question] User: By the way, speaking of noodles, have you tried any good Korean restaurants in your city lately? I've tried three different ones recently, and each has its own unique flavor and style.\n[2023/09/30, 22 days before the question] User: I think I'll go with kimchi and bokkeumbap. By the way, have you tried any good Korean restaurants in my city lately? I've tried four different ones so far, and I'm always looking for new recommendations.\n[2023/09/30, 22 days before the question] Assistant: As for your question, I'm afraid I'm a large language model, I don't have personal experiences or physical presence, so I haven't tried any Korean restaurants in your city or any other location.\n[2023/09/30, 22 days before the question] Assistant: **Online Review Sites**: Check out review platforms like Yelp, Google Reviews, or TripAdvisor to see what others have to say about Korean restaurants in your city.\n[2023/09/30, 22 days before the question] Assistant: I hope these suggestions help you find an amazing Korean restaurant in your city!",
+   "question": "How many Korean restaurants have I tried in my city?",
+   "question_id": "6aeb4375",
+   "question_type": "knowledge-update",
+   "responses": {
+    "ledger": "You've tried four different Korean restaurants in your city so far.",
+    "long-context": "I don't know how many Korean restaurants you have tried in your city. You mentioned trying four different ones, but I don't have that information stored in my memory.",
+    "oracle": "Based on the conversation, you mentioned trying four different Korean restaurants in your city.",
+    "rag-dense": "Based on the conversation, you mentioned trying three different Korean restaurants recently.",
+    "rag-dense+time": "Based on the conversation, you have tried four different Korean restaurants in your city so far."
+   },
+   "sec": {
+    "ledger": 0.32,
+    "long-context": 6.65,
+    "oracle": 1.16,
+    "rag-dense": 0.78,
+    "rag-dense+time": 0.84
+   }
+  },
+  {
+   "answer": "The information provided is not enough. You mentioned trying Korean restaurants but not Italian restaurants.",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 1458,
+    "long-context": 128456,
+    "oracle": 22488,
+    "rag-dense": 14170,
+    "rag-dense+time": 14460
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/04/24, 52 days before the question] Assistant: **Restaurant Reservations**: The concierge team can assist with reservations at the city's top restaurants, including hard-to-get tables at popular spots.\n[2023/05/20, 26 days before the question] User: By the way, speaking of noodles, have you tried any good Korean restaurants in your city lately? I've tried three different ones recently, and each has its own unique flavor and style.\n[2023/05/20, 26 days before the question] Assistant: If you're willing to share, I'd love to hear more about your experiences at the three restaurants you've tried.\n[2023/05/26, 20 days before the question] User: I think I'll go with kimchi and bokkeumbap. By the way, have you tried any good Korean restaurants in my city lately? I've tried four different ones so far, and I'm always looking for new recommendations.\n[2023/05/26, 20 days before the question] Assistant: As for your question, I'm afraid I'm a large language model, I don't have personal experiences or physical presence, so I haven't tried any Korean restaurants in your city or any other location.\n[2023/05/26, 20 days before the question] Assistant: **Online Review Sites**: Check out review platforms like Yelp, Google Reviews, or TripAdvisor to see what others have to say about Korean restaurants in your city.\n[2023/05/26, 20 days before the question] Assistant: I hope these suggestions help you find an amazing Korean restaurant in your city!",
+   "question": "How many Italian restaurants have I tried in my city?",
+   "question_id": "6aeb4375_abs",
+   "question_type": "knowledge-update",
+   "responses": {
+    "ledger": "I don't know how many Italian restaurants you have tried in your city. The previous conversation didn't include this specific information.",
+    "long-context": "I don't know the exact number of Italian restaurants you have tried in your city, as that information is not included in the provided memory.",
+    "oracle": "I don't know. The conversation history provided does not include any mentions of Italian restaurants or the number of Italian restaurants tried in your city.",
+    "rag-dense": "The conversation log doesn't contain any information about how many Italian restaurants you have tried in your city. Therefore, I don't have that specific number to provide.",
+    "rag-dense+time": "The conversation log doesn't contain any information about how many Italian restaurants you have tried in your city. Therefore, I don't have that specific number to provide."
+   },
+   "sec": {
+    "ledger": 0.5,
+    "long-context": 6.39,
+    "oracle": 1.34,
+    "rag-dense": 1.06,
+    "rag-dense+time": 1.07
+   }
+  },
+  {
+   "answer": "The information provided is not enough. You mentioned starting the role as Senior Software Engineer but not Software Engineer Manager.",
+   "correct": {
+    "ledger": false,
+    "long-context": true,
+    "oracle": false,
+    "rag-dense": false,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 645,
+    "long-context": 135549,
+    "oracle": 24559,
+    "rag-dense": 11701,
+    "rag-dense+time": 11991
+   },
+   "is_abs": true,
+   "ledger_context": "[2023/05/25, 12 days before the question] User: I'll reach out to Samantha and ask about the Corporate Team Building Package for 6 people. I'll also consider the format and agenda for the team outing, and possibly plan for some structured activities to encourage teamwork and collaboration. By the way, how many engineers do I lead in my new role as Senior Software Engineer?\n[2023/05/25, 12 days before the question] User: I apologize for the confusion! I lead a team of 4 engineers in my new role as Senior Software Engineer. So, we'll have 4 engineers, plus my manager Rachel, making it a total of 5 people from our team attending the outing.",
+   "question": "How many engineers do I lead when I just started my new role as Software Engineer Manager?",
+   "question_id": "031748ae_abs",
+   "question_type": "knowledge-update",
+   "responses": {
+    "ledger": "I don't know. The memory only shows how many engineers you lead after becoming a Senior Software Engineer, not when you first started as a Software Engineer Manager.",
+    "long-context": "I don't know the exact number of engineers you lead, as that information wasn't provided in the initial context.",
+    "oracle": "I don't know the exact number of engineers you lead when you just started your new role as Software Engineer Manager. You mentioned leading a team of 5 engineers in your current role as Senior Software Engineer, but I don't have information about the initial team size when you first became the Software Engineer Manager.",
+    "rag-dense": "The memory doesn't contain the exact number of engineers you lead when you started your new role as Software Engineer Manager. However, based on the context from previous conversations, you now lead a team of 4 engineers in your current role as Senior Software Engineer.",
+    "rag-dense+time": "The memory doesn't specify the exact number of engineers you lead when you started your new role as Software Engineer Manager. However, based on the context from previous conversations, you now lead a team of 4 engineers in your current role as Senior Software Engineer."
+   },
+   "sec": {
+    "ledger": 0.58,
+    "long-context": 6.8,
+    "oracle": 1.8,
+    "rag-dense": 1.2,
+    "rag-dense+time": 1.22
+   }
+  },
+  {
+   "answer": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+   "correct": {
+    "ledger": true,
+    "long-context": false,
+    "oracle": true,
+    "rag-dense": true,
+    "rag-dense+time": true
+   },
+   "ctx_chars": {
+    "ledger": 2211,
+    "long-context": 135628,
+    "oracle": 6742,
+    "rag-dense": 11079,
+    "rag-dense+time": 11356
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/24, 6 days before the question] Assistant: Here's an example template that you can customize according to your team's needs:\n\nShift Rotation Sheet for GM Social Media Agents\n\n|  | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Week 1 | Agent 1 | Agent 2 | Agent 3 | Agent 4 | Agent 5 | Agent 6 | Agent 7 |\n| Week 2 | Agent 8 | Agent 9 | Agent 10 | Agent 1 | Agent 2 | Agent 3 | Agent 4 |\n| Week 3 | Agent 5 | Agent 6 | Agent 7 | Agent 8 | Agent 9 | Agent 10 | Agent 1\n[2023/05/24, 6 days before the question] Assistant: Here's a shift rotation sheet for GM social media agents with 7 agents:\n\nShift Rotation Sheet for GM Social Media Agents\n\n|  | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Week 1 | Agent 1 | Agent 2 | Agent 3 | Agent 4 | Agent 5 | Agent 6 | Agent 7 |\n| Week 2 | Agent 6 | Agent 7 | Agent 1 | Agent 2 | Agent 3 | Agent 4 | Agent 5 |\n| Week 3 | Agent 4 | Agent 5 | Agent 6 | Agent 7 | Agent 1 | Agent 2 | Agent 3 |\n| Week 4 \n[2023/05/24, 6 days before the question] Assistant: Sure, here's the shift rotation sheet for GM social media agents with 7 agents, 4 shifts, and 2 days off for every agent for a week starting on Sunday and ending on Saturday:\n\nShift Rotation Sheet for GM Social Media Agents (1 Week, Sunday - Saturday)\n\n|  | 8 am - 4 pm | 12 pm - 8 pm | 4 pm - 12 am | 12 am - 8 am |\n| --- | --- | --- | --- |",
+   "question": "I'm checking our previous chat about the shift rotation sheet for GM social media agents. Can you remind me what was the rotation for Admon on a Sunday?",
+   "question_id": "7161e7e2",
+   "question_type": "single-session-assistant",
+   "responses": {
+    "ledger": "Based on the previous chat, Admon was scheduled for the Day Shift (8 am - 4 pm) on Sunday.",
+    "long-context": "I don't have specific information about Admon's shift rotation for Sundays in our previous chat. The previous conversation did not provide details about individual agent shifts or rotations. To answer your question accurately, I would need to refer to the specific shift rotation sheet or schedule for GM social media agents.",
+    "oracle": "According to the shift rotation sheet provided, Admon worked the 8 am - 4 pm (Day Shift) on Sunday.",
+    "rag-dense": "According to the shift rotation sheet provided, Admon was scheduled for the 8 am - 4 pm shift on Sunday.",
+    "rag-dense+time": "According to the shift rotation sheet provided, Admon was assigned to the 8 am - 4 pm shift on Sunday."
+   },
+   "sec": {
+    "ledger": 0.56,
+    "long-context": 7.39,
+    "oracle": 0.79,
+    "rag-dense": 0.95,
+    "rag-dense+time": 0.95
+   }
+  },
+  {
+   "answer": "Miss Bee Providore",
+   "correct": {
+    "ledger": true,
+    "long-context": true,
+    "oracle": true,
+    "rag-dense": false,
+    "rag-dense+time": false
+   },
+   "ctx_chars": {
+    "ledger": 2127,
+    "long-context": 130507,
+    "oracle": 7491,
+    "rag-dense": 12063,
+    "rag-dense+time": 12327
+   },
+   "is_abs": false,
+   "ledger_context": "[2023/05/30, same day as the question] User: I think I'll start with Cihampelas Walk to check out the denim street. Can you recommend any good restaurants or cafes in the area?\n[2023/05/30, same day as the question] Assistant: There are many good restaurants and cafes in the Cihampelas Walk area.\n[2023/05/30, same day as the question] Assistant: Miss Bee Providore: This restaurant serves a mix of western and Indonesian cuisine and has a cozy and stylish interior.\n[2023/05/30, same day as the question] Assistant: Miss Bee's Nasi Goreng: Their take on the classic Indonesian fried rice dish is a must-try!\n[2023/05/30, same day as the question] User: Yum, all of those dishes sound amazing! I'm definitely going to try the Miss Bee's Nasi Goreng and finish it off with the chocolate brownie.\n[2023/05/30, same day as the question] Assistant: Enjoy your meal at Miss Bee Providore and have a great time shopping at Cihampelas Walk!\n[2023/05/30, same day as the question] Assistant: Visit a volcano: Bandung is located near several active and dormant volcanoes, including Tangkuban Perahu and Kawah Putih.\n[2023/05/30, same day as the question] Assistant: You can take a day trip to visit these fascinating natural wonders.\n[2023/05/30, same day as the question] Assistant: Visit the Trans Studio Bandung: This is one of Indonesia's largest indoor theme parks, with rides, attractions, and entertainment for all ages.\n[2023/05/30, same day as the question] Assistant: Take a cooking class: Bandung ",
+   "question": "I'm planning to visit Bandung again and I was wondering if you could remind me of the name of that restaurant in Cihampelas Walk that serves a great Nasi Goreng?",
+   "question_id": "c4f10528",
+   "question_type": "single-session-assistant",
+   "responses": {
+    "ledger": "Miss Bee Providore serves a great Nasi Goreng in Cihampelas Walk. Enjoy your visit!",
+    "long-context": "Miss Bee Providore serves a great Nasi Goreng in Cihampelas Walk.",
+    "oracle": "I remember you mentioned trying the Miss Bee's Nasi Goreng at Miss Bee Providore in Cihampelas Walk. Enjoy your visit again!",
+    "rag-dense": "I remember you mentioned trying the Miss Bee Providore for their Nasi Goreng, but I don't have a specific confirmation that they were the one you tried in Cihampelas Walk. Since you were looking for a place to enjoy Nasi Goreng there, Miss Bee Providore is a great choice, but I don't have a definitive answer about which restaurant in Cihampelas Walk",
+    "rag-dense+time": "I remember you mentioned trying the Miss Bee Providore for their Nasi Goreng, but I don't have a specific confirmation about a restaurant named \"Miss Bee Providore\" in Cihampelas Walk. The recommendation was for a restaurant in the area that serves a great Nasi Goreng, but I don't have the exact name. If you're planning to visit again, you might want"
+   },
+   "sec": {
+    "ledger": 0.51,
+    "long-context": 6.51,
+    "oracle": 0.77,
+    "rag-dense": 1.66,
+    "rag-dense+time": 1.66
+   }
+  }
+ ],
+ "n": 20,
+ "reader_judge": "Qwen/Qwen2.5-7B-Instruct",
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "host": "pop-os",
+  "peak_rss_mb": 15732.7,
+  "peak_vram_reserved_mb": 12283.0,
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "smoke": true,
+ "summary": {
+  "ledger": {
+   "by_type": {
+    "abstention": [
+     0.75,
+     8
+    ],
+    "knowledge-update": [
+     0.5,
+     2
+    ],
+    "multi-session": [
+     0.0,
+     2
+    ],
+    "single-session-assistant": [
+     1.0,
+     2
+    ],
+    "single-session-preference": [
+     0.5,
+     2
+    ],
+    "single-session-user": [
+     1.0,
+     2
+    ],
+    "temporal-reasoning": [
+     0.0,
+     2
+    ]
+   },
+   "overall": 0.6
+  },
+  "long-context": {
+   "by_type": {
+    "abstention": [
+     0.625,
+     8
+    ],
+    "knowledge-update": [
+     0.5,
+     2
+    ],
+    "multi-session": [
+     0.0,
+     2
+    ],
+    "single-session-assistant": [
+     0.5,
+     2
+    ],
+    "single-session-preference": [
+     0.5,
+     2
+    ],
+    "single-session-user": [
+     0.5,
+     2
+    ],
+    "temporal-reasoning": [
+     0.5,
+     2
+    ]
+   },
+   "overall": 0.5
+  },
+  "oracle": {
+   "by_type": {
+    "abstention": [
+     0.625,
+     8
+    ],
+    "knowledge-update": [
+     1.0,
+     2
+    ],
+    "multi-session": [
+     0.0,
+     2
+    ],
+    "single-session-assistant": [
+     1.0,
+     2
+    ],
+    "single-session-preference": [
+     1.0,
+     2
+    ],
+    "single-session-user": [
+     1.0,
+     2
+    ],
+    "temporal-reasoning": [
+     1.0,
+     2
+    ]
+   },
+   "overall": 0.75
+  },
+  "rag-dense": {
+   "by_type": {
+    "abstention": [
+     0.75,
+     8
+    ],
+    "knowledge-update": [
+     0.5,
+     2
+    ],
+    "multi-session": [
+     0.0,
+     2
+    ],
+    "single-session-assistant": [
+     0.5,
+     2
+    ],
+    "single-session-preference": [
+     1.0,
+     2
+    ],
+    "single-session-user": [
+     1.0,
+     2
+    ],
+    "temporal-reasoning": [
+     0.5,
+     2
+    ]
+   },
+   "overall": 0.65
+  },
+  "rag-dense+time": {
+   "by_type": {
+    "abstention": [
+     0.625,
+     8
+    ],
+    "knowledge-update": [
+     1.0,
+     2
+    ],
+    "multi-session": [
+     0.0,
+     2
+    ],
+    "single-session-assistant": [
+     0.5,
+     2
+    ],
+    "single-session-preference": [
+     0.5,
+     2
+    ],
+    "single-session-user": [
+     1.0,
+     2
+    ],
+    "temporal-reasoning": [
+     0.5,
+     2
+    ]
+   },
+   "overall": 0.6
+  }
+ }
+}

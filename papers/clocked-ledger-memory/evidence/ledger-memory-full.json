@@ -1,0 +1,8044 @@
+{
+ "babilong": {
+  "qa1": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.81,
+      "answer_sec_per_query": 0.010076806140132248,
+      "ci95": [
+       0.73,
+       0.88
+      ],
+      "example_context": "[t=1890] As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the work home, and on Sunday, which she usually\ndevoted to a general clean-up of the room, and to mending the\nchildren's clothes.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1507.4,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.78
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.81,
+      "answer_sec_per_query": 0.01027623469941318,
+      "ci95": [
+       0.73,
+       0.88
+      ],
+      "example_context": "[t=1890] As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the work home, and on Sunday, which she usually\ndevoted to a general clean-up of the room, and to mending the\nchildren's clothes.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1603.83,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.8
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.81,
+      "answer_sec_per_query": 0.010347378590377048,
+      "ci95": [
+       0.73,
+       0.88
+      ],
+      "example_context": "[t=1890] As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the work home, and on Sunday, which she usually\ndevoted to a general clean-up of the room, and to mending the\nchildren's clothes.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1290.97,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.8
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.79,
+      "answer_sec_per_query": 0.01198086837073788,
+      "ci95": [
+       0.71,
+       0.87
+      ],
+      "example_context": "[t=1890] As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the work home, and on Sunday, which she usually\ndevoted to a general clean-up of the room, and to mending the\nchildren's clothes.",
+      "mean_ctx_records": 1.24,
+      "mean_records": 1507.4,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.78
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.81,
+      "answer_sec_per_query": 0.01196583888027817,
+      "ci95": [
+       0.73,
+       0.88
+      ],
+      "example_context": "[t=1890] As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the work home, and on Sunday, which she usually\ndevoted to a general clean-up of the room, and to mending the\nchildren's clothes.",
+      "mean_ctx_records": 1.16,
+      "mean_records": 1603.83,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.8
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.81,
+      "answer_sec_per_query": 0.01156650754972361,
+      "ci95": [
+       0.73,
+       0.88
+      ],
+      "example_context": "[t=1890] As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the work home, and on Sunday, which she usually\ndevoted to a general clean-up of the room, and to mending the\nchildren's clothes.",
+      "mean_ctx_records": 1.18,
+      "mean_records": 1290.97,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.8
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.77,
+      "answer_sec_per_query": 0.02191783642047085,
+      "ci95": [
+       0.69,
+       0.85
+      ],
+      "example_context": "[t=1855] Mary Linden, who was still lodging with them, could not help perceiving\ntheir unhappiness: she frequently noticed that Ruth's eyes were red and\nswollen as if with crying, and she gently sought to gain her\nconfidence, but without success. [t=1856] On one occasion when Mary was trying\nto advise her, Ruth burst out into a terrible fit of weeping, but she\nwould not say what was the cause--except that her head was aching--she\nwas not well, that was all. [t=1887] Downstairs, for a long time after he was gone, Ruth sat alone by the\nfireless grate, in the silence and the gathering shadows, ho",
+      "mean_ctx_records": 3.76,
+      "mean_records": 1507.4,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.85
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.82,
+      "answer_sec_per_query": 0.020640868140617386,
+      "ci95": [
+       0.74,
+       0.89
+      ],
+      "example_context": "[t=1830] Mary thought it was rather a strange sort of job, but she did as\nPhilpot directed and when he came for the stuff and asked how much it\nwas she said threepence: it had only taken about half an hour. [t=1855] Mary Linden, who was still lodging with them, could not help perceiving\ntheir unhappiness: she frequently noticed that Ruth's eyes were red and\nswollen as if with crying, and she gently sought to gain her\nconfidence, but without success. [t=1856] On one occasion when Mary was trying\nto advise her, Ruth burst out into a terrible fit of weeping, but she\nwould not say what was the cau",
+      "mean_ctx_records": 3.41,
+      "mean_records": 1603.83,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.89
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.79,
+      "answer_sec_per_query": 0.022255758959800004,
+      "ci95": [
+       0.71,
+       0.87
+      ],
+      "example_context": "[t=1855] Mary Linden, who was still lodging with them, could not help perceiving\ntheir unhappiness: she frequently noticed that Ruth's eyes were red and\nswollen as if with crying, and she gently sought to gain her\nconfidence, but without success. [t=1856] On one occasion when Mary was trying\nto advise her, Ruth burst out into a terrible fit of weeping, but she\nwould not say what was the cause--except that her head was aching--she\nwas not well, that was all. [t=1887] Downstairs, for a long time after he was gone, Ruth sat alone by the\nfireless grate, in the silence and the gathering shadows, ho",
+      "mean_ctx_records": 3.51,
+      "mean_records": 1290.97,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.86
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.77,
+      "ci95": [
+       0.69,
+       0.85
+      ],
+      "n": 100,
+      "sec_per_query": 0.014573703539790586
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.83,
+      "ci95": [
+       0.75,
+       0.9
+      ],
+      "n": 100,
+      "sec_per_query": 0.012429234639275819
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.71,
+      "ci95": [
+       0.62,
+       0.8
+      ],
+      "n": 100,
+      "sec_per_query": 0.013262315921019762
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 3.8076460898737423,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        1591,
+        "Mary journeyed to the bathroom.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1830,
+        "Mary thought it was rather a strange sort of job, but she did as\nPhilpot directed and when he came for the stuff and ask",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1855,
+        "Mary Linden, who was still lodging with them, could not help perceiving\ntheir unhappiness: she frequently noticed that R",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1856,
+        "On one occasion when Mary was trying\nto advise her, Ruth burst out into a terrible fit of weeping, but she\nwould not say",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1888,
+        "The presence of Mary Linden and the two children in the house probably\nsaved Ruth from being more unhappy than she was.",
+        [
+         "mary",
+         "ruth"
+        ]
+       ],
+       [
+        1890,
+        "As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the w",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the bathroom.",
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        2835,
+        "Sandra journeyed to the kitchen.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        3463,
+        "Sandra travelled to the hallway.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        4754,
+        "Sandra went back to the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        5312,
+        "Sandra moved to the kitchen.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        4376,
+        "Mary journeyed to the kitchen.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "john"
+      ],
+      "question": "Where is John? ",
+      "records_with_qwords": [
+       [
+        2584,
+        "John M'Leod and I suggested that we should, at the risk of\nquarrelling with him, refuse to allow him any share, but Hand",
+        [
+         "john"
+        ]
+       ],
+       [
+        2644,
+        "John journeyed to the garden.",
+        [
+         "john"
+        ]
+       ],
+       [
+        2877,
+        "However, John Ellis, whose wife had acted as laundress for Sir\nColin in the Crimea, was one of them, and James Strachan,",
+        [
+         "john"
+        ]
+       ],
+       [
+        3462,
+        "John Ready replied that he had no fear, and\nhis mother might know that he had died doing his duty.",
+        [
+         "john"
+        ]
+       ],
+       [
+        3467,
+        "John Ready sprang to the\nassistance of his brother, but too late; and although his bayonet\nreached the side of his oppon",
+        [
+         "john",
+         "same"
+        ]
+       ],
+       [
+        3527,
+        "John went to the kitchen.",
+        [
+         "john"
+        ]
+       ]
+      ],
+      "support": "John went to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        1115,
+        "Sandra moved to the bedroom.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the bedroom.",
+      "target": "bedroom"
+     }
+    ]
+   },
+   "16k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.98,
+      "answer_sec_per_query": 0.00931200796039775,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "example_context": "[t=468] Miss Mary also received her full share of\nthe credit, nor was the kettle excluded from honorable mention.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 172.99,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.98,
+      "answer_sec_per_query": 0.009087437039706856,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "example_context": "[t=468] Miss Mary also received her full share of\nthe credit, nor was the kettle excluded from honorable mention.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 216.86,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.98,
+      "answer_sec_per_query": 0.009084347269963473,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "example_context": "[t=468] Miss Mary also received her full share of\nthe credit, nor was the kettle excluded from honorable mention.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 124.17,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.98,
+      "answer_sec_per_query": 0.009954658660572022,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "example_context": "[t=5] Miss Mary entered into a full account of the thrilling adventure, and\nhad but just finished it when in walked the raccoon, his eyes sparkling,\nhis tail cocked in its airiest way. [t=34] And I don't deny that it was a great help, Cracker, and that I was\nvery glad the kettle did it. [t=43] And that was all the thanks the kettle got for its pains. [t=64] Miss Mary, highly delighted at being addressed by such a stately title\nas \"Lady Parrot,\" relaxed at once the severity of her mien, and\ngracefully sidled into the house in company with the sable-clad\nstranger, while Toto and the two others f",
+      "mean_ctx_records": 1.08,
+      "mean_records": 172.99,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.98,
+      "answer_sec_per_query": 0.010032140869880095,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "example_context": "[t=5] Miss Mary entered into a full account of the thrilling adventure, and\nhad but just finished it when in walked the raccoon, his eyes sparkling,\nhis tail cocked in its airiest way. [t=43] And that was all the thanks the kettle got for its pains. [t=64] Miss Mary, highly delighted at being addressed by such a stately title\nas \"Lady Parrot,\" relaxed at once the severity of her mien, and\ngracefully sidled into the house in company with the sable-clad\nstranger, while Toto and the two others followed, much amused. [t=327] With these words the excellent bear arose, put away the backgammon\nboard,",
+      "mean_ctx_records": 1.08,
+      "mean_records": 216.86,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.97,
+      "answer_sec_per_query": 0.009679716899991036,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "example_context": "[t=43] And that was all the thanks the kettle got for its pains. [t=327] With these words the excellent bear arose, put away the backgammon\nboard, and proceeded to build up the fire, hang the kettle, and put the\nbroth on to warm, all as deftly as if he had been a cook all his life. [t=468] Miss Mary also received her full share of\nthe credit, nor was the kettle excluded from honorable mention.",
+      "mean_ctx_records": 1.06,
+      "mean_records": 124.17,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.93,
+      "answer_sec_per_query": 0.011812213970115408,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "example_context": "[t=5] Miss Mary entered into a full account of the thrilling adventure, and\nhad but just finished it when in walked the raccoon, his eyes sparkling,\nhis tail cocked in its airiest way. [t=34] And I don't deny that it was a great help, Cracker, and that I was\nvery glad the kettle did it. [t=43] And that was all the thanks the kettle got for its pains. [t=64] Miss Mary, highly delighted at being addressed by such a stately title\nas \"Lady Parrot,\" relaxed at once the severity of her mien, and\ngracefully sidled into the house in company with the sable-clad\nstranger, while Toto and the two others f",
+      "mean_ctx_records": 2.39,
+      "mean_records": 172.99,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 1.0
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.93,
+      "answer_sec_per_query": 0.01189563488936983,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "example_context": "[t=5] Miss Mary entered into a full account of the thrilling adventure, and\nhad but just finished it when in walked the raccoon, his eyes sparkling,\nhis tail cocked in its airiest way. [t=43] And that was all the thanks the kettle got for its pains. [t=64] Miss Mary, highly delighted at being addressed by such a stately title\nas \"Lady Parrot,\" relaxed at once the severity of her mien, and\ngracefully sidled into the house in company with the sable-clad\nstranger, while Toto and the two others followed, much amused. [t=185] \"How about the bogghun, Miss Mary? [t=192] All assented joyfully, and Mis",
+      "mean_ctx_records": 2.39,
+      "mean_records": 216.86,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 1.0
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.93,
+      "answer_sec_per_query": 0.011675397569779306,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "example_context": "[t=43] And that was all the thanks the kettle got for its pains. [t=64] Miss Mary, highly delighted at being addressed by such a stately title\nas \"Lady Parrot,\" relaxed at once the severity of her mien, and\ngracefully sidled into the house in company with the sable-clad\nstranger, while Toto and the two others followed, much amused. [t=192] All assented joyfully, and Miss Mary, without more delay, related the\nstory of [t=277] Mary journeyed to the bathroom. [t=327] With these words the excellent bear arose, put away the backgammon\nboard, and proceeded to build up the fire, hang the kettle, and ",
+      "mean_ctx_records": 2.37,
+      "mean_records": 124.17,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 1.0
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.86,
+      "ci95": [
+       0.79,
+       0.92
+      ],
+      "n": 100,
+      "sec_per_query": 0.015758448870619758
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.86,
+      "ci95": [
+       0.79,
+       0.93
+      ],
+      "n": 100,
+      "sec_per_query": 0.013181866820668802
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.8,
+      "ci95": [
+       0.71,
+       0.87
+      ],
+      "n": 100,
+      "sec_per_query": 0.013097886960022152
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.5311262494022958,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        62,
+        "Lady Parrot,\" he added, addressing himself particularly to Miss Mary,\n\"grant me the honor of leading you within.",
+        [
+         "lady",
+         "mary"
+        ]
+       ],
+       [
+        64,
+        "Miss Mary, highly delighted at being addressed by such a stately title\nas \"Lady Parrot,\" relaxed at once the severity of",
+        [
+         "miss mary"
+        ]
+       ],
+       [
+        185,
+        "\"How about the bogghun, Miss Mary?",
+        [
+         "mary"
+        ]
+       ],
+       [
+        192,
+        "All assented joyfully, and Miss Mary, without more delay, related the\nstory of",
+        [
+         "mary"
+        ]
+       ],
+       [
+        277,
+        "Mary journeyed to the bathroom.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        468,
+        "Miss Mary also received her full share of\nthe credit, nor was the kettle excluded from honorable mention.",
+        [
+         "miss mary",
+         "kettle"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the bathroom.",
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        369,
+        "Sandra journeyed to the kitchen.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        438,
+        "Sandra travelled to the hallway.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        564,
+        "Sandra went back to the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        635,
+        "Sandra moved to the kitchen.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        471,
+        "Mary journeyed to the kitchen.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "john"
+      ],
+      "question": "Where is John? ",
+      "records_with_qwords": [
+       [
+        59,
+        "John moved to the hallway.",
+        [
+         "john"
+        ]
+       ],
+       [
+        84,
+        "John journeyed to the kitchen.",
+        [
+         "john"
+        ]
+       ],
+       [
+        86,
+        "John and Paul, and it exhibits\nthe character of the central Venetian Gothic fully developed.",
+        [
+         "john",
+         "paul"
+        ]
+       ],
+       [
+        248,
+        "John journeyed to the garden.",
+        [
+         "john"
+        ]
+       ],
+       [
+        330,
+        "John went to the kitchen.",
+        [
+         "john"
+        ]
+       ]
+      ],
+      "support": "John went to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        128,
+        "Sandra moved to the bedroom.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the bedroom.",
+      "target": "bedroom"
+     }
+    ]
+   },
+   "4k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.96,
+      "answer_sec_per_query": 0.009760852740146219,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 42.62,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.96
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.96,
+      "answer_sec_per_query": 0.009049835370387883,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 52.77,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.96
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.96,
+      "answer_sec_per_query": 0.009032191690057517,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 31.96,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.96
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.96,
+      "answer_sec_per_query": 0.009043476789956912,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 42.62,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.96
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.96,
+      "answer_sec_per_query": 0.0090331243397668,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 52.77,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.96
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.96,
+      "answer_sec_per_query": 0.009034432279877365,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 31.96,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.96
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.93,
+      "answer_sec_per_query": 0.01049767333897762,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 2.19,
+      "mean_records": 42.62,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.93,
+      "answer_sec_per_query": 0.010488109060097485,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 2.19,
+      "mean_records": 52.77,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.93,
+      "answer_sec_per_query": 0.010517711280845105,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "example_context": "[t=78] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 2.19,
+      "mean_records": 31.96,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.86,
+      "ci95": [
+       0.79,
+       0.92
+      ],
+      "n": 100,
+      "sec_per_query": 0.015707811120664703
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.85,
+      "ci95": [
+       0.78,
+       0.91
+      ],
+      "n": 100,
+      "sec_per_query": 0.013006395080592483
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.73,
+      "ci95": [
+       0.64,
+       0.81
+      ],
+      "n": 100,
+      "sec_per_query": 0.014116082639666273
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.17951472761924378,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        78,
+        "Mary journeyed to the bathroom.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the bathroom.",
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        52,
+        "Sandra journeyed to the kitchen.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        61,
+        "Sandra travelled to the hallway.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        78,
+        "Sandra went back to the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        89,
+        "Sandra moved to the kitchen.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        138,
+        "Mary journeyed to the kitchen.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "john"
+      ],
+      "question": "Where is John? ",
+      "records_with_qwords": [
+       [
+        14,
+        "John moved to the hallway.",
+        [
+         "john"
+        ]
+       ],
+       [
+        21,
+        "John journeyed to the kitchen.",
+        [
+         "john"
+        ]
+       ],
+       [
+        73,
+        "John journeyed to the garden.",
+        [
+         "john"
+        ]
+       ],
+       [
+        100,
+        "John went to the kitchen.",
+        [
+         "john"
+        ]
+       ]
+      ],
+      "support": "John went to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        37,
+        "Sandra moved to the bedroom.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the bedroom.",
+      "target": "bedroom"
+     }
+    ]
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.92,
+      "answer_sec_per_query": 0.009489865869982168,
+      "ci95": [
+       0.86,
+       0.97
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 656.36,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.92
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.91,
+      "answer_sec_per_query": 0.009247705689631402,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 840.81,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.91
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.91,
+      "answer_sec_per_query": 0.00936725251027383,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 468.59,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.91
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.92,
+      "answer_sec_per_query": 0.009471587910084053,
+      "ci95": [
+       0.86,
+       0.97
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.05,
+      "mean_records": 656.36,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.92
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.91,
+      "answer_sec_per_query": 0.009253875409485772,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 840.81,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.91
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.91,
+      "answer_sec_per_query": 0.009369533880380913,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 468.59,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.91
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.91,
+      "answer_sec_per_query": 0.012113226749934257,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 2.54,
+      "mean_records": 656.36,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.98
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.9,
+      "answer_sec_per_query": 0.013246521949768067,
+      "ci95": [
+       0.84,
+       0.95
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 2.62,
+      "mean_records": 840.81,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.97
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.91,
+      "answer_sec_per_query": 0.012518105260096491,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "example_context": "[t=637] Mary journeyed to the bathroom.",
+      "mean_ctx_records": 2.53,
+      "mean_records": 468.59,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": 0.98
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.85,
+      "ci95": [
+       0.78,
+       0.92
+      ],
+      "n": 100,
+      "sec_per_query": 0.015560596889117732
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.89,
+      "ci95": [
+       0.83,
+       0.95
+      ],
+      "n": 100,
+      "sec_per_query": 0.012519718679832294
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.78,
+      "ci95": [
+       0.7,
+       0.86
+      ],
+      "n": 100,
+      "sec_per_query": 0.013036725040292367
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 2.000167959445389,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        637,
+        "Mary journeyed to the bathroom.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the bathroom.",
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        1148,
+        "Sandra journeyed to the kitchen.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        1341,
+        "Sandra travelled to the hallway.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        1721,
+        "Sandra went back to the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        1987,
+        "Sandra moved to the kitchen.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "mary"
+      ],
+      "question": "Where is Mary? ",
+      "records_with_qwords": [
+       [
+        2149,
+        "Mary journeyed to the kitchen.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "support": "Mary journeyed to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "john"
+      ],
+      "question": "Where is John? ",
+      "records_with_qwords": [
+       [
+        423,
+        "John moved to the hallway.",
+        [
+         "john"
+        ]
+       ],
+       [
+        603,
+        "John journeyed to the kitchen.",
+        [
+         "john"
+        ]
+       ],
+       [
+        1914,
+        "John journeyed to the garden.",
+        [
+         "john"
+        ]
+       ],
+       [
+        2509,
+        "John went to the kitchen.",
+        [
+         "john"
+        ]
+       ]
+      ],
+      "support": "John went to the kitchen.",
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "sandra"
+      ],
+      "question": "Where is Sandra? ",
+      "records_with_qwords": [
+       [
+        482,
+        "Sandra moved to the bedroom.",
+        [
+         "sandra"
+        ]
+       ]
+      ],
+      "support": "Sandra moved to the bedroom.",
+      "target": "bedroom"
+     }
+    ]
+   }
+  },
+  "qa2": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.010128609320381655,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "[t=5200] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1470.55,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.010516655050450937,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "[t=5200] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1570.25,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.011148769459687173,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "[t=5200] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1242.65,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.53,
+      "answer_sec_per_query": 0.014941409230232239,
+      "ci95": [
+       0.43,
+       0.62
+      ],
+      "example_context": "[t=4257] Daniel took the football there. [t=5141] Daniel dropped the football. [t=5200] Daniel grabbed the football there. [t=5838] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.67,
+      "mean_records": 1470.55,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.51,
+      "answer_sec_per_query": 0.014000679439632222,
+      "ci95": [
+       0.41,
+       0.6
+      ],
+      "example_context": "[t=4257] Daniel took the football there. [t=5141] Daniel dropped the football. [t=5200] Daniel grabbed the football there. [t=5838] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.53,
+      "mean_records": 1570.25,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.47,
+      "answer_sec_per_query": 0.014864030639873817,
+      "ci95": [
+       0.37,
+       0.5602499999999987
+      ],
+      "example_context": "[t=4257] Daniel took the football there. [t=5141] Daniel dropped the football. [t=5200] Daniel grabbed the football there. [t=5838] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.34,
+      "mean_records": 1242.65,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.55,
+      "answer_sec_per_query": 0.01741237799054943,
+      "ci95": [
+       0.45975000000000005,
+       0.64
+      ],
+      "example_context": "[t=4257] Daniel took the football there. [t=5141] Daniel dropped the football. [t=5200] Daniel grabbed the football there. [t=5838] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.56,
+      "mean_records": 1470.55,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.56,
+      "answer_sec_per_query": 0.016414256970165297,
+      "ci95": [
+       0.46975,
+       0.66
+      ],
+      "example_context": "[t=4257] Daniel took the football there. [t=5141] Daniel dropped the football. [t=5200] Daniel grabbed the football there. [t=5838] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.43,
+      "mean_records": 1570.25,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.58,
+      "answer_sec_per_query": 0.02222721962025389,
+      "ci95": [
+       0.48,
+       0.68
+      ],
+      "example_context": "[t=123] When he found himself inclined to rail, he organized a baseball\nclub, and sent down to everlasting defeat the Linburgs, consisting of\ncash-boys from Linden and Hofburg's department store. [t=3798] Le Moyne had promised\nthe baseball club a football outfit, rumor said, but would not coach\nthem himself this year. [t=4257] Daniel took the football there. [t=5141] Daniel dropped the football. [t=5200] Daniel grabbed the football there. [t=5838] Daniel went to the kitchen.",
+      "mean_ctx_records": 6.14,
+      "mean_records": 1242.65,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.14,
+      "ci95": [
+       0.08,
+       0.21024999999999863
+      ],
+      "n": 100,
+      "sec_per_query": 0.015447595870355144
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.11,
+      "ci95": [
+       0.05,
+       0.17
+      ],
+      "n": 100,
+      "sec_per_query": 0.013106459710979835
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.13,
+      "ci95": [
+       0.07,
+       0.2
+      ],
+      "n": 100,
+      "sec_per_query": 0.013842782179126515
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 3.746309031243436,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where is the football? ",
+      "records_with_qwords": [
+       [
+        4257,
+        "Daniel took the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        5141,
+        "Daniel dropped the football.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        5200,
+        "Daniel grabbed the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Where is the milk? ",
+      "records_with_qwords": [
+       [
+        1943,
+        "Mary grabbed the milk there.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        3043,
+        "Mary dropped the milk.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        3209,
+        "Sandra got the milk there.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ],
+       [
+        3418,
+        "Sandra put down the milk.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        3449,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        3638,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        2549,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        2752,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        1249,
+        "Daniel got the apple there.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        2136,
+        "Daniel dropped the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        3513,
+        "Sandra got the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        4397,
+        "Sandra put down the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   },
+   "16k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.00989967184024863,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=397] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 190.17,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.009912724340101703,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=397] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 202.34,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.010285419969586656,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "[t=397] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 168.15,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.58,
+      "answer_sec_per_query": 0.012296263200696558,
+      "ci95": [
+       0.48,
+       0.6702499999999987
+      ],
+      "example_context": "[t=332] Daniel took the football there. [t=391] Daniel dropped the football. [t=397] Daniel grabbed the football there. [t=446] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.5,
+      "mean_records": 190.17,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.57,
+      "answer_sec_per_query": 0.012123376739909873,
+      "ci95": [
+       0.47975,
+       0.66
+      ],
+      "example_context": "[t=332] Daniel took the football there. [t=391] Daniel dropped the football. [t=397] Daniel grabbed the football there. [t=446] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.45,
+      "mean_records": 202.34,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.53,
+      "answer_sec_per_query": 0.012918425520183519,
+      "ci95": [
+       0.43,
+       0.62
+      ],
+      "example_context": "[t=332] Daniel took the football there. [t=391] Daniel dropped the football. [t=397] Daniel grabbed the football there. [t=446] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.4,
+      "mean_records": 168.15,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.014748513789381832,
+      "ci95": [
+       0.49,
+       0.68
+      ],
+      "example_context": "[t=332] Daniel took the football there. [t=391] Daniel dropped the football. [t=397] Daniel grabbed the football there. [t=446] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.0,
+      "mean_records": 190.17,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.014600717229768634,
+      "ci95": [
+       0.49,
+       0.68
+      ],
+      "example_context": "[t=332] Daniel took the football there. [t=391] Daniel dropped the football. [t=397] Daniel grabbed the football there. [t=446] Daniel went to the kitchen.",
+      "mean_ctx_records": 4.97,
+      "mean_records": 202.34,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.016956727129872888,
+      "ci95": [
+       0.49,
+       0.68
+      ],
+      "example_context": "[t=332] Daniel took the football there. [t=391] Daniel dropped the football. [t=397] Daniel grabbed the football there. [t=446] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.24,
+      "mean_records": 168.15,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "n": 100,
+      "sec_per_query": 0.017375294510275127
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.15,
+      "ci95": [
+       0.08,
+       0.22
+      ],
+      "n": 100,
+      "sec_per_query": 0.013636506849434227
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.15,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "n": 100,
+      "sec_per_query": 0.013956701350398362
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.4711874170298688,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where is the football? ",
+      "records_with_qwords": [
+       [
+        332,
+        "Daniel took the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        391,
+        "Daniel dropped the football.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        397,
+        "Daniel grabbed the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Where is the milk? ",
+      "records_with_qwords": [
+       [
+        290,
+        "Mary grabbed the milk there.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        445,
+        "Mary dropped the milk.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        471,
+        "Sandra got the milk there.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ],
+       [
+        499,
+        "Sandra put down the milk.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        757,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        789,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        528,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        578,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        124,
+        "Daniel got the apple there.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        209,
+        "Daniel dropped the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        339,
+        "Sandra got the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        438,
+        "Sandra put down the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   },
+   "4k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.01001074095023796,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=92] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 60.5,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.010076778279617428,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=92] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 62.29,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.01020000061020255,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=92] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 54.82,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.011779391069430857,
+      "ci95": [
+       0.44,
+       0.6302499999999986
+      ],
+      "example_context": "[t=74] Daniel took the football there. [t=90] Daniel dropped the football. [t=92] Daniel grabbed the football there. [t=108] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.44,
+      "mean_records": 60.5,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.011784331999951974,
+      "ci95": [
+       0.44,
+       0.6302499999999986
+      ],
+      "example_context": "[t=74] Daniel took the football there. [t=90] Daniel dropped the football. [t=92] Daniel grabbed the football there. [t=108] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.45,
+      "mean_records": 62.29,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.011700664419913664,
+      "ci95": [
+       0.45,
+       0.63
+      ],
+      "example_context": "[t=74] Daniel took the football there. [t=90] Daniel dropped the football. [t=92] Daniel grabbed the football there. [t=108] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.37,
+      "mean_records": 54.82,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.013549272289965301,
+      "ci95": [
+       0.5,
+       0.68
+      ],
+      "example_context": "[t=74] Daniel took the football there. [t=90] Daniel dropped the football. [t=92] Daniel grabbed the football there. [t=108] Daniel went to the kitchen.",
+      "mean_ctx_records": 4.72,
+      "mean_records": 60.5,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.013559334399178623,
+      "ci95": [
+       0.5,
+       0.68
+      ],
+      "example_context": "[t=74] Daniel took the football there. [t=90] Daniel dropped the football. [t=92] Daniel grabbed the football there. [t=108] Daniel went to the kitchen.",
+      "mean_ctx_records": 4.76,
+      "mean_records": 62.29,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.013664734710473567,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "example_context": "[t=74] Daniel took the football there. [t=90] Daniel dropped the football. [t=92] Daniel grabbed the football there. [t=108] Daniel went to the kitchen.",
+      "mean_ctx_records": 4.77,
+      "mean_records": 54.82,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.15,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "n": 100,
+      "sec_per_query": 0.01626780880964361
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.15,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "n": 100,
+      "sec_per_query": 0.014220817330060526
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.17,
+      "ci95": [
+       0.1,
+       0.24
+      ],
+      "n": 100,
+      "sec_per_query": 0.015093709719367325
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.13946999652194791,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where is the football? ",
+      "records_with_qwords": [
+       [
+        74,
+        "Daniel took the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        90,
+        "Daniel dropped the football.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        92,
+        "Daniel grabbed the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Where is the milk? ",
+      "records_with_qwords": [
+       [
+        54,
+        "Mary grabbed the milk there.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        87,
+        "Mary dropped the milk.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        94,
+        "Sandra got the milk there.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ],
+       [
+        100,
+        "Sandra put down the milk.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        156,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        164,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        123,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        134,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        50,
+        "Daniel got the apple there.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        80,
+        "Daniel dropped the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        124,
+        "Sandra got the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        158,
+        "Sandra put down the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.01012695774086751,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=1772] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 793.25,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.010119706180412323,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "[t=1772] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 832.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.010763974509900435,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "[t=1772] Daniel grabbed the football there.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 676.88,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.56,
+      "answer_sec_per_query": 0.01424743135110475,
+      "ci95": [
+       0.46,
+       0.66
+      ],
+      "example_context": "[t=1480] Daniel took the football there. [t=1752] Daniel dropped the football. [t=1772] Daniel grabbed the football there. [t=1951] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.69,
+      "mean_records": 793.25,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.55,
+      "answer_sec_per_query": 0.014343808259582147,
+      "ci95": [
+       0.45,
+       0.65
+      ],
+      "example_context": "[t=1480] Daniel took the football there. [t=1752] Daniel dropped the football. [t=1772] Daniel grabbed the football there. [t=1951] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.65,
+      "mean_records": 832.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.013715672589605675,
+      "ci95": [
+       0.44,
+       0.64
+      ],
+      "example_context": "[t=1480] Daniel took the football there. [t=1752] Daniel dropped the football. [t=1772] Daniel grabbed the football there. [t=1951] Daniel went to the kitchen.",
+      "mean_ctx_records": 3.41,
+      "mean_records": 676.88,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.016036454290151596,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "example_context": "[t=1480] Daniel took the football there. [t=1752] Daniel dropped the football. [t=1772] Daniel grabbed the football there. [t=1951] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.21,
+      "mean_records": 793.25,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.016442285879747942,
+      "ci95": [
+       0.49,
+       0.68
+      ],
+      "example_context": "[t=1480] Daniel took the football there. [t=1752] Daniel dropped the football. [t=1772] Daniel grabbed the football there. [t=1951] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.26,
+      "mean_records": 832.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.59,
+      "answer_sec_per_query": 0.02078470670967363,
+      "ci95": [
+       0.49,
+       0.68
+      ],
+      "example_context": "[t=1480] Daniel took the football there. [t=1752] Daniel dropped the football. [t=1772] Daniel grabbed the football there. [t=1951] Daniel went to the kitchen.",
+      "mean_ctx_records": 5.63,
+      "mean_records": 676.88,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "n": 100,
+      "sec_per_query": 0.01667961005005054
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.15,
+      "ci95": [
+       0.08,
+       0.22
+      ],
+      "n": 100,
+      "sec_per_query": 0.013449088700581343
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "n": 100,
+      "sec_per_query": 0.013754460029304028
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 1.863260644719703,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where is the football? ",
+      "records_with_qwords": [
+       [
+        1480,
+        "Daniel took the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        1752,
+        "Daniel dropped the football.",
+        [
+         "daniel",
+         "football"
+        ]
+       ],
+       [
+        1772,
+        "Daniel grabbed the football there.",
+        [
+         "daniel",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Where is the milk? ",
+      "records_with_qwords": [
+       [
+        1024,
+        "Mary grabbed the milk there.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        1758,
+        "Mary dropped the milk.",
+        [
+         "mary",
+         "milk"
+        ]
+       ],
+       [
+        1933,
+        "Sandra got the milk there.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ],
+       [
+        2068,
+        "Sandra put down the milk.",
+        [
+         "sandra",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        2012,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        2111,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        1488,
+        "Mary took the apple there.",
+        [
+         "mary",
+         "apple"
+        ]
+       ],
+       [
+        1607,
+        "Mary left the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where is the apple? ",
+      "records_with_qwords": [
+       [
+        457,
+        "Daniel got the apple there.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        757,
+        "Daniel dropped the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        1250,
+        "Sandra got the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        1603,
+        "Sandra put down the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   }
+  },
+  "qa3": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.3,
+      "answer_sec_per_query": 0.013165565609233454,
+      "ci95": [
+       0.21975000000000003,
+       0.4
+      ],
+      "example_context": "[t=4061] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1560.49,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.28,
+      "answer_sec_per_query": 0.013656651249621064,
+      "ci95": [
+       0.2,
+       0.37
+      ],
+      "example_context": "[t=4061] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1660.8,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.29,
+      "answer_sec_per_query": 0.014120162499602884,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "example_context": "[t=4061] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 1333.68,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.61,
+      "answer_sec_per_query": 0.01698391098063439,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "example_context": "[t=4033] \"And <DW53> and I are decorating the kitchen,\" continued he; \"and Cracker\nis cracking the nuts and polishing the apples; and Pigeon Pretty and\nMiss Mary are dusting the ornaments,--so you see we are all very busy\nindeed. [t=4056] Mary travelled to the bathroom. [t=4061] Mary got the football. [t=4195] Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by. [t=4257] Mary went back to the kitchen. [t=4320] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.93,
+      "mean_records": 1560.49,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.017159685930237173,
+      "ci95": [
+       0.5,
+       0.7
+      ],
+      "example_context": "[t=4033] \"And <DW53> and I are decorating the kitchen,\" continued he; \"and Cracker\nis cracking the nuts and polishing the apples; and Pigeon Pretty and\nMiss Mary are dusting the ornaments,--so you see we are all very busy\nindeed. [t=4056] Mary travelled to the bathroom. [t=4061] Mary got the football. [t=4195] Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by. [t=4257] Mary went back to the kitchen. [t=4320] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.97,
+      "mean_records": 1660.8,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.56,
+      "answer_sec_per_query": 0.01724279730929993,
+      "ci95": [
+       0.46,
+       0.65
+      ],
+      "example_context": "[t=4033] \"And <DW53> and I are decorating the kitchen,\" continued he; \"and Cracker\nis cracking the nuts and polishing the apples; and Pigeon Pretty and\nMiss Mary are dusting the ornaments,--so you see we are all very busy\nindeed. [t=4056] Mary travelled to the bathroom. [t=4061] Mary got the football. [t=4195] Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by. [t=4257] Mary went back to the kitchen. [t=4320] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.81,
+      "mean_records": 1333.68,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.51,
+      "answer_sec_per_query": 0.023762301779352128,
+      "ci95": [
+       0.41,
+       0.6
+      ],
+      "example_context": "[t=3629] Sandra left the football there. [t=3882] Sandra got the football. [t=4011] Sandra discarded the football. [t=4033] \"And <DW53> and I are decorating the kitchen,\" continued he; \"and Cracker\nis cracking the nuts and polishing the apples; and Pigeon Pretty and\nMiss Mary are dusting the ornaments,--so you see we are all very busy\nindeed. [t=4056] Mary travelled to the bathroom. [t=4061] Mary got the football. [t=4195] Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by. [t=4257] Mary went back to the kitchen. [t=4320] Mary journeyed to the garden.",
+      "mean_ctx_records": 8.04,
+      "mean_records": 1560.49,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.52,
+      "answer_sec_per_query": 0.0227625191595871,
+      "ci95": [
+       0.42,
+       0.61
+      ],
+      "example_context": "[t=3629] Sandra left the football there. [t=3882] Sandra got the football. [t=4011] Sandra discarded the football. [t=4033] \"And <DW53> and I are decorating the kitchen,\" continued he; \"and Cracker\nis cracking the nuts and polishing the apples; and Pigeon Pretty and\nMiss Mary are dusting the ornaments,--so you see we are all very busy\nindeed. [t=4056] Mary travelled to the bathroom. [t=4061] Mary got the football. [t=4195] Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by. [t=4257] Mary went back to the kitchen. [t=4320] Mary journeyed to the garden.",
+      "mean_ctx_records": 8.06,
+      "mean_records": 1660.8,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.53,
+      "answer_sec_per_query": 0.0283350641396828,
+      "ci95": [
+       0.43,
+       0.63
+      ],
+      "example_context": "[t=3629] Sandra left the football there. [t=3882] Sandra got the football. [t=4011] Sandra discarded the football. [t=4033] \"And <DW53> and I are decorating the kitchen,\" continued he; \"and Cracker\nis cracking the nuts and polishing the apples; and Pigeon Pretty and\nMiss Mary are dusting the ornaments,--so you see we are all very busy\nindeed. [t=4056] Mary travelled to the bathroom. [t=4061] Mary got the football. [t=4195] Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by. [t=4257] Mary went back to the kitchen. [t=4320] Mary journeyed to the garden.",
+      "mean_ctx_records": 8.32,
+      "mean_records": 1333.68,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.24,
+      "ci95": [
+       0.16,
+       0.33
+      ],
+      "n": 100,
+      "sec_per_query": 0.01605116287013516
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.22,
+      "ci95": [
+       0.14,
+       0.3
+      ],
+      "n": 100,
+      "sec_per_query": 0.015324814490741119
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.14,
+      "ci95": [
+       0.08,
+       0.21
+      ],
+      "n": 100,
+      "sec_per_query": 0.015747651150450112
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 3.816571167103248,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the garden? ",
+      "records_with_qwords": [
+       [
+        3176,
+        "John dropped the football.",
+        [
+         "john",
+         "football"
+        ]
+       ],
+       [
+        3527,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        3629,
+        "Sandra left the football there.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        3882,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        4011,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        4061,
+        "Mary got the football.",
+        [
+         "mary",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the kitchen? ",
+      "records_with_qwords": [
+       [
+        3541,
+        "If you wanted an apple pie and there was nothing in sight\nbut a cart-wheel he would change it into an apple pie for you.",
+        [
+         "apple"
+        ]
+       ],
+       [
+        3640,
+        "Sandra picked up the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        3949,
+        "Sandra dropped the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        4080,
+        "Sandra grabbed the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        4082,
+        "Sandra put down the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        4380,
+        "Mary took the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the garden? ",
+      "records_with_qwords": [
+       [
+        474,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        652,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        1177,
+        "Here it\nis occasionally agitated by raking from the lower to the upper end of\nthe trough as the current carries it downw",
+        [
+         "apple"
+        ]
+       ],
+       [
+        1179,
+        "The value of the apple seeds thus saved is\nsufficient to pay the daily wages of all the hands employed in the whole\nesta",
+        [
+         "apple"
+        ]
+       ],
+       [
+        2022,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        3349,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the bedroom? ",
+      "records_with_qwords": [
+       [
+        611,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        806,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        2389,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        3782,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the bathroom? ",
+      "records_with_qwords": [
+       [
+        3894,
+        "Sandra left the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        4024,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        4270,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        4453,
+        "Mary picked up the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        4484,
+        "Mary discarded the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        4678,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   },
+   "16k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.27,
+      "answer_sec_per_query": 0.01275116682983935,
+      "ci95": [
+       0.19,
+       0.3602499999999986
+      ],
+      "example_context": "[t=482] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 240.98,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.27,
+      "answer_sec_per_query": 0.012759957669768483,
+      "ci95": [
+       0.19,
+       0.3602499999999986
+      ],
+      "example_context": "[t=482] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 250.07,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.29,
+      "answer_sec_per_query": 0.013077419799519702,
+      "ci95": [
+       0.21,
+       0.39
+      ],
+      "example_context": "[t=482] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 217.9,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.63,
+      "answer_sec_per_query": 0.015510417149635032,
+      "ci95": [
+       0.53,
+       0.73
+      ],
+      "example_context": "[t=287] Mary went to the office. [t=481] Mary travelled to the bathroom. [t=482] Mary got the football. [t=512] Mary went back to the kitchen. [t=525] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.79,
+      "mean_records": 240.98,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.63,
+      "answer_sec_per_query": 0.015430236209649593,
+      "ci95": [
+       0.53,
+       0.73
+      ],
+      "example_context": "[t=287] Mary went to the office. [t=481] Mary travelled to the bathroom. [t=482] Mary got the football. [t=512] Mary went back to the kitchen. [t=525] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.86,
+      "mean_records": 250.07,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.62,
+      "answer_sec_per_query": 0.01569472358911298,
+      "ci95": [
+       0.52,
+       0.72
+      ],
+      "example_context": "[t=287] Mary went to the office. [t=481] Mary travelled to the bathroom. [t=482] Mary got the football. [t=512] Mary went back to the kitchen. [t=525] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.7,
+      "mean_records": 217.9,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.017858556509017944,
+      "ci95": [
+       0.44,
+       0.63
+      ],
+      "example_context": "[t=287] Mary went to the office. [t=406] Sandra left the football there. [t=452] Sandra got the football. [t=474] Sandra discarded the football. [t=481] Mary travelled to the bathroom. [t=482] Mary got the football. [t=512] Mary went back to the kitchen. [t=525] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.44,
+      "mean_records": 240.98,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.018224473040318115,
+      "ci95": [
+       0.44,
+       0.63
+      ],
+      "example_context": "[t=287] Mary went to the office. [t=406] Sandra left the football there. [t=452] Sandra got the football. [t=474] Sandra discarded the football. [t=481] Mary travelled to the bathroom. [t=482] Mary got the football. [t=512] Mary went back to the kitchen. [t=525] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.56,
+      "mean_records": 250.07,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.018956014579162003,
+      "ci95": [
+       0.44,
+       0.63
+      ],
+      "example_context": "[t=287] Mary went to the office. [t=406] Sandra left the football there. [t=452] Sandra got the football. [t=474] Sandra discarded the football. [t=481] Mary travelled to the bathroom. [t=482] Mary got the football. [t=512] Mary went back to the kitchen. [t=525] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.5,
+      "mean_records": 217.9,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.22,
+      "ci95": [
+       0.15,
+       0.3
+      ],
+      "n": 100,
+      "sec_per_query": 0.01640970755950548
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.19,
+      "ci95": [
+       0.12,
+       0.27
+      ],
+      "n": 100,
+      "sec_per_query": 0.014694162500090898
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.14,
+      "ci95": [
+       0.08,
+       0.21
+      ],
+      "n": 100,
+      "sec_per_query": 0.015388888389570638
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.47291295261704364,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the garden? ",
+      "records_with_qwords": [
+       [
+        334,
+        "John dropped the football.",
+        [
+         "john",
+         "football"
+        ]
+       ],
+       [
+        395,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        406,
+        "Sandra left the football there.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        452,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        474,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        482,
+        "Mary got the football.",
+        [
+         "mary",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the kitchen? ",
+      "records_with_qwords": [
+       [
+        325,
+        "Sandra dropped the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        395,
+        "Sandra picked up the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        437,
+        "Sandra dropped the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        455,
+        "Sandra grabbed the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        456,
+        "Sandra put down the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        503,
+        "Mary took the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the garden? ",
+      "records_with_qwords": [
+       [
+        93,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        126,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        413,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        649,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the bedroom? ",
+      "records_with_qwords": [
+       [
+        97,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        127,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        414,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        622,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the bathroom? ",
+      "records_with_qwords": [
+       [
+        617,
+        "Sandra left the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        639,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        680,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        712,
+        "Mary picked up the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        717,
+        "Mary discarded the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        748,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   },
+   "4k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.27,
+      "answer_sec_per_query": 0.012935506829526275,
+      "ci95": [
+       0.19,
+       0.36
+      ],
+      "example_context": "[t=132] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 94.29,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.27,
+      "answer_sec_per_query": 0.012940878480440005,
+      "ci95": [
+       0.19,
+       0.36
+      ],
+      "example_context": "[t=132] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 96.26,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.27,
+      "answer_sec_per_query": 0.013094485610490664,
+      "ci95": [
+       0.19,
+       0.36
+      ],
+      "example_context": "[t=132] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 89.87,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.65,
+      "answer_sec_per_query": 0.014839270350057632,
+      "ci95": [
+       0.56,
+       0.74
+      ],
+      "example_context": "[t=83] Mary went to the office. [t=131] Mary travelled to the bathroom. [t=132] Mary got the football. [t=140] Mary went back to the kitchen. [t=143] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.73,
+      "mean_records": 94.29,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.64,
+      "answer_sec_per_query": 0.014833768060198054,
+      "ci95": [
+       0.55,
+       0.73
+      ],
+      "example_context": "[t=83] Mary went to the office. [t=131] Mary travelled to the bathroom. [t=132] Mary got the football. [t=140] Mary went back to the kitchen. [t=143] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.75,
+      "mean_records": 96.26,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.63,
+      "answer_sec_per_query": 0.014888204949675127,
+      "ci95": [
+       0.54,
+       0.72
+      ],
+      "example_context": "[t=83] Mary went to the office. [t=131] Mary travelled to the bathroom. [t=132] Mary got the football. [t=140] Mary went back to the kitchen. [t=143] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.53,
+      "mean_records": 89.87,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.57,
+      "answer_sec_per_query": 0.017730882869800554,
+      "ci95": [
+       0.47,
+       0.66
+      ],
+      "example_context": "[t=83] Mary went to the office. [t=110] Sandra left the football there. [t=124] Sandra got the football. [t=129] Sandra discarded the football. [t=131] Mary travelled to the bathroom. [t=132] Mary got the football. [t=140] Mary went back to the kitchen. [t=143] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.49,
+      "mean_records": 94.29,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.57,
+      "answer_sec_per_query": 0.018105517610674724,
+      "ci95": [
+       0.47,
+       0.66
+      ],
+      "example_context": "[t=83] Mary went to the office. [t=110] Sandra left the football there. [t=124] Sandra got the football. [t=129] Sandra discarded the football. [t=131] Mary travelled to the bathroom. [t=132] Mary got the football. [t=140] Mary went back to the kitchen. [t=143] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.58,
+      "mean_records": 96.26,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.56,
+      "answer_sec_per_query": 0.01785875598085113,
+      "ci95": [
+       0.46,
+       0.65
+      ],
+      "example_context": "[t=83] Mary went to the office. [t=110] Sandra left the football there. [t=124] Sandra got the football. [t=129] Sandra discarded the football. [t=131] Mary travelled to the bathroom. [t=132] Mary got the football. [t=140] Mary went back to the kitchen. [t=143] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.46,
+      "mean_records": 89.87,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.23,
+      "ci95": [
+       0.15,
+       0.32
+      ],
+      "n": 100,
+      "sec_per_query": 0.01608976808958687
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.24,
+      "ci95": [
+       0.16,
+       0.33
+      ],
+      "n": 100,
+      "sec_per_query": 0.014535968189593405
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.19,
+      "ci95": [
+       0.12,
+       0.27
+      ],
+      "n": 100,
+      "sec_per_query": 0.015008581950096413
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.1427671853103675,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the garden? ",
+      "records_with_qwords": [
+       [
+        95,
+        "John dropped the football.",
+        [
+         "john",
+         "football"
+        ]
+       ],
+       [
+        106,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        110,
+        "Sandra left the football there.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        124,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        129,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        132,
+        "Mary got the football.",
+        [
+         "mary",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the kitchen? ",
+      "records_with_qwords": [
+       [
+        167,
+        "Sandra dropped the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        196,
+        "Sandra picked up the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        212,
+        "Sandra dropped the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        218,
+        "Sandra grabbed the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        219,
+        "Sandra put down the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        234,
+        "Mary took the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the garden? ",
+      "records_with_qwords": [
+       [
+        26,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        36,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        113,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        189,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the bedroom? ",
+      "records_with_qwords": [
+       [
+        30,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        38,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        113,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        173,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the bathroom? ",
+      "records_with_qwords": [
+       [
+        175,
+        "Sandra left the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        182,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        193,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        202,
+        "Mary picked up the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        204,
+        "Mary discarded the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        213,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.28,
+      "answer_sec_per_query": 0.012738609550287947,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "example_context": "[t=1940] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 778.41,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.28,
+      "answer_sec_per_query": 0.01306541705969721,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "example_context": "[t=1940] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 832.52,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.28,
+      "answer_sec_per_query": 0.013192498689750209,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "example_context": "[t=1940] Mary got the football.",
+      "mean_ctx_records": 1.0,
+      "mean_records": 671.95,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.01564494370017201,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "example_context": "[t=1386] Mary went to the office. [t=1936] Mary travelled to the bathroom. [t=1940] Mary got the football. [t=2034] Mary went back to the kitchen. [t=2066] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.85,
+      "mean_records": 778.41,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.01595677430042997,
+      "ci95": [
+       0.5,
+       0.7
+      ],
+      "example_context": "[t=1386] Mary went to the office. [t=1936] Mary travelled to the bathroom. [t=1940] Mary got the football. [t=2034] Mary went back to the kitchen. [t=2066] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.87,
+      "mean_records": 832.52,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.015915643490152433,
+      "ci95": [
+       0.5,
+       0.7
+      ],
+      "example_context": "[t=1386] Mary went to the office. [t=1936] Mary travelled to the bathroom. [t=1940] Mary got the football. [t=2034] Mary went back to the kitchen. [t=2066] Mary journeyed to the garden.",
+      "mean_ctx_records": 3.71,
+      "mean_records": 671.95,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.021055387769592926,
+      "ci95": [
+       0.44,
+       0.63
+      ],
+      "example_context": "[t=1386] Mary went to the office. [t=1722] Sandra left the football there. [t=1846] Sandra got the football. [t=1911] Sandra discarded the football. [t=1936] Mary travelled to the bathroom. [t=1940] Mary got the football. [t=2034] Mary went back to the kitchen. [t=2066] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.77,
+      "mean_records": 778.41,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.02214346781023778,
+      "ci95": [
+       0.44,
+       0.64
+      ],
+      "example_context": "[t=1386] Mary went to the office. [t=1722] Sandra left the football there. [t=1846] Sandra got the football. [t=1911] Sandra discarded the football. [t=1936] Mary travelled to the bathroom. [t=1940] Mary got the football. [t=2034] Mary went back to the kitchen. [t=2066] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.98,
+      "mean_records": 832.52,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.54,
+      "answer_sec_per_query": 0.022228067399701103,
+      "ci95": [
+       0.44,
+       0.63
+      ],
+      "example_context": "[t=1386] Mary went to the office. [t=1722] Sandra left the football there. [t=1846] Sandra got the football. [t=1911] Sandra discarded the football. [t=1936] Mary travelled to the bathroom. [t=1940] Mary got the football. [t=2034] Mary went back to the kitchen. [t=2066] Mary journeyed to the garden.",
+      "mean_ctx_records": 7.81,
+      "mean_records": 671.95,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.23,
+      "ci95": [
+       0.15,
+       0.32
+      ],
+      "n": 100,
+      "sec_per_query": 0.015877464399673046
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.24,
+      "ci95": [
+       0.16,
+       0.33
+      ],
+      "n": 100,
+      "sec_per_query": 0.015195528219919652
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.24
+      ],
+      "n": 100,
+      "sec_per_query": 0.01566865943954326
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 1.878976951702498,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the garden? ",
+      "records_with_qwords": [
+       [
+        1521,
+        "John dropped the football.",
+        [
+         "john",
+         "football"
+        ]
+       ],
+       [
+        1681,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        1722,
+        "Sandra left the football there.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        1846,
+        "Sandra got the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        1911,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        1940,
+        "Mary got the football.",
+        [
+         "mary",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the kitchen? ",
+      "records_with_qwords": [
+       [
+        1346,
+        "Sandra dropped the apple there.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        1606,
+        "Sandra picked up the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        1759,
+        "Sandra dropped the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        1815,
+        "Sandra grabbed the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        1817,
+        "Sandra put down the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        1958,
+        "Mary took the apple.",
+        [
+         "mary",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "bathroom"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the garden? ",
+      "records_with_qwords": [
+       [
+        432,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        582,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        1890,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        3063,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "apple"
+      ],
+      "question": "Where was the apple before the bedroom? ",
+      "records_with_qwords": [
+       [
+        534,
+        "Daniel took the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        675,
+        "Daniel discarded the apple.",
+        [
+         "daniel",
+         "apple"
+        ]
+       ],
+       [
+        1986,
+        "Sandra took the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ],
+       [
+        2969,
+        "Sandra left the apple.",
+        [
+         "sandra",
+         "apple"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "football"
+      ],
+      "question": "Where was the football before the bathroom? ",
+      "records_with_qwords": [
+       [
+        2298,
+        "Sandra left the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        2380,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        2535,
+        "Sandra discarded the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ],
+       [
+        2645,
+        "Mary picked up the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        2663,
+        "Mary discarded the football there.",
+        [
+         "mary",
+         "football"
+        ]
+       ],
+       [
+        2784,
+        "Sandra took the football.",
+        [
+         "sandra",
+         "football"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "kitchen"
+     }
+    ]
+   }
+  },
+  "qa4": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.007259864689549431,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.08,
+      "mean_records": 1426.09,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.0076633493800181895,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.17,
+      "mean_records": 1524.66,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006766981889959425,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 1206.37,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.0072525501099880785,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.08,
+      "mean_records": 1426.09,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.00828698783996515,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.2,
+      "mean_records": 1524.66,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006771581700304523,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 1206.37,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.007620670950273052,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.13,
+      "mean_records": 1426.09,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.008901781670283526,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.31,
+      "mean_records": 1524.66,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.0067662601405754684,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 1206.37,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.23,
+      "ci95": [
+       0.15,
+       0.31
+      ],
+      "n": 100,
+      "sec_per_query": 0.012514036800712346
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.24,
+      "ci95": [
+       0.16,
+       0.33
+      ],
+      "n": 100,
+      "sec_per_query": 0.01282676874077879
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.23,
+      "ci95": [
+       0.15,
+       0.31
+      ],
+      "n": 100,
+      "sec_per_query": 0.013096605850150808
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 3.7807676448719576,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "bathroom",
+       "east"
+      ],
+      "question": "What is the bathroom east of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "south",
+       "office"
+      ],
+      "question": "What is south of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "north",
+       "office"
+      ],
+      "question": "What is north of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bedroom",
+       "north"
+      ],
+      "question": "What is the bedroom north of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bathroom",
+       "south"
+      ],
+      "question": "What is the bathroom south of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     }
+    ]
+   },
+   "16k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.00690490148961544,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 198.12,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006962991659529507,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 206.56,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006762919870670885,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 163.53,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006899424940347672,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 198.12,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006969321399228647,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 206.56,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.00675236635026522,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 163.53,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.00689971407991834,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 198.12,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.007208606160711497,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.05,
+      "mean_records": 206.56,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006767041669227183,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 163.53,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.24,
+      "ci95": [
+       0.16,
+       0.33
+      ],
+      "n": 100,
+      "sec_per_query": 0.014197954229312018
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.29,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "n": 100,
+      "sec_per_query": 0.01299222230911255
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.27,
+      "ci95": [
+       0.19,
+       0.36
+      ],
+      "n": 100,
+      "sec_per_query": 0.013705670550698414
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.46916051396052355,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "bathroom",
+       "east"
+      ],
+      "question": "What is the bathroom east of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "south",
+       "office"
+      ],
+      "question": "What is south of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "north",
+       "office"
+      ],
+      "question": "What is north of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bedroom",
+       "north"
+      ],
+      "question": "What is the bedroom north of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bathroom",
+       "south"
+      ],
+      "question": "What is the bathroom south of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     }
+    ]
+   },
+   "4k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006907828460680321,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 45.24,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006862161429598928,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.01,
+      "mean_records": 46.79,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006756871950346977,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 39.54,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.0069032102206256244,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 45.24,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006862609359668568,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.01,
+      "mean_records": 46.79,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006747595689957962,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 39.54,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006900701930280775,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.02,
+      "mean_records": 45.24,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006864999530371278,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.01,
+      "mean_records": 46.79,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006755365520948544,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 39.54,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.26,
+      "ci95": [
+       0.17975000000000002,
+       0.35
+      ],
+      "n": 100,
+      "sec_per_query": 0.014156698449514806
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.26,
+      "ci95": [
+       0.17,
+       0.35
+      ],
+      "n": 100,
+      "sec_per_query": 0.013485979050165043
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.26,
+      "ci95": [
+       0.17975000000000002,
+       0.35
+      ],
+      "n": 100,
+      "sec_per_query": 0.013927451568888501
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 0.13511693724663928,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "bathroom",
+       "east"
+      ],
+      "question": "What is the bathroom east of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "south",
+       "office"
+      ],
+      "question": "What is south of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "north",
+       "office"
+      ],
+      "question": "What is north of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bedroom",
+       "north"
+      ],
+      "question": "What is the bedroom north of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bathroom",
+       "south"
+      ],
+      "question": "What is the bathroom south of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     }
+    ]
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.007449727060738951,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.07,
+      "mean_records": 734.62,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.007882229790557176,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.12,
+      "mean_records": 788.1,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006746041279984638,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 622.93,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.008736575728980824,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.18,
+      "mean_records": 734.62,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.009241846710210666,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.24,
+      "mean_records": 788.1,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006747984320390969,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 622.93,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.01180251958896406,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.4,
+      "mean_records": 734.62,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.15,
+      "answer_sec_per_query": 0.012175201509380713,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.48,
+      "mean_records": 788.1,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.16,
+      "answer_sec_per_query": 0.006740809589391574,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "example_context": "",
+      "mean_ctx_records": 0.0,
+      "mean_records": 622.93,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.29,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "n": 100,
+      "sec_per_query": 0.01305220392998308
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.25,
+      "ci95": [
+       0.17,
+       0.34
+      ],
+      "n": 100,
+      "sec_per_query": 0.012394743739860133
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.24,
+      "ci95": [
+       0.16,
+       0.33
+      ],
+      "n": 100,
+      "sec_per_query": 0.013284079630393535
+     }
+    },
+    "labels": [
+     "bathroom",
+     "bedroom",
+     "garden",
+     "hallway",
+     "kitchen",
+     "office"
+    ],
+    "mem_sec_per_doc": 1.8947225041815545,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "bathroom",
+       "east"
+      ],
+      "question": "What is the bathroom east of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "bedroom"
+     },
+     {
+      "qkeys": [
+       "south",
+       "office"
+      ],
+      "question": "What is south of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "kitchen"
+     },
+     {
+      "qkeys": [
+       "north",
+       "office"
+      ],
+      "question": "What is north of the office?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bedroom",
+       "north"
+      ],
+      "question": "What is the bedroom north of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     },
+     {
+      "qkeys": [
+       "bathroom",
+       "south"
+      ],
+      "question": "What is the bathroom south of?",
+      "records_with_qwords": [],
+      "support": null,
+      "target": "garden"
+     }
+    ]
+   }
+  },
+  "qa5": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.75,
+      "answer_sec_per_query": 0.01117004537023604,
+      "ci95": [
+       0.66,
+       0.83
+      ],
+      "example_context": "[t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.27,
+      "mean_records": 1522.43,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.77,
+      "answer_sec_per_query": 0.011026462709996849,
+      "ci95": [
+       0.69,
+       0.85
+      ],
+      "example_context": "[t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.27,
+      "mean_records": 1614.85,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.73,
+      "answer_sec_per_query": 0.011197415160713717,
+      "ci95": [
+       0.64,
+       0.81
+      ],
+      "example_context": "[t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.28,
+      "mean_records": 1263.78,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.61,
+      "answer_sec_per_query": 0.015551825939910486,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "example_context": "[t=3385] Fred handed the football to Jeff. [t=3500] Jeff handed the football to Fred. [t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.82,
+      "mean_records": 1522.43,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.63,
+      "answer_sec_per_query": 0.013863041090080514,
+      "ci95": [
+       0.5397500000000001,
+       0.72
+      ],
+      "example_context": "[t=3385] Fred handed the football to Jeff. [t=3500] Jeff handed the football to Fred. [t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.7,
+      "mean_records": 1614.85,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.6,
+      "answer_sec_per_query": 0.014833026679698378,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "example_context": "[t=3385] Fred handed the football to Jeff. [t=3500] Jeff handed the football to Fred. [t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.75,
+      "mean_records": 1263.78,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.63,
+      "answer_sec_per_query": 0.02434391953982413,
+      "ci95": [
+       0.54,
+       0.72
+      ],
+      "example_context": "[t=3275] Jeff gave the football to Fred. [t=3385] Fred handed the football to Jeff. [t=3500] Jeff handed the football to Fred. [t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 7.32,
+      "mean_records": 1522.43,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.63,
+      "answer_sec_per_query": 0.022235777830937876,
+      "ci95": [
+       0.54,
+       0.72
+      ],
+      "example_context": "[t=3275] Jeff gave the football to Fred. [t=3385] Fred handed the football to Jeff. [t=3500] Jeff handed the football to Fred. [t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 7.24,
+      "mean_records": 1614.85,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.66,
+      "answer_sec_per_query": 0.02355843976023607,
+      "ci95": [
+       0.57,
+       0.75
+      ],
+      "example_context": "[t=3275] Jeff gave the football to Fred. [t=3385] Fred handed the football to Jeff. [t=3500] Jeff handed the football to Fred. [t=3746] Fred gave the football to Jeff.",
+      "mean_ctx_records": 7.53,
+      "mean_records": 1263.78,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.64,
+      "ci95": [
+       0.55,
+       0.74
+      ],
+      "n": 100,
+      "sec_per_query": 0.013622231369372457
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "n": 100,
+      "sec_per_query": 0.013419794269138948
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.67,
+      "ci95": [
+       0.57,
+       0.76
+      ],
+      "n": 100,
+      "sec_per_query": 0.01416728151962161
+     }
+    },
+    "labels": [
+     "Bill",
+     "Fred",
+     "Jeff",
+     "Mary",
+     "apple",
+     "football",
+     "milk"
+    ],
+    "mem_sec_per_doc": 3.807883763103746,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "fred",
+       "football"
+      ],
+      "question": "Who did Fred give the football to? ",
+      "records_with_qwords": [
+       [
+        565,
+        "Fred picked up the football there.",
+        [
+         "fred",
+         "football"
+        ]
+       ],
+       [
+        2021,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        3275,
+        "Jeff gave the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        3385,
+        "Fred handed the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        3500,
+        "Jeff handed the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        3746,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "milk"
+      ],
+      "question": "Who did Mary give the milk to? ",
+      "records_with_qwords": [
+       [
+        3330,
+        "Mary moved to the garden.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        4147,
+        "Mary gave the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ],
+       [
+        4602,
+        "Bill handed the milk to Mary.",
+        [
+         "bill",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        4605,
+        "Mary passed the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ],
+       [
+        5868,
+        "How gracefully Miss Mary courtesied to\nthe stately hawk; and how jealous the crow was of this rival, who stood\non one le",
+        [
+         "mary",
+         "crow"
+        ]
+       ],
+       [
+        5895,
+        "Mary, and Pigeon Pretty, let me stroke your soft\nfeathers once more, by way of 'good-by.",
+        [
+         "mary",
+         "p",
+         "on"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Bill"
+     },
+     {
+      "qkeys": [
+       "fred",
+       "milk"
+      ],
+      "question": "Who did Fred give the milk to? ",
+      "records_with_qwords": [
+       [
+        3293,
+        "Fred dropped the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        3500,
+        "Fred grabbed the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        3779,
+        "Fred put down the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        4541,
+        "Fred picked up the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        4601,
+        "Fred gave the milk to Jeff.",
+        [
+         "fred",
+         "milk",
+         "jeff"
+        ]
+       ],
+       [
+        4775,
+        "Fred went back to the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "fred"
+      ],
+      "question": "What did Mary give to Fred? ",
+      "records_with_qwords": [
+       [
+        1673,
+        "Mary moved to the kitchen.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1999,
+        "Fred went to the office.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        2174,
+        "Fred went to the kitchen.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        2846,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        3187,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        3508,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "milk"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Who received the milk? ",
+      "records_with_qwords": [
+       [
+        3891,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        3918,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        4211,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        4720,
+        "Jeff got the milk there.",
+        [
+         "jeff",
+         "milk"
+        ]
+       ],
+       [
+        5049,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        5865,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Fred"
+     }
+    ]
+   },
+   "16k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.79,
+      "answer_sec_per_query": 0.010951299519510939,
+      "ci95": [
+       0.71,
+       0.87
+      ],
+      "example_context": "[t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.28,
+      "mean_records": 211.12,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.79,
+      "answer_sec_per_query": 0.01081209625932388,
+      "ci95": [
+       0.71,
+       0.87
+      ],
+      "example_context": "[t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.28,
+      "mean_records": 221.44,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.78,
+      "answer_sec_per_query": 0.010973907200386747,
+      "ci95": [
+       0.7,
+       0.86
+      ],
+      "example_context": "[t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.28,
+      "mean_records": 186.19,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.69,
+      "answer_sec_per_query": 0.012702621530042962,
+      "ci95": [
+       0.6,
+       0.78
+      ],
+      "example_context": "[t=294] Fred handed the football to Jeff. [t=304] Jeff handed the football to Fred. [t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.48,
+      "mean_records": 211.12,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.7,
+      "answer_sec_per_query": 0.012861962259048596,
+      "ci95": [
+       0.61,
+       0.79
+      ],
+      "example_context": "[t=294] Fred handed the football to Jeff. [t=304] Jeff handed the football to Fred. [t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.5,
+      "mean_records": 221.44,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.69,
+      "answer_sec_per_query": 0.012877458550501614,
+      "ci95": [
+       0.6,
+       0.78
+      ],
+      "example_context": "[t=294] Fred handed the football to Jeff. [t=304] Jeff handed the football to Fred. [t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.52,
+      "mean_records": 186.19,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.7,
+      "answer_sec_per_query": 0.015892287839669735,
+      "ci95": [
+       0.61,
+       0.79
+      ],
+      "example_context": "[t=285] Jeff gave the football to Fred. [t=294] Fred handed the football to Jeff. [t=304] Jeff handed the football to Fred. [t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.36,
+      "mean_records": 211.12,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.69,
+      "answer_sec_per_query": 0.015359575849724933,
+      "ci95": [
+       0.6,
+       0.78
+      ],
+      "example_context": "[t=285] Jeff gave the football to Fred. [t=294] Fred handed the football to Jeff. [t=304] Jeff handed the football to Fred. [t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.32,
+      "mean_records": 221.44,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.68,
+      "answer_sec_per_query": 0.01611850707093254,
+      "ci95": [
+       0.59,
+       0.77
+      ],
+      "example_context": "[t=285] Jeff gave the football to Fred. [t=294] Fred handed the football to Jeff. [t=304] Jeff handed the football to Fred. [t=327] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.44,
+      "mean_records": 186.19,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.63,
+      "ci95": [
+       0.54,
+       0.72
+      ],
+      "n": 100,
+      "sec_per_query": 0.014039865840459242
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.64,
+      "ci95": [
+       0.54,
+       0.74
+      ],
+      "n": 100,
+      "sec_per_query": 0.013036673250608146
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.64,
+      "ci95": [
+       0.55,
+       0.73
+      ],
+      "n": 100,
+      "sec_per_query": 0.013376808949979023
+     }
+    },
+    "labels": [
+     "Bill",
+     "Fred",
+     "Jeff",
+     "Mary",
+     "apple",
+     "football",
+     "milk"
+    ],
+    "mem_sec_per_doc": 0.48218859082553533,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "fred",
+       "football"
+      ],
+      "question": "Who did Fred give the football to? ",
+      "records_with_qwords": [
+       [
+        47,
+        "Fred picked up the football there.",
+        [
+         "fred",
+         "football"
+        ]
+       ],
+       [
+        177,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        285,
+        "Jeff gave the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        294,
+        "Fred handed the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        304,
+        "Jeff handed the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        327,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "milk"
+      ],
+      "question": "Who did Mary give the milk to? ",
+      "records_with_qwords": [
+       [
+        315,
+        "Fred got the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        382,
+        "Fred handed the milk to Mary.",
+        [
+         "fred",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        392,
+        "Mary moved to the garden.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        491,
+        "Mary gave the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ],
+       [
+        545,
+        "Bill handed the milk to Mary.",
+        [
+         "bill",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        546,
+        "Mary passed the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Bill"
+     },
+     {
+      "qkeys": [
+       "fred",
+       "milk"
+      ],
+      "question": "Who did Fred give the milk to? ",
+      "records_with_qwords": [
+       [
+        386,
+        "Fred dropped the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        410,
+        "Fred grabbed the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        446,
+        "Fred put down the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        539,
+        "Fred picked up the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        547,
+        "Fred gave the milk to Jeff.",
+        [
+         "fred",
+         "milk",
+         "jeff"
+        ]
+       ],
+       [
+        567,
+        "Fred went back to the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "fred"
+      ],
+      "question": "What did Mary give to Fred? ",
+      "records_with_qwords": [
+       [
+        336,
+        "Mary moved to the kitchen.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        399,
+        "Fred went to the office.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        436,
+        "Fred went to the kitchen.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        585,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        655,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        725,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "milk"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Who received the milk? ",
+      "records_with_qwords": [
+       [
+        513,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        517,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        558,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        621,
+        "Jeff got the milk there.",
+        [
+         "jeff",
+         "milk"
+        ]
+       ],
+       [
+        660,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        761,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Fred"
+     }
+    ]
+   },
+   "4k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.77,
+      "answer_sec_per_query": 0.010721483170054853,
+      "ci95": [
+       0.69,
+       0.85
+      ],
+      "example_context": "[t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.26,
+      "mean_records": 63.8,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.77,
+      "answer_sec_per_query": 0.010712390060070902,
+      "ci95": [
+       0.69,
+       0.85
+      ],
+      "example_context": "[t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.25,
+      "mean_records": 66.84,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.78,
+      "answer_sec_per_query": 0.010755885610124097,
+      "ci95": [
+       0.7,
+       0.86
+      ],
+      "example_context": "[t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.26,
+      "mean_records": 59.28,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.73,
+      "answer_sec_per_query": 0.011983274449594319,
+      "ci95": [
+       0.64,
+       0.82
+      ],
+      "example_context": "[t=113] Fred handed the football to Jeff. [t=117] Jeff handed the football to Fred. [t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.43,
+      "mean_records": 63.8,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.73,
+      "answer_sec_per_query": 0.01189358529052697,
+      "ci95": [
+       0.64,
+       0.82
+      ],
+      "example_context": "[t=113] Fred handed the football to Jeff. [t=117] Jeff handed the football to Fred. [t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.38,
+      "mean_records": 66.84,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.73,
+      "answer_sec_per_query": 0.012094075389904901,
+      "ci95": [
+       0.64,
+       0.82
+      ],
+      "example_context": "[t=113] Fred handed the football to Jeff. [t=117] Jeff handed the football to Fred. [t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.42,
+      "mean_records": 59.28,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.68,
+      "answer_sec_per_query": 0.014025781089439988,
+      "ci95": [
+       0.59,
+       0.77
+      ],
+      "example_context": "[t=108] Jeff gave the football to Fred. [t=113] Fred handed the football to Jeff. [t=117] Jeff handed the football to Fred. [t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.21,
+      "mean_records": 63.8,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.68,
+      "answer_sec_per_query": 0.014035697940271348,
+      "ci95": [
+       0.59,
+       0.77
+      ],
+      "example_context": "[t=108] Jeff gave the football to Fred. [t=113] Fred handed the football to Jeff. [t=117] Jeff handed the football to Fred. [t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.2,
+      "mean_records": 66.84,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.69,
+      "answer_sec_per_query": 0.014232265099417418,
+      "ci95": [
+       0.6,
+       0.78
+      ],
+      "example_context": "[t=108] Jeff gave the football to Fred. [t=113] Fred handed the football to Jeff. [t=117] Jeff handed the football to Fred. [t=127] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.14,
+      "mean_records": 59.28,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.65,
+      "ci95": [
+       0.55,
+       0.74
+      ],
+      "n": 100,
+      "sec_per_query": 0.014021655881078914
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.63,
+      "ci95": [
+       0.54,
+       0.72
+      ],
+      "n": 100,
+      "sec_per_query": 0.012861125499475747
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.67,
+      "ci95": [
+       0.57,
+       0.76
+      ],
+      "n": 100,
+      "sec_per_query": 0.013564039740012959
+     }
+    },
+    "labels": [
+     "Bill",
+     "Fred",
+     "Jeff",
+     "Mary",
+     "apple",
+     "football",
+     "milk"
+    ],
+    "mem_sec_per_doc": 0.13914660320151598,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "fred",
+       "football"
+      ],
+      "question": "Who did Fred give the football to? ",
+      "records_with_qwords": [
+       [
+        20,
+        "Fred picked up the football there.",
+        [
+         "fred",
+         "football"
+        ]
+       ],
+       [
+        66,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        108,
+        "Jeff gave the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        113,
+        "Fred handed the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        117,
+        "Jeff handed the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        127,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "milk"
+      ],
+      "question": "Who did Mary give the milk to? ",
+      "records_with_qwords": [
+       [
+        56,
+        "Fred handed the milk to Mary.",
+        [
+         "fred",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        57,
+        "To two other equally adventurous female minds they\nwill impart this newest find; after that you will see the four dining",
+        [
+         "aunt mary"
+        ]
+       ],
+       [
+        58,
+        "Mary moved to the garden.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        76,
+        "Mary gave the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ],
+       [
+        87,
+        "Bill handed the milk to Mary.",
+        [
+         "bill",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        88,
+        "Mary passed the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Bill"
+     },
+     {
+      "qkeys": [
+       "fred",
+       "milk"
+      ],
+      "question": "Who did Fred give the milk to? ",
+      "records_with_qwords": [
+       [
+        116,
+        "Fred discarded the football.",
+        [
+         "fred",
+         "football"
+        ]
+       ],
+       [
+        132,
+        "Fred dropped the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        142,
+        "Fred grabbed the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        155,
+        "Fred put down the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        182,
+        "Fred picked up the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        185,
+        "Fred gave the milk to Jeff.",
+        [
+         "fred",
+         "milk",
+         "jeff"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "fred"
+      ],
+      "question": "What did Mary give to Fred? ",
+      "records_with_qwords": [
+       [
+        71,
+        "Mary moved to the kitchen.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        85,
+        "Fred went to the office.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        91,
+        "Fred went to the kitchen.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        123,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        138,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        150,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "milk"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Who received the milk? ",
+      "records_with_qwords": [
+       [
+        98,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        99,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        105,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        114,
+        "Jeff got the milk there.",
+        [
+         "jeff",
+         "milk"
+        ]
+       ],
+       [
+        121,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        138,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Fred"
+     }
+    ]
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1:seed17": {
+      "acc": 0.74,
+      "answer_sec_per_query": 0.010904523329809308,
+      "ci95": [
+       0.65,
+       0.82
+      ],
+      "example_context": "[t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.28,
+      "mean_records": 733.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.75,
+      "answer_sec_per_query": 0.010778352339984849,
+      "ci95": [
+       0.66,
+       0.83
+      ],
+      "example_context": "[t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.28,
+      "mean_records": 773.6,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.75,
+      "answer_sec_per_query": 0.010956699519883841,
+      "ci95": [
+       0.66,
+       0.83
+      ],
+      "example_context": "[t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 1.29,
+      "mean_records": 632.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.7,
+      "answer_sec_per_query": 0.014493799379561096,
+      "ci95": [
+       0.61,
+       0.79
+      ],
+      "example_context": "[t=1602] Fred handed the football to Jeff. [t=1655] Jeff handed the football to Fred. [t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.72,
+      "mean_records": 733.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.7,
+      "answer_sec_per_query": 0.014180777290603146,
+      "ci95": [
+       0.61,
+       0.79
+      ],
+      "example_context": "[t=1602] Fred handed the football to Jeff. [t=1655] Jeff handed the football to Fred. [t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.66,
+      "mean_records": 773.6,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.71,
+      "answer_sec_per_query": 0.01541060408926569,
+      "ci95": [
+       0.62,
+       0.8
+      ],
+      "example_context": "[t=1602] Fred handed the football to Jeff. [t=1655] Jeff handed the football to Fred. [t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 3.75,
+      "mean_records": 632.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed17": {
+      "acc": 0.64,
+      "answer_sec_per_query": 0.019854181139962748,
+      "ci95": [
+       0.55,
+       0.73
+      ],
+      "example_context": "[t=1542] Jeff gave the football to Fred. [t=1602] Fred handed the football to Jeff. [t=1655] Jeff handed the football to Fred. [t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.82,
+      "mean_records": 733.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed29": {
+      "acc": 0.64,
+      "answer_sec_per_query": 0.019337268800009043,
+      "ci95": [
+       0.55,
+       0.73
+      ],
+      "example_context": "[t=1542] Jeff gave the football to Fred. [t=1602] Fred handed the football to Jeff. [t=1655] Jeff handed the football to Fred. [t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 6.71,
+      "mean_records": 773.6,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "ledger-h2m4:seed43": {
+      "acc": 0.64,
+      "answer_sec_per_query": 0.022054219740675764,
+      "ci95": [
+       0.55,
+       0.73
+      ],
+      "example_context": "[t=1542] Jeff gave the football to Fred. [t=1602] Fred handed the football to Jeff. [t=1655] Jeff handed the football to Fred. [t=1767] Fred gave the football to Jeff.",
+      "mean_ctx_records": 7.15,
+      "mean_records": 632.14,
+      "n": 100,
+      "qkey_found_rate": 1.0,
+      "support_hit_rate": null
+     },
+     "rag-bm25-k5(same-chunker)": {
+      "acc": 0.62,
+      "ci95": [
+       0.53,
+       0.72
+      ],
+      "n": 100,
+      "sec_per_query": 0.014036471389699727
+     },
+     "rag-dense-k5(same-chunker)": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "n": 100,
+      "sec_per_query": 0.013258834480075166
+     },
+     "rag-timestamps(same-chunker)": {
+      "acc": 0.68,
+      "ci95": [
+       0.58975,
+       0.77
+      ],
+      "n": 100,
+      "sec_per_query": 0.013896459810202941
+     }
+    },
+    "labels": [
+     "Bill",
+     "Fred",
+     "Jeff",
+     "Mary",
+     "apple",
+     "football",
+     "milk"
+    ],
+    "mem_sec_per_doc": 1.8745163730380592,
+    "n": 100,
+    "trace": [
+     {
+      "qkeys": [
+       "fred",
+       "football"
+      ],
+      "question": "Who did Fred give the football to? ",
+      "records_with_qwords": [
+       [
+        255,
+        "Fred picked up the football there.",
+        [
+         "fred",
+         "football"
+        ]
+       ],
+       [
+        898,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        1542,
+        "Jeff gave the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        1602,
+        "Fred handed the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ],
+       [
+        1655,
+        "Jeff handed the football to Fred.",
+        [
+         "jeff",
+         "football",
+         "fred"
+        ]
+       ],
+       [
+        1767,
+        "Fred gave the football to Jeff.",
+        [
+         "fred",
+         "football",
+         "jeff"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "milk"
+      ],
+      "question": "Who did Mary give the milk to? ",
+      "records_with_qwords": [
+       [
+        1259,
+        "Fred got the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        1491,
+        "Fred handed the milk to Mary.",
+        [
+         "fred",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        1522,
+        "Mary moved to the garden.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1842,
+        "Mary gave the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ],
+       [
+        2023,
+        "Bill handed the milk to Mary.",
+        [
+         "bill",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        2025,
+        "Mary passed the milk to Bill.",
+        [
+         "mary",
+         "milk",
+         "bill"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Bill"
+     },
+     {
+      "qkeys": [
+       "fred",
+       "milk"
+      ],
+      "question": "Who did Fred give the milk to? ",
+      "records_with_qwords": [
+       [
+        1085,
+        "Fred dropped the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        1154,
+        "Fred grabbed the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        1248,
+        "Fred put down the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        1500,
+        "Fred picked up the milk there.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        1520,
+        "Fred gave the milk to Jeff.",
+        [
+         "fred",
+         "milk",
+         "jeff"
+        ]
+       ],
+       [
+        1575,
+        "Fred went back to the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Jeff"
+     },
+     {
+      "qkeys": [
+       "mary",
+       "fred"
+      ],
+      "question": "What did Mary give to Fred? ",
+      "records_with_qwords": [
+       [
+        1520,
+        "Mary Linden, who was still lodging with them, could not help perceiving\ntheir unhappiness: she frequently noticed that R",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1521,
+        "On one occasion when Mary was trying\nto advise her, Ruth burst out into a terrible fit of weeping, but she\nwould not say",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1553,
+        "The presence of Mary Linden and the two children in the house probably\nsaved Ruth from being more unhappy than she was.",
+        [
+         "mary",
+         "ruth"
+        ]
+       ],
+       [
+        1555,
+        "As for Mary, she had not\nmuch time to do anything but sew, almost the only relaxation she knew\nbeing when she took the w",
+        [
+         "mary"
+        ]
+       ],
+       [
+        1648,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        1835,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "milk"
+     },
+     {
+      "qkeys": [
+       "milk"
+      ],
+      "question": "Who received the milk? ",
+      "records_with_qwords": [
+       [
+        1087,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        1095,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ],
+       [
+        1176,
+        "Fred discarded the milk.",
+        [
+         "fred",
+         "milk"
+        ]
+       ],
+       [
+        1347,
+        "Jeff got the milk there.",
+        [
+         "jeff",
+         "milk"
+        ]
+       ],
+       [
+        1464,
+        "Jeff passed the milk to Mary.",
+        [
+         "jeff",
+         "milk",
+         "mary"
+        ]
+       ],
+       [
+        1716,
+        "Mary passed the milk to Fred.",
+        [
+         "mary",
+         "milk",
+         "fred"
+        ]
+       ]
+      ],
+      "support": null,
+      "target": "Fred"
+     }
+    ]
+   }
+  }
+ },
+ "config": {
+  "expiry_docs": 80,
+  "layer": 14,
+  "lengths": [
+   "4k",
+   "16k",
+   "64k",
+   "128k"
+  ],
+  "limit": 100,
+  "reads": [
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    4
+   ]
+  ],
+  "seeds": [
+   17,
+   29,
+   43
+  ],
+  "tagger_n": 6000,
+  "tagger_steps": 800,
+  "tasks": [
+   "qa1",
+   "qa2",
+   "qa3",
+   "qa4",
+   "qa5"
+  ],
+  "thr": 0.5,
+  "time_docs": 60
+ },
+ "design": "Clocked ledger memory for a frozen LLM (plan: obsidian/demos/proposals/2026-09-23-clocked-ledger-memory-experiment-plan.md).\n\nDesign (the spectral-native \"fourth table\"): an append-only ledger of records, read by exact\nselection, never blended and never overwritten.\n\nWRITE (streaming, from text alone)\n  Each sentence is run through the frozen Qwen truncated at ``layer``; a small learned token\n  tagger marks entity mentions (people, objects). A sentence with >= 1 mention becomes one\n  record: (t = position/tick, text, keys = normalized mention strings, ttl). Keys are exact\n  integer addresses (a hash index), so a lookup is O(1) and has no ties.\n  The tagger trains on names, objects and verbs DISJOINT from bAbI/BABILong, so every test\n  entity is held out.\n\nREAD (exact program, no learning)\n  hop 1: for each key in the question, the latest m1 records with t <= T that are not expired\n  hop 2: for every other key those records mention, the latest m2 records up to T and up to the\n         last hop-1 record (the second key comes from the selected record itself: exact chaining)\n  The selected records, in time order, are the frozen LLM's whole context. If no valid record\n  exists the memory abstains (\"unknown\").\n\nSHARED HELPERS (fairness rule: the baselines get the same)\n  expiry: ``valid for N ticks`` is read by the same numeral regex the rag-timestamps-ttl-RULE\n  baseline uses; expiry is the exact integer test (T - t) >= ttl.\n",
+ "errors": [],
+ "experiment": "2026-09-23-ledger-memory",
+ "expiry": {
+  "arms": {
+   "ledger-m1:seed17": {
+    "acc": 0.95,
+    "ci95": [
+     0.9,
+     0.9875
+    ],
+    "correct_refusal_rate": 1.0,
+    "errors_trace": [
+     {
+      "ctx": "[t=1] Jeff moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Jeff? If the information about Jeff is older th",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Bill? If the information about Bill is older than",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 0.4625,
+    "n": 80,
+    "stale_answer_rate": 0.0
+   },
+   "ledger-m1:seed29": {
+    "acc": 0.95,
+    "ci95": [
+     0.9,
+     0.9875
+    ],
+    "correct_refusal_rate": 1.0,
+    "errors_trace": [
+     {
+      "ctx": "[t=1] Jeff moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Jeff? If the information about Jeff is older th",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Bill? If the information about Bill is older than",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 0.4625,
+    "n": 80,
+    "stale_answer_rate": 0.0
+   },
+   "ledger-m1:seed43": {
+    "acc": 0.875,
+    "ci95": [
+     0.8,
+     0.9375
+    ],
+    "correct_refusal_rate": 1.0,
+    "errors_trace": [
+     {
+      "ctx": "[t=1] Jeff moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Jeff? If the information about Jeff is older th",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Julie? If the information about Julie is older ",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "[t=1] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Bill? If the information about Bill is older than",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Julie? If the information about Julie is older ",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Julie? If the information about Julie is older ",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "garden"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Julie? If the information about Julie is older th",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "garden"
+     }
+    ],
+    "mean_ctx_records": 0.3875,
+    "n": 80,
+    "stale_answer_rate": 0.0
+   },
+   "ledger-m4:seed17": {
+    "acc": 0.95,
+    "ci95": [
+     0.9,
+     0.9875
+    ],
+    "correct_refusal_rate": 1.0,
+    "errors_trace": [
+     {
+      "ctx": "[t=1] Jeff moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Jeff? If the information about Jeff is older th",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Bill? If the information about Bill is older than",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 0.4625,
+    "n": 80,
+    "stale_answer_rate": 0.0
+   },
+   "ledger-m4:seed29": {
+    "acc": 0.95,
+    "ci95": [
+     0.9,
+     0.9875
+    ],
+    "correct_refusal_rate": 1.0,
+    "errors_trace": [
+     {
+      "ctx": "[t=1] Jeff moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Jeff? If the information about Jeff is older th",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Bill? If the information about Bill is older than",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1] Daniel moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Daniel? If the information about Daniel is older ",
+      "qkeys": [
+       "daniel"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 0.4625,
+    "n": 80,
+    "stale_answer_rate": 0.0
+   },
+   "ledger-m4:seed43": {
+    "acc": 0.875,
+    "ci95": [
+     0.8,
+     0.9375
+    ],
+    "correct_refusal_rate": 1.0,
+    "errors_trace": [
+     {
+      "ctx": "[t=1] Jeff moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Jeff? If the information about Jeff is older th",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Julie? If the information about Julie is older ",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "[t=1] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Bill? If the information about Bill is older than",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "before_expiry",
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Julie? If the information about Julie is older ",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=25001. Where is Julie? If the information about Julie is older ",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "garden"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=251. Where is Julie? If the information about Julie is older th",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "before_expiry",
+      "target": "garden"
+     }
+    ],
+    "mean_ctx_records": 0.3875,
+    "n": 80,
+    "stale_answer_rate": 0.0
+   }
+  },
+  "n": 80
+ },
+ "resumed_from_partial": true,
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "dtype": "bfloat16",
+  "host": "pop-os",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "peak_rss_mb": 3991.5,
+  "peak_vram_mb": 4521.1,
+  "peak_vram_reserved_mb": 4844.4,
+  "platform": "Linux-6.18.7-76061807-generic-x86_64-with-glibc2.39",
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "schema": "ledger-memory-v1",
+ "smoke": false,
+ "tagger": {
+  "17": {
+   "heldout_babi_entities": {
+    "precision": 0.9160401002506265,
+    "recall": 0.9965916837082481
+   },
+   "train": {
+    "final_loss": 0.01641124300658703,
+    "pos_frac": 0.07295798510313034,
+    "tokens": 100085
+   },
+   "train_entities_new_sentences": {
+    "precision": 0.8974518334369174,
+    "recall": 0.9958620689655172
+   }
+  },
+  "29": {
+   "heldout_babi_entities": {
+    "precision": 0.9144284821986258,
+    "recall": 0.9979550102249489
+   },
+   "train": {
+    "final_loss": 0.01292500365525484,
+    "pos_frac": 0.07319903373718262,
+    "tokens": 99974
+   },
+   "train_entities_new_sentences": {
+    "precision": 0.9023024268823896,
+    "recall": 1.0
+   }
+  },
+  "43": {
+   "heldout_babi_entities": {
+    "precision": 0.8972733037412809,
+    "recall": 0.9645535105657805
+   },
+   "train": {
+    "final_loss": 0.011730542406439781,
+    "pos_frac": 0.0750519409775734,
+    "tokens": 98665
+   },
+   "train_entities_new_sentences": {
+    "precision": 0.9306803594351734,
+    "recall": 1.0
+   }
+  }
+ },
+ "time": {
+  "arms": {
+   "ledger-m1:seed17": {
+    "acc": 0.9333333333333333,
+    "by_gap": {
+     "1000": 1.0,
+     "10000": 0.9230769230769231,
+     "100000": 1.0,
+     "1000000": 0.8181818181818182,
+     "10000000": 1.0,
+     "100000000": 0.9
+    },
+    "ci95": [
+     0.8666666666666667,
+     0.9833333333333333
+    ],
+    "errors_trace": [
+     {
+      "ctx": "[t=1001000] Julie moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=13011001. Where is Julie? If the information about Julie is old",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=100010001] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=300121003. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=100110001] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=110120001. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=101112003] Fred moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=102212003. Where is Fred? If the information about Fred is olde",
+      "qkeys": [
+       "fred"
+      ],
+      "role": "now",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 1.0,
+    "n": 60
+   },
+   "ledger-m1:seed29": {
+    "acc": 0.9333333333333333,
+    "by_gap": {
+     "1000": 1.0,
+     "10000": 0.9230769230769231,
+     "100000": 1.0,
+     "1000000": 0.8181818181818182,
+     "10000000": 1.0,
+     "100000000": 0.9
+    },
+    "ci95": [
+     0.8666666666666667,
+     0.9833333333333333
+    ],
+    "errors_trace": [
+     {
+      "ctx": "[t=1001000] Julie moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=13011001. Where is Julie? If the information about Julie is old",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=100010001] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=300121003. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=100110001] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=110120001. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=101112003] Fred moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=102212003. Where is Fred? If the information about Fred is olde",
+      "qkeys": [
+       "fred"
+      ],
+      "role": "now",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 1.0,
+    "n": 60
+   },
+   "ledger-m1:seed43": {
+    "acc": 0.9166666666666666,
+    "by_gap": {
+     "1000": 0.9,
+     "10000": 0.9230769230769231,
+     "100000": 1.0,
+     "1000000": 0.8181818181818182,
+     "10000000": 1.0,
+     "100000000": 0.9
+    },
+    "ci95": [
+     0.8333333333333334,
+     0.9833333333333333
+    ],
+    "errors_trace": [
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=20112002. Where is Julie? If the information about Julie is old",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "now",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=13011001. Where is Julie? If the information about Julie is old",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=100010001] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=300121003. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=100110001] Bill moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=110120001. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=101112003] Fred moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=102212003. Where is Fred? If the information about Fred is olde",
+      "qkeys": [
+       "fred"
+      ],
+      "role": "now",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 0.9666666666666667,
+    "n": 60
+   },
+   "ledger-m4:seed17": {
+    "acc": 0.7333333333333333,
+    "by_gap": {
+     "1000": 0.5,
+     "10000": 0.7692307692307693,
+     "100000": 0.8181818181818182,
+     "1000000": 0.7272727272727273,
+     "10000000": 0.8,
+     "100000000": 0.8
+    },
+    "ci95": [
+     0.6166666666666667,
+     0.8333333333333334
+    ],
+    "errors_trace": [
+     {
+      "ctx": "[t=200030004] Bill moved to the garden. [t=201030004] Bill moved to the bathroom. [t=201031004] Bill moved to the bedroom.",
+      "pred": "bathroom",
+      "q": "It is now time t=201042004. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "bedroom"
+     },
+     {
+      "ctx": "[t=1001001] Sandra moved to the garden. [t=101001001] Sandra moved to the bathroom. [t=102001001] Sandra moved to the bedroom.",
+      "pred": "bathroom",
+      "q": "It is now time t=113112004. Where is Sandra? If the information about Sandra is ",
+      "qkeys": [
+       "sandra"
+      ],
+      "role": "now",
+      "target": "bedroom"
+     },
+     {
+      "ctx": "[t=1] Mary moved to the bathroom. [t=100002] Mary moved to the kitchen. [t=101003] Mary moved to the hallway.",
+      "pred": "kitchen",
+      "q": "It is now time t=201322007. Where is Mary? If the information about Mary is olde",
+      "qkeys": [
+       "mary"
+      ],
+      "role": "now",
+      "target": "hallway"
+     },
+     {
+      "ctx": "[t=10111003] John moved to the office. [t=10211003] John moved to the office. [t=10311004] John moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=10322004. Where is John? If the information about John is older",
+      "qkeys": [
+       "john"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=111101004] Bill moved to the garden. [t=121101005] Bill moved to the bathroom. [t=121111005] Bill moved to the kitchen.",
+      "pred": "bathroom",
+      "q": "It is now time t=132111005. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "[t=1110001] Jeff moved to the hallway. [t=1111002] Jeff moved to the bathroom. [t=1112002] Jeff moved to the office.",
+      "pred": "bathroom",
+      "q": "It is now time t=101214002. Where is Jeff? If the information about Jeff is olde",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "now",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 2.466666666666667,
+    "n": 60
+   },
+   "ledger-m4:seed29": {
+    "acc": 0.7333333333333333,
+    "by_gap": {
+     "1000": 0.5,
+     "10000": 0.7692307692307693,
+     "100000": 0.8181818181818182,
+     "1000000": 0.7272727272727273,
+     "10000000": 0.8,
+     "100000000": 0.8
+    },
+    "ci95": [
+     0.6166666666666667,
+     0.8333333333333334
+    ],
+    "errors_trace": [
+     {
+      "ctx": "[t=200030004] Bill moved to the garden. [t=201030004] Bill moved to the bathroom. [t=201031004] Bill moved to the bedroom.",
+      "pred": "bathroom",
+      "q": "It is now time t=201042004. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "bedroom"
+     },
+     {
+      "ctx": "[t=1001001] Sandra moved to the garden. [t=101001001] Sandra moved to the bathroom. [t=102001001] Sandra moved to the bedroom.",
+      "pred": "bathroom",
+      "q": "It is now time t=113112004. Where is Sandra? If the information about Sandra is ",
+      "qkeys": [
+       "sandra"
+      ],
+      "role": "now",
+      "target": "bedroom"
+     },
+     {
+      "ctx": "[t=1] Mary moved to the bathroom. [t=100002] Mary moved to the kitchen. [t=101003] Mary moved to the hallway.",
+      "pred": "kitchen",
+      "q": "It is now time t=201322007. Where is Mary? If the information about Mary is olde",
+      "qkeys": [
+       "mary"
+      ],
+      "role": "now",
+      "target": "hallway"
+     },
+     {
+      "ctx": "[t=10111003] John moved to the office. [t=10211003] John moved to the office. [t=10311004] John moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=10322004. Where is John? If the information about John is older",
+      "qkeys": [
+       "john"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=111101004] Bill moved to the garden. [t=121101005] Bill moved to the bathroom. [t=121111005] Bill moved to the kitchen.",
+      "pred": "bathroom",
+      "q": "It is now time t=132111005. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "[t=1110001] Jeff moved to the hallway. [t=1111002] Jeff moved to the bathroom. [t=1112002] Jeff moved to the office.",
+      "pred": "bathroom",
+      "q": "It is now time t=101214002. Where is Jeff? If the information about Jeff is olde",
+      "qkeys": [
+       "jeff"
+      ],
+      "role": "now",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 2.466666666666667,
+    "n": 60
+   },
+   "ledger-m4:seed43": {
+    "acc": 0.7,
+    "by_gap": {
+     "1000": 0.4,
+     "10000": 0.7692307692307693,
+     "100000": 0.8181818181818182,
+     "1000000": 0.6363636363636364,
+     "10000000": 0.8,
+     "100000000": 0.8
+    },
+    "ci95": [
+     0.5833333333333334,
+     0.8166666666666667
+    ],
+    "errors_trace": [
+     {
+      "ctx": "[t=200030004] Bill moved to the garden. [t=201030004] Bill moved to the bathroom. [t=201031004] Bill moved to the bedroom.",
+      "pred": "bathroom",
+      "q": "It is now time t=201042004. Where is Bill? If the information about Bill is olde",
+      "qkeys": [
+       "bill"
+      ],
+      "role": "now",
+      "target": "bedroom"
+     },
+     {
+      "ctx": "[t=1001001] Sandra moved to the garden. [t=101001001] Sandra moved to the bathroom. [t=102001001] Sandra moved to the bedroom.",
+      "pred": "bathroom",
+      "q": "It is now time t=113112004. Where is Sandra? If the information about Sandra is ",
+      "qkeys": [
+       "sandra"
+      ],
+      "role": "now",
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=20112002. Where is Julie? If the information about Julie is old",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "now",
+      "target": "kitchen"
+     },
+     {
+      "ctx": "[t=1] Mary moved to the bathroom. [t=100002] Mary moved to the kitchen. [t=101003] Mary moved to the hallway.",
+      "pred": "kitchen",
+      "q": "It is now time t=201322007. Where is Mary? If the information about Mary is olde",
+      "qkeys": [
+       "mary"
+      ],
+      "role": "now",
+      "target": "hallway"
+     },
+     {
+      "ctx": "",
+      "pred": "unknown",
+      "q": "It is now time t=13011001. Where is Julie? If the information about Julie is old",
+      "qkeys": [
+       "julie"
+      ],
+      "role": "now",
+      "target": "office"
+     },
+     {
+      "ctx": "[t=10111003] John moved to the office. [t=10211003] John moved to the office. [t=10311004] John moved to the office.",
+      "pred": "unknown",
+      "q": "It is now time t=10322004. Where is John? If the information about John is older",
+      "qkeys": [
+       "john"
+      ],
+      "role": "now",
+      "target": "office"
+     }
+    ],
+    "mean_ctx_records": 2.3666666666666667,
+    "n": 60
+   }
+  },
+  "n": 60
+ }
+}

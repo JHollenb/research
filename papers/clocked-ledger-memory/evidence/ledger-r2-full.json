@@ -1,0 +1,2353 @@
+{
+ "babilong": {
+  "qa1": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1-gated:seed17": {
+      "acc": 0.92,
+      "ci95": [
+       0.86,
+       0.97
+      ],
+      "mean_records": 48.44,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed29": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "mean_records": 46.27,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed43": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "mean_records": 64.18,
+      "n": 100
+     },
+     "ledger-h1m1:seed17": {
+      "acc": 0.71,
+      "ci95": [
+       0.62,
+       0.8
+      ],
+      "mean_records": 974.32,
+      "n": 100
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.8,
+      "ci95": [
+       0.72,
+       0.87
+      ],
+      "mean_records": 1237.32,
+      "n": 100
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.8,
+      "ci95": [
+       0.72,
+       0.87
+      ],
+      "mean_records": 1552.74,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed17": {
+      "acc": 0.92,
+      "ci95": [
+       0.86,
+       0.97
+      ],
+      "mean_records": 48.44,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed29": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "mean_records": 46.27,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed43": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "mean_records": 64.18,
+      "n": 100
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.71,
+      "ci95": [
+       0.62,
+       0.8
+      ],
+      "mean_records": 974.32,
+      "n": 100
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.8,
+      "ci95": [
+       0.72,
+       0.87
+      ],
+      "mean_records": 1237.32,
+      "n": 100
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.8,
+      "ci95": [
+       0.72,
+       0.87
+      ],
+      "mean_records": 1552.74,
+      "n": 100
+     }
+    },
+    "n": 100
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1-gated:seed17": {
+      "acc": 0.94,
+      "ci95": [
+       0.89,
+       0.98
+      ],
+      "mean_records": 27.85,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed29": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "mean_records": 26.38,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed43": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "mean_records": 35.11,
+      "n": 100
+     },
+     "ledger-h1m1:seed17": {
+      "acc": 0.86,
+      "ci95": [
+       0.79,
+       0.92
+      ],
+      "mean_records": 480.6,
+      "n": 100
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "mean_records": 613.09,
+      "n": 100
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "mean_records": 769.9,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed17": {
+      "acc": 0.94,
+      "ci95": [
+       0.89,
+       0.98
+      ],
+      "mean_records": 27.85,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed29": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "mean_records": 26.38,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed43": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "mean_records": 35.11,
+      "n": 100
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.86,
+      "ci95": [
+       0.79,
+       0.92
+      ],
+      "mean_records": 480.6,
+      "n": 100
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "mean_records": 613.09,
+      "n": 100
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "mean_records": 769.9,
+      "n": 100
+     }
+    },
+    "n": 100
+   }
+  },
+  "qa2": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1-gated:seed17": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 56.76,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed29": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 53.18,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed43": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 71.49,
+      "n": 100
+     },
+     "ledger-h1m1:seed17": {
+      "acc": 0.15,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "mean_records": 939.05,
+      "n": 100
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.15,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "mean_records": 1194.9,
+      "n": 100
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.15,
+      "ci95": [
+       0.09,
+       0.22
+      ],
+      "mean_records": 1518.34,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed17": {
+      "acc": 0.57,
+      "ci95": [
+       0.47,
+       0.67
+      ],
+      "mean_records": 56.76,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed29": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "mean_records": 53.18,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed43": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "mean_records": 71.49,
+      "n": 100
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.48,
+      "ci95": [
+       0.38,
+       0.57
+      ],
+      "mean_records": 939.05,
+      "n": 100
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.51,
+      "ci95": [
+       0.41,
+       0.6
+      ],
+      "mean_records": 1194.9,
+      "n": 100
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.54,
+      "ci95": [
+       0.45,
+       0.63
+      ],
+      "mean_records": 1518.34,
+      "n": 100
+     }
+    },
+    "n": 100
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1-gated:seed17": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 40.22,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed29": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 37.97,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed43": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 48.46,
+      "n": 100
+     },
+     "ledger-h1m1:seed17": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 530.28,
+      "n": 100
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 664.21,
+      "n": 100
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.16,
+      "ci95": [
+       0.09,
+       0.23
+      ],
+      "mean_records": 819.4,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed17": {
+      "acc": 0.6,
+      "ci95": [
+       0.51,
+       0.69
+      ],
+      "mean_records": 40.22,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed29": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "mean_records": 37.97,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed43": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "mean_records": 48.46,
+      "n": 100
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.55,
+      "ci95": [
+       0.45,
+       0.65
+      ],
+      "mean_records": 530.28,
+      "n": 100
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.56,
+      "ci95": [
+       0.46,
+       0.66
+      ],
+      "mean_records": 664.21,
+      "n": 100
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.56,
+      "ci95": [
+       0.46,
+       0.66
+      ],
+      "mean_records": 819.4,
+      "n": 100
+     }
+    },
+    "n": 100
+   }
+  },
+  "qa3": {
+   "128k": {
+    "arms": {
+     "ledger-h1m1-gated:seed17": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 97.96,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed29": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 95.32,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed43": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 115.02,
+      "n": 100
+     },
+     "ledger-h1m1:seed17": {
+      "acc": 0.29,
+      "ci95": [
+       0.21,
+       0.38
+      ],
+      "mean_records": 1021.22,
+      "n": 100
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.37
+      ],
+      "mean_records": 1289.68,
+      "n": 100
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.27,
+      "ci95": [
+       0.19,
+       0.36
+      ],
+      "mean_records": 1613.02,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed17": {
+      "acc": 0.59,
+      "ci95": [
+       0.49,
+       0.69
+      ],
+      "mean_records": 97.96,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed29": {
+      "acc": 0.65,
+      "ci95": [
+       0.56,
+       0.74
+      ],
+      "mean_records": 95.32,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed43": {
+      "acc": 0.65,
+      "ci95": [
+       0.56,
+       0.74
+      ],
+      "mean_records": 115.02,
+      "n": 100
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.56,
+      "ci95": [
+       0.46,
+       0.65
+      ],
+      "mean_records": 1021.22,
+      "n": 100
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.7
+      ],
+      "mean_records": 1289.68,
+      "n": 100
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.7
+      ],
+      "mean_records": 1613.02,
+      "n": 100
+     }
+    },
+    "n": 100
+   },
+   "64k": {
+    "arms": {
+     "ledger-h1m1-gated:seed17": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 74.62,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed29": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 73.41,
+      "n": 100
+     },
+     "ledger-h1m1-gated:seed43": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 84.34,
+      "n": 100
+     },
+     "ledger-h1m1:seed17": {
+      "acc": 0.27,
+      "ci95": [
+       0.19,
+       0.36
+      ],
+      "mean_records": 509.92,
+      "n": 100
+     },
+     "ledger-h1m1:seed29": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 630.04,
+      "n": 100
+     },
+     "ledger-h1m1:seed43": {
+      "acc": 0.28,
+      "ci95": [
+       0.2,
+       0.38
+      ],
+      "mean_records": 802.46,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed17": {
+      "acc": 0.64,
+      "ci95": [
+       0.54,
+       0.73
+      ],
+      "mean_records": 74.62,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed29": {
+      "acc": 0.65,
+      "ci95": [
+       0.56,
+       0.74
+      ],
+      "mean_records": 73.41,
+      "n": 100
+     },
+     "ledger-h2m1-gated:seed43": {
+      "acc": 0.65,
+      "ci95": [
+       0.56,
+       0.74
+      ],
+      "mean_records": 84.34,
+      "n": 100
+     },
+     "ledger-h2m1:seed17": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.7
+      ],
+      "mean_records": 509.92,
+      "n": 100
+     },
+     "ledger-h2m1:seed29": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7002499999999986
+      ],
+      "mean_records": 630.04,
+      "n": 100
+     },
+     "ledger-h2m1:seed43": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7002499999999986
+      ],
+      "mean_records": 802.46,
+      "n": 100
+     }
+    },
+    "n": 100
+   }
+  }
+ },
+ "config": {
+  "chain_docs": 200,
+  "gate_steps": 600,
+  "layer": 14,
+  "lengths": [
+   "64k",
+   "128k"
+  ],
+  "limit": 100,
+  "seeds": [
+   17,
+   29,
+   43
+  ],
+  "tagger_n": 6000,
+  "tagger_steps": 800,
+  "tasks": [
+   "qa1",
+   "qa2",
+   "qa3"
+  ],
+  "time_docs": 60
+ },
+ "e4_chain": {
+  "para": {
+   "arms": {
+    "ledger-h2m1-gated:seed17": {
+     "acc": 0.415,
+     "ci95": [
+      0.345,
+      0.485
+     ],
+     "mean_records": 21.72,
+     "n": 200
+    },
+    "ledger-h2m1-gated:seed29": {
+     "acc": 0.44,
+     "ci95": [
+      0.37,
+      0.51
+     ],
+     "mean_records": 22.84,
+     "n": 200
+    },
+    "ledger-h2m1-gated:seed43": {
+     "acc": 0.425,
+     "ci95": [
+      0.355,
+      0.495
+     ],
+     "mean_records": 22.07,
+     "n": 200
+    },
+    "ledger-h2m1:seed17": {
+     "acc": 0.415,
+     "ci95": [
+      0.345,
+      0.485
+     ],
+     "mean_records": 26.59,
+     "n": 200
+    },
+    "ledger-h2m1:seed29": {
+     "acc": 0.44,
+     "ci95": [
+      0.37,
+      0.51
+     ],
+     "mean_records": 28.115,
+     "n": 200
+    },
+    "ledger-h2m1:seed43": {
+     "acc": 0.425,
+     "ci95": [
+      0.355,
+      0.495
+     ],
+     "mean_records": 29.81,
+     "n": 200
+    },
+    "ledger-h2m4-gated:seed17": {
+     "acc": 0.345,
+     "ci95": [
+      0.28,
+      0.41
+     ],
+     "mean_records": 21.72,
+     "n": 200
+    },
+    "ledger-h2m4-gated:seed29": {
+     "acc": 0.355,
+     "ci95": [
+      0.29,
+      0.42
+     ],
+     "mean_records": 22.84,
+     "n": 200
+    },
+    "ledger-h2m4-gated:seed43": {
+     "acc": 0.355,
+     "ci95": [
+      0.29,
+      0.42
+     ],
+     "mean_records": 22.07,
+     "n": 200
+    },
+    "ledger-h2m4:seed17": {
+     "acc": 0.345,
+     "ci95": [
+      0.28,
+      0.41
+     ],
+     "mean_records": 26.59,
+     "n": 200
+    },
+    "ledger-h2m4:seed29": {
+     "acc": 0.355,
+     "ci95": [
+      0.29,
+      0.42
+     ],
+     "mean_records": 28.115,
+     "n": 200
+    },
+    "ledger-h2m4:seed43": {
+     "acc": 0.35,
+     "ci95": [
+      0.285,
+      0.42
+     ],
+     "mean_records": 29.81,
+     "n": 200
+    },
+    "long-context": {
+     "acc": 0.29,
+     "ci95": [
+      0.23,
+      0.35
+     ],
+     "n": 200,
+     "sec_per_query": 0.08082117477024439
+    },
+    "no-memory": {
+     "acc": 0.16,
+     "ci95": [
+      0.11,
+      0.21
+     ],
+     "n": 200,
+     "sec_per_query": 0.008861930654966273
+    },
+    "rag-bm25-k5": {
+     "acc": 0.175,
+     "ci95": [
+      0.125,
+      0.23
+     ],
+     "n": 200,
+     "sec_per_query": 0.015131574504775926
+    },
+    "rag-dense-k5": {
+     "acc": 0.195,
+     "ci95": [
+      0.14,
+      0.25
+     ],
+     "n": 200,
+     "sec_per_query": 0.014406688794842921
+    },
+    "rag-timestamps": {
+     "acc": 0.205,
+     "ci95": [
+      0.15,
+      0.26
+     ],
+     "n": 200,
+     "sec_per_query": 0.014799976969952696
+    }
+   },
+   "example": {
+    "input": "Greg relocated to the bedroom. It was followed by \" Fuiste T\u00fa \" ( featuring Gaby Moreno ) , which reached number one on the Latin Pop Songs , number two on the Latin Songs charts and topped several other national charts. The rivalry then came to an end after The Undertaker chose to focus on Mr. Vastra tells Clara she gets only one word to impress the Doctor with if she wants his help. Julie made the trip over to the kitchen. At 0600 UTC on June 18 , the JTWC estimated peak 1 minute winds of 215 km / h ( 135 mph ) , while the JMA estimated peak 10 minute winds of 150 km / h ( 90 mph ). The former MSG told planners that a new embassy had been planned and was under construction several years pr",
+    "question": "Where is the football? ",
+    "target": "office"
+   },
+   "n": 200
+  },
+  "train": {
+   "arms": {
+    "ledger-h2m1-gated:seed17": {
+     "acc": 0.48,
+     "ci95": [
+      0.41,
+      0.55
+     ],
+     "mean_records": 24.135,
+     "n": 200
+    },
+    "ledger-h2m1-gated:seed29": {
+     "acc": 0.48,
+     "ci95": [
+      0.41,
+      0.55
+     ],
+     "mean_records": 24.135,
+     "n": 200
+    },
+    "ledger-h2m1-gated:seed43": {
+     "acc": 0.48,
+     "ci95": [
+      0.41,
+      0.55
+     ],
+     "mean_records": 24.135,
+     "n": 200
+    },
+    "ledger-h2m1:seed17": {
+     "acc": 0.48,
+     "ci95": [
+      0.41,
+      0.55
+     ],
+     "mean_records": 29.005,
+     "n": 200
+    },
+    "ledger-h2m1:seed29": {
+     "acc": 0.48,
+     "ci95": [
+      0.41,
+      0.55
+     ],
+     "mean_records": 29.41,
+     "n": 200
+    },
+    "ledger-h2m1:seed43": {
+     "acc": 0.48,
+     "ci95": [
+      0.41,
+      0.55
+     ],
+     "mean_records": 31.62,
+     "n": 200
+    },
+    "ledger-h2m4-gated:seed17": {
+     "acc": 0.37,
+     "ci95": [
+      0.3,
+      0.44
+     ],
+     "mean_records": 24.135,
+     "n": 200
+    },
+    "ledger-h2m4-gated:seed29": {
+     "acc": 0.37,
+     "ci95": [
+      0.3,
+      0.44
+     ],
+     "mean_records": 24.135,
+     "n": 200
+    },
+    "ledger-h2m4-gated:seed43": {
+     "acc": 0.37,
+     "ci95": [
+      0.3,
+      0.44
+     ],
+     "mean_records": 24.135,
+     "n": 200
+    },
+    "ledger-h2m4:seed17": {
+     "acc": 0.37,
+     "ci95": [
+      0.3,
+      0.44
+     ],
+     "mean_records": 29.005,
+     "n": 200
+    },
+    "ledger-h2m4:seed29": {
+     "acc": 0.37,
+     "ci95": [
+      0.3,
+      0.44
+     ],
+     "mean_records": 29.41,
+     "n": 200
+    },
+    "ledger-h2m4:seed43": {
+     "acc": 0.37,
+     "ci95": [
+      0.3,
+      0.44
+     ],
+     "mean_records": 31.62,
+     "n": 200
+    },
+    "long-context": {
+     "acc": 0.29,
+     "ci95": [
+      0.23,
+      0.355
+     ],
+     "n": 200,
+     "sec_per_query": 0.07934165698476135
+    },
+    "no-memory": {
+     "acc": 0.16,
+     "ci95": [
+      0.11,
+      0.21
+     ],
+     "n": 200,
+     "sec_per_query": 0.008875634025316685
+    },
+    "rag-bm25-k5": {
+     "acc": 0.16,
+     "ci95": [
+      0.11,
+      0.21
+     ],
+     "n": 200,
+     "sec_per_query": 0.01547158892499283
+    },
+    "rag-dense-k5": {
+     "acc": 0.185,
+     "ci95": [
+      0.135,
+      0.24
+     ],
+     "n": 200,
+     "sec_per_query": 0.014005426865187473
+    },
+    "rag-timestamps": {
+     "acc": 0.19,
+     "ci95": [
+      0.135,
+      0.245
+     ],
+     "n": 200,
+     "sec_per_query": 0.01434203346958384
+    }
+   },
+   "example": {
+    "input": "Greg journeyed to the bedroom. It was followed by \" Fuiste T\u00fa \" ( featuring Gaby Moreno ) , which reached number one on the Latin Pop Songs , number two on the Latin Songs charts and topped several other national charts. The rivalry then came to an end after The Undertaker chose to focus on Mr. Vastra tells Clara she gets only one word to impress the Doctor with if she wants his help. Julie moved to the kitchen. At 0600 UTC on June 18 , the JTWC estimated peak 1 minute winds of 215 km / h ( 135 mph ) , while the JMA estimated peak 10 minute winds of 150 km / h ( 90 mph ). The former MSG told planners that a new embassy had been planned and was under construction several years prior. Emily mo",
+    "question": "Where is the football? ",
+    "target": "office"
+   },
+   "n": 200
+  }
+ },
+ "e4_time": {
+  "arms": {
+   "ledger-m1-gated:seed17": {
+    "acc": 0.6833333333333333,
+    "ci95": [
+     0.5666666666666667,
+     0.8
+    ],
+    "n": 60,
+    "trace": [
+     {
+      "ctx": "[t=100000001] Jeff made the trip over to the hallway.",
+      "n_records": 6,
+      "person": "Jeff",
+      "pred": "hallway",
+      "qkeys": [
+       "jeff"
+      ],
+      "records": [
+       [
+        110001002,
+        "Sandra relocated to the bathroom.",
+        [
+         "s"
+        ]
+       ],
+       [
+        120001002,
+        "Sandra relocated to the bedroom.",
+        [
+         "s"
+        ]
+       ],
+       [
+        130001003,
+        "After a while Sandra reached the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        131001003,
+        "Fred hurried off toward the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "[t=20000002] Fred made the trip over to the garden.",
+      "n_records": 3,
+      "person": "Fred",
+      "pred": "garden",
+      "qkeys": [
+       "fred"
+      ],
+      "records": [
+       [
+        1,
+        "Julie made the trip over to the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10000002,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        20000002,
+        "Fred made the trip over to the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "n_records": 4,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the hallway.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        1000002,
+        "Bill wandered into the kitchen.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2000003,
+        "Bill wandered into the bedroom.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2101005,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Bill made the trip over to the office.",
+      "n_records": 3,
+      "person": "Bill",
+      "pred": "unknown",
+      "qkeys": [
+       "bill"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the garden.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20000002,
+        "Bill made the trip over to the office.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20110003,
+        "Julie relocated to the bathroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "n_records": 7,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        10111003,
+        "John hurried off toward the garden.",
+        [
+         "john"
+        ]
+       ],
+       [
+        10211003,
+        "Julie wandered into the garden.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10221003,
+        "Julie hurried off toward the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        11221004,
+        "Julie relocated to the hallway.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "hallway"
+     }
+    ]
+   },
+   "ledger-m1-gated:seed29": {
+    "acc": 0.7166666666666667,
+    "ci95": [
+     0.6,
+     0.8166666666666667
+    ],
+    "n": 60,
+    "trace": [
+     {
+      "ctx": "[t=100000001] Jeff made the trip over to the hallway.",
+      "n_records": 7,
+      "person": "Jeff",
+      "pred": "hallway",
+      "qkeys": [
+       "jeff"
+      ],
+      "records": [
+       [
+        120001002,
+        "Sandra relocated to the bedroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        130001003,
+        "After a while Sandra reached the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        131001003,
+        "Fred hurried off toward the garden.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        132001003,
+        "Soon Fred was in the office.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "[t=20000002] Fred made the trip over to the garden.",
+      "n_records": 3,
+      "person": "Fred",
+      "pred": "garden",
+      "qkeys": [
+       "fred"
+      ],
+      "records": [
+       [
+        1,
+        "Julie made the trip over to the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10000002,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        20000002,
+        "Fred made the trip over to the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "n_records": 4,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the hallway.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        1000002,
+        "Bill wandered into the kitchen.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2000003,
+        "Bill wandered into the bedroom.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2101005,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Bill made the trip over to the office.",
+      "n_records": 3,
+      "person": "Bill",
+      "pred": "unknown",
+      "qkeys": [
+       "bill"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the garden.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20000002,
+        "Bill made the trip over to the office.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20110003,
+        "Julie relocated to the bathroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "n_records": 8,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        10111003,
+        "John hurried off toward the garden.",
+        [
+         "john"
+        ]
+       ],
+       [
+        10211003,
+        "Julie wandered into the garden.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10221003,
+        "Julie hurried off toward the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        11221004,
+        "Julie relocated to the hallway.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "hallway"
+     }
+    ]
+   },
+   "ledger-m1-gated:seed43": {
+    "acc": 0.6833333333333333,
+    "ci95": [
+     0.5666666666666667,
+     0.8
+    ],
+    "n": 60,
+    "trace": [
+     {
+      "ctx": "[t=100000001] Jeff made the trip over to the hallway.",
+      "n_records": 6,
+      "person": "Jeff",
+      "pred": "hallway",
+      "qkeys": [
+       "jeff"
+      ],
+      "records": [
+       [
+        110001002,
+        "Sandra relocated to the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        120001002,
+        "Sandra relocated to the bedroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        130001003,
+        "After a while Sandra reached the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        131001003,
+        "Fred hurried off toward the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "[t=1001003] Sandra relocated to the hallway.",
+      "n_records": 3,
+      "person": "Sandra",
+      "pred": "hallway",
+      "qkeys": [
+       "sandra"
+      ],
+      "records": [
+       [
+        1001003,
+        "Sandra relocated to the hallway.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        111001004,
+        "Mary relocated to the garden.",
+        [
+         "mary"
+        ]
+       ],
+       [
+        211001004,
+        "After a while Mary reached the garden.",
+        [
+         "mary"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Fred made the trip over to the garden.",
+      "n_records": 3,
+      "person": "Fred",
+      "pred": "garden",
+      "qkeys": [
+       "fred"
+      ],
+      "records": [
+       [
+        1,
+        "Julie made the trip over to the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10000002,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        20000002,
+        "Fred made the trip over to the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "n_records": 4,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the hallway.",
+        [
+         "bill",
+         "trip"
+        ]
+       ],
+       [
+        1000002,
+        "Bill wandered into the kitchen.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2000003,
+        "Bill wandered into the bedroom.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2101005,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Bill made the trip over to the office.",
+      "n_records": 3,
+      "person": "Bill",
+      "pred": "unknown",
+      "qkeys": [
+       "bill"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the garden.",
+        [
+         "bill",
+         "trip"
+        ]
+       ],
+       [
+        20000002,
+        "Bill made the trip over to the office.",
+        [
+         "bill",
+         "trip"
+        ]
+       ],
+       [
+        20110003,
+        "Julie relocated to the bathroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "office"
+     }
+    ]
+   },
+   "ledger-m1:seed17": {
+    "acc": 0.6833333333333333,
+    "ci95": [
+     0.5666666666666667,
+     0.8
+    ],
+    "n": 60,
+    "trace": [
+     {
+      "ctx": "[t=100000001] Jeff made the trip over to the hallway.",
+      "n_records": 6,
+      "person": "Jeff",
+      "pred": "hallway",
+      "qkeys": [
+       "jeff"
+      ],
+      "records": [
+       [
+        110001002,
+        "Sandra relocated to the bathroom.",
+        [
+         "s"
+        ]
+       ],
+       [
+        120001002,
+        "Sandra relocated to the bedroom.",
+        [
+         "s"
+        ]
+       ],
+       [
+        130001003,
+        "After a while Sandra reached the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        131001003,
+        "Fred hurried off toward the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "[t=20000002] Fred made the trip over to the garden.",
+      "n_records": 4,
+      "person": "Fred",
+      "pred": "garden",
+      "qkeys": [
+       "fred"
+      ],
+      "records": [
+       [
+        1,
+        "Julie made the trip over to the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10000002,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        20000002,
+        "Fred made the trip over to the garden.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        120000002,
+        "Clayton Edward Kershaw ( born March 19 , 1988 ) is an American professional baseball pitcher for the Los Angeles Dodgers of Major League Baseball ( MLB ).",
+        [
+         "cl"
+        ]
+       ]
+      ],
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "n_records": 4,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the hallway.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        1000002,
+        "Bill wandered into the kitchen.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2000003,
+        "Bill wandered into the bedroom.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2101005,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Bill made the trip over to the office.",
+      "n_records": 3,
+      "person": "Bill",
+      "pred": "unknown",
+      "qkeys": [
+       "bill"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the garden.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20000002,
+        "Bill made the trip over to the office.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20110003,
+        "Julie relocated to the bathroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "n_records": 8,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        10211003,
+        "Julie wandered into the garden.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10221003,
+        "Julie hurried off toward the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        11221003,
+        "Mark Young ( Mawk ) \u2014 bass ( 1994 \u2013 2015 ).",
+        [
+         "mark"
+        ]
+       ],
+       [
+        11221004,
+        "Julie relocated to the hallway.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "hallway"
+     }
+    ]
+   },
+   "ledger-m1:seed29": {
+    "acc": 0.7166666666666667,
+    "ci95": [
+     0.6,
+     0.8166666666666667
+    ],
+    "n": 60,
+    "trace": [
+     {
+      "ctx": "[t=100000001] Jeff made the trip over to the hallway.",
+      "n_records": 7,
+      "person": "Jeff",
+      "pred": "hallway",
+      "qkeys": [
+       "jeff"
+      ],
+      "records": [
+       [
+        120001002,
+        "Sandra relocated to the bedroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        130001003,
+        "After a while Sandra reached the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        131001003,
+        "Fred hurried off toward the garden.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        132001003,
+        "Soon Fred was in the office.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "[t=20000002] Fred made the trip over to the garden.",
+      "n_records": 4,
+      "person": "Fred",
+      "pred": "garden",
+      "qkeys": [
+       "fred"
+      ],
+      "records": [
+       [
+        1,
+        "Julie made the trip over to the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10000002,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        20000002,
+        "Fred made the trip over to the garden.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        120000002,
+        "Clayton Edward Kershaw ( born March 19 , 1988 ) is an American professional baseball pitcher for the Los Angeles Dodgers of Major League Baseball ( MLB ).",
+        [
+         "cl"
+        ]
+       ]
+      ],
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "n_records": 4,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the hallway.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        1000002,
+        "Bill wandered into the kitchen.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2000003,
+        "Bill wandered into the bedroom.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2101005,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Bill made the trip over to the office.",
+      "n_records": 4,
+      "person": "Bill",
+      "pred": "unknown",
+      "qkeys": [
+       "bill"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the garden.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20000002,
+        "Bill made the trip over to the office.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        20010002,
+        "The latter would not resume arms against France until formally exchanged.",
+        [
+         "france"
+        ]
+       ],
+       [
+        20110003,
+        "Julie relocated to the bathroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "n_records": 9,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        10211003,
+        "Julie wandered into the garden.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10221003,
+        "Julie hurried off toward the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        11221003,
+        "Mark Young ( Mawk ) \u2014 bass ( 1994 \u2013 2015 ).",
+        [
+         "mark"
+        ]
+       ],
+       [
+        11221004,
+        "Julie relocated to the hallway.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "hallway"
+     }
+    ]
+   },
+   "ledger-m1:seed43": {
+    "acc": 0.7,
+    "ci95": [
+     0.5833333333333334,
+     0.8166666666666667
+    ],
+    "n": 60,
+    "trace": [
+     {
+      "ctx": "[t=100000001] Jeff made the trip over to the hallway.",
+      "n_records": 6,
+      "person": "Jeff",
+      "pred": "hallway",
+      "qkeys": [
+       "jeff"
+      ],
+      "records": [
+       [
+        110001002,
+        "Sandra relocated to the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        120001002,
+        "Sandra relocated to the bedroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        130001003,
+        "After a while Sandra reached the bathroom.",
+        [
+         "sandra"
+        ]
+       ],
+       [
+        131001003,
+        "Fred hurried off toward the garden.",
+        [
+         "fred"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "[t=20000002] Fred made the trip over to the garden.",
+      "n_records": 4,
+      "person": "Fred",
+      "pred": "garden",
+      "qkeys": [
+       "fred"
+      ],
+      "records": [
+       [
+        1,
+        "Julie made the trip over to the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10000002,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        20000002,
+        "Fred made the trip over to the garden.",
+        [
+         "fred"
+        ]
+       ],
+       [
+        120000002,
+        "Clayton Edward Kershaw ( born March 19 , 1988 ) is an American professional baseball pitcher for the Los Angeles Dodgers of Major League Baseball ( MLB ).",
+        [
+         "cl"
+        ]
+       ]
+      ],
+      "target": "bedroom"
+     },
+     {
+      "ctx": "",
+      "n_records": 4,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the hallway.",
+        [
+         "bill",
+         "trip"
+        ]
+       ],
+       [
+        1000002,
+        "Bill wandered into the kitchen.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2000003,
+        "Bill wandered into the bedroom.",
+        [
+         "bill"
+        ]
+       ],
+       [
+        2101005,
+        "Julie hurried off toward the bedroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "garden"
+     },
+     {
+      "ctx": "[t=20000002] Bill made the trip over to the office.",
+      "n_records": 5,
+      "person": "Bill",
+      "pred": "unknown",
+      "qkeys": [
+       "bill"
+      ],
+      "records": [
+       [
+        1,
+        "Bill made the trip over to the garden.",
+        [
+         "bill",
+         "trip"
+        ]
+       ],
+       [
+        20000002,
+        "Bill made the trip over to the office.",
+        [
+         "bill",
+         "trip"
+        ]
+       ],
+       [
+        20010002,
+        "The latter would not resume arms against France until formally exchanged.",
+        [
+         "france"
+        ]
+       ],
+       [
+        20110003,
+        "Julie relocated to the bathroom.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "office"
+     },
+     {
+      "ctx": "",
+      "n_records": 9,
+      "person": "Julie",
+      "pred": "unknown",
+      "qkeys": [
+       "julie"
+      ],
+      "records": [
+       [
+        10211003,
+        "Julie wandered into the garden.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        10221003,
+        "Julie hurried off toward the kitchen.",
+        [
+         "jul"
+        ]
+       ],
+       [
+        11221003,
+        "Mark Young ( Mawk ) \u2014 bass ( 1994 \u2013 2015 ).",
+        [
+         "mark"
+        ]
+       ],
+       [
+        11221004,
+        "Julie relocated to the hallway.",
+        [
+         "jul"
+        ]
+       ]
+      ],
+      "target": "hallway"
+     }
+    ]
+   }
+  },
+  "baselines": {
+   "arms": {
+    "long-context": {
+     "acc": 0.6,
+     "n": 60
+    },
+    "rag-dense-k5": {
+     "acc": 0.45,
+     "n": 60
+    },
+    "rag-timestamps": {
+     "acc": 0.5333333333333333,
+     "n": 60
+    },
+    "rag-timestamps-ttl-RULE": {
+     "acc": 0.0,
+     "n": 60
+    }
+   },
+   "kind": "time",
+   "n": 60
+  },
+  "n": 60
+ },
+ "errors": [],
+ "experiment": "2026-09-23-ledger-memory-r2",
+ "gate": {
+  "17": {
+   "pass_rate:events_heldout_phrasing_test_names": 1.0,
+   "pass_rate:events_train_templates_test_names": 1.0,
+   "pass_rate:narrative_test_names": 0.0,
+   "pass_rate:wikitext_heldout": 0.0,
+   "train": {
+    "final_loss": 3.13758420134036e-07,
+    "n_events": 2000,
+    "n_narrative": 2000
+   }
+  },
+  "29": {
+   "pass_rate:events_heldout_phrasing_test_names": 1.0,
+   "pass_rate:events_train_templates_test_names": 1.0,
+   "pass_rate:narrative_test_names": 0.0,
+   "pass_rate:wikitext_heldout": 0.0,
+   "train": {
+    "final_loss": 3.934801043214975e-06,
+    "n_events": 2000,
+    "n_narrative": 2000
+   }
+  },
+  "43": {
+   "pass_rate:events_heldout_phrasing_test_names": 0.9933333333333333,
+   "pass_rate:events_train_templates_test_names": 1.0,
+   "pass_rate:narrative_test_names": 0.0,
+   "pass_rate:wikitext_heldout": 0.0033333333333333335,
+   "train": {
+    "final_loss": 1.0449587080074707e-06,
+    "n_events": 2000,
+    "n_narrative": 2000
+   }
+  }
+ },
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "dtype": "bfloat16",
+  "host": "pop-os",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "peak_rss_mb": 3991.5,
+  "peak_vram_reserved_mb": 4865.4,
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "smoke": false,
+ "tagger": {
+  "17": {
+   "final_loss": 0.0138154998421669,
+   "heldout_phrasing_mentions": {
+    "precision": 0.92152466367713,
+    "recall": 0.8526970954356846
+   },
+   "pos_frac": 0.06334301829338074,
+   "tokens": 103942
+  },
+  "29": {
+   "final_loss": 0.007453959435224533,
+   "heldout_phrasing_mentions": {
+    "precision": 0.9612903225806452,
+    "recall": 0.9273858921161826
+   },
+   "pos_frac": 0.063480906188488,
+   "tokens": 102456
+  },
+  "43": {
+   "final_loss": 0.0235586054623127,
+   "heldout_phrasing_mentions": {
+    "precision": 0.9484978540772532,
+    "recall": 0.91701244813278
+   },
+   "pos_frac": 0.06507032364606857,
+   "tokens": 103027
+  }
+ }
+}

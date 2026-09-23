@@ -1,0 +1,2809 @@
+{
+ "adapter": {
+  "17": {
+   "train": {
+    "param_count": 7016538,
+    "phase1": {
+     "decay_gate_acc": 1.0,
+     "frac_facts_ttl": 0.2841409742832184,
+     "gate_acc": 1.0,
+     "loss": 12.391429901123047,
+     "mean_ttl_gate_prob": 1.0,
+     "pathA_value_acc": 1.0,
+     "route_acc_query": 1.0,
+     "step": 1999
+    },
+    "phase2": {
+     "loss": 2.0861589291598648e-06,
+     "step": 799,
+     "train_em": 1.0
+    }
+   }
+  },
+  "29": {
+   "train": {
+    "param_count": 7016538,
+    "phase1": {
+     "decay_gate_acc": 1.0,
+     "frac_facts_ttl": 0.2864744961261749,
+     "gate_acc": 1.0,
+     "loss": 12.0344877243042,
+     "mean_ttl_gate_prob": 1.0,
+     "pathA_value_acc": 1.0,
+     "route_acc_query": 1.0,
+     "step": 1999
+    },
+    "phase2": {
+     "loss": 1.1771901426982367e-06,
+     "step": 799,
+     "train_em": 1.0
+    }
+   }
+  },
+  "43": {
+   "train": {
+    "param_count": 7016538,
+    "phase1": {
+     "decay_gate_acc": 1.0,
+     "frac_facts_ttl": 0.2590949535369873,
+     "gate_acc": 1.0,
+     "loss": 8.7896089553833,
+     "mean_ttl_gate_prob": 1.0,
+     "pathA_value_acc": 1.0,
+     "route_acc_query": 1.0,
+     "step": 1999
+    },
+    "phase2": {
+     "loss": 3.5464688608044526e-06,
+     "step": 799,
+     "train_em": 1.0
+    }
+   }
+  }
+ },
+ "config": {
+  "adapter_tasks": [
+   "qa1"
+  ],
+  "addr_dim": 64,
+  "addr_tau": 0.3,
+  "babilong_backends": [
+   "fp32",
+   "spf64"
+  ],
+  "babilong_lengths": [
+   "4k",
+   "16k",
+   "64k",
+   "128k"
+  ],
+  "babilong_limit": 100,
+  "babilong_tasks": [
+   "qa1",
+   "qa2",
+   "qa3",
+   "qa4",
+   "qa5"
+  ],
+  "backends": [
+   "fp32",
+   "bf16",
+   "fp64",
+   "spf64",
+   "spf128"
+  ],
+  "banks": 32,
+  "baseline_arms": [
+   "no-memory",
+   "long-context",
+   "rag-dense-k5",
+   "rag-dense-k10",
+   "rag-bm25-k5",
+   "rag-facts-k5",
+   "rag-timestamps"
+  ],
+  "batch": 128,
+  "batch_b": 8,
+  "channels": 8,
+  "ctx_cap": 32768,
+  "expiry_docs": 80,
+  "expiry_frac": 0.4,
+  "expiry_ttls": [
+   1000,
+   100000
+  ],
+  "gen_check_limit": 25,
+  "lr": 0.003,
+  "lr_b": 0.003,
+  "n_soft": 8,
+  "seeds": [
+   17,
+   29,
+   43
+  ],
+  "steps1": 2000,
+  "steps2": 800,
+  "time_docs": 60,
+  "time_gaps": [
+   1000,
+   10000,
+   100000,
+   1000000,
+   10000000,
+   100000000
+  ],
+  "train_episodes": 500,
+  "vram_probe_caps": [
+   16384,
+   32768
+  ],
+  "w_addr": 1.0,
+  "w_decay": 2.0,
+  "w_val": 1.0,
+  "wd": 0.0001
+ },
+ "design": "genuine streaming memory: learned write-gate + soft content-addressed router + writer decide what/where to write from the text alone; the bank state resolves overwrite (gated replacement) and expiry (decay); reads go through the router; no gold markers/positions/slot at test.",
+ "errors": [],
+ "experiment": "2026-09-22-memory-adapter-babilong",
+ "gap_is": "idle ticks between the last write and the query, advanced by the chosen backend at read time (SPF closed form / float iterated); the document itself is streamed sentence-by-sentence through frozen Qwen",
+ "n_filler_sentences": 4000,
+ "results": {
+  "babilong": {
+   "qa1": {
+    "128k": {
+     "adapter": {
+      "17": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.59,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.6,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.59,
+         "ci95": [
+          0.49,
+          0.69
+         ],
+         "n": 100,
+         "sec_per_query": 0.15208577041514218
+        },
+        "adapter:spf64": {
+         "acc": 0.6,
+         "ci95": [
+          0.51,
+          0.7
+         ],
+         "n": 100,
+         "sec_per_query": 0.15208577041514218
+        }
+       },
+       "gate": {
+        "precision": 0.20318827516034407,
+        "recall": 0.8925952380952381
+       },
+       "n": 100
+      },
+      "29": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.59,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.59,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.59,
+         "ci95": [
+          0.49,
+          0.69
+         ],
+         "n": 100,
+         "sec_per_query": 0.15229554533492773
+        },
+        "adapter:spf64": {
+         "acc": 0.59,
+         "ci95": [
+          0.49,
+          0.69
+         ],
+         "n": 100,
+         "sec_per_query": 0.15229554533492773
+        }
+       },
+       "gate": {
+        "precision": 0.5713478656963952,
+        "recall": 0.8859285714285715
+       },
+       "n": 100
+      },
+      "43": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.51,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.51,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.51,
+         "ci95": [
+          0.41975,
+          0.61
+         ],
+         "n": 100,
+         "sec_per_query": 0.1514593837747816
+        },
+        "adapter:spf64": {
+         "acc": 0.51,
+         "ci95": [
+          0.41975,
+          0.61
+         ],
+         "n": 100,
+         "sec_per_query": 0.1514593837747816
+        }
+       },
+       "gate": {
+        "precision": 0.49333928992891546,
+        "recall": 0.8925952380952381
+       },
+       "n": 100
+      }
+     },
+     "arms": {
+      "long-context": {
+       "acc": 0.42,
+       "ci95": [
+        0.33,
+        0.51
+       ],
+       "n": 100,
+       "sec_per_query": 2.3564855237596203
+      },
+      "no-memory": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.008883502109674736
+      },
+      "rag-bm25-k5": {
+       "acc": 0.7,
+       "ci95": [
+        0.61,
+        0.79
+       ],
+       "n": 100,
+       "sec_per_query": 0.015879840028937907
+      },
+      "rag-dense-k10": {
+       "acc": 0.78,
+       "ci95": [
+        0.69,
+        0.86
+       ],
+       "n": 100,
+       "sec_per_query": 0.020635019049514085
+      },
+      "rag-dense-k5": {
+       "acc": 0.81,
+       "ci95": [
+        0.73,
+        0.88
+       ],
+       "n": 100,
+       "sec_per_query": 0.014104200069559737
+      },
+      "rag-facts-k5": {
+       "acc": 0.87,
+       "ci95": [
+        0.8,
+        0.93
+       ],
+       "n": 100,
+       "sec_per_query": 0.010898619190556928
+      },
+      "rag-timestamps": {
+       "acc": 0.69,
+       "ci95": [
+        0.59975,
+        0.78
+       ],
+       "n": 100,
+       "sec_per_query": 0.015563626369694248
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa1"
+    },
+    "16k": {
+     "adapter": {
+      "17": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.7,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.72,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.71,
+         "ci95": [
+          0.62,
+          0.8
+         ],
+         "n": 100,
+         "sec_per_query": 0.038414893839508295
+        },
+        "adapter:spf64": {
+         "acc": 0.71,
+         "ci95": [
+          0.62,
+          0.8
+         ],
+         "n": 100,
+         "sec_per_query": 0.038414893839508295
+        }
+       },
+       "gate": {
+        "precision": 0.6899065232153467,
+        "recall": 0.915265873015873
+       },
+       "n": 100
+      },
+      "29": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.67,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.66,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.67,
+         "ci95": [
+          0.58,
+          0.76
+         ],
+         "n": 100,
+         "sec_per_query": 0.03812535119475797
+        },
+        "adapter:spf64": {
+         "acc": 0.66,
+         "ci95": [
+          0.57,
+          0.75
+         ],
+         "n": 100,
+         "sec_per_query": 0.03812535119475797
+        }
+       },
+       "gate": {
+        "precision": 0.9187831057831058,
+        "recall": 0.9128373015873017
+       },
+       "n": 100
+      },
+      "43": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.61,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.61,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.61,
+         "ci95": [
+          0.52,
+          0.7
+         ],
+         "n": 100,
+         "sec_per_query": 0.03793716726009734
+        },
+        "adapter:spf64": {
+         "acc": 0.61,
+         "ci95": [
+          0.52,
+          0.7
+         ],
+         "n": 100,
+         "sec_per_query": 0.03793716726009734
+        }
+       },
+       "gate": {
+        "precision": 0.8994141414141414,
+        "recall": 0.9180039682539683
+       },
+       "n": 100
+      }
+     },
+     "arms": {
+      "long-context": {
+       "acc": 0.64,
+       "ci95": [
+        0.54,
+        0.73
+       ],
+       "n": 100,
+       "sec_per_query": 0.8296563142701052
+      },
+      "no-memory": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.008991147839697077
+      },
+      "rag-bm25-k5": {
+       "acc": 0.82,
+       "ci95": [
+        0.74975,
+        0.89
+       ],
+       "n": 100,
+       "sec_per_query": 0.01756614990066737
+      },
+      "rag-dense-k10": {
+       "acc": 0.78,
+       "ci95": [
+        0.7,
+        0.86
+       ],
+       "n": 100,
+       "sec_per_query": 0.023608681589830666
+      },
+      "rag-dense-k5": {
+       "acc": 0.8,
+       "ci95": [
+        0.72,
+        0.87
+       ],
+       "n": 100,
+       "sec_per_query": 0.015223871959606186
+      },
+      "rag-facts-k5": {
+       "acc": 0.87,
+       "ci95": [
+        0.8,
+        0.93
+       ],
+       "n": 100,
+       "sec_per_query": 0.010906942069996149
+      },
+      "rag-timestamps": {
+       "acc": 0.81,
+       "ci95": [
+        0.73,
+        0.88
+       ],
+       "n": 100,
+       "sec_per_query": 0.016880676560103895
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa1"
+    },
+    "4k": {
+     "adapter": {
+      "17": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.73,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.73,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.72,
+         "ci95": [
+          0.63,
+          0.8
+         ],
+         "n": 100,
+         "sec_per_query": 0.026347910259501076
+        },
+        "adapter:spf64": {
+         "acc": 0.72,
+         "ci95": [
+          0.63,
+          0.8
+         ],
+         "n": 100,
+         "sec_per_query": 0.026347910259501076
+        }
+       },
+       "gate": {
+        "precision": 0.8740851370851371,
+        "recall": 0.9127500000000001
+       },
+       "n": 100
+      },
+      "29": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.73,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.73,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.73,
+         "ci95": [
+          0.64,
+          0.82
+         ],
+         "n": 100,
+         "sec_per_query": 0.025270996720064432
+        },
+        "adapter:spf64": {
+         "acc": 0.73,
+         "ci95": [
+          0.64,
+          0.82
+         ],
+         "n": 100,
+         "sec_per_query": 0.025270996720064432
+        }
+       },
+       "gate": {
+        "precision": 0.9715353535353535,
+        "recall": 0.914
+       },
+       "n": 100
+      },
+      "43": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.66,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.66,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.66,
+         "ci95": [
+          0.57,
+          0.75
+         ],
+         "n": 100,
+         "sec_per_query": 0.025389569880208
+        },
+        "adapter:spf64": {
+         "acc": 0.66,
+         "ci95": [
+          0.57,
+          0.75
+         ],
+         "n": 100,
+         "sec_per_query": 0.025389569880208
+        }
+       },
+       "gate": {
+        "precision": 0.953118686868687,
+        "recall": 0.9127500000000001
+       },
+       "n": 100
+      }
+     },
+     "arms": {
+      "long-context": {
+       "acc": 0.59,
+       "ci95": [
+        0.49,
+        0.69
+       ],
+       "n": 100,
+       "sec_per_query": 0.20782190738013015
+      },
+      "no-memory": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.012419211299857125
+      },
+      "rag-bm25-k5": {
+       "acc": 0.84,
+       "ci95": [
+        0.76,
+        0.91
+       ],
+       "n": 100,
+       "sec_per_query": 0.017781604030169547
+      },
+      "rag-dense-k10": {
+       "acc": 0.82,
+       "ci95": [
+        0.74,
+        0.89
+       ],
+       "n": 100,
+       "sec_per_query": 0.02353403656044975
+      },
+      "rag-dense-k5": {
+       "acc": 0.86,
+       "ci95": [
+        0.79,
+        0.93
+       ],
+       "n": 100,
+       "sec_per_query": 0.015367029750486837
+      },
+      "rag-facts-k5": {
+       "acc": 0.87,
+       "ci95": [
+        0.8,
+        0.93
+       ],
+       "n": 100,
+       "sec_per_query": 0.01089870637981221
+      },
+      "rag-timestamps": {
+       "acc": 0.73,
+       "ci95": [
+        0.64,
+        0.82
+       ],
+       "n": 100,
+       "sec_per_query": 0.016565593089908362
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa1"
+    },
+    "64k": {
+     "adapter": {
+      "17": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.65,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.65,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.65,
+         "ci95": [
+          0.55,
+          0.74
+         ],
+         "n": 100,
+         "sec_per_query": 0.08575335459958296
+        },
+        "adapter:spf64": {
+         "acc": 0.65,
+         "ci95": [
+          0.55,
+          0.74
+         ],
+         "n": 100,
+         "sec_per_query": 0.08575335459958296
+        }
+       },
+       "gate": {
+        "precision": 0.3495554807918484,
+        "recall": 0.8750000000000001
+       },
+       "n": 100
+      },
+      "29": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.65,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.65,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.65,
+         "ci95": [
+          0.56,
+          0.74
+         ],
+         "n": 100,
+         "sec_per_query": 0.0862169379601255
+        },
+        "adapter:spf64": {
+         "acc": 0.65,
+         "ci95": [
+          0.56,
+          0.74
+         ],
+         "n": 100,
+         "sec_per_query": 0.0862169379601255
+        }
+       },
+       "gate": {
+        "precision": 0.7283823766103178,
+        "recall": 0.8732500000000001
+       },
+       "n": 100
+      },
+      "43": {
+       "arms": {
+        "adapter-ORACLE:fp32": {
+         "acc": 0.6,
+         "n": 100
+        },
+        "adapter-ORACLE:spf64": {
+         "acc": 0.6,
+         "n": 100
+        },
+        "adapter:fp32": {
+         "acc": 0.6,
+         "ci95": [
+          0.51,
+          0.7
+         ],
+         "n": 100,
+         "sec_per_query": 0.08577652581036091
+        },
+        "adapter:spf64": {
+         "acc": 0.6,
+         "ci95": [
+          0.51,
+          0.7
+         ],
+         "n": 100,
+         "sec_per_query": 0.08577652581036091
+        }
+       },
+       "gate": {
+        "precision": 0.6697171173339906,
+        "recall": 0.87425
+       },
+       "n": 100
+      }
+     },
+     "arms": {
+      "long-context": {
+       "acc": 0.53,
+       "ci95": [
+        0.43,
+        0.63
+       ],
+       "n": 100,
+       "sec_per_query": 2.2732753491797486
+      },
+      "no-memory": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.009063739839475601
+      },
+      "rag-bm25-k5": {
+       "acc": 0.81,
+       "ci95": [
+        0.73,
+        0.88
+       ],
+       "n": 100,
+       "sec_per_query": 0.017323564200196415
+      },
+      "rag-dense-k10": {
+       "acc": 0.83,
+       "ci95": [
+        0.75,
+        0.89
+       ],
+       "n": 100,
+       "sec_per_query": 0.02363818172016181
+      },
+      "rag-dense-k5": {
+       "acc": 0.82,
+       "ci95": [
+        0.74,
+        0.89
+       ],
+       "n": 100,
+       "sec_per_query": 0.014906803769990802
+      },
+      "rag-facts-k5": {
+       "acc": 0.87,
+       "ci95": [
+        0.8,
+        0.93
+       ],
+       "n": 100,
+       "sec_per_query": 0.010843438020674511
+      },
+      "rag-timestamps": {
+       "acc": 0.69,
+       "ci95": [
+        0.6,
+        0.78
+       ],
+       "n": 100,
+       "sec_per_query": 0.015505821598926559
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa1"
+    }
+   },
+   "qa2": {
+    "128k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 2.357067340021022
+      },
+      "no-memory": {
+       "acc": 0.09,
+       "ci95": [
+        0.04,
+        0.15
+       ],
+       "n": 100,
+       "sec_per_query": 0.009310445201117545
+      },
+      "rag-bm25-k5": {
+       "acc": 0.14,
+       "ci95": [
+        0.07,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.01642564417910762
+      },
+      "rag-dense-k10": {
+       "acc": 0.12,
+       "ci95": [
+        0.06,
+        0.19
+       ],
+       "n": 100,
+       "sec_per_query": 0.023895518699428065
+      },
+      "rag-dense-k5": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.015386278639780357
+      },
+      "rag-facts-k5": {
+       "acc": 0.27,
+       "ci95": [
+        0.18,
+        0.36
+       ],
+       "n": 100,
+       "sec_per_query": 0.011723239510320126
+      },
+      "rag-timestamps": {
+       "acc": 0.15,
+       "ci95": [
+        0.08,
+        0.22
+       ],
+       "n": 100,
+       "sec_per_query": 0.01673920663073659
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa2"
+    },
+    "16k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.43,
+       "ci95": [
+        0.33,
+        0.53
+       ],
+       "n": 100,
+       "sec_per_query": 0.8301340319099836
+      },
+      "no-memory": {
+       "acc": 0.09,
+       "ci95": [
+        0.04,
+        0.15
+       ],
+       "n": 100,
+       "sec_per_query": 0.009215705640381202
+      },
+      "rag-bm25-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23024999999999865
+       ],
+       "n": 100,
+       "sec_per_query": 0.0182337362295948
+      },
+      "rag-dense-k10": {
+       "acc": 0.13,
+       "ci95": [
+        0.07,
+        0.2
+       ],
+       "n": 100,
+       "sec_per_query": 0.024240531070390717
+      },
+      "rag-dense-k5": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.01580139791010879
+      },
+      "rag-facts-k5": {
+       "acc": 0.27,
+       "ci95": [
+        0.18,
+        0.36
+       ],
+       "n": 100,
+       "sec_per_query": 0.011663579780142755
+      },
+      "rag-timestamps": {
+       "acc": 0.15,
+       "ci95": [
+        0.08,
+        0.22
+       ],
+       "n": 100,
+       "sec_per_query": 0.016435861729551107
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa2"
+    },
+    "4k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.39,
+       "ci95": [
+        0.29,
+        0.48
+       ],
+       "n": 100,
+       "sec_per_query": 0.20953266156022438
+      },
+      "no-memory": {
+       "acc": 0.09,
+       "ci95": [
+        0.04,
+        0.15
+       ],
+       "n": 100,
+       "sec_per_query": 0.009123161369934678
+      },
+      "rag-bm25-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.24
+       ],
+       "n": 100,
+       "sec_per_query": 0.017436846800846978
+      },
+      "rag-dense-k10": {
+       "acc": 0.18,
+       "ci95": [
+        0.11,
+        0.26
+       ],
+       "n": 100,
+       "sec_per_query": 0.02252373402006924
+      },
+      "rag-dense-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.015261266389861703
+      },
+      "rag-facts-k5": {
+       "acc": 0.27,
+       "ci95": [
+        0.18,
+        0.36
+       ],
+       "n": 100,
+       "sec_per_query": 0.011698669829638676
+      },
+      "rag-timestamps": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.016759997199987994
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa2"
+    },
+    "64k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.29,
+       "ci95": [
+        0.21,
+        0.38
+       ],
+       "n": 100,
+       "sec_per_query": 2.270112383400556
+      },
+      "no-memory": {
+       "acc": 0.09,
+       "ci95": [
+        0.04,
+        0.15
+       ],
+       "n": 100,
+       "sec_per_query": 0.00920980280963704
+      },
+      "rag-bm25-k5": {
+       "acc": 0.19,
+       "ci95": [
+        0.12,
+        0.27
+       ],
+       "n": 100,
+       "sec_per_query": 0.017677915699314328
+      },
+      "rag-dense-k10": {
+       "acc": 0.13,
+       "ci95": [
+        0.07,
+        0.2
+       ],
+       "n": 100,
+       "sec_per_query": 0.02129334114026278
+      },
+      "rag-dense-k5": {
+       "acc": 0.13,
+       "ci95": [
+        0.07,
+        0.2
+       ],
+       "n": 100,
+       "sec_per_query": 0.014546265519456938
+      },
+      "rag-facts-k5": {
+       "acc": 0.27,
+       "ci95": [
+        0.18,
+        0.36
+       ],
+       "n": 100,
+       "sec_per_query": 0.011744138549547643
+      },
+      "rag-timestamps": {
+       "acc": 0.14,
+       "ci95": [
+        0.08,
+        0.21
+       ],
+       "n": 100,
+       "sec_per_query": 0.015162093139952048
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa2"
+    }
+   },
+   "qa3": {
+    "128k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.37,
+       "ci95": [
+        0.28,
+        0.46
+       ],
+       "n": 100,
+       "sec_per_query": 2.3495532413199545
+      },
+      "no-memory": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 0.01159835836966522
+      },
+      "rag-bm25-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.016837135610403495
+      },
+      "rag-dense-k10": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.24
+       ],
+       "n": 100,
+       "sec_per_query": 0.02367139870999381
+      },
+      "rag-dense-k5": {
+       "acc": 0.17,
+       "ci95": [
+        0.1,
+        0.25
+       ],
+       "n": 100,
+       "sec_per_query": 0.01650607375893742
+      },
+      "rag-facts-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.01439000883954577
+      },
+      "rag-timestamps": {
+       "acc": 0.19,
+       "ci95": [
+        0.11,
+        0.27
+       ],
+       "n": 100,
+       "sec_per_query": 0.017288739969953896
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa3"
+    },
+    "16k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.26,
+       "ci95": [
+        0.18,
+        0.35
+       ],
+       "n": 100,
+       "sec_per_query": 1.5886980722402222
+      },
+      "no-memory": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 0.01157274001976475
+      },
+      "rag-bm25-k5": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 0.017143729759845884
+      },
+      "rag-dense-k10": {
+       "acc": 0.19,
+       "ci95": [
+        0.12,
+        0.27
+       ],
+       "n": 100,
+       "sec_per_query": 0.02166898195981048
+      },
+      "rag-dense-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.015416514709359034
+      },
+      "rag-facts-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.01434292174060829
+      },
+      "rag-timestamps": {
+       "acc": 0.22,
+       "ci95": [
+        0.14,
+        0.30024999999999863
+       ],
+       "n": 100,
+       "sec_per_query": 0.016056959080742672
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa3"
+    },
+    "4k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.22,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.22074012872995807
+      },
+      "no-memory": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 0.011522377759683877
+      },
+      "rag-bm25-k5": {
+       "acc": 0.17,
+       "ci95": [
+        0.1,
+        0.25
+       ],
+       "n": 100,
+       "sec_per_query": 0.016949816489359365
+      },
+      "rag-dense-k10": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.02106020333012566
+      },
+      "rag-dense-k5": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.31
+       ],
+       "n": 100,
+       "sec_per_query": 0.015051623700419441
+      },
+      "rag-facts-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.014383644199697301
+      },
+      "rag-timestamps": {
+       "acc": 0.21,
+       "ci95": [
+        0.14,
+        0.29
+       ],
+       "n": 100,
+       "sec_per_query": 0.016106473160907627
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa3"
+    },
+    "64k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.36,
+       "ci95": [
+        0.27,
+        0.46
+       ],
+       "n": 100,
+       "sec_per_query": 2.2701551712001673
+      },
+      "no-memory": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 0.01155273576034233
+      },
+      "rag-bm25-k5": {
+       "acc": 0.19,
+       "ci95": [
+        0.12,
+        0.27
+       ],
+       "n": 100,
+       "sec_per_query": 0.016814058129675687
+      },
+      "rag-dense-k10": {
+       "acc": 0.2,
+       "ci95": [
+        0.12,
+        0.28
+       ],
+       "n": 100,
+       "sec_per_query": 0.02348197532002814
+      },
+      "rag-dense-k5": {
+       "acc": 0.26,
+       "ci95": [
+        0.18,
+        0.35
+       ],
+       "n": 100,
+       "sec_per_query": 0.016269152091117577
+      },
+      "rag-facts-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.014417702610371634
+      },
+      "rag-timestamps": {
+       "acc": 0.15,
+       "ci95": [
+        0.08,
+        0.22
+       ],
+       "n": 100,
+       "sec_per_query": 0.017867713160812856
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa3"
+    }
+   },
+   "qa4": {
+    "128k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.22,
+       "ci95": [
+        0.14975000000000002,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 2.3543659806996584
+      },
+      "no-memory": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.007247818900505081
+      },
+      "rag-bm25-k5": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.31
+       ],
+       "n": 100,
+       "sec_per_query": 0.014334184430772438
+      },
+      "rag-dense-k10": {
+       "acc": 0.25,
+       "ci95": [
+        0.16,
+        0.33
+       ],
+       "n": 100,
+       "sec_per_query": 0.023313468570122495
+      },
+      "rag-dense-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.014330032269936056
+      },
+      "rag-facts-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.0069704963592812415
+      },
+      "rag-timestamps": {
+       "acc": 0.2,
+       "ci95": [
+        0.13,
+        0.28
+       ],
+       "n": 100,
+       "sec_per_query": 0.015436584539711475
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa4"
+    },
+    "16k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.21,
+       "ci95": [
+        0.13,
+        0.29
+       ],
+       "n": 100,
+       "sec_per_query": 0.8234764940303285
+      },
+      "no-memory": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.007110917010577395
+      },
+      "rag-bm25-k5": {
+       "acc": 0.26,
+       "ci95": [
+        0.18,
+        0.35
+       ],
+       "n": 100,
+       "sec_per_query": 0.015780656799906864
+      },
+      "rag-dense-k10": {
+       "acc": 0.28,
+       "ci95": [
+        0.19,
+        0.37
+       ],
+       "n": 100,
+       "sec_per_query": 0.024353532190434634
+      },
+      "rag-dense-k5": {
+       "acc": 0.3,
+       "ci95": [
+        0.21,
+        0.39
+       ],
+       "n": 100,
+       "sec_per_query": 0.014153680989984423
+      },
+      "rag-facts-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.006980257889954373
+      },
+      "rag-timestamps": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 0.01637522147037089
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa4"
+    },
+    "4k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.2,
+       "ci95": [
+        0.13,
+        0.28
+       ],
+       "n": 100,
+       "sec_per_query": 0.2139267368800938
+      },
+      "no-memory": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.00707497835974209
+      },
+      "rag-bm25-k5": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.33
+       ],
+       "n": 100,
+       "sec_per_query": 0.014963068530196324
+      },
+      "rag-dense-k10": {
+       "acc": 0.22,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.024919792000437157
+      },
+      "rag-dense-k5": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.32
+       ],
+       "n": 100,
+       "sec_per_query": 0.015191338319564238
+      },
+      "rag-facts-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.00697626422974281
+      },
+      "rag-timestamps": {
+       "acc": 0.23,
+       "ci95": [
+        0.15,
+        0.31
+       ],
+       "n": 100,
+       "sec_per_query": 0.016648939079605043
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa4"
+    },
+    "64k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.27,
+       "ci95": [
+        0.19,
+        0.36
+       ],
+       "n": 100,
+       "sec_per_query": 2.2710020326997618
+      },
+      "no-memory": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.007272445410490036
+      },
+      "rag-bm25-k5": {
+       "acc": 0.28,
+       "ci95": [
+        0.2,
+        0.37
+       ],
+       "n": 100,
+       "sec_per_query": 0.014614051330136135
+      },
+      "rag-dense-k10": {
+       "acc": 0.26,
+       "ci95": [
+        0.17975000000000002,
+        0.35
+       ],
+       "n": 100,
+       "sec_per_query": 0.023579476570012046
+      },
+      "rag-dense-k5": {
+       "acc": 0.26,
+       "ci95": [
+        0.17,
+        0.35
+       ],
+       "n": 100,
+       "sec_per_query": 0.01445197760942392
+      },
+      "rag-facts-k5": {
+       "acc": 0.16,
+       "ci95": [
+        0.09,
+        0.23
+       ],
+       "n": 100,
+       "sec_per_query": 0.006992215529317036
+      },
+      "rag-timestamps": {
+       "acc": 0.22,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.015383186669787392
+      }
+     },
+     "labels": [
+      "bathroom",
+      "bedroom",
+      "garden",
+      "hallway",
+      "kitchen",
+      "office"
+     ],
+     "n": 100,
+     "task": "qa4"
+    }
+   },
+   "qa5": {
+    "128k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.37,
+       "ci95": [
+        0.28,
+        0.47
+       ],
+       "n": 100,
+       "sec_per_query": 2.355162475570105
+      },
+      "no-memory": {
+       "acc": 0.21,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.009554915429325773
+      },
+      "rag-bm25-k5": {
+       "acc": 0.61,
+       "ci95": [
+        0.51,
+        0.71
+       ],
+       "n": 100,
+       "sec_per_query": 0.01503990980098024
+      },
+      "rag-dense-k10": {
+       "acc": 0.59,
+       "ci95": [
+        0.49,
+        0.68
+       ],
+       "n": 100,
+       "sec_per_query": 0.02407515338039957
+      },
+      "rag-dense-k5": {
+       "acc": 0.57,
+       "ci95": [
+        0.47,
+        0.66
+       ],
+       "n": 100,
+       "sec_per_query": 0.015173610999481753
+      },
+      "rag-facts-k5": {
+       "acc": 0.3,
+       "ci95": [
+        0.22,
+        0.39
+       ],
+       "n": 100,
+       "sec_per_query": 0.011674163189018144
+      },
+      "rag-timestamps": {
+       "acc": 0.6,
+       "ci95": [
+        0.5,
+        0.7
+       ],
+       "n": 100,
+       "sec_per_query": 0.017168040060205385
+      }
+     },
+     "labels": [
+      "Bill",
+      "Fred",
+      "Jeff",
+      "Mary",
+      "apple",
+      "football",
+      "milk"
+     ],
+     "n": 100,
+     "task": "qa5"
+    },
+    "16k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.25,
+       "ci95": [
+        0.17,
+        0.34
+       ],
+       "n": 100,
+       "sec_per_query": 1.572435375660425
+      },
+      "no-memory": {
+       "acc": 0.21,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.00944751787930727
+      },
+      "rag-bm25-k5": {
+       "acc": 0.64,
+       "ci95": [
+        0.55,
+        0.73
+       ],
+       "n": 100,
+       "sec_per_query": 0.01479236318031326
+      },
+      "rag-dense-k10": {
+       "acc": 0.6,
+       "ci95": [
+        0.5,
+        0.7
+       ],
+       "n": 100,
+       "sec_per_query": 0.024066907379310578
+      },
+      "rag-dense-k5": {
+       "acc": 0.62,
+       "ci95": [
+        0.52,
+        0.71
+       ],
+       "n": 100,
+       "sec_per_query": 0.014905034290859476
+      },
+      "rag-facts-k5": {
+       "acc": 0.3,
+       "ci95": [
+        0.22,
+        0.39
+       ],
+       "n": 100,
+       "sec_per_query": 0.011677475579781459
+      },
+      "rag-timestamps": {
+       "acc": 0.63,
+       "ci95": [
+        0.53,
+        0.72
+       ],
+       "n": 100,
+       "sec_per_query": 0.016388790520140903
+      }
+     },
+     "labels": [
+      "Bill",
+      "Fred",
+      "Jeff",
+      "Mary",
+      "apple",
+      "football",
+      "milk"
+     ],
+     "n": 100,
+     "task": "qa5"
+    },
+    "4k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.37,
+       "ci95": [
+        0.28,
+        0.47
+       ],
+       "n": 100,
+       "sec_per_query": 0.21324389146990141
+      },
+      "no-memory": {
+       "acc": 0.21,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.009462275950936601
+      },
+      "rag-bm25-k5": {
+       "acc": 0.61,
+       "ci95": [
+        0.51,
+        0.71
+       ],
+       "n": 100,
+       "sec_per_query": 0.01547777871019207
+      },
+      "rag-dense-k10": {
+       "acc": 0.64,
+       "ci95": [
+        0.54,
+        0.73
+       ],
+       "n": 100,
+       "sec_per_query": 0.02205797582981177
+      },
+      "rag-dense-k5": {
+       "acc": 0.63,
+       "ci95": [
+        0.53,
+        0.72
+       ],
+       "n": 100,
+       "sec_per_query": 0.014560769880190491
+      },
+      "rag-facts-k5": {
+       "acc": 0.3,
+       "ci95": [
+        0.22,
+        0.39
+       ],
+       "n": 100,
+       "sec_per_query": 0.011624884629854932
+      },
+      "rag-timestamps": {
+       "acc": 0.69,
+       "ci95": [
+        0.59,
+        0.77
+       ],
+       "n": 100,
+       "sec_per_query": 0.015952912729699165
+      }
+     },
+     "labels": [
+      "Bill",
+      "Fred",
+      "Jeff",
+      "Mary",
+      "apple",
+      "football",
+      "milk"
+     ],
+     "n": 100,
+     "task": "qa5"
+    },
+    "64k": {
+     "arms": {
+      "long-context": {
+       "acc": 0.37,
+       "ci95": [
+        0.28,
+        0.47
+       ],
+       "n": 100,
+       "sec_per_query": 2.2702759413793685
+      },
+      "no-memory": {
+       "acc": 0.21,
+       "ci95": [
+        0.14,
+        0.3
+       ],
+       "n": 100,
+       "sec_per_query": 0.009477604690473526
+      },
+      "rag-bm25-k5": {
+       "acc": 0.63,
+       "ci95": [
+        0.5397500000000001,
+        0.72
+       ],
+       "n": 100,
+       "sec_per_query": 0.014785741820232942
+      },
+      "rag-dense-k10": {
+       "acc": 0.64,
+       "ci95": [
+        0.54,
+        0.73
+       ],
+       "n": 100,
+       "sec_per_query": 0.024499901980161668
+      },
+      "rag-dense-k5": {
+       "acc": 0.6,
+       "ci95": [
+        0.5,
+        0.7
+       ],
+       "n": 100,
+       "sec_per_query": 0.014991491339169443
+      },
+      "rag-facts-k5": {
+       "acc": 0.3,
+       "ci95": [
+        0.22,
+        0.39
+       ],
+       "n": 100,
+       "sec_per_query": 0.011607189670903607
+      },
+      "rag-timestamps": {
+       "acc": 0.65,
+       "ci95": [
+        0.55,
+        0.74
+       ],
+       "n": 100,
+       "sec_per_query": 0.015834639450768007
+      }
+     },
+     "labels": [
+      "Bill",
+      "Fred",
+      "Jeff",
+      "Mary",
+      "apple",
+      "football",
+      "milk"
+     ],
+     "n": 100,
+     "task": "qa5"
+    }
+   }
+  },
+  "expiry": {
+   "adapter": {
+    "17": {
+     "arms": {
+      "adapter:bf16": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.01074181781266816,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:fp32": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.01074181781266816,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:fp64": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.01074181781266816,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:spf128": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.01074181781266816,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:spf64": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.01074181781266816,
+       "stale_answer_rate": 0.5581395348837209
+      }
+     },
+     "expiry_decay_diag": {
+      "frac_dom_expiring": 1.0,
+      "mean_pred_ttl": 5589.474792480469
+     },
+     "gate": {
+      "precision": 0.0,
+      "recall": null
+     },
+     "n": 80
+    },
+    "29": {
+     "arms": {
+      "adapter:bf16": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010674976604932454,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:fp32": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010674976604932454,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:fp64": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010674976604932454,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:spf128": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010674976604932454,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:spf64": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010674976604932454,
+       "stale_answer_rate": 0.5581395348837209
+      }
+     },
+     "expiry_decay_diag": {
+      "frac_dom_expiring": 1.0,
+      "mean_pred_ttl": 5259.41557006836
+     },
+     "gate": {
+      "precision": 0.0,
+      "recall": null
+     },
+     "n": 80
+    },
+    "43": {
+     "arms": {
+      "adapter:bf16": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010704264839878306,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:fp32": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010704264839878306,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:fp64": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010704264839878306,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:spf128": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010704264839878306,
+       "stale_answer_rate": 0.5581395348837209
+      },
+      "adapter:spf64": {
+       "acc": 0.475,
+       "ci95": [
+        0.3625,
+        0.575
+       ],
+       "correct_refusal_rate": 0.4418604651162791,
+       "n": 80,
+       "sec_per_query": 0.010704264839878306,
+       "stale_answer_rate": 0.5581395348837209
+      }
+     },
+     "expiry_decay_diag": {
+      "frac_dom_expiring": 1.0,
+      "mean_pred_ttl": 5372.735760498047
+     },
+     "gate": {
+      "precision": 0.0,
+      "recall": null
+     },
+     "n": 80
+    }
+   },
+   "baselines": {
+    "arms": {
+     "long-context": {
+      "acc": 0.5125,
+      "correct_refusal_rate": 0.27906976744186046,
+      "n": 80,
+      "stale_answer_rate": 0.7209302325581395
+     },
+     "rag-dense-k5": {
+      "acc": 0.5375,
+      "correct_refusal_rate": 0.20930232558139536,
+      "n": 80,
+      "stale_answer_rate": 0.7906976744186046
+     },
+     "rag-timestamps": {
+      "acc": 0.5375,
+      "correct_refusal_rate": 0.20930232558139536,
+      "n": 80,
+      "stale_answer_rate": 0.7906976744186046
+     },
+     "rag-timestamps-ttl-RULE": {
+      "acc": 1.0,
+      "correct_refusal_rate": 1.0,
+      "n": 80,
+      "stale_answer_rate": 0.0
+     }
+    },
+    "kind": "expiry",
+    "n": 80
+   }
+  },
+  "generative_check": {
+   "qa1": {
+    "arms": {
+     "long-context": {
+      "acc": 0.56,
+      "n": 25
+     },
+     "no-memory": {
+      "acc": 0.0,
+      "n": 25
+     },
+     "rag-dense-k5": {
+      "acc": 0.8,
+      "n": 25
+     }
+    },
+    "n": 25,
+    "task": "qa1"
+   },
+   "qa2": {
+    "arms": {
+     "long-context": {
+      "acc": 0.36,
+      "n": 25
+     },
+     "no-memory": {
+      "acc": 0.04,
+      "n": 25
+     },
+     "rag-dense-k5": {
+      "acc": 0.04,
+      "n": 25
+     }
+    },
+    "n": 25,
+    "task": "qa2"
+   },
+   "qa3": {
+    "arms": {
+     "long-context": {
+      "acc": 0.44,
+      "n": 25
+     },
+     "no-memory": {
+      "acc": 0.12,
+      "n": 25
+     },
+     "rag-dense-k5": {
+      "acc": 0.2,
+      "n": 25
+     }
+    },
+    "n": 25,
+    "task": "qa3"
+   },
+   "qa4": {
+    "arms": {
+     "long-context": {
+      "acc": 0.6,
+      "n": 25
+     },
+     "no-memory": {
+      "acc": 0.16,
+      "n": 25
+     },
+     "rag-dense-k5": {
+      "acc": 0.52,
+      "n": 25
+     }
+    },
+    "n": 25,
+    "task": "qa4"
+   },
+   "qa5": {
+    "arms": {
+     "long-context": {
+      "acc": 0.8,
+      "n": 25
+     },
+     "no-memory": {
+      "acc": 0.24,
+      "n": 25
+     },
+     "rag-dense-k5": {
+      "acc": 0.88,
+      "n": 25
+     }
+    },
+    "n": 25,
+    "task": "qa5"
+   }
+  },
+  "time": {
+   "adapter": {
+    "17": {
+     "arms": {
+      "adapter:bf16": {
+       "acc": 0.3,
+       "ci95": [
+        0.18333333333333332,
+        0.4166666666666667
+       ],
+       "n": 60,
+       "sec_per_query": 5.642880144629938
+      },
+      "adapter:fp32": {
+       "acc": 0.65,
+       "ci95": [
+        0.5166666666666667,
+        0.7666666666666667
+       ],
+       "n": 60,
+       "sec_per_query": 5.642880144629938
+      },
+      "adapter:fp64": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.642880144629938
+      },
+      "adapter:spf128": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.642880144629938
+      },
+      "adapter:spf64": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.642880144629938
+      }
+     },
+     "by_gap": {
+      "1000": {
+       "bf16": 0.4,
+       "fp32": 1.0,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "10000": {
+       "bf16": 0.46153846153846156,
+       "fp32": 0.8461538461538461,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "100000": {
+       "bf16": 0.18181818181818182,
+       "fp32": 0.6363636363636364,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "1000000": {
+       "bf16": 0.36363636363636365,
+       "fp32": 0.6363636363636364,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "10000000": {
+       "bf16": 0.0,
+       "fp32": 0.6,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "100000000": {
+       "bf16": 0.2,
+       "fp32": 0.1,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      }
+     },
+     "gate": {
+      "precision": 0.0,
+      "recall": null
+     },
+     "n": 60
+    },
+    "29": {
+     "arms": {
+      "adapter:bf16": {
+       "acc": 0.2833333333333333,
+       "ci95": [
+        0.16666666666666666,
+        0.4
+       ],
+       "n": 60,
+       "sec_per_query": 5.626392441740027
+      },
+      "adapter:fp32": {
+       "acc": 0.6333333333333333,
+       "ci95": [
+        0.5,
+        0.75
+       ],
+       "n": 60,
+       "sec_per_query": 5.626392441740027
+      },
+      "adapter:fp64": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.626392441740027
+      },
+      "adapter:spf128": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.626392441740027
+      },
+      "adapter:spf64": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.626392441740027
+      }
+     },
+     "by_gap": {
+      "1000": {
+       "bf16": 0.5,
+       "fp32": 0.9,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "10000": {
+       "bf16": 0.38461538461538464,
+       "fp32": 0.8461538461538461,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "100000": {
+       "bf16": 0.45454545454545453,
+       "fp32": 0.6363636363636364,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "1000000": {
+       "bf16": 0.0,
+       "fp32": 0.5454545454545454,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "10000000": {
+       "bf16": 0.0,
+       "fp32": 0.8,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "100000000": {
+       "bf16": 0.2,
+       "fp32": 0.1,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      }
+     },
+     "gate": {
+      "precision": 0.0,
+      "recall": null
+     },
+     "n": 60
+    },
+    "43": {
+     "arms": {
+      "adapter:bf16": {
+       "acc": 0.3,
+       "ci95": [
+        0.18333333333333332,
+        0.4166666666666667
+       ],
+       "n": 60,
+       "sec_per_query": 5.622460976529789
+      },
+      "adapter:fp32": {
+       "acc": 0.7333333333333333,
+       "ci95": [
+        0.6166666666666667,
+        0.8337499999999978
+       ],
+       "n": 60,
+       "sec_per_query": 5.622460976529789
+      },
+      "adapter:fp64": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.622460976529789
+      },
+      "adapter:spf128": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.622460976529789
+      },
+      "adapter:spf64": {
+       "acc": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ],
+       "n": 60,
+       "sec_per_query": 5.622460976529789
+      }
+     },
+     "by_gap": {
+      "1000": {
+       "bf16": 0.4,
+       "fp32": 1.0,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "10000": {
+       "bf16": 0.3076923076923077,
+       "fp32": 0.7692307692307693,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "100000": {
+       "bf16": 0.45454545454545453,
+       "fp32": 0.6363636363636364,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "1000000": {
+       "bf16": 0.18181818181818182,
+       "fp32": 0.8181818181818182,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "10000000": {
+       "bf16": 0.0,
+       "fp32": 0.8,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      },
+      "100000000": {
+       "bf16": 0.3,
+       "fp32": 0.4,
+       "fp64": 1.0,
+       "spf128": 1.0,
+       "spf64": 1.0
+      }
+     },
+     "gate": {
+      "precision": 0.0,
+      "recall": null
+     },
+     "n": 60
+    }
+   },
+   "baselines": {
+    "arms": {
+     "long-context": {
+      "acc": 0.6333333333333333,
+      "n": 60
+     },
+     "rag-dense-k5": {
+      "acc": 0.4,
+      "n": 60
+     },
+     "rag-timestamps": {
+      "acc": 0.48333333333333334,
+      "n": 60
+     },
+     "rag-timestamps-ttl-RULE": {
+      "acc": 1.0,
+      "n": 60
+     }
+    },
+    "kind": "time",
+    "n": 60
+   }
+  }
+ },
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "dtype": "bfloat16",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "peak_rss_mb": 6337.0,
+  "peak_vram_mb": 5476.8,
+  "peak_vram_reserved_mb": 6882.9,
+  "platform": "Linux-6.18.7-76061807-generic-x86_64-with-glibc2.39",
+  "python": "3.14.6",
+  "retriever": "BAAI/bge-small-en-v1.5",
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "schema": "memory-adapter-babilong-report-v1",
+ "smoke": false,
+ "vram_probe": {
+  "16384": {
+   "peak_vram_mb": 4385.6
+  },
+  "32768": {
+   "peak_vram_mb": 5476.8
+  }
+ }
+}

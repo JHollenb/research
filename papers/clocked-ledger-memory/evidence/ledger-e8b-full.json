@@ -1,0 +1,2234 @@
+{
+ "cells": {
+  "e4-chain-para": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.68,
+      "ci95": [
+       0.615,
+       0.745
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.685,
+      "ci95": [
+       0.62,
+       0.7451249999999993
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.46,
+      "ci95": [
+       0.395,
+       0.5251249999999993
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=3] Jeff wandered into the garden. [t=59] Jeff scooped up the football.",
+      "entity": "football",
+      "n_bound_records": 20,
+      "q": "Where is the football? ",
+      "target": "bathroom",
+      "value": "garden"
+     },
+     {
+      "bound_ctx": "[t=43] Julie wandered into the bedroom. [t=46] Julie lifted the football off the floor.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "q": "Where is the football? ",
+      "target": "kitchen",
+      "value": "bedroom"
+     },
+     {
+      "bound_ctx": "[t=49] The apple was collected by John.",
+      "entity": "apple",
+      "n_bound_records": 17,
+      "q": "Where is the apple? ",
+      "target": "hallway",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=32] Bill made the trip over to the hallway. [t=56] The milk was collected by Bill.",
+      "entity": "milk",
+      "n_bound_records": 21,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=47] After a while Mary reached the bathroom. [t=50] Mary lifted the football off the floor.",
+      "entity": "football",
+      "n_bound_records": 21,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=36] Emily hurried off toward the kitchen. [t=50] Emily set the apple down.",
+      "entity": "apple",
+      "n_bound_records": 21,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.755,
+      "ci95": [
+       0.695,
+       0.815
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.76,
+      "ci95": [
+       0.7,
+       0.82
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.495,
+      "ci95": [
+       0.425,
+       0.565
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=43] Julie wandered into the bedroom. [t=46] Julie lifted the football off the floor.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "q": "Where is the football? ",
+      "target": "kitchen",
+      "value": "bedroom"
+     },
+     {
+      "bound_ctx": "[t=49] The apple was collected by John.",
+      "entity": "apple",
+      "n_bound_records": 17,
+      "q": "Where is the apple? ",
+      "target": "hallway",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=32] Bill made the trip over to the hallway. [t=56] The milk was collected by Bill.",
+      "entity": "milk",
+      "n_bound_records": 22,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=47] After a while Mary reached the bathroom. [t=50] Mary lifted the football off the floor.",
+      "entity": "football",
+      "n_bound_records": 20,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=36] Soon Fred was in the hallway. [t=37] Fred lifted the milk off the floor.",
+      "entity": "milk",
+      "n_bound_records": 20,
+      "q": "Where is the milk? ",
+      "target": "kitchen",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=49] Bill relocated to the bathroom. [t=63] The milk was abandoned by Bill.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.775,
+      "ci95": [
+       0.715,
+       0.835
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.78,
+      "ci95": [
+       0.72,
+       0.84
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.48,
+      "ci95": [
+       0.41,
+       0.55
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=49] The apple was collected by John.",
+      "entity": "apple",
+      "n_bound_records": 17,
+      "q": "Where is the apple? ",
+      "target": "hallway",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=32] Bill made the trip over to the hallway. [t=56] The milk was collected by Bill.",
+      "entity": "milk",
+      "n_bound_records": 22,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=47] After a while Mary reached the bathroom. [t=50] Mary lifted the football off the floor.",
+      "entity": "football",
+      "n_bound_records": 20,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=36] Soon Fred was in the hallway. [t=37] Fred lifted the milk off the floor.",
+      "entity": "milk",
+      "n_bound_records": 20,
+      "q": "Where is the milk? ",
+      "target": "kitchen",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=49] Bill relocated to the bathroom. [t=63] The milk was abandoned by Bill.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=58] Emily snatched the milk. [t=62] Emily made the trip over to the kitchen.",
+      "entity": "milk",
+      "n_bound_records": 25,
+      "q": "Where is the milk? ",
+      "target": "hallway",
+      "value": "kitchen"
+     }
+    ]
+   }
+  },
+  "e4-chain-para2": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.89,
+      "ci95": [
+       0.845,
+       0.93
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.9,
+      "ci95": [
+       0.855,
+       0.94
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.515,
+      "ci95": [
+       0.445,
+       0.5851249999999992
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.02,
+    "traces": [
+     {
+      "bound_ctx": "[t=26] Jeff made a beeline for the kitchen. [t=41] Jeff got rid of the milk.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=43] Bill ended up in the hallway. [t=52] Bill dumped the apple.",
+      "entity": "apple",
+      "n_bound_records": 21,
+      "q": "Where is the apple? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=36] Emily strolled into the kitchen. [t=53] The apple was left behind by Emily.",
+      "entity": "apple",
+      "n_bound_records": 21,
+      "q": "Where is the apple? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=17] Jeff ended up in the garden. [t=20] Jeff picked the milk up. [t=24] The apple ended up in the hands of Jeff. [t=28] Jeff parted with the milk.",
+      "entity": null,
+      "n_bound_records": 19,
+      "q": "Where is the apple? ",
+      "target": "garden",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=4] Emily made a beeline for the office. [t=28] Emily took hold of the milk.",
+      "entity": "milk",
+      "n_bound_records": 24,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "office"
+     },
+     {
+      "bound_ctx": "[t=46] Julie made a beeline for the hallway. [t=49] The milk was left behind by Julie.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "office",
+      "value": "hallway"
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.915,
+      "ci95": [
+       0.875,
+       0.95
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.92,
+      "ci95": [
+       0.88,
+       0.955
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.5,
+      "ci95": [
+       0.43,
+       0.57
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.015,
+    "traces": [
+     {
+      "bound_ctx": "[t=26] Jeff made a beeline for the kitchen. [t=41] Jeff got rid of the milk.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=43] Bill ended up in the hallway. [t=52] Bill dumped the apple.",
+      "entity": "apple",
+      "n_bound_records": 21,
+      "q": "Where is the apple? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=46] The milk was left behind by Bill.",
+      "entity": "milk",
+      "n_bound_records": 24,
+      "q": "Where is the milk? ",
+      "target": "office",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=24] The apple ended up in the hands of Jeff.",
+      "entity": null,
+      "n_bound_records": 19,
+      "q": "Where is the apple? ",
+      "target": "garden",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=46] Julie made a beeline for the hallway. [t=49] The milk was left behind by Julie.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=2] Bill made a beeline for the kitchen. [t=59] Bill dumped the football.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "q": "Where is the football? ",
+      "target": "bathroom",
+      "value": "kitchen"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.91,
+      "ci95": [
+       0.87,
+       0.95
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.915,
+      "ci95": [
+       0.875,
+       0.95
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.52,
+      "ci95": [
+       0.45,
+       0.595
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.015,
+    "traces": [
+     {
+      "bound_ctx": "[t=43] Bill ended up in the hallway. [t=52] Bill dumped the apple.",
+      "entity": "apple",
+      "n_bound_records": 21,
+      "q": "Where is the apple? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=36] Emily strolled into the kitchen. [t=53] The apple was left behind by Emily.",
+      "entity": "apple",
+      "n_bound_records": 21,
+      "q": "Where is the apple? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=24] The apple ended up in the hands of Jeff.",
+      "entity": null,
+      "n_bound_records": 19,
+      "q": "Where is the apple? ",
+      "target": "garden",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=4] Emily made a beeline for the office. [t=28] Emily took hold of the milk.",
+      "entity": "milk",
+      "n_bound_records": 24,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "office"
+     },
+     {
+      "bound_ctx": "[t=46] Julie made a beeline for the hallway. [t=49] The milk was left behind by Julie.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=2] Bill made a beeline for the kitchen. [t=59] Bill dumped the football.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "q": "Where is the football? ",
+      "target": "bathroom",
+      "value": "kitchen"
+     }
+    ]
+   }
+  },
+  "e4-chain-train": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.995,
+      "ci95": [
+       0.985,
+       1.0
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.995,
+      "ci95": [
+       0.985,
+       1.0
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.53,
+      "ci95": [
+       0.46,
+       0.6
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=47] John journeyed to the kitchen. [t=54] John got the football.",
+      "entity": "football",
+      "n_bound_records": 25,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.96,
+      "ci95": [
+       0.93,
+       0.985
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.96,
+      "ci95": [
+       0.93,
+       0.985
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.53,
+      "ci95": [
+       0.46,
+       0.6
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=32] Bill moved to the hallway. [t=56] Bill took the milk.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=6] Mary went to the office. [t=38] Mary picked up the apple.",
+      "entity": "apple",
+      "n_bound_records": 25,
+      "q": "Where is the apple? ",
+      "target": "bathroom",
+      "value": "office"
+     },
+     {
+      "bound_ctx": "[t=12] Jeff journeyed to the garden. [t=65] Jeff left the football.",
+      "entity": "football",
+      "n_bound_records": 25,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "garden"
+     },
+     {
+      "bound_ctx": "[t=23] Bill took the football. [t=58] Bill travelled to the kitchen.",
+      "entity": "football",
+      "n_bound_records": 25,
+      "q": "Where is the football? ",
+      "target": "bathroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=47] John journeyed to the kitchen. [t=54] John got the football.",
+      "entity": "football",
+      "n_bound_records": 25,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=14] Mary went to the kitchen. [t=54] Mary dropped the apple.",
+      "entity": "apple",
+      "n_bound_records": 20,
+      "q": "Where is the apple? ",
+      "target": "bathroom",
+      "value": "kitchen"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.995,
+      "ci95": [
+       0.985,
+       1.0
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.995,
+      "ci95": [
+       0.985,
+       1.0
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.53,
+      "ci95": [
+       0.46,
+       0.6
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=47] John journeyed to the kitchen. [t=54] John got the football.",
+      "entity": "football",
+      "n_bound_records": 25,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     }
+    ]
+   }
+  },
+  "qa1:128k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.93,
+      "ci95": [
+       0.88,
+       0.98
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=3729] John moved to the kitchen.",
+      "entity": "john",
+      "n_bound_records": 20,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=1522] John went back to the garden.",
+      "entity": "john",
+      "n_bound_records": 4,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "garden"
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.96,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.96,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=4119] Mary went to the bedroom.",
+      "entity": "mary",
+      "n_bound_records": 20,
+      "q": "Where is Mary? ",
+      "target": "bathroom",
+      "value": "bedroom"
+     },
+     {
+      "bound_ctx": "[t=3729] John moved to the kitchen.",
+      "entity": "john",
+      "n_bound_records": 19,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=3202] Daniel journeyed to the hallway.",
+      "entity": "daniel",
+      "n_bound_records": 16,
+      "q": "Where is Daniel? ",
+      "target": "bedroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=1522] John went back to the garden.",
+      "entity": "john",
+      "n_bound_records": 4,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "garden"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=3729] John moved to the kitchen.",
+      "entity": "john",
+      "n_bound_records": 21,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=1522] John went back to the garden.",
+      "entity": "john",
+      "n_bound_records": 4,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "garden"
+     }
+    ]
+   }
+  },
+  "qa1:64k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.96,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=1183] John moved to the kitchen.",
+      "entity": "john",
+      "n_bound_records": 9,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=885] John went back to the garden.",
+      "entity": "john",
+      "n_bound_records": 3,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "garden"
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.96,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.96,
+      "ci95": [
+       0.92,
+       0.99
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=980] Mary went to the bedroom.",
+      "entity": "mary",
+      "n_bound_records": 9,
+      "q": "Where is Mary? ",
+      "target": "bathroom",
+      "value": "bedroom"
+     },
+     {
+      "bound_ctx": "[t=1183] John moved to the kitchen.",
+      "entity": "john",
+      "n_bound_records": 9,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=990] Daniel journeyed to the hallway.",
+      "entity": "daniel",
+      "n_bound_records": 7,
+      "q": "Where is Daniel? ",
+      "target": "bedroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=885] John went back to the garden.",
+      "entity": "john",
+      "n_bound_records": 3,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "garden"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.98,
+      "ci95": [
+       0.95,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=1183] John moved to the kitchen.",
+      "entity": "john",
+      "n_bound_records": 9,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=885] John went back to the garden.",
+      "entity": "john",
+      "n_bound_records": 5,
+      "q": "Where is John? ",
+      "target": "bedroom",
+      "value": "garden"
+     }
+    ]
+   }
+  },
+  "qa2:128k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.58,
+      "ci95": [
+       0.48,
+       0.67
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=3869] John left the apple.",
+      "entity": "apple",
+      "n_bound_records": 12,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=1280] John went to the hallway. [t=2747] John left the football.",
+      "entity": "football",
+      "n_bound_records": 16,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=2004] John discarded the football.",
+      "entity": "football",
+      "n_bound_records": 4,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": null
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=2553] Daniel moved to the bathroom. [t=3671] Daniel took the milk there.",
+      "entity": "milk",
+      "n_bound_records": 30,
+      "q": "Where is the milk? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=3869] John left the apple.",
+      "entity": "apple",
+      "n_bound_records": 12,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=3371] Mary left the milk.",
+      "entity": "milk",
+      "n_bound_records": 7,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=3503] Mary left the milk.",
+      "entity": "milk",
+      "n_bound_records": 13,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=4198] Daniel put down the apple.",
+      "entity": "apple",
+      "n_bound_records": 26,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=1280] John went to the hallway. [t=2747] John left the football.",
+      "entity": "football",
+      "n_bound_records": 15,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "hallway"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=3869] John left the apple.",
+      "entity": "apple",
+      "n_bound_records": 13,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=1280] John went to the hallway. [t=2747] John left the football.",
+      "entity": "football",
+      "n_bound_records": 15,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=2004] John discarded the football.",
+      "entity": "football",
+      "n_bound_records": 3,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": null
+     }
+    ]
+   }
+  },
+  "qa2:64k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.55,
+      "ci95": [
+       0.45,
+       0.65
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=2524] John left the apple.",
+      "entity": "apple",
+      "n_bound_records": 14,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=679] John went to the hallway. [t=1699] John left the football.",
+      "entity": "football",
+      "n_bound_records": 15,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=959] John discarded the football.",
+      "entity": "football",
+      "n_bound_records": 3,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": null
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.91,
+      "ci95": [
+       0.85,
+       0.96
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=1464] Daniel moved to the bathroom. [t=2107] Daniel took the milk there.",
+      "entity": "milk",
+      "n_bound_records": 27,
+      "q": "Where is the milk? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=2524] John left the apple.",
+      "entity": "apple",
+      "n_bound_records": 11,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=1655] Mary left the milk.",
+      "entity": "milk",
+      "n_bound_records": 7,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=2061] Mary left the milk.",
+      "entity": "milk",
+      "n_bound_records": 16,
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=1595] Daniel put down the apple.",
+      "entity": "apple",
+      "n_bound_records": 18,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=679] John went to the hallway. [t=1699] John left the football.",
+      "entity": "football",
+      "n_bound_records": 13,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "hallway"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 0.97,
+      "ci95": [
+       0.93,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=2524] John left the apple.",
+      "entity": "apple",
+      "n_bound_records": 12,
+      "q": "Where is the apple? ",
+      "target": "bedroom",
+      "value": null
+     },
+     {
+      "bound_ctx": "[t=679] John went to the hallway. [t=1699] John left the football.",
+      "entity": "football",
+      "n_bound_records": 14,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=959] John discarded the football.",
+      "entity": "football",
+      "n_bound_records": 3,
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": null
+     }
+    ]
+   }
+  }
+ },
+ "diagnostics": {
+  "17": {
+   "narrative_test_names:other_rate": 1.0,
+   "para2:drop": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 50,
+    "per_template": {
+     "The {o} was left behind by {n}.": [
+      10,
+      10
+     ],
+     "{n} dumped the {o}.": [
+      10,
+      10
+     ],
+     "{n} got rid of the {o}.": [
+      10,
+      10
+     ],
+     "{n} laid the {o} down.": [
+      10,
+      10
+     ],
+     "{n} parted with the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 50
+   },
+   "para2:move": {
+    "agent_ok": 54,
+    "confusions": {},
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "Eventually {n} arrived at the {r}.": [
+      10,
+      10
+     ],
+     "The next stop for {n} was the {r}.": [
+      10,
+      10
+     ],
+     "{n} dashed over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} ended up in the {r}.": [
+      10,
+      10
+     ],
+     "{n} made a beeline for the {r}.": [
+      10,
+      10
+     ],
+     "{n} strolled into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 60,
+    "rel_ok": 60
+   },
+   "para2:take": {
+    "agent_ok": 46,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 50,
+    "per_template": {
+     "The {o} ended up in the hands of {n}.": [
+      10,
+      10
+     ],
+     "{n} fetched the {o}.": [
+      10,
+      10
+     ],
+     "{n} picked the {o} up.": [
+      10,
+      10
+     ],
+     "{n} seized the {o}.": [
+      10,
+      10
+     ],
+     "{n} took hold of the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 50
+   },
+   "para:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was abandoned by {n}.": [
+      10,
+      10
+     ],
+     "{n} let go of the {o}.": [
+      10,
+      10
+     ],
+     "{n} placed the {o} on the ground.": [
+      10,
+      10
+     ],
+     "{n} set the {o} down.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "para:move": {
+    "agent_ok": 52,
+    "confusions": {
+     "other": 6
+    },
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "After a while {n} reached the {r}.": [
+      10,
+      10
+     ],
+     "Soon {n} was in the {r}.": [
+      10,
+      4
+     ],
+     "{n} hurried off toward the {r}.": [
+      10,
+      10
+     ],
+     "{n} made the trip over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} relocated to the {r}.": [
+      10,
+      10
+     ],
+     "{n} wandered into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 59,
+    "rel_ok": 54
+   },
+   "para:take": {
+    "agent_ok": 40,
+    "confusions": {
+     "drop": 8
+    },
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was collected by {n}.": [
+      10,
+      10
+     ],
+     "{n} lifted the {o} off the floor.": [
+      10,
+      2
+     ],
+     "{n} scooped up the {o}.": [
+      10,
+      10
+     ],
+     "{n} snatched the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 32
+   },
+   "train:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} discarded the {o}.": [
+      10,
+      10
+     ],
+     "{n} dropped the {o}.": [
+      10,
+      10
+     ],
+     "{n} left the {o}.": [
+      10,
+      10
+     ],
+     "{n} put down the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "train:move": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 0,
+    "per_template": {
+     "{n} journeyed to the {r}.": [
+      10,
+      10
+     ],
+     "{n} moved to the {r}.": [
+      10,
+      10
+     ],
+     "{n} travelled to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went back to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went to the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 50,
+    "rel_ok": 50
+   },
+   "train:take": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} got the {o}.": [
+      10,
+      10
+     ],
+     "{n} grabbed the {o} there.": [
+      10,
+      10
+     ],
+     "{n} picked up the {o}.": [
+      10,
+      10
+     ],
+     "{n} took the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   }
+  },
+  "29": {
+   "narrative_test_names:other_rate": 1.0,
+   "para2:drop": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 50,
+    "per_template": {
+     "The {o} was left behind by {n}.": [
+      10,
+      10
+     ],
+     "{n} dumped the {o}.": [
+      10,
+      10
+     ],
+     "{n} got rid of the {o}.": [
+      10,
+      10
+     ],
+     "{n} laid the {o} down.": [
+      10,
+      10
+     ],
+     "{n} parted with the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 50
+   },
+   "para2:move": {
+    "agent_ok": 57,
+    "confusions": {},
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "Eventually {n} arrived at the {r}.": [
+      10,
+      10
+     ],
+     "The next stop for {n} was the {r}.": [
+      10,
+      10
+     ],
+     "{n} dashed over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} ended up in the {r}.": [
+      10,
+      10
+     ],
+     "{n} made a beeline for the {r}.": [
+      10,
+      10
+     ],
+     "{n} strolled into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 60,
+    "rel_ok": 60
+   },
+   "para2:take": {
+    "agent_ok": 47,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 50,
+    "per_template": {
+     "The {o} ended up in the hands of {n}.": [
+      10,
+      10
+     ],
+     "{n} fetched the {o}.": [
+      10,
+      10
+     ],
+     "{n} picked the {o} up.": [
+      10,
+      10
+     ],
+     "{n} seized the {o}.": [
+      10,
+      10
+     ],
+     "{n} took hold of the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 50
+   },
+   "para:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was abandoned by {n}.": [
+      10,
+      10
+     ],
+     "{n} let go of the {o}.": [
+      10,
+      10
+     ],
+     "{n} placed the {o} on the ground.": [
+      10,
+      10
+     ],
+     "{n} set the {o} down.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "para:move": {
+    "agent_ok": 56,
+    "confusions": {
+     "other": 5
+    },
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "After a while {n} reached the {r}.": [
+      10,
+      10
+     ],
+     "Soon {n} was in the {r}.": [
+      10,
+      5
+     ],
+     "{n} hurried off toward the {r}.": [
+      10,
+      10
+     ],
+     "{n} made the trip over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} relocated to the {r}.": [
+      10,
+      10
+     ],
+     "{n} wandered into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 56,
+    "rel_ok": 55
+   },
+   "para:take": {
+    "agent_ok": 40,
+    "confusions": {
+     "drop": 7
+    },
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was collected by {n}.": [
+      10,
+      10
+     ],
+     "{n} lifted the {o} off the floor.": [
+      10,
+      3
+     ],
+     "{n} scooped up the {o}.": [
+      10,
+      10
+     ],
+     "{n} snatched the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 33
+   },
+   "train:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} discarded the {o}.": [
+      10,
+      10
+     ],
+     "{n} dropped the {o}.": [
+      10,
+      10
+     ],
+     "{n} left the {o}.": [
+      10,
+      10
+     ],
+     "{n} put down the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "train:move": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 0,
+    "per_template": {
+     "{n} journeyed to the {r}.": [
+      10,
+      10
+     ],
+     "{n} moved to the {r}.": [
+      10,
+      10
+     ],
+     "{n} travelled to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went back to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went to the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 50,
+    "rel_ok": 50
+   },
+   "train:take": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} got the {o}.": [
+      10,
+      10
+     ],
+     "{n} grabbed the {o} there.": [
+      10,
+      10
+     ],
+     "{n} picked up the {o}.": [
+      10,
+      10
+     ],
+     "{n} took the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   }
+  },
+  "43": {
+   "narrative_test_names:other_rate": 1.0,
+   "para2:drop": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 50,
+    "per_template": {
+     "The {o} was left behind by {n}.": [
+      10,
+      10
+     ],
+     "{n} dumped the {o}.": [
+      10,
+      10
+     ],
+     "{n} got rid of the {o}.": [
+      10,
+      10
+     ],
+     "{n} laid the {o} down.": [
+      10,
+      10
+     ],
+     "{n} parted with the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 50
+   },
+   "para2:move": {
+    "agent_ok": 54,
+    "confusions": {},
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "Eventually {n} arrived at the {r}.": [
+      10,
+      10
+     ],
+     "The next stop for {n} was the {r}.": [
+      10,
+      10
+     ],
+     "{n} dashed over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} ended up in the {r}.": [
+      10,
+      10
+     ],
+     "{n} made a beeline for the {r}.": [
+      10,
+      10
+     ],
+     "{n} strolled into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 60,
+    "rel_ok": 60
+   },
+   "para2:take": {
+    "agent_ok": 47,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 50,
+    "per_template": {
+     "The {o} ended up in the hands of {n}.": [
+      10,
+      10
+     ],
+     "{n} fetched the {o}.": [
+      10,
+      10
+     ],
+     "{n} picked the {o} up.": [
+      10,
+      10
+     ],
+     "{n} seized the {o}.": [
+      10,
+      10
+     ],
+     "{n} took hold of the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 50
+   },
+   "para:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was abandoned by {n}.": [
+      10,
+      10
+     ],
+     "{n} let go of the {o}.": [
+      10,
+      10
+     ],
+     "{n} placed the {o} on the ground.": [
+      10,
+      10
+     ],
+     "{n} set the {o} down.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "para:move": {
+    "agent_ok": 56,
+    "confusions": {
+     "other": 5
+    },
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "After a while {n} reached the {r}.": [
+      10,
+      10
+     ],
+     "Soon {n} was in the {r}.": [
+      10,
+      5
+     ],
+     "{n} hurried off toward the {r}.": [
+      10,
+      10
+     ],
+     "{n} made the trip over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} relocated to the {r}.": [
+      10,
+      10
+     ],
+     "{n} wandered into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 57,
+    "rel_ok": 55
+   },
+   "para:take": {
+    "agent_ok": 40,
+    "confusions": {
+     "drop": 6
+    },
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was collected by {n}.": [
+      10,
+      10
+     ],
+     "{n} lifted the {o} off the floor.": [
+      10,
+      4
+     ],
+     "{n} scooped up the {o}.": [
+      10,
+      10
+     ],
+     "{n} snatched the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 34
+   },
+   "train:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} discarded the {o}.": [
+      10,
+      10
+     ],
+     "{n} dropped the {o}.": [
+      10,
+      10
+     ],
+     "{n} left the {o}.": [
+      10,
+      10
+     ],
+     "{n} put down the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "train:move": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 0,
+    "per_template": {
+     "{n} journeyed to the {r}.": [
+      10,
+      10
+     ],
+     "{n} moved to the {r}.": [
+      10,
+      10
+     ],
+     "{n} travelled to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went back to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went to the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 50,
+    "rel_ok": 50
+   },
+   "train:take": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} got the {o}.": [
+      10,
+      10
+     ],
+     "{n} grabbed the {o} there.": [
+      10,
+      10
+     ],
+     "{n} picked up the {o}.": [
+      10,
+      10
+     ],
+     "{n} took the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   }
+  }
+ },
+ "errors": [],
+ "experiment": "2026-09-23-ledger-e8b-bound-strict",
+ "heldout_places": [
+  "park",
+  "cellar",
+  "library",
+  "garage",
+  "attic",
+  "porch",
+  "station",
+  "market",
+  "studio",
+  "lobby",
+  "basement",
+  "pantry",
+  "balcony",
+  "classroom",
+  "warehouse",
+  "shed",
+  "chapel",
+  "barn"
+ ],
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "host": "pop-os",
+  "peak_rss_mb": 3982.8,
+  "peak_vram_reserved_mb": 6134.2,
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "seeds": [
+  17,
+  29,
+  43
+ ],
+ "smoke": false,
+ "timing": {
+  "e4-chain-para": {
+   "n_docs": 200,
+   "trunk_sec_all_seeds": 14.808170165051706
+  },
+  "e4-chain-para2": {
+   "n_docs": 200,
+   "trunk_sec_all_seeds": 14.801484746276401
+  },
+  "e4-chain-train": {
+   "n_docs": 200,
+   "trunk_sec_all_seeds": 14.821652151294984
+  },
+  "qa1:128k": {
+   "n_docs": 100,
+   "trunk_sec_all_seeds": 393.84125482069794
+  },
+  "qa1:64k": {
+   "n_docs": 100,
+   "trunk_sec_all_seeds": 196.58304777217563
+  },
+  "qa2:128k": {
+   "n_docs": 100,
+   "trunk_sec_all_seeds": 391.7313786413288
+  },
+  "qa2:64k": {
+   "n_docs": 100,
+   "trunk_sec_all_seeds": 194.66645433322992
+  },
+  "writers_sec": 35.197160687996075
+ },
+ "writer": {
+  "17": {
+   "loss_rel": 6.8240074142522644e-06,
+   "loss_tag": 0.07496588677167892,
+   "n": 8000
+  },
+  "29": {
+   "loss_rel": 1.337638695986243e-05,
+   "loss_tag": 0.061990465968847275,
+   "n": 8000
+  },
+  "43": {
+   "loss_rel": 2.1142475816304795e-05,
+   "loss_tag": 0.06022157520055771,
+   "n": 8000
+  }
+ }
+}

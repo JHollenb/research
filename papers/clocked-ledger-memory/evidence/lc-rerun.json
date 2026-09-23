@@ -1,0 +1,232 @@
+{
+ "babilong": {
+  "qa1": {
+   "128k": {
+    "acc": 0.44,
+    "ci95": [
+     0.35,
+     0.54
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.559308349660132
+   },
+   "16k": {
+    "acc": 0.64,
+    "ci95": [
+     0.54,
+     0.73
+    ],
+    "n": 100,
+    "n_over_cap": 0,
+    "sec_per_query": 0.8544847460708115
+   },
+   "64k": {
+    "acc": 0.56,
+    "ci95": [
+     0.46,
+     0.66
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.3892874052294064
+   }
+  },
+  "qa2": {
+   "128k": {
+    "acc": 0.24,
+    "ci95": [
+     0.16,
+     0.33
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.5398976939404383
+   },
+   "16k": {
+    "acc": 0.43,
+    "ci95": [
+     0.33,
+     0.53
+    ],
+    "n": 100,
+    "n_over_cap": 0,
+    "sec_per_query": 0.8490013258799445
+   },
+   "64k": {
+    "acc": 0.31,
+    "ci95": [
+     0.22,
+     0.4
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.3882036073203197
+   }
+  },
+  "qa3": {
+   "128k": {
+    "acc": 0.37,
+    "ci95": [
+     0.28,
+     0.47
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.55502923118067
+   },
+   "16k": {
+    "acc": 0.26,
+    "ci95": [
+     0.18,
+     0.35
+    ],
+    "n": 100,
+    "n_over_cap": 0,
+    "sec_per_query": 1.6237131461198442
+   },
+   "64k": {
+    "acc": 0.3,
+    "ci95": [
+     0.22,
+     0.39
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.387563717070734
+   }
+  },
+  "qa4": {
+   "128k": {
+    "acc": 0.2,
+    "ci95": [
+     0.13,
+     0.28
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.5494415748107713
+   },
+   "16k": {
+    "acc": 0.21,
+    "ci95": [
+     0.13,
+     0.29
+    ],
+    "n": 100,
+    "n_over_cap": 0,
+    "sec_per_query": 0.8406531440990511
+   },
+   "64k": {
+    "acc": 0.22,
+    "ci95": [
+     0.14,
+     0.3
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.3858647236798425
+   }
+  },
+  "qa5": {
+   "128k": {
+    "acc": 0.27,
+    "ci95": [
+     0.18,
+     0.36
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.548887359540677
+   },
+   "16k": {
+    "acc": 0.25,
+    "ci95": [
+     0.17,
+     0.34
+    ],
+    "n": 100,
+    "n_over_cap": 0,
+    "sec_per_query": 1.6032974450103938
+   },
+   "64k": {
+    "acc": 0.34,
+    "ci95": [
+     0.25,
+     0.44
+    ],
+    "n": 100,
+    "n_over_cap": 100,
+    "sec_per_query": 2.3875145607604646
+   }
+  }
+ },
+ "cap": 32768,
+ "errors": [],
+ "experiment": "2026-09-23-long-context-rerun",
+ "fix_commit": "484b9840",
+ "generated": {
+  "expiry": {
+   "doc_tokens_max": 112,
+   "n_over_cap": 0,
+   "result": {
+    "arms": {
+     "long-context": {
+      "acc": 0.5125,
+      "correct_refusal_rate": 0.27906976744186046,
+      "n": 80,
+      "stale_answer_rate": 0.7209302325581395
+     },
+     "rag-timestamps-ttl-RULE": {
+      "acc": 1.0,
+      "correct_refusal_rate": 1.0,
+      "n": 80,
+      "stale_answer_rate": 0.0
+     }
+    },
+    "kind": "expiry",
+    "n": 80
+   }
+  },
+  "time": {
+   "doc_tokens_max": 247,
+   "n_over_cap": 0,
+   "result": {
+    "arms": {
+     "long-context": {
+      "acc": 0.6333333333333333,
+      "n": 60
+     },
+     "rag-timestamps-ttl-RULE": {
+      "acc": 1.0,
+      "n": 60
+     }
+    },
+    "kind": "time",
+    "n": 60
+   }
+  },
+  "time-para": {
+   "doc_tokens_max": 257,
+   "n_over_cap": 0,
+   "result": {
+    "arms": {
+     "long-context": {
+      "acc": 0.6,
+      "n": 60
+     },
+     "rag-timestamps-ttl-RULE": {
+      "acc": 0.0,
+      "n": 60
+     }
+    },
+    "kind": "time",
+    "n": 60
+   }
+  }
+ },
+ "runtime": {
+  "host": "pop-os",
+  "torch": "2.13.0+cu130"
+ }
+}

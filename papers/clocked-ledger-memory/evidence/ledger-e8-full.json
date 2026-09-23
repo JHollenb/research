@@ -1,0 +1,1276 @@
+{
+ "cells": {
+  "e4-chain-para": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.83,
+      "ci95": [
+       0.775,
+       0.88
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.83,
+      "ci95": [
+       0.775,
+       0.88
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.46,
+      "ci95": [
+       0.39,
+       0.53
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=32] Bill made the trip over to the hallway. [t=56] The milk was collected by Bill.",
+      "entity": "milk",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=35] Bill lifted the milk off the floor. [t=47] The milk was abandoned by Bill. [t=56] The milk was collected by Bill.",
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=3] Greg relocated to the kitchen. [t=58] Greg snatched the football.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=22] Greg snatched the football. [t=57] Greg set the football down. [t=58] Greg snatched the football.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=36] Soon Fred was in the hallway. [t=37] Fred lifted the milk off the floor.",
+      "entity": "milk",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=25] Fred relocated to the bedroom. [t=33] Fred let go of the milk. [t=37] Fred lifted the milk off the floor. [t=39] Fred relocated to the garden. [t=48] Fred hurried off toward the kitchen.",
+      "q": "Where is the milk? ",
+      "target": "kitchen",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=46] John made the trip over to the hallway. [t=54] The football was collected by John.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=46] John made the trip over to the hallway. [t=50] Soon John was in the office. [t=54] The football was collected by John.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=49] Bill relocated to the bathroom. [t=63] The milk was abandoned by Bill.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=53] The football was collected by Bill. [t=60] The milk was collected by Bill. [t=63] The milk was abandoned by Bill.",
+      "q": "Where is the milk? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     },
+     {
+      "bound_ctx": "[t=58] Emily snatched the milk. [t=62] Emily made the trip over to the kitchen.",
+      "entity": "milk",
+      "n_bound_records": 25,
+      "plain_ctx": "[t=47] Emily placed the milk on the ground. [t=50] Emily made the trip over to the bathroom. [t=58] Emily snatched the milk. [t=62] Emily made the trip over to the kitchen. [t=65] Emily snatched the football.",
+      "q": "Where is the milk? ",
+      "target": "hallway",
+      "value": "kitchen"
+     }
+    ]
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.82,
+      "ci95": [
+       0.765,
+       0.87
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.825,
+      "ci95": [
+       0.77,
+       0.875
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.49,
+      "ci95": [
+       0.42,
+       0.56
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=4] Julie made the trip over to the kitchen. [t=10] Julie lifted the football off the floor.",
+      "entity": "football",
+      "n_bound_records": 25,
+      "plain_ctx": "[t=4] Julie made the trip over to the kitchen. [t=10] Julie lifted the football off the floor. [t=30] Julie hurried off toward the garden. [t=42] Julie snatched the milk.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=32] Bill made the trip over to the hallway. [t=56] The milk was collected by Bill.",
+      "entity": "milk",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=35] Bill lifted the milk off the floor. [t=47] The milk was abandoned by Bill. [t=56] The milk was collected by Bill.",
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=3] Greg relocated to the kitchen. [t=58] Greg snatched the football.",
+      "entity": "football",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=22] Greg snatched the football. [t=57] Greg set the football down. [t=58] Greg snatched the football.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=36] Soon Fred was in the hallway. [t=37] Fred lifted the milk off the floor.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=33] Fred let go of the milk. [t=36] Soon Fred was in the hallway. [t=37] Fred lifted the milk off the floor. [t=39] Fred relocated to the garden. [t=48] Fred hurried off toward the kitchen.",
+      "q": "Where is the milk? ",
+      "target": "kitchen",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=46] John made the trip over to the hallway. [t=54] The football was collected by John.",
+      "entity": "football",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=46] John made the trip over to the hallway. [t=50] Soon John was in the office. [t=54] The football was collected by John.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=49] Bill relocated to the bathroom. [t=63] The milk was abandoned by Bill.",
+      "entity": "milk",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=53] The football was collected by Bill. [t=60] The milk was collected by Bill. [t=63] The milk was abandoned by Bill.",
+      "q": "Where is the milk? ",
+      "target": "bedroom",
+      "value": "bathroom"
+     }
+    ]
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 0.815,
+      "ci95": [
+       0.76,
+       0.865
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 0.82,
+      "ci95": [
+       0.765,
+       0.87
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.47,
+      "ci95": [
+       0.4,
+       0.535
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": [
+     {
+      "bound_ctx": "[t=32] Bill made the trip over to the hallway. [t=56] The milk was collected by Bill.",
+      "entity": "milk",
+      "n_bound_records": 21,
+      "plain_ctx": "[t=35] Bill lifted the milk off the floor. [t=47] The milk was abandoned by Bill. [t=56] The milk was collected by Bill.",
+      "q": "Where is the milk? ",
+      "target": "bathroom",
+      "value": "hallway"
+     },
+     {
+      "bound_ctx": "[t=3] Greg relocated to the kitchen. [t=58] Greg snatched the football.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=22] Greg snatched the football. [t=57] Greg set the football down. [t=58] Greg snatched the football.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "kitchen"
+     },
+     {
+      "bound_ctx": "[t=25] Fred relocated to the bedroom. [t=37] Fred lifted the milk off the floor.",
+      "entity": "milk",
+      "n_bound_records": 20,
+      "plain_ctx": "[t=25] Fred relocated to the bedroom. [t=33] Fred let go of the milk. [t=37] Fred lifted the milk off the floor. [t=39] Fred relocated to the garden. [t=48] Fred hurried off toward the kitchen.",
+      "q": "Where is the milk? ",
+      "target": "kitchen",
+      "value": "bedroom"
+     },
+     {
+      "bound_ctx": "[t=6] John wandered into the garden. [t=62] John let go of the football.",
+      "entity": "football",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=47] The football was abandoned by John. [t=58] John snatched the football. [t=62] John let go of the football. [t=64] John relocated to the hallway.",
+      "q": "Where is the football? ",
+      "target": "kitchen",
+      "value": "garden"
+     },
+     {
+      "bound_ctx": "[t=38] Fred wandered into the office. [t=46] Fred scooped up the football.",
+      "entity": "football",
+      "n_bound_records": 23,
+      "plain_ctx": "[t=25] Fred hurried off toward the bedroom. [t=38] Fred wandered into the office. [t=46] Fred scooped up the football. [t=51] Fred scooped up the milk.",
+      "q": "Where is the football? ",
+      "target": "bedroom",
+      "value": "office"
+     },
+     {
+      "bound_ctx": "[t=46] John made the trip over to the hallway. [t=54] The football was collected by John.",
+      "entity": "football",
+      "n_bound_records": 22,
+      "plain_ctx": "[t=29] John placed the football on the ground. [t=46] John made the trip over to the hallway. [t=54] The football was collected by John.",
+      "q": "Where is the football? ",
+      "target": "office",
+      "value": "hallway"
+     }
+    ]
+   }
+  },
+  "e4-chain-train": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.535,
+      "ci95": [
+       0.465,
+       0.605
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.535,
+      "ci95": [
+       0.465,
+       0.605
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 200
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 200
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.535,
+      "ci95": [
+       0.465,
+       0.605
+      ],
+      "n": 200
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   }
+  },
+  "qa1:128k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.92,
+      "ci95": [
+       0.86,
+       0.97
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   }
+  },
+  "qa1:64k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.94,
+      "ci95": [
+       0.89,
+       0.98
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.99,
+      "ci95": [
+       0.97,
+       1.0
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   }
+  },
+  "qa2:128k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.57,
+      "ci95": [
+       0.47,
+       0.67
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.61,
+      "ci95": [
+       0.51,
+       0.7
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   }
+  },
+  "qa2:64k": {
+   "17": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.6,
+      "ci95": [
+       0.51,
+       0.69
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "29": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   },
+   "43": {
+    "arms": {
+     "bound-direct": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "bound-reader": {
+      "acc": 1.0,
+      "ci95": [
+       1.0,
+       1.0
+      ],
+      "n": 100
+     },
+     "ledger-h2m1-gated": {
+      "acc": 0.6,
+      "ci95": [
+       0.5,
+       0.69
+      ],
+      "n": 100
+     }
+    },
+    "bound_fallback_rate": 0.0,
+    "traces": []
+   }
+  }
+ },
+ "diagnostics": {
+  "17": {
+   "narrative_test_names:other_rate": 1.0,
+   "para:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was abandoned by {n}.": [
+      10,
+      10
+     ],
+     "{n} let go of the {o}.": [
+      10,
+      10
+     ],
+     "{n} placed the {o} on the ground.": [
+      10,
+      10
+     ],
+     "{n} set the {o} down.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "para:move": {
+    "agent_ok": 56,
+    "confusions": {
+     "other": 4
+    },
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "After a while {n} reached the {r}.": [
+      10,
+      10
+     ],
+     "Soon {n} was in the {r}.": [
+      10,
+      6
+     ],
+     "{n} hurried off toward the {r}.": [
+      10,
+      10
+     ],
+     "{n} made the trip over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} relocated to the {r}.": [
+      10,
+      10
+     ],
+     "{n} wandered into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 60,
+    "rel_ok": 56
+   },
+   "para:take": {
+    "agent_ok": 40,
+    "confusions": {
+     "drop": 5
+    },
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was collected by {n}.": [
+      10,
+      10
+     ],
+     "{n} lifted the {o} off the floor.": [
+      10,
+      5
+     ],
+     "{n} scooped up the {o}.": [
+      10,
+      10
+     ],
+     "{n} snatched the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 35
+   },
+   "train:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} discarded the {o}.": [
+      10,
+      10
+     ],
+     "{n} dropped the {o}.": [
+      10,
+      10
+     ],
+     "{n} left the {o}.": [
+      10,
+      10
+     ],
+     "{n} put down the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "train:move": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 0,
+    "per_template": {
+     "{n} journeyed to the {r}.": [
+      10,
+      10
+     ],
+     "{n} moved to the {r}.": [
+      10,
+      10
+     ],
+     "{n} travelled to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went back to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went to the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 50,
+    "rel_ok": 50
+   },
+   "train:take": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} got the {o}.": [
+      10,
+      10
+     ],
+     "{n} grabbed the {o} there.": [
+      10,
+      10
+     ],
+     "{n} picked up the {o}.": [
+      10,
+      10
+     ],
+     "{n} took the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   }
+  },
+  "29": {
+   "narrative_test_names:other_rate": 1.0,
+   "para:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was abandoned by {n}.": [
+      10,
+      10
+     ],
+     "{n} let go of the {o}.": [
+      10,
+      10
+     ],
+     "{n} placed the {o} on the ground.": [
+      10,
+      10
+     ],
+     "{n} set the {o} down.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "para:move": {
+    "agent_ok": 56,
+    "confusions": {
+     "other": 4
+    },
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "After a while {n} reached the {r}.": [
+      10,
+      10
+     ],
+     "Soon {n} was in the {r}.": [
+      10,
+      6
+     ],
+     "{n} hurried off toward the {r}.": [
+      10,
+      10
+     ],
+     "{n} made the trip over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} relocated to the {r}.": [
+      10,
+      10
+     ],
+     "{n} wandered into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 60,
+    "rel_ok": 56
+   },
+   "para:take": {
+    "agent_ok": 40,
+    "confusions": {
+     "drop": 7
+    },
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was collected by {n}.": [
+      10,
+      10
+     ],
+     "{n} lifted the {o} off the floor.": [
+      10,
+      3
+     ],
+     "{n} scooped up the {o}.": [
+      10,
+      10
+     ],
+     "{n} snatched the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 33
+   },
+   "train:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} discarded the {o}.": [
+      10,
+      10
+     ],
+     "{n} dropped the {o}.": [
+      10,
+      10
+     ],
+     "{n} left the {o}.": [
+      10,
+      10
+     ],
+     "{n} put down the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "train:move": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 0,
+    "per_template": {
+     "{n} journeyed to the {r}.": [
+      10,
+      10
+     ],
+     "{n} moved to the {r}.": [
+      10,
+      10
+     ],
+     "{n} travelled to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went back to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went to the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 50,
+    "rel_ok": 50
+   },
+   "train:take": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} got the {o}.": [
+      10,
+      10
+     ],
+     "{n} grabbed the {o} there.": [
+      10,
+      10
+     ],
+     "{n} picked up the {o}.": [
+      10,
+      10
+     ],
+     "{n} took the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   }
+  },
+  "43": {
+   "narrative_test_names:other_rate": 1.0,
+   "para:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was abandoned by {n}.": [
+      10,
+      10
+     ],
+     "{n} let go of the {o}.": [
+      10,
+      10
+     ],
+     "{n} placed the {o} on the ground.": [
+      10,
+      10
+     ],
+     "{n} set the {o} down.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "para:move": {
+    "agent_ok": 56,
+    "confusions": {
+     "other": 7
+    },
+    "n": 60,
+    "object_ok": 0,
+    "per_template": {
+     "After a while {n} reached the {r}.": [
+      10,
+      10
+     ],
+     "Soon {n} was in the {r}.": [
+      10,
+      3
+     ],
+     "{n} hurried off toward the {r}.": [
+      10,
+      10
+     ],
+     "{n} made the trip over to the {r}.": [
+      10,
+      10
+     ],
+     "{n} relocated to the {r}.": [
+      10,
+      10
+     ],
+     "{n} wandered into the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 60,
+    "rel_ok": 53
+   },
+   "para:take": {
+    "agent_ok": 40,
+    "confusions": {
+     "drop": 4
+    },
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "The {o} was collected by {n}.": [
+      10,
+      10
+     ],
+     "{n} lifted the {o} off the floor.": [
+      10,
+      6
+     ],
+     "{n} scooped up the {o}.": [
+      10,
+      10
+     ],
+     "{n} snatched the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 36
+   },
+   "train:drop": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} discarded the {o}.": [
+      10,
+      10
+     ],
+     "{n} dropped the {o}.": [
+      10,
+      10
+     ],
+     "{n} left the {o}.": [
+      10,
+      10
+     ],
+     "{n} put down the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   },
+   "train:move": {
+    "agent_ok": 50,
+    "confusions": {},
+    "n": 50,
+    "object_ok": 0,
+    "per_template": {
+     "{n} journeyed to the {r}.": [
+      10,
+      10
+     ],
+     "{n} moved to the {r}.": [
+      10,
+      10
+     ],
+     "{n} travelled to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went back to the {r}.": [
+      10,
+      10
+     ],
+     "{n} went to the {r}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 50,
+    "rel_ok": 50
+   },
+   "train:take": {
+    "agent_ok": 40,
+    "confusions": {},
+    "n": 40,
+    "object_ok": 40,
+    "per_template": {
+     "{n} got the {o}.": [
+      10,
+      10
+     ],
+     "{n} grabbed the {o} there.": [
+      10,
+      10
+     ],
+     "{n} picked up the {o}.": [
+      10,
+      10
+     ],
+     "{n} took the {o}.": [
+      10,
+      10
+     ]
+    },
+    "place_ok": 0,
+    "rel_ok": 40
+   }
+  }
+ },
+ "errors": [],
+ "experiment": "2026-09-23-ledger-e8-bound",
+ "runtime": {
+  "device": "NVIDIA GeForce RTX 4080",
+  "host": "pop-os",
+  "peak_rss_mb": 3991.4,
+  "peak_vram_reserved_mb": 4731.2,
+  "torch": "2.13.0+cu130",
+  "transformers": "5.13.1"
+ },
+ "smoke": false,
+ "writer": {
+  "17": {
+   "loss_rel": 8.405382686760277e-06,
+   "loss_tag": 0.060805436223745346,
+   "n": 8000
+  },
+  "29": {
+   "loss_rel": 1.1990646271442529e-05,
+   "loss_tag": 0.056631311774253845,
+   "n": 8000
+  },
+  "43": {
+   "loss_rel": 3.0844130378682166e-05,
+   "loss_tag": 0.043888065963983536,
+   "n": 8000
+  }
+ }
+}
