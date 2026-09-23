@@ -1,9 +1,9 @@
 {
-  "axis_count": 16,
+  "axis_count": 28,
   "counts": {
-    "carrier_candidate": 7,
-    "carrier_certified": 9,
-    "certified": 0,
+    "carrier_candidate": 12,
+    "carrier_certified": 14,
+    "certified": 2,
     "unknown": 0
   },
   "interpretation": "Each row is one full native-conditioner checkpoint-replay contrast. Certified and carrier-certified are bounded route claims; carrier-candidate is a causal trend with one or more promotion gates open. No row establishes minimality, universality, or a token/channel semantic address.",
@@ -16,6 +16,105 @@
     "single.0"
   ],
   "rows": [
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.015107997014885077,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.8995389969939389,
+        "min_target_progress": 0.9238836567372098
+      },
+      "axis_id": "lighting_dawn_sunset__pa",
+      "category": "lighting",
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-a41550277906",
+      "label": "lighting/dawn to sunset",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic red brick lighthouse on a rocky coast at sunset, warm orange light",
+        "source": "a photorealistic red brick lighthouse on a rocky coast at dawn, soft blue light",
+        "wrong_axis": "a photorealistic red brick lighthouse on a rocky coast at midnight, silver moonlight"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.941878
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.034325962852994274,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5888213020980028,
+        "min_target_progress": 0.933760746156504
+      },
+      "axis_id": "relation_beside_behind_ball__pb",
+      "category": "relation",
+      "gate_summary": {
+        "failed": [],
+        "passed": 9,
+        "total": 9
+      },
+      "group": "job-fee7b2bb0d62",
+      "label": "relation/beside to behind",
+      "level": "certified",
+      "prompts": {
+        "scene_target": "a photorealistic gray kitten sitting behind a yellow box on a wooden floor, soft indoor light",
+        "source": "a photorealistic gray kitten sitting beside a yellow box on a wooden floor, soft indoor light",
+        "wrong_axis": "a photorealistic orange kitten sitting beside a yellow box on a wooden floor, soft indoor light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.879375
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.036681851867682136,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.8614424857990738,
+        "min_target_progress": 0.8766128671102515
+      },
+      "axis_id": "lighting_dawn_sunset__pb",
+      "category": "lighting",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-a41550277906",
+      "label": "lighting/dawn to sunset",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic wooden park bench under an oak tree at sunset, warm orange light",
+        "source": "a photorealistic wooden park bench under an oak tree at dawn, soft blue light",
+        "wrong_axis": "a photorealistic wooden park bench under an oak tree at midnight, silver moonlight"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.87426
+    },
     {
       "aggregate": {
         "max_route_ablation_progress": 0.004583253929879683,
@@ -85,6 +184,110 @@
         "wrong_axis": "<host-path>"
       },
       "rank_score": 0.853806
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.008395701238005926,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.5308322211694734,
+        "min_target_progress": 0.9341165115704206
+      },
+      "axis_id": "ears_upright_folded__pa",
+      "category": "pose",
+      "gate_summary": {
+        "failed": [
+          "dose_response"
+        ],
+        "passed": 8,
+        "total": 9
+      },
+      "group": "job-b63a7543a301",
+      "label": "pose/ear position",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic brown dog with folded-back ears sitting on a lawn at noon, bright light",
+        "source": "a photorealistic brown dog with upright ears sitting on a lawn at noon, bright light",
+        "wrong_axis": "a photorealistic brown dog with upright ears sitting on a snowy hill at dusk, cool light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.841087
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.01891992509281948,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.7333165623601752,
+        "min_target_progress": 0.8300293727347764
+      },
+      "axis_id": "weather_clear_snowstorm__pb",
+      "category": "weather",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-a41550277906",
+      "label": "weather/clear to snowstorm",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic brown horse in a mountain valley during a heavy snowstorm at dawn, diffuse gray light",
+        "source": "a photorealistic brown horse in a mountain valley under a clear sky at dawn, soft blue light",
+        "wrong_axis": "a photorealistic white horse in a mountain valley under a clear sky at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.832113
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.002070779221860608,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6140274663641041,
+        "min_target_progress": 0.8709324509900347
+      },
+      "axis_id": "orientation_left_right__pa",
+      "category": "pose",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-b63a7543a301",
+      "label": "pose/orientation",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic brown owl perched on a branch facing right in a forest at dusk, dim light",
+        "source": "a photorealistic brown owl perched on a branch facing left in a forest at dusk, dim light",
+        "wrong_axis": "a photorealistic white owl perched on a branch facing left in a forest at dusk, dim light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.830874
     },
     {
       "aggregate": {
@@ -333,6 +536,75 @@
     },
     {
       "aggregate": {
+        "max_route_ablation_progress": 0.04056801346540395,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.574894779616561,
+        "min_target_progress": 0.6080987411662094
+      },
+      "axis_id": "relation_on_under_furniture__pa",
+      "category": "relation",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response"
+        ],
+        "passed": 7,
+        "total": 9
+      },
+      "group": "job-fee7b2bb0d62",
+      "label": "relation/on to under",
+      "level": "carrier_certified",
+      "prompts": {
+        "scene_target": "a photorealistic brown dog sitting under a wooden desk in a quiet room, soft window light",
+        "source": "a photorealistic brown dog sitting on a wooden bench in a quiet room, soft window light",
+        "wrong_axis": "a photorealistic white dog sitting on a wooden bench in a quiet room, soft window light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.695148
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.006587287631546479,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.8156606435241389,
+        "min_target_progress": 0.9422145295120041
+      },
+      "axis_id": "weather_clear_snowstorm__pa",
+      "category": "weather",
+      "gate_summary": {
+        "failed": [
+          "specificity_sham"
+        ],
+        "passed": 8,
+        "total": 9
+      },
+      "group": "job-a41550277906",
+      "label": "weather/clear to snowstorm",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic red fox standing in a pine forest during a heavy snowstorm at dawn, diffuse gray light",
+        "source": "a photorealistic red fox standing in a pine forest under a clear sky at dawn, soft blue light",
+        "wrong_axis": "a photorealistic gray fox standing in a pine forest under a clear sky at dawn, soft blue light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.868815
+    },
+    {
+      "aggregate": {
         "max_route_ablation_progress": 0.014057225687103436,
         "min_exact_scalar_branches": 18,
         "min_mediation_rescue_fraction": 0.4686366685012561,
@@ -366,6 +638,42 @@
         "wrong_axis": "<host-path>"
       },
       "rank_score": 0.76831
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.025270441143859457,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.4562779276926242,
+        "min_target_progress": 0.8745194888755397
+      },
+      "axis_id": "relation_beside_behind_ball__pa",
+      "category": "relation",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-fee7b2bb0d62",
+      "label": "relation/beside to behind",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic brown puppy sitting behind a blue bucket on a green lawn at noon, bright light",
+        "source": "a photorealistic brown puppy sitting beside a blue bucket on a green lawn at noon, bright light",
+        "wrong_axis": "a photorealistic white puppy sitting beside a blue bucket on a green lawn at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.761805
     },
     {
       "aggregate": {
@@ -549,6 +857,114 @@
         "wrong_axis": "<host-path>"
       },
       "rank_score": 0.661112
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.00780471712473485,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.4990334204543697,
+        "min_target_progress": 0.5862594330735034
+      },
+      "axis_id": "ears_upright_folded__pb",
+      "category": "pose",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-b63a7543a301",
+      "label": "pose/ear position",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic gray rabbit with folded-back ears on a wooden table, soft light",
+        "source": "a photorealistic gray rabbit with upright ears on a wooden table, soft light",
+        "wrong_axis": "a photorealistic gray rabbit with upright ears on a grassy field at noon, bright light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.645006
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.01680385682448793,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.38906824355800324,
+        "min_target_progress": 0.5650262534253645
+      },
+      "axis_id": "relation_on_under_furniture__pb",
+      "category": "relation",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "mediation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-fee7b2bb0d62",
+      "label": "relation/on to under",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic orange cat sitting under a glass coffee table in a living room, warm light",
+        "source": "a photorealistic orange cat sitting on a red sofa in a living room, warm light",
+        "wrong_axis": "a photorealistic gray cat sitting on a red sofa in a living room, warm light"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.611208
+    },
+    {
+      "aggregate": {
+        "max_route_ablation_progress": 0.00031390592432267717,
+        "min_exact_scalar_branches": 18,
+        "min_mediation_rescue_fraction": 0.6064084237122479,
+        "min_target_progress": 0.4529566512180735
+      },
+      "axis_id": "orientation_left_right__pb",
+      "category": "pose",
+      "gate_summary": {
+        "failed": [
+          "sufficiency",
+          "dose_response",
+          "consumer_continuation"
+        ],
+        "passed": 6,
+        "total": 9
+      },
+      "group": "job-b63a7543a301",
+      "label": "pose/orientation",
+      "level": "carrier_candidate",
+      "prompts": {
+        "scene_target": "a photorealistic golden retriever facing right while sitting on a beach at noon, bright sunlight",
+        "source": "a photorealistic golden retriever facing left while sitting on a beach at noon, bright sunlight",
+        "wrong_axis": "a photorealistic black dog facing left while sitting on a beach at noon, bright sunlight"
+      },
+      "proof_images": {
+        "full_transfer": "<host-path>",
+        "montage": "<host-path>",
+        "route_ablation": "<host-path>",
+        "source": "<host-path>",
+        "target": "<host-path>",
+        "wrong_axis": "<host-path>"
+      },
+      "rank_score": 0.608367
     },
     {
       "aggregate": {

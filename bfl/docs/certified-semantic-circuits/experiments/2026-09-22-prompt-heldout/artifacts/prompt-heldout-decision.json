@@ -1,12 +1,12 @@
 {
   "verdict": {
     "certified_axes": 6,
-    "certified_replicate_literal_strict": 1,
-    "certified_route_replicate": 2,
-    "carrier_route_replicate": 5,
-    "open_route_replicate": 0,
-    "all20_route_replicate": 7,
-    "aggregate_survives_prompt_holdout_literal": false,
+    "certified_replicate_literal_strict": 4,
+    "certified_route_replicate": 6,
+    "carrier_route_replicate": 6,
+    "open_route_replicate": 1,
+    "all20_route_replicate": 13,
+    "aggregate_survives_prompt_holdout_literal": true,
     "baseline_certified_strict_ge_half": 0,
     "baseline_available": false
   },
@@ -624,13 +624,69 @@
       "baseline_route_pass": 0,
       "baseline_strict_pass": 0,
       "baseline_n": 0,
-      "heldout_variant_tiers": {},
-      "heldout_route_pass": 0,
-      "heldout_strict_pass": 0,
-      "heldout_n": 0,
-      "route_replicate": false,
-      "literal_replicate": false,
-      "heldout_cells": [],
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_candidate"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 3,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "consumer_continuation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        }
+      ],
       "baseline_cells": []
     },
     "ears_upright_folded": {
@@ -639,13 +695,71 @@
       "baseline_route_pass": 0,
       "baseline_strict_pass": 0,
       "baseline_n": 0,
-      "heldout_variant_tiers": {},
-      "heldout_route_pass": 0,
-      "heldout_strict_pass": 0,
-      "heldout_n": 0,
-      "route_replicate": false,
-      "literal_replicate": false,
-      "heldout_cells": [],
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_candidate"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 2,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
       "baseline_cells": []
     },
     "relation_beside_behind_ball": {
@@ -654,13 +768,63 @@
       "baseline_route_pass": 0,
       "baseline_strict_pass": 0,
       "baseline_n": 0,
-      "heldout_variant_tiers": {},
-      "heldout_route_pass": 0,
-      "heldout_strict_pass": 0,
-      "heldout_n": 0,
-      "route_replicate": false,
-      "literal_replicate": false,
-      "heldout_cells": [],
+      "heldout_variant_tiers": {
+        "pa": "carrier_candidate",
+        "pb": "certified"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 5,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        }
+      ],
       "baseline_cells": []
     },
     "relation_on_under_furniture": {
@@ -669,13 +833,75 @@
       "baseline_route_pass": 0,
       "baseline_strict_pass": 0,
       "baseline_n": 0,
-      "heldout_variant_tiers": {},
-      "heldout_route_pass": 0,
-      "heldout_strict_pass": 0,
-      "heldout_n": 0,
-      "route_replicate": false,
+      "heldout_variant_tiers": {
+        "pa": "carrier_certified",
+        "pb": "carrier_candidate"
+      },
+      "heldout_route_pass": 5,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": true,
       "literal_replicate": null,
-      "heldout_cells": [],
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "mediation",
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
       "baseline_cells": []
     },
     "count_one_two_birds": {
@@ -744,13 +970,65 @@
       "baseline_route_pass": 0,
       "baseline_strict_pass": 0,
       "baseline_n": 0,
-      "heldout_variant_tiers": {},
-      "heldout_route_pass": 0,
-      "heldout_strict_pass": 0,
-      "heldout_n": 0,
-      "route_replicate": false,
-      "literal_replicate": false,
-      "heldout_cells": [],
+      "heldout_variant_tiers": {
+        "pa": "certified",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 6,
+      "heldout_strict_pass": 4,
+      "heldout_n": 6,
+      "route_replicate": true,
+      "literal_replicate": true,
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        }
+      ],
       "baseline_cells": []
     },
     "weather_clear_snowstorm": {
@@ -759,13 +1037,71 @@
       "baseline_route_pass": 0,
       "baseline_strict_pass": 0,
       "baseline_n": 0,
-      "heldout_variant_tiers": {},
-      "heldout_route_pass": 0,
-      "heldout_strict_pass": 0,
-      "heldout_n": 0,
-      "route_replicate": false,
+      "heldout_variant_tiers": {
+        "pa": "carrier_candidate",
+        "pb": "carrier_certified"
+      },
+      "heldout_route_pass": 3,
+      "heldout_strict_pass": 1,
+      "heldout_n": 6,
+      "route_replicate": true,
       "literal_replicate": false,
-      "heldout_cells": [],
+      "heldout_cells": [
+        {
+          "seed": "4242",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "specificity_sham"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "9001",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "specificity_sham"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": false,
+          "strict_pass": false,
+          "failed": [
+            "specificity_sham"
+          ],
+          "variant": "pa"
+        },
+        {
+          "seed": "4242",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        },
+        {
+          "seed": "9001",
+          "route_pass": true,
+          "strict_pass": true,
+          "failed": [],
+          "variant": "pb"
+        },
+        {
+          "seed": "20260922",
+          "route_pass": true,
+          "strict_pass": false,
+          "failed": [
+            "sufficiency",
+            "dose_response"
+          ],
+          "variant": "pb"
+        }
+      ],
       "baseline_cells": []
     },
     "style_photo_oil": {
