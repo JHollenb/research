@@ -46,8 +46,14 @@ for m in MODELS:
                                       "fraction": ci(gg(s,"sae_k","best",k,"best","fraction")),
                                       "flip": ci(gg(s,"sae_k","best",k,"best","flip"))} for k in ("k1","k5","k20")}
             cell["sae_swap_best"] = {"layer": gg(s,"sae_swap","best_layer"), "fraction": ci(gg(s,"sae_swap","best","fraction"))}
-            cell["sae_global"] = {N: {"fraction": ci(gg(s,"sae_global",N,"fraction")), "flip": ci(gg(s,"sae_global",N,"flip")),
-                                      "random_fraction": ci(gg(s,"sae_global_random",N,"fraction"))} for N in ("N10","N50","N200")}
+            for scope, arm, rarm in [("all","sae_global","sae_global_random"),
+                                     ("subject","sae_global_subject","sae_global_subject_random"),
+                                     ("nonfinal","sae_global_nonfinal","sae_global_nonfinal_random")]:
+                key = "sae_global" if scope == "all" else f"sae_global_{scope}"
+                cell[key] = {N: {"fraction": ci(gg(s,arm,N,"fraction")), "flip": ci(gg(s,arm,N,"flip")),
+                                 "random_fraction": ci(gg(s,rarm,N,"fraction"))} for N in ("N10","N50","N200") if gg(s,arm,N)}
+            cell["sae_global_diag"] = {sc: (gates.get(f"sae_global{'' if sc=='all' else '_'+sc}_diag_N200") or {}).get("by_position_class")
+                                       for sc in ("all","subject","nonfinal")}
             cell["steering_best"] = {"layer": gg(s,"steering","best_layer"), "norm_gain": ci(gg(s,"steering","best"))}
             cell["kv_suff_all"] = ci(s.get("kv_suff_all"))
         mm["behaviors"][b] = cell

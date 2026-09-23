@@ -1,7 +1,7 @@
 ---
 title: "Single-Site Tests Miss Distributed Stores"
 type: research-paper
-status: draft-pending-results
+status: published
 date: 2026-08-21
 updated: 2026-09-22
 tags: [interpretability, activation-patching, sparse-autoencoders, causal-mediation, flux2, language-models, methods]
@@ -15,13 +15,13 @@ Jacob Hollenbeck
 
 *2026-08-21; revised 2026-09-22*
 
-> **Status.** Items marked `TODO-{…}` are runs that are queued but not finished. Every other number in this paper is measured and traceable to a file in this folder.
+> Every number in this paper is measured and traceable to a file in this folder.
 
 ---
 
 ## Abstract
 
-Activation patching usually asks one site at a time whether a component is necessary or sufficient for a behavior. We show measured cases where that question gets the wrong answer because the information the output depends on is spread across steps or layers: no single site is necessary and no single site's slice is sufficient, while the whole path is both. In FLUX.2 Klein 4B, ablating any one of four route components at any one denoising step leaves at least 22% of an identity transition intact, while ablating the same four components at every step leaves 0.13% and inserting them carries 91%, on held-out seeds. In language models, replacing a subject token's cached keys and values at a single layer, with the subject token's own computation left untouched, removes at most 16% of the effect in GPT-2 small and 8–18% in Qwen2.5-1.5B, while replacing them across the second half of the layers removes 92–104% and flips the top answer in 90–95% of items. We then ran a standard sparse-autoencoder workflow (SAELens with public GPT-2 and Gemma Scope SAEs) on the same prompts. In Gemma-2-2B, ablating the 20 most-attributed SAE features at the best single layer removes 29% of the subject's effect, 57 times more than 20 random features but far from the whole effect; in GPT-2 small, which is below the scale where we see distributed storage, the same procedure removes all of it. Ranking features across all layers and positions removes more than the whole effect in GPT-2 (3–9×), but almost entirely by deleting features on the other prompt tokens, and 200 random features alone remove 3.3 times the effect. TransformerLens reproduces our implementation to within 1.5×10⁻⁴ nats. Finally, a preregistered, blind-graded comparison of four standard readouts against the model's own output gave the wrong verdict in 4 of 4 graded cases; those arms are our own implementations on cases chosen because we expected failures, so they show the failure modes exist, not how often they occur. All code, results and offline verifiers are included.
+Activation patching usually asks one site at a time whether a component is necessary or sufficient for a behavior. We show measured cases where that question gets the wrong answer because the information the output depends on is spread across steps or layers: no single site is necessary and no single site's slice is sufficient, while the whole path is both. In FLUX.2 Klein 4B, ablating any one of four route components at any one denoising step leaves at least 22% of an identity transition intact, while ablating the same four components at every step leaves 0.13% and inserting them carries 91%, on held-out seeds. In language models, replacing a subject token's cached keys and values at a single layer, with the subject token's own computation left untouched, removes at most 16% of the effect in GPT-2 small and 8–18% in Qwen2.5-1.5B and Gemma-2-2B, while replacing them across the second half of the layers removes 81–104% and flips the top answer in 83–95% of items. We then ran a standard sparse-autoencoder workflow (SAELens with public GPT-2 and Gemma Scope SAEs) on the same prompts. In Gemma-2-2B, ablating the 20 most-attributed SAE features at the best single layer removes 29% of the subject's effect, 57 times more than 20 random features but far from the whole effect; in GPT-2 small, which is below the scale where we see distributed storage, the same procedure removes all of it. Ranking features across all layers and positions removes more than the whole effect in GPT-2 (3–9×), but almost entirely by deleting features on the other prompt tokens, and 200 random features alone remove 3.3 times the effect. In Gemma-2-2B the SAE workflow does find the store once the ablation spans every layer: restricted to the subject token but ranked across all 26 layers, 200 features remove 63% of the identity effect and 90% of the color effect (random: 11% and 35%). The failure is the single-layer question, not the features. TransformerLens reproduces our implementation on GPT-2 to within 1.5×10⁻⁴ nats. Finally, a preregistered, blind-graded comparison of four standard readouts against the model's own output gave the wrong verdict in 4 of 4 graded cases; those arms are our own implementations on cases chosen because we expected failures, so they show the failure modes exist, not how often they occur. All code, results and offline verifiers are included.
 
 ## 1. The problem
 
@@ -85,13 +85,13 @@ These swaps were made with hooks on the key and value projections inside a singl
 | GPT-2 small (124M) | identity (39) | 0.16 [0.11, 0.23] at L10 | −0.01 | 0.99 [0.97, 1.00] (92%) | 0.18 at L10 |
 | Qwen2.5-1.5B | identity (42) | 0.08 [0.06, 0.12] at L23 | −0.08 | 0.92 [0.89, 0.97] (90%) | **0.99 at L0** |
 | Qwen2.5-1.5B | color (22) | 0.18 [0.06, 0.23] at L23 | 0.29 | 1.04 [0.92, 1.24] (95%) | **0.97 at L0** |
-| Gemma-2-2B | identity (42) | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | 0.08 at L22 |
-| Gemma-2-2B | color (25) | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | TODO-{gemma2-v2-isolated-kv} | 0.15 at L20 |
+| Gemma-2-2B | identity (42) | 0.08 [0.07, 0.08] at L22 | −0.04 | 0.94 [0.91, 0.98] (83%) | 0.08 at L22 |
+| Gemma-2-2B | color (25) | 0.15 [0.13, 0.17] at L20 | 0.10 | 0.81 [0.70, 0.91] (84%) | 0.15 at L20 |
 | SmolLM2-1.7B | identity (34) | not rerun | — | — | 0.39 at L19 |
 | SmolLM2-1.7B | color (27) | not rerun | — | — | 0.09 at L18 |
 | Qwen2.5-0.5B | identity (42) | not rerun | — | — | 0.35 at L20 |
 
-Values are fractions of the whole-path effect (median, 95% bootstrap interval). With isolated swaps, the preregistered rule "the best single layer removes less than a quarter of the effect" holds in every cell measured so far, while the second half of the layers removes 92–104% and flips the answer in 90–95% of items.
+Values are fractions of the whole-path effect (median, 95% bootstrap interval). With isolated swaps, the preregistered rule "the best single layer removes less than a quarter of the effect" holds in all five cells measured, while the second half of the layers removes 81–104% and flips the answer in 83–95% of items. In GPT-2 and Gemma-2-2B the in-forward and isolated swaps nearly agree (0.18 vs 0.16; 0.08 vs 0.08; 0.15 vs 0.15); Qwen2.5-1.5B is where they diverge.
 
 The in-forward column shows why the distinction in §2 matters. In the first run, Qwen2.5-1.5B appeared to store the subject entirely at layer 0: swapping layer 0's keys and values in-forward removed 99% of the identity effect and 97% of the color effect. With the subject token's own computation left untouched, layer 0 removes 0.00 (identity) and 0.03 (color). The in-forward swap at layer 0 had changed the subject token's own hidden state through self-attention, which then propagated through every later layer. A single-site test with this implementation detail would have reported a sharply localized, early mechanism that does not exist. The SmolLM2-1.7B and Qwen2.5-0.5B identity cells, which exceeded the 0.25 threshold in-forward (0.39 and 0.35), were not rerun with isolated swaps, so we do not count them either way.
 
@@ -100,20 +100,22 @@ The in-forward column shows why the distinction in §2 matters. In the first run
 | model, behavior | SAE-20 at best single layer (flip) | 20 random features, same layer | SAE-global-subject N = 10 / 50 / 200 | random, subject position | SAE-global N = 10 / 50 / 200 | random, all positions |
 |---|---|---|---|---|---|---|
 | GPT-2, identity | 1.25 [0.87, 1.38] at L6 (77%) | 0.28 | 0.73 / 0.46 / 0.45 | 0.06 / 0.30 / 0.84 | 3.08 / 8.02 / 9.36 | 0.09 / 0.66 / 3.31 |
-| Gemma-2-2B, identity | 0.29 [0.22, 0.33] at L17 (5%) | 0.005 | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global} | TODO-{gemma2-v2-sae-global} |
-| Gemma-2-2B, color | 0.52 [0.40, 0.65] at L17 (44%) | 0.51 | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global-subject} | TODO-{gemma2-v2-sae-global} | TODO-{gemma2-v2-sae-global} |
+| Gemma-2-2B, identity | 0.29 [0.22, 0.33] at L17 (5%) | 0.005 | 0.21 / 0.39 / 0.63 | 0.00 / 0.01 / 0.11 | 2.15 / 4.45 / 6.51 | 0.00 / 0.00 / 0.01 |
+| Gemma-2-2B, color | 0.52 [0.40, 0.65] at L17 (44%) | 0.51 | 0.34 / 0.80 / 0.90 | 0.00 / 0.08 / 0.35 | 1.81 / 3.13 / 4.43 | 0.00 / 0.01 / 0.04 |
 
 Values are fractions of the whole-path key/value effect; values above 1 mean the ablation removed more answer log-probability than deleting the subject did.
 
 **Single-layer SAE ablation.** In Gemma-2-2B the attribution step finds the right features: the top 20 at layer 17 remove 29% of the identity effect, against 0.5% for 20 random features at the same layer. But 29% is not the effect; the rest is carried elsewhere and the answer changes in only 5% of items. This is the SAE version of the single-layer null. For color the top-20 ablation reaches 0.52, nominally passing the preregistered "necessary component" threshold of 0.5, but 20 random features at the same layer reach 0.51, so the layer is sensitive to any perturbation and the pass is not evidence of a located mechanism. GPT-2 small behaves differently: 20 features at layer 6 remove the whole effect (1.25, flip 77%), specifically (random: 0.28). That matches the scale floor in §6: in small models the store is concentrated.
 
-**Global SAE ablation.** Ranking features over every layer and position and ablating the top N removes 3–9 times the whole-path effect in GPT-2 and flips every answer, so by the preregistered rule it is "faithful." It is not locating the subject: of the 8,400 features selected across items at N = 200, 8,383 sit on neither the subject token nor the final position but on the rest of the prompt, and 200 random features remove 3.3 times the effect on their own. Restricted to the subject position, the global ranking removes 0.45–0.73 of the effect in GPT-2 against 0.06–0.84 for random subject-position features; the N = 200 random control exceeds the attributed set. Gemma-2-2B global results: TODO-{gemma2-v2-sae-global}.
+**Global SAE ablation.** Ranking features over every layer and position and ablating the top N removes 3–9 times the whole-path effect in GPT-2 and flips every answer, so by the preregistered rule it is "faithful." It is not locating the subject: of the 8,400 features selected across items at N = 200, 8,383 sit on neither the subject token nor the final position but on the rest of the prompt, and 200 random features remove 3.3 times the effect on their own. Restricted to the subject position, the global ranking removes 0.45–0.73 of the effect in GPT-2 against 0.06–0.84 for random subject-position features; the N = 200 random control exceeds the attributed set.
+
+Gemma-2-2B differs in two ways. First, the global ranking is specific: random features at any N remove at most 4% of the effect, while the attributed ones remove 1.8–6.5 times it. It still does not isolate the subject — of the N = 200 selections, 14% (identity) and 9% (color) sit on the subject token, 30% and 28% on the final position and the rest on other tokens — and dropping the final position leaves most of the overshoot (identity 3.45 at N = 200), so the readout position alone does not explain it. Second, the subject-restricted ranking works: it removes 0.63 of the identity effect at N = 200 (flip 52%, random 0.11) and 0.80–0.90 of the color effect at N = 50–200 (flip 76–92%, random 0.08–0.35). That arm ablates the subject token's features at every layer at once, so it is a whole-path intervention expressed in SAE features. It agrees with the key/value result: the same features that remove 29% at one layer remove most of the effect when the ablation spans the layers. What misleads is the single-layer question, not the SAE.
 
 **Steering.** Adding the clean prompt's top-20 attributed feature directions to the filler prompt at a single layer recovers a median 0.91 of the answer log-probability in GPT-2 (layer 10) and 0.20–0.29 in Gemma-2-2B (layers 0–1, first run); writing the clean keys and values into the filler prompt at every layer recovers 1.00 in both.
 
 ### 4.5 TransformerLens and cost
 
-Running the same arms through TransformerLens (`HookedTransformer` / `HookedSAETransformer`, version 3.9.0, weights loaded without processing so logits match Hugging Face) reproduces our implementation on GPT-2 to within 4.6×10⁻⁵–5.5×10⁻⁵ nats for the residual and key/value arms and 1.5×10⁻⁴ for SAE-20, over 504 item × layer cells per behavior, and gives the same verdicts on both applicable decision rules. Gemma-2-2B: TODO-{gemma2-transformerlens-agreement}. TransformerLens was not run on Qwen2.5-1.5B.
+Running the same arms through TransformerLens (`HookedTransformer` / `HookedSAETransformer`, version 3.9.0, weights loaded without processing so logits match Hugging Face) reproduces our implementation on GPT-2 to within 4.6×10⁻⁵–5.5×10⁻⁵ nats for the residual and key/value arms and 1.5×10⁻⁴ for SAE-20 over the 504 identity item × layer cells (6.8×10⁻⁵ and 1.3×10⁻⁴ over the 360 color cells), and gives the same verdicts on both applicable decision rules. TransformerLens was not run on Gemma-2-2B or Qwen2.5-1.5B. For Gemma-2-2B we tried: the TransformerLens copy of the model in FP32 exceeded the memory of the 16 GB GPU (peak 15.1 GB before the process was stopped, even with our copy removed from the GPU first), so the Gemma numbers rest on our implementation alone.
 
 On these short prompts (under 20 tokens), reusing a cached prefix instead of recomputing the whole prompt gave no speed-up: 0.31 ms vs 0.32 ms per intervention per item with Hugging Face, and 0.60 ms vs 1.24 ms with TransformerLens, whose key/value cache path was slower. The whole GPT-2 job, including every arm, both libraries and all bootstrap intervals, took 284 s on one RTX 4080; the Qwen2.5-1.5B job took 52 s. Prefix reuse pays off for long shared prefixes and diffusion trajectories (Appendix §2 and §4), not for prompts this short.
 
@@ -149,7 +151,7 @@ The criterion was met: 4 of 4 main cases graded as misreports, 5 counting the re
 - **Implementation dependence.** In-forward and isolated key/value swaps can disagree completely (Qwen2.5-1.5B layer 0: 0.99 vs 0.00). The first run of our own preregistered experiment used in-forward swaps and a global SAE ablation that did not propagate between layers; both were found in code review after the first run, fixed, and rerun under a dated amendment. The first-run files are kept.
 - **No constructive recipe.** Weighting a write by the measured per-layer or per-step profile did not beat writing at the best single site in SmolLM2-1.7B, and only partly recovered at Qwen3-8B.
 - **Token time.** Unlike depth and diffusion steps, the token axis did not accumulate: ablating the scene suffix moves about 1% of the subject effect.
-- **Breadth.** One lab; single-token answers; two templated behaviors; five language models from 124M to 2.6B in the preregistered panel, of which three were rerun with isolated swaps; one diffusion model. Color admitted too few items in GPT-2 (4) and Qwen2.5-0.5B (8) to count. No external replication.
+- **Breadth.** One lab; single-token answers; two templated behaviors; five language models from 124M to 2.6B in the preregistered panel, of which three were rerun with isolated swaps; the TransformerLens cross-check covers GPT-2 only; one diffusion model. Color admitted too few items in GPT-2 (4) and Qwen2.5-0.5B (8) to count. No external replication.
 
 ## 7. Related work
 
@@ -166,7 +168,7 @@ cd evidence/four-quadrant-tests && python3 verify.py
 cd evidence/instrument-trial && pip install . && instrument-trial-verify
 # expect: RESULT: all hashes and all mechanical verdicts verified
 
-# Preregistered panel and SAE comparison (GPU; about 1-5 minutes per model on an RTX 4080)
+# Preregistered panel and SAE comparison (GPU; about 1–8 minutes per model on an RTX 4080)
 cd experiments/2026-09-22-sae-comparison && pip install -r requirements.txt
 python run_sae_comparison.py --model gpt2 --device cuda --out-dir results --out-tag _v2 --tl
 ```

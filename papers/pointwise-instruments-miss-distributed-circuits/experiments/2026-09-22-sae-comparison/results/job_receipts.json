@@ -594,5 +594,634 @@
   "started_ts": 1790106411.2657099,
   "finished_ts": 1790106507.4570491,
   "host": "gpu-host"
- }
+ },
+ "gpt2_v2": {
+  "job_id": "job-6acfb6e31696",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 11000.0,
+   "vram_mb": 2500.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 291.12,
+   "peak_rss_mb": 5235.0,
+   "peak_vram_mb": 2648.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790121071.011152
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790121071.0335422
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790121071.0734577
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790121071.1591847
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790121362.0878623
+     },
+     {
+      "name": "finished",
+      "ts": 1790121362.111034
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "gpt2",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--out-tag",
+     "_v2",
+     "--tl"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 25,
+  "timeout_s": 3600.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "gpt2",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--out-tag",
+   "_v2",
+   "--tl"
+  ],
+  "submitted_ts": 1790118382.2923505,
+  "started_ts": 1790121071.0886283,
+  "finished_ts": 1790121362.0780728,
+  "host": "gpu-host",
+  "role": "produced *_gpt2_v2.* (rerun with TransformerLens)"
+ },
+ "qwen15_v2": {
+  "job_id": "job-f82633bf4175",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 14000.0,
+   "vram_mb": 11000.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 61.63,
+   "peak_rss_mb": 7086.3,
+   "peak_vram_mb": 7446.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790125504.1711986
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790125504.204256
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790125504.2523985
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790125504.3556879
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790125564.7384706
+     },
+     {
+      "name": "finished",
+      "ts": 1790125565.7562752
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "qwen15",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--out-tag",
+     "_v2",
+     "--model-path",
+     "<host-path>"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 25,
+  "timeout_s": 3600.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "qwen15",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--out-tag",
+   "_v2",
+   "--model-path",
+   "<host-path>"
+  ],
+  "submitted_ts": 1790124871.0281034,
+  "started_ts": 1790125504.2213314,
+  "finished_ts": 1790125565.891733,
+  "host": "gpu-host",
+  "role": "produced *_qwen15_v2.* (rerun, no TransformerLens)"
+ },
+ "gemma2_v2": {
+  "job_id": "job-98b6cd5f5905",
+  "experiment": "sae-comparison",
+  "state": "succeeded",
+  "reservation": {
+   "ram_mb": 34000.0,
+   "vram_mb": 12300.0,
+   "cpu_threads": 4,
+   "disk_gb": 1.0,
+   "est_wall_s": null,
+   "source": "declared"
+  },
+  "result": {
+   "status": "ok",
+   "returncode": 0,
+   "elapsed_s": 472.25,
+   "peak_rss_mb": 14017.6,
+   "peak_vram_mb": 13284.0,
+   "executed_payload": null,
+   "os_memory_limit_backend": "linux-cgroup-v2",
+   "diagnostics": {
+    "phase": "finished",
+    "phases": [
+     {
+      "name": "payload.prepare",
+      "ts": 1790138486.9782884
+     },
+     {
+      "name": "dispatch.vram_guard",
+      "ts": 1790138487.0191145
+     },
+     {
+      "name": "process.launch",
+      "ts": 1790138487.066042
+     },
+     {
+      "name": "process.monitor",
+      "ts": 1790138487.125545
+     },
+     {
+      "name": "process.finalize",
+      "ts": 1790138959.1608226
+     },
+     {
+      "name": "finished",
+      "ts": 1790138959.1788237
+     }
+    ],
+    "command": [
+     "env",
+     "HF_HOME=<host-path>",
+     "HF_HUB_OFFLINE=1",
+     "OMP_NUM_THREADS=8",
+     "TRITON_CACHE_DIR=<host-path>",
+     "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+     "<host-path>",
+     "<host-path>",
+     "--model",
+     "gemma2",
+     "--device",
+     "cuda",
+     "--out-dir",
+     "<host-path>",
+     "--out-tag",
+     "_v2"
+    ],
+    "cwd": "<host-path>",
+    "log_path": "<host-path>"
+   },
+   "failure": null
+  },
+  "needs": {
+   "cuda": true,
+   "host": "gpu-host"
+  },
+  "priority": 25,
+  "timeout_s": 7200.0,
+  "cmd": [
+   "env",
+   "HF_HOME=<host-path>",
+   "HF_HUB_OFFLINE=1",
+   "OMP_NUM_THREADS=8",
+   "TRITON_CACHE_DIR=<host-path>",
+   "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+   "<host-path>",
+   "<host-path>",
+   "--model",
+   "gemma2",
+   "--device",
+   "cuda",
+   "--out-dir",
+   "<host-path>",
+   "--out-tag",
+   "_v2"
+  ],
+  "submitted_ts": 1790138486.6176918,
+  "started_ts": 1790138486.8730218,
+  "finished_ts": 1790138958.9483557,
+  "host": "gpu-host",
+  "role": "produced *_gemma2_v2.* (rerun, no TransformerLens)"
+ },
+ "gemma2_v2_transformerlens_attempts": [
+  {
+   "job_id": "job-d4eedc9190b6",
+   "experiment": "sae-comparison",
+   "state": "killed_vram",
+   "reservation": {
+    "ram_mb": 34000.0,
+    "vram_mb": 12300.0,
+    "cpu_threads": 4,
+    "disk_gb": 1.0,
+    "est_wall_s": null,
+    "source": "declared"
+   },
+   "result": {
+    "status": "killed_vram",
+    "returncode": -9,
+    "elapsed_s": 518.59,
+    "peak_rss_mb": 25368.7,
+    "peak_vram_mb": 15164.0,
+    "executed_payload": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "diagnostics": {
+     "phase": "finished",
+     "phases": [
+      {
+       "name": "payload.prepare",
+       "ts": 1790123754.9781084
+      },
+      {
+       "name": "dispatch.vram_guard",
+       "ts": 1790123754.9999723
+      },
+      {
+       "name": "process.launch",
+       "ts": 1790123755.035338
+      },
+      {
+       "name": "process.monitor",
+       "ts": 1790123755.084983
+      },
+      {
+       "name": "process.finalize",
+       "ts": 1790124272.2781944
+      },
+      {
+       "name": "finished",
+       "ts": 1790124273.5373995
+      }
+     ],
+     "command": [
+      "env",
+      "HF_HOME=<host-path>",
+      "HF_HUB_OFFLINE=1",
+      "OMP_NUM_THREADS=8",
+      "TRITON_CACHE_DIR=<host-path>",
+      "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+      "<host-path>",
+      "<host-path>",
+      "--model",
+      "gemma2",
+      "--device",
+      "cuda",
+      "--out-dir",
+      "<host-path>",
+      "--out-tag",
+      "_v2",
+      "--tl"
+     ],
+     "cwd": "<host-path>",
+     "log_path": "<host-path>"
+    },
+    "failure": {
+     "kind": "killed_vram",
+     "phase": "process.finalize",
+     "message": "tree VRAM 15164MB > ceiling 13530MB",
+     "observed_ts": 1790124273.5226343,
+     "command": [
+      "env",
+      "HF_HOME=<host-path>",
+      "HF_HUB_OFFLINE=1",
+      "OMP_NUM_THREADS=8",
+      "TRITON_CACHE_DIR=<host-path>",
+      "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+      "<host-path>",
+      "<host-path>",
+      "--model",
+      "gemma2",
+      "--device",
+      "cuda",
+      "--out-dir",
+      "<host-path>",
+      "--out-tag",
+      "_v2",
+      "--tl"
+     ],
+     "cwd": "<host-path>",
+     "returncode": -9,
+     "signal": 9,
+     "resources": {
+      "peak_rss_mb": 25368.7,
+      "peak_vram_mb": 15164.0,
+      "ram_ceiling_mb": 37400.0,
+      "vram_ceiling_mb": 13530.000000000002
+     },
+     "log_tail": "<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour\n[17:36:00] loading gemma2 from unsloth/gemma-2-2b (fp32, eager)\n\rLoading weights:   0%|          | 0/288 [00:00<?, ?it/s]\rLoading weights:   0%|          | 1/288 [00:06<32:16,  6.75s/it]\rLoading weights:  80%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589  | 230/288 [00:06<00:01, 47.61it/s]\rLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 288/288 [00:08<00:00, 35.23it/s]\n[17:36:32] loaded: 26 layers, hidden 2304\n[17:36:35] behavior identity\n[17:36:36]   context 0: kept 14 rows, admitted 14, subj_pos 4, seq_len 17, cache_parity 0.00e+00\n[17:36:36]   context 1: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00\n[17:36:36]   context 2: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00\n[17:41:10]   admitted 42/42; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L13': 0.0, 'L25': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0, 'L12': 0.0, 'L13': 0.0, 'L14': 0.0, 'L15': 0.0, 'L16': 0.0, 'L17': 0.0, 'L18': 0.0, 'L19': 0.0, 'L20': 0.0, 'L21': 0.0, 'L22': 0.0, 'L23': 0.0, 'L24': 0.0, 'L25': 0.0}\n[17:41:10] behavior color\n[17:41:10]   context 0: kept 10 rows, admitted 8, subj_pos 2, seq_len 15, cache_parity 0.00e+00\n[17:41:10]   context 1: kept 10 rows, admitted 9, subj_pos 2, seq_len 15, cache_parity 0.00e+00\n[17:41:10]   context 2: kept 10 rows, admitted 8, subj_pos 2, seq_len 15, cache_parity 0.00e+00\n[17:44:18]   admitted 25/30; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L13': 0.0, 'L25': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0, 'L12': 0.0, 'L13': 0.0, 'L14': 0.0, 'L15': 0.0, 'L16': 0.0, 'L17': 0.0, 'L18': 0.0, 'L19': 0.0, 'L20': 0.0, 'L21': 0.0, 'L22': 0.0, 'L23': 0.0, 'L24': 0.0, 'L25': 0.0}\n[17:44:18] TransformerLens cross-check\n[17:44:19]   building TransformerLens model\n<host-path> DeprecationWarning: HookedTransformer.from_pretrained is deprecated and will be removed in a future major release. Use TransformerBridge.boot_transformers(...) instead, then call enable_compatibility_mode() for HookedTransformer-equivalent numerics. See docs/source/content/migrating_to_v3.md.\n  tl = HookedSAETransformer.from_pretrained(\n"
+    }
+   },
+   "needs": {
+    "cuda": true,
+    "host": "gpu-host"
+   },
+   "priority": 25,
+   "timeout_s": 7200.0,
+   "cmd": [
+    "env",
+    "HF_HOME=<host-path>",
+    "HF_HUB_OFFLINE=1",
+    "OMP_NUM_THREADS=8",
+    "TRITON_CACHE_DIR=<host-path>",
+    "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+    "<host-path>",
+    "<host-path>",
+    "--model",
+    "gemma2",
+    "--device",
+    "cuda",
+    "--out-dir",
+    "<host-path>",
+    "--out-tag",
+    "_v2",
+    "--tl"
+   ],
+   "submitted_ts": 1790118382.633763,
+   "started_ts": 1790123754.9980743,
+   "finished_ts": 1790124273.941943,
+   "host": "gpu-host",
+   "role": "killed: GPU memory over limit during TransformerLens step; no output"
+  },
+  {
+   "job_id": "job-d2da12a80add",
+   "experiment": "sae-comparison",
+   "state": "killed_vram",
+   "reservation": {
+    "ram_mb": 34000.0,
+    "vram_mb": 12300.0,
+    "cpu_threads": 4,
+    "disk_gb": 1.0,
+    "est_wall_s": null,
+    "source": "declared"
+   },
+   "result": {
+    "status": "killed_vram",
+    "returncode": -9,
+    "elapsed_s": 493.62,
+    "peak_rss_mb": 32451.1,
+    "peak_vram_mb": 15144.0,
+    "executed_payload": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "diagnostics": {
+     "phase": "finished",
+     "phases": [
+      {
+       "name": "payload.prepare",
+       "ts": 1790137660.125378
+      },
+      {
+       "name": "dispatch.vram_guard",
+       "ts": 1790137660.16515
+      },
+      {
+       "name": "process.launch",
+       "ts": 1790137660.2167094
+      },
+      {
+       "name": "process.monitor",
+       "ts": 1790137660.2696927
+      },
+      {
+       "name": "process.finalize",
+       "ts": 1790138153.68599
+      },
+      {
+       "name": "finished",
+       "ts": 1790138153.7123513
+      }
+     ],
+     "command": [
+      "env",
+      "HF_HOME=<host-path>",
+      "HF_HUB_OFFLINE=1",
+      "OMP_NUM_THREADS=8",
+      "TRITON_CACHE_DIR=<host-path>",
+      "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+      "<host-path>",
+      "<host-path>",
+      "--model",
+      "gemma2",
+      "--device",
+      "cuda",
+      "--out-dir",
+      "<host-path>",
+      "--out-tag",
+      "_v2",
+      "--tl"
+     ],
+     "cwd": "<host-path>",
+     "log_path": "<host-path>"
+    },
+    "failure": {
+     "kind": "killed_vram",
+     "phase": "process.finalize",
+     "message": "tree VRAM 15144MB > ceiling 13530MB",
+     "observed_ts": 1790138153.7119002,
+     "command": [
+      "env",
+      "HF_HOME=<host-path>",
+      "HF_HUB_OFFLINE=1",
+      "OMP_NUM_THREADS=8",
+      "TRITON_CACHE_DIR=<host-path>",
+      "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+      "<host-path>",
+      "<host-path>",
+      "--model",
+      "gemma2",
+      "--device",
+      "cuda",
+      "--out-dir",
+      "<host-path>",
+      "--out-tag",
+      "_v2",
+      "--tl"
+     ],
+     "cwd": "<host-path>",
+     "returncode": -9,
+     "signal": 9,
+     "resources": {
+      "peak_rss_mb": 32451.1,
+      "peak_vram_mb": 15144.0,
+      "ram_ceiling_mb": 37400.0,
+      "vram_ceiling_mb": 13530.000000000002
+     },
+     "log_tail": "<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour\n[21:27:45] loading gemma2 from unsloth/gemma-2-2b (fp32, eager)\n\rLoading weights:   0%|          | 0/288 [00:00<?, ?it/s]\rLoading weights:   0%|          | 1/288 [00:06<31:59,  6.69s/it]\rLoading weights:  81%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f | 234/288 [00:06<00:01, 47.53it/s]\rLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 288/288 [00:07<00:00, 36.72it/s]\n[21:28:14] loaded: 26 layers, hidden 2304\n[21:28:17] behavior identity\n[21:28:18]   context 0: kept 14 rows, admitted 14, subj_pos 4, seq_len 17, cache_parity 0.00e+00\n[21:28:18]   context 1: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00\n[21:28:18]   context 2: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00\n[21:32:39]   admitted 42/42; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L13': 0.0, 'L25': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0, 'L12': 0.0, 'L13': 0.0, 'L14': 0.0, 'L15': 0.0, 'L16': 0.0, 'L17': 0.0, 'L18': 0.0, 'L19': 0.0, 'L20': 0.0, 'L21': 0.0, 'L22': 0.0, 'L23': 0.0, 'L24': 0.0, 'L25': 0.0}\n[21:32:39] behavior color\n[21:32:39]   context 0: kept 10 rows, admitted 8, subj_pos 2, seq_len 15, cache_parity 0.00e+00\n[21:32:39]   context 1: kept 10 rows, admitted 9, subj_pos 2, seq_len 15, cache_parity 0.00e+00\n[21:32:39]   context 2: kept 10 rows, admitted 8, subj_pos 2, seq_len 15, cache_parity 0.00e+00\n[21:35:35]   admitted 25/30; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L13': 0.0, 'L25': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0, 'L12': 0.0, 'L13': 0.0, 'L14': 0.0, 'L15': 0.0, 'L16': 0.0, 'L17': 0.0, 'L18': 0.0, 'L19': 0.0, 'L20': 0.0, 'L21': 0.0, 'L22': 0.0, 'L23': 0.0, 'L24': 0.0, 'L25': 0.0}\n[21:35:35] TransformerLens cross-check\n[21:35:39]   building TransformerLens model (CPU build, then move to GPU)\n\rLoading weights:   0%|          | 0/288 [00:00<?, ?it/s]\rLoading weights:   0%|          | 1/288 [00:01<06:21,  1.33s/it]\rLoading weights:  66%|\u2588\u2588\u2588\u2588\u2588\u2588\u258c   | 190/288 [00:01<00:00, 175.19it/s]\rLoading weights:  92%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f| 264/288 [00:02<00:00, 115.24it/s]\rLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 288/288 [00:02<00:00, 97.18it/s] \n<host-path> DeprecationWarning: HookedTransformer.from_pretrained is deprecated and will be removed in a future major release. Use TransformerBridge.boot_transformers(...) instead, then call enable_compatibility_mode() for HookedTransformer-equivalent numerics. See docs/source/content/migrating_to_v3.md.\n  tl = HookedSAETransformer.from_pretrained(\n"
+    }
+   },
+   "needs": {
+    "cuda": true,
+    "host": "gpu-host"
+   },
+   "priority": 25,
+   "timeout_s": 7200.0,
+   "cmd": [
+    "env",
+    "HF_HOME=<host-path>",
+    "HF_HUB_OFFLINE=1",
+    "OMP_NUM_THREADS=8",
+    "TRITON_CACHE_DIR=<host-path>",
+    "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+    "<host-path>",
+    "<host-path>",
+    "--model",
+    "gemma2",
+    "--device",
+    "cuda",
+    "--out-dir",
+    "<host-path>",
+    "--out-tag",
+    "_v2",
+    "--tl"
+   ],
+   "submitted_ts": 1790125364.3736043,
+   "started_ts": 1790137660.0253446,
+   "finished_ts": 1790138153.4940581,
+   "host": "gpu-host",
+   "role": "killed: GPU memory over limit during TransformerLens step; no output"
+  },
+  {
+   "job_id": "job-646d8311c2b6",
+   "experiment": "sae-comparison",
+   "state": "cancelled",
+   "reservation": {
+    "ram_mb": 34000.0,
+    "vram_mb": 14336.0,
+    "cpu_threads": 4,
+    "disk_gb": 1.0,
+    "est_wall_s": null,
+    "source": "declared"
+   },
+   "result": null,
+   "needs": {
+    "cuda": true,
+    "host": "gpu-host"
+   },
+   "priority": 25,
+   "timeout_s": 7200.0,
+   "cmd": [
+    "env",
+    "HF_HOME=<host-path>",
+    "HF_HUB_OFFLINE=1",
+    "OMP_NUM_THREADS=8",
+    "TRITON_CACHE_DIR=<host-path>",
+    "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True",
+    "<host-path>",
+    "<host-path>",
+    "--model",
+    "gemma2",
+    "--device",
+    "cuda",
+    "--out-dir",
+    "<host-path>",
+    "--out-tag",
+    "_v2tl",
+    "--tl"
+   ],
+   "submitted_ts": 1790138491.8281035,
+   "started_ts": null,
+   "finished_ts": 1790139113.3497276,
+   "host": "gpu-host",
+   "role": "cancelled: reservation needed for TransformerLens exceeds free GPU memory on the 16 GB host"
+  }
+ ]
 }

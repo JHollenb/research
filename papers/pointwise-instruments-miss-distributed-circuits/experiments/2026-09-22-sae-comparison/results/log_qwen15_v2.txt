@@ -1,0 +1,12 @@
+[18:05:10] loading qwen15 from <host-path> (fp32, eager)
+[18:05:37] loaded: 28 layers, hidden 1536
+[18:05:39] behavior identity
+[18:05:40]   context 0: kept 14 rows, admitted 14, subj_pos 4, seq_len 17, cache_parity 0.00e+00
+[18:05:40]   context 1: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00
+[18:05:40]   context 2: kept 14 rows, admitted 14, subj_pos 4, seq_len 20, cache_parity 0.00e+00
+[18:05:53]   admitted 42/42; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L14': 0.0, 'L27': 0.0}, sae_noop=None
+[18:05:53] behavior color
+[18:05:53]   context 0: kept 10 rows, admitted 7, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[18:05:53]   context 1: kept 10 rows, admitted 7, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[18:05:53]   context 2: kept 10 rows, admitted 8, subj_pos 1, seq_len 14, cache_parity 0.00e+00
+[18:06:02]   admitted 22/30; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L14': 0.0, 'L27': 0.0}, sae_noop=None

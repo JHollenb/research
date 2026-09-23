@@ -1,0 +1,12 @@
+[21:41:32] loading gemma2 from unsloth/gemma-2-2b (fp32, eager)
+[21:42:00] loaded: 26 layers, hidden 2304
+[21:42:02] behavior identity
+[21:42:03]   context 0: kept 14 rows, admitted 14, subj_pos 4, seq_len 17, cache_parity 0.00e+00
+[21:42:03]   context 1: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00
+[21:42:03]   context 2: kept 14 rows, admitted 14, subj_pos 4, seq_len 18, cache_parity 0.00e+00
+[21:46:21]   admitted 42/42; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L13': 0.0, 'L25': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0, 'L12': 0.0, 'L13': 0.0, 'L14': 0.0, 'L15': 0.0, 'L16': 0.0, 'L17': 0.0, 'L18': 0.0, 'L19': 0.0, 'L20': 0.0, 'L21': 0.0, 'L22': 0.0, 'L23': 0.0, 'L24': 0.0, 'L25': 0.0}
+[21:46:21] behavior color
+[21:46:21]   context 0: kept 10 rows, admitted 8, subj_pos 2, seq_len 15, cache_parity 0.00e+00
+[21:46:21]   context 1: kept 10 rows, admitted 9, subj_pos 2, seq_len 15, cache_parity 0.00e+00
+[21:46:21]   context 2: kept 10 rows, admitted 8, subj_pos 2, seq_len 15, cache_parity 0.00e+00
+[21:49:16]   admitted 25/30; gates kv_noop=0.0, resid_noop={'L0': 0.0, 'L13': 0.0, 'L25': 0.0}, sae_noop={'L0': 0.0, 'L1': 0.0, 'L2': 0.0, 'L3': 0.0, 'L4': 0.0, 'L5': 0.0, 'L6': 0.0, 'L7': 0.0, 'L8': 0.0, 'L9': 0.0, 'L10': 0.0, 'L11': 0.0, 'L12': 0.0, 'L13': 0.0, 'L14': 0.0, 'L15': 0.0, 'L16': 0.0, 'L17': 0.0, 'L18': 0.0, 'L19': 0.0, 'L20': 0.0, 'L21': 0.0, 'L22': 0.0, 'L23': 0.0, 'L24': 0.0, 'L25': 0.0}
