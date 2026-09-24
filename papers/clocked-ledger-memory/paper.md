@@ -204,15 +204,23 @@ With oracle roles, the bound resolver scores **1.00** on training, PARA and PARA
 - **512k smoke (n = 4):** ledger 4/4, long context 1/4, RAG 3–4/4.
 - **Full run at 512k, 1M and 10M tokens:** pending (§6).
 
-### 4.6 Scaling the reader (E7, pending)
+### 4.6 Does a bigger reader make the memory unnecessary? (E7)
 
-E7 gives the ledger's exact contexts to a 4-bit Qwen2.5-7B reader and compares its own long-context and RAG arms. In the smoke (qa2 16k, n = 8):
-- ledger contexts with the 7B reader: 1.00
-- ledger contexts with the 1.5B reader: 0.875
-- 7B long context: 0.375
-- 7B RAG: 0.25–0.375
+E7 hands the same ledger contexts (plain ledger, gated, h2m1, writer seed 17) to the 1.5B reader and to Qwen2.5-7B-Instruct (4-bit). The 7B also gets its own long-context and RAG arms. There are 100 questions per BABILong cell and 200 held-out-phrasing chain documents (`evidence/ledger-e7-full.json`, job-9bb661d65189).
 
-The full run is in progress.
+| cell | 7B no memory | 7B long context | 7B RAG dense | 7B RAG timestamps | ledger → 1.5B | ledger → 7B |
+|---|---|---|---|---|---|---|
+| qa1 16k | 0.14 | 0.86 | **0.96** | 0.82 | 0.89 | 0.89 |
+| qa1 128k | 0.14 | 0.50 | **0.95** | 0.77 | 0.92 | 0.92 |
+| qa2 16k | 0.11 | 0.50 | 0.11 | 0.15 | 0.59 | **0.69** |
+| qa2 128k | 0.11 | 0.28 | 0.12 | 0.12 | 0.57 | **0.66** |
+| qa3 16k | 0.30 | 0.32 | 0.14 | 0.13 | **0.65** | 0.63 |
+| qa3 128k | 0.30 | 0.39 | 0.11 | 0.09 | **0.59** | 0.58 |
+| E4 chains, PARA | 0.16 | 0.39 | 0.195 | 0.21 | **0.46** | 0.455 |
+
+- **Chaining still needs the memory.** A 4.7× larger reader with its own long context scores 0.28 on two-fact chains at 128k; with retrieval, 0.12. The same reader on ledger contexts scores 0.66.
+- **A bigger reader barely fixes the plain ledger's choice problem.** On qa2 it gains 0.07–0.10. On qa3 and on held-out phrasing it gains nothing. Model size does not close the reader bottleneck found in §4.4; the bound read does (0.91–0.97, §4.1).
+- **For single facts, retrieval plus a stronger reader is strong.** 7B RAG scores 0.95–0.96, above the plain ledger's 0.89–0.92 and on par with the bound ledger's 0.96–0.98 with the 1.5B reader. Where similarity reaches the one relevant sentence, a capable reader can pick the latest from five. The ledger's advantage is chaining, time and validity, not single-fact lookup.
 
 ### 4.7 LongMemEval-S with the reader held fixed — OPEN
 
@@ -282,7 +290,6 @@ These results are **not comparable** to published LongMemEval numbers, which use
 | run | question | status |
 |---|---|---|
 | LongMemEval same-reader baselines (§4.7) | how much of the oracle each memory recovers | job-e39bfd6977e5, running |
-| E7 (§4.6) | does a 7B reader make the ledger unnecessary? | job-9bb661d65189, running |
 | E5 (§4.5) | 512k, 1M, 10M tokens | queued |
 
 ---
