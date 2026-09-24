@@ -1,7 +1,7 @@
 ---
 title: "A Clocked Ledger: Exact, Time-Aware Memory for a Frozen Language Model"
 type: research-paper
-status: draft
+status: complete
 date: 2026-09-23
 updated: 2026-09-23
 tags: [memory, long-context, retrieval, babilong, longmemeval, binding, frozen-llm, spf]
@@ -13,7 +13,7 @@ tags: [memory, long-context, retrieval, babilong, longmemeval, binding, frozen-l
 
 Jacob Hollenbeck
 
-*2026-09-23 (draft; §4.7 awaiting the same-reader LongMemEval baselines)*
+*2026-09-23*
 
 > Every number in this paper is measured on one RTX 4080 and traceable to a file in `evidence/` (hashes in `evidence/SHA256SUMS`). Assertions that are not measured are marked ASSERTED.
 
@@ -34,7 +34,7 @@ These scores hold with every test name, object and room absent from training. On
 
 On "where is X now" after idle gaps of up to 10⁸ ticks, the ledger scores **0.92–0.93**; the next best LLM arm scores 0.63. On facts with lifetimes, the ledger gives **no stale answers after expiry**, where every LLM arm gives a stale answer 72–79% of the time.
 
-On LongMemEval-S (500 real chat questions, 4-bit Qwen2.5-7B reader), the ledger answers single-session facts at 0.73–0.83, knowledge updates at 0.68 and abstentions at 0.80. It is weak on preferences, cross-session counts and relative-time questions. §4.7 isolates how much of that gap is the memory and how much the reader.
+On LongMemEval-S (500 real chat questions), the same 4-bit Qwen2.5-7B reader scores only 0.54 when handed the true evidence sessions. The reader, not the memory, sets that ceiling. The plain lexical ledger recovers 85% of that oracle and dense retrieval 89%, a statistical tie (p = 0.40); recency-truncated long context recovers 36%. Carrying the typed, bound ledger to conversation is the next step (§7).
 
 ---
 
@@ -222,36 +222,61 @@ E7 hands the same ledger contexts (plain ledger, gated, h2m1, writer seed 17) to
 - **A bigger reader barely fixes the plain ledger's choice problem.** On qa2 it gains 0.07–0.10. On qa3 and on held-out phrasing it gains nothing. Model size does not close the reader bottleneck found in §4.4; the bound read does (0.91–0.97, §4.1).
 - **For single facts, retrieval plus a stronger reader is strong.** 7B RAG scores 0.95–0.96, above the plain ledger's 0.89–0.92 and on par with the bound ledger's 0.96–0.98 with the 1.5B reader. Where similarity reaches the one relevant sentence, a capable reader can pick the latest from five. The ledger's advantage is chaining, time and validity, not single-fact lookup.
 
-### 4.7 LongMemEval-S with the reader held fixed — OPEN
+### 4.7 LongMemEval-S with the reader held fixed
 
-> **Awaiting job-e39bfd6977e5:** oracle evidence sessions, dense RAG, dense RAG with exact day offsets, and long context (most recent 30k tokens). All use the same 4-bit Qwen2.5-7B reader and prompt, and are graded by the same rubric and graders as the ledger arm below. This section will report each memory's accuracy as a fraction of the oracle's, by question type. That removes the reader's intelligence from the comparison.
+**Setup.**
+- Every arm uses the same 4-bit Qwen2.5-7B-Instruct reader and the same prompt, over 500 questions with about 115k tokens of chat history each.
+- **Oracle** is given the benchmark's evidence sessions.
+- **Ledger** is the *plain lexical* variant: records are user turns and assistant sentences, keyed by 6-character word prefixes. The read takes the best exact key overlap, ties broken by recency, top 12, each annotated "N days before the question".
+- **RAG** takes the bge-small top 10 conversation rounds, with dates. **RAG + time** adds the same exact day offsets the ledger gets.
+- **Long context** is the most recent sessions that fit in 30k tokens.
 
-**Ledger arm (measured):**
-- 500 questions, about 115k tokens of chat history each.
-- The ledger here is the *plain lexical* variant: records are user turns and assistant sentences, keyed by 6-character word prefixes. The read takes the best exact key overlap, ties broken by recency, top 12 records, each annotated "N days before the question".
-- Answers were graded by five independent LLM graders (Claude Sonnet) against a fixed rubric (`evidence/longmem-grading-rubric.md`).
-- The author checked all 30 abstention grades (30/30 agreed, one borderline) and a random 45 of the rest (44/45 agreed).
+**Grading.**
+- There was no LLM judge in the loop; the 7B self-judge and a Qwen3-8B judge both made systematic errors (§5.1).
+- Claude Sonnet graders scored every answer against a fixed rubric (`evidence/longmem-grading-rubric.md`), 100–200 answers per grader. The 2,000 baseline answers were shuffled across arms, with arm names hidden from the graders.
+- The author spot-checked:
+  - all 30 ledger abstention grades: agreed with all 30
+  - 45 other ledger grades: agreed with 44
+  - 30 baseline grades: agreed with 29, one uncertain
 
-| type | n | correct | correct + ½ partial |
-|---|---|---|---|
-| single-session, user facts | 64 | 0.828 | 0.844 |
-| abstention | 30 | 0.800 | 0.800 |
-| single-session, assistant facts | 56 | 0.732 | 0.759 |
-| knowledge update | 72 | 0.681 | 0.708 |
-| temporal reasoning | 127 | 0.276 | 0.280 |
-| multi-session | 121 | 0.215 | 0.231 |
-| single-session preference | 30 | 0.067 | 0.250 |
-| **all** | **500** | **0.460** | **0.485** |
+Evidence: `longmem-ledger*.json`, `longmem-baselines*.json`.
 
-- **Strong where one exact record answers the question.** Latest-wins selection handles real knowledge updates.
-- **Weak exactly where lexical keys cannot reach the evidence:**
-  - preferences: the question says "phone accessories", the history says "iPhone 13 Pro"
-  - cross-session counts: every relevant record is needed, and the read keeps the top 12
-  - relative time: "what did I buy 10 days ago" is a time-range lookup, which the lexical read does not do although every record carries its date
+| type | n | oracle | ledger | RAG | RAG + time | long context (30k) |
+|---|---|---|---|---|---|---|
+| single-session, user | 64 | 0.891 | 0.828 | 0.797 | 0.797 | 0.203 |
+| single-session, assistant | 56 | 0.982 | 0.732 | 0.839 | 0.821 | 0.339 |
+| knowledge update | 72 | 0.722 | 0.681 | 0.722 | 0.736 | 0.361 |
+| temporal reasoning | 127 | 0.323 | 0.276 | 0.252 | 0.276 | 0.024 |
+| multi-session | 121 | 0.273 | 0.215 | 0.231 | 0.223 | 0.033 |
+| preference | 30 | 0.300 | 0.067 | 0.200 | 0.200 | 0.100 |
+| abstention | 30 | 0.800 | 0.800 | 0.800 | 0.733 | 0.967 |
+| **all** | **500** | **0.542** | **0.460** | **0.480** | **0.480** | **0.194** |
+| **fraction of oracle** | | 1.00 | **0.85** | **0.89** | **0.89** | 0.36 |
 
-These results are **not comparable** to published LongMemEval numbers, which use GPT-4o readers and GPT-4o judges.
+Accuracy is strict: partial counts as wrong. With partial = ½ the ranking is unchanged.
 
-*[Same-reader comparison table and discussion to be inserted here.]*
+**Reading.**
+1. **On this benchmark the reader, not the memory, sets the ceiling.**
+   - Given the true evidence sessions, the 7B reader scores 0.54 overall.
+   - It scores 0.27 on multi-session aggregation and 0.32 on temporal reasoning.
+   - No memory can lift those types above what the reader does with perfect evidence. Published LongMemEval numbers use GPT-4o as reader and judge, so they measure a different reader and are not comparable.
+2. **The lexical ledger and dense RAG are statistically tied.**
+   - Ledger 0.460 and RAG 0.480 recover 85% and 89% of the oracle.
+   - Paired, 53 questions are right only for the ledger and 63 only for RAG (McNemar p = 0.40).
+   - The ledger is ahead on user facts (0.83 against 0.80) and temporal questions (0.28 against 0.25). It is behind on assistant facts (0.73 against 0.84) and preferences (0.07 against 0.20), where word keys miss paraphrased evidence.
+3. **Recency-truncated long context collapses (0.19)** because the evidence is usually older than the last 30k tokens. Its high abstention score (0.97) comes from saying "I don't know" to almost everything.
+4. **The ledger's distinctive abilities are not what this benchmark stresses at this reader size:**
+   - exact chaining through a second entity (§4.1, §4.6)
+   - latest-wins over many versions (§4.2)
+   - expiry (§4.2)
+
+   Knowledge update is the closest type: the ledger reaches 94% of the oracle there, and RAG 100%.
+
+   The lexical ledger lacks the typed, role-bound keys that produced the BABILong result. §7 describes how to build them for conversation.
+
+**Conclusion for open conversation (measured).**
+- The plain ledger, built with no conversation-specific learning, matches a standard dense retriever at 85–89% of the oracle with the same reader.
+- It does not beat retriever or oracle, and this benchmark cannot show the ledger's advantages while the reader tops out at 0.54 with perfect evidence.
 
 ---
 
@@ -289,8 +314,7 @@ These results are **not comparable** to published LongMemEval numbers, which use
 
 | run | question | status |
 |---|---|---|
-| LongMemEval same-reader baselines (§4.7) | how much of the oracle each memory recovers | job-e39bfd6977e5, running |
-| E5 (§4.5) | 512k, 1M, 10M tokens | queued |
+| E5 (§4.5) | 512k, 1M, 10M tokens | job-c22b7d3e1b64, running; qa1 at 512k done |
 
 ---
 
@@ -373,6 +397,8 @@ Code: `spf-wt-phaselock/domains/ml/memory-adapter-babilong/` (branch `feat/phase
 | 512k smoke | `ledger_worker4.py` | job-0d254d14e290 | `ledger-e5-smoke.json` |
 | LongMemEval ledger arm | `longmem_worker.py --arms ledger --no-judge` | job-3cb51167bf5d | `longmem-ledger.json`, `longmem-ledger-sonnet-grades.json` |
 | judge audit | `longmem_rejudge.py` | job-408dcf4bcd68 | `longmem-smoke.json`, `longmem-smoke-rejudge.json` |
+| LongMemEval same-reader baselines | `longmem_worker.py --arms oracle,rag-dense,rag-dense+time,long-context --no-judge` | job-e39bfd6977e5 | `longmem-baselines.json`, `longmem-baselines-sonnet-grades.json` |
+| 7B reader (E7) | `ledger_worker3.py` | job-9bb661d65189 | `ledger-e7-full.json` |
 
 Verify evidence: `cd evidence && shasum -a 256 -c SHA256SUMS`.
 
