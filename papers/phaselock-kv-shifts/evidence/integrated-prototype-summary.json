@@ -1,0 +1,58 @@
+{
+  "job": "job-e9e4562f2336",
+  "status": "complete",
+  "source_sha256": "ce9f5dd85a3380748758606bbbd2afa7da9ae2aba7ed843d28053e29bf9d5103",
+  "saturn_receipt_sha256": "392db5e9bfdd2b28a08253ab5ff63f4b85ba4a0d99b3130867830ab98550ad2b",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dtype": "bfloat16",
+  "gpu": "NVIDIA GeForce RTX 4080",
+  "n_tokens": 1600,
+  "sinks": 4,
+  "window": 1024,
+  "token_sha256": "3dbbd4b450bb02420d01c741d245836fa7d71be3f75551c49d1e9735c5e5d654",
+  "consumer": "integrated PyTorch Qwen-submodule prototype; attention unfused",
+  "arms": {
+    "pristine_reference": {
+      "ppl_steady": 17.150923633918435,
+      "nll_steady": 2.842052028366912,
+      "tokens_per_s": 62.07045826499397,
+      "top1_vs_reference": null,
+      "n_shifts": 571,
+      "shift_host_ns_median": null,
+      "shift_host_ns_p95": null
+    },
+    "bf16_rerotate": {
+      "ppl_steady": 17.388481228134026,
+      "nll_steady": 2.8558079886196985,
+      "tokens_per_s": 64.52132973339616,
+      "top1_vs_reference": 0.9474605954465849,
+      "n_shifts": 571,
+      "shift_host_ns_median": null,
+      "shift_host_ns_p95": null
+    },
+    "ring_float64": {
+      "ppl_steady": 17.27812403587932,
+      "nll_steady": 2.8494411947440836,
+      "tokens_per_s": 59.67169076605311,
+      "top1_vs_reference": 0.9544658493870403,
+      "n_shifts": 571,
+      "shift_host_ns_median": 340,
+      "shift_host_ns_p95": 636.0
+    },
+    "ring_phaselock": {
+      "ppl_steady": 17.27962276395335,
+      "nll_steady": 2.8495279323478777,
+      "tokens_per_s": 59.63954606047519,
+      "top1_vs_reference": 0.9527145359019265,
+      "n_shifts": 571,
+      "shift_host_ns_median": 301,
+      "shift_host_ns_p95": 561.0
+    }
+  },
+  "isolated_shift": {
+    "ring_cuda_kernels": 0,
+    "bf16_rerotate_cuda_kernels": 224,
+    "ring_surviving_kv_bytes_written": 0,
+    "bf16_surviving_kv_bytes_written_min": 29331456
+  }
+}
