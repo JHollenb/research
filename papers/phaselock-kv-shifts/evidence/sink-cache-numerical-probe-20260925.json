@@ -1,0 +1,59 @@
+{
+  "capacity": 1028,
+  "sinks": 4,
+  "vectors": 64,
+  "transformers": "4.52.1",
+  "outcomes": {
+    "128": {
+      "upstream_bf16": {
+        "mean_relative_l2_error_to_direct": 0.07184085994958878,
+        "mean_norm_ratio_to_direct": 0.9692750573158264,
+        "mean_cosine_to_direct": 0.9978010058403015
+      },
+      "patched_fp32_unit": {
+        "mean_relative_l2_error_to_direct": 0.04692506045103073,
+        "mean_norm_ratio_to_direct": 1.0012093782424927,
+        "mean_cosine_to_direct": 0.9988746047019958
+      },
+      "fp32_only": {
+        "mean_relative_l2_error_to_direct": 0.05456588417291641,
+        "mean_norm_ratio_to_direct": 0.9844207763671875,
+        "mean_cosine_to_direct": 0.9985891580581665
+      }
+    },
+    "512": {
+      "upstream_bf16": {
+        "mean_relative_l2_error_to_direct": 0.24202442169189453,
+        "mean_norm_ratio_to_direct": 0.8654090166091919,
+        "mean_cosine_to_direct": 0.9765992164611816
+      },
+      "patched_fp32_unit": {
+        "mean_relative_l2_error_to_direct": 0.12494415789842606,
+        "mean_norm_ratio_to_direct": 1.0037657022476196,
+        "mean_cosine_to_direct": 0.9918450117111206
+      },
+      "fp32_only": {
+        "mean_relative_l2_error_to_direct": 0.19674848020076752,
+        "mean_norm_ratio_to_direct": 0.9112311601638794,
+        "mean_cosine_to_direct": 0.9829580187797546
+      }
+    },
+    "1026": {
+      "upstream_bf16": {
+        "mean_relative_l2_error_to_direct": 0.41598862409591675,
+        "mean_norm_ratio_to_direct": 0.7648571133613586,
+        "mean_cosine_to_direct": 0.9228978157043457
+      },
+      "patched_fp32_unit": {
+        "mean_relative_l2_error_to_direct": 0.18933337926864624,
+        "mean_norm_ratio_to_direct": 1.004833698272705,
+        "mean_cosine_to_direct": 0.9815717935562134
+      },
+      "fp32_only": {
+        "mean_relative_l2_error_to_direct": 0.35146793723106384,
+        "mean_norm_ratio_to_direct": 0.8343635201454163,
+        "mean_cosine_to_direct": 0.9420173168182373
+      }
+    }
+  }
+}

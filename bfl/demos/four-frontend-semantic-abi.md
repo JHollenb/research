@@ -72,3 +72,13 @@ Not established: a universal semantic ABI, donor-free foreign frontend compilati
 - [Detailed analysis](../artifacts/four-frontend-semantic-abi/analysis.md)
 - [Artifact verifier](../artifacts/four-frontend-semantic-abi/verify.py)
 
+## Follow-up (2026-08-21)
+
+The foreign-authorship gap measured here is now partially resolved: anchored symbol
+authorship at native parity via a rank-40 displacement-subspace bridge (SmolLM2-1.7B
+features authoring lion/wolf through the frozen Klein consumer at progress 0.523–0.810,
+equal to the native-direction control ±0.01, shams −0.56–0.18; see
+the symbol-table experiment report\*, receipt `job-0706b0497903`). Zero-shot authorship of unanchored symbols remains open (≈ sham).
+
+\* Unpublished internal report. Ask the publisher for more information.
+

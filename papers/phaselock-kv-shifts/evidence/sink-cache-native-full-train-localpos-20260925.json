@@ -1,0 +1,991 @@
+{
+  "attention": "eager",
+  "block": 1,
+  "capacity": 1028,
+  "dataset": "<host-path>",
+  "dataset_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+  "dtype": "torch.bfloat16",
+  "final": {
+    "block_ppl": {
+      "baseline": 10.21765643153712,
+      "patched": 10.105325030812638
+    },
+    "block_tokens": 539,
+    "current_max_logit_delta": 2.6875,
+    "elapsed_s": 1393.396,
+    "ppl": {
+      "baseline": 10.377347563542385,
+      "patched": 10.390520837562606
+    },
+    "pre_shift_logit_exact": true,
+    "steady_ppl": {
+      "baseline": 10.12197726732255,
+      "patched": 10.135523100037313
+    },
+    "step": 19999,
+    "top1_agreement": 0.8941447072353618,
+    "traces": {
+      "baseline": {
+        "coefficient_dtype": "torch.bfloat16",
+        "coefficient_norm_max": 1.0085692405700684,
+        "coefficient_norm_min": 0.9940480589866638,
+        "evictions": 18971,
+        "input_trig_dtype": "torch.bfloat16",
+        "key_dtype": "torch.bfloat16",
+        "local_positions_valid": true,
+        "rerotation_calls": 531188,
+        "shift_calls": 531188,
+        "trig_delivery_calls": 531216,
+        "update_calls": 531216
+      },
+      "patched": {
+        "coefficient_dtype": "torch.float32",
+        "coefficient_norm_max": 1.0000001192092896,
+        "coefficient_norm_min": 0.9999998211860657,
+        "evictions": 18971,
+        "input_trig_dtype": "torch.bfloat16",
+        "key_dtype": "torch.bfloat16",
+        "local_positions_valid": true,
+        "rerotation_calls": 531188,
+        "shift_calls": 531188,
+        "trig_delivery_calls": 531216,
+        "update_calls": 531216
+      }
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4080",
+  "measurements": [
+    {
+      "block_ppl": {
+        "baseline": 16.278973048226085,
+        "patched": 16.184896910788346
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 1.125,
+      "elapsed_s": 34.711,
+      "ppl": {
+        "baseline": 16.357150898980258,
+        "patched": 16.30991058548986
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 16.278973048226085,
+        "patched": 16.184896910788346
+      },
+      "step": 2052,
+      "top1_agreement": 0.9615009746588694,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 1024,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 28672,
+          "shift_calls": 28672,
+          "trig_delivery_calls": 28700,
+          "update_calls": 28700
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 1024,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 28672,
+          "shift_calls": 28672,
+          "trig_delivery_calls": 28700,
+          "update_calls": 28700
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 14.520304371336271,
+        "patched": 14.819569087482718
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 3.15625,
+      "elapsed_s": 63.52,
+      "ppl": {
+        "baseline": 15.721214890472456,
+        "patched": 15.797836606074027
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 15.374512789451982,
+        "patched": 15.487194644066868
+      },
+      "step": 3076,
+      "top1_agreement": 0.9388816644993498,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 2048,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 57344,
+          "shift_calls": 57344,
+          "trig_delivery_calls": 57372,
+          "update_calls": 57372
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 2048,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 57344,
+          "shift_calls": 57344,
+          "trig_delivery_calls": 57372,
+          "update_calls": 57372
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 16.328264429706007,
+        "patched": 16.23231207438547
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.0546875,
+      "elapsed_s": 94.153,
+      "ppl": {
+        "baseline": 15.870681317555793,
+        "patched": 15.905247639953807
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 15.686073647334059,
+        "patched": 15.731687069822962
+      },
+      "step": 4100,
+      "top1_agreement": 0.9229268292682927,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 3072,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 86016,
+          "shift_calls": 86016,
+          "trig_delivery_calls": 86044,
+          "update_calls": 86044
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 3072,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 86016,
+          "shift_calls": 86016,
+          "trig_delivery_calls": 86044,
+          "update_calls": 86044
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 8.987468438082201,
+        "patched": 9.1264814598307
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.0,
+      "elapsed_s": 145.167,
+      "ppl": {
+        "baseline": 14.165845134466638,
+        "patched": 14.234122114123377
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 13.647246371164764,
+        "patched": 13.729582092970494
+      },
+      "step": 5124,
+      "top1_agreement": 0.917447306791569,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 4096,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 114688,
+          "shift_calls": 114688,
+          "trig_delivery_calls": 114716,
+          "update_calls": 114716
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 4096,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 114688,
+          "shift_calls": 114688,
+          "trig_delivery_calls": 114716,
+          "update_calls": 114716
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 11.692008431073626,
+        "patched": 11.968332641952209
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.125,
+      "elapsed_s": 234.714,
+      "ppl": {
+        "baseline": 13.720163913586449,
+        "patched": 13.828954452905283
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 13.231645275638162,
+        "patched": 13.357727662092293
+      },
+      "step": 6148,
+      "top1_agreement": 0.9121665582303188,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 5120,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 143360,
+          "shift_calls": 143360,
+          "trig_delivery_calls": 143388,
+          "update_calls": 143388
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 5120,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 143360,
+          "shift_calls": 143360,
+          "trig_delivery_calls": 143388,
+          "update_calls": 143388
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 11.72795425691249,
+        "patched": 12.09078987666741
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 3.96875,
+      "elapsed_s": 323.837,
+      "ppl": {
+        "baseline": 13.416241472878996,
+        "patched": 13.566270409987807
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 12.968266251924097,
+        "patched": 13.13770783838309
+      },
+      "step": 7172,
+      "top1_agreement": 0.906441717791411,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 6144,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 172032,
+          "shift_calls": 172032,
+          "trig_delivery_calls": 172060,
+          "update_calls": 172060
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 6144,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 172032,
+          "shift_calls": 172032,
+          "trig_delivery_calls": 172060,
+          "update_calls": 172060
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 10.32753270107021,
+        "patched": 10.295651988408776
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 3.0,
+      "elapsed_s": 413.309,
+      "ppl": {
+        "baseline": 12.984747616433257,
+        "patched": 13.106657519563171
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 12.553228708618034,
+        "patched": 12.6880803927169
+      },
+      "step": 8196,
+      "top1_agreement": 0.9025134211810639,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 7168,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 200704,
+          "shift_calls": 200704,
+          "trig_delivery_calls": 200732,
+          "update_calls": 200732
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 7168,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 200704,
+          "shift_calls": 200704,
+          "trig_delivery_calls": 200732,
+          "update_calls": 200732
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 10.223906719426862,
+        "patched": 10.146827266538482
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.3125,
+      "elapsed_s": 502.456,
+      "ppl": {
+        "baseline": 12.644548760977047,
+        "patched": 12.73931309991459
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 12.235257701657504,
+        "patched": 12.338509928830446
+      },
+      "step": 9220,
+      "top1_agreement": 0.9021691973969631,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 8192,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 229376,
+          "shift_calls": 229376,
+          "trig_delivery_calls": 229404,
+          "update_calls": 229404
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 8192,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 229376,
+          "shift_calls": 229376,
+          "trig_delivery_calls": 229404,
+          "update_calls": 229404
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 10.236073596360688,
+        "patched": 10.289299946488118
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 4.875,
+      "elapsed_s": 591.069,
+      "ppl": {
+        "baseline": 12.380264556560052,
+        "patched": 12.470205638849324
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 11.99511077602997,
+        "patched": 12.092013303723142
+      },
+      "step": 10244,
+      "top1_agreement": 0.9017961733697775,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 9216,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 258048,
+          "shift_calls": 258048,
+          "trig_delivery_calls": 258076,
+          "update_calls": 258076
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 9216,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 258048,
+          "shift_calls": 258048,
+          "trig_delivery_calls": 258076,
+          "update_calls": 258076
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 12.733650628132073,
+        "patched": 12.504558007907043
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.5625,
+      "elapsed_s": 680.215,
+      "ppl": {
+        "baseline": 12.41196988253668,
+        "patched": 12.473323570544801
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 12.066994916239803,
+        "patched": 12.132647762169187
+      },
+      "step": 11268,
+      "top1_agreement": 0.8990947816826411,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 10240,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 286720,
+          "shift_calls": 286720,
+          "trig_delivery_calls": 286748,
+          "update_calls": 286748
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 10240,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 286720,
+          "shift_calls": 286720,
+          "trig_delivery_calls": 286748,
+          "update_calls": 286748
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 13.017019806728369,
+        "patched": 12.993411536444121
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 3.2890625,
+      "elapsed_s": 769.312,
+      "ppl": {
+        "baseline": 12.46128198121027,
+        "patched": 12.5158435149948
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 12.150416616730785,
+        "patched": 12.208483908900014
+      },
+      "step": 12292,
+      "top1_agreement": 0.8967621217051741,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 11264,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 315392,
+          "shift_calls": 315392,
+          "trig_delivery_calls": 315420,
+          "update_calls": 315420
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 11264,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 315392,
+          "shift_calls": 315392,
+          "trig_delivery_calls": 315420,
+          "update_calls": 315420
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 4.618972007202091,
+        "patched": 4.51314530067351
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 1.90625,
+      "elapsed_s": 858.176,
+      "ppl": {
+        "baseline": 11.545626367047669,
+        "patched": 11.571639989707846
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 11.209528602432485,
+        "patched": 11.236900453685656
+      },
+      "step": 13316,
+      "top1_agreement": 0.8990687894262541,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 12288,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 344064,
+          "shift_calls": 344064,
+          "trig_delivery_calls": 344092,
+          "update_calls": 344092
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 12288,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 344064,
+          "shift_calls": 344064,
+          "trig_delivery_calls": 344092,
+          "update_calls": 344092
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 8.087510226407236,
+        "patched": 8.129328555666234
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.03125,
+      "elapsed_s": 946.817,
+      "ppl": {
+        "baseline": 11.255830188569591,
+        "patched": 11.283532776082314
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.931550666672019,
+        "patched": 10.960535556600057
+      },
+      "step": 14340,
+      "top1_agreement": 0.9000697350069735,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 13312,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 372736,
+          "shift_calls": 372736,
+          "trig_delivery_calls": 372764,
+          "update_calls": 372764
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 13312,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 372736,
+          "shift_calls": 372736,
+          "trig_delivery_calls": 372764,
+          "update_calls": 372764
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 7.899187946352033,
+        "patched": 8.056313859898308
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 3.53125,
+      "elapsed_s": 1035.987,
+      "ppl": {
+        "baseline": 10.993277633582643,
+        "patched": 11.033002578713113
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.680786865447836,
+        "patched": 10.722155564698546
+      },
+      "step": 15364,
+      "top1_agreement": 0.899570424368654,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 14336,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 401408,
+          "shift_calls": 401408,
+          "trig_delivery_calls": 401436,
+          "update_calls": 401436
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 14336,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 401408,
+          "shift_calls": 401408,
+          "trig_delivery_calls": 401436,
+          "update_calls": 401436
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 6.465666025206111,
+        "patched": 6.149380876581283
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.46875,
+      "elapsed_s": 1125.1,
+      "ppl": {
+        "baseline": 10.634659571083604,
+        "patched": 10.637294838841893
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.329292683043885,
+        "patched": 10.332023609976181
+      },
+      "step": 16388,
+      "top1_agreement": 0.8996826946546254,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 15360,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 430080,
+          "shift_calls": 430080,
+          "trig_delivery_calls": 430108,
+          "update_calls": 430108
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 15360,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 430080,
+          "shift_calls": 430080,
+          "trig_delivery_calls": 430108,
+          "update_calls": 430108
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 8.081856921072644,
+        "patched": 8.138196229979483
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 1.57421875,
+      "elapsed_s": 1213.672,
+      "ppl": {
+        "baseline": 10.464360840971935,
+        "patched": 10.471078449050191
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.172099960866833,
+        "patched": 10.179039810147362
+      },
+      "step": 17412,
+      "top1_agreement": 0.8981736733287388,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 16384,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 458752,
+          "shift_calls": 458752,
+          "trig_delivery_calls": 458780,
+          "update_calls": 458780
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 16384,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 458752,
+          "shift_calls": 458752,
+          "trig_delivery_calls": 458780,
+          "update_calls": 458780
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 10.15659864399505,
+        "patched": 10.410290897225275
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 2.78125,
+      "elapsed_s": 1293.254,
+      "ppl": {
+        "baseline": 10.447024612625876,
+        "patched": 10.46769280458117
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.171187464141283,
+        "patched": 10.192499488388487
+      },
+      "step": 18436,
+      "top1_agreement": 0.8958016923410718,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 17408,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 487424,
+          "shift_calls": 487424,
+          "trig_delivery_calls": 487452,
+          "update_calls": 487452
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 17408,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 487424,
+          "shift_calls": 487424,
+          "trig_delivery_calls": 487452,
+          "update_calls": 487452
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 9.27486363884716,
+        "patched": 9.228715499846448
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 7.125,
+      "elapsed_s": 1352.111,
+      "ppl": {
+        "baseline": 10.381806006218099,
+        "patched": 10.398533668265626
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.11919288181028,
+        "patched": 10.136407527473919
+      },
+      "step": 19460,
+      "top1_agreement": 0.8948098663926002,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 18432,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 516096,
+          "shift_calls": 516096,
+          "trig_delivery_calls": 516124,
+          "update_calls": 516124
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 18432,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 516096,
+          "shift_calls": 516096,
+          "trig_delivery_calls": 516124,
+          "update_calls": 516124
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 10.21765643153712,
+        "patched": 10.105325030812638
+      },
+      "block_tokens": 539,
+      "current_max_logit_delta": 2.6875,
+      "elapsed_s": 1393.396,
+      "ppl": {
+        "baseline": 10.377347563542385,
+        "patched": 10.390520837562606
+      },
+      "pre_shift_logit_exact": true,
+      "steady_ppl": {
+        "baseline": 10.12197726732255,
+        "patched": 10.135523100037313
+      },
+      "step": 19999,
+      "top1_agreement": 0.8941447072353618,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 18971,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 531188,
+          "shift_calls": 531188,
+          "trig_delivery_calls": 531216,
+          "update_calls": 531216
+        },
+        "patched": {
+          "coefficient_dtype": "torch.float32",
+          "coefficient_norm_max": 1.0000001192092896,
+          "coefficient_norm_min": 0.9999998211860657,
+          "evictions": 18971,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "local_positions_valid": true,
+          "rerotation_calls": 531188,
+          "shift_calls": 531188,
+          "trig_delivery_calls": 531216,
+          "update_calls": 531216
+        }
+      }
+    }
+  ],
+  "model": "<host-path>",
+  "model_config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+  "position_mode": "bounded_local_slot",
+  "position_rule": "initial 0..capacity-1; after each eviction new token at capacity-1",
+  "prefill_logit_sha256": "ddd9c9ee1e997794fa597bfb66597985739651a4bc922ada1a02e036044f6cbd",
+  "prefill_nll": {
+    "baseline": 2877.8216590881348,
+    "patched": 2877.8216590881348
+  },
+  "recent_window": 1024,
+  "sinks": 4,
+  "source_sha256": {
+    "baseline": "ac8d2f4f7ae25656989b0d7d359790fcb0d04fdb4735265a90f6d4570fc5ed52",
+    "patched": "213d6979a021796eeafe42ac1ad8bce152249555b4104555e498a814b1e333e4"
+  },
+  "status": "succeeded",
+  "token_ids_sha256": "529bc6f6fd3a82939d5f6067c0e9d26522161a0c815c76c32245b8cacd5ff102",
+  "tokens_requested": 20000,
+  "torch": "2.13.0+cu130",
+  "transformers": "4.52.1"
+}

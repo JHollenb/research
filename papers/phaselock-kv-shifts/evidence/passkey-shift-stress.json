@@ -1,0 +1,29 @@
+{
+  "assay": "Fixed-window full-forward pass-key shift emulation, not live incremental decoding",
+  "shift_positions_per_step": 512,
+  "prompts_per_model_condition": 24,
+  "scoring": "All answer tokens must be teacher-forced top-1",
+  "float_rerotation_arithmetic": "FP32, followed by the listed key storage dtype after every shift",
+  "models": [
+    {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "job_id": "job-5c5dc2748dd9",
+      "source": "spf-data/2026-09-22-phaselock/2026-09-22-Qwen2.5-1.5B-Instruct.json",
+      "source_sha256": "54abe9d743d90a708a0aa7374e1363692418391327926dd799657fb9f6829c25",
+      "correct_of_24": {
+        "256_shifts": {"repeated_bf16": 17, "repeated_fp16": 24, "phaselock": 24},
+        "1024_shifts": {"repeated_bf16": 0, "repeated_fp16": 24, "phaselock": 24}
+      }
+    },
+    {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "job_id": "job-e3bb775dbfe3",
+      "source": "spf-data/2026-09-22-phaselock/2026-09-22-Qwen2.5-0.5B-Instruct.json",
+      "source_sha256": "548b321793045bed0e76a5a258a79988aaee3d832ba7774e2ab1f77aabf39e5c",
+      "correct_of_24": {
+        "256_shifts": {"repeated_bf16": 14, "repeated_fp16": 24, "phaselock": 24},
+        "1024_shifts": {"repeated_bf16": 0, "repeated_fp16": 24, "phaselock": 24}
+      }
+    }
+  ]
+}

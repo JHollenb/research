@@ -1,8 +1,8 @@
 # PhaseLock: stable position shifts for sliding KV caches
 
-[Paper draft](paper.md) · Jacob Hollenbeck · 2026-09-24
+[Paper draft](paper.md) · Jacob Hollenbeck · updated 2026-09-25
 
-This draft reports the completed Qwen streaming and kernel experiments. Section 5 includes a checked Saturn/mrun ring-buffer prototype, a held-out 20,000-token quality run with a stronger FP32-arithmetic/BF16-storage rerotation control, a two-script synthetic conversation recall assay, and a reserved production-engine result. The paper is not yet submitted or published.
+This draft reports the completed Qwen streaming and kernel experiments. It distinguishes the larger fixed-window pass-key stress result from the smaller live conversation assay. Section 5 includes a checked Saturn/mrun ring-buffer prototype, a held-out 20,000-token quality run with a stronger FP32-arithmetic/BF16-storage rerotation control, and the two-script synthetic conversation recall assay. Section 6 summarizes a source-level audit of inference repositories, including the separate vLLM cache-identity report, and a paired native Hugging Face SinkCache model comparison. That public cache comparison did not reproduce the paper's catastrophic BF16 perplexity loss under bounded local positions. No native production-engine run is pending. The paper is not yet submitted or published.
 
 The underlying run identifiers and exact configurations are in the paper's reproducibility section. Raw artifacts remain in the workspace experiment archive pending preparation of a PhaseLock-only public supplement.
 
@@ -21,3 +21,6 @@ The [conversation recall extract](evidence/conversation-recall.json) records
 both matched scripts' per-case answers, target scores, source ages, and raw
 result hashes. The source assay and full raw results remain in the local Saturn
 experiment archive pending preparation of a public supplement.
+
+The [pass-key stress extract](evidence/passkey-shift-stress.json) records the
+fixed-window answer counts and source hashes separately from the live assays.
