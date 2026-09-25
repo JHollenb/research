@@ -1,0 +1,146 @@
+{
+  "description": "PhaseLock-only normalized extract of three archived streaming result files; source hashes bind the exact raw JSON. Missing timing denotes invalid contention, not zero cost.",
+  "runs": [
+    {
+      "job": "job-3589b82a0935",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "window": 1024,
+      "sinks": 4,
+      "block": 1,
+      "n_tokens": 20000,
+      "status": "complete",
+      "source_sha256": "869cdb0ca99ae0934d76b9aa832a0f4e2630a7460fde77ef4cd187d198a18e65",
+      "arms": {
+        "pristine_float": {
+          "ppl_steady": 9.88220713954818,
+          "mean_nll_steady": 2.2907358815020094,
+          "ms_per_token": 13.671
+        },
+        "phaselock": {
+          "ppl_steady": 9.884165455753436,
+          "mean_nll_steady": 2.2909340277427748,
+          "ms_per_token": 13.467
+        },
+        "postrope_fp32": {
+          "ppl_steady": 9.88621187776299,
+          "mean_nll_steady": 2.2911410467573683,
+          "ms_per_token": 13.862
+        },
+        "postrope_fp16": {
+          "ppl_steady": 10.05602722966898,
+          "mean_nll_steady": 2.3081721790874803,
+          "ms_per_token": 14.018
+        },
+        "postrope_bf16": {
+          "ppl_steady": 322.1006163239165,
+          "mean_nll_steady": 5.774863969790512,
+          "ms_per_token": 13.603
+        },
+        "quantize_once_q8": {
+          "ppl_steady": 10.18110978185228,
+          "mean_nll_steady": 2.3205340210796206,
+          "ms_per_token": 15.041
+        },
+        "requantize_each_shift_q8": {
+          "ppl_steady": 12.898404295331849,
+          "mean_nll_steady": 2.5571036056801026,
+          "ms_per_token": 17.675
+        }
+      }
+    },
+    {
+      "job": "job-40591d508a14",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "window": 2048,
+      "sinks": 4,
+      "block": 1,
+      "n_tokens": 20000,
+      "status": "quality rows complete; job lost and timing contended",
+      "source_sha256": "e475b5f4db8713a63e8b62ee453e900087cef8de19b11db4ddedebbe7c230f73",
+      "arms": {
+        "pristine_float": {
+          "ppl_steady": 9.071775707606367,
+          "mean_nll_steady": 2.2051680230914,
+          "ms_per_token": null
+        },
+        "phaselock": {
+          "ppl_steady": 9.077437989187212,
+          "mean_nll_steady": 2.205791993017497,
+          "ms_per_token": null
+        },
+        "postrope_fp32": {
+          "ppl_steady": 9.078589721880594,
+          "mean_nll_steady": 2.205918863576769,
+          "ms_per_token": null
+        },
+        "postrope_fp16": {
+          "ppl_steady": 9.315457210251346,
+          "mean_nll_steady": 2.2316750860751338,
+          "ms_per_token": null
+        },
+        "postrope_bf16": {
+          "ppl_steady": 61839.17468197925,
+          "mean_nll_steady": 11.032292337149917,
+          "ms_per_token": null
+        },
+        "quantize_once_q8": {
+          "ppl_steady": 9.418560561900538,
+          "mean_nll_steady": 2.2426822703198552,
+          "ms_per_token": null
+        },
+        "requantize_each_shift_q8": {
+          "ppl_steady": 814.3202535593009,
+          "mean_nll_steady": 6.7023537205195405,
+          "ms_per_token": null
+        }
+      }
+    },
+    {
+      "job": "job-e3ebcf029df1",
+      "model": "Qwen2.5-0.5B-Instruct",
+      "window": 1024,
+      "sinks": 4,
+      "block": 1,
+      "n_tokens": 20000,
+      "status": "complete",
+      "source_sha256": "a43e5ab4dfa8e534f88387667b62c72c20dadbfac354896ff6f2a805c481610b",
+      "arms": {
+        "pristine_float": {
+          "ppl_steady": 14.225572232749485,
+          "mean_nll_steady": 2.655041206461612,
+          "ms_per_token": 11.313
+        },
+        "phaselock": {
+          "ppl_steady": 14.222604844219456,
+          "mean_nll_steady": 2.654832589330696,
+          "ms_per_token": 11.473
+        },
+        "postrope_fp32": {
+          "ppl_steady": 14.224324672401124,
+          "mean_nll_steady": 2.6549535041860417,
+          "ms_per_token": 15.731
+        },
+        "postrope_fp16": {
+          "ppl_steady": 14.232301983772198,
+          "mean_nll_steady": 2.655514168784585,
+          "ms_per_token": 16.743
+        },
+        "postrope_bf16": {
+          "ppl_steady": 114.71557466952864,
+          "mean_nll_steady": 4.7424558010508635,
+          "ms_per_token": 11.648
+        },
+        "quantize_once_q8": {
+          "ppl_steady": 14.669787600329606,
+          "mean_nll_steady": 2.6857901135449365,
+          "ms_per_token": 13.166
+        },
+        "requantize_each_shift_q8": {
+          "ppl_steady": 76.67133089115546,
+          "mean_nll_steady": 4.339527856115271,
+          "ms_per_token": 15.317
+        }
+      }
+    }
+  ]
+}

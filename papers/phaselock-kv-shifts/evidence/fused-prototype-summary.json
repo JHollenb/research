@@ -1,0 +1,89 @@
+{
+  "schema": "phaselock-paper-fused-prototype-summary-v1",
+  "job_id": "job-5a4426fff103",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "input_sha256": "3dbbd4b450bb02420d01c741d245836fa7d71be3f75551c49d1e9735c5e5d654",
+  "tokens": 1600,
+  "sinks": 4,
+  "window": 1024,
+  "post_fill_shifts": 571,
+  "quality": {
+    "ring_integer": {
+      "steady_ppl": 17.27962276395335,
+      "steady_nll": 2.8495279323478777,
+      "top1_sha256": "43c9f2b018a3fcba37d59a45a6a6bddf7052dd6b4daef52df913d511f1d98472"
+    },
+    "ring_float64": {
+      "steady_ppl": 17.27812403587932,
+      "steady_nll": 2.8494411947440836,
+      "top1_sha256": "973d39a9ca99c187a6517e36a207f443785f315f1369cf2c80162f75845618a0"
+    },
+    "unfused_fp32": {
+      "steady_ppl": 17.088776937844596,
+      "steady_nll": 2.838421928612444,
+      "top1_sha256": "6467d257868fb4c6b66606fdbb24362e750c5d20f676f2346a2fdf08b9701c17"
+    },
+    "fused_logical": {
+      "steady_ppl": 17.09508762212618,
+      "steady_nll": 2.8387911486777884,
+      "top1_sha256": "dda4121a877bf9eb9a3f93a98545906d41141f9df41e7967921ffe3ef1724223"
+    },
+    "fused": {
+      "steady_ppl": 17.095094685554518,
+      "steady_nll": 2.8387915618623847,
+      "top1_sha256": "0e14e36158322ef551653c3be8c31f4ed41507d620817c713bc8159f464df0ee"
+    },
+    "rerotate_bf16": {
+      "steady_ppl": 17.388481228134026,
+      "steady_nll": 2.8558079886196985,
+      "top1_sha256": "bf289e06c09b1df2a951785b57e0488b633a8a98c703e5f58846f443251d10e2"
+    }
+  },
+  "paired": {
+    "fused_minus_unfused_fp32_mean_nll_steady": 0.0003696332499405268,
+    "fused_vs_unfused_fp32_top1_agreement_steady": 0.9877408056042032
+  },
+  "decoder_speed_runs": [
+    {
+      "arm": "fused_logical",
+      "steady_tokens_per_s": 106.54948570922508
+    },
+    {
+      "arm": "fused",
+      "steady_tokens_per_s": 106.09351267229412
+    },
+    {
+      "arm": "unfused_fp32",
+      "steady_tokens_per_s": 64.94299728018919
+    },
+    {
+      "arm": "ring_integer",
+      "steady_tokens_per_s": 70.12198344094382
+    },
+    {
+      "arm": "fused",
+      "steady_tokens_per_s": 106.43755290505669
+    },
+    {
+      "arm": "fused_logical",
+      "steady_tokens_per_s": 106.26553954316817
+    }
+  ],
+  "attention_probe_ms_per_call": {
+    "unfused": 0.18588672637939452,
+    "fused_logical": 0.05777743816375733,
+    "fused": 0.03671040058135986
+  },
+  "same_input_trace_max_abs_fused_vs_fp32": 0.00390625,
+  "raw_result_sha256": "6bd6aa68e524fe46275d561d034616bdec870fa2e546880135c61de547938c48",
+  "attention_probe_result_sha256": "b6ba286e3921fe9c7cdf0b00070e2dadd4ba2bea1285cc419a2c147ebe3be6e2",
+  "saturn_receipt_sha256": "484c83a8ca8410a31bb3f6eeb81127cef861f70195ec144c973c61f2535ec5f9",
+  "mrun_payload_sha256": "88fc12e66a34d9ad8874e001aa363718f17d9beea7894cc8a43e69d38cd2279e",
+  "limitations": [
+    "Python decoder prototype, not a native production engine",
+    "571 post-fill shifts and one WikiText train prefix",
+    "FP32 unfused control materializes conversion buffers",
+    "BF16 attention arms and FP32 attention arms have different numerical contracts"
+  ]
+}

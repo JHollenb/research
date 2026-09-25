@@ -1,0 +1,279 @@
+{
+  "schema": "phaselock-heldout-block-analysis-v1",
+  "source": "saturn/experiments/2026-09-24-phaselock-integrated-ring/results-quality-test20k-v1.json",
+  "source_sha256": "76900a783b0ca0a388b83306671e360255a45bfa21fabda85aff6f7e6e8a42a7",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "dataset_split": "test",
+  "dataset_file_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+  "input_sha256": "0b79a8e8eaabaa2bc731ceaf7b10db9679b6fb892afebf87b0d921aa2e7185da",
+  "window": 1024,
+  "sinks": 4,
+  "tokens": 20000,
+  "extra_source": "saturn/experiments/2026-09-24-phaselock-integrated-ring/results-quality-test20k-fp32twiddle-v1.json",
+  "extra_source_sha256": "9ab4d32a74133823d1a5cd7669cf1b4b348d8ba21601fcde2f5e7e30964eca6b",
+  "arms": [
+    {
+      "arm": "reference",
+      "steady_ppl": 8.328555364208626,
+      "steady_tokens_per_s": 64.4971989042846
+    },
+    {
+      "arm": "rerotate_bf16",
+      "steady_ppl": 253.91762190895454,
+      "steady_tokens_per_s": 74.37292484226114
+    },
+    {
+      "arm": "ring_integer",
+      "steady_ppl": 8.450200225286997,
+      "steady_tokens_per_s": 60.51710814107325
+    },
+    {
+      "arm": "ring_float64",
+      "steady_ppl": 8.446349250220425,
+      "steady_tokens_per_s": 67.21392530165244
+    },
+    {
+      "arm": "rerotate_fp32_bf16",
+      "steady_ppl": 8.60590743647047,
+      "steady_tokens_per_s": 71.16839568777017
+    }
+  ],
+  "comparisons": [
+    {
+      "arms": [
+        "reference",
+        "rerotate_bf16"
+      ],
+      "n_post_fill_rows": 18971,
+      "mean_nll_delta_b_minus_a_post_fill": 3.4173198757477525,
+      "ppl_ratio_b_over_a_post_fill": 30.48759488351935,
+      "top1_agreement_post_fill": 0.26155711348900956,
+      "mean_nll_delta_before_first_shift": 4.081580136026514e-05,
+      "block_size": 1024,
+      "complete_blocks": 18,
+      "tail_rows_excluded_from_bootstrap": 539,
+      "block_mean_nll_deltas": [
+        0.7919674935565633,
+        3.5251402479543827,
+        3.0574389322729303,
+        3.6227537393807436,
+        3.712516605983353,
+        3.894436222297557,
+        4.075866565604887,
+        3.7723986328688097,
+        3.9628234789953183,
+        4.336616616336613,
+        3.3800995055442087,
+        2.8797288420823435,
+        2.895296595378687,
+        3.345070174565306,
+        3.397157201281016,
+        3.4309321201748837,
+        3.3807864864321537,
+        3.598136394989604
+      ],
+      "positive_delta_blocks": 18,
+      "descriptive_block_bootstrap_95pct": [
+        3.0197615624990486,
+        3.6778977476578203
+      ]
+    },
+    {
+      "arms": [
+        "reference",
+        "ring_integer"
+      ],
+      "n_post_fill_rows": 18971,
+      "mean_nll_delta_b_minus_a_post_fill": 0.014500120915038585,
+      "ppl_ratio_b_over_a_post_fill": 1.0146057576324856,
+      "top1_agreement_post_fill": 0.9291550260924569,
+      "mean_nll_delta_before_first_shift": 0.003147368335229293,
+      "block_size": 1024,
+      "complete_blocks": 18,
+      "tail_rows_excluded_from_bootstrap": 539,
+      "block_mean_nll_deltas": [
+        0.014463124930520266,
+        -0.0003025132266074593,
+        0.03364357940702334,
+        0.014658702110811994,
+        0.0023837177442231905,
+        -0.007486168584559749,
+        -9.345107871538971e-05,
+        0.001540859928434557,
+        0.04847449303019857,
+        0.024287199324383835,
+        0.040538803205265594,
+        -0.019247628290969487,
+        -0.005271753634959353,
+        0.02606242997388719,
+        0.012537519277601383,
+        0.05701262942286078,
+        0.01471812299221753,
+        0.02510583147813783
+      ],
+      "positive_delta_blocks": 13,
+      "descriptive_block_bootstrap_95pct": [
+        0.006749228986199808,
+        0.025060969165291967
+      ]
+    },
+    {
+      "arms": [
+        "reference",
+        "ring_float64"
+      ],
+      "n_post_fill_rows": 18971,
+      "mean_nll_delta_b_minus_a_post_fill": 0.01404429114472618,
+      "ppl_ratio_b_over_a_post_fill": 1.0141433755147997,
+      "top1_agreement_post_fill": 0.9302619788097622,
+      "mean_nll_delta_before_first_shift": 0.0024451017447282763,
+      "block_size": 1024,
+      "complete_blocks": 18,
+      "tail_rows_excluded_from_bootstrap": 539,
+      "block_mean_nll_deltas": [
+        0.011739036338516584,
+        -0.0026771314687721315,
+        0.032687754013579706,
+        0.013404085118019271,
+        0.001111166342706582,
+        -0.010160410900267536,
+        0.005138285233456941,
+        -0.001157831381649821,
+        0.04868579705672005,
+        0.0276310788441414,
+        0.039461453702756444,
+        -0.01738579643708249,
+        -0.008208254099811185,
+        0.027451431808932725,
+        0.012268065272758477,
+        0.05598549243866913,
+        0.013424824343861275,
+        0.025143832301884217
+      ],
+      "positive_delta_blocks": 13,
+      "descriptive_block_bootstrap_95pct": [
+        0.006199017621008467,
+        0.024624172421595886
+      ]
+    },
+    {
+      "arms": [
+        "ring_float64",
+        "ring_integer"
+      ],
+      "n_post_fill_rows": 18971,
+      "mean_nll_delta_b_minus_a_post_fill": 0.00045582977031240516,
+      "ppl_ratio_b_over_a_post_fill": 1.0004559336764893,
+      "top1_agreement_post_fill": 0.9805492593959201,
+      "mean_nll_delta_before_first_shift": 0.0007022665905010169,
+      "block_size": 1024,
+      "complete_blocks": 18,
+      "tail_rows_excluded_from_bootstrap": 539,
+      "block_mean_nll_deltas": [
+        0.0027240885920036817,
+        0.002374618242164672,
+        0.0009558253934436323,
+        0.001254616992792723,
+        0.0012725514015166084,
+        0.0026742423157077866,
+        -0.00523173631217233,
+        0.002698691310084378,
+        -0.00021130402652147495,
+        -0.0033438795197575644,
+        0.0010773495025091506,
+        -0.0018618318538869971,
+        0.0029365004648518322,
+        -0.0013890018350455335,
+        0.00026945400484290616,
+        0.0010271369841916567,
+        0.0012932986483562559,
+        -3.8000823746386914e-05
+      ],
+      "positive_delta_blocks": 12,
+      "descriptive_block_bootstrap_95pct": [
+        -0.0005900406072394455,
+        0.0013742900792769036
+      ]
+    },
+    {
+      "arms": [
+        "reference",
+        "rerotate_fp32_bf16"
+      ],
+      "n_post_fill_rows": 18971,
+      "mean_nll_delta_b_minus_a_post_fill": 0.032758863187880856,
+      "ppl_ratio_b_over_a_post_fill": 1.0333013422056057,
+      "top1_agreement_post_fill": 0.9072268198829793,
+      "mean_nll_delta_before_first_shift": 0.0012208807023931152,
+      "block_size": 1024,
+      "complete_blocks": 18,
+      "tail_rows_excluded_from_bootstrap": 539,
+      "block_mean_nll_deltas": [
+        0.01933431699748045,
+        0.04799936311647457,
+        0.040258120888239546,
+        0.0274164326516404,
+        0.05104545812374539,
+        0.036368587416049536,
+        0.030482040554890233,
+        0.0178537817020894,
+        0.03629069895225712,
+        0.06783229879696506,
+        0.03485600884472717,
+        0.009170682390177376,
+        0.014392753789449486,
+        0.04033963510728178,
+        0.029287166879894855,
+        0.02853436081150207,
+        0.03779089316136819,
+        0.02840510083620451
+      ],
+      "positive_delta_blocks": 18,
+      "descriptive_block_bootstrap_95pct": [
+        0.02715599322553576,
+        0.03964484475096037
+      ]
+    },
+    {
+      "arms": [
+        "ring_float64",
+        "rerotate_fp32_bf16"
+      ],
+      "n_post_fill_rows": 18971,
+      "mean_nll_delta_b_minus_a_post_fill": 0.018714572043154677,
+      "ppl_ratio_b_over_a_post_fill": 1.0188907871937545,
+      "top1_agreement_post_fill": 0.894206947446102,
+      "mean_nll_delta_before_first_shift": -0.001224221042335161,
+      "block_size": 1024,
+      "complete_blocks": 18,
+      "tail_rows_excluded_from_bootstrap": 539,
+      "block_mean_nll_deltas": [
+        0.0075952806589638655,
+        0.0506764945852467,
+        0.00757036687465984,
+        0.014012347533621128,
+        0.04993429178103881,
+        0.04652899831631707,
+        0.025343755321433292,
+        0.01901161308373922,
+        -0.012395098104462932,
+        0.040201219952823664,
+        -0.004605444858029273,
+        0.026556478827259866,
+        0.02260100788926067,
+        0.012888203298349055,
+        0.017019101607136378,
+        -0.027451131627167058,
+        0.024366068817506914,
+        0.003261268534320294
+      ],
+      "positive_delta_blocks": 15,
+      "descriptive_block_bootstrap_95pct": [
+        0.00837883960256125,
+        0.02722417067685194
+      ]
+    }
+  ],
+  "interpretation_limit": "One held-out text stream; block resampling describes local variation, not independent-stream replication. The original BF16 rerotation arm uses BF16 twiddle arithmetic; the optional FP32-math BF16-storage arm isolates that choice."
+}
