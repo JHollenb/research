@@ -1,0 +1,93 @@
+{
+  "cross_job_source_state_hashes_equal": 36,
+  "cross_job_source_state_hashes_total": 36,
+  "instrument_status": "unblinded-native-rgb-contact-side-review-source-anatomy-defects",
+  "interactions": [
+    {
+      "factor": "full",
+      "seed": 26091741,
+      "target_rgb_mad": 8.886735280354818
+    },
+    {
+      "factor": "complement",
+      "seed": 26091741,
+      "target_rgb_mad": 8.643184661865234
+    },
+    {
+      "factor": "predicate",
+      "seed": 26091741,
+      "target_rgb_mad": 5.8093210856119795
+    },
+    {
+      "factor": "full",
+      "seed": 26091841,
+      "target_rgb_mad": 11.403508504231771
+    },
+    {
+      "factor": "complement",
+      "seed": 26091841,
+      "target_rgb_mad": 9.742366790771484
+    },
+    {
+      "factor": "predicate",
+      "seed": 26091841,
+      "target_rgb_mad": 5.8912709554036455
+    },
+    {
+      "factor": "full",
+      "seed": 26091842,
+      "target_rgb_mad": 12.511383056640625
+    },
+    {
+      "factor": "complement",
+      "seed": 26091842,
+      "target_rgb_mad": 11.811532338460287
+    },
+    {
+      "factor": "predicate",
+      "seed": 26091842,
+      "target_rgb_mad": 9.433728535970053
+    }
+  ],
+  "job_id": "job-6386d22db7c1",
+  "mechanics_checks": {
+    "26091741:source-left-replay": true,
+    "26091741:source-neutral-replay": true,
+    "26091741:source-right-replay": true,
+    "26091841:source-left-replay": true,
+    "26091841:source-neutral-replay": true,
+    "26091841:source-right-replay": true,
+    "26091842:source-left-replay": true,
+    "26091842:source-neutral-replay": true,
+    "26091842:source-right-replay": true,
+    "physical_forward_budget": true,
+    "text_encodes": true
+  },
+  "mechanics_status": "valid",
+  "predicate_direction_energy_fraction_range": [
+    0.05065654886248212,
+    0.07885463571071362
+  ],
+  "raw_images": 30,
+  "schema": "saturn-spectral-binding-descriptive-analysis-v1",
+  "shared_to_direction_energy_ratio_range": [
+    65.39282241998461,
+    273.81374579138134
+  ],
+  "terminal_status": "not-established",
+  "trend_status": "native-mean-restores-contact-and-complement-direction-selects-side",
+  "visual_summary": {
+    "complement_direction": "6/6 requested-side contacts with identical predicate-slot values within each left/right pair",
+    "full_native_text": "6/6 requested-side contacts",
+    "limitations": [
+      "3 discovery seeds in one prompt template and checkpoint",
+      "Exact target-conditioned source states and their mean remain donor dependencies",
+      "Full, complement, predicate projections have unequal energy",
+      "Camera identity and other camera preservation are not certified",
+      "Extra-hand defects persist; no independent contact judge"
+    ],
+    "mean_text": "3/3 touch left with directional term zero; averaging is not a neutral action",
+    "native_target_contact": "6/6 requested-side contacts; 4/6 have a third hand as in the exactly replayed prior job",
+    "predicate_direction": "5/6 requested-side contacts; seed 26091741 right request still touches left"
+  }
+}

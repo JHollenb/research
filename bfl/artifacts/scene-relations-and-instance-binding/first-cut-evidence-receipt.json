@@ -1,0 +1,272 @@
+{
+  "claim_boundary": "Three-seed exploratory native-consumer assay. Exact spectral object selection and historical writer target invariance; new target contrast is donor-assisted, scene-specific, and not a learned or donor-free spatial pointer. Raw donor tensors ephemeral; images, hashes, row energies, exact inputs and source snapshots retained. No terminal binding claim.",
+  "evidence": {
+    "FINDINGS.md": {
+      "bytes": 3713,
+      "sha256": "4de66d3f2764fca9a4679306e530d089c34e9357ccbbfcd5e69095bb7bc95c3e"
+    },
+    "analysis-source/finalize.py": {
+      "bytes": 7107,
+      "sha256": "75e3333f176ee4ec0d79257d04b2a589c9a7f2a32663f29422fb5ea70fbb19d7"
+    },
+    "analysis.json": {
+      "bytes": 2478,
+      "sha256": "9260635eda1bdf3d1b885464cc81e8914d46ae3f15126c2b99812b6c37372bfb"
+    },
+    "evidence-observations.jsonl": {
+      "bytes": 39873,
+      "sha256": "44b2846daa97344073842b156a33e5c1714812db81081230b98d31c7c7eb2f5c"
+    },
+    "images/26091741--combined-left.png": {
+      "bytes": 217704,
+      "sha256": "63d32c0841fee356aa654125ea61cbdd6ac5c318d3ac5914a46982a482de6ff2"
+    },
+    "images/26091741--combined-right.png": {
+      "bytes": 220485,
+      "sha256": "459c2cd40d9e044a105813e44c4a27b493d293c358ac3890a4636346f5e60ad8"
+    },
+    "images/26091741--compiled-left.png": {
+      "bytes": 216461,
+      "sha256": "695d88138563b17b63321405daa681e75c56da1bad107bf727e376b6b6275377"
+    },
+    "images/26091741--compiled-right.png": {
+      "bytes": 216461,
+      "sha256": "695d88138563b17b63321405daa681e75c56da1bad107bf727e376b6b6275377"
+    },
+    "images/26091741--contact-sheet.png": {
+      "bytes": 673425,
+      "sha256": "5959e41e620ce75dbf901f0d1ceaf88df8f62a4dc781e5f75e7986bc7c0d6174"
+    },
+    "images/26091741--native-left.png": {
+      "bytes": 223697,
+      "sha256": "88dcc8757ca9121577bf80017577fa06cf637061f6c27e3339ffceeb731c62e3"
+    },
+    "images/26091741--native-right.png": {
+      "bytes": 228513,
+      "sha256": "68ca2347fc5de80bf2b146d742d37c5def7c75531a7b9e7613b736da85110c00"
+    },
+    "images/26091741--neutral.png": {
+      "bytes": 216549,
+      "sha256": "3ce87bf113694e4f3b6125d285a25dfc3230e59043af4ba36a89ee69fb75c6ac"
+    },
+    "images/26091741--pointer-left.png": {
+      "bytes": 219039,
+      "sha256": "205d1f431b2b8df646fd19404f432837b18f668d41c0cb225ef740307d2c67e6"
+    },
+    "images/26091741--pointer-right.png": {
+      "bytes": 215708,
+      "sha256": "e198b8d10403d9290815acc549cd3883fc4aa6ba15df6ffe0a83da6dac179e44"
+    },
+    "images/26091741--shifted-compiled.png": {
+      "bytes": 219091,
+      "sha256": "680a00742efcb98f3f1eb2884bfa11385e3e75f2f1de26b790d7afaad8d62739"
+    },
+    "images/26091741--zero-compiled.png": {
+      "bytes": 216549,
+      "sha256": "3ce87bf113694e4f3b6125d285a25dfc3230e59043af4ba36a89ee69fb75c6ac"
+    },
+    "images/26091841--combined-left.png": {
+      "bytes": 225782,
+      "sha256": "bf35607f6ff77aa3bfb8347da6303475067d37659b4a4eea92232a0ad6de2625"
+    },
+    "images/26091841--combined-right.png": {
+      "bytes": 229483,
+      "sha256": "f154c5e8d84381776f2363b05d8809804f551004d7c79bf412a9a08504d7420b"
+    },
+    "images/26091841--compiled-left.png": {
+      "bytes": 229470,
+      "sha256": "bb07db0ea2c09774f76f0e666fa4fdb11bb7aad916ce598ae45cb182dea6c7d3"
+    },
+    "images/26091841--compiled-right.png": {
+      "bytes": 229470,
+      "sha256": "bb07db0ea2c09774f76f0e666fa4fdb11bb7aad916ce598ae45cb182dea6c7d3"
+    },
+    "images/26091841--contact-sheet.png": {
+      "bytes": 716007,
+      "sha256": "ffa907a7b6e1a3e8aebca22461bc678fb2adf19601faa67f72e96a62e5e7e551"
+    },
+    "images/26091841--native-left.png": {
+      "bytes": 228594,
+      "sha256": "25c96d35239289a7ff8bf32a51d7f7711e6b2ff4c64b16b83aca7cbebada5ce3"
+    },
+    "images/26091841--native-right.png": {
+      "bytes": 241489,
+      "sha256": "bd222c8a50700ee2b583659e00019766a856db5f8d0ecc5ca879879c2a4d6752"
+    },
+    "images/26091841--neutral.png": {
+      "bytes": 231729,
+      "sha256": "2cb7188e6ce4de76377a0d0654c475e052aa82a43320c6458902b5b5af1c9426"
+    },
+    "images/26091841--pointer-left.png": {
+      "bytes": 226800,
+      "sha256": "3d3eceecbcb6637a78fdc60306283ce3639a77200e636335e1c09a59d85184b1"
+    },
+    "images/26091841--pointer-right.png": {
+      "bytes": 228032,
+      "sha256": "1e1e2519156324b8ef8cc7267d230da6da32bd2e18568e1ee78969227f70d247"
+    },
+    "images/26091841--shifted-compiled.png": {
+      "bytes": 231206,
+      "sha256": "4a455c12905103e6359e60db77243e8fbf8cdf182621ad5d6ff732d4934beb8a"
+    },
+    "images/26091841--zero-compiled.png": {
+      "bytes": 231729,
+      "sha256": "2cb7188e6ce4de76377a0d0654c475e052aa82a43320c6458902b5b5af1c9426"
+    },
+    "images/26091842--combined-left.png": {
+      "bytes": 237283,
+      "sha256": "e73984b3aaf790b1c0a62271bc7ccfb39754340f2edc27813250d335f94604d2"
+    },
+    "images/26091842--combined-right.png": {
+      "bytes": 240622,
+      "sha256": "adc826d3abf36bacfd3c9b0362b8875c3968e6614509c5c593eb46eb4b35075d"
+    },
+    "images/26091842--compiled-left.png": {
+      "bytes": 239160,
+      "sha256": "2efbb0ce39c0184650614a5602c40ac694dcbbf6ccd09cdf6e09548cda6ec13f"
+    },
+    "images/26091842--compiled-right.png": {
+      "bytes": 239160,
+      "sha256": "2efbb0ce39c0184650614a5602c40ac694dcbbf6ccd09cdf6e09548cda6ec13f"
+    },
+    "images/26091842--contact-sheet.png": {
+      "bytes": 742928,
+      "sha256": "7ac8baab264ba0cd1fe642074baba83c7798fe72b668b585871cdc69de63fc37"
+    },
+    "images/26091842--native-left.png": {
+      "bytes": 242422,
+      "sha256": "f8ad031513226cf7a06bcb9dd6260b9b1e8de2f59e96cabb675a5ecdd4582653"
+    },
+    "images/26091842--native-right.png": {
+      "bytes": 243628,
+      "sha256": "f1702ea210ac8aeb547632260602a2b6288d90b1418511e96ed165dbab71c289"
+    },
+    "images/26091842--neutral.png": {
+      "bytes": 239470,
+      "sha256": "afd78d8570ec75bc4f0675d33cc457e3e58d7de4512992e03df86afa2bb94623"
+    },
+    "images/26091842--pointer-left.png": {
+      "bytes": 240346,
+      "sha256": "69ebc7e65ebd0199ffac103bc9041db38fb3eddc22ddddb3f606cec0e3686522"
+    },
+    "images/26091842--pointer-right.png": {
+      "bytes": 238256,
+      "sha256": "316c54c76864af9969ea35ffe3eca428843d289021f37b3af3f58363521f367d"
+    },
+    "images/26091842--shifted-compiled.png": {
+      "bytes": 240907,
+      "sha256": "7096bbafafeb8a241b7b7efdfd3ed74c99f9f38555362293f9a6b30ac6341bf8"
+    },
+    "images/26091842--zero-compiled.png": {
+      "bytes": 239470,
+      "sha256": "afd78d8570ec75bc4f0675d33cc457e3e58d7de4512992e03df86afa2bb94623"
+    },
+    "programs/config.json": {
+      "bytes": 4042,
+      "sha256": "2458cf709e42bc73dbdcd53da6b8976f6df9414582854f589cf33e4f48ca601f"
+    },
+    "programs/operator/kernels.safetensors": {
+      "bytes": 295144,
+      "sha256": "ddda24911ef6a9bb3653d1375255606fe85babe03409b8f1f6275be8d4ee2a89"
+    },
+    "programs/operator/manifest.json": {
+      "bytes": 4411,
+      "sha256": "4bb83bfe0c90ea843e01584110252206d9156c815dd7bdb71d727ffaa690a51b"
+    },
+    "report.json": {
+      "bytes": 1105065,
+      "sha256": "a0a1a5dd00fbc27487198c82fb8cf6bf5df1580526665947f02305b375b54407"
+    },
+    "run-receipt.json": {
+      "bytes": 9994,
+      "sha256": "7a0851689d1abb9024ed03cacac8053f8b5baf7be69a5453b0ee0e36f7fa3213"
+    },
+    "source/address_cut.py": {
+      "bytes": 5060,
+      "sha256": "0ad5b2726bcf87a6a145b8c52df62f99479a5bb478d864482354ee1def1474c5"
+    },
+    "source/bundle_support.py": {
+      "bytes": 7911,
+      "sha256": "663a2379460852380f7b2cdfeb839f3ee6f0901c810b600056ed2845042afab9"
+    },
+    "source/config.json": {
+      "bytes": 4042,
+      "sha256": "2458cf709e42bc73dbdcd53da6b8976f6df9414582854f589cf33e4f48ca601f"
+    },
+    "source/mrun_src/mrun/diffusion/phase.py": {
+      "bytes": 152390,
+      "sha256": "adb71412163334cb68d193741870b7f3f2d84082bec449a90e222494af15a0f0"
+    },
+    "source/request.json": {
+      "bytes": 3421,
+      "sha256": "8feaef87ee78fbe9251e929c3b100961b660e25ad45cfca73d3d649363ddc687"
+    },
+    "source/runtime_common.py": {
+      "bytes": 7204,
+      "sha256": "6032e2bd294373f4a5588d42ff4ef6a01fdff7b84ca1fc8c0e19e65249fb116b"
+    },
+    "source/saturn_src/saturn/donor_free_relation_operator.py": {
+      "bytes": 34590,
+      "sha256": "1bd3bf6dfe3f9b2a5aebd2a68cf4315c21eddd7d542d943edd0db2561c117cee"
+    },
+    "source/saturn_src/saturn/flux_scene_program.py": {
+      "bytes": 6972,
+      "sha256": "7e20985a6544a609321cbcc985924e0bda23731ab80a4191a513f3a61f62a44d"
+    },
+    "source/saturn_src/saturn/semantic_scene_ir.py": {
+      "bytes": 12105,
+      "sha256": "818f231cd2e9e97d50168d2184de5e6b01be13bdf164bbab5afc4ac5ccf21f7a"
+    },
+    "source/saturn_src/saturn/spectral_address.py": {
+      "bytes": 33447,
+      "sha256": "3751b1c1ea43c5bedd8d86a19b97074f55f0547d6fffad1487c9e57e06b7762d"
+    },
+    "source/saturn_src/saturn/spectral_canvas.py": {
+      "bytes": 7838,
+      "sha256": "5dd7db139213b1f63e45df68f267bed77c5dff52440675ac31a73945fcedac15"
+    },
+    "source/saturn_src/saturn/sprite_register.py": {
+      "bytes": 27821,
+      "sha256": "0967fb6a322483d876c087fe67876382004410b44eee0a55bbc3278ce2449e19"
+    },
+    "source/saturn_src/saturn/tensor_hash.py": {
+      "bytes": 2543,
+      "sha256": "5e37cc1e34f4b49c97f026b861af8cbb8d47697931743b19e3fd506c9932f3f4"
+    },
+    "source/worker.py": {
+      "bytes": 16496,
+      "sha256": "749d7e0fb1ef2b649d70baca0c3c874a239b6dd30cb706f6600a2f851833ac4e"
+    },
+    "transport-recovery.json": {
+      "bytes": 398,
+      "sha256": "6e92819f1a8d116e47a0a105bfadfed0ef57dd0b33988e382229cd9be2bb5273"
+    },
+    "visual-audit.json": {
+      "bytes": 12722,
+      "sha256": "dbfc4fd9f3d8ee5aa5573d4ebe26a7e01ab747fb887405f5af636544edf6dba9"
+    }
+  },
+  "gate_scope": "evidence-integrity-and-exact-execution-only; semantic outcomes are observations",
+  "gates": {
+    "26091741:old_pointer_invariant": true,
+    "26091741:zero_exact": true,
+    "26091841:old_pointer_invariant": true,
+    "26091841:zero_exact": true,
+    "26091842:old_pointer_invariant": true,
+    "26091842:zero_exact": true,
+    "artifact_hashes_exact": true,
+    "payload_custody_exact": true,
+    "physical_forward_budget": true,
+    "png_rgb_hashes_exact": true,
+    "scheduler_succeeded": true,
+    "source_snapshot_exact": true,
+    "text_encodes": true
+  },
+  "instrument_status": "unblinded-native-rgb-review-contact-only-no-independent-keypoint-judge",
+  "job_id": "job-47589b8693dc",
+  "mechanics_status": "valid",
+  "request_sha256": "99920b0044d1d66f9b4d1d19ec5928b6d5041f54bc5bafd81e52cf5178f73355",
+  "schema": "saturn-spectral-instance-binding-evidence-receipt-v1",
+  "terminal_status": "not-established",
+  "trend_status": "old-pointer-invariant-and-compact-action-inactive-in-two-camera-context"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "scene-relation-historical-image-custody-v1",
+  "files": {
+    "cross-object-mechanism-proof.png": {
+      "source": "saturn/results/flux2-relation-cross-object-rosetta/synthesis/cross-object-mechanism-proof.png",
+      "sha256": "56a1356535039d72ff74aee15a15e22e9c524fff98485f73b4788fbdaeffaf1c",
+      "bytes": 1116968
+    },
+    "heldout-use-operator-contact-sheet.png": {
+      "source": "saturn/results/flux2-donor-free-use-operator/job-fcdb757d005e/images/heldout-use-operator-contact-sheet.png",
+      "sha256": "3eaad5989c5d535be2d045b38a9aa520da4b2f741eaccc8195913d315d3659b8",
+      "bytes": 811159
+    }
+  }
+}

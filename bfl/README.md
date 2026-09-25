@@ -23,6 +23,7 @@ The main-branch program is strongest where systems and causal evidence meet: exa
 | supporting | [Semantic Circuit Object Part I](demos/semantic-circuit-object-part-I.md) | A causal route can be compiled into a model-facing object symbol: lexical address, payload, writer, spatial interpretation, and native image consumer. |
 | supporting | [Semantic Circuit Object Part II](demos/semantic-circuit-object-part-II.md) | That symbol can become durable debugger I/O: a typed manifest survives readback and drives property, dose, wrong-address, composition, and isolation tests. |
 | supporting | [Semantic Circuit Object Part III](demos/semantic-circuit-object-part-III.md) | The semantic object is present across the tested FLUX models, but its address grain and carrier change with the conditioner: sharp Qwen rows versus T5 noun-phrase windows. |
+| follow-up | [Scene Relations and Instance Binding](demos/scene-relations-and-instance-binding.md) | A compact action signal reaches new objects, but the declared object pointer does not enter the numerical writer. Spectral instance reads and native same-parent cuts separate action content, target direction, and visual contact. |
 
 The order above is the main-branch presentation order. This page describes only reports and evidence committed on `main`.
 

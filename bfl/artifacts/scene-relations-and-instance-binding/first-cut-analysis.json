@@ -1,0 +1,65 @@
+{
+  "historical_target_switch_equal_site_writes": 12,
+  "historical_target_switch_total_site_writes": 12,
+  "instrument_status": "unblinded-native-rgb-review-contact-only-no-independent-keypoint-judge",
+  "interactions": [
+    {
+      "interaction_rgb_rms": 12.988488357919557,
+      "new_pointer_rgb_mad": 3.8053436279296875,
+      "old_pointer_rgb_mad": 0.0,
+      "pointer_only_rgb_mad": 3.8874727884928384,
+      "seed": 26091741
+    },
+    {
+      "interaction_rgb_rms": 19.60823483337659,
+      "new_pointer_rgb_mad": 5.597009023030599,
+      "old_pointer_rgb_mad": 0.0,
+      "pointer_only_rgb_mad": 4.503163655598958,
+      "seed": 26091841
+    },
+    {
+      "interaction_rgb_rms": 24.02641577808048,
+      "new_pointer_rgb_mad": 6.928896586100261,
+      "old_pointer_rgb_mad": 0.0,
+      "pointer_only_rgb_mad": 5.381394704182942,
+      "seed": 26091842
+    }
+  ],
+  "job_id": "job-47589b8693dc",
+  "mechanics_checks": {
+    "26091741:old_pointer_invariant": true,
+    "26091741:zero_exact": true,
+    "26091841:old_pointer_invariant": true,
+    "26091841:zero_exact": true,
+    "26091842:old_pointer_invariant": true,
+    "26091842:zero_exact": true,
+    "physical_forward_budget": true,
+    "text_encodes": true
+  },
+  "mechanics_status": "valid",
+  "predicate_direction_energy_fraction_range": [
+    0.05065654886248212,
+    0.07885463571071362
+  ],
+  "raw_images": 33,
+  "schema": "saturn-spectral-binding-descriptive-analysis-v1",
+  "shared_to_direction_energy_ratio_range": [
+    65.39282241998461,
+    273.81374579138134
+  ],
+  "terminal_status": "not-established",
+  "trend_status": "old-pointer-invariant-and-compact-action-inactive-in-two-camera-context",
+  "visual_summary": {
+    "compact_adjust": "0/3 distinct seed outputs make contact; left/right metadata duplicates do not add independent samples",
+    "compiled_plus_pointer": "0/6 outputs make contact",
+    "limitations": [
+      "Unblinded visual review, no independent contact judge",
+      "Camera appearance changes; exact identity preservation unmeasured",
+      "Source contact is coarse touching, not verified focus-ring adjustment",
+      "Single scene template and model; three discovery seeds"
+    ],
+    "native_target_contact": "6/6 prompted source images touch the requested side; 4/6 add a third hand",
+    "pointer_only": "0/6 signed contrast outputs make contact",
+    "shifted_compact": "0/3 make contact; perturbation energy not matched so no address-specificity conclusion"
+  }
+}

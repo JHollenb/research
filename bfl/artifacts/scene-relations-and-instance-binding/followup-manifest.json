@@ -1,0 +1,121 @@
+{
+  "files": {
+    "cross-object-mechanism-proof.png": {
+      "bytes": 1116968,
+      "sha256": "56a1356535039d72ff74aee15a15e22e9c524fff98485f73b4788fbdaeffaf1c"
+    },
+    "figure-source.py": {
+      "bytes": 3893,
+      "sha256": "ba47317b5638a591f5e169dbdc7090afa626e1f60371ddeb3cb601f6f9de6e76"
+    },
+    "first-cut-FINDINGS.md": {
+      "bytes": 3713,
+      "sha256": "4de66d3f2764fca9a4679306e530d089c34e9357ccbbfcd5e69095bb7bc95c3e"
+    },
+    "first-cut-analysis.json": {
+      "bytes": 2478,
+      "sha256": "9260635eda1bdf3d1b885464cc81e8914d46ae3f15126c2b99812b6c37372bfb"
+    },
+    "first-cut-custody-verification.json": {
+      "bytes": 17035,
+      "sha256": "0ae078f43134240e22640316b893022f3956b4d15e17003eaef62161604637ac"
+    },
+    "first-cut-evidence-receipt.json": {
+      "bytes": 10815,
+      "sha256": "a379d5f7bdc965c122a06a9c0e153040cf371bb67196b81153dc87dac53e5f91"
+    },
+    "first-cut-report.json": {
+      "bytes": 1105065,
+      "sha256": "a0a1a5dd00fbc27487198c82fb8cf6bf5df1580526665947f02305b375b54407"
+    },
+    "first-cut-run-receipt.json": {
+      "bytes": 9994,
+      "sha256": "7a0851689d1abb9024ed03cacac8053f8b5baf7be69a5453b0ee0e36f7fa3213"
+    },
+    "first-cut-visual-audit.json": {
+      "bytes": 12722,
+      "sha256": "dbfc4fd9f3d8ee5aa5573d4ebe26a7e01ab747fb887405f5af636544edf6dba9"
+    },
+    "heldout-use-operator-contact-sheet.png": {
+      "bytes": 811159,
+      "sha256": "3eaad5989c5d535be2d045b38a9aa520da4b2f741eaccc8195913d315d3659b8"
+    },
+    "manifest.json": {
+      "bytes": 635,
+      "sha256": "2db5512661b8151de5e4c0c138368a61b4e258bc079433608bcb152348537cd3"
+    },
+    "route-factorization-FINDINGS.md": {
+      "bytes": 4137,
+      "sha256": "122317d3687d2a1b3988ef07f51b0e68ce3f9b6f3aec99510f1dc2cf31fb17d5"
+    },
+    "route-factorization-analysis.json": {
+      "bytes": 3035,
+      "sha256": "9d7e3aa186fe5f76e7c50c6f84a5273b8d8d51ad9c5cb75fc3e0a1ce40243ab6"
+    },
+    "route-factorization-custody-verification.json": {
+      "bytes": 16171,
+      "sha256": "91a0cdc5eb273f7b60af03708cc4c547c47b2aba59b6ca681e1d845c4e51fbe0"
+    },
+    "route-factorization-evidence-receipt.json": {
+      "bytes": 10533,
+      "sha256": "75b1cbd99f7f9fdfe0c5cc11a76df2915e39a54b60fc32ef1d2defe14ef0eaee"
+    },
+    "route-factorization-report.json": {
+      "bytes": 936965,
+      "sha256": "9fe883513eec71aec52f593a04ee34c188f53fc0eae96271a28dfa168815d552"
+    },
+    "route-factorization-run-receipt.json": {
+      "bytes": 10067,
+      "sha256": "bcac4b7ea3fc68437d26a95a8c32efcebbf2a685bf1563dadfc47fd2682f5c6b"
+    },
+    "route-factorization-visual-audit.json": {
+      "bytes": 11331,
+      "sha256": "53e621aa130e3a2802a5dcdddcf49a23fab2d681d2acf8ad8d788f0dcb3b9c1a"
+    },
+    "spectral-binding-followup-proof.png": {
+      "bytes": 973115,
+      "sha256": "26301ca87f7aefa242b316010fba4a0442c8b03bda013070a60859b8f7de1aec"
+    },
+    "spectral-binding-state-geometry.png": {
+      "bytes": 120518,
+      "sha256": "a4b2dff8b98a213c688283d73384de78cf2f4ef5c42269cacb2193863b3fff6f"
+    },
+    "spectral-binding-state-geometry.svg": {
+      "bytes": 58665,
+      "sha256": "7629bc578329146d4f91e80f5ff937e9275c8e57763f71c2fdd78d155de3f10e"
+    }
+  },
+  "schema": "spectral-binding-research-bundle-v1",
+  "scope": "Summary bundle; full individual PNGs, source snapshots and logs remain in the linked Saturn job directories.",
+  "source_inputs": {
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/FINDINGS.md": "4de66d3f2764fca9a4679306e530d089c34e9357ccbbfcd5e69095bb7bc95c3e",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/analysis.json": "9260635eda1bdf3d1b885464cc81e8914d46ae3f15126c2b99812b6c37372bfb",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/custody-verification.json": "0ae078f43134240e22640316b893022f3956b4d15e17003eaef62161604637ac",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/evidence-receipt.json": "a379d5f7bdc965c122a06a9c0e153040cf371bb67196b81153dc87dac53e5f91",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/images/26091741--compiled-left.png": "695d88138563b17b63321405daa681e75c56da1bad107bf727e376b6b6275377",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/images/26091741--neutral.png": "3ce87bf113694e4f3b6125d285a25dfc3230e59043af4ba36a89ee69fb75c6ac",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/images/26091841--compiled-left.png": "bb07db0ea2c09774f76f0e666fa4fdb11bb7aad916ce598ae45cb182dea6c7d3",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/images/26091841--neutral.png": "2cb7188e6ce4de76377a0d0654c475e052aa82a43320c6458902b5b5af1c9426",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/images/26091842--compiled-left.png": "2efbb0ce39c0184650614a5602c40ac694dcbbf6ccd09cdf6e09548cda6ec13f",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/images/26091842--neutral.png": "afd78d8570ec75bc4f0675d33cc457e3e58d7de4512992e03df86afa2bb94623",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/report.json": "a0a1a5dd00fbc27487198c82fb8cf6bf5df1580526665947f02305b375b54407",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/run-receipt.json": "7a0851689d1abb9024ed03cacac8053f8b5baf7be69a5453b0ee0e36f7fa3213",
+    "saturn/results/flux2-spectral-instance-binding/job-47589b8693dc/visual-audit.json": "dbfc4fd9f3d8ee5aa5573d4ebe26a7e01ab747fb887405f5af636544edf6dba9",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/FINDINGS.md": "122317d3687d2a1b3988ef07f51b0e68ce3f9b6f3aec99510f1dc2cf31fb17d5",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/analysis.json": "9d7e3aa186fe5f76e7c50c6f84a5273b8d8d51ad9c5cb75fc3e0a1ce40243ab6",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/custody-verification.json": "91a0cdc5eb273f7b60af03708cc4c547c47b2aba59b6ca681e1d845c4e51fbe0",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/evidence-receipt.json": "75b1cbd99f7f9fdfe0c5cc11a76df2915e39a54b60fc32ef1d2defe14ef0eaee",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091741--complement-left.png": "d5145e815194ffa03d81b9563cbc5aad88dc52b2748efb1e9a7643880019c1b4",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091741--complement-right.png": "6ead6efce3ec7c24a1abae20cfe875a0983a4a3b84da35c47ef17809feb26658",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091741--mean.png": "ed1f3592b26e213d861e89818107b53eda7430a2a1a42895cfdfc78ddf3da310",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091841--complement-left.png": "b73724982113d693ef4edd00856d990aa45ab6a7194de6010e6f104cb361371d",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091841--complement-right.png": "9fb4a2246e350541587c10a1bbc70e684bb53493fafa7a6442febec79ce43c76",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091841--mean.png": "22d69f4bf18411cdc0c0471d2e19552c52b87a75c690c67f042393a48a2f0663",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091842--complement-left.png": "567494caa08e7e310eaf90859001cf9b8bcb99b9b305f1b43ee9b1304a3b6e25",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091842--complement-right.png": "0dbe9a7ba3dc3dc36038da8a28dea21dba7fbcb0e51f485331c40d168444ab52",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/images/26091842--mean.png": "2469398567baae55765d64f9e45a6ec9126a4df37b7e6370ed6bc2d63454a46a",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/report.json": "9fe883513eec71aec52f593a04ee34c188f53fc0eae96271a28dfa168815d552",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/run-receipt.json": "bcac4b7ea3fc68437d26a95a8c32efcebbf2a685bf1563dadfc47fd2682f5c6b",
+    "saturn/results/flux2-spectral-instance-binding/job-6386d22db7c1/visual-audit.json": "53e621aa130e3a2802a5dcdddcf49a23fab2d681d2acf8ad8d788f0dcb3b9c1a"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "schema": "mrun.guarded-job-receipt.v2",
+  "job_id": "job-47589b8693dc",
+  "state": "succeeded",
+  "created": null,
+  "idempotent_replay": null,
+  "admission": {
+    "claim_key": "mrun:0a76d15083c0b9380befb48e9101f608aec51db8de3f42b3091cdb0a2df2d92c",
+    "fencing_epoch": 1,
+    "idempotency_key": "mrun:0a76d15083c0b9380befb48e9101f608aec51db8de3f42b3091cdb0a2df2d92c",
+    "scope_sha256": "030438b2e845d72d5372f5ddb6cf6fd12c0cc3998c8514a8dde39fb6c3629a05"
+  },
+  "submitted_request": {
+    "client_estimate": {
+      "cpu_threads": 8,
+      "disk_gb": 1.0,
+      "ram_mb": 20000.0,
+      "source": "mrun diffusion FLUX component/offload envelope",
+      "vram_mb": 13000.0
+    },
+    "client_run_id": "4924d0b0f77d328f",
+    "cmd": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "SATURN_RESIDENT_WORKER=1",
+      "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+      "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+      "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+      "SATURN_RUN_CONFIG=saturn_run_config.json",
+      "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+      "uv",
+      "run",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "python",
+      "-u",
+      "worker.py"
+    ],
+    "config": {
+      "batch_size": 1,
+      "claim_boundary": "Three-seed exploratory native-consumer assay. Exact spectral object selection and historical writer target invariance; new target contrast is donor-assisted, scene-specific, and not a learned or donor-free spatial pointer. Raw donor tensors ephemeral; images, hashes, row energies, exact inputs and source snapshots retained. No terminal binding claim.",
+      "config_bytes_sha256": "2458cf709e42bc73dbdcd53da6b8976f6df9414582854f589cf33e4f48ca601f",
+      "denoiser_calls_budget": 132,
+      "device": "cuda",
+      "dtype": "bfloat16",
+      "executed_source_hashes": {
+        "address_cut.py": "0ad5b2726bcf87a6a145b8c52df62f99479a5bb478d864482354ee1def1474c5",
+        "bundle_support.py": "663a2379460852380f7b2cdfeb839f3ee6f0901c810b600056ed2845042afab9",
+        "mrun_src/mrun/diffusion/phase.py": "adb71412163334cb68d193741870b7f3f2d84082bec449a90e222494af15a0f0",
+        "runtime_common.py": "6032e2bd294373f4a5588d42ff4ef6a01fdff7b84ca1fc8c0e19e65249fb116b",
+        "saturn_src/saturn/donor_free_relation_operator.py": "1bd3bf6dfe3f9b2a5aebd2a68cf4315c21eddd7d542d943edd0db2561c117cee",
+        "saturn_src/saturn/flux_scene_program.py": "7e20985a6544a609321cbcc985924e0bda23731ab80a4191a513f3a61f62a44d",
+        "saturn_src/saturn/semantic_scene_ir.py": "818f231cd2e9e97d50168d2184de5e6b01be13bdf164bbab5afc4ac5ccf21f7a",
+        "saturn_src/saturn/spectral_address.py": "3751b1c1ea43c5bedd8d86a19b97074f55f0547d6fffad1487c9e57e06b7762d",
+        "saturn_src/saturn/spectral_canvas.py": "5dd7db139213b1f63e45df68f267bed77c5dff52440675ac31a73945fcedac15",
+        "saturn_src/saturn/sprite_register.py": "0967fb6a322483d876c087fe67876382004410b44eee0a55bbc3278ce2449e19",
+        "saturn_src/saturn/tensor_hash.py": "5e37cc1e34f4b49c97f026b861af8cbb8d47697931743b19e3fd506c9932f3f4",
+        "worker.py": "749d7e0fb1ef2b649d70baca0c3c874a239b6dd30cb706f6600a2f851833ac4e"
+      },
+      "experiment": "flux2-spectral-instance-binding",
+      "fresh_reference_encodes": 0,
+      "fresh_text_encodes": 3,
+      "geometry": {
+        "batch_size": 1,
+        "denoiser_calls_budget": 132,
+        "fresh_reference_encodes": 0,
+        "fresh_text_encodes": 3,
+        "height": 512,
+        "model_loads": 1,
+        "physical_images_budget": 33,
+        "steps": 4,
+        "width": 512
+      },
+      "height": 512,
+      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "model_id": "black-forest-labs/FLUX.2-klein-4B",
+      "model_loads": 1,
+      "mrun_guarded_request_sha256": "0a76d15083c0b9380befb48e9101f608aec51db8de3f42b3091cdb0a2df2d92c",
+      "needs": {
+        "cuda": true,
+        "payload_custody_v2": true
+      },
+      "physical_images_budget": 33,
+      "request_sha256": "99920b0044d1d66f9b4d1d19ec5928b6d5041f54bc5bafd81e52cf5178f73355",
+      "resident_worker": true,
+      "retry_on_kill": false,
+      "saturn_request_sha256": "47cf03db9bb65730ad2a27ed063223cfe6f455f07cc8d88c36dbaab0ec607a8a",
+      "saturn_submission_label": "spectral-instance-binding-v1",
+      "scheduling_contract": {
+        "additional_scheduler_submissions": 0,
+        "branch_execution": "in_process",
+        "checkpoint_policy": "One immutable neutral StateCut per seed; scalar sibling futures preserve registered numerical authority",
+        "collection_policy": "direct_job_only",
+        "conditioner_policy": "Three cached encodes: neutral, left target, right target. No fresh reference encoding.",
+        "control_plane": "mrun_outer_lease",
+        "data_plane": "resident_worker",
+        "execution_model": "finite_local_program",
+        "interactive": false,
+        "lease_scope": "entire-worker",
+        "logical_branches": 33,
+        "logical_checkpoint_replays": 33,
+        "logical_operations": 33,
+        "max_local_work_items": 256,
+        "max_mrun_submissions": 1,
+        "model_loads": 1,
+        "mrun_retry_policy": "none_for_finite_lease",
+        "per_branch_mrun_submissions": 0,
+        "per_transition_mrun_submissions": 0,
+        "replay_policy": "local_checkpoint_restore",
+        "schema": "saturn-single-lease-scheduling-contract-v1",
+        "terminal_claim": false
+      },
+      "schema": "saturn-spectral-instance-binding-request-v1",
+      "steps": 4,
+      "task_family": "forward",
+      "width": 512
+    },
+    "env_alias": null,
+    "experiment": "flux2-spectral-instance-binding",
+    "needs": {
+      "cuda": true,
+      "payload_custody_v2": true,
+      "prefer_host": "beast"
+    },
+    "payload": {
+      "sha256": "f941e5ba91a8a59f212e0d040b8d2fbb155044b2f0516022d903168aa1a7b120",
+      "size_bytes": 5700704
+    },
+    "payload_kind": "shipped",
+    "plans": null,
+    "priority": 50,
+    "reservation": null,
+    "schema": "mrun.normalized-job-request.v2",
+    "timeout_s": 600.0
+  },
+  "submitted_request_sha256": "42701428c400fb8a4a1d92c28f987fb6b28ccca61daa7eeb1fedf6ea1c59bc68",
+  "resolved_execution": {
+    "reservation": {
+      "ram_mb": 20000.0,
+      "vram_mb": 13000.0,
+      "cpu_threads": 8,
+      "disk_gb": 1.0,
+      "est_wall_s": null,
+      "source": "estimated"
+    },
+    "plans": null,
+    "plan_binding": {
+      "assigned_host": "beast",
+      "selected_plan": null,
+      "submitted_plan": null,
+      "submitted_plan_present": false,
+      "matches_submitted_plan": true,
+      "binding_status": "explicit_no_submitted_plan"
+    }
+  },
+  "payload_custody": {
+    "required": true,
+    "declared": {
+      "sha256": "f941e5ba91a8a59f212e0d040b8d2fbb155044b2f0516022d903168aa1a7b120",
+      "size_bytes": 5700704
+    },
+    "sealed": {
+      "sha256": "f941e5ba91a8a59f212e0d040b8d2fbb155044b2f0516022d903168aa1a7b120",
+      "size_bytes": 5700704,
+      "sealed_ts": 1789778756.0435288
+    },
+    "executed": {
+      "sha256": "f941e5ba91a8a59f212e0d040b8d2fbb155044b2f0516022d903168aa1a7b120",
+      "size_bytes": 5700704,
+      "reported_ts": 1789778756.333513,
+      "host": "beast"
+    }
+  },
+  "meta": {
+    "queue_note": "Spectral binding cut: 3 seeds x 11 scalar 512px futures x 4 steps, one model load and 3 text encodes; stop at 132 transformer calls. Exact old-pointer control and donor-assisted target-complement factorial. No retry or child jobs."
+  },
+  "assigned_host": "beast",
+  "result": {
+    "status": "ok",
+    "returncode": 0,
+    "elapsed_s": 86.31,
+    "peak_rss_mb": 15360.1,
+    "peak_vram_mb": 9086.0,
+    "executed_payload": {
+      "sha256": "f941e5ba91a8a59f212e0d040b8d2fbb155044b2f0516022d903168aa1a7b120",
+      "size_bytes": 5700704,
+      "host": "beast"
+    },
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "diagnostics": {
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1789778756.3741312
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1789778756.677077
+        },
+        {
+          "name": "process.launch",
+          "ts": 1789778756.7101295
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1789778756.7488906
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1789778842.619964
+        },
+        {
+          "name": "finished",
+          "ts": 1789778842.648882
+        }
+      ],
+      "command": [
+        "/usr/bin/env",
+        "PYTHONUNBUFFERED=1",
+        "PYTHONNOUSERSITE=1",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "DIFFUSERS_OFFLINE=1",
+        "TOKENIZERS_PARALLELISM=false",
+        "TQDM_DISABLE=1",
+        "SATURN_RESIDENT_WORKER=1",
+        "UV_CACHE_DIR=/mnt/big/llm-models/.uv-cache",
+        "TORCH_HOME=/mnt/big/llm-models/.torch-cache",
+        "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+        "SATURN_RUN_CONFIG=saturn_run_config.json",
+        "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+        "uv",
+        "run",
+        "--offline",
+        "--with",
+        "diffusers==0.39.0",
+        "--with",
+        "transformers==5.14.1",
+        "--with",
+        "accelerate==1.14.0",
+        "--with",
+        "safetensors>=0.5",
+        "--with",
+        "numpy>=2.0",
+        "python",
+        "-u",
+        "worker.py"
+      ],
+      "cwd": "/mnt/hdd8tb/mrun-work/job-47589b8693dc",
+      "log_path": "/mnt/hdd8tb/mrun-work/job-47589b8693dc/job.log"
+    },
+    "failure": null
+  },
+  "created_ts": 1789778755.8457568,
+  "started_ts": 1789778756.5433145,
+  "finished_ts": 1789778842.4698873
+}

@@ -1,0 +1,263 @@
+{
+  "schema": "saturn-spectral-binding-visual-review-v1",
+  "reviewer": "Codex direct image inspection; one unblinded model reviewer",
+  "instrument_status": "unblinded-native-rgb-contact-side-review-source-anatomy-defects",
+  "trend_status": "native-mean-restores-contact-and-complement-direction-selects-side",
+  "review_scope": "All three 10-cell native contact sheets; full-resolution complement-left and predicate-right for seed 26091741 and complement-right for 26091841. Coarse visible hand/camera contact is distinct from anatomy, physical operation, or identity preservation.",
+  "rows": {
+    "26091741--neutral": {
+      "visible_hand_contact_side": "none",
+      "visible_camera_count": 2,
+      "follows_requested_side": null,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--native-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": false,
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--native-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": false,
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--full-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--full-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--mean": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": null,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--complement-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--complement-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--predicate-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091741--predicate-right": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": false,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--neutral": {
+      "visible_hand_contact_side": "none",
+      "visible_camera_count": 2,
+      "follows_requested_side": null,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--native-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": false,
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--native-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": false,
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--full-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--full-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--mean": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": null,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--complement-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--complement-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--predicate-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091841--predicate-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--neutral": {
+      "visible_hand_contact_side": "none",
+      "visible_camera_count": 2,
+      "follows_requested_side": null,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--native-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": true,
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--native-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": true,
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--full-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--full-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--mean": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": null,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--complement-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--complement-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--predicate-left": {
+      "visible_hand_contact_side": "left",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    },
+    "26091842--predicate-right": {
+      "visible_hand_contact_side": "right",
+      "visible_camera_count": 2,
+      "follows_requested_side": true,
+      "exact_focus_ring_manipulation": "not-established",
+      "correct_two_arm_anatomy": "not-systematically-scored",
+      "exact_object_identity_preservation": "not-measured"
+    }
+  },
+  "summary": {
+    "native_target_contact": "6/6 requested-side contacts; 4/6 have a third hand as in the exactly replayed prior job",
+    "full_native_text": "6/6 requested-side contacts",
+    "mean_text": "3/3 touch left with directional term zero; averaging is not a neutral action",
+    "complement_direction": "6/6 requested-side contacts with identical predicate-slot values within each left/right pair",
+    "predicate_direction": "5/6 requested-side contacts; seed 26091741 right request still touches left",
+    "limitations": [
+      "3 discovery seeds in one prompt template and checkpoint",
+      "Exact target-conditioned source states and their mean remain donor dependencies",
+      "Full, complement, predicate projections have unequal energy",
+      "Camera identity and other camera preservation are not certified",
+      "Extra-hand defects persist; no independent contact judge"
+    ]
+  }
+}
