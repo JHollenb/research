@@ -627,7 +627,7 @@ Both models ran the §5.3 and §6 harnesses unchanged apart from applying the no
 | Pairs kept exact during rerotation | Qwen2.5-1.5B PPL | Qwen3-0.6B PPL | Qwen3-1.7B PPL | Share of rerotation loss removed (2.5-1.5B / 3-0.6B / 3-1.7B) |
 |---|---:|---:|---:|---|
 | None (FP32-arithmetic rerotation) | 8.170 | 22.090 | 20.692 | — |
-| Swamped pairs (35 of 64) | **8.052** | **17.341** | **14.022** | 103% / 100% / 97% |
+| Swamped pairs (35 of 64) | **8.052** | **17.341** | **14.022** | 103% / 101% / 97% |
 | Six highest-\(\gamma\) pairs per layer | — | 17.881 | 15.252 | — / 88% / 76% |
 | Unswamped pairs (29 of 64) | 8.123 | 21.062 | 18.609 | 41% / 20% / 27% |
 | Pristine reference | 8.055 | 17.363 | 13.868 | 100% |
