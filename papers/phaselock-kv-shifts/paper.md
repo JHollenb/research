@@ -1,15 +1,15 @@
 ---
-title: "PhaseLock: Stable Position Shifts for Sliding KV Caches"
+title: "Rotation Swamping: Why BF16 Cannot Move RoPE Keys, and Why QK-Norm Makes It Worse"
 type: research-paper
 status: draft
 date: 2026-09-24
 updated: 2026-09-30
-tags: [phaselock, rotary-position-embedding, kv-cache, streaming-inference, quantization, qwen3, triton, bit-hacks]
+tags: [rotation-swamping, qk-norm, phaselock, rotary-position-embedding, kv-cache, streaming-inference, quantization, qwen3, triton, bit-hacks]
 ---
 
-# PhaseLock: Stable Position Shifts for Sliding KV Caches
+# Rotation Swamping: Why BF16 Cannot Move RoPE Keys, and Why QK-Norm Makes It Worse
 
-**Rotation swamping, the FP32 position cliff, and 4-bit pre-RoPE keys in streaming Qwen inference**
+**Repeated key rerotation, the FP32 position cliff, and 4-bit pre-RoPE keys in streaming Qwen caches, with PhaseLock integer phase**
 
 Jacob Hollenbeck
 

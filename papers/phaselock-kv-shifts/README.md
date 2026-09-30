@@ -1,4 +1,6 @@
-# PhaseLock: stable position shifts for sliding KV caches
+# Rotation Swamping: Why BF16 Cannot Move RoPE Keys, and Why QK-Norm Makes It Worse
+
+*Formerly "PhaseLock: Stable Position Shifts for Sliding KV Caches".*
 
 [Paper draft](paper.md) · Jacob Hollenbeck · updated 2026-09-30
 

@@ -7,6 +7,6 @@ updated: 2026-09-22
 
 # Research Papers
 
-- [PhaseLock: Stable Position Shifts for Sliding KV Caches](phaselock-kv-shifts/README.md) (draft; integrated inference experiment reserved).
+- [Rotation Swamping: Why BF16 Cannot Move RoPE Keys, and Why QK-Norm Makes It Worse](phaselock-kv-shifts/README.md) (draft; formerly PhaseLock): repeated low-precision key rerotation loses slow RoPE channels; block shifts and immutable keys avoid it.
 - [Single-Site Tests Miss Distributed Stores](pointwise-instruments-miss-distributed-circuits/README.md): measured cases in FLUX.2 and three language-model families where no single step or layer is necessary or sufficient but the whole path is both, plus a blind-graded comparison of four standard readouts against the model's own output.
 - [The Circuit That Survived Its Coordinates](../bfl/docs/certified-semantic-circuits/README.md): the certified distributed semantic route in FLUX.2 Klein 4B.
