@@ -1,0 +1,276 @@
+{
+ "schema": "phaselock-free-wins-offset-v1",
+ "sources": {
+  "offset-test4k-v1": {
+   "sha256": "f5b85a18d3a3fc9452eb375b9d8cbff0410c6946f99a0fc82450c9cc4d89a183",
+   "input_sha256": "8c856d26c10cabedc9d7b5fbda6749b1f699b6ba015fc96aa7d8fe8d78026b83"
+  },
+  "offset-fine-v1": {
+   "sha256": "7e42988e94180f3553c4aef27d0905815c092ee21a669e13ed0b231b2038e700",
+   "input_sha256": "8c856d26c10cabedc9d7b5fbda6749b1f699b6ba015fc96aa7d8fe8d78026b83"
+  }
+ },
+ "rows": [
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 0,
+   "ppl_steady": 9.464082239574221,
+   "excess_nll_vs_pristine": -0.0007952722530159734
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 0,
+   "ppl_steady": 9.472963112318459,
+   "excess_nll_vs_pristine": 0.00014267003586566405
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 0,
+   "ppl_steady": 9.473379587031825,
+   "excess_nll_vs_pristine": 0.0001866273231170512
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 100000,
+   "ppl_steady": 9.464565087421398,
+   "excess_nll_vs_pristine": -0.0007442585588523027
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 100000,
+   "ppl_steady": 9.466860680174971,
+   "excess_nll_vs_pristine": -0.0005017329638082796
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 100000,
+   "ppl_steady": 9.469564499895927,
+   "excess_nll_vs_pristine": -0.00021616041734593794
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 1000000,
+   "ppl_steady": 9.470806762855537,
+   "excess_nll_vs_pristine": -8.499478317573637e-05
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 1000000,
+   "ppl_steady": 9.472918169873642,
+   "excess_nll_vs_pristine": 0.0001379162047603492
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 1000000,
+   "ppl_steady": 9.476505498399657,
+   "excess_nll_vs_pristine": 0.0005165353765895066
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 10000000,
+   "ppl_steady": 9.465221286446951,
+   "excess_nll_vs_pristine": -0.0006749214215846112
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 10000000,
+   "ppl_steady": 9.470452608017512,
+   "excess_nll_vs_pristine": -0.00012238865340723974
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 10000000,
+   "ppl_steady": 9.448757881542779,
+   "excess_nll_vs_pristine": -0.0024158024127812166
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 100000000,
+   "ppl_steady": 171.2185678129589,
+   "excess_nll_vs_pristine": 2.8946418216498206
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 100000000,
+   "ppl_steady": 9.47060334025361,
+   "excess_nll_vs_pristine": -0.0001064672318226296
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 100000000,
+   "ppl_steady": 9.47535289897589,
+   "excess_nll_vs_pristine": 0.00039490511900880474
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 1000000000,
+   "ppl_steady": 1467.6102821165366,
+   "excess_nll_vs_pristine": 5.04309161297685
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 1000000000,
+   "ppl_steady": 9.481353684761713,
+   "excess_nll_vs_pristine": 0.0010280163025758098
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 1000000000,
+   "ppl_steady": 9.481231547249987,
+   "excess_nll_vs_pristine": 0.001015119334854905
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp32",
+   "offset": 5000000000,
+   "ppl_steady": 6304.927215952334,
+   "excess_nll_vs_pristine": 6.500787619823932
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "fp64",
+   "offset": 5000000000,
+   "ppl_steady": 9.464412127709377,
+   "excess_nll_vs_pristine": -0.0007604072383436547
+  },
+  {
+   "source": "offset-test4k-v1",
+   "phase": "int32",
+   "offset": 5000000000,
+   "ppl_steady": 9.484000033337457,
+   "excess_nll_vs_pristine": 0.0013070847733941977
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 8000000,
+   "ppl_steady": 9.47668246079885,
+   "excess_nll_vs_pristine": 0.0005352122595370068
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 8000000,
+   "ppl_steady": 9.463444915374943,
+   "excess_nll_vs_pristine": -0.0008626201499836968
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 16000000,
+   "ppl_steady": 9.502644079686469,
+   "excess_nll_vs_pristine": 0.0032709911966090654
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 16000000,
+   "ppl_steady": 9.467720170647548,
+   "excess_nll_vs_pristine": -0.0004109605477665434
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 16777216,
+   "ppl_steady": 22.649157613954344,
+   "excess_nll_vs_pristine": 0.8718235738506684
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 16777216,
+   "ppl_steady": 9.462986433207048,
+   "excess_nll_vs_pristine": -0.0009110648842517105
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 20000000,
+   "ppl_steady": 22.906943893546774,
+   "excess_nll_vs_pristine": 0.8831409990218453
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 20000000,
+   "ppl_steady": 9.463600995205399,
+   "excess_nll_vs_pristine": -0.0008461297685034232
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 33554432,
+   "ppl_steady": 85.0195134880125,
+   "excess_nll_vs_pristine": 2.19458171177046
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 33554432,
+   "ppl_steady": 9.453233552636185,
+   "excess_nll_vs_pristine": -0.0019422253015976521
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 50000000,
+   "ppl_steady": 96.33538966691422,
+   "excess_nll_vs_pristine": 2.3195366589501143
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 50000000,
+   "ppl_steady": 9.475485289756579,
+   "excess_nll_vs_pristine": 0.0004088777306814459
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 67108864,
+   "ppl_steady": 171.63913557893122,
+   "excess_nll_vs_pristine": 2.897095131398761
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 67108864,
+   "ppl_steady": 9.47284643519542,
+   "excess_nll_vs_pristine": 0.00013035278774046842
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "fp32",
+   "offset": 134217728,
+   "ppl_steady": 335.2209745591361,
+   "excess_nll_vs_pristine": 3.5664908532768176
+  },
+  {
+   "source": "offset-fine-v1",
+   "phase": "int32",
+   "offset": 134217728,
+   "ppl_steady": 9.45840068852912,
+   "excess_nll_vs_pristine": -0.0013957760026084081
+  }
+ ],
+ "pristine_ppl_offset-test4k-v1": 9.471611727793794,
+ "pristine_ppl_offset-fine-v1": 9.471611727793794
+}

@@ -1,0 +1,934 @@
+{
+ "schema": "phaselock-bithacks-speed-v1",
+ "sources": {
+  "speed-v3": {
+   "sha256": "df4e0be2d29dbe5f7d4d22347a92346cb06f53c2164f04b06e284ca8774aa5bb",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen2.5-1.5B-Instruct",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "55454c5a0b8e61caccf3a452ab37fbeb7a08b47b952e24d162ae709b7f06f9d1",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "0546685cd772cd045885e4deba3855a8742da9e3d8cd3ca05230896e68eac8d0"
+   }
+  },
+  "attnbench-v2": {
+   "sha256": "e4a2115ca1834eb588825754d1cc6e5dab984e17c86ba9652c52b1d87e8cc7c0",
+   "status": "running",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen2.5-1.5B-Instruct",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "2799eaa92ca2a79dc80c242979ded06a04fb56837d0ce1ce838026c4c91f4f85",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "25563736063634540c9962b5a5d7d66ed14eee462a9d83b271b4b23fee3b7186"
+   }
+  },
+  "attnbench-128k": {
+   "sha256": "0369c0ba9bcef51f2454307848066020334f3482cb477812e7a10f3198f9a4fe",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen2.5-1.5B-Instruct",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "6261d2a1100087bb449685445ed5f53131ccccadf2c433476d1b19551cd76197",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "25563736063634540c9962b5a5d7d66ed14eee462a9d83b271b4b23fee3b7186"
+   }
+  },
+  "speedx-qwen25-1.5b": {
+   "sha256": "1c9e28c89886fcf2f52c279fa1bfe01f35aeadc9f89704a2276f572ef52b0be3",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen2.5-1.5B-Instruct",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "6261d2a1100087bb449685445ed5f53131ccccadf2c433476d1b19551cd76197",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "0546685cd772cd045885e4deba3855a8742da9e3d8cd3ca05230896e68eac8d0"
+   },
+   "max_layers": 0
+  },
+  "speedx-qwen3-0.6b": {
+   "sha256": "da34778ef02ecf61e6eaeacffa72f09383e95a6fd5dd7d1b7d5f3a9348f09304",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen3-0.6B",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "6261d2a1100087bb449685445ed5f53131ccccadf2c433476d1b19551cd76197",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "0546685cd772cd045885e4deba3855a8742da9e3d8cd3ca05230896e68eac8d0"
+   },
+   "max_layers": 0
+  },
+  "speedx-qwen3-1.7b": {
+   "sha256": "41ec39dfbe64eeb2ab00e7aeb417422cf06ea411b7f8704a66d69c1d62dd49f2",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen3-1.7B",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "6261d2a1100087bb449685445ed5f53131ccccadf2c433476d1b19551cd76197",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "0546685cd772cd045885e4deba3855a8742da9e3d8cd3ca05230896e68eac8d0"
+   },
+   "max_layers": 0
+  },
+  "speedx-qwen3-8b-L18": {
+   "sha256": "41262d753ca0a462b396d661f8eb790c8fda7cc36e9a1a4d1fbe85598fa8b5b3",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen3-8B",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "55454c5a0b8e61caccf3a452ab37fbeb7a08b47b952e24d162ae709b7f06f9d1",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "0546685cd772cd045885e4deba3855a8742da9e3d8cd3ca05230896e68eac8d0"
+   },
+   "max_layers": 18
+  },
+  "speedx-qwen3-8b-L9": {
+   "sha256": "ee35078913fb0ac58e8684be58d1fd44bc65b7955098fcdf3104e801b15b8afe",
+   "status": "complete",
+   "gpu": "NVIDIA GeForce RTX 4080",
+   "torch": "2.13.0+cu130",
+   "model": "Qwen/Qwen3-8B",
+   "source_sha256": {
+    "bits_worker.py": "5088e372d36e9fec4457b235ee35a69e0b6f0af6bfb242d1cfe0bb8850add9f5",
+    "conversation_worker.py": "5fc1847c8f2153402f68d25b105d19df8222906bd4f9a607654ae238a371d797",
+    "formats.py": "aae3d4480bf3998de027c0aa00514cd8eac7211854fdbbfd3d6d04613a039fe9",
+    "fused_attention.py": "a19c282dd9c7591e96cb72285018f2c94e440b63115bcd66551f2a72b667eb42",
+    "fused_pre.py": "dd98a8e8cfc9f7b5d614b2bd1a116de40b747ad69dada2f32f00a54a300aa2a3",
+    "fused_worker.py": "2ab549dab4e231e4217c63b7e400eb3b8a7b237df6cd1d6794f83ab0132b0a09",
+    "integration_worker.py": "9acd27d130111a05153b16fbc398dffc86aec16bfca5ace9165ccd3f90a0f907",
+    "kernels_v3.py": "55454c5a0b8e61caccf3a452ab37fbeb7a08b47b952e24d162ae709b7f06f9d1",
+    "legacy_stream.py": "7303ec4ade45e08fd94f30bc8a8614a4933a7a15c978c9ccf989e060a78b4005",
+    "paged.py": "34057651479fc74ac147073f6dbcf5a8917acdbe339a9bceae32fd8486865bf4",
+    "spf_fused_attention.py": "93343c6b23f6b2cee4945af0ea12498643d13e016d4088234c4b2f74f6d65eb7",
+    "spf_payload.py": "20045c03fa69e87d00daef6a9182ca527fb04e18e83b132cc1a04976bbb66691",
+    "spf_phase.py": "aee38378874fd5cfbf5d97efb56ec7355c0a01a5eb0dbdc68faaac39a07d8864",
+    "splitk_attention.py": "c36ca1d8dff2757629f22a82f997a1764d3c9acc804352a7b52143a403bd101a",
+    "unified.py": "36489b22f976e32b66b1c4c72b3a373bc43da70dc2a405d48ab426baecc54c58",
+    "wins_worker.py": "0546685cd772cd045885e4deba3855a8742da9e3d8cd3ca05230896e68eac8d0"
+   },
+   "max_layers": 9
+  }
+ },
+ "whole_model_ms_per_token": {
+  "gqa_post": {
+   "1024": 6.406431965105718,
+   "4096": 6.616267408750108,
+   "16384": 7.142581714910936,
+   "32768": 7.847600030920741
+  },
+  "old_bf16_tab": {
+   "1024": 6.039076311243042,
+   "4096": 6.211795905090658,
+   "16384": 6.755659277178301,
+   "32768": 7.4337465122039115
+  },
+  "old_q4b_tab": {
+   "1024": 6.645109409150547,
+   "4096": 6.798620134183992,
+   "16384": 7.4282289050414185,
+   "32768": 8.123815066602884
+  },
+  "v3_bf16": {
+   "1024": 6.3723805344328595,
+   "4096": 6.570158192117653,
+   "16384": 7.065477291763846,
+   "32768": 7.7641926024061085
+  },
+  "v3_q4_f16": {
+   "1024": 5.93230063191018,
+   "4096": 6.077148040585039,
+   "16384": 6.474929609479279,
+   "32768": 6.960637936581119
+  },
+  "v3_q4_f16_v4": {
+   "1024": 6.054579599281583,
+   "4096": 6.057131083154112,
+   "16384": 6.429218292765139,
+   "32768": 6.790900221953701
+  },
+  "v3_q4c_f16": {
+   "1024": 6.683118667604926,
+   "4096": 6.8608507427836205,
+   "16384": 7.46195748032179,
+   "32768": 8.200902643442253
+  },
+  "v3_q4c_f16_v4": {
+   "1024": 7.445554519903152,
+   "4096": 7.5051495453451835,
+   "16384": 7.9950824785664505,
+   "32768": 8.571020459923895
+  }
+ },
+ "one_layer_us_per_call": {
+  "pf_bf16|nw4_s64": {
+   "4096": {
+    "us": 7.611237233504653,
+    "max_abs_err_vs_fp64_same_format": 0.005804991748508154
+   },
+   "32768": {
+    "us": 25.5819148151204,
+    "max_abs_err_vs_fp64_same_format": 0.00818865804768848
+   },
+   "131072": {
+    "us": 216.99112723581493,
+    "max_abs_err_vs_fp64_same_format": 0.0036104657924048433
+   }
+  },
+  "pf_bf16|nw8_s64": {
+   "4096": {
+    "us": 7.981802336871624,
+    "max_abs_err_vs_fp64_same_format": 0.005804991748508154
+   },
+   "32768": {
+    "us": 27.219547773711383,
+    "max_abs_err_vs_fp64_same_format": 0.00818865804768848
+   },
+   "131072": {
+    "us": 210.57472273241729,
+    "max_abs_err_vs_fp64_same_format": 0.0036104657924048433
+   }
+  },
+  "pf_bf16|nw4_s256": {
+   "4096": {
+    "us": 7.581579848192632,
+    "max_abs_err_vs_fp64_same_format": 0.005804991748508154
+   },
+   "32768": {
+    "us": 31.190612353384495,
+    "max_abs_err_vs_fp64_same_format": 0.00818865804768848
+   },
+   "131072": {
+    "us": 222.1684978576377,
+    "max_abs_err_vs_fp64_same_format": 0.0032656457707744696
+   }
+  },
+  "pf_bf16|nw8_s256": {
+   "4096": {
+    "us": 7.965297554619609,
+    "max_abs_err_vs_fp64_same_format": 0.005804991748508154
+   },
+   "32768": {
+    "us": 35.16849013976753,
+    "max_abs_err_vs_fp64_same_format": 0.00818865804768848
+   },
+   "131072": {
+    "us": 222.09110029507428,
+    "max_abs_err_vs_fp64_same_format": 0.0032656457707744696
+   }
+  },
+  "pf_fp16|nw4_s64": {
+   "4096": {
+    "us": 7.559414952993393,
+    "max_abs_err_vs_fp64_same_format": 0.005804991748508154
+   },
+   "32768": {
+    "us": 27.168325032107532,
+    "max_abs_err_vs_fp64_same_format": 0.00818865804768848
+   },
+   "131072": {
+    "us": 216.94078284781426,
+    "max_abs_err_vs_fp64_same_format": 0.0036104657924048433
+   }
+  },
+  "pf_q4|nw4_s64": {
+   "4096": {
+    "us": 9.547427762299776,
+    "max_abs_err_vs_fp64_same_format": 0.0471139028436634
+   },
+   "32768": {
+    "us": 36.05366742704064,
+    "max_abs_err_vs_fp64_same_format": 0.06276718494118144
+   },
+   "131072": {
+    "us": 153.69714994449168,
+    "max_abs_err_vs_fp64_same_format": 0.03579799781784193
+   }
+  },
+  "pf_q4_f16|nw4_s64": {
+   "4096": {
+    "us": 9.421139839105308,
+    "max_abs_err_vs_fp64_same_format": 0.006475203887283537
+   },
+   "32768": {
+    "us": 36.07675957027823,
+    "max_abs_err_vs_fp64_same_format": 0.006378874419477126
+   },
+   "131072": {
+    "us": 153.79728516563773,
+    "max_abs_err_vs_fp64_same_format": 0.003873945859028727
+   }
+  },
+  "pf_q4_f16|nw8_s64": {
+   "4096": {
+    "us": 9.364360012114048,
+    "max_abs_err_vs_fp64_same_format": 0.006475203887283537
+   },
+   "32768": {
+    "us": 36.00675496272743,
+    "max_abs_err_vs_fp64_same_format": 0.006378874419477126
+   },
+   "131072": {
+    "us": 143.50712473969907,
+    "max_abs_err_vs_fp64_same_format": 0.003873945859028727
+   }
+  },
+  "pf_q4_f16|nw4_s256": {
+   "4096": {
+    "us": 9.417134569957852,
+    "max_abs_err_vs_fp64_same_format": 0.006475203887283537
+   },
+   "32768": {
+    "us": 41.77650262136012,
+    "max_abs_err_vs_fp64_same_format": 0.006378874419477126
+   },
+   "131072": {
+    "us": 155.7697175303474,
+    "max_abs_err_vs_fp64_same_format": 0.003873945859028727
+   }
+  },
+  "pf_q4_f16|nw8_s256": {
+   "4096": {
+    "us": 9.340215474367142,
+    "max_abs_err_vs_fp64_same_format": 0.006475203887283537
+   },
+   "32768": {
+    "us": 42.0287752058357,
+    "max_abs_err_vs_fp64_same_format": 0.006378874419477126
+   },
+   "131072": {
+    "us": 152.24403468891978,
+    "max_abs_err_vs_fp64_same_format": 0.003873945859028727
+   }
+  },
+  "pf_q4_f16_nomagic|nw4_s64": {
+   "4096": {
+    "us": 9.41475504077971,
+    "max_abs_err_vs_fp64_same_format": 0.006475203887283537
+   },
+   "32768": {
+    "us": 36.84344294015318,
+    "max_abs_err_vs_fp64_same_format": 0.006378874419477126
+   },
+   "131072": {
+    "us": 150.82048019394279,
+    "max_abs_err_vs_fp64_same_format": 0.003873945859028727
+   }
+  },
+  "pf_q4_i8|nw4_s64": {
+   "4096": {
+    "us": 10.486177634447813,
+    "max_abs_err_vs_fp64_same_format": 0.01220822797424126
+   },
+   "32768": {
+    "us": 44.755039853043854,
+    "max_abs_err_vs_fp64_same_format": 0.004791247061286016
+   },
+   "131072": {
+    "us": 162.51701745204628,
+    "max_abs_err_vs_fp64_same_format": 0.005560276374724976
+   }
+  },
+  "pf_q4_i8|nw8_s64": {
+   "4096": {
+    "us": 10.866537922993302,
+    "max_abs_err_vs_fp64_same_format": 0.01220822797424126
+   },
+   "32768": {
+    "us": 48.89291478320956,
+    "max_abs_err_vs_fp64_same_format": 0.004791247061286016
+   },
+   "131072": {
+    "us": 170.03815970383584,
+    "max_abs_err_vs_fp64_same_format": 0.005560276374724976
+   }
+  },
+  "pf_q4_i8|nw4_s256": {
+   "4096": {
+    "us": 10.458677425049245,
+    "max_abs_err_vs_fp64_same_format": 0.01220822797424126
+   },
+   "32768": {
+    "us": 48.77376777585596,
+    "max_abs_err_vs_fp64_same_format": 0.004791247061286016
+   },
+   "131072": {
+    "us": 160.96284030936658,
+    "max_abs_err_vs_fp64_same_format": 0.005428775695253865
+   }
+  },
+  "pf_q4_i8|nw8_s256": {
+   "4096": {
+    "us": 10.826689540408552,
+    "max_abs_err_vs_fp64_same_format": 0.01220822797424126
+   },
+   "32768": {
+    "us": 52.8146349824965,
+    "max_abs_err_vs_fp64_same_format": 0.004791247061286016
+   },
+   "131072": {
+    "us": 170.05043220706284,
+    "max_abs_err_vs_fp64_same_format": 0.005428775695253865
+   }
+  },
+  "pf_q4lut_f16|nw4_s64": {
+   "4096": {
+    "us": 15.307629946619274,
+    "max_abs_err_vs_fp64_same_format": 0.006243867156572547
+   },
+   "32768": {
+    "us": 74.97844519093633,
+    "max_abs_err_vs_fp64_same_format": 0.008244715309342066
+   },
+   "131072": {
+    "us": 264.5445422967896,
+    "max_abs_err_vs_fp64_same_format": 0.003546625475653653
+   }
+  },
+  "pf_vq8_f16|nw4_s64": {
+   "4096": {
+    "us": 15.201032510958612,
+    "max_abs_err_vs_fp64_same_format": 0.006046257004596822
+   },
+   "32768": {
+    "us": 66.01869012229145,
+    "max_abs_err_vs_fp64_same_format": 0.008355376412806287
+   },
+   "131072": {
+    "us": 234.0650325641036,
+    "max_abs_err_vs_fp64_same_format": 0.003642147342140342
+   }
+  },
+  "pf_q4c_f16|nw4_s64": {
+   "4096": {
+    "us": 12.980762403458357,
+    "max_abs_err_vs_fp64_same_format": 0.006229021865810341
+   },
+   "32768": {
+    "us": 58.23463259730488,
+    "max_abs_err_vs_fp64_same_format": 0.00783920672395401
+   },
+   "131072": {
+    "us": 225.82419507671148,
+    "max_abs_err_vs_fp64_same_format": 0.003597499092115611
+   }
+  },
+  "pf_q4clut_f16|nw4_s64": {
+   "4096": {
+    "us": 16.829825472086668,
+    "max_abs_err_vs_fp64_same_format": 0.005882706263129145
+   },
+   "32768": {
+    "us": 89.01217486709356,
+    "max_abs_err_vs_fp64_same_format": 0.007478864127246035
+   },
+   "131072": {
+    "us": 350.46063538175076,
+    "max_abs_err_vs_fp64_same_format": 0.0037304879007639125
+   }
+  },
+  "pf_q4_f16_v4|nw4_s64": {
+   "4096": {
+    "us": 9.408267214894295,
+    "max_abs_err_vs_fp64_same_format": 0.007328222044554078
+   },
+   "32768": {
+    "us": 30.357229989022017,
+    "max_abs_err_vs_fp64_same_format": 0.009533949215886572
+   },
+   "131072": {
+    "us": 106.41564207617193,
+    "max_abs_err_vs_fp64_same_format": 0.005372305963209367
+   }
+  },
+  "pf_q4_f16_v4|nw8_s64": {
+   "4096": {
+    "us": 9.898332646116614,
+    "max_abs_err_vs_fp64_same_format": 0.007328222044554078
+   },
+   "32768": {
+    "us": 43.52416726760566,
+    "max_abs_err_vs_fp64_same_format": 0.009533949215886572
+   },
+   "131072": {
+    "us": 147.78506010770798,
+    "max_abs_err_vs_fp64_same_format": 0.005372305963209367
+   }
+  },
+  "pf_q4_f16_v4|nw4_s256": {
+   "4096": {
+    "us": 10.001175105571747,
+    "max_abs_err_vs_fp64_same_format": 0.007328222044554078
+   },
+   "32768": {
+    "us": 35.87989252991974,
+    "max_abs_err_vs_fp64_same_format": 0.006718601520185441
+   },
+   "131072": {
+    "us": 100.52459256257862,
+    "max_abs_err_vs_fp64_same_format": 0.005372305963209367
+   }
+  },
+  "pf_q4_f16_v4|nw8_s256": {
+   "4096": {
+    "us": 9.891894878819585,
+    "max_abs_err_vs_fp64_same_format": 0.007328222044554078
+   },
+   "32768": {
+    "us": 46.749162720516324,
+    "max_abs_err_vs_fp64_same_format": 0.006718601520185441
+   },
+   "131072": {
+    "us": 137.77685002423823,
+    "max_abs_err_vs_fp64_same_format": 0.005372305963209367
+   }
+  },
+  "pf_q4_i8_v4|nw4_s64": {
+   "4096": {
+    "us": 11.414589826017618,
+    "max_abs_err_vs_fp64_same_format": 0.015828925723388565
+   },
+   "32768": {
+    "us": 53.49645973183215,
+    "max_abs_err_vs_fp64_same_format": 0.00859187323552879
+   },
+   "131072": {
+    "us": 178.78606740850955,
+    "max_abs_err_vs_fp64_same_format": 0.006003704243946972
+   }
+  },
+  "pf_q4_i8_v4|nw8_s64": {
+   "4096": {
+    "us": 11.21238514315337,
+    "max_abs_err_vs_fp64_same_format": 0.015828925723388565
+   },
+   "32768": {
+    "us": 53.650824702344835,
+    "max_abs_err_vs_fp64_same_format": 0.00859187323552879
+   },
+   "131072": {
+    "us": 182.02694540377706,
+    "max_abs_err_vs_fp64_same_format": 0.006003704243946972
+   }
+  },
+  "pf_q4_i8_v4|nw4_s256": {
+   "4096": {
+    "us": 11.397507623769343,
+    "max_abs_err_vs_fp64_same_format": 0.015828925723388565
+   },
+   "32768": {
+    "us": 56.0841424157843,
+    "max_abs_err_vs_fp64_same_format": 0.00859187323552879
+   },
+   "131072": {
+    "us": 166.26857221126556,
+    "max_abs_err_vs_fp64_same_format": 0.006003704243946972
+   }
+  },
+  "pf_q4_i8_v4|nw8_s256": {
+   "4096": {
+    "us": 11.18974236305803,
+    "max_abs_err_vs_fp64_same_format": 0.015828925723388565
+   },
+   "32768": {
+    "us": 57.441077660769224,
+    "max_abs_err_vs_fp64_same_format": 0.00859187323552879
+   },
+   "131072": {
+    "us": 169.93764729704708,
+    "max_abs_err_vs_fp64_same_format": 0.006003704243946972
+   }
+  },
+  "pf_q4c_f16_v4|nw4_s64": {
+   "4096": {
+    "us": 13.891512644477189,
+    "max_abs_err_vs_fp64_same_format": 0.00661111540671433
+   },
+   "32768": {
+    "us": 49.160789931192994,
+    "max_abs_err_vs_fp64_same_format": 0.0077232751592479915
+   },
+   "131072": {
+    "us": 167.27014211937785,
+    "max_abs_err_vs_fp64_same_format": 0.006180901151811469
+   }
+  },
+  "pf_q4c_f16_v4|nw8_s64": {
+   "4096": {
+    "us": 10.547420242801309,
+    "max_abs_err_vs_fp64_same_format": 0.00661111540671433
+   },
+   "32768": {
+    "us": 46.002292074263096,
+    "max_abs_err_vs_fp64_same_format": 0.0077232751592479915
+   },
+   "131072": {
+    "us": 155.3299225633964,
+    "max_abs_err_vs_fp64_same_format": 0.006180901151811469
+   }
+  },
+  "pf_q4c_f16_v4|nw4_s256": {
+   "4096": {
+    "us": 13.861007755622268,
+    "max_abs_err_vs_fp64_same_format": 0.00661111540671433
+   },
+   "32768": {
+    "us": 57.19807231798768,
+    "max_abs_err_vs_fp64_same_format": 0.0077232751592479915
+   },
+   "131072": {
+    "us": 165.60984251555055,
+    "max_abs_err_vs_fp64_same_format": 0.006180901151811469
+   }
+  },
+  "pf_q4c_f16_v4|nw8_s256": {
+   "4096": {
+    "us": 10.526180267333984,
+    "max_abs_err_vs_fp64_same_format": 0.00661111540671433
+   },
+   "32768": {
+    "us": 50.13944231905043,
+    "max_abs_err_vs_fp64_same_format": 0.0077232751592479915
+   },
+   "131072": {
+    "us": 145.93328000046313,
+    "max_abs_err_vs_fp64_same_format": 0.006180901151811469
+   }
+  },
+  "pf_q4clut_f16_vlut|nw4_s64": {
+   "4096": {
+    "us": 21.46863262169063,
+    "max_abs_err_vs_fp64_same_format": 0.0057101950242921945
+   },
+   "32768": {
+    "us": 119.18964504729956,
+    "max_abs_err_vs_fp64_same_format": 0.007911353992369724
+   },
+   "131072": {
+    "us": 445.3613021178171,
+    "max_abs_err_vs_fp64_same_format": 0.009000813345965142
+   }
+  },
+  "pf_q4lut_f16_vlut|nw4_s64": {
+   "4096": {
+    "us": 20.337397581897676,
+    "max_abs_err_vs_fp64_same_format": 0.0067644459485540764
+   },
+   "32768": {
+    "us": 104.86364539247006,
+    "max_abs_err_vs_fp64_same_format": 0.008279719311888867
+   },
+   "131072": {
+    "us": 360.15916732139885,
+    "max_abs_err_vs_fp64_same_format": 0.007774261912341984
+   }
+  },
+  "old_q4b_table": {
+   "4096": {
+    "us": 8.402990060858428,
+    "max_abs_err_vs_fp64_same_format": 0.021787882253190442
+   },
+   "32768": {
+    "us": 51.57038976904005,
+    "max_abs_err_vs_fp64_same_format": 0.030003602229911316
+   },
+   "131072": {
+    "us": 247.01110494788733,
+    "max_abs_err_vs_fp64_same_format": 0.011507099028056439
+   }
+  },
+  "pre_q4_table_nomagic": {
+   "4096": {
+    "us": 8.705804939381778,
+    "max_abs_err_vs_fp64_same_format": 0.021787882253190442
+   },
+   "32768": {
+    "us": 37.57370752282441,
+    "max_abs_err_vs_fp64_same_format": 0.030003602229911316
+   },
+   "131072": {
+    "us": 211.24229242559522,
+    "max_abs_err_vs_fp64_same_format": 0.011507099028056439
+   }
+  },
+  "pre_q4_table_magic": {
+   "4096": {
+    "us": 8.628659998066723,
+    "max_abs_err_vs_fp64_same_format": 0.021787882253190442
+   },
+   "32768": {
+    "us": 37.777984980493784,
+    "max_abs_err_vs_fp64_same_format": 0.030003602229911316
+   },
+   "131072": {
+    "us": 208.87780468910933,
+    "max_abs_err_vs_fp64_same_format": 0.011507099028056439
+   }
+  },
+  "pre_q4_int64trig_magic": {
+   "4096": {
+    "us": 18.68288265541196,
+    "max_abs_err_vs_fp64_same_format": 0.001800595535549121
+   },
+   "32768": {
+    "us": 117.02064250130206,
+    "max_abs_err_vs_fp64_same_format": 0.0011840287821190953
+   },
+   "131072": {
+    "us": 414.57822488155216,
+    "max_abs_err_vs_fp64_same_format": 0.0009019967574024346
+   }
+  },
+  "pre_q4_trig32_magic": {
+   "4096": {
+    "us": 8.371557341888547,
+    "max_abs_err_vs_fp64_same_format": 0.001800595535549121
+   },
+   "32768": {
+    "us": 39.08773243892938,
+    "max_abs_err_vs_fp64_same_format": 0.0009395999417930456
+   },
+   "131072": {
+    "us": 160.4820671491325,
+    "max_abs_err_vs_fp64_same_format": 0.0009019967574024346
+   }
+  },
+  "pre_spfM_lut10": {
+   "4096": {
+    "us": 23.01339292898774,
+    "max_abs_err_vs_fp64_same_format": 0.0018750992375224929
+   },
+   "32768": {
+    "us": 93.22015510406345,
+    "max_abs_err_vs_fp64_same_format": 0.000996332345686246
+   },
+   "131072": {
+    "us": 337.2230927925557,
+    "max_abs_err_vs_fp64_same_format": 0.0007807827646969523
+   }
+  },
+  "gqa_post_bf16": {
+   "4096": {
+    "us": 6.0271547408774495,
+    "max_abs_err_vs_fp64_same_format": 0.0011673895875250473
+   },
+   "32768": {
+    "us": 20.824054954573512,
+    "max_abs_err_vs_fp64_same_format": 0.0010922930959738064
+   },
+   "131072": {
+    "us": 215.79975204076618,
+    "max_abs_err_vs_fp64_same_format": 0.0009565396941507154
+   }
+  }
+ },
+ "pristine_vs_ring": {
+  "speedx-qwen25-1.5b": {
+   "pristine_graph": {
+    "1024": 6.592582128925384,
+    "4096": 7.397825430063684,
+    "16384": 13.438226517849131
+   },
+   "rerotate_graph": {
+    "1024": 6.726047437297978,
+    "4096": 7.480768759076542,
+    "16384": 12.532179250180933
+   },
+   "ring_graph": {
+    "1024": 6.520962360701448,
+    "4096": 6.776793629325678,
+    "16384": 7.4062859393127685
+   },
+   "ring_graph_gqa": {
+    "1024": 6.403558946039392,
+    "4096": 6.615409804259207,
+    "16384": 7.143413415967975
+   }
+  },
+  "speedx-qwen3-0.6b": {
+   "pristine_graph": {
+    "1024": 4.920233324916575,
+    "4096": 10.235528055921455,
+    "16384": 54.65638703265649
+   },
+   "rerotate_graph": {
+    "1024": 5.004422056459398,
+    "4096": 10.02221043868996,
+    "16384": 51.42223419961806
+   },
+   "ring_graph": {
+    "1024": 4.331859544378644,
+    "4096": 4.909777750716491,
+    "16384": 7.067910189474709
+   },
+   "ring_graph_gqa": {
+    "1024": 4.214617385087499,
+    "4096": 4.788770961807619,
+    "16384": 7.11484306881041
+   }
+  },
+  "speedx-qwen3-1.7b": {
+   "pristine_graph": {
+    "1024": 8.33646511410979,
+    "4096": 13.707517767760807,
+    "16384": 57.539347196220945
+   },
+   "rerotate_graph": {
+    "1024": 8.419716809680681,
+    "4096": 13.408815455610512,
+    "16384": 54.794111138313184
+   },
+   "ring_graph": {
+    "1024": 7.753248819918171,
+    "4096": 8.31459021979883,
+    "16384": 10.471312724977928
+   },
+   "ring_graph_gqa": {
+    "1024": 7.645526234935886,
+    "4096": 8.212235305578192,
+    "16384": 10.542632732141406
+   }
+  },
+  "speedx-qwen3-8b-L18": {
+   "pristine_graph": {
+    "1024": 14.294571435625613,
+    "4096": 17.714017527977504,
+    "16384": 46.305252257594354
+   },
+   "rerotate_graph": {
+    "1024": 14.340690454681548,
+    "4096": 17.57230307981525,
+    "16384": 44.20364757230437
+   },
+   "ring_graph": {
+    "1024": 13.915753295370116,
+    "4096": 14.271571796704894,
+    "16384": 15.660639285331683
+   },
+   "ring_graph_gqa": {
+    "1024": 13.843613939700855,
+    "4096": 14.208926031128588,
+    "16384": 15.693039877749264
+   }
+  },
+  "speedx-qwen3-8b-L9": {
+   "pristine_graph": {
+    "1024": 8.084144550314456,
+    "4096": 9.797615535415106,
+    "16384": 24.17950986673103
+   },
+   "rerotate_graph": {
+    "1024": 8.107559860688223,
+    "4096": 9.733271444980634,
+    "16384": 22.89695666470014
+   },
+   "ring_graph": {
+    "1024": 7.862240113354098,
+    "4096": 8.104035180322308,
+    "16384": 8.796825069001121
+   },
+   "ring_graph_gqa": {
+    "1024": 7.825361859281432,
+    "4096": 8.074086169755047,
+    "16384": 8.823578769712443
+   }
+  }
+ }
+}

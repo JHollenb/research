@@ -1,0 +1,1031 @@
+{
+  "attention": "eager",
+  "block": 1,
+  "capacity": 1028,
+  "dataset": "/home/beast/.cache/huggingface/hub/datasets--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+  "dataset_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+  "dtype": "torch.bfloat16",
+  "final": {
+    "block_ppl": {
+      "baseline": 13.40974753344885,
+      "patched": 10.001336535089438
+    },
+    "block_tokens": 539,
+    "current_max_logit_delta": 4.796875,
+    "elapsed_s": 1403.698,
+    "ppl": {
+      "baseline": 15.006432808801693,
+      "patched": 10.27618712082011
+    },
+    "prefill_logit_sha256_equal": true,
+    "steady_ppl": {
+      "baseline": 14.932650276777181,
+      "patched": 10.017986999081254
+    },
+    "step": 19999,
+    "top1_agreement": 0.7258362918145908,
+    "traces": {
+      "baseline": {
+        "coefficient_dtype": "torch.bfloat16",
+        "coefficient_norm_max": 1.0085692405700684,
+        "coefficient_norm_min": 0.9940480589866638,
+        "evictions": 18971,
+        "input_trig_dtype": "torch.bfloat16",
+        "key_dtype": "torch.bfloat16",
+        "last_position": 19998,
+        "position_contract_valid": true,
+        "rerotation_calls": 531188,
+        "shift_calls": 531188,
+        "trig_delivery_calls": 531216,
+        "update_calls": 531216
+      },
+      "patched": {
+        "coefficient_dtype": null,
+        "coefficient_norm_max": null,
+        "coefficient_norm_min": null,
+        "evictions": 18971,
+        "input_trig_dtype": null,
+        "key_dtype": "torch.bfloat16",
+        "last_position": 19998,
+        "position_contract_valid": true,
+        "rerotation_calls": 0,
+        "shift_calls": 531188,
+        "trig_delivery_calls": 531216,
+        "update_calls": 531216
+      }
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4080",
+  "measurements": [
+    {
+      "block_ppl": {
+        "baseline": 23.965636010778375,
+        "patched": 16.123836127377032
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 3.125,
+      "elapsed_s": 63.778,
+      "ppl": {
+        "baseline": 19.839235467021886,
+        "patched": 16.279175274547388
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 23.965636010778375,
+        "patched": 16.123836127377032
+      },
+      "step": 2052,
+      "top1_agreement": 0.8615984405458089,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 1024,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 2051,
+          "position_contract_valid": true,
+          "rerotation_calls": 28672,
+          "shift_calls": 28672,
+          "trig_delivery_calls": 28700,
+          "update_calls": 28700
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 1024,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 2051,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 28672,
+          "trig_delivery_calls": 28700,
+          "update_calls": 28700
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 21.042716484017124,
+        "patched": 14.17748398664984
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 4.1875,
+      "elapsed_s": 121.505,
+      "ppl": {
+        "baseline": 20.2320304187357,
+        "patched": 15.547026665800447
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 22.456671256754873,
+        "patched": 15.119372622541388
+      },
+      "step": 3076,
+      "top1_agreement": 0.8078673602080624,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 2048,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 3075,
+          "position_contract_valid": true,
+          "rerotation_calls": 57344,
+          "shift_calls": 57344,
+          "trig_delivery_calls": 57372,
+          "update_calls": 57372
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 2048,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 3075,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 57344,
+          "trig_delivery_calls": 57372,
+          "update_calls": 57372
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 22.91952127897536,
+        "patched": 16.546543926705347
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 4.1875,
+      "elapsed_s": 178.506,
+      "ppl": {
+        "baseline": 20.872178311718596,
+        "patched": 15.790858131033366
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 22.609906602474354,
+        "patched": 15.58086671796401
+      },
+      "step": 4100,
+      "top1_agreement": 0.7778048780487805,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 3072,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 4099,
+          "position_contract_valid": true,
+          "rerotation_calls": 86016,
+          "shift_calls": 86016,
+          "trig_delivery_calls": 86044,
+          "update_calls": 86044
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 3072,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 4099,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 86016,
+          "trig_delivery_calls": 86044,
+          "update_calls": 86044
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 13.26174225150419,
+        "patched": 9.040248875775905
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.6591796875,
+      "elapsed_s": 234.825,
+      "ppl": {
+        "baseline": 19.06360758647105,
+        "patched": 14.125326037557427
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 19.786738855011155,
+        "patched": 13.59843112902387
+      },
+      "step": 5124,
+      "top1_agreement": 0.7701014832162373,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 4096,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 5123,
+          "position_contract_valid": true,
+          "rerotation_calls": 114688,
+          "shift_calls": 114688,
+          "trig_delivery_calls": 114716,
+          "update_calls": 114716
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 4096,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 5123,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 114688,
+          "trig_delivery_calls": 114716,
+          "update_calls": 114716
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 16.64544146476779,
+        "patched": 11.897802972897143
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.470703125,
+      "elapsed_s": 292.064,
+      "ppl": {
+        "baseline": 18.637737142927918,
+        "patched": 13.7272837695309
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 19.114301899944316,
+        "patched": 13.239890686013648
+      },
+      "step": 6148,
+      "top1_agreement": 0.7595966167859467,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 5120,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 6147,
+          "position_contract_valid": true,
+          "rerotation_calls": 143360,
+          "shift_calls": 143360,
+          "trig_delivery_calls": 143388,
+          "update_calls": 143388
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 5120,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 6147,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 143360,
+          "trig_delivery_calls": 143388,
+          "update_calls": 143388
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 19.14819728919884,
+        "patched": 11.830172574037789
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.078125,
+      "elapsed_s": 348.378,
+      "ppl": {
+        "baseline": 18.70977801226569,
+        "patched": 13.438850126823592
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 19.11994696192877,
+        "patched": 12.99378010357918
+      },
+      "step": 7172,
+      "top1_agreement": 0.7516731734523145,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 6144,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 7171,
+          "position_contract_valid": true,
+          "rerotation_calls": 172032,
+          "shift_calls": 172032,
+          "trig_delivery_calls": 172060,
+          "update_calls": 172060
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 6144,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 7171,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 172032,
+          "trig_delivery_calls": 172060,
+          "update_calls": 172060
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 14.446481504878436,
+        "patched": 10.35839753479908
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.84375,
+      "elapsed_s": 405.966,
+      "ppl": {
+        "baseline": 18.114951158004494,
+        "patched": 13.008742477422022
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 18.369505060655143,
+        "patched": 12.57975653303432
+      },
+      "step": 8196,
+      "top1_agreement": 0.7445095168374817,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 7168,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 8195,
+          "position_contract_valid": true,
+          "rerotation_calls": 200704,
+          "shift_calls": 200704,
+          "trig_delivery_calls": 200732,
+          "update_calls": 200732
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 7168,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 8195,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 200704,
+          "trig_delivery_calls": 200732,
+          "update_calls": 200732
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 14.20800318599696,
+        "patched": 9.891630498924018
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.2744140625,
+      "elapsed_s": 464.789,
+      "ppl": {
+        "baseline": 17.632730631032622,
+        "patched": 12.618927572452654
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 17.789015104982948,
+        "patched": 12.207358306748201
+      },
+      "step": 9220,
+      "top1_agreement": 0.7433839479392624,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 8192,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 9219,
+          "position_contract_valid": true,
+          "rerotation_calls": 229376,
+          "shift_calls": 229376,
+          "trig_delivery_calls": 229404,
+          "update_calls": 229404
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 8192,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 9219,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 229376,
+          "trig_delivery_calls": 229404,
+          "update_calls": 229404
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 16.214734874550647,
+        "patched": 10.418789730723232
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 8.296875,
+      "elapsed_s": 550.888,
+      "ppl": {
+        "baseline": 17.485579198045883,
+        "patched": 12.379559148125754
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 17.60680542356374,
+        "patched": 11.994351078508714
+      },
+      "step": 10244,
+      "top1_agreement": 0.7390667707926591,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 9216,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 10243,
+          "position_contract_valid": true,
+          "rerotation_calls": 258048,
+          "shift_calls": 258048,
+          "trig_delivery_calls": 258076,
+          "update_calls": 258076
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 9216,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 10243,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 258048,
+          "trig_delivery_calls": 258076,
+          "update_calls": 258076
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 18.0368154217468,
+        "patched": 12.24596205759928
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 6.140625,
+      "elapsed_s": 636.995,
+      "ppl": {
+        "baseline": 17.53497000951362,
+        "patched": 12.367358299961626
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 17.64934101146983,
+        "patched": 12.01927776765661
+      },
+      "step": 11268,
+      "top1_agreement": 0.7351792687255946,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 10240,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 11267,
+          "position_contract_valid": true,
+          "rerotation_calls": 286720,
+          "shift_calls": 286720,
+          "trig_delivery_calls": 286748,
+          "update_calls": 286748
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 10240,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 11267,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 286720,
+          "trig_delivery_calls": 286748,
+          "update_calls": 286748
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 18.874566907032428,
+        "patched": 12.561345459691346
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 7.1328125,
+      "elapsed_s": 730.512,
+      "ppl": {
+        "baseline": 17.642839815971993,
+        "patched": 12.38340360473238
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 17.75735831343635,
+        "patched": 12.067574509336545
+      },
+      "step": 12292,
+      "top1_agreement": 0.7323462414578588,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 11264,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 12291,
+          "position_contract_valid": true,
+          "rerotation_calls": 315392,
+          "shift_calls": 315392,
+          "trig_delivery_calls": 315420,
+          "update_calls": 315420
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 11264,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 12291,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 315392,
+          "trig_delivery_calls": 315420,
+          "update_calls": 315420
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 5.502275743787533,
+        "patched": 4.533641949248469
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 6.84375,
+      "elapsed_s": 819.398,
+      "ppl": {
+        "baseline": 16.13076989708664,
+        "patched": 11.462555035961532
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 16.10554247468838,
+        "patched": 11.122154527977996
+      },
+      "step": 13316,
+      "top1_agreement": 0.7389606488434965,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 12288,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 13315,
+          "position_contract_valid": true,
+          "rerotation_calls": 344064,
+          "shift_calls": 344064,
+          "trig_delivery_calls": 344092,
+          "update_calls": 344092
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 12288,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 13315,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 344064,
+          "trig_delivery_calls": 344092,
+          "update_calls": 344092
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 11.932999162790745,
+        "patched": 8.207179142482428
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.578125,
+      "elapsed_s": 908.924,
+      "ppl": {
+        "baseline": 15.787280030844332,
+        "patched": 11.192340919213368
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 15.73830626419834,
+        "patched": 10.865143393088315
+      },
+      "step": 14340,
+      "top1_agreement": 0.7385634588563459,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 13312,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 14339,
+          "position_contract_valid": true,
+          "rerotation_calls": 372736,
+          "shift_calls": 372736,
+          "trig_delivery_calls": 372764,
+          "update_calls": 372764
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 13312,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 14339,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 372736,
+          "trig_delivery_calls": 372764,
+          "update_calls": 372764
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 13.676210533028932,
+        "patched": 7.886773524352833
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 4.1875,
+      "elapsed_s": 999.51,
+      "ppl": {
+        "baseline": 15.636958809809954,
+        "patched": 10.934244935467195
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 15.58121805980032,
+        "patched": 10.619331298484827
+      },
+      "step": 15364,
+      "top1_agreement": 0.7365920333246551,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 14336,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 15363,
+          "position_contract_valid": true,
+          "rerotation_calls": 401408,
+          "shift_calls": 401408,
+          "trig_delivery_calls": 401436,
+          "update_calls": 401436
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 14336,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 15363,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 401408,
+          "trig_delivery_calls": 401436,
+          "update_calls": 401436
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 10.482796153670998,
+        "patched": 5.968155590364879
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.5625,
+      "elapsed_s": 1091.967,
+      "ppl": {
+        "baseline": 15.251067548885384,
+        "patched": 10.528306464057742
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 15.174921550440422,
+        "patched": 10.219116912909373
+      },
+      "step": 16388,
+      "top1_agreement": 0.7347449353185258,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 15360,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 16387,
+          "position_contract_valid": true,
+          "rerotation_calls": 430080,
+          "shift_calls": 430080,
+          "trig_delivery_calls": 430108,
+          "update_calls": 430108
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 15360,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 16387,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 430080,
+          "trig_delivery_calls": 430108,
+          "update_calls": 430108
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 12.723111318641848,
+        "patched": 8.013703731106169
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 7.9140625,
+      "elapsed_s": 1180.449,
+      "ppl": {
+        "baseline": 15.089383262488546,
+        "patched": 10.360674914793018
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 15.008701979424732,
+        "patched": 10.065019310159585
+      },
+      "step": 17412,
+      "top1_agreement": 0.7311049850677693,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 16384,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 17411,
+          "position_contract_valid": true,
+          "rerotation_calls": 458752,
+          "shift_calls": 458752,
+          "trig_delivery_calls": 458780,
+          "update_calls": 458780
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 16384,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 17411,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 458752,
+          "trig_delivery_calls": 458780,
+          "update_calls": 458780
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 15.668159429370334,
+        "patched": 10.189424793868536
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 5.3046875,
+      "elapsed_s": 1269.214,
+      "ppl": {
+        "baseline": 15.12096231272189,
+        "patched": 10.351088034605453
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 15.046713596943306,
+        "patched": 10.072295051767014
+      },
+      "step": 18436,
+      "top1_agreement": 0.7285202863961814,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 17408,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 18435,
+          "position_contract_valid": true,
+          "rerotation_calls": 487424,
+          "shift_calls": 487424,
+          "trig_delivery_calls": 487452,
+          "update_calls": 487452
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 17408,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 18435,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 487424,
+          "trig_delivery_calls": 487452,
+          "update_calls": 487452
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 13.885000130357055,
+        "patched": 9.146293630641853
+      },
+      "block_tokens": 1024,
+      "current_max_logit_delta": 12.3125,
+      "elapsed_s": 1357.563,
+      "ppl": {
+        "baseline": 15.05326467743515,
+        "patched": 10.283906446147393
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 14.979696036755346,
+        "patched": 10.018474319229693
+      },
+      "step": 19460,
+      "top1_agreement": 0.7272353545734841,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 18432,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 19459,
+          "position_contract_valid": true,
+          "rerotation_calls": 516096,
+          "shift_calls": 516096,
+          "trig_delivery_calls": 516124,
+          "update_calls": 516124
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 18432,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 19459,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 516096,
+          "trig_delivery_calls": 516124,
+          "update_calls": 516124
+        }
+      }
+    },
+    {
+      "block_ppl": {
+        "baseline": 13.40974753344885,
+        "patched": 10.001336535089438
+      },
+      "block_tokens": 539,
+      "current_max_logit_delta": 4.796875,
+      "elapsed_s": 1403.698,
+      "ppl": {
+        "baseline": 15.006432808801693,
+        "patched": 10.27618712082011
+      },
+      "prefill_logit_sha256_equal": true,
+      "steady_ppl": {
+        "baseline": 14.932650276777181,
+        "patched": 10.017986999081254
+      },
+      "step": 19999,
+      "top1_agreement": 0.7258362918145908,
+      "traces": {
+        "baseline": {
+          "coefficient_dtype": "torch.bfloat16",
+          "coefficient_norm_max": 1.0085692405700684,
+          "coefficient_norm_min": 0.9940480589866638,
+          "evictions": 18971,
+          "input_trig_dtype": "torch.bfloat16",
+          "key_dtype": "torch.bfloat16",
+          "last_position": 19998,
+          "position_contract_valid": true,
+          "rerotation_calls": 531188,
+          "shift_calls": 531188,
+          "trig_delivery_calls": 531216,
+          "update_calls": 531216
+        },
+        "patched": {
+          "coefficient_dtype": null,
+          "coefficient_norm_max": null,
+          "coefficient_norm_min": null,
+          "evictions": 18971,
+          "input_trig_dtype": null,
+          "key_dtype": "torch.bfloat16",
+          "last_position": 19998,
+          "position_contract_valid": true,
+          "rerotation_calls": 0,
+          "shift_calls": 531188,
+          "trig_delivery_calls": 531216,
+          "update_calls": 531216
+        }
+      }
+    }
+  ],
+  "model": "/mnt/big/llm-models/hf/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+  "position_mode": "absolute_global",
+  "position_rule": "initial 0..capacity-1; subsequent tokens use original absolute positions",
+  "prefill_logit_sha256": "ddd9c9ee1e997794fa597bfb66597985739651a4bc922ada1a02e036044f6cbd",
+  "prefill_nll": {
+    "baseline": 2877.8216590881348,
+    "patched": 2877.8216590881348
+  },
+  "recent_window": 1024,
+  "sinks": 4,
+  "source_sha256": {
+    "baseline": "ac8d2f4f7ae25656989b0d7d359790fcb0d04fdb4735265a90f6d4570fc5ed52",
+    "patched": "71ddeb239961648ef3ab82a81da3a53a9a0d918941d3cf2f287f69aae4d1f5c5"
+  },
+  "status": "succeeded",
+  "token_ids_sha256": "529bc6f6fd3a82939d5f6067c0e9d26522161a0c815c76c32245b8cacd5ff102",
+  "tokens_requested": 20000,
+  "torch": "2.13.0+cu130",
+  "transformers": "4.52.1"
+}

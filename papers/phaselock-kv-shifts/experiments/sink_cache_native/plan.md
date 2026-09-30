@@ -42,8 +42,9 @@ and records the dtype and norm of the coefficients at the first shift.
 The working prediction was that the upstream BF16 path would accumulate a
 large quality loss while the patched path stayed near the paper's FP32
 arithmetic control. The 2,600-token mechanics smoke instead found nearly
-equal perplexity. The full 20,000-token comparison is retained even if the
-effect is small or opposite. The paper's 253.918 and 8.606 came from a
+equal perplexity. The full 20,000-token comparison found post-fill perplexity
+10.122 upstream versus 10.136 patched, so the predicted native quality gain
+did not materialize under bounded local positions. The paper's 253.918 and 8.606 came from a
 different, manual consumer with a constant rounded one-step twiddle; this
 repository derives a position-dependent twiddle from a BF16 RoPE table.
 
@@ -65,6 +66,33 @@ local streams. It measures whether correcting the actual generation position
 contract improves next-token quality. The experiment also tests a capacity
 boundary correction: appending a token that exactly fills the window does not
 evict one early.
+
+The 2,600-token W256 smoke (`job-28273ff796af`) succeeded: exact prefill
+logit hashes, 2,339 evictions, 65,492 upstream rerotations, zero patched
+rerotations, and post-fill perplexity 27.840 versus 19.227. Every reported
+256-token block favored the correction. This is a separate coordinate-contract
+result; it does not prove the bounded-local BF16 precision hypothesis. The
+paper-sized W1024 global-position run is staged with explicit finite-value
+checks and a 10,800-second timeout. Its first submission
+(`job-6f65205bbcc3`) was killed during startup after 20 seconds when tree RSS
+reached 3,821 MB against a 3,584 MB ceiling; it produced no experiment data.
+The rerun (`job-38071dde859b`, output
+`phaselock-sinkcache-native-full-train-globalpos-20260925-r1.json`) requested
+5,120 MB RAM based on that measured startup peak and the 3,308 MB peak of the
+completed W1024 local-position run. Its baseline source is pinned to upstream
+commit `ea681c7`; the retry has a distinct run identity and output path. The
+exact-capacity growth change does not affect either paired run because both
+prefills start at full capacity. It succeeded: upstream post-fill perplexity
+was 14.933 versus 10.018 with retained absolute phases, across 18,971 paired
+evictions; all 19 reported blocks favored the correction. The prefill logit
+hashes matched, RoPE inputs reached every cache update, and the upstream and
+corrected arms made 531,188 and zero rerotation calls, respectively. The
+independent 10,000-token WikiText-2 test-split check (`job-0f39060a3150`)
+also succeeded: upstream post-fill perplexity was 15.982 versus 10.441
+corrected, with the correction ahead in all nine reported blocks. The source
+and model hashes matched the train run; dataset and token hashes differed as
+expected. Prefill logit hashes matched between arms, and all 8,971 evictions
+per arm satisfied the position and RoPE-delivery checks.
 
 The initial paired test specifies the local positions required by the paper;
 the absolute-position follow-up tests the wrapper's position contract.

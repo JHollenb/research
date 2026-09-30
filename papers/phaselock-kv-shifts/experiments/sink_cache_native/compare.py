@@ -166,18 +166,23 @@ def main() -> None:
             input_ids=prefill_ids, position_ids=prefill_positions[None],
             past_key_values=cache, cache_position=prefill_positions, use_cache=True
         ).logits[0]
+        if not bool(torch.isfinite(logits).all().item()):
+            raise RuntimeError(f"{name}: nonfinite prefill logits")
         prefill_hashes[name] = hashlib.sha256(logits.view(torch.uint16).cpu().numpy().tobytes()).hexdigest()
         targets = torch.tensor(ids[1:capacity + 1], dtype=torch.long, device="cuda")
         for start in range(0, capacity, 64):
             block = logits[start:start + 64].float()
             scores = torch.logsumexp(block, dim=-1) - block.gather(-1, targets[start:start + 64, None]).squeeze(-1)
+            if not bool(torch.isfinite(scores).all().item()):
+                raise RuntimeError(f"{name}: nonfinite prefill NLL")
             nll_sums[name] += float(scores.sum().item())
         if cache.get_seq_length() != capacity or trace["rerotation_calls"] != 0 or trace["evictions"] != 0:
             raise RuntimeError(f"{name}: initial prefill changed position or evicted")
         if trace["key_dtype"] != "torch.bfloat16":
             raise RuntimeError(f"{name}: native cache key dtype is {trace['key_dtype']}")
         del logits
-    if prefill_hashes["baseline"] != prefill_hashes["patched"]:
+    prefill_hashes_equal = prefill_hashes["baseline"] == prefill_hashes["patched"]
+    if not prefill_hashes_equal:
         raise RuntimeError("baseline and patched native logits differ before rerotation")
     result["prefill_logit_sha256"] = prefill_hashes["baseline"]
     result["prefill_nll"] = nll_sums.copy()
@@ -199,6 +204,8 @@ def main() -> None:
             ).logits[0, -1].float()
             outputs[name] = logits
             nll = float((torch.logsumexp(logits, dim=0) - logits[target]).item())
+            if not math.isfinite(nll):
+                raise RuntimeError(f"{name}: nonfinite streaming NLL at token {t}")
             nll_sums[name] += nll
             steady_sums[name] += nll
             block_sums[name] += nll
@@ -206,6 +213,8 @@ def main() -> None:
         steady_count += 1
         block_count += 1
         delta = float((outputs["baseline"] - outputs["patched"]).abs().max().item())
+        if not math.isfinite(delta):
+            raise RuntimeError(f"nonfinite paired logit difference at token {t}")
         top1_equal += int(outputs["baseline"].argmax().item() == outputs["patched"].argmax().item())
         if block_count == report_every or t == args.tokens - 2:
             traces = {name: trace.copy() for name, (_, trace) in arms.items()}
@@ -217,7 +226,7 @@ def main() -> None:
                 "block_ppl": {name: math.exp(block_sums[name] / block_count) for name in arms},
                 "block_tokens": block_count,
                 "top1_agreement": top1_equal / nll_counts,
-                "pre_shift_logit_exact": True,
+                "prefill_logit_sha256_equal": prefill_hashes_equal,
                 "current_max_logit_delta": delta,
                 "traces": traces,
             }

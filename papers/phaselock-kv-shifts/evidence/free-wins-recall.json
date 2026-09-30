@@ -1,0 +1,1363 @@
+{
+ "schema": "phaselock-free-wins-recall-v1",
+ "sources": {
+  "recall-full-s0-h2ofix-v1": {
+   "sha256": "8c8e28717f9ba493482f888bced7684950a04c73c6a5efdf3a57036e1b832233",
+   "input_sha256": "88a612326e73439fac2fb4d2e933c78d4576d2d3bad9e1346032c8307cc77a2b"
+  },
+  "recall-full-s0-quest-v1": {
+   "sha256": "f380a3bb0046ccc3812ac52eca0587a272fc3b1b63134d40739856984626e577",
+   "input_sha256": "88a612326e73439fac2fb4d2e933c78d4576d2d3bad9e1346032c8307cc77a2b"
+  },
+  "recall-full-s0-v1": {
+   "sha256": "8c4f597d2d1897dbd250d8223d6a2a15de41ae0e42a8663d7a2f324cec275535",
+   "input_sha256": "88a612326e73439fac2fb4d2e933c78d4576d2d3bad9e1346032c8307cc77a2b"
+  },
+  "recall-full-s0-vote-v1": {
+   "sha256": "0f55d7f122d6c0b952be854a53d0cdce2d4a2479654330463852b5bfd6d10104",
+   "input_sha256": "88a612326e73439fac2fb4d2e933c78d4576d2d3bad9e1346032c8307cc77a2b"
+  },
+  "recall-full-s1-h2ofix-v1": {
+   "sha256": "ee5bd26e963a729f1b01768b3138a0547d24d06ce5d4c14c27716bb30735cc4b",
+   "input_sha256": "61b82634767c9eaa4c6b6f6e34017bbdc1050ca5429774ef2bef0fa75c7ad85b"
+  },
+  "recall-full-s1-quest-v1": {
+   "sha256": "7d6af53d373e0a0854ecb4558fab5dc9756f91cf13e45ba160318b1b23f55493",
+   "input_sha256": "61b82634767c9eaa4c6b6f6e34017bbdc1050ca5429774ef2bef0fa75c7ad85b"
+  },
+  "recall-full-s1-vote-v1": {
+   "sha256": "a75099da95dfd0d9280820be681239ca12e22f34de4f7d54f2a6bb8e3cede1ee",
+   "input_sha256": "61b82634767c9eaa4c6b6f6e34017bbdc1050ca5429774ef2bef0fa75c7ad85b"
+  },
+  "recall-full-s2-h2ofix-v1": {
+   "sha256": "449aee67bfb02c10f04a395997fbf6bd20fa432b7e7298e5665689d983736d89",
+   "input_sha256": "808f26595b1fb8b12cd4948b037983d72b2a3902fb993c11205cd9285e1709a8"
+  },
+  "recall-full-s2-quest-v1": {
+   "sha256": "b5afb6c772ffb7999128654f37d49d498d877e14bcb011d91e822a813bfd3b75",
+   "input_sha256": "808f26595b1fb8b12cd4948b037983d72b2a3902fb993c11205cd9285e1709a8"
+  },
+  "recall-full-s2-vote-v1": {
+   "sha256": "459d37b80ac05609452621a872241a3628a5459bec4c3069a96a68de1e729129",
+   "input_sha256": "808f26595b1fb8b12cd4948b037983d72b2a3902fb993c11205cd9285e1709a8"
+  },
+  "recall-longmem-s0-h2ofix-v1": {
+   "sha256": "f5c00435e61607b60081cfcf3cbb90fd15360b057f9616664af069a2df0014b0",
+   "input_sha256": "3c6bf603e7b93eead8d4c096cbac60a35f9dd10679ec1fd4d9878152ed730485"
+  },
+  "recall-longmem-s0-quest-v1": {
+   "sha256": "0bf32449bb75ef0d8fb349e1ec15b0ae1e69ce93d4b30a07f8a9e13aea58dc35",
+   "input_sha256": "3c6bf603e7b93eead8d4c096cbac60a35f9dd10679ec1fd4d9878152ed730485"
+  },
+  "recall-longmem-s0-v1": {
+   "sha256": "fb6ae306bc2a8540074f18d6e7022197ab5721982c454f4d6b6283a4204de52a",
+   "input_sha256": "3c6bf603e7b93eead8d4c096cbac60a35f9dd10679ec1fd4d9878152ed730485"
+  },
+  "recall-longmem-s0-vote-v1": {
+   "sha256": "688e016d8e13c5f719a433b40abc1d30e6bbaf05174b3726ca41f9f29574acdc",
+   "input_sha256": "3c6bf603e7b93eead8d4c096cbac60a35f9dd10679ec1fd4d9878152ed730485"
+  },
+  "recall-longmem-s1-h2ofix-v1": {
+   "sha256": "48315b51ad3c5dea7172e65aa406bedf2a0b6e5e8ab676e3549e1b6d38531f5a",
+   "input_sha256": "e6f976e8d11612ac74be200522b50a1244e654a0a4b167fac37e1dd24a8e105f"
+  },
+  "recall-longmem-s1-quest-v1": {
+   "sha256": "918ee45b30ff72f839d1fcb742e286191754c02d919999553ad8e0784e0a05ea",
+   "input_sha256": "e6f976e8d11612ac74be200522b50a1244e654a0a4b167fac37e1dd24a8e105f"
+  },
+  "recall-longmem-s1-vote-v1": {
+   "sha256": "8deba1234803b81863f7c14c633c2d6c5fac064d35a633f31dba4b3205b4b484",
+   "input_sha256": "e6f976e8d11612ac74be200522b50a1244e654a0a4b167fac37e1dd24a8e105f"
+  },
+  "recall-longmem-s2-h2ofix-v1": {
+   "sha256": "a97b82debb4ef7369a3cd1f341ab833afaad0d91c47bcea9d8292497d8924ab9",
+   "input_sha256": "9e468356e4573de66a916dd654939a54803ff2d87e2bc06a971a1fd2f0e5284c"
+  },
+  "recall-longmem-s2-quest-v1": {
+   "sha256": "d60d5aa89734a949b3ed1f74de1a62f292b64848549a74ebc454981467eaa7ee",
+   "input_sha256": "9e468356e4573de66a916dd654939a54803ff2d87e2bc06a971a1fd2f0e5284c"
+  },
+  "recall-longmem-s2-vote-v1": {
+   "sha256": "cb0de9641f720458efcf04cce4368b447e8c210ff4b73dafc25eade0345e7ca2",
+   "input_sha256": "9e468356e4573de66a916dd654939a54803ff2d87e2bc06a971a1fd2f0e5284c"
+  }
+ },
+ "per_script": [
+  {
+   "script": "full-s0",
+   "arm": "h2o896_true",
+   "source": "recall-full-s0-h2ofix-v1",
+   "retained_correct": 10,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -5.103849112987518,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "h2oavg896_true",
+   "source": "recall-full-s0-h2ofix-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -4.172259986400604,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "fifo",
+   "source": "recall-full-s0-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -5.497986853122711,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "retr8x16_quest_true",
+   "source": "recall-full-s0-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -1.429924690630287,
+   "evicted_fact_page_layers": [
+    16,
+    14,
+    13,
+    9
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "retr8x16_quest_adjacent",
+   "source": "recall-full-s0-quest-v1",
+   "retained_correct": 10,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -1.4848622146528214,
+   "evicted_fact_page_layers": [
+    18,
+    14,
+    13,
+    8
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "retr8x16_mean_true",
+   "source": "recall-full-s0-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -3.2514530662447214,
+   "evicted_fact_page_layers": [
+    13,
+    20,
+    4,
+    13
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "fifo_budget1152",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -5.63760644197464,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "h2o_true",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 7,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -8.062913060188293,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "h2o_compact",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 7,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -6.9986554980278015,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "h2oavg_true",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 11,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -4.417978941637557,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "retr4_adjacent",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 10,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -3.6288069039583206,
+   "evicted_fact_page_layers": [
+    11,
+    11,
+    3,
+    4
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "retr4_true",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 0,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -3.50283282995224,
+   "evicted_fact_page_layers": [
+    8,
+    9,
+    0,
+    4
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "full_context",
+   "source": "recall-full-s0-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 3,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -0.25933407529373653,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s0",
+   "arm": "retr8x16_questvote_true",
+   "source": "recall-full-s0-vote-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 3,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -3.3577787317335606,
+   "evicted_fact_page_layers": [
+    28,
+    28,
+    28,
+    0
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "fifo_budget1152",
+   "source": "recall-full-s1-h2ofix-v1",
+   "retained_correct": 11,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -2.652883693575859,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "h2o896_true",
+   "source": "recall-full-s1-h2ofix-v1",
+   "retained_correct": 9,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -2.910092294216156,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "h2oavg896_true",
+   "source": "recall-full-s1-h2ofix-v1",
+   "retained_correct": 11,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -1.2555749341845512,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "fifo",
+   "source": "recall-full-s1-quest-v1",
+   "retained_correct": 11,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -2.973109930753708,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "retr8x16_quest_true",
+   "source": "recall-full-s1-quest-v1",
+   "retained_correct": 11,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -0.7461906629032455,
+   "evicted_fact_page_layers": [
+    9,
+    16,
+    8,
+    8
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "retr8x16_mean_true",
+   "source": "recall-full-s1-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -3.517201002105139,
+   "evicted_fact_page_layers": [
+    19,
+    3,
+    4,
+    15
+   ]
+  },
+  {
+   "script": "full-s1",
+   "arm": "retr8x16_questvote_true",
+   "source": "recall-full-s1-vote-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 3,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -0.7173432128329296,
+   "evicted_fact_page_layers": [
+    0,
+    28,
+    0,
+    28
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "fifo_budget1152",
+   "source": "recall-full-s2-h2ofix-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -4.8661487102508545,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "h2o896_true",
+   "source": "recall-full-s2-h2ofix-v1",
+   "retained_correct": 9,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -5.008622825145721,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "h2oavg896_true",
+   "source": "recall-full-s2-h2ofix-v1",
+   "retained_correct": 11,
+   "retained": 12,
+   "evicted_correct": 3,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -1.3090977015090175,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "fifo",
+   "source": "recall-full-s2-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -5.184794716536999,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "retr8x16_quest_true",
+   "source": "recall-full-s2-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 3,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -0.5957465241663158,
+   "evicted_fact_page_layers": [
+    12,
+    12,
+    14,
+    7
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "retr8x16_mean_true",
+   "source": "recall-full-s2-quest-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 2,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -1.4231396899558604,
+   "evicted_fact_page_layers": [
+    16,
+    5,
+    16,
+    16
+   ]
+  },
+  {
+   "script": "full-s2",
+   "arm": "retr8x16_questvote_true",
+   "source": "recall-full-s2-vote-v1",
+   "retained_correct": 12,
+   "retained": 12,
+   "evicted_correct": 1,
+   "evicted": 4,
+   "evicted_mean_target_logprob": -5.498028074391186,
+   "evicted_fact_page_layers": [
+    28,
+    28,
+    28,
+    0
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "h2o896_true",
+   "source": "recall-longmem-s0-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 2,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -5.290363981078069,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "h2oavg896_true",
+   "source": "recall-longmem-s0-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -4.496185832346479,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "fifo",
+   "source": "recall-longmem-s0-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 2,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -6.08698067938288,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "retr8x16_quest_true",
+   "source": "recall-longmem-s0-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 8,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -1.461715023528086,
+   "evicted_fact_page_layers": [
+    11,
+    17,
+    10,
+    11,
+    11,
+    12,
+    5,
+    10,
+    10,
+    3,
+    10,
+    9
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "retr8x16_quest_adjacent",
+   "source": "recall-longmem-s0-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 5,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -2.485793845107158,
+   "evicted_fact_page_layers": [
+    11,
+    18,
+    10,
+    9,
+    12,
+    10,
+    2,
+    7,
+    8,
+    1,
+    10,
+    11
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "retr8x16_mean_true",
+   "source": "recall-longmem-s0-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 8,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -1.7621258237826016,
+   "evicted_fact_page_layers": [
+    26,
+    23,
+    17,
+    25,
+    3,
+    16,
+    13,
+    4,
+    12,
+    7,
+    14,
+    3
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "fifo_budget1152",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 3,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -5.835600035265088,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "h2o_true",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.389247086190153,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "h2o_compact",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.6603098679527952,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "h2oavg_true",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 2,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -4.727837001904845,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "retr4_adjacent",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -4.107879421411781,
+   "evicted_fact_page_layers": [
+    24,
+    6,
+    4,
+    0,
+    3,
+    5,
+    2,
+    1,
+    2,
+    3,
+    8,
+    0
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "retr4_true",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -4.2554072943894425,
+   "evicted_fact_page_layers": [
+    24,
+    6,
+    4,
+    0,
+    4,
+    5,
+    2,
+    1,
+    3,
+    2,
+    9,
+    0
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "full_context",
+   "source": "recall-longmem-s0-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 12,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -0.06719714443897828,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s0",
+   "arm": "retr8x16_questvote_true",
+   "source": "recall-longmem-s0-vote-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 7,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -1.2979743356142233,
+   "evicted_fact_page_layers": [
+    28,
+    28,
+    28,
+    28,
+    28,
+    28,
+    0,
+    28,
+    28,
+    28,
+    0,
+    28
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "fifo_budget1152",
+   "source": "recall-longmem-s1-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 1,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.833444664875666,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "h2o896_true",
+   "source": "recall-longmem-s1-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 3,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.8787447065114975,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "h2oavg896_true",
+   "source": "recall-longmem-s1-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 3,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.2411947996976473,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "fifo",
+   "source": "recall-longmem-s1-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 3,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -4.067132018506527,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "retr8x16_quest_true",
+   "source": "recall-longmem-s1-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -2.39160902419826,
+   "evicted_fact_page_layers": [
+    10,
+    17,
+    15,
+    11,
+    14,
+    7,
+    8,
+    4,
+    5,
+    6,
+    9,
+    7
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "retr8x16_mean_true",
+   "source": "recall-longmem-s1-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 5,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -2.1039554019031734,
+   "evicted_fact_page_layers": [
+    27,
+    25,
+    15,
+    18,
+    4,
+    5,
+    7,
+    6,
+    2,
+    1,
+    5,
+    5
+   ]
+  },
+  {
+   "script": "longmem-s1",
+   "arm": "retr8x16_questvote_true",
+   "source": "recall-longmem-s1-vote-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 6,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -2.3470806131711774,
+   "evicted_fact_page_layers": [
+    28,
+    28,
+    28,
+    0,
+    0,
+    28,
+    28,
+    0,
+    0,
+    0,
+    0,
+    28
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "fifo_budget1152",
+   "source": "recall-longmem-s2-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 2,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -5.32157323261102,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "h2o896_true",
+   "source": "recall-longmem-s2-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -4.523800364385049,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "h2oavg896_true",
+   "source": "recall-longmem-s2-h2ofix-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 4,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.8987890481948853,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "fifo",
+   "source": "recall-longmem-s2-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 2,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -5.249195396900177,
+   "evicted_fact_page_layers": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "retr8x16_quest_true",
+   "source": "recall-longmem-s2-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 5,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -2.287128946535328,
+   "evicted_fact_page_layers": [
+    10,
+    19,
+    12,
+    14,
+    13,
+    3,
+    9,
+    9,
+    5,
+    3,
+    5,
+    4
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "retr8x16_mean_true",
+   "source": "recall-longmem-s2-quest-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 3,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -3.4745201616121144,
+   "evicted_fact_page_layers": [
+    14,
+    20,
+    19,
+    10,
+    12,
+    7,
+    8,
+    16,
+    3,
+    11,
+    0,
+    1
+   ]
+  },
+  {
+   "script": "longmem-s2",
+   "arm": "retr8x16_questvote_true",
+   "source": "recall-longmem-s2-vote-v1",
+   "retained_correct": 4,
+   "retained": 4,
+   "evicted_correct": 6,
+   "evicted": 12,
+   "evicted_mean_target_logprob": -2.19564862359645,
+   "evicted_fact_page_layers": [
+    28,
+    28,
+    28,
+    28,
+    28,
+    0,
+    0,
+    0,
+    28,
+    0,
+    28,
+    28
+   ]
+  }
+ ],
+ "aggregate": {
+  "h2o896_true": {
+   "scripts": 6,
+   "retained": [
+    40,
+    48
+   ],
+   "evicted": [
+    11,
+    48
+   ]
+  },
+  "h2oavg896_true": {
+   "scripts": 6,
+   "retained": [
+    46,
+    48
+   ],
+   "evicted": [
+    16,
+    48
+   ]
+  },
+  "fifo": {
+   "scripts": 6,
+   "retained": [
+    47,
+    48
+   ],
+   "evicted": [
+    10,
+    48
+   ]
+  },
+  "retr8x16_quest_true": {
+   "scripts": 6,
+   "retained": [
+    47,
+    48
+   ],
+   "evicted": [
+    24,
+    48
+   ]
+  },
+  "retr8x16_quest_adjacent": {
+   "scripts": 2,
+   "retained": [
+    14,
+    16
+   ],
+   "evicted": [
+    7,
+    16
+   ]
+  },
+  "retr8x16_mean_true": {
+   "scripts": 6,
+   "retained": [
+    48,
+    48
+   ],
+   "evicted": [
+    22,
+    48
+   ]
+  },
+  "fifo_budget1152": {
+   "scripts": 6,
+   "retained": [
+    47,
+    48
+   ],
+   "evicted": [
+    9,
+    48
+   ]
+  },
+  "h2o_true": {
+   "scripts": 2,
+   "retained": [
+    11,
+    16
+   ],
+   "evicted": [
+    4,
+    16
+   ]
+  },
+  "h2o_compact": {
+   "scripts": 2,
+   "retained": [
+    11,
+    16
+   ],
+   "evicted": [
+    4,
+    16
+   ]
+  },
+  "h2oavg_true": {
+   "scripts": 2,
+   "retained": [
+    15,
+    16
+   ],
+   "evicted": [
+    3,
+    16
+   ]
+  },
+  "retr4_adjacent": {
+   "scripts": 2,
+   "retained": [
+    14,
+    16
+   ],
+   "evicted": [
+    5,
+    16
+   ]
+  },
+  "retr4_true": {
+   "scripts": 2,
+   "retained": [
+    16,
+    16
+   ],
+   "evicted": [
+    4,
+    16
+   ]
+  },
+  "full_context": {
+   "scripts": 2,
+   "retained": [
+    16,
+    16
+   ],
+   "evicted": [
+    15,
+    16
+   ]
+  },
+  "retr8x16_questvote_true": {
+   "scripts": 6,
+   "retained": [
+    48,
+    48
+   ],
+   "evicted": [
+    26,
+    48
+   ]
+  }
+ }
+}
