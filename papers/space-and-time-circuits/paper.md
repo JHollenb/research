@@ -4,6 +4,7 @@ subtitle: "Localized circuits, time-accumulated circuits, and why standard instr
 type: research-paper
 status: draft-2
 date: 2026-09-30
+updated: 2026-10-01
 author: Jacob Hollenbeck
 outline: outline.md
 supersedes_for_external_release:
@@ -19,7 +20,7 @@ tags: [interpretability, circuits, diffusion, language-models, state-space-model
 
 Jacob Hollenbeck
 
-*Draft 2, 2026-09-30.*
+*Draft 2, 2026-09-30; updated 2026-10-01.*
 
 > **Draft notes.**
 >
@@ -56,21 +57,21 @@ No single site on the path is necessary, but the path as a whole is. A four-quad
 - Transplanting the target state at one step leaves the image far from the target (pixel MAD 48.4); at all steps it reproduces it (0.47).
 - Removing any single step leaves the target (color contrast, 5/5 seeds). Removing all steps reverts the image to the source (interchange) or to the null image (deletion).
 
-**Language-model stores are time circuits on necessity, but they are written once and committed late.** This holds in SmolLM2, Qwen2.5, Pythia, Gemma-2 and Mamba.
-- **Necessity is path-constituted, along a late band.** In the cleanest cells (Qwen2.5-1.5B, Gemma-2-2B), no single layer carries more than 0.08 of the effect and no three adjacent layers more than 0.18–0.23. A late band of 6–8 layers carries 0.76–0.96; in Gemma-2 it is the four sliding-window layers. Smaller models narrow the band to 2–4 layers. Qwen2.5-0.5B narrows it to a redundant pair, which is a space circuit with backup.
-- **The write is not distributed.** One residual write at the subject authors the answer from any layer up to a late commit band at about 0.7–0.9 of depth.
-- **A commit ledger accounts for the store.** The residual write equals the sum of the downstream per-layer commits. It holds within 0.02–0.15 in Mamba, where the committing layer is the one that stops its own clock. In transformers it is redundant over 1–3 layers; in Gemma-2 only the sliding-window layers commit.
+**Language-model stores are time-formed, with concentrated or redundant late commits.** Formation and commitment are measured in SmolLM2, Qwen2.5, Pythia, Gemma-2 and Mamba; the distribution of necessity differs by cell.
+- **Necessity is path-constituted, along a late band in the clean cells.** In the cleanest identity cells (Qwen2.5-1.5B, Gemma-2-2B), no single layer carries more than 0.08 of the effect and no three adjacent layers more than 0.18–0.23. Tested six- and eight-layer bands carry 0.76–0.96. In Gemma-2, four sliding-window layers carry 0.58–0.59 together, with global layers adding about 0.17 jointly. Across the tested cells, necessity ranges from a redundant pair or four-layer short band to wider six- and eight-layer bands. Qwen2.5-0.5B identity is the redundant pair, a space circuit with backup.
+- **One residual intervention can seed formation.** A residual write at the subject during the formation window lets the unchanged suffix author the answer; formed-store write ports are concentrated or redundant in the late band at about 0.7–0.9 of depth.
+- **A commit ledger characterizes the store.** The residual-write curve matches the downstream sum of per-layer state writes within 0.02–0.15 in Mamba, where the committing layer is the one that stops its own clock. Transformer curves match in shape but overshoot in summed magnitude because late write ports are redundant; in Gemma-2 only the sliding-window layers commit positively.
 - **The store is read at the commit layer.** That read can be replaced by an exact-row join.
 - **A computed answer is written in two places.** In addition problems, the operands are committed early at their own positions and the sum is formed late at the query position.
 
-**Standard instruments see the controls, not the class.**
+**Instrument coverage is uneven.**
 - *A space circuit, found:* on Pythia-70M induction, three heads are necessary and sufficient (recovered loss ≈ 1.0), and one head alone carries 0.58–0.72 of the necessity.
 - *Anthropic's circuit tracer misses the store.* On the same Gemma-2-2B panel where a whole-state cut over the second half flips 83–84% of answers:
   - its attribution graph places the subject's largest layer at L0 and routes about 30% of influence through error nodes;
-  - no feature-level intervention it supports — zero-ablation or a matched interchange; its own top features or all ~18,000 features at every position — converts the identity more than 0.08 of the way (median), and none flips more than 1 of 12 answers.
+  - no tested feature ablation recovers a necessity flip; feature-basis interchange of its own top features or all ~18,000 features at every position converts identity at most 0.08 of the way (median), with at most 1 of 12 flips.
 - *Elsewhere:* single-step patching reports the FLUX carrier as absent, and in a blind-graded trial four standard readouts gave the wrong verdict in 4 of 4 cases.
 
-**Why it matters.** A time circuit has no single site to find, ablate or edit. The consequences are concrete:
+**Why it matters.** The single-site/whole-path gap changes how we locate and edit a carrier. The consequences are concrete:
 - edits must be installed early;
 - *when* a write lands selects *what* changes;
 - a prompt compiles to an installable source that reproduces native images exactly.
@@ -89,9 +90,9 @@ No single site on that path is necessary, but the path as a whole is. A four-qua
 - *FLUX.2 Klein 4B.* Removing any single denoising step leaves the target image on 5 of 5 seeds; removing every step reverts it.
 - *Language transformers* (SmolLM2, Qwen2.5, Pythia and Gemma-2). In the cleanest cells, a stored object is spread over a late band of the subject's key/value trace. No single layer carries more than 0.08 of the effect and no three adjacent layers more than 0.23, yet six to eight layers carry 0.76–0.96. In smaller models the band narrows, down to a redundant pair of layers in Qwen2.5-0.5B.
 
-In language models the path is written once and committed late: a single residual write authors the store, a short late band commits it, and a commit ledger accounts for it layer by layer. The same holds in Mamba.
+In language models, one residual intervention can seed a store that the unchanged layer suffix forms and commits late. A commit ledger compares that source write with the downstream formed-store write ports. Mamba shows a similar formation window with more concentrated state retention.
 
-**Standard tools do not find these circuits.** On Gemma-2-2B, cutting the subject's state over the second half of the layers flips 83–84% of answers. On the same panel, Anthropic's circuit tracer places the subject's influence at layer 0 and in error nodes. No intervention it supports moves the answer more than 0.08 of the way (median): not ablation, not a matched interchange, not its own top features, not all ~18,000 features at every position. On a space circuit (Pythia-70M induction), standard head ablation finds the three responsible heads.
+**The tested feature basis misses identity and partly captures color.** On Gemma-2-2B, cutting the subject's state over the second half of the layers flips 83–84% of answers. On the same panel, Anthropic's circuit tracer places the subject's influence at layer 0 and in error nodes. The tested feature interventions move identity at most 0.08 of the way (median), including interchange of all ~18,000 features at every position. Color is partly captured: all-layer feature interchange reaches 0.31–0.42. On a space circuit (Pythia-70M induction), standard head ablation finds the three responsible heads.
 
 ---
 
@@ -277,7 +278,9 @@ The cost is generality: the exact paths cover a few pinned models, need a job sc
 
 **A methods vignette.** A "0.2218 / 0.0013" pair circulated in our notes as the single-step / all-step contrast. No instrument produced it. The program's own audit caught it and replaced it with receipt-backed values [integral-residual-dynamics §1]. Plausible numbers that no instrument produced are the failure mode this paper is about.
 
-> **TODO [R1]:** timeline figure (Aug 5 → Sep 30) from `obsidian/blog/2026-08-28-221644-the-week-in-review-from-the-final-boss-to-a-transaction-abi.md` and the source map in the outline.
+![Figure 1. Timeline](figures/fig1-timeline.png)
+
+**Figure 1. How the time circuit was found, Aug 5 – Oct 1, 2026.** Each event is a dated lab note or experiment record (sources in `figures/make_figures.py`, `EVENTS`). The lanes separate diffusion, language-model, instrument and retraction milestones. Retractions are part of the path: the crossed-pairing leak, the rank-16 clock, and the Mamba and 30B in-forward certificates.
 
 ## 5. A time circuit in a diffusion transformer
 
@@ -412,23 +415,36 @@ Across all 12 cells (four cuts × three setups), the cuts are:
 
 No pooled or global conditioning path exists: the transformer receives only `encoder_hidden_states`. So no bypass is hiding content.
 
-**Contrast with language models.** The language-model signature was robust to every method (§6.2). With the dp artifact removed, FLUX is too, when necessity is read as "removes the target".
+**Contrast with language models.** The sampled language-model necessity comparison was robust to every tested method (§6.2); method robustness of the subsequently identified late writers remains untested. With the dp artifact removed, FLUX's tested necessity pattern also survives, when necessity is read as "removes the target".
 
 **Reading rule for FLUX necessity.** Every necessity verdict in this paper is read as nearest image class plus MAD to source, target and null (E1c, E7), not as dp alone. Two values remain dp-only: the prompt-mean (−0.367) and resample (−0.03) rows of the method table above, whose job recorded no image distances. Read alone, dp ≈ 0 means "neither source nor target", which includes the null image. Source-interchange values in the certified-circuits paper are unaffected, because interchange reverts to the source and dp −1 is unambiguous there.
 
 ### 5.6 The FLUX family
 
-The semantic-object interface built on the route replicates across checkpoints at trend level, not as nine-gate certificates [`research/bfl/demos/semantic-circuit-object-part-III.md`].
+The initial semantic-object interface tests replicated across checkpoints at trend level [`research/bfl/demos/semantic-circuit-object-part-III.md`]. E8 below extends Klein 9B to a two-seed four-quadrant identity result; it passes 8/9 route gates, so it remains short of a strict nine-gate certificate.
 
 | checkpoint | result |
 |---|---|
 | base-4B (undistilled, 50-step CFG) | white fox .888, sham ≤ .13 |
-| Klein 9B (one seed) | subject write .743 vs sham .043; cross-scene value port .471 vs .076 |
+| Klein 9B (initial one-seed interface test) | subject write .743 vs sham .043; cross-scene value port .471 vs .076 |
+| Klein 9B (E8: two seeds, two route windows) | identity: four quadrants, single-step write ≤ 0.48 vs all-step 0.90–0.95, 8/9 route gates; lighting mixed, 7/9 gates |
 | FLUX.1-schnell (T5 + CLIP) | object survives at noun-phrase-window grain: single row −.05 / .03, ±3 window .56 / .63 |
 
 On FLUX.1-schnell, the route carries 0.6915 of image progress, 98% of the all-joint ceiling of 0.7069.
 
-> **TODO [E8] (optional):** a nine-gate certificate on Klein 9B.
+**E8: Klein 9B four quadrants and nine gates (MEASURED; `saturn/experiments/2026-10-01-e8-klein9b-nine-gate/FINDINGS.md`; `job-7f6bc96ee3f0` identity, `job-98b74ff88115` lighting).**
+- **Setup.** FLUX.2 Klein 9B (8 joint + 24 single blocks), bf16, 256², 4 steps, two seeds. Two route windows: joint.2–4 + single.0 (the 4B indices) and joint.4–7 + single.0. The no-op is exact (RGB MAD 0.0).
+- **Identity is a time circuit.**
+  - Every single-step swap leaves the target (8/8 step × seed × route), and every all-step swap reverts to the source.
+  - No single-step write reaches the 0.90 bar (max 0.48), while the all-step write reaches 0.90–0.95.
+  - All-step zero-deletion gives the null image.
+  - This upgrades the 9B row above from a one-seed trend to a two-seed four-quadrant result.
+- **Lighting is mixed.**
+  - On seed 7217, swapping step 0 alone reverts the image to the source (MAD 37 vs 50), on both windows.
+  - On seed 4242 the all-step necessity is weak (MAD to source 27 vs 58) and the all-step write is 0.85–0.87.
+- **No single block set.** The two windows certify interchangeably (identity sufficiency 0.945 vs 0.902).
+- **Not a strict nine-gate certificate.** Identity passes 8/9 (the wrong-axis donor fails on one seed) and lighting 7/9 (sufficiency and dose).
+- **Pattern.** The first-step bottleneck in lighting is the same pattern as SDXL (E9, §5.7). Where a diffusion route deviates from the clean time shape, it does so at the earliest step.
 
 ### 5.7 Other diffusion families
 
@@ -441,11 +457,19 @@ On FLUX.1-schnell, the route carries 0.6915 of image progress, 98% of the all-jo
 
 **Chroma (DiT).** Its 28-step trajectory invalidates every step after step 0 (`job-3d34f8ee687c`).
 
-All of these receipts are private and come from one checkpoint each.
+All of these receipts are private and come from one checkpoint each. E9 below runs the full four-quadrant test on the same SDXL writer route. It finds path-distributed sufficiency but individually necessary early steps, so the route does not pass the complete certificate.
 
 **Independent of the retracted rank-16 controller (R2, checked).** That retraction concerns a Qwen2.5-Coder-1.5B layer-16 controller [`obsidian/blog/2026-08-31-143646-rank-16-was-a-basin-not-a-clock.md`]. The SDXL fits are rank-1 SVD schedules on SDXL UNet leaves; their records use no rank-16 controller and no later record retracts them.
 
-> **TODO [E9] (optional):** a four-quadrant certificate on one SDXL route.
+**E9: the four-quadrant test on the SDXL writer route (MEASURED; `saturn/experiments/2026-10-01-e9-sdxl-four-quadrant/FINDINGS.md`; `job-ad5d115e5faf`).**
+- **Setup.** WAI / Illustrious v150, mug → clock, seed 88122, 28 steps. The cut is the input to the `up1` writer at each denoising step.
+- **Gates.** The exact no-op holds on 28/28 calls in both runs, with byte-identical RGB.
+- **Sufficiency is a time circuit.** Writing the target state at any single step leaves the source (max scene_progress 0.215), and all steps together author the target (0.985, MAD 1.13).
+- **Necessity is not.** All-step interchange reverts to the source (dp −0.97, MAD 1.14). Single-step interchange at step 1 alone also leaves the image nearest the source (MAD to source 47.8 vs target 73.6), and step 0 is a near tie at source (60.6 vs 63.0). Steps 2–27 each leave the target.
+- **Verdict.** By the preregistered mapping, the route is space-like on necessity (the first steps are a bottleneck) and time-like on sufficiency. The primary prediction, a time circuit, is refuted.
+- **Deletion.** As in FLUX, deletion is non-specific: all-step zero and a norm-matched sham both give the null image, while zeroing one mid step leaves the target (0.914).
+
+SDXL's route is therefore a mixed cell, the mirror image of the language-model cells (Figure 2). There necessity is spread and the write is concentrated; here the write is spread and necessity sits in the earliest steps, where layout is set (inference). One seed, one contrast, one sampler (EulerAncestral).
 
 ## 6. Time circuits in language and state-space models
 
@@ -488,11 +512,15 @@ Every necessity number is from the isolated swap with every single layer swept. 
 **Reading.**
 - **The whole-path half holds in every powered cell.** The second half of the subject's key/value trace is necessary (flip 0.86–0.97), and the whole trace authors the target (1.00).
 - **Single-layer behavior splits.**
-  - Three cells are necessity-clean: Qwen2.5-1.5B, Gemma-2-2B and SmolLM2 color.
+  - Necessity-clean cells include Qwen2.5-1.5B and Gemma-2-2B identity and color, and SmolLM2 color.
   - Four cells contain a late writer that carries 30–51% of necessity and up to 0.99 of the write: SmolLM2 identity, Qwen2.5-0.5B identity, and Pythia-410M at both steps.
-- **Window necessity refines the split (E19, §6.1b).** The necessity-clean cells need a 6–8-layer late band (no three adjacent layers above 0.42). The late-writer cells need 4 layers, and Qwen2.5-0.5B only the pair L20–21.
+- **Window necessity refines the split (E19, §6.1b).** No three adjacent layers carry more than 0.42 in the necessity-clean cells. The smallest tested qualifying windows span six or eight layers, except Gemma identity, which remains below 0.8 at eight. The late-writer cells have qualifying four-layer windows, and Qwen2.5-0.5B only needs the pair L20–21.
+
+![Figure 2. Single-site quadrants](figures/fig2-quadrants.png)
+
+**Figure 2. Single-layer necessity against single-layer write, every fully swept cell.** The whole path is 1.00 on both axes in every cell, so these two quadrants decide the class. No language-model cell lies in the time-circuit quadrant (bottom left). Necessity is low (≤ 0.18 in the clean cells), but one isolated K/V write at the commit layer installs 0.31–0.99 (0.54–0.81 in the clean cells). Mamba cells lie near the space-circuit quadrant, with one late writer. Sources: E3b/E17 and E16 reports (`figures/README.md`).
 - **SmolLM2 color is not clean on both halves.** Its necessity is clean, but its best single-layer write (0.542) exceeds the 0.2 bar.
-- **No language-model cell yet passes all four quadrants under full sweeps.** The two necessity-clean identity cells were never write-swept.
+- **No language-model cell passes all four quadrants under full sweeps.** E15/E17 completed the write sweeps of the two necessity-clean identity cells and found concentrated isolated writes: 0.81 at Qwen2.5-1.5B L23 and 0.81 at Gemma-2-2B L22.
 
 **Qwen3-30B-A3B.** The public certificate [`evidence/ar-certificates/`] used the *in-forward* swap. Under the isolated swap, the in-forward reproduction is bit-exact (clean margin 7.2817), but no ablation, single or whole-path, flips the answer, and necessity is flat across all 48 layers. We read the in-forward 30B certificate as a confound of the in-forward swap: it lets the subject read its own replaced entries (§2.3). The bundle stays public as a record of the in-forward protocol, and this paper does not cite it as a time-circuit certificate.
 
@@ -500,7 +528,7 @@ Every necessity number is from the isolated swap with every single layer swept. 
 >
 The bundle README now marks both of its entries (Qwen3-8B, Qwen3-30B-A3B) as in-forward-only, two-layer-sampled records.
 
-### 6.1b Written once through the residual, committed late
+### 6.1b One residual intervention seeds formation, committed late
 
 Rule 6 says writes go through the residual. E16 does exactly that for every panel cell and for Mamba (`saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E16-residual-writes.md`; Mamba, Amendment R of the sweep record).
 - **Transformers:** in the filler prompt, the residual entering block L at the subject position is replaced with the clean subject's.
@@ -508,7 +536,7 @@ Rule 6 says writes go through the residual. E16 does exactly that for every pane
 
 Each job ran in 24–42 s. The no-op checks are ≤ 4e-5 (transformers) and ≤ 2.5e-4 (Mamba, batch noise in the vocabulary head).
 
-**Formation window.** One residual write authors the target from any layer up to the late writer, and fails right after it:
+**Formation window.** Moving a single residual write through depth reveals where it can seed target authorship. Authority falls across or after the late commit, with the transition differing by cell:
 
 | cell | residual write still ≈ full at | after | formed-store writes at those layers |
 |---|---|---|---|
@@ -522,7 +550,11 @@ Each job ran in 24–42 s. The no-op checks are ≤ 4e-5 (transformers) and ≤ 
 | Mamba-2.8B identity | L42 | L43 0.86, L44 0.22, L47 0.01 | L43 0.12, L44 0.60, L45 0.10, L47 0.11 |
 | Mamba-2.8B counting | L38 | L39 0.81, L41 0.69, L44 0.01 | L39 0.13, L41 0.14, L44 0.67 |
 
-**A commit ledger.** The residual write at ℓ equals the sum of the single-layer formed-store writes at the layers still downstream.
+![Figure 3. Per-layer profiles](figures/fig3-layer-profiles.png)
+
+**Figure 3. One residual intervention seeds formation, committed late.** Per-layer isolated necessity (bars), residual write (grey) and isolated K/V or state write (orange), by relative depth. Each residual-write arm uses one intervention and leaves the suffix native; its authority falls across or after the late commit. Formed-store writes peak late, with concentration or redundancy differing by cell and Gemma's positive ports interleaved on sliding-window layers. Single-layer necessity is ≤ 0.08 in Qwen2.5-1.5B and Gemma identity and 0.31 at SmolLM2's identity writer. In Mamba identity it is concentrated at the writer (0.67–0.81).
+
+**A commit ledger.** We compare the residual write at ℓ with the sum of the single-layer formed-store writes at the layers still downstream. Equality is an empirical approximation with different accuracy in the two families, not an assumed conservation law.
 - **Mamba conserves to within 0.02–0.15.** Pearson r = 0.998–1.000 over the late half, and the per-layer state writes sum to 0.94–1.09.
 - **Transformers match the shape but not the magnitude.** r = 0.95–1.00 over the late half, but the per-layer writes sum to 0.99–2.96.
 
@@ -531,11 +563,11 @@ Each job ran in 24–42 s. The no-op checks are ≤ 4e-5 (transformers) and ≤ 
 - **The leak was real, but only in Qwen2.5-1.5B's early layers.** Its in-forward "L0 0.985" becomes 0.009 (identity) and 0.086 (color) under isolation, and its best single layer moves to L23 (0.81 / 0.75). In every other cell the isolated and in-forward per-layer values agree to 3 decimals.
 - **The magnitude overshoot is not the leak.** The late-half ledger r is the same under isolation (0.95–1.00, within 0.005 of the in-forward arm), and Σ of isolated single-layer writes is still 0.99–2.96.
 - **The overshoot is redundancy at the commit.** Adjacent late layers each nearly suffice alone, so their sum exceeds the joint write: Qwen2.5-0.5B identity L20 0.67 + L21 0.75; SmolLM2 identity L19 0.99 with L20–22 another 0.76.
-- **Downstream of the commit layer the ledger is additive.** Max |R(ℓ) − Σ_{k≥ℓ} write(k)| is 0.001–0.15.
+- **Downstream of the commit layer the ledger is approximately additive.** Max |R(ℓ) − Σ_{k≥ℓ} write(k)| is 0.001–0.15 in the non-Gemma cells; Gemma identity is 0.003 and Gemma color is 0.208 (E17 table).
 
 **Gemma-2-2B commits only on its sliding-window layers (MEASURED parity; meaning is inference).** Gemma-2 alternates sliding-window (even index) and global (odd index) attention. Every positive commit is on a sliding-window layer: L16, L18, L20 and L22, at 0.39–0.81 (identity) and 0.15–0.65 (color). The global layers between them write slightly *negative*: L17 −0.06 / −0.08 and L21 −0.07 / −0.03. On these 15-token prompts the 4096-token window covers the whole context, so the split is a difference in what the two layer types learned, not in what they can reach. It is the most redundant commit in the panel (Σ 2.96).
 
-So Mamba commits through one clock-stopping layer and conserves exactly. Transformers commit redundantly over 1–3 adjacent late layers, and the sum saturates there.
+So Mamba's dominant commit is a clock-stopping layer, with a downstream-sum approximation accurate to 0.02–0.15. Transformers have redundant late write ports whose individual gains can sum beyond the joint write; Gemma's positive ports are spread over interleaved sliding-window layers.
 
 **How long is the path? Window necessity (E19, MEASURED).** Low single-layer necessity has two readings. In a *time circuit*, the store is spread along the path. In a *redundant band*, two or three adjacent layers back each other up, which is the backup behavior behind the Hydra effect [McGrath 2023]. E19 separates them. It cuts every contiguous window of 2, 3, 4, 6 and 8 layers with the isolated swap, and separately cuts everything except the window (`saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md`; seven jobs, `job-6d0625ad15ee` … `job-14e48b6093e8`).
 - **Setup.** Preregistered with two outcomes:
@@ -555,8 +587,8 @@ So Mamba commits through one clock-stopping layer and conserves exactly. Transfo
 | Gemma-2-2B identity | 0.08 | **0.18** | > 8 | L16–23: 0.76, flip 0.60 | path |
 
 What this shows:
-- **The path prediction holds in every necessity-clean cell, and the band prediction in none of them.** Qwen2.5-0.5B identity, which the full sweeps had already called a late writer pair, turns out to be a redundant two-layer pair (L20–21 carries 0.99; the other 22 layers carry nothing). At the layer grain, that is a space circuit with backup.
-- **The path is a late band, not the whole second half.** Every best window contains the write commit layer, and cutting everything else leaves the answer mostly intact (complement −0.30 to 0.20; Qwen2.5-1.5B color 0.39). The clean paths are 6–8 layers long and start at 0.6–0.8 of depth.
+- **The necessity-clean cells favor a wider path over a three-layer backup band.** Their best three-layer windows are below 0.5. The smallest tested windows reaching 0.8 span six or eight layers, except Gemma identity, which reaches only 0.76 at eight and remains unresolved at larger widths. Widths five and seven were not swept, so these are bounds from the tested grid rather than exact minimum lengths. Qwen2.5-0.5B identity, which the full sweeps had already called a late writer pair, turns out to be a redundant two-layer pair (L20–21 carries 0.99; the other 22 layers carry nothing). At the layer grain, that is a space circuit with backup.
+- **The necessity is concentrated within a late band, not uniformly across the whole second half.** Every best window contains the write commit layer, and cutting everything else leaves the answer mostly intact (complement −0.30 to 0.20; Qwen2.5-1.5B color 0.39). The tested six- and eight-layer bands start at 0.6–0.8 of depth.
 - **In Qwen2.5-1.5B, the band runs from the commit layer to the end.** L22–27 carries 0.96, L21–26 0.50, and L24–27 −0.11.
 - **In Gemma, the band is its sliding-window layers (E19b, `job-14e48b6093e8`).**
   - The four sliding layers L16, L18, L20 and L22 together carry 0.58–0.59 (flip 0.26 / 0.52). Individually they carry 0.02, 0.00, 0.04 and 0.08.
@@ -565,16 +597,24 @@ What this shows:
   - The Gemma path is non-adjacent: four sliding-window layers interleaved with global layers that matter only jointly.
 - **Training sharpens the band.** Pythia identity needs six layers at step 4000 (0.85) and four at step 16000.
 
-So the language-model time circuit is a time circuit at the layer grain within a late band. That band starts at the commit and is read from the commit onward (§6.8).
+Thus the necessity-clean language-model stores have distributed necessity within a late band at the layer grain. That band includes the commit and is read from the commit onward (§6.8). Their formed-store writes remain concentrated, so these results do not establish the strict four-quadrant signature defined in §2.
+
+![Figure 4. Window necessity](figures/fig4-window-necessity.png)
+
+**Figure 4. Window necessity (E19, E19b).** Left and middle: the fraction of whole-path necessity removed by cutting a contiguous window, plotted by width and start layer. No narrow window carries the store in either model. In Qwen2.5-1.5B, the six layers from the commit layer to the end carry 0.96. Right: in Gemma-2-2B, the four sliding-window layers carry 0.58, the global layers alone *raise* the answer, and the 8-layer window carries 0.76 (95% CIs).
+
+![Figure 5. Necessity by cut size](figures/fig5-cut-size.png)
+
+**Figure 5. Necessity carried by the best cut of size k.** A space circuit is carried by its best single site: Pythia-70M's relay head L2H1 carries 0.58, and the minimal three-head circuit 0.95 (E4). In the necessity-clean language-model cells the best single layer carries ≤ 0.18 and the best three ≤ 0.42. The smallest tested qualifying windows span six or eight layers, while Gemma identity remains below 0.8 at eight (E19). Short-band cells have qualifying four-layer windows, and Qwen2.5-0.5B's redundant pair has a qualifying pair. FLUX (orange, four denoising steps) is read on its dp axis. Its best single step, the last, moves the image 0.37–0.46 of the way toward the source, yet the image stays nearest the target on every seed. That is the time-circuit verdict under the nearest-class rule (§5.5), but the step is not inert.
 
 **Relation to prior work on factual recall.** Three lines of work describe parts of this picture in transformers.
 
 - **Causal tracing** [Meng 2022]. A noised run of a factual prompt is repaired by restoring the clean hidden state at one layer and position. The effect is strong at the last subject token in middle layers, and ROME then edits the mid-layer MLP there.
-  - *Shared:* our residual write is the same class of intervention (we write into a filler prompt instead of a noised one), and the formation window is the causal-tracing curve.
+  - *Shared:* our residual write is the same class of intervention (we write into a filler prompt instead of a noised one), and its formation window is analogous to the causal-tracing curve.
   - *Different:* causal tracing measures single-site *sufficiency* and reads it as location. The other half of the certificate says otherwise. Isolated necessity shows that no single layer holds the store (≤ 0.08 in the cleanest cells; ≤ 0.23 for any three adjacent layers, E19), while a residual write succeeds from any layer up to the commit band. The tracing curve marks where a write *can* author the answer, not where the store *is*.
   - *Consequence:* this is a mechanism for the finding that causal-tracing localization does not predict which layer is best to edit [Hase 2023].
 - **Dissecting recall** [Geva 2023]. Early MLPs enrich the last subject position, the relation propagates to the final token, and upper-layer attention heads extract the attribute from the enriched subject. They show this with attention-edge and sublayer knockouts.
-  - *Shared:* our formation window corresponds to enrichment. Our late commit, with a read concentrated in one late head (E13), corresponds to extraction.
+  - *Shared:* our formation window corresponds to enrichment. Our late commit, with a read concentrated in a small late head set (one head in the clean identity cases, top-8 for SmolLM2 color; E13), corresponds to extraction.
   - *Different:* we add
     - full single-layer sweeps under exact gates, which separate path-distributed necessity from the concentrated write;
     - the commit ledger;
@@ -592,16 +632,16 @@ So the language-model time circuit is a time circuit at the layer grain within a
 
 None of these works treats the diffusion case, where the time circuit is clean (§5), and none tests a feature-circuit instrument against such a store (§9, E6).
 
-**Reading (inference).** In these language models the stored object is:
-- *written once* through the residual;
-- *formed* by the model;
-- *committed* into the read store (K/V or recurrent state) over a short late band at ~0.7–0.9 of depth.
+**Reading (inference).** In these language models:
+- one intervention through the residual can seed the stored object during the formation window;
+- the unchanged downstream model forms the consumer-readable state;
+- commitment into the read store (K/V or recurrent state) is concentrated or redundant in a late band at ~0.7–0.9 of depth.
 
-The answer then reads the committed store, and that read is distributed (§6.1 necessity). The "late writer" of the full sweeps is the largest commit. In Mamba, the committing layer is the one that stops its clock (§6.4).
+The answer then reads the committed store. Native necessity is distributed in the necessity-clean transformer cells, while other transformer cells and Mamba have more concentrated writers (§§6.1, 6.4). The "late writer" of the full sweeps is the largest measured formed-store write port. In Mamba, that layer nearly stops its clock (§6.4).
 
-This is the language-model form of the paper's time axis. The time is in the *formation and commit*, not in a necessity-distributed store.
+This is the language-model form of the paper's time axis: *formation and commit* occur through the ordered layer suffix. A sufficient intervention at one upstream residual boundary does not place the whole circuit at that boundary; the unchanged suffix still constructs the later store. E16 shows that one intervention can seed this process, not that the native model makes exactly one write. This time-formed profile is distinct from the strict four-quadrant signature at the formed-store cut (§2).
 
-> **TODO [W] (naming, low priority):** pick a name for the language-model structure (written once through the residual, formed by the model, committed late, read at the commit layer). Candidates:
+> **TODO [W] (naming, low priority):** pick a name for the language-model structure (seeded by one residual intervention, formed by the unchanged suffix, committed late, read at the commit layer). Candidates:
 > - "set-and-forget circuit" (the author's suggestion);
 > - "write-once / commit-late store";
 > - "commit circuit";
@@ -642,7 +682,7 @@ So a computed object is not stored at a single carrier the way a recalled one is
 
 ### 6.4 The certificate is about the cut, not the architecture
 
-**Transformers.** Two transformers that certify at the key/value cut *lose their own certificates* at the hidden-state cut. When only the cut changes, single-site necessity moves from 1.0–1.5% to 172–236% of the whole-path effect (`job-13a15543fbb1`, `job-8e2d02c4a51e`, `job-0622676c3473`, `job-f11cab813f66`).
+**Transformers.** In two transformers, changing only the cut from stored key/value state to the hidden state moves the sampled single-site necessity from 1.0–1.5% to 172–236% of the whole-path effect (`job-13a15543fbb1`, `job-8e2d02c4a51e`, `job-0622676c3473`, `job-f11cab813f66`). The later full write sweeps show that neither cell passes all four quadrants at the key/value cut (§6.1, E15/E17). The comparison establishes cut sensitivity, rather than two current certificates.
 
 **Mamba's state cut.** Mamba carries its prompt as a per-layer pair: convolution state C_ℓ and recurrent state H_ℓ. Sealing and rehydrating that pair reproduces the native continuation 64/64 tokens with zero logit error [`saturn/experiments/2026-09-02-mamba-state-source-rosetta/FINDINGS.md`].
 
@@ -668,13 +708,13 @@ So a computed object is not stored at a single carrier the way a recalled one is
 | hidden state | fails: L32 alone is 108.8% of the whole-path effect, reproducing the August measurement |
 
 **Reading.**
-- **Transformers.** The key/value cut certifies and the hidden cut does not. This stands on fully swept cells.
+- **Transformers.** The key/value cut can expose distributed necessity while the hidden-state cut concentrates it. That cut dependence survives, but no fully swept transformer cell passes all four quadrants because the formed-store write is concentrated late (§6.1, E15/E17).
 - **Mamba.** No cut yields the distributed four-quadrant certificate.
   - At the family-native state cut, the full trace still authors the answer (write 1.00), and second-half necessity is about equal to the whole.
   - But within that late block, a single layer at about 0.69–0.83 of the depth carries 40–81% of necessity and 0.39–0.70 of write sufficiency.
   - The concentration persists from 130M to 2.8B, so it is not a scale-floor effect within this range.
   - The two-layer samples (L12/L18, L24/L36, L32/L48) fell outside the writer in every case.
-- **Scope.** Two-layer sampling produced the E5 "certificates". With full sweeps, Mamba looks like the transformer cells with late writers (§6.1): a necessary and sufficient whole path, plus one writer at 0.69–0.83 of the depth. Mamba differs in that *no* cell is necessity-clean, whereas three transformer cells are. Mamba's state is also path-formed by a separate test (below).
+- **Scope.** Two-layer sampling produced the E5 "certificates". With full sweeps, Mamba looks like the transformer cells with late writers (§6.1): a necessary and sufficient whole path, plus one writer at 0.69–0.83 of the depth. Mamba differs in that *no* cell is necessity-clean, whereas several transformer cells are. Mamba's state is also path-formed by a separate test (below).
 - **Retraction.** We retract the E5 claim that Mamba certifies at the state cut. "Mamba does not certify" is correct at every cut tested.
 
 **The Mamba late writer is the layer that stops its clock.** We measured each layer's retention over the suffix, from subject to readout, on the same checkpoints (`saturn/experiments/2026-09-30-mamba-writer-clock/FINDINGS.md`; jobs `job-c115d4cdb811`, `job-92c7e677d9db`, `job-a90710f84b0d`; recompute canary ≤ 2.9e-5). Retention is exp(A·Σ_suffix Δ).
@@ -722,8 +762,8 @@ No attention model up to 2.6B avoids the writer: Qwen2.5-1.5B and Gemma-2-2B are
 
 **Is the late writer the "final boss"?** The conjecture had three parts [`obsidian/blog/2026-08-21-114500-the-final-boss-circuit.md`]: a *late*, *path-constituted* store that smaller circuits *write into*. On the full evidence:
 - **Late: yes.** Every language-model cell commits at 0.6–0.9 of depth, and every Mamba cell does too (§6.1b, §6.4).
-- **Path-constituted: only within a band.** In the necessity-clean cells, a 6–8-layer late band carries the store, and no three adjacent layers carry more than 0.23 (E19). In the other cells it is a short band or a redundant pair.
-- **Written into: yes, but only through the residual.** Writes enter during the formation window and are committed at the band's first layer (E16, E17).
+- **Path-distributed necessity: within a late band in the clean cells.** Qwen2.5-1.5B identity reaches 0.96 in six layers and Gemma identity reaches 0.76 in eight; their best three adjacent layers carry only 0.23 and 0.18 (E19). Other clean cells have qualifying six- or eight-layer windows. In the remaining cells the effect is concentrated in a short band or a redundant pair.
+- **Written into: yes.** An upstream residual intervention during the formation window seeds the store through the unchanged suffix (E16). Direct isolated K/V writes at late formed-store ports can also author the answer (E17); commitment is concentrated or redundant within the late band, not necessarily at its first layer.
 - **The answer reads it there.** Restoring the read at the commit layer alone recovers the answer (E13), and an exact-row join there equals the oracle (E18).
 
 So the "final boss" is a role held by a short late band, not a single layer. The conjecture that every model has one is supported only for the eight models fully swept here (five transformers, three Mamba).
@@ -749,7 +789,7 @@ The receipt itself records "terminal claim: false".
 
 **Relation to task and function vectors.** In-context task vectors [Hendel 2023] and function vectors [Todd 2024] carry a task as one vector, added to the residual stream at one layer of the query position. The corridor here is a different object: a set of *source rows*, keys and values at many positions and layers, that later positions read through attention. Its keys and values are each necessary for transfer (keys only 0/4, values only 0/4, joint 4/4). A residual vector is a write; the corridor is the table that writes of that kind form. On n = 4 we do not claim the corridor cannot be compressed into a function vector, only that the carriage we measured is joint.
 
-### 6.7 Chain-of-thought scratchpad state (limited)
+### 6.7 Chain-of-thought scratchpad state
 
 Swapping the scratchpad token's keys and values flips the answer in four families:
 
@@ -762,15 +802,34 @@ Swapping the scratchpad token's keys and values flips the answer in four familie
 
 (`saturn/experiments/2026-08-21-ird-fruit-battery/`, private.)
 
-**Caveat.** The design uses one prompt pair per family, and the swapped token is the answer the scratchpad already states. This measures copying, not causal use of intermediate steps.
+**Caveat.** The design uses one prompt pair per family, and the swapped token is the answer the scratchpad already states. This table measures copying, not causal use of intermediate steps; E10 below tests causal use directly.
 
 **Model virtual memory now supports this test.** The page swap / unmount / remount recipe runs on Qwen2.5-0.5B with exact page restore (`saturn/experiments/2026-09-30-mvm-mamba-cot/FINDINGS.md`, `job-8fa1e41f6adb`). On a tiny panel it discriminates the two cases:
 - unmounting a *copied* value flips the answer (necessity 0.84);
 - a *non-copied* intermediate arithmetic step is not used measurably (−0.015).
 
-That is copying, not computation, for these items.
+That is copying, not computation, for those items. E10 (below) shows the "not used" reading does not survive a design without restatement.
 
-> **TODO [E10]:** an intermediate-step swap with ≥ 20 items, against truncation and mistake-insertion baselines [Lanham 2023]. Run it through model virtual memory (`saturn.model_os.CausalContextVM`) as page-level swap, unmount and remount of scratchpad pages, with exact no-op and uninstall gates. The Prefill(A‖B) ≠ Mount(…) check (§8) is the coherence control. This needs the MVM integration logged in `saturn/request.jsonl` (`mvm-model-os-vm-cli-cot-mamba`).
+**E10: non-copied intermediate steps are causally used (MEASURED; `saturn/experiments/2026-10-01-e10-cot-intermediate-steps/FINDINGS.md`; `job-5c53b6865f0f` Qwen2.5-0.5B-Instruct, `job-f62de8e717a0` Qwen2.5-1.5B-Instruct).**
+- **Setup.** Two-step arithmetic with teacher-forced scaffolds. An item is admitted only if the model greedily writes each step and the answer: 48 and 46 items. In single-intermediate items, the answer is one operation past a scratchpad value that is never restated.
+- **Gates.**
+  - The exact remount gate is 0.0 on every item.
+  - The Prefill-vs-Mount coherence control differs by ≤ 0.07, so the page graft composes.
+  - The copied-value canary flips 1.00.
+
+| intervention on the non-copied step | 0.5B (n = 32) | 1.5B (n = 30) |
+|---|---|---|
+| K/V unmount (mean-ablate the step's rows) | 1.00 flip (10.3 nats) | 1.00 (11.2) |
+| K/V swap from a counterfactual item: authors *its* answer | 0.47 | **1.00** |
+| mistake insertion, text [Lanham 2023] | 1.00 | 1.00 |
+| truncation after the step, text [Lanham 2023] | 1.00 | 1.00 |
+
+- **The step is causally used.** Page-level interventions on a non-copied step match the text baselines, and a corrupted step propagates arithmetically (42 → 43 gives 38 = 43 − 5).
+- **Specificity.** In two-step chains, unmounting the early step alone is inert (0/8, |Δ| ≤ 0.04 nats), because its value is re-derived into the next written step. Unmounting the consumed step flips 8/8, and unmounting the whole scratchpad flips every item.
+
+**Reading.** A non-restated consumed intermediate is a necessary single-site carrier on the scratchpad axis. In two-step chains, early-step unmount is inert (0/8), while consumed-step unmount is decisive (8/8). Whole-scratchpad necessity therefore does not establish necessity distributed across scratchpad steps. The earlier "not used" (−0.015) is attributed to the downstream text restating the value (inference); E10 establishes causal use when that restatement is removed.
+
+**Scope.** Synthetic arithmetic, Qwen2.5 Instruct only, one greedy seed; the 1.5B run is bf16.
 
 ### 6.8 The read side: can an address replace the selection? (partly open)
 
@@ -793,12 +852,12 @@ That is copying, not computation, for these items.
 - Shuffled and off-by-one rows give chance.
 - The model's own contextual keys, used as join keys, fail in both models (P4). Row-unique-correct keys collapse with depth (Qwen2.5 at length 12: 192 of 192 at L0, 9 at L12, 7 at L24).
 
-**What is not established** (the program's own same-day audit) [`HANDOFF.md`]:
+**What the first exact-join test did not establish** (the program's own same-day audit) [`HANDOFF.md`]. E12/E18 below address these limitations in part:
 - **Dose.** The selected heads natively put only 0.22–0.40 of their attention on the source row, so the one-hot read amplifies the answer row about 3×. "Exact beats soft" may be amplification.
-- **Metric.** Scoring was forced choice, not full-vocabulary top-1.
-- **Key finding.** Token keys were unique by construction, so the join was equivalent to the oracle and the key-finding step was never tested.
+- **Metric.** Scoring was forced choice, not full-vocabulary top-1. E12 later tests native dose and full-vocabulary scoring.
+- **Key finding.** Token keys were unique by construction, so this first join was equivalent to the oracle. E12/E18 later derive a standardized model-key bucket; query-derived semantic selection remains unresolved.
 
-**The fully assembled stack.** A test that combined Thott custody, a spectral bucket, an exact typed key and a native Qwen consumer was mechanically valid, but behaviorally null:
+**An earlier, separate fully assembled stack.** A test that combined Thott custody, a spectral bucket, an exact typed key and a native Qwen consumer was mechanically valid, but behaviorally null:
 - exact typed pages generated the held continuation 0/4;
 - the record states "terminal claim: none" (`job-3e5b1ba855f9`; `saturn/experiments/2026-09-24-thott-spectral-causal-context/FINDINGS.md`).
 
@@ -814,14 +873,14 @@ That is copying, not computation, for these items.
   - That is the same layer where the residual write's formation window closes (§6.1b).
 - **The read can be replaced by a join.** A one-hot read of the exact subject row in the top-k reading heads reproduces the clean answer: Qwen top-8 full-vocab top-1 0.86; SmolLM2 color 1.00. Shuffled rows stay at chance.
 - **Authorship.** Forcing a donor's subject row authors the donor's answer (Qwen +1.0 vs control 0; SmolLM2 at its concentration layer).
-- **The bucket we built from the model's de-rotated L0 keys was degenerate** (cosine ≥ 0.9999 across positions), so the oracle row carried the join.
+- **E13's raw, unstandardized L0-cosine bucket was degenerate** (cosine ≥ 0.9999 across positions), so the oracle row carried that join. E18 later fixes this degeneracy by standardization.
 
-**Status.** The language-model picture is:
+**Interim status after E13.** The language-model picture is:
 - written once through the residual;
 - committed late (§6.1b);
 - read at that late layer by a join on the exact row.
 
-**A model-derived address (E12).** A model-derived address replaces the selection (`saturn/experiments/2026-09-30-e12-bucket-exact-address/FINDINGS.md`; `job-09432bae9699`, `job-b8db28ceb7d0`; additive `job-edbd0fad3c04`, `job-dd5884c9fa04`). The oracle canary reproduces the prior audit bit-for-bit.
+**A model-derived bucket and exact occurrence key (E12).** A bucket derived from the model's keys, together with a rule-given exact occurrence key, replaces selection on synthetic induction (`saturn/experiments/2026-09-30-e12-bucket-exact-address/FINDINGS.md`; `job-09432bae9699`, `job-b8db28ceb7d0`; additive `job-edbd0fad3c04`, `job-dd5884c9fa04`). The oracle canary reproduces the prior audit bit-for-bit.
 
 How the address is computed:
 - The de-rotated layer-0 key is standardized. This removes the shared, nearly collinear component that defeated E13's raw-cosine bucket.
@@ -895,11 +954,11 @@ It is the complete parent edge set (336 and 448 edges), with no compact envelope
 
 So one model holds a distributed path and a space-like component on it.
 
-**The same mix appears elsewhere.** Qwen2.5-0.5B identity (L20–21), Pythia-410M (L16→L17) and all three Mamba models (L20, L39, L44) show it: the whole path is necessary and sufficient, yet one late writer carries most of the effect (§§6.1, 6.4, 6.5). The two-layer samples fell outside the writer in every case. On the full-sweep evidence, a mixed path plus late writer is the common case in language models, and a clean time circuit is the exception.
+**The same mix appears elsewhere.** Qwen2.5-0.5B identity (L20–21), Pythia-410M (L16→L17) and all three Mamba models (L20, L39, L44) show it: the whole path is necessary and sufficient, yet late writers carry a substantial fraction of the effect (§§6.1, 6.4, 6.5). The two-layer samples fell outside the writer in every case. On the full-sweep evidence, time-formed execution with concentrated or redundant late writes is common in the tested language-model cells; none passes the strict four-quadrant certificate.
 
-**Qwen2.5-0.5B** has a certified space circuit (induction source routing) and a time-circuit identity cell.
+**Qwen2.5-0.5B** has a certified space circuit (induction source routing) and a time-formed identity store whose late K/V necessity is concentrated in a redundant pair, L20–21 (E19). The identity cell does not pass the strict four-quadrant certificate.
 
-> **TODO [R5]:** side-by-side four-quadrant figure from `job-ec1ab31d35f2` and the E3b sweep, plus a per-layer necessity/write profile for SmolLM2 identity and the three Mamba models, and the E19 window-necessity profile (best window by width) for every transformer cell.
+Figures 2–5 show the same-model contrast across all cells: the single-site quadrants (Figure 2), the per-layer profiles (Figure 3), window necessity (Figure 4) and necessity by cut size against the Pythia space circuit (Figure 5).
 
 **Pythia-70M: writer and relay.** The writer pair is a space circuit within its layer. The whole-model account also needs the upstream layer-2 relay that builds the induction keys.
 
@@ -965,11 +1024,13 @@ A time circuit has two parts that behave differently across prompts.
 
 **Time-formed state cannot be assembled from parts formed independently.** Holding text and order fixed, key/value pages compiled together match the native next token on 6/6 panels, while pages compiled independently match 1/6 [`saturn/experiments/2026-09-25-book-index-two-source-coherence/FINDINGS.md`]. In general, Prefill(A‖B) ≠ Mount(Prefill(A), Prefill(B)). The stored state is a product of its causal path.
 
-The address side of this split (why the consumer selects the rows it does) is treated in §6.8 and left open.
+The address side of this split is partly resolved in §6.8: a subject-referenced bucket isolates the exact row, and a join at the commit layer matches the oracle. A query-derived address for semantic row selection remains open.
 
-> **TODO [W]:** figure: the static skeleton with dynamic circuits as overlays.
+![Figure 6. Static skeleton, dynamic overlays](figures/fig6-skeleton-overlays.png)
 
-## 9. Why standard instruments miss time circuits
+**Figure 6. Static infrastructure and dynamic circuits in FLUX.2 Klein 4B (schematic).** Grey: the static skeleton, meaning route blocks joint.2–joint.4 and single.0 at each of four denoising steps, with the carried register between steps. Coloured: dynamic circuits that load onto it. These are the spectral address at joint.3 across all four steps; the two parents of the final image (register at t2, 0.403; program at single.0 at t3, 0.712; both, pixel-exact); and the payload edits that reuse the route. All numbers are quoted from this section.
+
+## 9. How sampled and feature basis tests understate time formed stores
 
 **Blind-graded trial.** Six preregistered cases compared standard readouts with exact-replay verdicts, and a context-free grader judged each against the model's actual output [`research/papers/pointwise-instruments-miss-distributed-circuits/evidence/instrument-trial/`].
 - In 4 of 4 main cases, the standard readout gave the wrong verdict and the exact-replay verdict matched.
@@ -987,11 +1048,11 @@ The address side of this split (why the consumer selects the rows it does) is tr
 - In GPT-2 small, which is below the scale floor, one layer suffices.
 - TransformerLens reproduces our implementation on GPT-2 to within 1.5×10⁻⁴ nats [pointwise §4.5].
 
-**Single-layer key/value patching** reports the store as absent. The best single layer gives .08 in Gemma-2-2B and Qwen2.5-1.5B, against .94 and .92 for the second half [pointwise §4.3]. Contiguous windows do not rescue it: the best three adjacent layers give .18 and .23, and only a 6–8-layer late band carries the effect (E19, §6.1b).
+**Single-layer isolated key/value necessity** understates the store. The best single layer gives .08 in Gemma-2-2B and Qwen2.5-1.5B, against .94 and .92 for the second half [pointwise §4.3]. Narrow three-layer windows do not localize it: their best effects are .18 and .23. The six-layer Qwen identity band carries .96, while Gemma identity reaches .76 at eight (E19, §6.1b).
 
 **Causal tracing** [Meng 2022] makes the complementary error. It restores one site and reads success as location. A residual write succeeds anywhere in the formation window, so the trace points at a layer that is not, by itself, necessary (§6.1b).
 
-**Attribution graphs** freeze attention and do not explain cross-position flow [Ameisen 2025]; QK tracing extends them to attention scores [Kamath 2025]. Time circuits at the key/value cut are cross-position, time-accumulated transport.
+**Attribution graphs** trace cross-position effects with attention patterns frozen, but do not explain the QK selection that produced those patterns [Ameisen 2025]. QK tracing extends them to feature interactions that explain attention scores [Kamath 2025]. The key/value store is read across positions; its formation and commit must be distinguished from that selection.
 
 **A caution in the other direction.** A full single-layer sweep is itself a standard instrument, and here it was the one that caught the concentrated writers. Single-site tools are not wrong, only incomplete when sampled. The failure mode is reading "no single sampled site matters" as "no single site matters", or as "nothing matters".
 
@@ -1009,12 +1070,12 @@ The address side of this split (why the consumer selects the rows it does) is tr
 
 *What Saturn reports on the same panel:* cutting the subject's isolated K/V over the second half flips 0.83 (identity) and 0.84 (color) of items, while no single layer carries more than 0.15.
 
-*Matched operator (MEASURED, `job-03225ce474d1`).* Here every active transcoder feature is set to its value on the filler prompt: Saturn's swap, in the instrument's own basis. The no-op gate is exact. The results:
-- **Identity is invisible.** Swapping every feature at every position and layer (~18k) moves the answer at most 0.08 of the way to the filler, with at most 1/12 flips. The identity sits in the transcoders' error terms.
+*Feature-basis interchange analogue (MEASURED, `job-03225ce474d1`).* Every transcoder feature active in either the clean or filler run is set to its value on the filler prompt. This is a closer analogue of the whole-state swap, but it leaves the reconstruction error terms clean. The no-op gate is exact. The results:
+- **Identity is not recovered through the tested feature coefficients.** Swapping every feature at every position and layer (~18k) moves the answer at most 0.08 of the way to the filler, with at most 1/12 flips. The missing effect is attributed to the unchanged error terms (inference).
 - **Color is partly visible, with the time-circuit shape:** single layers ≤ 0.12, second half 0.19–0.23, all layers 0.31–0.42. That is about a third of Saturn's 0.81 and 1.00.
 - **The graph's own top features are not the store.** Swapping them moves the answer *away* from the filler (−0.02 to −0.19).
 
-So, on its native operator and on the matched one alike, circuit-tracer does not find the store that a whole-state cut removes on 0.83–0.84 of items.
+Thus the tested circuit-tracer feature basis does not recover full causal control of this Gemma store. Identity is nearly unaffected by feature interchange, and color is partly captured; a whole-state K/V cut removes the answer on 0.83–0.84 of items.
 
 ## 10. Consequences for editing and generation
 
@@ -1079,13 +1140,13 @@ The same structure explains a known puzzle in language-model editing: the layer 
 ## 12. Limitations and open problems
 
 - **Sample sizes.** The original language-model grid used at most four items per cell, readouts are single-token, and most diffusion results use two seeds.
-- **Replication.** All work is from one lab, with no external replication. Several receipts are private; TODO [R6] and E3 reduce this.
-- **Sampled cells.** Several cited cells still rest on two-layer samples: Qwen3-30B, the computed-object cell, and the E2b method panel. §§6.1 and 6.4 show that sampled verdicts can flip.
-- **Layer grain, late band.** The language-model time circuit is path-constituted at the layer grain within a late band of 6–8 layers (E19). Below the layer grain (heads, key versus value, positions) we have not swept, and a finer instrument could find a compact site inside the band.
+- **Replication.** All work is from one lab, with no external replication. E3 supplies a public AR bundle; several other receipts remain private and TODO [R6] remains open.
+- **Sampled cells.** The E2b method-sensitivity panel still samples L12 and L18, leaving late-writer method robustness untested. The public Qwen3 bundle preserves historical two-layer-sampled in-forward records, but the current 30B verdict comes from a full isolated sweep. E11 fully sweeps the computed-object cell over 45 items and finds a mixed late-writer profile. §§6.1 and 6.4 show that sampled verdicts can flip.
+- **Layer grain, late band.** In the necessity-clean language-model cells, E19 localizes distributed necessity to a late band. Qualifying tested windows span six or eight layers, except Gemma identity, which remains below 0.8 at eight; these are not exact minimum lengths. Below the layer grain (heads, key versus value, positions) we have not swept exhaustively, and a finer instrument could find a compact site inside the band.
 - **Minimality.** A certificate identifies a path-constituted mechanism at a cut, not a minimal or unique path. E1 shows the FLUX path is not unique.
 - **Necessity.** FLUX whole-path deletion is non-specific (a random sham also nulls the image) and, at the input cut, equals removing the prompt. Interchange is the informative necessity operator (§5.5).
-- **Region, not address.** We establish a causal *region*, not a depth- or position-specific *address*.
-- **Why, not just what.** We explain what moved, where, and to which consumer, but only partly why attention attended there. Selection is replaceable by an address join: a bucket from the model's own layer-0 keys plus an exact key matches or beats the native read on synthetic induction under matched dose and full-vocabulary scoring (E12), and on the time-circuit reads at the commit layer (E18). But the address the model could form from the query alone finds the subject row only on repetition text (1.00), not on semantic reads (0.00) (§6.8). For semantic reads, the QK "why" is open.
+- **Region and address.** The diffusion result identifies a joint region rather than a minimal unique route. For LM reads, E18 identifies the exact subject row and commit-layer concentration using a subject-referenced key. That key presumes selection; a semantic query-to-row address remains unknown.
+- **Why, not just what.** We explain what moved, where, and to which consumer, but only partly why attention attended there. E12 replaces selection on synthetic induction with a model-key bucket plus a rule-given exact occurrence key, and separately audits native dose and full-vocabulary scoring. E18 replaces the commit-layer read using a subject-referenced singleton bucket and exact-row join. The address formed from the query alone finds the subject row only on repetition text (1.00), not on semantic reads (0.00) (§6.8). For semantic reads, the QK "why" is open.
 
 
 ## 13. Related work
@@ -1093,10 +1154,10 @@ The same structure explains a known puzzle in language-model editing: the layer 
 **Patching, tracing and editing.** Activation and path patching locate components by intervening at one site [Meng 2022; Wang 2022]. Best practice for the operator and the metric is set out in [Zhang & Nanda 2023; Heimersheim & Nanda 2024].
 - Causal tracing [Meng 2022] and dissecting recall [Geva 2023] describe factual recall in transformers. §6.1b relates our formation window, commit and read to both, and to deferred commitment [Agarwal 2026].
 - Causal-tracing localization does not predict where editing works [Hase 2023]. Our necessity sweeps supply one reason (§6.1b, §10).
-- Self-repair [McGrath 2023; Rushing & Nanda 2024] is another way single-site ablation underestimates importance. It differs from a time circuit: in self-repair, downstream components compensate *in reaction to* an ablation, while in a time circuit the path itself is the store. Static backup among a few adjacent layers would also hide a store from single-layer cuts. E19 tests this with every contiguous window: it holds for Qwen2.5-0.5B (a redundant pair) and fails in the necessity-clean cells, where no three adjacent layers carry more than 0.23 (§6.1b).
+- Self-repair [McGrath 2023; Rushing & Nanda 2024] is another way single-site ablation underestimates importance. It differs from a time circuit: in self-repair, downstream components compensate *in reaction to* an ablation, while in a time circuit the path itself is the store. Static backup among a few adjacent layers would also hide a store from single-layer cuts. E19 tests compact contiguous backup: Qwen2.5-0.5B identity has a redundant pair, while the clean identity cells in Qwen2.5-1.5B and Gemma need wider tested bands and their best three adjacent layers carry only 0.23 and 0.18 (§6.1b). Other necessity-clean cells have best three-layer effects up to 0.42.
 - Faithfulness scores depend on the ablation method [Miller 2024]. We therefore report interchange and deletion separately and gate both on exact replay.
 
-**Circuit discovery.** Automated circuit discovery [Conmy 2023], sparse autoencoders and transcoders [Lieberum 2024], and attribution graphs [Ameisen 2025; Lindsey 2025] all rank sites or features. QK tracing extends attribution graphs to attention [Kamath 2025], and the circuit-tracer library releases them [Hanna 2025]. §9 runs circuit-tracer against a time-circuit store, under its native ablation and under a matched interchange.
+**Circuit discovery.** Automated circuit discovery [Conmy 2023], sparse autoencoders and transcoders [Lieberum 2024], and attribution graphs [Ameisen 2025; Lindsey 2025] all rank sites or features. QK tracing extends attribution graphs to attention [Kamath 2025], and the circuit-tracer library releases them [Hanna 2025]. §9 runs circuit-tracer against the store under native feature ablation and a feature-basis interchange analogue that leaves the reconstruction error terms clean.
 
 **Distributed effects, 2026.** Two recent papers observe the distributed effect without naming a class of circuit.
 - In-context task identity transfers 0% under single-position intervention at every layer of Llama-3.2-3B, but up to 96% under multi-position intervention [Cheng & Zhang 2026].
@@ -1122,15 +1183,20 @@ These locate *where* an edit acts. §10 adds *when*.
 
 There are two classes of circuit and one certificate to tell them apart.
 - **Space circuits** are what the field's instruments find.
-- **Time circuits** are built across steps or depth, and those instruments miss them by construction.
+- **Time-formed circuits** are built across steps or depth. Sampled single-site measurements can understate their causal support or confuse a write port with the formed store; full sweeps and multi-site interventions recover more of the structure.
 
 **What we certified.**
 - A time-accumulated carrier in a production diffusion transformer.
-- The same certificate shape in transformer language models at the key/value cut.
+
+**What the completed language-model experiments establish.**
+- Whole-path necessity and sufficiency, with distributed native necessity in the clean transformer cells and concentrated or redundant late write ports. No fully swept LM cell passes the strict four-quadrant certificate.
+- One upstream residual intervention can seed formation through the unchanged layer suffix. A sufficient seed does not localize the whole downstream circuit to the write site.
+- Exact-row reads are join-replaceable at the commit, while query-derived semantic addressing remains open.
+- K/V-page interventions causally audit use of non-restated intermediate arithmetic state on the bounded E10 panel.
 
 **What strict application changed.** Applying the certificate strictly sharpened every claim:
 - the FLUX carrier is a redundant joint-region text stream, and its time-accumulation signature holds under both interchange and deletion;
-- in language models, full sweeps found a late writer at ~0.7–0.9 of the depth in most cells, transformer and Mamba alike. The clean four-quadrant time circuit is established in diffusion. In language models it is so far only half-established, cell by cell.
+- in language models, full sweeps found late formed-store write ports at ~0.7–0.9 of depth in most cells, transformer and Mamba alike. The clean four-quadrant signature is established in diffusion. In necessity-clean transformer cells, three strict quadrants hold: no single-layer necessity, whole-path necessity and whole-path sufficiency. Single-layer formed-store writes exceed the low-write bar, so the fourth does not hold. Mamba also has concentrated singleton necessity.
 
 So the space/time distinction is a property of a behavior at a cut, and the same model can hold both.
 
@@ -1138,9 +1204,9 @@ So the space/time distinction is a property of a behavior at a cut, and the same
 
 **What the instruments see.**
 - On a space circuit (Pythia-70M induction), standard ablation finds three heads that are necessary and sufficient.
-- On the time-circuit store in Gemma-2-2B, the attribution graph puts the subject's influence at L0 and in error nodes. No feature-level intervention it supports — ablation or matched interchange, at its top features or at every feature — converts the answer more than 0.08 of the way. A whole-state cut over the second half flips 83–84% of answers.
+- On the tested store in Gemma-2-2B, the attribution graph puts the subject's influence at L0 and in error nodes. All-layer feature interchange moves identity at most 0.08 of the way and captures color partly, at 0.31–0.42. A whole-state cut over the second half flips 83–84% of answers.
 
-The class is real. It is the norm for stored objects in these models, and today's tools are built not to see it.
+The diffusion results establish the full path-wide signature at a declared cut. The language-model results establish time-formed stores with different necessity and write profiles. Their comparison shows why source controllability, native causal support, commitment and readout must be measured separately.
 
 ---
 
@@ -1201,17 +1267,17 @@ The class is real. It is the norm for stored objects in these models, and today'
 | E16 | Residual-write sweeps, every panel cell + Mamba (rule 6) | **done** (incl. Gemma `job-ed4ce1ac5974`): formation window + Mamba commit ledger | same + `…-mamba-full-layer-sweeps/` |
 | E3b-M | Full sweeps: Mamba-130M, 370M, 2.8B (identity + counting) | **done: none certified** (single late writer) | `saturn/experiments/2026-09-30-mamba-full-layer-sweeps/` |
 | E5 | Mamba state-cut certificate | **done** (sampled; retracted by E3b-M) | `saturn/experiments/2026-09-30-mamba-state-cut-certificate/` |
-| E6 | circuit-tracer head-to-head (Gemma-2-2B) | **done**: graph spreads subject influence (largest layer L0), ~30% error; no feature ablation flips the answer (0/20, attention frozen or not) vs K/V second-half cut flipping 0.83–0.84 | `saturn/experiments/2026-09-30-circuit-tracer-head-to-head/` |
+| E6 | circuit-tracer head-to-head (Gemma-2-2B) | **done**: graph spreads subject influence (largest layer L0), ~30% error; native feature ablation flips 0/20; feature-basis interchange with clean error terms moves identity ≤ 0.08 and color 0.31–0.42; K/V second-half cut flips 0.83–0.84 | `saturn/experiments/2026-09-30-circuit-tracer-head-to-head/` |
 | E4 | Pythia recovered-loss R (mean + resample) | **done**: writer necessary, not sufficient; five-head set necessary and sufficient (R ≈ 1.0); necessity concentrated in L2H1 and L3H6 | `saturn/experiments/2026-09-30-e4-pythia-recovered-loss/` |
 | E7 | Multi-seed FLUX color necessity | **done**: 5/5 seeds; single step leaves the target, all-step interchange → source, deletion → null | `saturn/experiments/2026-09-30-e7-flux-color-multiseed/` |
-| E8 | Klein 9B nine-gate certificate | optional | — |
-| E9 | SDXL four-quadrant certificate | optional | — |
-| E10 | CoT intermediate-step redesign | optional | — |
+| E8 | Klein 9B four quadrants + nine gates | **done**: identity is a time circuit (2 seeds × 2 route windows; single-step ≤ 0.48 vs all-step 0.90–0.95); lighting mixed (step 0 alone → source on one seed); nine gates 8/9 identity, 7/9 lighting | `saturn/experiments/2026-10-01-e8-klein9b-nine-gate/` |
+| E9 | SDXL four-quadrant certificate (up1 writer route) | **done**: mixed; write path-constituted (single step ≤ 0.215, all 0.985), but step 1 alone is necessary (→ source); prereg TIME refuted | `saturn/experiments/2026-10-01-e9-sdxl-four-quadrant/` |
+| E10 | CoT intermediate-step test (≥ 20 items, Lanham baselines, K/V pages) | **done**: non-copied steps causally used (unmount 1.00 flips in 0.5B and 1.5B; counterfactual swap authors 0.47 / 1.00; matches mistake/truncation); chain early step inert (0/8), consumed step necessary (8/8), whole path necessary | `saturn/experiments/2026-10-01-e10-cot-intermediate-steps/` |
 | E11 | Full sweep of the computed-object cell (§6.3) | **done**: mixed cell (necessity L17 0.35); operands written early at carriers (≤L7), sum written late at query (L18→L21) | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E11-computed-object.md` |
-| E12 | Exact-join audit (dose, full vocab) + ambiguous keys + model-derived bucket address (§6.8) | **done: PASS**. Bucket from the model's own L0 phase words + exact key = oracle; within 0.03 of clean (additive); beats native on ambiguous keys | `saturn/experiments/2026-09-25-ar-exact-join-admission/`, `saturn/experiments/2026-09-30-e12-bucket-exact-address/` |
-| E13 | Cut-and-join on a time-circuit read (§6.8) | **done**: read concentrated at the commit layer, join-replaceable; bucket degenerate | `saturn/experiments/2026-09-30-e13-time-circuit-read-join/` |
+| E12 | Exact-join audit (dose, full vocab) + ambiguous keys + model-derived bucket (§6.8) | **done: PASS in the tested synthetic circuit**. Model L0 phase bucket + rule-given exact occurrence key = oracle; within 0.03 of clean (additive); beats native on ambiguous keys | `saturn/experiments/2026-09-25-ar-exact-join-admission/`, `saturn/experiments/2026-09-30-e12-bucket-exact-address/` |
+| E13 | Cut-and-join on a time-circuit read (§6.8) | **done**: read concentrated at the commit layer, join-replaceable; raw unstandardized bucket degenerate, later fixed by E18 standardization | `saturn/experiments/2026-09-30-e13-time-circuit-read-join/` |
 | E14 | Hybrid attention + SSM model full sweep (§6.4) | optional | — |
-| E19 | Window necessity: every contiguous 2/3/4/6/8-layer window + complement, six transformer cells; Gemma sliding/global sets (E19b) | **done**: path in every necessity-clean cell (best 3 adjacent ≤ 0.23 Qwen2.5-1.5B, 0.18 Gemma; 6–8-layer late band carries 0.76–0.96); Qwen2.5-0.5B = redundant pair; Gemma band = sliding layers (0.58) + global interaction | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md` |
+| E19 | Window necessity: every contiguous 2/3/4/6/8-layer window + complement, six transformer cells; Gemma sliding/global sets (E19b) | **done**: wider-band trend in necessity-clean cells (best 3 adjacent ≤ 0.23 Qwen2.5-1.5B identity, 0.18 Gemma identity); tested six/eight-layer bands carry 0.76–0.96, Gemma identity below 0.8 at eight; Qwen2.5-0.5B = redundant pair; Gemma sliding/global joint effects retained | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md` |
 | E18 | Bucket + exact join on time-circuit reads (E13 cells at the commit layer) and on natural text (§6.8) | **done**: subject bucket fixes E13 (size 1; join = oracle at the commit layer; Gemma sliding layers yes, global layers no); a query-formed address finds the row only on repetition (1.00), not semantic reads (0.00) | `saturn/experiments/2026-09-30-e18-bucket-join-time-reads/` |
 
 **Reproduction entry point.** `saturn/experiments/2026-09-30-space-and-time-circuits/` wraps every experiment above without moving its record: `run.py` lists, resubmits, collects and canary-checks each one, `registry.json` maps each ID to its record directory, FINDINGS, submit script and cited jobs, and `canaries.json` holds each canary's recorded value and tolerance.
@@ -1220,11 +1286,11 @@ The class is real. It is the norm for stored objects in these models, and today'
 
 | ID | Item |
 |---|---|
-| R1 | Timeline figure. |
+| R1 | **Done**: Figure 1. |
 | R2 | **Done**: independent (the retraction is a Qwen-Coder controller); §5.7 citations tightened. |
 | R3 | Fix mis-citations inherited from the IRD and transaction drafts: the FLUX four-quadrant numbers are `job-7d53e47755f7` (case-1 ledger), not `job-6650205b45eb`; the 30B receipts are `job-7cc5b24954f0` and `job-ef8408d9c3d2`, not `job-38c1c37dd591` (a SmolLM2 smoke job); the scene-edit .9133 is in `research/bfl/demos/scene-circuit-certificate.md`, not `job-3cd13239dd91`. |
 | R4 | Scale-floor wording after E3b. |
-| R5 | Same-model figure and per-layer profiles. |
+| R5 | **Done**: Figures 2–5 (`figures/make_figures.py`). |
 | R6 | Commit and redact `research/demos/`. |
 | R7 | Locate or drop the measurement paper's unreceipted Pythia-70M single-layer claim. |
 | R8 | The symbol-table read count is 21/36, not 35/54. |

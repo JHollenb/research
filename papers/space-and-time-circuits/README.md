@@ -2,7 +2,7 @@
 title: "A New Class of Circuits: Space and Time"
 type: research-documentation
 status: draft-2
-updated: 2026-09-30
+updated: 2026-10-01
 ---
 
 # A New Class of Circuits: Space and Time
@@ -16,7 +16,7 @@ updated: 2026-09-30
 
 The argument has three parts:
 
-1. **Two classes of circuit.** Space circuits are localized and visible to single-site tools. Time circuits are built up over denoising steps or along a token's key/value trace. Single-site tools cannot see them, while a four-quadrant certificate identifies them.
+1. **Circuit structure across sites and time.** FLUX exhibits the full four-quadrant signature across denoising steps. Language models exhibit time-formed stores with concentrated or redundant late write ports, and distributed necessity in the clean transformer cells. Source writing, formation, commitment and readout are measured separately; the fully swept LM cells do not pass the strict four-quadrant certificate.
 2. **Static and dynamic parts.** A time circuit is static infrastructure, and per-prompt dynamic circuits load onto it.
 3. **Editing follows from timing.** The image-editing and scene-compilation results follow from that timing structure.
 
@@ -27,6 +27,8 @@ Draft 2 (2026-09-30): full prose for every section whose results are settled. Op
 - **TODO [E#]** marks an experiment to run (Appendix A);
 - **TODO [R#]** marks a collation or correction step (Appendix B);
 - **TODO [W]** marks writing only.
+
+The 2026-10-01 status update reconciles the completed experiments through E19 with the summaries and limitations; E14 remains optional and unrun. Earlier sampled verdicts and historical nulls remain labeled as such. E10 establishes causal use of non-restated intermediate arithmetic state; E12/E18 establish bucket-and-join replacement in the tested settings, while query-derived semantic selection remains open.
 
 Results produced on 2026-09-30 by the blind-certification and grail tooling are excluded at the author's direction.
 
