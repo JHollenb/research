@@ -27,16 +27,20 @@ The new manuscript is intended to supersede the separate IRD and transaction dra
 
 Localization, formation, storage, writing, and consumption can occur at different sites and times. A pointwise null therefore need not imply that the model lacks a causal mechanism.
 
-The paper's operational time-circuit definition fixes a model, behavior, accumulation axis, state cut, intervention, and unchanged native consumer. It requires all four quadrants:
+The paper separates three claims: an operational discovery with strict path-distributed diffusion instances; architectural generalization of the broader time-formed family; and implemented applications through scene compilation and the Saturn VM. The introduction maps each claim to its evidence. Section 3 explains replay, typed execution and model virtual memory; section 10 specifies the compiler and reports the VM's native continuation, durable-state and residency results.
+
+A **time-formed circuit** has controlling state that depends causally on ordered execution. Local seeds, commits, latches and readouts can belong to that family. Its **strict path-distributed subtype** fixes a model, behavior, accumulation axis, state cut, intervention, and unchanged native consumer, and requires all four quadrants:
 
 | Intervention | Every individual site | Whole path |
 |---|---|---|
 | Necessity: remove or replace state | Behavior survives | Behavior is removed |
 | Sufficiency: install target state | Little target transfer | Target behavior is installed |
 
-The universal quantifier matters: a weak average singleton effect does not suffice if one individual site is decisive. The signature is cut- and granularity-specific. It also does not, by itself, uniquely exclude redundancy, additive accumulation followed by a nonlinear consumer, or other competing explanations; dose, window, ordering, and control panels provide additional anatomy.
+The universal quantifier matters: a weak average singleton effect does not suffice if one individual site is decisive. The signature is cut- and granularity-specific. **Nonlinearity and non-additivity are not conditions of the definition:** even a linear additive route can pass. Competing mechanism explanations do not revoke an operational pass; dose, window, ordering and control panels provide separate anatomy. Architectural generalization concerns the broader time-formed family, while each specimen's strict-subtype status is reported separately.
 
 Saturn captures native execution, forks matched alternatives, changes typed state, and executes the original downstream model to tokens or pixels. Its exact restore/replay checks protect against confusing runtime error with a causal effect. The model's output supplies the behavioral evidence. See the [Saturn architecture and use protocol](../../../saturn/docs/SATURN-BIBLE.md), [evidence-plane guide](../../../saturn/docs/EVIDENCE-PLANE.md), and [capability map](../../../obsidian/blog/2026-08-14-what-saturn-can-actually-do.md).
+
+Replay recomputes a future from captured state; a fork owns its future writes, and rewind restores a retained cut. Model virtual memory separates logical state, physical residency and causal ancestry. Eviction/reload preserves state; a causal swap or mean ablation changes it. A compiled scene source is produced before target rendering, while live queries and native denoising still execute. These distinctions make the compiler and VM claims concrete without treating state reuse as cached answers.
 
 ## What the current evidence says
 
@@ -93,6 +97,7 @@ The [bundled report and verifier](evidence/hybrid-attn-ssm/README.md) check repo
 | Experiment | Connection and boundary |
 |---|---|
 | [Scene-source compilation](../../demos/scene-generator.md) and its [full paper](../../demos/docs/scene-generator-paper.md) | Complete prompt-derived source installation reproduces 21/21 native images across seven specimens and five diffusion families. Exact native replay establishes execution equivalence; it does not establish independent semantic editing or prompt fidelity. |
+| [Durable causal-context VM](../../../saturn/experiments/2026-09-29-causal-context-vm-integration/FINDINGS.md) and [Mamba state VM](../../../saturn/experiments/2026-09-30-mvm-mamba-cot/FINDINGS.md) | Shared exact-history context, private computed continuation, bounded residency, abort/restore and fresh-process resumption; independently implemented recurrent-state sweeps agree with the paper's measurements. These are bounded execution results, with numerical contracts reported per backend. |
 | [Scene editing](../../demos/scene-editing.md) and [real hotpatch futures](../../bfl/demos/real-hotpatch-cinema.md) | Timing changes which properties a write can control. Register and program state can jointly reproduce an endpoint that neither alone reproduces. |
 | [Character registers](../../demos/jen-character-register.md), [sprite registers](../../demos/jen-sprite-register.md), and [trait diagnostics](../../demos/anime-sprite-register.md) | Saved native reference operands can be replayed and reused. Fine identity, spatial ownership, and actor binding retain visible failures. |
 | [Relations and transport](../../demos/flux-relations-and-transport.md) | Object movement depends on spatial support and early timing; donor-assisted contextual results must be separated from donor-free binding. |
@@ -120,7 +125,7 @@ The original IRD C7 scratchpad swaps changed answers across four model families,
 
 The single-intermediate result supports causal use of non-restated arithmetic state on admitted, scaffolded synthetic items. It does not establish an automated monitor of free-generated long reasoning or hidden motives.
 
-**The chain is not a time circuit under the current definition at scratchpad-step grain.** Its later step is individually necessary and its counterfactual state is individually sufficient to direct the answer. Pooling the inert early step with the decisive later step gives 50% average single-step flips, but the definition concerns every singleton. Whole-path removal does not exceed the strongest singleton on the binary answer-change endpoint.
+**The chain does not meet the strict path-distributed subtype at scratchpad-step grain.** Its later step is individually necessary and its counterfactual state is individually sufficient to direct the answer. Pooling the inert early step with the decisive later step gives 50% average single-step flips, but the strict definition concerns every singleton. Whole-path removal does not exceed the strongest singleton on the binary answer-change endpoint.
 
 The code prefills the entire scratchpad before intervening. It therefore tests the final answer's use of already formed state; it does not test whether the early step was required to generate the later one. Calling the early value "re-derived" after intervention is not directly supported, because the later state was already present.
 

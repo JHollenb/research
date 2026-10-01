@@ -20,7 +20,7 @@ tags: [interpretability, circuits, diffusion, language-models, state-space-model
 
 Jacob Hollenbeck
 
-*Draft 3, 2026-10-01; incorporates the recovered overnight E14 run and E20 residual-seed mediation.*
+*Draft 3, 2026-10-01; incorporates the recovered overnight E14 run, E20 residual-seed mediation, and explicit replay, compiler and VM contracts.*
 
 > **Draft notes.**
 >
@@ -46,7 +46,7 @@ In FLUX.2 Klein 4B, the text-conditioning carrier shows this signature across th
 
 Decoder and state-space sweeps expose different formation, commitment and read profiles. In Qwen and Gemma identity cells, singleton necessity shares are at most 0.08 while late isolated K/V writes recover about 0.81 of normalized answer-logprob gain. In Qwen2.5-1.5B, blocking an endogenous late K/V band removes a median 0.924 of an upstream residual seed's logprob effect; transplanting that band into an unseeded recipient recovers 0.871. Mamba concentrates control at a late retention layer. Falcon's hybrid state has attention-dominated dependence with weaker individual write ports and partial SSM writing. On admitted scaffolded arithmetic items, non-restated intermediate K/V state causally controls subsequent answers.
 
-The tested Gemma circuit-tracer feature basis captures little identity control and partial color control despite large native-state intervention effects. Together, these results separate where state can be seeded, where it is stored and how it is consumed, and connect that distinction to temporal editing and source compilation.
+The tested Gemma circuit-tracer feature basis captures little identity control and partial color control despite large native-state intervention effects. We make the execution consequences explicit: a scene compiler lowers prompt-derived source before target rendering and reproduces 21/21 recorded native images across seven specimens and five diffusion families; Saturn's VM executes typed state transactions, including durable transformer context and recurrent-state interventions. Together, these results separate where state can be seeded, where it is stored and how it is consumed. The strict certificate, architectural variations and implemented applications are distinct claims with separately reported evidence.
 ---
 
 ## 1. Introduction
@@ -65,14 +65,15 @@ The route was carrying its signal *across time*. The remaining steps preserved t
 
 **Time-formed circuits.** We use **time-formed circuit** for the broad family in which controlling state depends causally on an ordered execution history. The strict four-quadrant subtype is a **path-distributed time circuit**: no single site at the declared cut is necessary or sufficient, while the whole path is both. Our working name was the "final boss": the conjecture that a model funnels its output through a late, path-constituted store that smaller circuits write into [`obsidian/blog/2026-08-21-114500-the-final-boss-circuit.md`]. The tested diffusion carrier passes the strict subtype. In autoregressive transformers, the whole-path half holds and necessity can be distributed, but full sweeps also find concentrated or redundant late write ports. In the tested standalone Mamba specimens, a late retention latch is locally decisive. Locality and temporal formation are therefore compatible.
 
-**Contributions.**
-1. **Definition and certificate.** A broad time-formed family, a strict path-distributed subtype, and a four-quadrant certificate for that subtype (§2).
-2. **Diffusion accumulation.** A strict path-distributed circuit in a production diffusion transformer, controlled against alternative paths and tested under counterfactual and deletion interventions (§5).
-3. **Autoregressive formation and commit.** Path-formed stores with distributed native necessity and recurring concentrated or redundant late write ports (§6).
-4. **SSM retention and latch.** Ordered recurrent state formation with locally concentrated late retention in the tested Mamba specimens (§6.4).
-5. **Same-model contrasts.** Local and time-formed properties in the same model and behavior (§7).
-6. **Static and dynamic decomposition.** A static-infrastructure / dynamic-circuit decomposition of the tested diffusion circuit, with the editing and compilation results it explains (§§8, 10).
-7. **Instrument coverage.** Measured cases in which sampled or feature-basis instruments understate the relevant causal support, including a blind-graded trial and public-tool comparisons (§9).
+**Three connected claims.** We establish a trajectory-level causal assay with strict path-distributed instances in diffusion; architectural variations of time-formed control in diffusion, transformer and state-space specimens; and executable applications through scene compilation and model-state virtualization. **Nonlinearity is not a condition of the four-quadrant definition.** Architectural generalization concerns temporal formation; strict-subtype membership is reported separately for each specimen.
+
+| claim | evidence that establishes it | scope of the claim |
+|---|---|---|
+| **1. Operational discovery:** path-distributed causal support at a declared cut | Exhaustive singleton and whole-path necessity/sufficiency measurements in FLUX.2 Klein, with native RGB endpoints and matched replay (§§2, 5) | The four-quadrant pass establishes the operational subtype. It does not require non-additivity or establish a unique mechanism. |
+| **2. Architectural generalization:** controlling state is formed, committed or retained through execution | Diffusion time panels; transformer residual-seed, formed-store, mediation and read sweeps; Mamba ordered-transition and retention measurements (§§5–7) | The broad family recurs with different local write and read profiles. A strict four-quadrant pass in every architecture is a stronger claim and is not established here. |
+| **3. Executable use:** the state boundaries support working compilation and VM operations | Prompt-source compilation, exact native rendering, measured source-cache reuse, durable context transactions and independently implemented recurrent-state sweeps (§§3, 8, 10) | These are implemented, bounded applications. Each has its own execution and output contract. |
+
+The supporting contributions include same-model local/time-formed contrasts (§7), a static-infrastructure / dynamic-circuit decomposition (§8), and measured instrument-coverage failures in a blind-graded trial and public-tool comparisons (§9). These explain why source controllability, stored support and downstream consumption need separate measurements.
 
 **Boundaries.**
 - We certify behaviors at declared cuts in particular models. The architecture-level variations are definitions, not claims that every diffusion, autoregressive or SSM model instantiates the same mechanism.
@@ -122,6 +123,17 @@ These properties are not mutually exclusive. A locally sufficient residual write
 
 Hybrid architectures can combine these variations. E14 tests Falcon's attention K/V and SSM formed-state cuts after the subject prefix, but does not establish its residual-formation window, read layer or retention clock (§6.4).
 
+**Measured architectural profiles.** This is the evidence for claim 2; the last column keeps it separate from claim 1.
+
+| specimen and declared cut | formation or consumption evidence | singleton / path profile | strict subtype at this cut? |
+|---|---|---|---|
+| FLUX.2 Klein 4B, text-stream route across denoising steps | Growing carrier separation and timing-dependent effects (§5) | No tested singleton achieves the declared full-transfer or removal result; the whole path achieves both | **Yes**, for the reported setup/site-set combinations |
+| FLUX.2 Klein 9B, identity route | Multi-step source interchange and target writing (§5.6) | Four quadrants pass on two seeds and two route windows; the additional nine-gate bundle is 8/9 | **Yes** for the four-quadrant assay; report the additional bundle separately |
+| SDXL, conditioning writes across denoising steps | Target writing is distributed across the run (§5.7) | Whole-path writing is 0.985; the best singleton is 0.215, but an early singleton is necessary | **No**; mixed necessity/write profile |
+| Qwen and Gemma identity, isolated subject K/V | Residual formation windows, late commits and reads; Qwen seed-to-band mediation (§6.1b) | Best singleton necessity shares are at most 0.08, but late singleton writes reach about 0.81 | **No**; distributed necessity with a concentrated write port |
+| Mamba, per-layer recurrent state | Ordered transition programs and a slow retention clock (§6.4) | A late latch is locally decisive | **No**; temporal formation with local retention |
+| Falcon-H1, post-subject attention and SSM state | Native suffix consumes both state families (§6.4) | Attention dominates removal; SSM has partial writing authority | **Not established**; formation and retention sweeps remain open |
+
 **Formally.** Split the state at the cut into a prompt-invariant scaffold and a prompt-specific residual, x(t) = s(t) + r(t). A time-formed circuit has a consumer-relevant state R that depends on the ordered execution trajectory, R = 𝓕(r(0), …, r(T)), as established by replay or path interventions [integral-residual-dynamics §2]. R may still be controllable from a local source site because the unchanged suffix performs the remaining formation. The strict subtype adds the four operational conditions above at the declared cut.
 
 **What is and isn't claimed.** The **wiring fact** — the consumer reads the final state, so whatever controls the output is present there — is close to a tautology and is *not* our claim. The broad claim requires evidence that ordered execution forms the controlling state. The four-quadrant pattern below makes the narrower claim that causal support is path-distributed at the chosen cut and resolution.
@@ -169,20 +181,80 @@ For example, let y = (x₁ + … + x₈)/8, with an all-zero source and all-one 
 
 ## 3. Method: matched replay judged by the native consumer
 
-**Why matched replay.** These causal tests require an instrument that can:
-- capture a computation once;
-- fork it many times, with one value replaced at every step or layer;
-- replay the remainder within a measured output contract.
+### 3.1 Replay computes alternate futures from a captured past
+
+Write a model execution as state transitions sⱼ₊₁ = Fⱼ(sⱼ; θ, η), followed by its output consumer C(sₜ). Here θ identifies the frozen model and η identifies the execution contract: conditioning, numerical program, schedule, positions and sampling policy as applicable. A captured **StateCut** binds a boundary j to the state needed to resume that particular program. It stores mutable values or verified handles to them; fixed weights and deterministically derived values can be named by identity rather than copied.
+
+**Replay** means restoring that cut and executing the real downstream computation again. An intervention A changes the declared state or installs a schedule of writes in the suffix. The experiment compares C(Fₜ₋₁ ∘ … ∘ Fⱼ(A(sⱼ))) with the no-op future from the same sⱼ; a scheduled Act can also run at specified later transitions. Future attention, residual updates, recurrent transitions, tokens and pixels are computed by the model under the modified state. They are not taken from a saved answer tape.
+
+| execution family | state bound at the cut | computation resumed |
+|---|---|---|
+| Diffusion | Latent and latent IDs, conditioning, guidance, exact timestep/sigma schedule, scheduler identity and cursor; any additional history required by the declared scheduler | Remaining native denoising calls, scheduler updates and VAE/RGB decoding |
+| Autoregressive transformer | Committed token/position history, visible K/V rows, cache length and lineage; a mid-layer cut additionally binds its residual and staged deltas | Remaining decoder layers and/or token transitions, full readout and declared sampler |
+| State-space or hybrid model | Per-layer recurrent/convolution state, token cursor and applicable attention cache; family-specific epoch or cache metadata | Remaining native transitions and answer readout |
+
+The state closure is adapter-specific. The tested greedy language paths bind sampler identity; the deterministic diffusion suffixes bind the initialized latent and schedule. A stochastic suffix would additionally require its random-state closure before inheriting a replay claim. A latent alone is not a complete cut for an arbitrary scheduler, and a K/V tensor alone does not identify a causal context [pointwise `appendix-execution-model.md` §1].
+
+The working sequence is:
+
+1. Capture the unmodified parent once and retain its identity.
+2. Resume a no-op branch to measure the replay contract.
+3. Fork siblings from that same parent; declare the cut, operands, sites, timing and dose changed in each.
+4. Execute each sibling's real suffix and score the unchanged output consumer.
+5. Restore the parent, or retain a selected child, while preserving completed branch evidence.
+
+**Fork, replay and rewind have different roles.** A fork creates a branch with its own future writes; replay executes that future; rewind restores a previously retained state and its declared mutable closure. A full rerun from a seed recomputes the prefix, whereas cut replay reuses it. An uninstall check restores the modified operands and checks that the native result returns. That check validates reversible execution; it is distinct from a semantic rescue through a different mediator.
+
+Capture-once, fork-many reuse makes trajectory sweeps practical and gives their controls a common causal past. It does not make every suffix free, or guarantee that a changed batch shape or kernel preserves numerical equality.
 
 Replay error must be small relative to the effect being interpreted. Bitwise replay is available for the declared diffusion paths; numerically bounded replay is reported separately where used, including E14.
 
-**Execution model.** Saturn represents model state as typed **Frames** and interventions as **Acts**. An Act declares its reads, writes and invalidations. A **StateCut** names an execution boundary from which matched futures can be forked.
-
 **Replay integrity is measured, not assumed:**
 - diffusion resume reproduces a mean RGB difference of 0.0;
-- text resume reproduces identical tokens and logits;
+- the pinned Qwen text proof reproduces identical tokens and logits;
 - FLUX reproduces 8/8 images bitwise across two residency schedules [pointwise `appendix-execution-model.md`].
 - Falcon's E14 replay is numerically close, rather than bit-identical: maximum full-vocabulary logit difference is 3.62e-5 for chunk replay and 7.63e-5 for token replay, within its declared 1e-3 contract (§6.4).
+
+### 3.2 What the Saturn VM executes
+
+Saturn makes selected native model transitions addressable through a typed runtime. Its **virtual machine** executes a bounded program of state operations and native-consumer calls. The program specifies which model state is read or changed and where execution resumes. The pretrained model supplies the neural computation; the VM supplies state ownership, dependency tracking, branching and transaction records.
+
+| runtime object | responsibility |
+|---|---|
+| **Frame** | Typed description of the present state: model identity, boundary, tensor schema and state handles |
+| **StateCut** | Retained execution boundary with identity and ancestry from which a valid future can resume |
+| **Act** | Operation with declared reads, writes and invalidations, including its address, sign/dose and numerical contract |
+| **Program and bindings** | Ordered/dependent cells bound to executable operations and an authoritative native consumer |
+| **Transaction receipt** | Record of the parent, candidate operation, observed result and commit/abort/restore decision |
+
+For example, a diffusion program can resume a latent at step 1, install target text state at steps 1–3, and render the native future. A language program can mount an exact prefix, replace selected subject K/V pages after prefill, and ask the original model for its next-token distribution. These operations target different typed state and cannot silently substitute for one another.
+
+`CircuitRuntime` executes a dependency graph over verified artifacts. Its authoritative dependency contract computes which cells become dirty after an input changes, binds the parent StateCut, and admits the declared weight-page set before acquisition. Reuse is allowed only when the input identities, prior build state and stored bytes satisfy that contract. The native-consumer callback always runs: cached request preparation cannot stand in for newly computed logits or tokens. Model OS owns the declared operation authority and commit/abort boundary; family backends own tensors and native execution. `mrun` owns physical model placement and resource admission. See [Model OS](../../../saturn/docs/MODEL-OS-API.md) and the [runtime implementation](../../../saturn/src/saturn/circuit_runtime.py).
+
+This gives **compilation** a concrete target. A compiler emits a model-bound source object or operation plan, its site bindings and dependency/numerical contract; the VM can install or execute that result through a family adapter. The scene compiler in §10.2 has a particularly complete source boundary. Other neural-decompiler experiments separately test source identification, causal localization, recipient-local lowering and continued semantic execution; success at one stage does not establish the others [neural-decompiler runtime](../../../saturn/docs/NEURAL-DECOMPILER-RUNTIME.md).
+
+### 3.3 Model virtual memory: logical state, physical storage and causal ancestry
+
+**Model virtual memory** exposes model state through logical addresses while allowing its physical storage and residency to change. A logical page can identify a transformer layer/head/token range of K/V, or a Mamba layer's convolution and recurrent pair (C_ℓ, H_ℓ) at a declared token cut. The address includes its model/state ABI, shape and dtype, positions or cursor, and causal parent. The backend maps that address to verified resident tensors or backing-store bytes.
+
+The important separation is between **what state the model may read**, **where its bytes reside**, and **how that state was formed**. Eviction and rehydration preserve the logical state. A causal swap deliberately changes it. Neither operation removes the model's need to execute its next transition. These state pages are distinct from checkpoint weight pages; the demonstrations here do not require hardware CUDA virtual-memory mappings.
+
+| operation | meaning at the model-state boundary |
+|---|---|
+| mount | Make a verified state object available to its declared consumer |
+| fork | Share an immutable parent while giving each branch its own writes and visible continuation |
+| swap / diff | Replace specified pages with a declared donor state, or compare states without changing them |
+| unmount | Remove declared state from the consumer under the chosen operator; in the E10 necessity assay this means mean ablation, rather than storage eviction |
+| evict / hydrate / restore | Persist or reload the same logical state, or select a retained earlier cut |
+| sweep / clock | Repeatedly execute typed interventions across layers, or measure the native change of a declared carrier |
+
+`CausalContextVM` exposes transformer context, while `MambaStateVM` exposes recurrent pages. The Mamba operation modes explicitly distinguish `read-formed-state`, `residual-write`, `forced-formed-install` and `noop`. A formed-page transplant tests the consumer's use of already formed state; a residual write lets the unchanged suffix form new state (reading rule 6). This distinction remains visible in the VM API and its receipts.
+
+**Causal ancestry restricts composition.** State formed while reading A followed by B generally differs from independently formed A and B pages placed next to each other: Prefill(A‖B) ≠ Mount(Prefill(A), Prefill(B)). Jointly compiled pages match the native next token on 6/6 tested panels; independently compiled pages match 1/6 (§8). Position and mask bookkeeping alone cannot supply the missing contextual computation. Exact shared-ancestor reuse is valid because the ancestor has the same causal past; arbitrary page concatenation needs a separately qualified consumer.
+
+In the durable Qwen implementation, verified ancestor K/V is shared, each session owns its private continuation arena, and a divergent continuation copies the private delta when required to preserve a retained future. A transaction computes a candidate before changing the selected visible cut. An aborted candidate leaves the parent's visible state unchanged and retains its rejection receipt. Exported checkpoints bind the full required mount and private bytes so a fresh process can resume the selected cut. Section 10.3 reports the measured session, residency and restart results [Causal Context VM](../../../saturn/docs/CAUSAL-CONTEXT-VM.md).
+
+### 3.4 Origins and choice of state cut
 
 **Origins.** The runtime grew from an observation about Mamba. A resident Mamba-2.8B decoded at 34.2 tokens/s while a paged path managed 0.27. That gap separated four things: checkpoint bytes, executable pages, request state and output contracts [`obsidian/blog/2026-07-19-from-fast-mamba-to-a-100x-model-runtime.md`].
 
@@ -197,7 +269,7 @@ The first family-local transactional Act was built for Mamba-130M. Because Mamba
 
 That decomposition motivated using the key/value cut in language models.
 
-**Model virtual memory.** The same transactional runtime exposes model state as mountable pages: transformer K/V pages (`CausalContextVM`) and Mamba per-layer (C_ℓ, H_ℓ) state pages (`MambaStateVM`). Operations are mount, fork, swap, diff, unmount, per-layer sweep and clock, and each is labeled as a formed-state read or a residual write (rule 6). The Mamba VM reproduces the paper's per-layer necessity sweep bit-for-bit, and the residual-write sweep to 3 decimals, from an independent implementation (`job-7075c40c839b`).
+### 3.5 Measurement and certification contracts
 
 **Gates for FLUX.** Nine gates [certified-semantic-circuits §3]:
 1. replication on two seeds;
@@ -223,7 +295,9 @@ That decomposition motivated using the key/value cut in language models.
 
 A failed gate means "not established by this test", never "absent".
 
-**Relation to standard libraries.** TransformerLens [Nanda & Bloom 2022], nnsight [Fiotto-Kaufman 2024] and pyvene [Wu 2024] do what a single forward pass needs: reading activations, patching sites, interchange interventions and, in nnsight and pyvene, trainable interventions. We do not replace them. TransformerLens reproduces our single-site numbers on GPT-2 to within 1.5×10⁻⁴ nats (§9).
+### 3.6 Relation to standard intervention libraries
+
+TransformerLens [Nanda & Bloom 2022], nnsight [Fiotto-Kaufman 2024] and pyvene [Wu 2024] support activation reads, site patching and interchange interventions; nnsight and pyvene also support trainable interventions. TransformerLens reproduces our single-site numbers on GPT-2 to within 1.5×10⁻⁴ nats (§9).
 
 This paper needs four things they leave to the user [`research/papers/pointwise-instruments-miss-distributed-circuits/appendix-execution-model.md` §3]:
 - the sampler's timestep and noise-schedule state as capturable, resumable state (TransformerLens does not load FLUX; nnsight and pyvene can hook the denoiser as a generic module);
@@ -231,7 +305,7 @@ This paper needs four things they leave to the user [`research/papers/pointwise-
 - the prefix/suffix split behind the isolated key/value swap;
 - capture-once, fork-many reuse, so a whole-path or all-window sweep is not paid for once per site.
 
-The cost is generality: the exact paths cover a few pinned models, need a job scheduler, and do no training.
+The cost is generality: these inference assays cover pinned model/backend paths and require family-specific state closure. The replay and VM results in this paper do not establish arbitrary-model or training-state closure.
 
 ## 4. How the time-formed family was found
 
@@ -605,6 +679,8 @@ Thus the necessity-clean language-model stores have distributed necessity within
 | seed + matched-width L16–21 block | 0.934 [0.913, 0.958] | 39/42 | 37/42 |
 
 The late-band block removes **0.924 [0.765, 1.030]** of the seed effect, with a raw median removal of 3.290 nats. The seed raises target logprob by a median 3.515 nats. Ratios use each row's actual seed effect before aggregation; all 42 denominators are positive and at least 1.577 nats, so the 10% and 25% denominator-sensitivity panels retain every row. The block lowers target logprob in every row, but fractions range from 0.397 to 1.327; values above one mean suppression below the recipient baseline, not more than 100% of a unique causal contribution. Context medians for removal are 0.900/0.920/0.930 and for rescue 0.871/0.833/0.954. Bootstrap intervals describe this measured panel, with identities repeated across contexts, rather than independent held-out replication.
+
+An identity-cluster sensitivity bootstrap retains all three contexts when resampling each of the 14 identities (10,000 draws, seed 0); its 95% intervals are [0.732, 1.075] for removal and [0.835, 0.894] for rescue. It accounts for shared identity/prefix state without changing the paired conclusion.
 
 A cyclic wrong-identity band authors the wrong donor's token on 37/42 rows and the intended target on 0/42, under both readouts. Each suffix receives a private cache; overwrites occur after subject computation. All recorded logits/K/V are finite. Split/full-forward and residual self-write differences are ≤ 3.8e-5 in full-vocabulary logits; recipient-band reinstall and seeded-band block/restore are exact. Block/restore checks replay closure and is not independent rescue evidence.
 
@@ -1009,12 +1085,13 @@ This is the space-circuit signature, against at most 0.15 per *layer* in the lan
 
 ## 8. Static infrastructure and dynamic circuits
 
-The tested diffusion circuit has two parts that behave differently across prompts.
+The tested diffusion system separates a stable execution interface from prompt-dependent source and live state.
 
-| part | contents | across prompts and seeds |
+| part | contents | what remains fixed |
 |---|---|---|
-| static | route order, writer roles, state boundaries, the native consumer, prompt-time keys and values | fixed |
-| dynamic | which source rows, payload, signed coefficients, dose, spatial support, timing, the live query | changes per prompt |
+| static infrastructure | route order, writer roles, state boundaries, projection weights and the native consumer | the declared model and execution interface across the tested prompts |
+| compiled source | prompt-derived operands, including SDXL keys, values and pooled conditioning | fixed within a compiled SDXL run; changes when the prompt changes |
+| dynamic circuit and recipient state | source-row selection, payload coefficients, dose, spatial support, intervention timing and live queries | evaluated or changed in the recipient's ongoing execution |
 
 **The skeleton holds while coordinates move** [`obsidian/blog/2026-08-26-151627-the-hypergraph-had-a-skeleton.md`; `obsidian/2026-08-29-003349-skeleton-ir-incremental-executor-proposal.md`]:
 - the causal-profile cosine within an ontology is 0.9132, against 0.7344 across ontologies;
@@ -1027,6 +1104,8 @@ The tested diffusion circuit has two parts that behave differently across prompt
 - installing the matched keys and values under the live query reproduces the native image exactly (α 1.0000, RGB MAE 0.0);
 - keys alone reach 0.662, and values alone 0.718.
 
+Here "static" describes the source during one SDXL execution, not a prompt-independent tensor. The compiler exposes that complete prompt-specific source, while the unchanged denoiser computes its evolving use. Section 10.2 specifies the compiler's inputs, object code, native interpreter and measured reuse. FLUX's joint text–image carrier is subsequently contextualized, so this SDXL source-static result does not imply that FLUX's internal K/V is static.
+
 **Exact composition.** A four-factor cube (body × scene × gaze × color) reconstructs exactly under a Möbius decomposition (error 0.0) (`job-8d9a230b083d`, `job-f68e1365baae`, `job-755b73fca4f7`). Restoring the mediator:
 
 | through | rescue |
@@ -1034,6 +1113,8 @@ The tested diffusion circuit has two parts that behave differently across prompt
 | image stream | 83.07% |
 | text stream | −1.84% |
 | both streams | pixel-exact |
+
+The cube supplies all factor corners to the decomposition. Exact reconstruction of those corners does not establish prediction of unseen combinations.
 
 **Two parents.** The final image has two parents:
 
@@ -1112,7 +1193,9 @@ Thus the tested circuit-tracer feature basis does not recover full causal contro
 
 ## 10. Consequences for editing and generation
 
-Each of these follows from the carrier being built over time.
+These applications use the separation between source state, formation, storage and consumption. Their measured benefits are additional evidence for claim 3. The strict four-quadrant certificate is not a prerequisite for every application: static-source caching, for example, follows from the source boundary and native numerical contract.
+
+### 10.1 Timing and carrier interventions
 
 The same structure explains a known puzzle in language-model editing: the layer that causal tracing localizes is not the best layer to edit [Hase 2023]. In a write-once/commit-late store, any layer in the formation window can author the answer. What matters is installing the write before the commit band (§6.1b).
 
@@ -1127,12 +1210,67 @@ The same structure explains a known puzzle in language-model editing: the layer 
 4. **Small early writes are amplified.**
    - Zeroing 18 scaffold rows (3.5%) at step 0 does about as much damage as swapping the whole prompt, and 80–89% of the damage enters at step 0 [`research/bfl/demos/empty-context-positional-scaffold.md`].
    - A 55,297-parameter patch at joint.2, step 0, repairs counting (three apples to five; held-out exact count 37% → 72%). Its collateral gate fails, with 48% of ordinary prompts disturbed: accumulation cuts both ways [`research/bfl/demos/recipient-native-capability-patch.md`].
-5. **Scenes compile** (`job-5b20cdbb0f15`) [`research/demos/scene-generator.md`].
-   - A prompt lowers to static keys and values installed across the run: 21/21 exact images across seven specimens and five diffusion families.
-   - Complete installation gives MAE 0.0000, while partial installation fails.
-6. **Writing through the carrier from another model.**
+5. **Writing through the carrier from another model.**
    - A foreign language model, bridged through per-symbol anchors, authors through the unchanged consumer at native parity (`job-0706b0497903`, public).
    - Held-out symbols are *read* (21/36 after correcting for template collapse) but not *authored* (sham level). An affine-ceiling argument explains why.
+
+### 10.2 The scene compiler: prompt source, object code and native execution
+
+The scene compiler lowers a prompt into an explicit **model-native source object** that the unchanged generator can consume. "Program" here means source operands plus their binding contract; it does not assume a human-readable scene graph or a replacement neural generator. The concrete SDXL pipeline is:
+
+```text
+positive/negative prompt + model/execution identity
+    -> native tokenizers and text encoders
+    -> contextual sequence E and pooled conditioning P
+    -> source projections at 70 cross-attention sites
+    -> sealed paired K/V + pooled state + site/shape/dtype/CFG bindings
+    -> native denoising loop with live recipient queries
+    -> native scheduler and VAE -> RGB image
+```
+
+For each SDXL site ℓ, the compiler evaluates $K_\ell = E W^K_\ell + b^K_\ell$ and $V_\ell = E W^V_\ell + b^V_\ell$, retaining any native bias. It also preserves positive/negative classifier-free-guidance ordering and pooled conditioning. Its output is $S = (\{K_\ell,V_\ell\}, P;\,\mathrm{bindings})$. Resolution-dependent time conditioning and other pipeline settings remain part of the execution contract. During denoising call k, the native model computes $Q_{\ell,k}$ from the live recipient residual and reads the sealed memory through attention:
+
+$$
+Y_{\ell,k}=\operatorname{softmax}\!\left(Q_{\ell,k}K_\ell^\top/\sqrt{d_h}+M_{\ell,k}\right)V_\ell,
+$$
+
+followed by native head combination, output projection and residual computation. K/V is fixed for this prompt at this boundary; Q, attention weights, latent state and future computation remain dynamic. Compilation removes repeated source construction from the suffix, while native interpretation performs the learned generative work.
+
+**The visibility restriction matters.** The prompt-derived source is computed and hash-sealed before any target image or separately evolved target denoising trajectory is supplied. Installation uses the same initial latent and execution settings as the native target reference, which is rendered last. The study therefore compiles a source rather than recording a target answer. The original source object is sealed in memory; that experiment does not by itself establish a durable tensor-package format. The [scene-generator paper](../../demos/docs/scene-generator-paper.md) and [reproduction bundle](../../demos/artifacts/scene-generator/README.md) give the exact ordering and source checks.
+
+**Completeness is tested by the consumer.** Equal initial state, equal complete source operands and the same numerical operations imply equal subsequent states by induction. Empirically locating and installing *all* applicable source paths establishes the premises of that argument. In the fresh coral-whale reproduction (`job-5b20cdbb0f15`), the native RGB endpoint distinguishes complete from partial source installation:
+
+| installed source | RGB MAE to native target |
+|---|---:|
+| base source | 59.3529 |
+| target K/V only | 28.2969 |
+| target pooled state only | 61.2861 |
+| complete target K/V + pooled state | **0.0000** |
+| wrong-sign source displacement | 94.2905 |
+
+Separate K-only permutation and cross-prompt K/V controls have MAE 78.3537 and 79.9241. The result establishes a complete executable source interface with matched operands; exact native replay preserves the native model's semantic successes and mistakes.
+
+**Family-local replication.** The recorded native RGB comparisons are 21/21 across seven specimens and five diffusion families: two WAI-SDXL seeds, Illustrious SDXL, FLUX.1 Schnell, FLUX.2 Klein, Chroma1-HD and Krea2 Turbo. Reused prompts and related checkpoints are dependent replications. The shared result is the role decomposition—prompt source, live binding, dynamic carrier, persistent latent and native decoder. Each family has its own lowering. In FLUX.2, for example, the compiled prompt-derived Qwen carrier enters joint text–image computation; its internal state changes with depth and denoising time. No cross-family tensor ABI or universal static K/V claim follows.
+
+**Measured execution benefit.** In the tested SDXL run, 70 sites × two projections × 28 calls gives 3,920 repeated source-projection invocations. Compiling evaluates 140 projections once, then reuses their results. A CUDA BF16 sequential-CPU-offload benchmark with eight counterbalanced timed repetitions per arm reduced median native-forward time from 33.8948 s to 28.4070 s: **1.193×, or 16.19% less elapsed time**, with native RGB parity throughout. This scope excludes the earlier model load and source compilation. It does not establish cold-request or fully GPU-resident speedup [scene-generator paper §5.5](../../demos/docs/scene-generator-paper.md#55-static-source-caching-has-measurable-systems-value).
+
+The attention equation and caching static projections are established techniques. The contribution here is the complete, causally tested source boundary, its family-local lowering and its measured native execution contract.
+
+### 10.3 The VM: reusable state with computed continuation
+
+The second systems application turns the state cut into a reusable session interface. In the durable Qwen assay (`job-97e3192c594e`), `CausalContextVM` executes actual Model OS transactions as the native consumer of a `CircuitRuntime` program. The request-binding cell may be reused; the one-token neural transition still executes all 24 decoder layers and the full readout. Each completed transaction emits four artifact manifests: **source** records the mount/checkpoint; **address** records ordered ancestry and logical rows; **operator** records the transaction and numerical contract; **renderer** records the generated token and visibility decision.
+
+| implemented use | measured result | practical meaning |
+|---|---|---|
+| Shared ancestor, private futures | Two sessions share 63 ancestor rows, each with 14 private prefix rows and eight reserved continuation rows; native continuation generates `314.` and `271.` | Reuse preserves a common causal past while each branch consumes its own future state |
+| Bounded residency with durable backing | Two evictions and exact selected-cut reload; 1,314,816 bytes of resident K/V capacity for two sessions | A context can leave device memory and resume without changing its logical identity |
+| Restore and abort | Earlier-parent replay has an identical first-token logit digest; a rejected candidate leaves the parent fingerprint unchanged and remains recorded | Alternate futures can be inspected without automatically making their state or output visible |
+| Export and fresh-process resume | After deleting the source store, a child process restores the exported cut and produces identical next logits | Continuation depends on the exported state closure rather than a hidden live process |
+| Recurrent-state causal microscope | Mamba's independently implemented VM necessity sweep agrees bit-for-bit with E3b; residual-write results agree to three decimals at all 24 layers | The same typed session interface exposes formed-state reads and source writes for an SSM |
+
+The Qwen specimen is Qwen2.5-0.5B-Instruct, BF16, Triton segmented attention on an RTX 4080. Its 12 transactions, 48 plane manifests and 12 checkpoints passed a separate artifact audit. Exact restart and restore comparisons use the **same segmented-attention program**; this assay does not claim bitwise equality with a different Hugging Face attention program. The residency figure counts K/V capacity, including reserved private rows, and excludes weights, staging, workspaces and allocator reservation. This is a bounded serialized service with finite continuation arenas [integration findings](../../../saturn/experiments/2026-09-29-causal-context-vm-integration/FINDINGS.md).
+
+The recurrent specimen is Mamba-130M (`job-7075c40c839b`). Its fork, no-op and uninstall controls are exact; native replay error is 2.2e-4 with argmax agreement. Sweep agreement is an implementation cross-check within this program, rather than external replication [Mamba VM findings](../../../saturn/experiments/2026-09-30-mvm-mamba-cot/FINDINGS.md). E10 then uses formed K/V-page interventions to test non-restated arithmetic intermediates (§6.7). These applications demonstrate a working state-management and causal-analysis interface; general CoT faithfulness, arbitrary context composition and production serving throughput remain separate questions.
 
 > **TODO [R6]:** commit and redact `research/demos/` before citing it.
 >
@@ -1185,7 +1323,7 @@ The same structure explains a known puzzle in language-model editing: the layer 
 
 ## 13. Related work
 
-**Patching, tracing and editing.** Activation and path patching locate components by intervening at one site [Meng 2022; Wang 2022]. Best practice for the operator and the metric is set out in [Zhang & Nanda 2023; Heimersheim & Nanda 2024].
+**Patching, tracing and editing.** Activation and path patching test components and information-flow paths through interventions [Meng 2022; Wang 2022]. They can be applied jointly; the limitation studied here is a sampled or singleton-only interpretation. Best practice for the operator and the metric is set out in [Zhang & Nanda 2023; Heimersheim & Nanda 2024].
 - Causal tracing [Meng 2022] and dissecting recall [Geva 2023] describe factual recall in transformers. §6.1b relates our formation window, commit and read to both, and to deferred commitment [Agarwal 2026].
 - Causal-tracing localization does not predict where editing works [Hase 2023]. Our necessity sweeps supply one reason (§6.1b, §10).
 - Self-repair [McGrath 2023; Rushing & Nanda 2024] can make a single-site ablation underestimate importance: downstream components compensate in reaction to the intervention. Static backup among a few adjacent layers can also hide a store from single-layer cuts. Both motivate measurements beyond the singleton/joint cross. E19 tests compact contiguous backup: Qwen2.5-0.5B identity has a redundant pair, while the clean identity cells in Qwen2.5-1.5B and Gemma need wider tested bands and their best three adjacent layers carry only 0.23 and 0.18 (§6.1b). Other necessity-clean cells have best three-layer effects up to 0.42. These windows measure the breadth of causal support; they do not isolate a compensatory response during the intervened suffix.
@@ -1199,13 +1337,24 @@ The same structure explains a known puzzle in language-model editing: the layer 
 
 We add the certificate, the cut result, the full-sweep rule, the commit ledger, the diffusion carrier and the static/dynamic decomposition.
 
-**Diffusion.** Related diffusion work includes:
+**Diffusion editing.** Related diffusion work includes:
 - attention-based prompt editing [Hertz 2022];
 - vital layers for editing in FLUX [Avrahami 2025];
 - key/value-cache editing in diffusion transformers [Zhu 2025];
 - padding tokens acting as registers in text-to-image models [Toker 2025].
 
-These locate *where* an edit acts. §10 adds *when*.
+Temporal control is already part of diffusion editing and interpretation. Our contribution must therefore be compared on its state cut, causal assay and execution interface, rather than presented as the first observation that edit timing matters.
+
+**Closest temporal comparisons.** **DifFRACT** [Mazur 2026] trains timestep-conditioned transcoders for FLUX.1 Schnell and constructs feature-attribution graphs at each denoising step using a local replacement model. It finds a transition from text-dominated to image-dominated attribution, validates early-versus-late semantic interventions, and improves steering through graph-selected concept, context and suppressor features. Its default interventions span every denoising step. This is direct prior work on temporal diffusion circuits, not merely speculation or pointwise localization. Our proposed distinction is the exhaustive singleton/whole-path necessity-and-sufficiency assay at a native-state cut, together with replay and executable source/state interfaces.
+
+**PCI** [Görgün 2026] switches from a base prompt to a concept prompt at a chosen denoising timestep and continues with that conditioning. Its Concept Insertion Success curves use final-image VQA to measure when concepts remain insertable across five generators; they also guide editing. PCI establishes temporal controllability at the prompt boundary. Our internal-state interventions ask how formed carriers distribute causal support. Failure of late prompt insertion alone does not identify an internal circuit or prove the absence of a representation.
+
+| comparison | question answered | additional question in this paper |
+|---|---|---|
+| DifFRACT | Which interpretable feature pathways contribute at each denoising step, and how can their intervention improve generation? | Does the declared native-state path meet all four singleton/joint conditions, and how can its execution boundary be exposed? |
+| PCI | At what time can changed prompt conditioning still insert a concept? | Which internal state is formed, retained and consumed, and what do same-parent state interventions establish? |
+
+Neither temporal variation alone nor a four-quadrant pass settles priority for every claim. Claim 1 concerns the declared operational class and measured instances; claim 2 concerns the compared formation/commit/retention profiles; claim 3 concerns the implemented compiler and VM contracts. These are the units for a novelty comparison.
 
 **Task and function vectors.** In-context task vectors [Hendel 2023] and function vectors [Todd 2024] are compact carriers of a behavior read at one site. The time-formed stores here can also have a local read or write port (§6.8); their temporal classification comes from how the downstream state is formed, not from excluding locality.
 
@@ -1239,13 +1388,13 @@ The four-quadrant certificate identifies the **strict path-distributed subtype**
 
 Thus locality and temporal formation are properties of a behavior at a cut, and the same behavior can exhibit both.
 
-**The decomposition.** In the tested diffusion system, the static/dynamic decomposition turns the time-formed circuit into an editing and compilation interface.
+**What the applications establish.** The scene compiler constructs complete prompt-derived source before target rendering and reaches 21/21 recorded native RGB endpoints across family-local lowerings. Its tested SDXL source cache removes 16.19% of median measured native-forward time. The Saturn VM exposes typed state operations with computed continuation: the bounded Qwen service shares a causal ancestor, restores and exports durable cuts, and preserves rejected futures; the Mamba VM reproduces the causal sweeps through its own implementation (§10). These are concrete systems results with source, execution and consumer contracts, separate from the strict circuit certificate.
 
 **What the instruments see.**
 - On a space circuit (Pythia-70M induction), standard ablation finds three heads that are necessary and sufficient.
 - On the tested store in Gemma-2-2B, the attribution graph puts the subject's influence at L0 and in error nodes. All-layer feature interchange moves identity at most 0.08 of the way and captures color partly, at 0.31–0.42. A whole-state cut over the second half flips 83–84% of answers.
 
-The tested diffusion results establish the strict path-wide signature at a declared cut. The autoregressive results establish time-formed stores with different necessity and write profiles. The SSM results establish a retention/latch variation in the tested Mamba specimens. Their comparison shows why source controllability, native causal support, commitment and readout must be measured separately, without promoting a specimen result into a universal architecture claim.
+The three claims are therefore distinct: **operational discovery** of a strict path-wide signature in the tested diffusion cuts; **architectural generalization** of the broader formation, commit and retention patterns; and **executable use** through source compilation and state virtualization. Their comparison shows why source controllability, native causal support, commitment and readout must be measured separately. Prior temporal diffusion work already establishes that timing matters; the proposed contribution is this combination of causal definitions, measured state profiles and working execution interfaces.
 
 ---
 
@@ -1259,6 +1408,7 @@ The tested diffusion results establish the strict path-wide signature at a decla
 - **[Conmy 2023]** A. Conmy, A. N. Mavor-Parker, A. Lynch, S. Heimersheim, A. Garriga-Alonso. Towards Automated Circuit Discovery for Mechanistic Interpretability. NeurIPS 2023. arXiv:2304.14997.
 - **[Fiotto-Kaufman 2024]** J. Fiotto-Kaufman, A. R. Loftus, E. Todd, J. Brinkmann, et al. NNsight and NDIF: Democratizing Access to Open-Weight Foundation Model Internals. arXiv:2407.14561, 2024.
 - **[Geva 2023]** M. Geva, J. Bastings, K. Filippova, A. Globerson. Dissecting Recall of Factual Associations in Auto-Regressive Language Models. EMNLP 2023. arXiv:2304.14767.
+- **[Görgün 2026]** A. Görgün, F. Sammani, N. Deligiannis, B. Schiele, J. Fischer. [Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions](https://arxiv.org/abs/2512.08486). ICLR 2026; first submitted December 2025.
 - **[Hanna 2025]** M. Hanna, M. Piotrowski, J. Lindsey, E. Ameisen. Circuit-Tracer: A New Library for Finding Feature Circuits. Proceedings of the 8th BlackboxNLP Workshop, 2025, pp. 239–249.
 - **[Hase 2023]** P. Hase, M. Bansal, B. Kim, A. Ghandeharioun. Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models. NeurIPS 2023. arXiv:2301.04213.
 - **[Heimersheim & Nanda 2024]** S. Heimersheim, N. Nanda. How to use and interpret activation patching. arXiv:2404.15255, 2024.
@@ -1268,6 +1418,7 @@ The tested diffusion results establish the strict path-wide signature at a decla
 - **[Lanham 2023]** T. Lanham et al. Measuring Faithfulness in Chain-of-Thought Reasoning. arXiv:2307.13702, 2023.
 - **[Lieberum 2024]** T. Lieberum et al. Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2. arXiv:2408.05147, 2024.
 - **[Lindsey 2025]** J. Lindsey et al. On the Biology of a Large Language Model. Transformer Circuits Thread, 2025. transformer-circuits.pub/2025/attribution-graphs/biology.html
+- **[Mazur 2026]** A. Mazur, N. Konovalova, A. Alanov. [DifFRACT: Diffusion Feature Reconstruction and Attribution for Circuit Tracing](https://arxiv.org/abs/2606.15796). arXiv:2606.15796, June 2026.
 - **[McGrath 2023]** T. McGrath, M. Rahtz, J. Kramár, V. Mikulik, S. Legg. The Hydra Effect: Emergent Self-repair in Language Model Computations. arXiv:2307.15771, 2023.
 - **[Meng 2022]** K. Meng, D. Bau, A. Andonian, Y. Belinkov. Locating and Editing Factual Associations in GPT. NeurIPS 2022. arXiv:2202.05262.
 - **[Miller 2024]** J. Miller, B. Chughtai, W. Saunders. Transformer Circuit Faithfulness Metrics Are Not Robust. COLM 2024. arXiv:2407.08734.
