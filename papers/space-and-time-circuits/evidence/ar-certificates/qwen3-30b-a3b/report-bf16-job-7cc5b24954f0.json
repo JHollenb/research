@@ -1,0 +1,338 @@
+{
+  "battery_name": "moe",
+  "cells": {
+    "qwen3-30b-a3b.arithmetic": {
+      "L": 7,
+      "carrier_positions": [
+        3,
+        5
+      ],
+      "clean": {
+        "lp_base_answer": -0.1452,
+        "margin": 6.375,
+        "top1": "eight"
+      },
+      "cut": "kv",
+      "engine": "paged-layer-bf16-cuda",
+      "gates": {
+        "noop_max_abs": 0.0
+      },
+      "generic_floor": {
+        "lp_base_answer": -11.4539,
+        "margin": -3.75,
+        "top1": "three"
+      },
+      "n_layers": 48,
+      "necessity": {
+        "L24": {
+          "delta_lp": 0.0012,
+          "lp_base_answer": -0.144,
+          "margin": 7.0,
+          "top1": "eight"
+        },
+        "L36": {
+          "delta_lp": 0.0306,
+          "lp_base_answer": -0.1146,
+          "margin": 6.875,
+          "top1": "eight"
+        },
+        "all": {
+          "delta_lp": -12.227,
+          "lp_base_answer": -12.3722,
+          "margin": -4.625,
+          "top1": "two"
+        },
+        "first_half": {
+          "delta_lp": -12.9979,
+          "lp_base_answer": -13.1431,
+          "margin": -2.75,
+          "top1": "ten"
+        },
+        "second_half": {
+          "delta_lp": -8.1664,
+          "lp_base_answer": -8.3116,
+          "margin": -2.75,
+          "top1": "five"
+        }
+      },
+      "pc_shift": 11.625,
+      "sufficiency": {
+        "W1_L24": {
+          "s_norm": 0.6237,
+          "shift": 7.25
+        },
+        "W2_L24": {
+          "s_norm": -0.086,
+          "shift": -1.0
+        },
+        "W2_all": {
+          "s_norm": 1.0215,
+          "shift": 11.875
+        }
+      },
+      "target_clean": {
+        "lp_base_answer": -5.962,
+        "margin": -5.25,
+        "top1": "nine"
+      }
+    },
+    "qwen3-30b-a3b.identity": {
+      "L": 22,
+      "carrier_positions": [
+        4
+      ],
+      "clean": {
+        "lp_base_answer": -1.2801,
+        "margin": 6.875,
+        "top1": "fox"
+      },
+      "cut": "kv",
+      "engine": "paged-layer-bf16-cuda",
+      "gates": {
+        "noop_max_abs": 0.0
+      },
+      "generic_floor": {
+        "lp_base_answer": -2.8137,
+        "margin": 1.625,
+        "top1": "fox"
+      },
+      "n_layers": 48,
+      "necessity": {
+        "L24": {
+          "delta_lp": 0.0788,
+          "lp_base_answer": -1.2013,
+          "margin": 6.75,
+          "top1": "fox"
+        },
+        "L36": {
+          "delta_lp": 0.0851,
+          "lp_base_answer": -1.195,
+          "margin": 6.9375,
+          "top1": "fox"
+        },
+        "all": {
+          "delta_lp": -1.3436,
+          "lp_base_answer": -2.6237,
+          "margin": 2.25,
+          "top1": "fox"
+        },
+        "first_half": {
+          "delta_lp": -0.8124,
+          "lp_base_answer": -2.0925,
+          "margin": 2.625,
+          "top1": "fox"
+        },
+        "second_half": {
+          "delta_lp": -1.6692,
+          "lp_base_answer": -2.9493,
+          "margin": 1.125,
+          "top1": "fox"
+        }
+      },
+      "pc_shift": 22.1875,
+      "sufficiency": {
+        "W1_L24": {
+          "s_norm": 0.9803,
+          "shift": 21.75
+        },
+        "W2_L24": {
+          "s_norm": -0.0056,
+          "shift": -0.125
+        },
+        "W2_all": {
+          "s_norm": 1.0366,
+          "shift": 23.0
+        }
+      },
+      "target_clean": {
+        "lp_base_answer": -11.4831,
+        "margin": -10.5,
+        "top1": "lion"
+      }
+    }
+  },
+  "design": "experiments/2026-08-21-wall-a-addressing/README.md#addendum-y",
+  "execution_receipt": {
+    "battery_case": "collect",
+    "battery_name": null,
+    "battery_sha256": null,
+    "case": "ird-battery",
+    "command": [
+      "/usr/bin/env",
+      "PYTHONUNBUFFERED=1",
+      "PYTHONNOUSERSITE=1",
+      "HF_HUB_OFFLINE=1",
+      "TRANSFORMERS_OFFLINE=1",
+      "DIFFUSERS_OFFLINE=1",
+      "TOKENIZERS_PARALLELISM=false",
+      "TQDM_DISABLE=1",
+      "SATURN_RESIDENT_WORKER=1",
+      "UV_CACHE_DIR=<host-path>",
+      "TORCH_HOME=<host-path>",
+      "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+      "SATURN_RUN_CONFIG=saturn_run_config.json",
+      "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+      "uv",
+      "run",
+      "--offline",
+      "--with",
+      "diffusers==0.39.0",
+      "--with",
+      "transformers==5.14.1",
+      "--with",
+      "accelerate==1.14.0",
+      "--with",
+      "safetensors>=0.5",
+      "--with",
+      "numpy>=2.0",
+      "--with",
+      "mlflow>=2.9",
+      "--with",
+      "boto3>=1.34",
+      "--with",
+      "python-dotenv>=1.0",
+      "--with",
+      "trackio>=0.1",
+      "python",
+      "-u",
+      "run_saturn_ird_battery.py"
+    ],
+    "design_sha256": "5cb3913003269585810b6b308395eaeaafd5097a129cea2736602096b00e5b91",
+    "device": "cuda encoder / cuda source (fp32) / offloaded diffusion",
+    "dtype": "bfloat16 encoder / float32 source / float64 ridge",
+    "experiment": "saturn-ird-battery",
+    "host_selection": "prefer_gpu_host_softly",
+    "instrument": "IRD bounds battery (Addendum Y): payload-driven certificate cells {family, engine incl fused-paged, cut kv|hidden, object} over identity/counting/arithmetic/code-trace/binding objects; necessity layer-set generic-swaps at carrier positions with generic-prompt floors, sufficiency target-trace writes, exact no-op gates; battery config sha recorded in request.",
+    "launcher_attempt": 2,
+    "log_sha256": "c7ccea9182373aecbb3fa608e8c6145280e6e71537e1d3b2930754743f7baaca",
+    "model_id": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": "<host-path>",
+    "mrun_job_id": "job-7cc5b24954f0",
+    "mrun_ok": true,
+    "mrun_result": {
+      "diagnostics": {
+        "command": [
+          "/usr/bin/env",
+          "PYTHONUNBUFFERED=1",
+          "PYTHONNOUSERSITE=1",
+          "HF_HUB_OFFLINE=1",
+          "TRANSFORMERS_OFFLINE=1",
+          "DIFFUSERS_OFFLINE=1",
+          "TOKENIZERS_PARALLELISM=false",
+          "TQDM_DISABLE=1",
+          "SATURN_RESIDENT_WORKER=1",
+          "UV_CACHE_DIR=<host-path>",
+          "TORCH_HOME=<host-path>",
+          "PYTHONPATH=saturn_src:mrun_src:common_src:.",
+          "SATURN_RUN_CONFIG=saturn_run_config.json",
+          "SATURN_DEBUG_REQUEST=saturn_debug_request.json",
+          "uv",
+          "run",
+          "--offline",
+          "--with",
+          "diffusers==0.39.0",
+          "--with",
+          "transformers==5.14.1",
+          "--with",
+          "accelerate==1.14.0",
+          "--with",
+          "safetensors>=0.5",
+          "--with",
+          "numpy>=2.0",
+          "--with",
+          "mlflow>=2.9",
+          "--with",
+          "boto3>=1.34",
+          "--with",
+          "python-dotenv>=1.0",
+          "--with",
+          "trackio>=0.1",
+          "python",
+          "-u",
+          "run_saturn_ird_battery.py"
+        ],
+        "cwd": "<host-path>",
+        "log_path": "<host-path>/job.log",
+        "phase": "finished",
+        "phases": [
+          {
+            "name": "payload.prepare",
+            "ts": 1787307744.7462466
+          },
+          {
+            "name": "dispatch.vram_guard",
+            "ts": 1787307745.526855
+          },
+          {
+            "name": "process.launch",
+            "ts": 1787307745.567977
+          },
+          {
+            "name": "process.monitor",
+            "ts": 1787307745.6260884
+          },
+          {
+            "name": "process.finalize",
+            "ts": 1787308863.3905425
+          },
+          {
+            "name": "finished",
+            "ts": 1787308863.4095235
+          }
+        ]
+      },
+      "elapsed_s": 1118.74,
+      "executed_payload": {
+        "host": "gpu-host",
+        "sha256": "86f2683acf0ab00cb524df2ca206aecfb799fc28eee8c045b6a5cb91dd88062e",
+        "size_bytes": 4021035
+      },
+      "failure": null,
+      "os_memory_limit_backend": "linux-cgroup-v2",
+      "peak_rss_mb": 3082.8,
+      "peak_vram_mb": 3560.0,
+      "returncode": 0,
+      "status": "ok"
+    },
+    "mrun_state": "succeeded",
+    "needs": {
+      "cuda": true
+    },
+    "payload": {
+      "battery": {}
+    },
+    "pipeline_class": "Flux2KleinPipeline",
+    "preflight": "strict",
+    "report_present": true,
+    "reservation": {
+      "ram_mb": 24000.0,
+      "vram_mb": 8000.0
+    },
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "branch_execution": "in_process",
+      "checkpoint_policy": "one model load; 109 native encodes + chunked CUDA fp32 source-feature passes + closed-form ridge + 32 consumer renders in process; no training, no nested submissions",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_local_program",
+      "interactive": false,
+      "lease_scope": "entire-worker",
+      "max_local_work_items": 256,
+      "max_mrun_submissions": 1,
+      "model_loads": 1,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "replay_policy": "local_checkpoint_restore",
+      "schema": "saturn-single-lease-scheduling-contract-v1"
+    },
+    "schema": "saturn-ird-battery-mrun-request-v1",
+    "task_family": "saturn-flux-rosetta-manalysis",
+    "worker_sha256": "d20b8f2a7ceb0f3c5b3a10baaced3ea6f856fa4c2c15465645cc17731e45eda3"
+  },
+  "peak_rss_mb": 4066.9,
+  "peak_vram_mb": 2793.2,
+  "schema": "saturn-ird-battery-v1",
+  "wall_s_total": 1114.56
+}

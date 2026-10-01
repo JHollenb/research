@@ -1,0 +1,136 @@
+{
+ "bundle": "ar-certificates",
+ "generated": "2026-09-30",
+ "patterns": {
+  "path": "absolute local filesystem paths under /mnt,/home,/Users,/root,/var, replaced with <host-path> (trailing real filename kept for log_path)",
+  "host": "the internal machine nickname 'beast', replaced with the generic placeholder 'gpu-host' (underscore variant 'gpu_host' inside snake_case ids)",
+  "ip": "none present",
+  "s3": "none present",
+  "ssh": "none present",
+  "git": "none present"
+ },
+ "convention_source": "pointwise-instruments-miss-distributed-circuits/evidence/four-quadrant-tests/REDACTIONS.json",
+ "proof": "this redactor reproduces the already-public report-fp32-recheck-job-6299f2391d5c.json byte-for-byte (sha256 c71544e404f935905c63fbb5ee56298d5276c2eb4cbab11d6f9ff56a7501f694)",
+ "files": [
+  {
+   "file": "qwen3-8b/report-paged-fp32-job-ead9d040871b.json",
+   "source": "<saturn>/results/ird-q3-paged-recheck/job-ead9d040871b/report.json",
+   "sha256_before": "4adfa70a1ef9274c59675d7926c0faed230abe1b5d540ccc6cdfdc08ef856e5f",
+   "sha256_after": "53bf73d85266aeb83e3ab0087ac8cbb8de0ac3dc9fa78cb5c90a05c64a13294b",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "qwen3-8b/run-receipt-paged-fp32-job-ead9d040871b.json",
+   "source": "<saturn>/results/ird-q3-paged-recheck/job-ead9d040871b/run-receipt.json",
+   "sha256_before": "48e3a6fdf6317d0723408e79c4382c8a4e4041b6781ca8f9f3295f7a7630af00",
+   "sha256_after": "892d851deac018642f8fda66f495e2862d2d6cf7d6fa68a77a73d3f693316445",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "qwen3-8b/report-cpu-fp32-job-6299f2391d5c.json",
+   "source": "<saturn>/results/ird-q3-fp32-recheck/job-6299f2391d5c/report.json",
+   "sha256_before": "c1bc205dab1a2f2dcae0a478d9b4d2f031e21f44f054d43aa24dc43dc5ae572e",
+   "sha256_after": "c71544e404f935905c63fbb5ee56298d5276c2eb4cbab11d6f9ff56a7501f694",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "qwen3-8b/run-receipt-cpu-fp32-job-6299f2391d5c.json",
+   "source": "<saturn>/results/ird-q3-fp32-recheck/job-6299f2391d5c/run-receipt.json",
+   "sha256_before": "8412be27352a66de913aeb4531ab767475846f855cea095767cfdd07e55bfbb1",
+   "sha256_after": "21f9b5ad803b649c03070006a99ccbaff8fddd8f59a0be2de76d61a5fdad28b9",
+   "replacements": {
+    "path": 8,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 10
+  },
+  {
+   "file": "qwen3-30b-a3b/report-fp32-job-ef8408d9c3d2.json",
+   "source": "<saturn>/results/ird-battery/job-ef8408d9c3d2/report.json",
+   "sha256_before": "ea33ded864ea147de3546ce617a3153ab56fdb7dc1476476250126496e7a1f24",
+   "sha256_after": "e5a2425018437e2529d06b0672b80000703f97e6d5f9493acfcd8dad57a9449a",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "qwen3-30b-a3b/run-receipt-fp32-job-ef8408d9c3d2.json",
+   "source": "<saturn>/results/ird-battery/job-ef8408d9c3d2/run-receipt.json",
+   "sha256_before": "fabe5905db5063835debc177d1b07ab94bda8ddf75ff38abd0148413b69789bd",
+   "sha256_after": "d2c937c97218d20bfdf301706387e61342f1689834242f35055956f9d34989f8",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "qwen3-30b-a3b/report-bf16-job-7cc5b24954f0.json",
+   "source": "<saturn>/results/ird-battery/job-7cc5b24954f0/report.json",
+   "sha256_before": "95a8be4604514450013769c4da7f0eb4bbfeafc5287483c4344f07b0c5458955",
+   "sha256_after": "c031e6ae2555e1539f5d7deb444563599b2aab33f304b8451ade4c1e8e33dcfd",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  },
+  {
+   "file": "qwen3-30b-a3b/run-receipt-bf16-job-7cc5b24954f0.json",
+   "source": "<saturn>/results/ird-battery/job-7cc5b24954f0/run-receipt.json",
+   "sha256_before": "5a992d38f5ad35fd711b608b3fa1fc91106089f4f9655c584bcc67a4c4ccb8c9",
+   "sha256_after": "cb59ce95d13571c79c50687fd174f6810e4ade6cce8fa684fc4c10978ac4485e",
+   "replacements": {
+    "path": 7,
+    "host": 2,
+    "ip": 0,
+    "s3": 0,
+    "ssh": 0,
+    "git": 0
+   },
+   "total_replacements": 9
+  }
+ ]
+}

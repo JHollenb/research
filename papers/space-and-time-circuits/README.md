@@ -1,13 +1,13 @@
 ---
 title: "A New Class of Circuits: Space and Time"
 type: research-documentation
-status: outline-draft
+status: draft-2
 updated: 2026-09-30
 ---
 
 # A New Class of Circuits: Space and Time
 
-[The paper outline](paper.md) consolidates four documents into one argument:
+[The paper](paper.md) (draft 2; the original outline is preserved in [`outline.md`](outline.md)) consolidates four documents into one argument:
 
 - the certified FLUX.2 route ([`../../bfl/docs/certified-semantic-circuits/`](../../bfl/docs/certified-semantic-circuits/README.md));
 - the measurement paper ([`../pointwise-instruments-miss-distributed-circuits/`](../pointwise-instruments-miss-distributed-circuits/README.md));
@@ -22,7 +22,7 @@ The argument has three parts:
 
 ## Status
 
-Outline draft. Each section lists the claim, the existing evidence with receipt paths, and what is still owed:
+Draft 2 (2026-09-30): full prose for every section whose results are settled. Open items are marked inline:
 
 - **TODO [E#]** marks an experiment to run (Appendix A);
 - **TODO [R#]** marks a collation or correction step (Appendix B);
