@@ -1,5 +1,15 @@
 # AR time-circuit certificates — public evidence bundle
 
+> **Status (2026-09-30): in-forward protocol only; not cited as time-circuit certificates.**
+> Both certificates here use the *in-forward* key/value swap and sample two single layers
+> (8B: L18/L27; 30B: L24/L36). In the in-forward swap the subject reads its own replaced
+> entries (paper §2.3). Under the *isolated* swap with every layer swept, the Qwen3-30B-A3B
+> in-forward result reproduces bit-exactly (clean margin 7.2817) but no ablation, single or
+> whole-path, flips the answer (`saturn/experiments/2026-09-30-full-layer-sweeps/`, job
+> `job-9c383862e6f9`). Qwen3-8B identity has a degenerate necessity readout (scene prior) and
+> was not re-run under the isolated swap. The bundle stays as the record of the in-forward
+> protocol; receipts and `verify.py` are unchanged. See paper §6.1.
+
 Redacted receipts for the autoregressive (language-model) four-quadrant
 certificates that paper §6.1 previously had only as private `saturn/results`
 jobs. Produced for paper TODO **[E3]** (`paper.md:328`). Redaction follows the
