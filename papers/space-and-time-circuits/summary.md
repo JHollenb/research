@@ -8,7 +8,9 @@ paper: paper.md
 
 # Space and Time Circuits — research summary
 
-[A New Class of Circuits: Space and Time](paper.md) consolidates the final-boss, IRD, distributed-store measurement, and certified FLUX route work. This summary reflects the working manuscript and experiment records through October 1, 2026. The manuscript contains newer results than its [README](README.md) and preserved [outline](outline.md). Historical certificates and later corrections should be read separately.
+[Space and Time Circuits: Causal Control Across Model Trajectories](paper.md) consolidates the final-boss, IRD, distributed-store measurement, and certified FLUX route work. This summary reflects draft 3 and the recovered overnight experiment records through October 1, 2026. The [README](README.md) records current status; the [outline](outline.md) preserves the earlier plan. Historical certificates and later corrections should be read separately.
+
+**Definition check: the paper does establish its operational time-circuit definition in FLUX.** A blanket statement that the research does not meet its own definition would be wrong. The [reviewer's clarification](critiques/clarification-2026-10-01_110945_PDT.md) explicitly concedes this. The decoder-LM formed-store results and E10 scratchpad-step results have different quadrant profiles; their limitations do not revoke the diffusion certificate. The additive [definition and rerun audit](../../../saturn/experiments/2026-09-30-space-and-time-circuits/TIME-DEFINITION-VERIFICATION-2026-10-01.md) checks the saved FLUX reports and identifies stale statements separately from corrected measurements.
 
 ## The papers it brings together
 
@@ -19,7 +21,7 @@ paper: paper.md
 | [Single-Site Tests Miss Distributed Stores](../pointwise-instruments-miss-distributed-circuits/paper.md) | Primary single-site/whole-path measurements, public-tool comparisons, and the blind-graded instrument trial. Its [execution-model appendix](../pointwise-instruments-miss-distributed-circuits/appendix-execution-model.md) explains the replay method. |
 | [The Circuit That Survived Its Coordinates](../../bfl/docs/certified-semantic-circuits/paper.md) | The production FLUX.2 semantic-route measurements, held-out tests, controls, and evidence bundle. |
 
-The new manuscript is intended to supersede the separate IRD and transaction drafts for external release. The [assessment notes](../capabilities-as-transactions/assessment-notes.md) explain the consolidation, while the [October 1 review](critiques/review-2026-10-01_094028_PDT.md) identifies remaining interpretation and prior-art issues.
+The new manuscript is intended to supersede the separate IRD and transaction drafts for external release. The [assessment notes](../capabilities-as-transactions/assessment-notes.md) explain the consolidation. Read the [October 1 review](critiques/review-2026-10-01_094028_PDT.md) alongside its later [clarification](critiques/clarification-2026-10-01_110945_PDT.md) and [experiment-recovery audit](critiques/experiment-recovery-2026-10-01.md): the manuscript has since repaired several statements criticized in the initial snapshot.
 
 ## The question and the instrument
 
@@ -42,11 +44,15 @@ Saturn captures native execution, forks matched alternatives, changes typed stat
 
 In FLUX.2 Klein 4B, the historical `joint.2 → joint.3 → joint.4 → single.0` text route carries twenty tested semantic contrasts: six strict nine-gate certificates, eleven additional carrier-level results, and three candidates. Single-step target transplantation leaves pixel MAD 48.4 to the target; all-step transplantation reduces it to 0.47. In the five-seed color necessity panel, removing one step leaves the target, while all-step interchange reverts to the source and all-step deletion produces the null image.
 
+Independent re-analysis of the later joint-region report confirms **15/15 tested setup/site-set combinations meet all four declared criteria**: three setups crossed with five site sets, not fifteen independent model replications. Progress was recomputed from the saved image distances. The largest singleton write is 0.562, below the 0.90 full-transfer bar; the smallest whole-path write is 0.91309. Every singleton source replacement leaves progress above 0.15, while every whole-path replacement leaves it at or below 0.01101. The five-seed color report separately confirms the necessity half, rather than five complete four-quadrant replications. See the [pinned audit JSON](../../../saturn/experiments/2026-09-30-space-and-time-circuits/time-definition-verification-2026-10-01.json).
+
 Later alternative-path controls show that the carrier is a redundant joint-region text-conditioning pathway. The historical route is a certified representative, not a unique or minimal route. Whole-path deletion is non-specific: a norm-matched sham also nulls the image, and deleting the input conditioning is equivalent to removing the prompt. Interchange and the singleton/joint gap carry the more specific information.
 
 Klein 9B identity also shows the four-quadrant pattern on two seeds and two route windows, although the stricter nine-gate panel is 8/9. Lighting is mixed. SDXL is mixed in the opposite direction to the language models: target writing requires a temporal path, but removing an early step can be individually decisive.
 
 Supporting writeups: [twenty-axis panel](../../bfl/demos/twenty-axis-semantic-route-circuit.md), [distributed K/V route](../../bfl/demos/distributed-kv-causal-route.md), [causal clock](../../bfl/demos/diffusion-time-causal-clock.md), and [SDXL decoder study](../../demos/sdxl-decoder.md). The newest [off-route](../../../saturn/experiments/2026-09-30-flux2-offroute-span-sweep/FINDINGS.md), [five-seed](../../../saturn/experiments/2026-09-30-e7-flux-color-multiseed/FINDINGS.md), [9B](../../../saturn/experiments/2026-10-01-e8-klein9b-nine-gate/FINDINGS.md), and [SDXL four-quadrant](../../../saturn/experiments/2026-10-01-e9-sdxl-four-quadrant/FINDINGS.md) records remain under Saturn.
+
+One stale reading is especially consequential: E1b/E2b treated deletion's `dp ≈ 0` as target survival. The later [E1c correction](../../../saturn/experiments/2026-09-30-flux2-residual-deletion/FINDINGS.md) shows that this is the null image, so whole-path deletion does remove the target. Preserve the older measurements, but use the corrected interpretation.
 
 ### Language models: written during a formation window, committed late
 
@@ -61,6 +67,22 @@ A residual write can install the information before the commit band. Native comp
 Consequently, the final boss survives as a model-local role or band. A universal boss layer or an all-family four-quadrant certificate is not established. The sampled Mamba certificates were retracted; Qwen3-30B's in-forward certificate does not survive the isolated cache-swap protocol. Training in the inspected Pythia identity case sharpens a late writer, reversing the earlier sampled interpretation that it progressively distributes the effect.
 
 Sources: [residual-write findings](../../../saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E16-residual-writes.md), [isolated-write findings](../../../saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md), [window necessity](../../../saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md), [computed objects](../../../saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E11-computed-object.md), [Mamba sweeps](../../../saturn/experiments/2026-09-30-mamba-full-layer-sweeps/FINDINGS.md), and [writer clock](../../../saturn/experiments/2026-09-30-mamba-writer-clock/FINDINGS.md).
+
+### Falcon hybrid: attention dominates the formed-state read
+
+The overnight E14 full sweep completed on Falcon-H1-0.5B-Base. Every singleton was tested at its attention and SSM cuts, with identity attention windows through width six. Identity admits 22/22 items across two contexts; color admits 9/20, all from one context.
+
+| Identity intervention | Attention K/V | SSM state | Both |
+|---|---:|---:|---:|
+| Whole-cut candidate changes | 17/22 | 2/22 | 21/22 |
+| Median original-answer Δlogprob | −1.774 | −0.038 | −2.644 |
+| Whole-cut normalized write | 0.987 | 0.345 | 1.000 |
+
+The strongest attention singleton identity write is 0.224, with CI [0.191, 0.254], versus about 0.81 in Qwen2.5-1.5B and Gemma-2 identity. The best six-layer necessity window carries 0.715 of attention's whole-cut effect; widths above six remain unresolved. The strongest SSM singleton writes are only 0.066 for identity and 0.055 for color. Weak, sign-varying SSM removal effects make normalized necessity shares unstable.
+
+This supports a broader attention profile and partial complementary SSM authority at the **post-subject formed-state cut**. It does not establish the predicted Mamba-like SSM writer, SSM dispensability during prefix formation, or a new strict certificate. The identity attention write crosses the 0.2 bar and color singleton necessity crosses 0.25. Falcon formation, commit, read and clock roles were not measured. These results narrow the late-writer generalization without changing the FLUX certificate.
+
+The [bundled report and verifier](evidence/hybrid-attn-ssm/README.md) check report/log equality, source hashes and complete layer/window coverage without executing a model. The aggregate-only report cannot support independent re-bootstrap. See the [canonical findings](../../../saturn/experiments/2026-10-01-e14-hybrid-attn-ssm/FINDINGS.md) for signed effects and execution history.
 
 ## Larger experiments incorporated in the story
 
@@ -123,4 +145,4 @@ Arithmetic CoT has direct [causal predecessors](https://arxiv.org/abs/2412.01113
 - **Not copied into `research/`:** the standalone E10, E6, E18, E16/E17/E19, Mamba sweep/clock, and newest diffusion experiment findings. Their current canonical records are under `saturn/experiments/`; this summary links to them explicitly. The paper contains summaries, and older AR bundles exist in [research evidence](evidence/ar-certificates/README.md), but that does not make the newer records part of the research bundle.
 - **Also outside `research/`:** the Saturn Bible/evidence documentation and the dated Obsidian capability map and retrospective, [From the Final Boss to Executable Models](../../../obsidian/blog/2026-09-08-211251-from-the-final-boss-to-executable-models.md).
 
-The [consolidated experiment directory](../../../saturn/experiments/2026-09-30-space-and-time-circuits/SUMMARY.md) links back to this summary. Verification here re-analyzed existing reports and code; no models were rerun, no historical results were rewritten, and the main manuscript was left untouched.
+The [consolidated experiment directory](../../../saturn/experiments/2026-09-30-space-and-time-circuits/SUMMARY.md) links back to this summary. Verification re-analyzed existing reports and code without running models or rewriting historical results. The initial review left the manuscript untouched; the subsequent authorized draft-3 revision incorporates E14, corrects E10's setup/timing account, and narrows the headline and late-writer claims after preserving the as-is paper directory at `369ab87`.

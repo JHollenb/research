@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the figures for "A New Class of Circuits: Space and Time" from collected reports.
+"""Build figures for "Space and Time Circuits" from collected reports.
 
 Every number is read from a report.json under saturn/experiments (paths below), except the
 timeline (fig1), whose events are dated lab notes and records listed in EVENTS, and the
@@ -28,6 +28,7 @@ FLS = EXP / "2026-09-30-full-layer-sweeps" / "results"
 MAMBA = EXP / "2026-09-30-mamba-full-layer-sweeps" / "results"
 E4 = EXP / "2026-09-30-e4-pythia-recovered-loss" / "results"
 E7 = EXP / "2026-09-30-e7-flux-color-multiseed" / "results" / "full-report.json"
+E14 = HERE.parent / "evidence" / "hybrid-attn-ssm" / "report.json"
 
 # Okabe-Ito palette (colorblind-safe)
 C = {"space": "#0072B2", "flux": "#D55E00", "clean": "#009E73", "band": "#E69F00",
@@ -122,7 +123,7 @@ def fig1():
     ax.set_xlabel("size of the best contiguous cut (heads, steps, or layers)")
     ax.set_ylabel("fraction of whole-path necessity")
     ax.set_ylim(-0.1, 1.6)
-    ax.set_title("A space circuit is carried by its best single site; a time circuit is not")
+    ax.set_title("Necessity by intervention size at each declared cut")
     ax.legend(frameon=False, fontsize=7.5, loc="upper left")
     fig.savefig(HERE / "fig5-cut-size.png")
     plt.close(fig)
@@ -259,12 +260,14 @@ QCELLS = [("SmolLM2 id", "canary-70c9aa8890ca", "identity"),
 
 
 def fig4():
-    fig, ax = plt.subplots(figsize=(5.6, 4.6))
-    ax.add_patch(plt.Rectangle((0, 0), 0.25, 0.25, color=C["clean"], alpha=0.10, lw=0))
-    ax.text(0.01, 0.235, "time-circuit quadrant\n(neither single site suffices)", fontsize=7,
-            color=C["clean"], va="top")
+    fig, ax = plt.subplots(figsize=(6.8, 5.0))
+    ax.add_patch(plt.Rectangle((0, 0), 0.25, 0.2, color=C["clean"], alpha=0.10, lw=0))
+    ax.text(0.01, 0.025, "low singleton effects\nwhole-path checks also required", fontsize=7,
+            color=C["clean"], va="bottom")
+    ax.axvline(0.25, color=C["grey"], ls=":", lw=0.8)
+    ax.axhline(0.2, color=C["grey"], ls=":", lw=0.8)
     ax.add_patch(plt.Rectangle((0.5, 0.5), 0.55, 0.55, color=C["space"], alpha=0.08, lw=0))
-    ax.text(0.52, 1.04, "space-circuit quadrant", fontsize=7, color=C["space"], va="top")
+    ax.text(0.52, 1.04, "large singleton effects", fontsize=7, color=C["space"], va="top")
     pts = []
     for label, rdir, beh in QCELLS:
         p = FLS / rdir / "report.json"
@@ -288,14 +291,24 @@ def fig4():
         ax.scatter(x, y, color=C["mamba"], marker="D", s=26, zorder=3)
         ax.annotate(label.replace(" identity", ""), (x, y), xytext=(4, -8),
                     textcoords="offset points", fontsize=6.5)
+    for beh, offset in [("identity", (-65, 21)), ("color", (12, -17))]:
+        s = load(E14)["summary"][beh]
+        x = max(v["fraction"]["median"] for v in s["necessity"]["attn"].values())
+        y = max(v["median"] for v in s["write"]["attn"].values())
+        label = "Falcon attention " + ("id" if beh == "identity" else "color")
+        pts.append((label, x, y))
+        ax.scatter(x, y, color=C["flux"], marker="^", s=45, zorder=4)
+        ax.annotate(label, (x, y), xytext=offset, textcoords="offset points", fontsize=7,
+                    arrowprops={"arrowstyle": "-", "color": C["flux"], "lw": 0.6})
     ax.set_xlim(-0.05, 1.08)
     ax.set_ylim(-0.05, 1.08)
-    ax.set_xlabel("best single-layer necessity (isolated cut)")
-    ax.set_ylabel("best single-layer write (isolated K/V or state)")
-    ax.set_title("Single-site necessity is low, single-site write is high:\n"
-                 "written once, committed late (whole path = 1.00 in every cell)")
+    ax.set_xlabel("best singleton necessity share of its own whole-cut effect")
+    ax.set_ylabel("best singleton normalized write (isolated K/V or state)")
+    ax.set_title("Singleton necessity and write profiles differ across specimens\n"
+                 "Selected full sweeps; Falcon adds weaker attention write ports")
     ax.scatter([], [], color=C["band"], s=28, label="transformer cells (E3b/E17)")
     ax.scatter([], [], color=C["mamba"], marker="D", s=26, label="Mamba cells (E16)")
+    ax.scatter([], [], color=C["flux"], marker="^", s=45, label="Falcon attention (E14)")
     ax.legend(frameon=False, fontsize=7, loc="lower right")
     fig.savefig(HERE / "fig2-quadrants.png")
     plt.close(fig)
@@ -321,7 +334,7 @@ EVENTS = [  # (date, lane, label, source)
     ("2026-09-22", 2, "pointwise paper: single-site\ntests miss distributed stores", "research/papers/pointwise-instruments-miss-distributed-circuits/paper.md"),
     ("2026-09-25", 1, "exact join replaces attention's read", "saturn/experiments/2026-09-25-ar-exact-join-admission/FINDINGS.md"),
     ("2026-09-30", 3, "Mamba certificates and 30B\nin-forward certificate retracted", "saturn/experiments/2026-09-30-full-layer-sweeps/PLAN.md"),
-    ("2026-09-30", 1, "written once, committed late (E16/E17)", "saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md"),
+    ("2026-09-30", 1, "one residual seed, late commit (E16/E17)", "saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md"),
     ("2026-09-30", 2, "circuit-tracer misses the store (E6)", "saturn/experiments/2026-09-30-circuit-tracer-head-to-head/FINDINGS.md"),
     ("2026-10-01", 1, "the path is a late band (E19)", "saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md"),
 ]
@@ -357,7 +370,7 @@ def fig5():
     ax.set_xlim(0, (dt.date(2026, 10, 9) - d0).days)
     ax.set_ylim(-0.7, len(LANES) - 0.3)
     ax.spines["left"].set_visible(False)
-    ax.set_title("How the time circuit was found, Aug 5 – Oct 1, 2026")
+    ax.set_title("How circuit formation and control were mapped, Aug 5 – Oct 1, 2026")
     fig.savefig(HERE / "fig1-timeline.png")
     plt.close(fig)
 

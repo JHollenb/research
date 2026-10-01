@@ -1,0 +1,473 @@
+{
+  "execution_record_sha256": "40d9e4542a1f37e3598980b923f3f8f770fd946b838de2fef7fd725cc064e588",
+  "instrument_status": "aggregate-only-no-item-rows",
+  "job_id": "job-5efb5697631c",
+  "mechanics_status": "record-consistent",
+  "problems": [],
+  "report_sha256": "914ee169683a7f751e2b3e1517c6b280ef2d7e3380083d3b13bd692e335a6121",
+  "schema": "e14-record-audit-v1",
+  "scope": "Existing collected aggregates, log payload, scheduler record and source hashes; no model execution.",
+  "sources": {
+    "PLAN.md": "07a8c91c1d987d3ff51682ffd651f5ba0f334730be68522a89d2871174c93bab",
+    "run_sae_comparison.py": "69c85378077bfa17ababf4bd46c48a41a160c53087c9508169c709a5fb63d1f6",
+    "worker_hybrid.py": "b237695b8f6189046317984ad57bc15e90a6e5f8b1f3ad1fe741bd8229c4fa28"
+  },
+  "summary": {
+    "color": {
+      "both_all_necessity": {
+        "flip": {
+          "hi": 1,
+          "lo": 0.6666666666666666,
+          "n": 9,
+          "rate": 0.8888888888888888
+        },
+        "median_dlp": -2.5686964988708496
+      },
+      "both_all_write": {
+        "hi": 1.0000002479233459,
+        "lo": 0.9999991884895862,
+        "median": 0.99999989251714,
+        "n": 9
+      },
+      "capability_drop_median": 2.568694591522217,
+      "cuts": {
+        "attn": {
+          "best_positive_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 9,
+              "rate": 0
+            },
+            "fraction": {
+              "hi": 0.3757890768126765,
+              "lo": 0.17093454436283032,
+              "median": 0.29480677601392274,
+              "n": 9
+            },
+            "layer": "L23",
+            "median_dlp": -0.4918762445449829
+          },
+          "best_positive_write": {
+            "hi": 0.2762050758658482,
+            "layer": "L23",
+            "lo": 0.1028466475929136,
+            "median": 0.17485613275349443,
+            "n": 9
+          },
+          "largest_absolute_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 9,
+              "rate": 0
+            },
+            "fraction": {
+              "hi": 0.3757890768126765,
+              "lo": 0.17093454436283032,
+              "median": 0.29480677601392274,
+              "n": 9
+            },
+            "layer": "L23",
+            "median_dlp": -0.4918762445449829
+          },
+          "largest_absolute_write": {
+            "hi": 0.2762050758658482,
+            "layer": "L23",
+            "lo": 0.1028466475929136,
+            "median": 0.17485613275349443,
+            "n": 9
+          },
+          "maximum_singleton_flip_rate": 0,
+          "whole_necessity": {
+            "flip": {
+              "hi": 1,
+              "lo": 0.6666666666666666,
+              "n": 9,
+              "rate": 0.8888888888888888
+            },
+            "median_dlp": -2.289154529571533
+          },
+          "whole_write": {
+            "hi": 0.9734153489279541,
+            "lo": 0.8686827444221862,
+            "median": 0.9562402373242794,
+            "n": 9
+          }
+        },
+        "ssm": {
+          "best_positive_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 9,
+              "rate": 0
+            },
+            "fraction": {
+              "hi": 0.7614400877012293,
+              "lo": 0.040143338670411484,
+              "median": 0.19218023819887667,
+              "n": 9
+            },
+            "layer": "L9",
+            "median_dlp": -0.05199837684631348
+          },
+          "best_positive_write": {
+            "hi": 0.06774542950235853,
+            "layer": "L0",
+            "lo": 0.015380797220255779,
+            "median": 0.05513330383780105,
+            "n": 9
+          },
+          "largest_absolute_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 9,
+              "rate": 0
+            },
+            "fraction": {
+              "hi": 0.45055877269981204,
+              "lo": -2.6422409251925325,
+              "median": -0.4235815839019095,
+              "n": 9
+            },
+            "layer": "L1",
+            "median_dlp": 0.174760103225708
+          },
+          "largest_absolute_write": {
+            "hi": -0.06396466418894724,
+            "layer": "L1",
+            "lo": -0.13368868599946537,
+            "median": -0.09473350944478774,
+            "n": 9
+          },
+          "maximum_singleton_flip_rate": 0,
+          "whole_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 9,
+              "rate": 0
+            },
+            "median_dlp": -0.06902134418487549
+          },
+          "whole_write": {
+            "hi": 0.24249193682851813,
+            "lo": 0.09429600285216518,
+            "median": 0.1715155587586261,
+            "n": 9
+          }
+        }
+      },
+      "n_admitted": 9,
+      "n_items": 20,
+      "split_noop_max": 0.000034332275390625,
+      "split_noop_token_max": 0.00006103515625,
+      "windows_attn": {},
+      "write_noops": {
+        "attn_write_noop_max": 0.00000667572021484375,
+        "ssm_write_noop_max": 0.000010013580322265625
+      }
+    },
+    "identity": {
+      "both_all_necessity": {
+        "flip": {
+          "hi": 1,
+          "lo": 0.8636363636363636,
+          "n": 22,
+          "rate": 0.9545454545454546
+        },
+        "median_dlp": -2.6444251537323
+      },
+      "both_all_write": {
+        "hi": 1.000000625126309,
+        "lo": 0.9999996666636111,
+        "median": 1.0000002024026315,
+        "n": 22
+      },
+      "capability_drop_median": 2.6444259881973267,
+      "cuts": {
+        "attn": {
+          "best_positive_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 22,
+              "rate": 0
+            },
+            "fraction": {
+              "hi": 0.17777481155063574,
+              "lo": 0.06930748704194445,
+              "median": 0.1488045965785574,
+              "n": 22
+            },
+            "layer": "L30",
+            "median_dlp": -0.30442607402801514
+          },
+          "best_positive_write": {
+            "hi": 0.25425205315935134,
+            "layer": "L23",
+            "lo": 0.1913238643050615,
+            "median": 0.22364465750512186,
+            "n": 22
+          },
+          "largest_absolute_necessity": {
+            "flip": {
+              "hi": 0,
+              "lo": 0,
+              "n": 22,
+              "rate": 0
+            },
+            "fraction": {
+              "hi": 0.17777481155063574,
+              "lo": 0.06930748704194445,
+              "median": 0.1488045965785574,
+              "n": 22
+            },
+            "layer": "L30",
+            "median_dlp": -0.30442607402801514
+          },
+          "largest_absolute_write": {
+            "hi": 0.25425205315935134,
+            "layer": "L23",
+            "lo": 0.1913238643050615,
+            "median": 0.22364465750512186,
+            "n": 22
+          },
+          "maximum_singleton_flip_rate": 0.09090909090909091,
+          "whole_necessity": {
+            "flip": {
+              "hi": 0.9545454545454546,
+              "lo": 0.5909090909090909,
+              "n": 22,
+              "rate": 0.7727272727272727
+            },
+            "median_dlp": -1.7739793062210083
+          },
+          "whole_write": {
+            "hi": 1.0719410321776874,
+            "lo": 0.9311331738924936,
+            "median": 0.9867678855653035,
+            "n": 22
+          }
+        },
+        "ssm": {
+          "best_positive_necessity": {
+            "flip": {
+              "hi": 0.22727272727272727,
+              "lo": 0,
+              "n": 22,
+              "rate": 0.09090909090909091
+            },
+            "fraction": {
+              "hi": 0.33548039902296,
+              "lo": -0.2433473672554859,
+              "median": 0.17645527760665114,
+              "n": 22
+            },
+            "layer": "L8",
+            "median_dlp": 0.060910820960998535
+          },
+          "best_positive_write": {
+            "hi": 0.10067240611169335,
+            "layer": "L21",
+            "lo": 0.05131454465892078,
+            "median": 0.06636241091441429,
+            "n": 22
+          },
+          "largest_absolute_necessity": {
+            "flip": {
+              "hi": 0.22727272727272727,
+              "lo": 0,
+              "n": 22,
+              "rate": 0.09090909090909091
+            },
+            "fraction": {
+              "hi": 0.33548039902296,
+              "lo": -0.2433473672554859,
+              "median": 0.17645527760665114,
+              "n": 22
+            },
+            "layer": "L8",
+            "median_dlp": 0.060910820960998535
+          },
+          "largest_absolute_write": {
+            "hi": 0.10067240611169335,
+            "layer": "L21",
+            "lo": 0.05131454465892078,
+            "median": 0.06636241091441429,
+            "n": 22
+          },
+          "maximum_singleton_flip_rate": 0.09090909090909091,
+          "whole_necessity": {
+            "flip": {
+              "hi": 0.22727272727272727,
+              "lo": 0,
+              "n": 22,
+              "rate": 0.09090909090909091
+            },
+            "median_dlp": -0.037509799003601074
+          },
+          "whole_write": {
+            "hi": 0.4233628510143951,
+            "lo": 0.26231526062543725,
+            "median": 0.3451931269971593,
+            "n": 22
+          }
+        }
+      },
+      "n_admitted": 22,
+      "n_items": 22,
+      "split_noop_max": 0.0000362396240234375,
+      "split_noop_token_max": 0.0000762939453125,
+      "windows_attn": {
+        "w2": {
+          "best": {
+            "complement": {
+              "flip": {
+                "hi": 0.45454545454545453,
+                "lo": 0.09090909090909091,
+                "n": 22,
+                "rate": 0.2727272727272727
+              },
+              "fraction": {
+                "hi": 0.5217126172981847,
+                "lo": 0.30947349707644145,
+                "median": 0.4095136467066082,
+                "n": 22
+              },
+              "median_dlp": -0.7096681594848633
+            },
+            "window": {
+              "flip": {
+                "hi": 0,
+                "lo": 0,
+                "n": 22,
+                "rate": 0
+              },
+              "fraction": {
+                "hi": 0.5279506246935558,
+                "lo": 0.2176464519941267,
+                "median": 0.47100405956551483,
+                "n": 22
+              },
+              "median_dlp": -0.7271901369094849
+            }
+          },
+          "best_window": "L29-30"
+        },
+        "w3": {
+          "best": {
+            "complement": {
+              "flip": {
+                "hi": 0.5,
+                "lo": 0.13636363636363635,
+                "n": 22,
+                "rate": 0.3181818181818182
+              },
+              "fraction": {
+                "hi": 0.5049826972607866,
+                "lo": 0.3320885814693407,
+                "median": 0.4184166470853546,
+                "n": 22
+              },
+              "median_dlp": -0.7277170419692993
+            },
+            "window": {
+              "flip": {
+                "hi": 0.13636363636363635,
+                "lo": 0,
+                "n": 22,
+                "rate": 0.045454545454545456
+              },
+              "fraction": {
+                "hi": 0.5190650982842313,
+                "lo": 0.2524802434394676,
+                "median": 0.4301625128756264,
+                "n": 22
+              },
+              "median_dlp": -0.6822113990783691
+            }
+          },
+          "best_window": "L28-30"
+        },
+        "w4": {
+          "best": {
+            "complement": {
+              "flip": {
+                "hi": 0.45454545454545453,
+                "lo": 0.09090909090909091,
+                "n": 22,
+                "rate": 0.2727272727272727
+              },
+              "fraction": {
+                "hi": 0.4429441912303669,
+                "lo": 0.17998087552492653,
+                "median": 0.26329843172627904,
+                "n": 22
+              },
+              "median_dlp": -0.4762568473815918
+            },
+            "window": {
+              "flip": {
+                "hi": 0.22727272727272727,
+                "lo": 0,
+                "n": 22,
+                "rate": 0.09090909090909091
+              },
+              "fraction": {
+                "hi": 0.6960794242523904,
+                "lo": 0.26062361079680757,
+                "median": 0.5869326032868196,
+                "n": 22
+              },
+              "median_dlp": -0.9077067375183105
+            }
+          },
+          "best_window": "L27-30"
+        },
+        "w6": {
+          "best": {
+            "complement": {
+              "flip": {
+                "hi": 0.22727272727272727,
+                "lo": 0,
+                "n": 22,
+                "rate": 0.09090909090909091
+              },
+              "fraction": {
+                "hi": 0.32325896360834894,
+                "lo": -0.13045339250181387,
+                "median": 0.192634098276233,
+                "n": 22
+              },
+              "median_dlp": -0.31381094455718994
+            },
+            "window": {
+              "flip": {
+                "hi": 0.4090909090909091,
+                "lo": 0.09090909090909091,
+                "n": 22,
+                "rate": 0.22727272727272727
+              },
+              "fraction": {
+                "hi": 1.0360515308193685,
+                "lo": 0.5974044266961884,
+                "median": 0.7150807287264289,
+                "n": 22
+              },
+              "median_dlp": -1.4466323852539062
+            }
+          },
+          "best_window": "L29-34"
+        }
+      },
+      "write_noops": {
+        "attn_write_noop_max": 0.000009775161743164062,
+        "ssm_write_noop_max": 0.00000858306884765625
+      }
+    }
+  },
+  "terminal_status": "No new four-quadrant certificate established by this audit."
+}
