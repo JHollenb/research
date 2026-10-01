@@ -29,9 +29,17 @@ Draft 3 (updated 2026-10-01): full prose for every section whose results are set
 - **TODO [R#]** marks a collation or correction step (Appendix B);
 - **TODO [W]** marks writing only.
 
-The 2026-10-01 status update reconciles the completed experiments through E19 with the summaries and limitations, including the recovered E14 Falcon hybrid run. Earlier sampled verdicts and historical nulls remain labeled as such. E10 establishes causal use of non-restated intermediate arithmetic state; E12/E18 establish bucket-and-join replacement in the tested settings, while query-derived semantic selection remains open.
+The 2026-10-01 status update reconciles the completed experiments through E20 with the summaries and limitations, including the recovered E14 Falcon hybrid run. Earlier sampled verdicts and historical nulls remain labeled as such. E10 establishes causal use of non-restated intermediate arithmetic state; E12/E18 establish bucket-and-join replacement in the tested settings, while query-derived semantic selection remains open.
 
 E14 shows attention-dominated formed-state dependence, partial SSM writing and no strong concentrated SSM writer or new strict certificate. The [pinned report and verifier](evidence/hybrid-attn-ssm/README.md) are bundled here. This narrows the recurring late-writer claim while preserving the FLUX result. E10's corrected account distinguishes use of an already cached consumed step from regeneration of that step after intervention.
+
+E20 directly connects an L12 residual seed to endogenous L22–27 subject K/V
+and the native consumer in Qwen2.5-1.5B identity: blocking the band removes a
+median 0.924 of seed logprob gain, and transplanting it into an unseeded
+recipient recovers 0.871. The 42-row mrun result, controls and mechanics
+verification are in [the experiment record](../../../saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E20-mediation.md);
+the [timestamped follow-up](critiques/experiment-followup-2026-10-01_121715_PDT.md)
+explains its claim scope and remaining work.
 
 The as-is paper directory was committed at `369ab87` before this recovery revision. The [recovery audit](critiques/experiment-recovery-2026-10-01.md) records the inclusion gaps and source checks.
 

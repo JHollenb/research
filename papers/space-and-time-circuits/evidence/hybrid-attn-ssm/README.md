@@ -1,6 +1,6 @@
 # Falcon hybrid attention and SSM evidence
 
-This bundle pins the recovered E14 result used in [paper §6.4](../../paper.md#64-the-certificate-is-about-the-cut-not-the-architecture). It copies the successful job's report, collection receipt, scheduler execution record and log without changing their bytes. The log is named `job-log.txt` here. The submitted worker, design and helper are included with their original source hashes.
+This bundle pins the recovered E14 result used in [paper §6.4](../../paper.md). It copies the successful job's report, collection receipt, scheduler execution record and log without changing their bytes. The log is named `job-log.txt` here. The submitted worker, design and helper are included with their original source hashes.
 
 `job-5efb5697631c` completed on 2026-10-01 at 01:40:58 PDT. Falcon-H1-0.5B-Base has 36 parallel attention/Mamba2 layers. The run uses CUDA FP32, TF32 disabled, eager attention, seed 0, two contexts and chunk suffix replay. Every singleton is swept at both formed-state cuts for identity and color; identity attention additionally has all 133 width-2/3/4/6 windows and complements.
 

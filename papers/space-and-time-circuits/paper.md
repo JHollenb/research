@@ -20,7 +20,7 @@ tags: [interpretability, circuits, diffusion, language-models, state-space-model
 
 Jacob Hollenbeck
 
-*Draft 3, 2026-10-01; incorporates the recovered overnight E14 run.*
+*Draft 3, 2026-10-01; incorporates the recovered overnight E14 run and E20 residual-seed mediation.*
 
 > **Draft notes.**
 >
@@ -40,63 +40,13 @@ Jacob Hollenbeck
 
 ## Abstract
 
-> **TODO [W, pick one]:** two candidate abstracts. **A** is the full account; **B** is the short announcement. Keep one before publishing.
+We distinguish local causal support from state formed through ordered execution. A space circuit has individually decisive support at a declared state interface and site resolution. A time-formed circuit can accumulate control across denoising steps, model depth or recurrent transitions. Its path-distributed subtype has a four-quadrant signature: no singleton meets the declared necessity or sufficiency criterion, while whole-path interventions meet both. Intervention effects are judged by the unchanged model consumer.
 
-### Abstract A — full account
+In FLUX.2 Klein 4B, the text-conditioning carrier shows this signature across three source/target setups and five tested site sets. Single-step writes reach at most 0.562 target-image progress, while all-step writes reach at least 0.913 against the 0.90 transfer criterion. Every singleton source replacement leaves progress above the 0.15 removal criterion; every whole-path replacement leaves at most 0.011. A separate five-seed color panel confirms the necessity profile: single-step removal retains the target, whole-path interchange reaches the source, and whole-path deletion reaches the null image.
 
-**Circuit taxonomy.** A *space circuit* has locally decisive causal support at the declared resolution: a head, feature, edge or state site whose intervention matters on its own. A *time-formed circuit* is broader: its controlling state depends causally on an ordered execution history. The two properties are not exclusive. A local source write can seed a computation that the unchanged suffix forms over time, and a time-formed store can have a local commit, latch or readout.
+Decoder and state-space sweeps expose different formation, commitment and read profiles. In Qwen and Gemma identity cells, singleton necessity shares are at most 0.08 while late isolated K/V writes recover about 0.81 of normalized answer-logprob gain. In Qwen2.5-1.5B, blocking an endogenous late K/V band removes a median 0.924 of an upstream residual seed's logprob effect; transplanting that band into an unseeded recipient recovers 0.871. Mamba concentrates control at a late retention layer. Falcon's hybrid state has attention-dominated dependence with weaker individual write ports and partial SSM writing. On admitted scaffolded arithmetic items, non-restated intermediate K/V state causally controls subsequent answers.
 
-The broad family has three architecture-level variations:
-- **diffusion accumulation:** a carrier is updated across denoising steps;
-- **autoregressive formation/commit:** a source state is transformed through depth and committed into a later read store;
-- **SSM retention/latch:** recurrent transitions form state and a selective retention mechanism holds it for a later consumer.
-
-A *strict path-distributed time circuit* is the subtype that passes the four-quadrant certificate at a declared cut: no single site is necessary or sufficient, while the whole path is both. The certificate measures distributed causal support under the stated interventions and thresholds; it does not require nonlinearity, because a weighted additive route can also produce the cross.
-
-**A tested diffusion specimen passes the strict certificate.** In FLUX.2 Klein 4B, a text-stream carrier across the denoising steps transports every semantic contrast we tested.
-- Transplanting the target state at one step leaves the image far from the target (pixel MAD 48.4); at all steps it reproduces it (0.47).
-- Removing any single step leaves the target (color contrast, 5/5 seeds). Removing all steps reverts the image to the source (interchange) or to the null image (deletion).
-
-**Autoregressive transformer stores are time-formed, with concentrated or redundant late commits.** Formation and commitment are measured in SmolLM2, Qwen2.5, Pythia and Gemma-2; the distribution of necessity differs by cell.
-- **Necessity is path-constituted, along a late band in the clean cells.** In the cleanest identity cells (Qwen2.5-1.5B, Gemma-2-2B), no single layer carries more than 0.08 of the effect and no three adjacent layers more than 0.18–0.23. Tested six- and eight-layer bands carry 0.76–0.96. In Gemma-2, four sliding-window layers carry 0.58–0.59 together, with global layers adding about 0.17 jointly. Across the tested cells, necessity ranges from a redundant pair or four-layer short band to wider six- and eight-layer bands. Qwen2.5-0.5B identity is the redundant pair, a space circuit with backup.
-- **One residual intervention can seed formation.** A residual write at the subject during the formation window lets the unchanged suffix author the answer; formed-store write ports are concentrated or redundant in the late band at about 0.7–0.9 of depth.
-- **The seed acts through a later formed store.** In Qwen2.5-1.5B identity, blocking L22–27 removes a median 0.924 of an L12 residual seed's logprob effect; transplanting that seed-formed band into an unseeded recipient recovers 0.871. Wrong-identity bands author the wrong identity (E20, §6.1b).
-- **A commit ledger characterizes the store.** Transformer curves match in shape but overshoot in summed magnitude because late write ports are redundant; in Gemma-2 only the sliding-window layers commit positively.
-- **The store is read at the commit layer.** That read can be replaced by an exact-row join.
-- **A computed answer is written in two places.** In addition problems, the operands are committed early at their own positions and the sum is formed late at the query position.
-
-**The tested SSM specimen shows the retention/latch variation.** In Mamba, the residual-write curve matches the downstream sum of per-layer state writes within 0.02–0.15, and the committing layer is the one that nearly stops its own clock. Full sweeps find a locally decisive late writer, so none of the tested Mamba cells passes the strict four-quadrant subtype. The evidence is for these specimens and cuts, not for SSMs universally.
-
-**A hybrid model broadens the comparison.** In Falcon-H1-0.5B, attention dominates the tested post-subject state dependence: whole-attention interchange changes 17/22 identity candidates, versus 2/22 for SSM state alone and 21/22 for both. Attention's strongest identity singleton write is only 0.224, and its best six-layer necessity window carries 0.715 of its own whole-cut effect. The SSM path writes identity partly (0.345 whole-cut gain), but no concentrated Mamba-like SSM writer is established. No new strict certificate follows (§6.4).
-
-**Instrument coverage is uneven.**
-- *A space circuit, found:* on Pythia-70M induction, three heads are necessary and sufficient (recovered loss ≈ 1.0), and one head alone carries 0.58–0.72 of the necessity.
-- *The tested circuit-tracer feature basis does not recover full control of the store.* On the same Gemma-2-2B panel where a whole-state cut over the second half flips 83–84% of answers:
-  - its attribution graph places the subject's largest layer at L0 and routes about 30% of influence through error nodes;
-  - no tested feature ablation recovers a necessity flip; feature-basis interchange of its own top features or all ~18,000 features at every position converts identity at most 0.08 of the way (median), with at most 1 of 12 flips.
-- *Elsewhere:* single-step patching understates the tested diffusion carrier, and in a blind-graded trial four standard readouts gave the wrong verdict in 4 of 4 cases.
-
-**Why it matters.** The single-site/whole-path gap changes how we locate and edit a carrier. The consequences are concrete:
-- edits must be installed early;
-- *when* a write lands selects *what* changes;
-- a prompt compiles to an installable source that reproduces native images exactly.
-
-### Abstract B — announcement
-
-We distinguish localized causal support from state formed through ordered execution. A *space circuit* has a head, feature, edge or state site that matters on its own. A *time-formed circuit* depends on a trajectory through denoising steps, autoregressive depth or recurrent state transitions. These properties can coexist: a local source, commit, latch or readout can participate in a temporally formed computation.
-
-A strict path-distributed subtype passes a four-quadrant certificate at a declared cut: no single site is necessary or sufficient, while the whole path is both. The certificate is judged by the model's own output under exact replay. It diagnoses distributed causal support, not nonlinearity; weighted additive routes can also pass it.
-
-**Where we find them.**
-- *FLUX.2 Klein 4B.* Removing any single denoising step leaves the target image on 5 of 5 seeds; removing every step reverts it.
-- *Language transformers* (SmolLM2, Qwen2.5, Pythia and Gemma-2). In the cleanest cells, a stored object is spread over a late band of the subject's key/value trace. No single layer carries more than 0.08 of the effect and no three adjacent layers more than 0.23, yet six to eight layers carry 0.76–0.96. In smaller models the band narrows, down to a redundant pair of layers in Qwen2.5-0.5B.
-
-In autoregressive transformers, one residual intervention can seed a store that the unchanged layer suffix forms and commits late. A commit ledger compares that source write with the downstream formed-store write ports. In the tested SSM specimens, Mamba shows the retention/latch variation: ordered state formation with a concentrated late layer that nearly stops its clock. Those Mamba cells do not pass the strict four-quadrant subtype.
-
-Falcon-H1-0.5B adds a mixed hybrid profile: the formed attention store dominates these reads, with broader necessity and weaker singleton writing than the earlier concentrated-writer cells. SSM state has partial writing authority without a strong localized writer. This limits the late-writer generalization while preserving the diffusion result.
-
-**The tested feature basis misses identity and partly captures color.** On Gemma-2-2B, cutting the subject's state over the second half of the layers flips 83–84% of answers. On the same panel, Anthropic's circuit tracer places the subject's influence at layer 0 and in error nodes. The tested feature interventions move identity at most 0.08 of the way (median), including interchange of all ~18,000 features at every position. Color is partly captured: all-layer feature interchange reaches 0.31–0.42. On a space circuit (Pythia-70M induction), standard head ablation finds the three responsible heads.
-
+The tested Gemma circuit-tracer feature basis captures little identity control and partial color control despite large native-state intervention effects. Together, these results separate where state can be seeded, where it is stored and how it is consumed, and connect that distinction to temporal editing and source compilation.
 ---
 
 ## 1. Introduction
@@ -303,7 +253,7 @@ The cost is generality: the exact paths cover a few pinned models, need a job sc
 
 ![Figure 1. Timeline](figures/fig1-timeline.png)
 
-**Figure 1. How the time-formed circuit family was identified, Aug 5 – Oct 1, 2026.** Each event is a dated lab note or experiment record (sources in `figures/make_figures.py`, `EVENTS`). The lanes separate diffusion, language-model, instrument and retraction milestones. Retractions are part of the path: the crossed-pairing leak, the rank-16 clock, and the Mamba and 30B in-forward certificates.
+**Figure 1. How circuit formation and control were mapped, Aug 5 – Oct 1, 2026.** Each event is a dated lab note or experiment record (sources in `figures/make_figures.py`, `EVENTS`). The lanes separate diffusion, language-model, instrument and retraction milestones. Retractions are part of the path: the crossed-pairing leak, the rank-16 clock, and the Mamba and 30B in-forward certificates.
 
 ## 5. Diffusion accumulation: a strict path-distributed specimen
 
@@ -644,6 +594,21 @@ Thus the necessity-clean language-model stores have distributed necessity within
 ![Figure 5. Necessity by cut size](figures/fig5-cut-size.png)
 
 **Figure 5. Necessity carried by the best cut of size k.** A space circuit is carried by its best single site: Pythia-70M's relay head L2H1 carries 0.58, and the minimal three-head circuit 0.95 (E4). In the necessity-clean language-model cells the best single layer carries ≤ 0.18 and the best three ≤ 0.42. The smallest tested qualifying windows span six or eight layers, while Gemma identity remains below 0.8 at eight (E19). Short-band cells have qualifying four-layer windows, and Qwen2.5-0.5B's redundant pair has a qualifying pair. FLUX (orange, four denoising steps) is read on its dp axis. Its best single step, the last, moves the image 0.37–0.46 of the way toward the source, yet the image stays nearest the target on every seed. That is the strict path-distributed verdict under the nearest-class rule (§5.5), but the step is not inert.
+
+**Does the source seed act through the late store? E20 (MEASURED).** We combined the E16 source write with the E19 late-band cut on Qwen2.5-1.5B's existing identity panel: 14 one-token identities × three contexts, 42/42 admitted rows (`job-e1f652e80f43`; smoke `job-ae430ab2aebd`; `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E20-mediation.md`). A donor residual entering L12 seeds the filler recipient. After the subject finishes computing, we overwrite only its L22–27 K/V rows and let the unchanged suffix consume them. The rescue source is K/V formed by the **seeded recipient**, rather than the clean donor's oracle trace; rescue installs that band into an otherwise **unseeded** recipient cache.
+
+| arm | median fraction of the actual seed's logprob effect retained (95% item bootstrap CI) | target candidate top-1 | target full-vocabulary top-1 |
+|---|---|--:|--:|
+| L12 residual seed | 1 | 42/42 | 38/42 |
+| seed + recipient L22–27 block | 0.076 [−0.030, 0.235] | 14/42 | 1/42 |
+| unseeded recipient + seeded L22–27 rescue | 0.871 [0.850, 0.894] | 37/42 | 37/42 |
+| seed + matched-width L16–21 block | 0.934 [0.913, 0.958] | 39/42 | 37/42 |
+
+The late-band block removes **0.924 [0.765, 1.030]** of the seed effect, with a raw median removal of 3.290 nats. The seed raises target logprob by a median 3.515 nats. Ratios use each row's actual seed effect before aggregation; all 42 denominators are positive and at least 1.577 nats, so the 10% and 25% denominator-sensitivity panels retain every row. The block lowers target logprob in every row, but fractions range from 0.397 to 1.327; values above one mean suppression below the recipient baseline, not more than 100% of a unique causal contribution. Context medians for removal are 0.900/0.920/0.930 and for rescue 0.871/0.833/0.954. Bootstrap intervals describe this measured panel, with identities repeated across contexts, rather than independent held-out replication.
+
+A cyclic wrong-identity band authors the wrong donor's token on 37/42 rows and the intended target on 0/42, under both readouts. Each suffix receives a private cache; overwrites occur after subject computation. All recorded logits/K/V are finite. Split/full-forward and residual self-write differences are ≤ 3.8e-5 in full-vocabulary logits; recipient-band reinstall and seeded-band block/restore are exact. Block/restore checks replay closure and is not independent rescue evidence.
+
+**Reading.** The L12 seed's effect is largely mediated by the endogenous late subject K/V band in this cell. This directly connects source control, later formed state and native consumption, strengthening the autoregressive formation/commit account. It does not make the band unique, establish every natural donor computation's route, decode intermediate semantic state or certify free-running chain-of-thought tracking. The 0.81 singleton formed-store write at L23 remains unchanged, so this result supports the broad time-formed family without supplying the strict subtype's missing low-singleton-write quadrant.
 
 **Relation to prior work on factual recall.** Three lines of work describe parts of this picture in transformers.
 
@@ -1262,6 +1227,7 @@ The four-quadrant certificate identifies the **strict path-distributed subtype**
 **What the completed language-model experiments establish.**
 - Whole-path necessity and sufficiency, with distributed native necessity in the clean transformer cells and concentrated or redundant late write ports. No fully swept LM cell passes the strict four-quadrant certificate.
 - One upstream residual intervention can seed formation through the unchanged layer suffix. A sufficient seed does not localize the whole downstream circuit to the write site.
+- In Qwen2.5-1.5B identity, the endogenous L22–27 band carries most of an L12 seed's effect: its block removes 0.924 and its transplant into an unseeded recipient recovers 0.871 (E20). This is a bounded source-to-store-to-consumer mediation result.
 - Exact-row reads are join-replaceable at the commit, while query-derived semantic addressing remains open.
 - K/V-page interventions causally audit use of non-restated intermediate arithmetic state on the bounded E10 panel.
 - In Falcon-H1, attention dominates the tested post-subject formed-state dependence, while SSM state has partial writing authority without a concentrated Mamba-like writer. No strict certificate follows, and Falcon's source formation, read layer and retention clock remain unmeasured.
@@ -1335,7 +1301,7 @@ The tested diffusion results establish the strict path-wide signature at a decla
 | E2b | Ablation-method sensitivity (LM + FLUX) | **done** | `saturn/experiments/2026-09-30-ablation-method-sensitivity/` |
 | E3 | Isolated full sweeps + public AR bundle | **done** | `saturn/experiments/2026-09-30-isolated-swap-reruns/`; `evidence/ar-certificates/` |
 | E3b-T | Full sweeps: Qwen2.5-0.5B, Qwen3-30B, Pythia-410M | **done**: late writers; 30B fails isolated | `saturn/experiments/2026-09-30-full-layer-sweeps/` |
-| E17 | Isolated single-layer K/V write sweeps (additivity in transformers) | **done**: leak only in Qwen2.5-1.5B early layers; overshoot = redundant commit, additive after commit | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md` |
+| E17 | Isolated single-layer K/V write sweeps (additivity in transformers) | **done**: early leaks in Qwen2.5-1.5B and Gemma; isolated late writers persist; redundant commit and approximate downstream additivity | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md` |
 | E15 | Full write sweeps: Qwen2.5-1.5B and Gemma-2-2B identity | **done**: write concentrated in both (Qwen L23 0.81; Gemma L22 0.81, color L20 0.65); no LM cell passes four quadrants | `saturn/experiments/2026-09-30-full-layer-sweeps/` |
 | E16 | Residual-write sweeps, every panel cell + Mamba (rule 6) | **done** (incl. Gemma `job-ed4ce1ac5974`): formation window + Mamba commit ledger | same + `…-mamba-full-layer-sweeps/` |
 | E3b-M | Full sweeps: Mamba-130M, 370M, 2.8B (identity + counting) | **done: none certified** (single late writer) | `saturn/experiments/2026-09-30-mamba-full-layer-sweeps/` |
@@ -1351,6 +1317,7 @@ The tested diffusion results establish the strict path-wide signature at a decla
 | E13 | Cut-and-join on a time-formed-store read (§6.8) | **done**: read concentrated at the commit layer, join-replaceable; raw unstandardized bucket degenerate, later fixed by E18 standardization | `saturn/experiments/2026-09-30-e13-time-circuit-read-join/` |
 | E14 | Hybrid attention + SSM model full sweep (§6.4) | **done**: Falcon attention dominates formed-state dependence; partial SSM writing, no strong localized SSM writer and no new strict certificate | `saturn/experiments/2026-10-01-e14-hybrid-attn-ssm/`; `evidence/hybrid-attn-ssm/` |
 | E19 | Window necessity: every contiguous 2/3/4/6/8-layer window + complement, six transformer cells; Gemma sliding/global sets (E19b) | **done**: wider-band trend in necessity-clean cells (best 3 adjacent ≤ 0.23 Qwen2.5-1.5B identity, 0.18 Gemma identity); tested six/eight-layer bands carry 0.76–0.96, Gemma identity below 0.8 at eight; Qwen2.5-0.5B = redundant pair; Gemma sliding/global joint effects retained | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md` |
+| E20 | L12 residual-seed effect mediated through endogenous L22–27 subject K/V (§6.1b) | **done**: 42/42 rows; late-band block removes 0.924 of seed logprob gain; seeded-band rescue into unseeded recipient recovers 0.871; wrong band authors wrong identity; supports broad formation/commit family, no new strict certificate | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E20-mediation.md` |
 | E18 | Bucket + exact join on time-formed-store reads (E13 cells at the commit layer) and on natural text (§6.8) | **done**: subject bucket fixes E13 (size 1; join = oracle at the commit layer; Gemma sliding layers yes, global layers no); a query-formed address finds the row only on repetition (1.00), not semantic reads (0.00) | `saturn/experiments/2026-09-30-e18-bucket-join-time-reads/` |
 
 **Reproduction entry point.** `saturn/experiments/2026-09-30-space-and-time-circuits/` wraps the registered experiments without moving their records: `run.py` lists, resubmits, collects and canary-checks them, `registry.json` maps IDs to record directories, findings, submit scripts and cited jobs, and `canaries.json` holds recorded values and tolerances. Some registry entries lag the newest results, including E10 and E14 at recovery time; use the canonical directories in the table for their current scripts. E14's collected result can be checked without Saturn or model execution using `evidence/hybrid-attn-ssm/verify_record.py`; its original launcher is `saturn/experiments/2026-10-01-e14-hybrid-attn-ssm/submit.py`.
