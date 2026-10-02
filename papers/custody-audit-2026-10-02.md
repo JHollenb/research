@@ -220,3 +220,77 @@ Net: central claims (E1 repair↑scale; E2/E4 token-vs-cache dissociation + hidd
 E3 supporting) all come from the FINAL post-bugfix successful full runs, recomputed exact.
 No fabricated or stale-run numbers found. Required fixes = the six caveats above (chiefly
 #1 and #2).
+
+---
+
+## B(x) training continuation (appended 2026-10-02)
+
+Scope: verify every number in `saturn/experiments/2026-10-02-bx-training-continuation/`
+(FINDINGS.md, PAPER-SECTION.md) comes from the FINAL successful full runs and post-fix code.
+READ-ONLY; all numbers recomputed from `results/*.json` via `analyze.py`/`combine.py`, job
+state from the Beast scheduler (tunnel 19025). No model runs.
+
+Verdict: **PASS** (headline numbers reproduce exactly; 5 minor nits, none material).
+
+### Numbers custody-clean
+All 9 claimed jobs `state=succeeded`, `returncode=0`; cmd args match claimed roles
+(step/arms/data-seed/steps/lr). `combine.py` over the 3 FINAL data orders reproduces the
+FINDINGS core table to 4 dp: ref 3.1827, bf16 3.2059 (+0.0232±0.0030), bf16_Bx 3.1622
+(−0.0205±0.0076), bf16_mean 3.1561 (−0.0266±0.0038); matched-precision (vs bf16) gap
+−0.0438 / −0.0499 = "0.044 / 0.050". **The 3 orders are data-seed {1234, 2, 3}**, sourced from
+`full6-s1234.json` (job-fec87d0ed93a), `core4-s2.json` (job-42b6aafa841c), `core4-s3.json`
+(job-c7c8fa99cd9c). s0/s1 (job-05070b1d9ab9 / job-98b52ce36655) are BOTH the 1234 order and
+bit-identical to each other and to full6's core arms (verified diff=0.000000 all arms) — not a
+separate order; they are determinism replicates of the 1234 entry. The matched-precision
+per-order gaps −0.039/−0.042/−0.051 = bf16_Bx-vs-bf16 at seed 1234/2/3 ✓.
+Probes (full6): plain bf16 grad err 148.25%→65.63% (desc-eff 0.411→0.841); bf16_Bx
+28.83%→8.63% (0.949→0.998) ✓. Mid control (step64000, job-582dfd0974e9): all 4 arms within
+0.0010 nats of ref ✓; B(x) still cuts grad err (~20× on median-param, ~10× global). FP8 (full6):
+MXFP8 desc-eff −0.671, held 3.5806→4.7806; MXFP8+B(x) desc-eff +0.550→+0.866, held min 3.2724
+(t=100) → 3.4501 (+0.2673 vs ref) ✓. Throughput (full6): 16884/15282/14031/15048/9281/8767
+tok/s (B(x) costs 8.2% over bf16) ✓.
+
+### Key checks
+- **bf16 arm = fp32-master + fp32 Adam + bf16 autocast:** CONFIRMED. `train_worker.py:243`
+  loads fp32; AdamW on fp32 params → fp32 state; quantizer `x.to(bf16).to(fp32)` rounds matmul
+  operands only, fp32 accumulation; softmax/LN/GELU/residual stay fp32. (Nit: it is an
+  operand-rounding model, slightly *more* generous than true autocast which also rounds stored
+  activations — conservative for the B(x) claim; "exactly torch.autocast" is marginally strong.)
+- **B(x) = paper operator:** CONFIRMED. Same `exact_accum_worker` `_B` path — key-mean removal
+  (QAttn.fwd), softmax-grad GProj (QAttn.bwd), unembedding-mean removal + logit zero-sum
+  (QHead), chain-rule corrections. Arm D = `BX_GPROJ=False` (invariant removal, no GProj). Base
+  B(x) (uniform mean), no Tier-1 flags.
+- **Held-out disjoint:** YES — train = wikitext-2-raw-train parquet, eval/probe = -validation
+  parquet (standard disjoint splits); held loss + grad probe both on val blocks; eval always in
+  fp32 (weight quality, not inference numerics).
+- **Arms identical except rounding:** YES — same ckpt, `manual_seed(seed)` before each arm, one
+  shared data order computed before the arm loop, same AdamW/lr/warmup; only `W.ARM`+`BX_GPROJ`
+  differ.
+- **Addendum frozen before new-arm jobs:** YES — addendum 00:52:03; core4-s2/s3 created
+  00:52:32/00:52:36, fp8smoke 01:17:13, full6 01:45:40 (all after). Mid + s1 ran before the
+  addendum and are honestly logged there as already-run. FROZEN.json (00:26:25) written after the
+  lr-sweep finished (00:25:16) and before full-s0 started (00:26:38).
+- **No LR selection leakage:** CONFIRMED. `lrsweep.json` contains ONLY ref/bf16 at each LR
+  (train_worker forces `["ref","bf16"]` in sweep mode); LR 2e-5 chosen on the *reference* arm's
+  monotonic improvement (3.604→3.274), never on any B(x) arm's held-out result.
+- **Post-fix code:** full6/fp8smoke jobs created (01:17/01:45) after the mxfp8/E8M0 edit
+  (exact_accum_worker.py 01:16:58); q_mxfp8 carries the zero-block guard (`am>0 → scale 1`);
+  reported MXFP8 numbers are finite (non-NaN) → post-fix. full-s0 core ≡ full6 core
+  (diff 0.000000) proves the fix left the bf16 arms untouched.
+
+### ISSUES (all minor)
+1. **Provenance pointer.** PAPER-SECTION cites `job-05070b1d9ab9` as the data-seed-1234 core
+   source, but `combine.py`/FINDINGS feed from `full6-s1234.json` (job-fec87d0ed93a). Numerically
+   identical (verified), but cite full6 as canonical (or note full-s0≡full6-core).
+2. **"twentyfold" at mid.** Holds on median-param (21.49%→1.11%≈19×); global_rel is ~10× (t=0) to
+   ~17× (t=999). Specify the metric.
+3. **Throughput rounding.** ref 16884 printed "17.0k" (16.9k; 17.0k is the mid run's 17011);
+   bf16_mean 15048 printed "15.1k" (15.0k). Last-digit only.
+4. **Main figure = single order.** `bx-training-main.png` is byte-identical to `bx-training-s0.png`
+   = full-s0 (data-seed 1234, 4 arms). Valid audited data (core-4 ≡ full6), but it shows one data
+   order, not the 3-order mean/spread behind the headline; the fp8 panel is the separate 6-arm fig.
+5. **Context numbers not re-audited.** "203.8%→11.8%", "410m 42.7%→3.0%" are parent
+   rounding-placement paper figures cited for context, out of this experiment's scope.
+
+Net: every headline number comes from the FINAL post-fix successful runs, recomputed exact. No
+fabricated or stale-run numbers. Required fixes = the 5 nits above (chiefly #1 pointer, #2 metric).
