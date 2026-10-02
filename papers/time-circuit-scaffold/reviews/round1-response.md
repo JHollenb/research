@@ -73,7 +73,8 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 
 ## Running (placeholders in text)
 
-`<!-- TODO confirm-color -->` (§5).
+Confirm-color (§5) has since landed in round 2 (see `round2-response.md`): the fresh-color retest
+cleared FAL-3 under all three frozen locators in both families. No placeholders remain.
 
 **Landed since round 1:**
 - **P2-B sliding causality** (§3, Figure B): the Gemma-2 commit tracks depth, not attention type.
