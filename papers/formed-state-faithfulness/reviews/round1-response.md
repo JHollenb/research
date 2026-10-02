@@ -126,3 +126,37 @@ bfloat16 large point (C) and natural problems (D) are needed for a main-venue cl
 results, and any further corrections, into round 2 with a changelog. We did not change any measured number;
 the custody audit confirms the point estimates, and this revision is entirely framing, scope, prior art,
 figures, and structure.
+
+---
+
+# Round-2 update (controls landed) — central flaw conceded
+
+The decisive control the monitoring reviewer asked for (A: ablate the step **and** cut operand
+access) has run, and **the reviewer was right.** We concede the central flaw explicitly and have
+rebuilt the paper around it.
+
+- **E1 "silent repair" is recompute-from-prompt, not a hidden channel.** With operands
+  attention-masked, post-ablation repair collapses wherever the cut is non-destructive: 0.188→0.000
+  (0.5B, sanity 1.000) and 0.531→0.031 (3B, sanity 1.000). The non-destructive resample control
+  confirms it: the model never reproduces the original answer once the operands are changed
+  (tracks-original = 0.000 at 0.5B and 1.5B); it tracks the new visible operands. At 1.5B the mask
+  was destructive (sanity 0.571), so the resample control carries the verdict there (a partial pass:
+  R4 = 0.450 misses the R1−0.15 bound, but still recompute-from-prompt). We have **retracted** the
+  "silently re-derive / grows with capability" reading; the rate is not even monotone
+  (0.188/0.762/0.531) and the 3B point is a base model. E1 is now presented as a *dispensability*
+  caveat for removal-based attribution (Section 7), exactly as the reviewer characterized it.
+- **We re-led with the dissociation, not the artificial capacity edit**, per the clarity reviewer —
+  but demoted even further: the title is now "The Answer Follows the Cache," and the state-only swap
+  is stated plainly as an *injected* dissociation (it shows the hidden channel *can* override the
+  token), with the full-transcript re-verbalization recovery kept.
+- **The probe (control B) is a negative, reported as one.** The reviewer's suggestion to test a
+  state-aware monitor was the right instinct, but our single-layer linear probe did **not** clear its
+  pre-registered swap-decode bar (0.19/0.19/0.00 < 0.70). The looser 0.84-0.97 flag is exploratory
+  only (no false-positive rate; ridge penalty tuned on the evaluated items). We do **not** headline
+  "monitor the cache"; a layer-swept, held-out probe is future work.
+- **Remaining asks honored as scope:** natural-task reasoning (the reviewer's domain-breadth point)
+  is named as the main open gap (TODO D); a clean 7B-Instruct bf16 point is pending (job-050706578e6c).
+
+Net: the paper is now a workshop-scale note with one solid pre-registered result (the injected
+token-vs-state dissociation) and two honest negatives (E1 = dispensability; the probe missed its
+bar). We thank the monitoring reviewer; the operand-cut control changed our conclusion.
