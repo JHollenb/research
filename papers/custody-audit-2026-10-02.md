@@ -1,0 +1,136 @@
+# Custody audit — 2026-10-02
+
+Scope: verify every number feeding `time-formed-circuits/paper.md` and
+`time-circuit-scaffold/paper.md` (and READMEs) from the three 2026-10-02
+experiments comes from the FINAL successful full run. READ-ONLY; all numbers
+below independently recomputed from raw report rows + live job state
+(Beast scheduler via tunnel 19025). No model runs.
+
+## PASS / ISSUES
+
+| Exp | Numbers custody-clean? | Verdict |
+|---|---|---|
+| E1 site-variance-decomposition | YES (recompute == JSON == FINDINGS == papers) | PASS on numbers; ISSUES in FINDINGS interpretation (FAL-3 mislabel/overstate; post-hoc color exclusion) |
+| E2 e20-cross-family | YES (recompute == analysis.json == FINDINGS == papers == READMEs) | PASS |
+| E3 mamba-writer-clock-dose | YES on the per-cell table (recompute == summary.json == papers) | PASS with ONE propagated discrepancy (3/6 vs 2/6) |
+
+## E1 — site-variance-decomposition
+
+Final full runs: Qwen `job-9a3d0b5139ec` (succeeded, n_items 102, smoke=False),
+Gemma `job-06001771bc33` (succeeded, 102, smoke=False). Recomputed the Phase-2
+primary table directly from `results/peritem-job-*/report.json` with the
+committed `write_commit`/`late_half_argmin` logic → EXACT match to
+`results/phase2_sitemap_analysis.json` and FINDINGS:
+Qwen identity L23/SD1.16/n42, Qwen color L23/SD4.17/n22, Gemma identity
+L22/SD0.00/n42, Gemma color L20/SD1.11/n25; late-half argmin SD and in-band 1.00.
+Phase-1 decomposition verified against `F*.json`: read-site coord 42.2 / coord×op
+29.0 / coord×fact 1.1 / coord×binding 1.6 %; store-necessity op 84.0 / fact 3.2 /
+op×fact 2.0 / residual 10.4 %; consumption op 79.3 / fact 3.0 / template 0.05 %.
+All match both papers + both READMEs. Seed-gain range (published Qwen) 1.577–5.555,
+median 3.515 ✓.
+
+mtime/job ordering (all clean): PREREG 00:14:36, FROZEN 00:14:51 < Phase-2 jobs
+created (Qwen 00:17:10, Gemma 00:18:56; smokes 00:15:21/00:17:16, all post-FROZEN)
+< analysis 00:23:54 < FINDINGS 00:30:01. Metric-bug fix CONFIRMED applied:
+`phase2_sitemap_analysis.json` (00:23:54) is a post-fix output of
+`phase2_analyze.py` (00:23:50); the primary locator is `write_commit`
+(formation-window close) + late-half argmin, replacing the "argmax finds the early
+plateau" statistic. No superseded phase-2 JSON exists.
+
+ISSUES (interpretation, not wrong-run):
+1. **Qwen-color SD 4.17 exclusion is POST HOC, not per the preregistered admission
+   margin.** PREREG admission is only `clean_lp − filler_lp ≥ 1.0` and top-1==answer;
+   both "weak-signal" facts passed it and are inside n=22. The "2 weak-signal facts"
+   + "robust late-half argmin" pullbacks have no preregistered basis.
+2. **FINDINGS.md overstates and mislabels the falsifier.** FINDINGS:9 "No falsifier
+   triggered", :95 "FAL-1 … NOT triggered". But 4.17 > 4 crosses FAL-3
+   (`sd_argmax_write > 4`). `time-circuit-scaffold/paper.md` §5 handles this
+   CORRECTLY — states FAL-3 fired, labels both pullbacks post hoc, treats the cell
+   as a crossed falsifier pending a confirmatory re-run. Blog
+   `2026-10-02-010505-…` carries both the original "not triggered" text AND a ":40
+   correction" acknowledging FAL-3 fired. FINDINGS.md is the only un-corrected copy.
+3. **LATENT reproducibility risk (not a current error).** `phase2_analyze.py`
+   `load()` globs `peritem-*/report.json` and picks max `n_items` per model.
+   Phase-3 peritem folders (`258dbd06988b`, `9693441af910`) now exist; a re-run
+   could select a p3 report. The committed JSON predates p3, so current numbers are
+   clean.
+
+Phase-3 relational addendum (NOT audited, per instructions): jobs
+`job-258dbd06988b` (created 00:33:14) and `job-9693441af910` (created 00:37:29)
+both succeeded; FROZEN-addendum/PREREG-addendum (00:31:43) precede them;
+`phase3_relational_analysis.json` (01:11:24) + `FINDINGS-addendum-draft.md`
+(01:16:31) are DRAFT, not promoted, not in any paper.
+
+## E2 — e20-cross-family
+
+Final full runs: Gemma `job-fab52bcf3cce`, Qwen held-out `job-a66b102614e3`,
+SmolLM2 `job-c128e07da015` — all succeeded, smoke=False, n_admitted 42/79/34.
+Independently recomputed block/rescue/wrong/outside medians AND 95% CIs
+(`np.random.default_rng(0)`, n_boot=10000, 2.5/97.5 pct) from each report's
+admitted rows → EXACT match to `results/analysis.json`, FINDINGS Table,
+`time-formed-circuits` Table 2 / §3.3–3.4, and both READMEs:
+Qwen pub 0.924 [0.765,1.030] / 0.871 [0.850,0.894]; Qwen held-out
+0.728 [0.676,0.795] / 0.713 [0.683,0.764]; Gemma 0.768 [0.752,0.809] /
+0.985 [0.980,0.995]; SmolLM2 0.740 [0.663,0.812] / 0.910 [0.884,0.917];
+earlier-band 0.066/0.219/−0.008/0.020; wrong-identity −0.067/−0.039/−0.260/0.015;
+top-1 rates all match. Published E20 `FINDINGS-E20-mediation.md` states 0.924/0.871 ✓.
+
+No failed/smoke row contributed: killed_vram `job-66931f253d0c` and killed_ram
+`job-0efc7bef9d07` have NO report.json; all smokes (`1dac8132fe0f`,`68552f432536`,
+`40dd12ea35e8`,`087b25e11114`,`5eae1d40ccd6`) are smoke=True n_adm=3. The figure
+is generated by the same script from the same cells.
+
+mtime/job ordering clean: FROZEN 00:20:09 < final jobs created 00:22:26/22:31/22:38
+< finished 00:25:44/26:02/26:25 < analysis 00:28:51 < FINDINGS 00:31:00.
+
+NOTE (immaterial): SmolLM2 has a SECOND non-smoke full run `job-f10a5a73b564`
+(created 00:14:40, pre-FROZEN). `_find_full()` selects latest mtime = `c128e07da015`;
+I verified f10a and c128 are numerically IDENTICAL, so selection does not affect any
+number. The paper's identity-clustered bootstrap ([0.732,1.075]/[0.835,0.894], §3.3)
+is a separate method NOT in analysis.json — disclosed, with a pending-TODO; not
+verifiable from the item-bootstrap artifact.
+
+## E3 — mamba-writer-clock-dose
+
+Final full runs: `job-baf14cd06dd2` (130M), `job-cbb0e8a57f45` (370M),
+`job-e55fc32a16ed` (2.8B) — all succeeded. Recomputed every cell's A/B/dt
+amplitude, B/A specificity, P1/P2/P3 directly from raw `arms` in the three
+reports → EXACT match to `results/summary.json` and FINDINGS table (A 0.01–0.40,
+B 0.02–1.37, dt 0.02–1.87; P1 false 6/6; P2 false 5/6; write>clock 6/6; 2.8B-id
+neighbor 0.36 vs writer 0.04). `analyze.py` globs `dose*/report.json` excluding
+"smoke" → only the 3 full jobs; no smoke/failed contamination.
+mtime/job ordering clean: PREREG 00:02:17, FROZEN 00:02:37 < all jobs
+< summary.json 00:12:56 < FINDINGS 00:17:14. Both papers' E3 refs
+(`time-formed-circuits` §7.1, `time-circuit-scaffold` §3, READMEs, evidence-map
+jobs `baf14cd06dd2/cbb0e8a57f45/e55fc32a16ed`) match.
+
+## Discrepancies (file:line — reported vs recomputed — source run)
+
+1. **E3 "3/6 → 2/6".** `writer_A_releaseclock_k2 > 0` (margin up on clock release
+   at k=2) is positive in only 2/6 cells (130M-identity +0.207, 370M-identity
+   +0.140; other four negative), NOT 3/6. Source: the 3 final E3 reports / summary.json.
+   - `saturn/experiments/2026-10-02-mamba-writer-clock-dose/FINDINGS.md:33` — "in 3/6 cells the margin goes up".
+   - `research/papers/time-formed-circuits/paper.md:226` — "the margin change is positive in three of the six cells".
+   (Absent from `time-circuit-scaffold` and both blogs.)
+2. **E1 FINDINGS falsifier verdict** (interpretation; numbers correct).
+   `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md:9` ("No
+   falsifier triggered") and `:95`/`:101` conflict with the audited fact (SD 4.17 >
+   4 crosses FAL-3) and with `time-circuit-scaffold/paper.md` §5 (which states FAL-3
+   fired). FINDINGS also attributes 4.17 to FAL-1; it is a write-commit SD → FAL-3.
+3. **E1 Qwen-color exclusion** (interpretation). FINDINGS/paper's "2 weak-signal
+   facts" carve-out is post hoc; not covered by the preregistered admission margin.
+
+## Required fixes
+
+1. E3: change "three/3" → "two/2" in `mamba-writer-clock-dose/FINDINGS.md:33` and
+   `time-formed-circuits/paper.md:226`.
+2. E1: correct `site-variance-decomposition/FINDINGS.md` to match the paper — one
+   preregistered falsifier (FAL-3) fired; label the robust-statistic and two-fact
+   pullbacks post hoc; fix the FAL-1↔FAL-3 label.
+3. E3 (outside the two audited papers, but prescribed by E3 `PAPER-SECTION.md`):
+   `space-and-time-circuits/paper.md` lines 632/702/719/728/801 still state "the
+   Mamba late writer is the layer that stops its clock" (clock-stop as mechanism)
+   and are NOT yet replaced with the clock-dose correction. (The correction DID land
+   in the two audited papers.)
+4. E1 (latent): pin job-id or filter by experiment tag in `phase2_analyze.py`
+   `load()` so a re-run cannot pick up Phase-3 peritem folders.
