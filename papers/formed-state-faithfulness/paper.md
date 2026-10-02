@@ -81,6 +81,12 @@ One scope limit: the teacher-forced edit changes the step's *stored* state, whic
 
 *Figure 1. A non-copied reasoning step occupies two lanes. The written token "= 42" (yellow) is what a text monitor reads; the key/value state it forms (red) is what a monitor cannot read directly, and the answer reads from that state. The three interventions: a text edit changes the token and re-forms its state (what text methods do); a state-only swap keeps the correct token but overwrites its cached state; a state ablation removes the step's cached state and lets the model continue.*
 
+The same instrument renders one real item concretely (Figure 2), which previews the two edits before the aggregate panels. On the item "6 times 7, minus 5" with scratchpad "6 times 7 = 42" (Qwen2.5-1.5B, bfloat16; the product 42 is never restated and the answer 37 is not the product), per-layer necessity (zeroing the step's page one layer at a time) peaks at the writer layer 20 (0.274) with a narrow commit band at layers 20-22, and at the decisive answer digit the answer depends on both the visible scratch token (3.38 nats) and the hidden formed state (3.76 nats). A state-only donor swap flips the answer while the visible text still reads "= 42" (the Section 4 dissociation, on one item); zeroing the page drives the answer wrong (−3.04 nats), so this particular item is *not* silently repaired. We flag that honestly: silent repair is item-dependent, and this harder multiply step shows none, unlike the 0.76 aggregate repair rate at 1.5B (Section 5). The exact-restore no-op canary is 0.0.
+
+![What a text monitor reads versus what the cache holds, for one item](figures/fig2_vm_trace.png)
+
+*Figure 2. What a text monitor reads versus what the cache holds, for one real item (Qwen2.5-1.5B bfloat16; the computed non-restated step 6×7−5, scratchpad "= 42", answer 37). Top: a layer × generated-token heatmap of attention onto the formed intermediate page, with the per-layer necessity side panel peaking at the writer layer 20 (0.274) and the necessity/commit band 20-22 marked. Bottom: per generated token, the answer's dependence on the visible scratch token (blue, what a text monitor reads) and on the hidden formed state (red, what it does not); at the decisive answer digit both are load-bearing (visible 3.38, hidden 3.76 nats). A state-only donor swap flips the answer with the visible text fixed at "= 42"; zeroing the page breaks the answer (−3.04 nats), so this item is not silently repaired — item-dependent, unlike the 0.76 aggregate at 1.5B (Section 5). No-op canary 0.0. Trace and job in Appendix A.*
+
 ### 2.5 Monitor definition
 
 A *step-reading monitor* reads the written reasoning steps, parses the stated step, and predicts the answer from it; this is the object text-based faithfulness work operates on, and it is blind to the hidden-state channel by construction. A *full-transcript monitor* reads the entire generated output, including the answer continuation. We distinguish the two throughout, because they differ sharply on the state-only edit (Section 4.3, Section 7.1).
@@ -153,7 +159,7 @@ What we do *not* yet establish is the mechanism, and the distinction is central.
 
 ### 5.2 Compensation rises with scale at fixed precision
 
-Silent repair rises sharply with model size (Table 2, Figure 2). On the bfloat16 axis it goes from 0.19 at 0.5B to 0.76 at 1.5B (+0.57, non-overlapping intervals). On the 4-bit axis it goes from 0.29 at 1.5B to 0.73 at 7B (+0.44, non-overlapping). The pre-registered prediction (rises with scale, 0.5B-to-largest increase at least 0.25) held on both axes; the falsifier did not fire.
+Silent repair rises sharply with model size (Table 2, Figure 4). On the bfloat16 axis it goes from 0.19 at 0.5B to 0.76 at 1.5B (+0.57, non-overlapping intervals). On the 4-bit axis it goes from 0.29 at 1.5B to 0.73 at 7B (+0.44, non-overlapping). The pre-registered prediction (rises with scale, 0.5B-to-largest increase at least 0.25) held on both axes; the falsifier did not fire.
 
 **Table 2. Silent-repair rate after ablating the step's stored state. Rate [95% bootstrap CI], n admitted single items.**
 
@@ -178,9 +184,9 @@ The float32-versus-bfloat16 control is a null, as predicted: identical at 0.5B (
 
 At 1.5B, NF4 gives 0.292 against 0.762 in bfloat16 (difference 0.47): 4-bit quantization roughly halves the silent-repair rate at fixed size. This refutes the part of our pre-registration predicting the 4-bit gap would be within 0.20, and we report it straight. The consequence is a reporting discipline: the 7B point (4-bit only) is compared to the 4-bit 1.5B point, where the scale effect still holds (0.29 to 0.73). The pre-registered cross-check passes: the 4-bit gap (0.47) is smaller than the bfloat16 size gap (0.57). For anyone monitoring quantized deployments, a 4-bit model repairs removed steps about half as often as its bfloat16 counterpart, so removal-based attribution will look more faithful on it for reasons unrelated to the reasoning being more externalized.
 
-![Silent repair rises with scale](figures/fig2_repair_vs_scale.png)
+![Silent repair rises with scale](figures/fig4_repair_vs_scale.png)
 
-*Figure 2. Silent-repair rate after ablating a step's stored state, versus model size (log scale), two precision axes drawn separately. Solid bfloat16 line connects 0.5B (0.19) and 1.5B (0.76); there is no bfloat16 7B point. Dashed 4-bit line connects 1.5B (0.29) and 7B (0.73), 7B labeled NF4-only. Float32 diamonds (0.5B, 1.5B) sit on or near the bfloat16 points (the 1.5B float32 diamond is slightly above, at 0.83); the 4-bit 1.5B point sits well below, the quantization confound made visible. Each line is two points. Error bars are 95% bootstrap CIs.*
+*Figure 4. Silent-repair rate after ablating a step's stored state, versus model size (log scale), two precision axes drawn separately. Solid bfloat16 line connects 0.5B (0.19) and 1.5B (0.76); there is no bfloat16 7B point. Dashed 4-bit line connects 1.5B (0.29) and 7B (0.73), 7B labeled NF4-only. Float32 diamonds (0.5B, 1.5B) sit on or near the bfloat16 points (the 1.5B float32 diamond is slightly above, at 0.83); the 4-bit 1.5B point sits well below, the quantization confound made visible. Each line is two points. Error bars are 95% bootstrap CIs.*
 
 ### 5.6 What this does to removal-based metrics, and what is still needed
 
@@ -279,6 +285,8 @@ All runs: Qwen2.5-Instruct, greedy, one seed, stock attention with native causal
 | 1.5B | bfloat16 | free | 9 | job-602f0c494da4 | discounted (no-op 8/9 = 0.889 < 0.90) |
 | 7B | NF4 | free | 9 | job-f904b4749690 | discounted (no-op 5/9) |
 
+**Single-item VM trace (Figure 2).** Qwen2.5-1.5B-Instruct, bfloat16, eager, exact cache-edit, item 6×7−5 (scratchpad "= 42", answer 37), `job-e034c77db8d6`; per-layer necessity peak at layer 20 (0.274), commit band 20-22, state-only donor swap flips the answer with the visible text fixed, zeroing the page breaks the answer (−3.04 nats, no silent repair on this item), no-op canary 0.0. Source: `saturn/experiments/2026-10-02-vm-trace-visualizer/` (FINDINGS-draft.md, renders/qwen-trace.png, traces/qwen-trace.json).
+
 **Supporting prior experiments (verified against the above before citing).**
 
 | Role | Task / finding | Models | Source path |
@@ -339,7 +347,7 @@ Both arms are below the pre-registered no-op threshold of 0.90 and are reported 
 
 *The 7B `ablate answer-changed` rate (0.500) is computed over 8 scored items (one of the 9 admitted lacked a scored ablate continuation); the header n = 9 is the admitted-and-located count. The rate is unaffected.
 
-![Free-running chain-of-thought](figures/fig4_free_running.png)
+![Free-running chain-of-thought](figures/figF1_free_running.png)
 
 *Figure F1. Free-running chain-of-thought (exploratory; both arms below the pre-registered no-op threshold of 0.90). Left: ablating a self-generated step changes the answer rarely (blue), is silently repaired (green), and the regenerated text seldom reveals the edit (red). Right: swapping to a coherent wrong value always changes the answer and is always re-verbalized.*
 

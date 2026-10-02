@@ -49,6 +49,13 @@ than measuring it. Scope: synthetic arithmetic, greedy, one seed.
   art added: self-repair/Hydra (McGrath 2023; Rushing & Nanda 2024; Bugaud 2026), implicit/latent
   reasoning (Yu 2024; Yang 2024; Biran 2024), Radhakrishnan 2023; Paper-1 overlap sharpened to a
   new-contribution list. (8) Evidence-audit fixes 1-10 applied (see below).
+- **Measured VM-trace figure added (Figure 2).** A real render of one item (Qwen2.5-1.5B,
+  `job-e034c77db8d6`) now sits next to the schematic: it shows the hidden page being read (necessity
+  peak L20 0.274, band 20-22), the hidden/visible dependence per token (3.76/3.38 at the answer
+  digit), the state-only donor swap flipping the answer with text fixed, and — reported honestly —
+  zeroing the page breaking the answer (−3.04, NO silent repair on this harder multiply item, vs the
+  0.76 panel aggregate: per-item variation). All figures renumbered to reading order (schematic 1,
+  VM trace 2, token-vs-state 3, repair-vs-scale 4, free-running F1); files renamed to match.
 - **Controls running** (placeholders in paper): A repair-from-prompt (decisive mechanism test),
   B probe-based state monitor, C bfloat16-7B via paged execution + Qwen2.5-3B, D natural word problems.
 - All runs measured on one RTX 4080, greedy, one seed, stock attention with native causal masks.
@@ -71,10 +78,11 @@ than measuring it. Scope: synthetic arithmetic, greedy, one seed.
 
 | Figure | File | Source |
 |---|---|---|
-| 1 Two-lane schematic (§2.4) | `figures/fig1_two_lane_schematic.png` | built this round (static schematic: visible token lane vs formed-cache lane + the three interventions). Replaces the earlier VM-trace placeholder |
-| 2 Silent repair vs scale (§5.5) | `figures/fig2_repair_vs_scale.png` | drawn from `EXP/results/analysis-summary.json` (two separate precision axes; 7B marked NF4). Supersedes primary `fig1_repair_vs_scale.png`, which drew the 7B-NF4 point on the bf16 line |
-| 3 Token-vs-state + recovery (§4.3) | `figures/fig3_token_vs_state.png` | rebuilt this round from analysis-summary + raw re-verbalization rows: added the full-transcript recovery series (0.66-1.00) |
-| F1 Free-running (Appendix F) | `figures/fig4_free_running.png` | copied from primary `fig3_free_running.png`; demoted to appendix (discounted panel) |
+| 1 Two-lane schematic (§2.4) | `figures/fig1_two_lane_schematic.png` | static schematic: visible token lane vs formed-cache lane + the three interventions |
+| 2 VM trace, one real item (§2.4) | `figures/fig2_vm_trace.png` | measured render copied from `saturn/experiments/2026-10-02-vm-trace-visualizer/renders/qwen-trace.png` (`job-e034c77db8d6`); layer×token attention onto the hidden page, necessity peak L20 (0.274), band 20-22, hidden/visible dependence strip; honest note: this item shows NO repair (−3.04 on zeroing) vs the 0.76 panel rate |
+| 3 Token-vs-state + recovery (§4.3) | `figures/fig3_token_vs_state.png` | from analysis-summary + raw re-verbalization rows: state-only/text-visible bars + full-transcript recovery series (0.66-1.00) |
+| 4 Silent repair vs scale (§5.5) | `figures/fig4_repair_vs_scale.png` | drawn from `EXP/results/analysis-summary.json` (two separate precision axes; 7B marked NF4). Supersedes primary `fig1_repair_vs_scale.png`, which drew the 7B-NF4 point on the bf16 line |
+| F1 Free-running (Appendix F) | `figures/figF1_free_running.png` | copied from primary `fig3_free_running.png`; demoted to appendix (discounted panel) |
 
 ## Evidence map (claim → source path)
 
@@ -106,6 +114,7 @@ Paths under `~/domains/`. The primary experiment directory is abbreviated
 | C19 | Confounded precedent de-confounded here (prior E10; later step individually decisive, not a strict time circuit) | swap authorship 19/32, 30/30; removal-wrong 26/32, 3/30 | `research/papers/time-formed-circuits/paper.md` (E10 row); `saturn/experiments/2026-10-01-e10-completed-answer-rerun/FINDINGS.md`; `.../2026-10-01-e10-cot-intermediate-steps/VERIFICATION-2026-10-01.md` |
 | C20 | Hidden state in self-generated, non-arithmetic content (corroboration) | move self-generated value state, visible reply fixed → later answer changes 3/3 eligible, block 2/3 | `saturn/experiments/2026-10-01-qwen-alias-binding-feedback/FINDINGS.md` |
 | C21 | Copied-value necessity (context; non-copied earlier reading superseded) | copied-value necessity 0.84 flips | `saturn/experiments/2026-09-30-mvm-mamba-cot/FINDINGS.md` |
+| C22 | VM trace, one real item (Fig 2): hidden page read, necessity peak L20, state-swap flip, NO repair on this item | Qwen2.5-1.5B bf16, 6×7−5 answer 37; L20 necessity 0.2738, band 20-22; hidden/visible dep 3.76/3.38 at answer digit; donor state-swap flips (text fixed); zeroing −3.0433; no-op 0.0 | `saturn/experiments/2026-10-02-vm-trace-visualizer/` (FINDINGS-draft.md; traces/qwen-trace.json `side_series` argmax L20, `removal_answer_delta`, `canaries.noop_canary_max_abs`); `job-e034c77db8d6` |
 
 ## Job identifiers (custody)
 
