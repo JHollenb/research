@@ -10,8 +10,9 @@ Companion: Paper 1, [Time-Formed Circuits in Transformers](../time-formed-circui
 ## Status
 
 Submission manuscript, 2026-10-02 (rebuild). The spine is the seven properties of the
-time-scaffold architecture, each replicated across a diffusion model, an autoregressive
-transformer, and a state-space model, built from the original passing experiments and the
+time-scaffold architecture, each with within-family
+evidence in at least two of the three families (diffusion, transformer, state-space; coverage
+stated per property in the paper), built from the original passing experiments and the
 model virtual machine. Formal backbone: `reviews/architecture-math-2026-10-02.md`
 ([Thm]/[Id]/[Meas]/[Pred]); architecture brief: `reviews/architecture-brief-2026-10-02.md`;
 rebuild log: `reviews/rebuild-notes.md`.
@@ -36,7 +37,7 @@ reader, a writer, carried state, and a native consumer — laid out along ordere
 (denoising steps, depth-plus-position, or recurrent transitions). On each step an operation reads
 the carried state, acts through recurring writer and consumer roles, changes that state, and
 influences the next operation; the machinery recurs while the sources, addresses, payloads, doses,
-and timings vary per input. We report seven properties, each replicated across the three families,
+and timings vary per input. We report seven properties with family coverage stated per property, not uniform replication,
 and keep the honest limits explicit: the cross-family common graph is a null, the diffusion
 source-sufficiency result is architectural custody rather than discovery, and several location-index
 and variance-ratio checks test a proxy and are reported with their limits in an appendix. (Full
@@ -57,10 +58,10 @@ Paths relative to `~/domains`. "Companion" means the claim is carried by Paper 1
 | 2 | Reader re-weighted not rebuilt: per-item within-op 0.74–0.99 vs across-op 0.204/0.218 | 40 facts; Qwen2.5-1.5B, Gemma-2-2B | `.../2026-10-02-site-variance-decomposition/FINDINGS-addendum-draft.md` |
 | 2 | Shared value routes L23/KV0/V, L22/KV1/V; within-binding 0.95; cross-op 0.336 | Qwen2.5-1.5B | `saturn/experiments/2026-10-01-qwen-head-edge-topology/FINDINGS.md` |
 | 2 | Address (K) vs payload (V): K×V interaction α_s(1−α_s)(E−1)/D·Δv; SDXL 0.72/0.66/0.72/1.0, Δ 0.3413; joint-perm invariance OPEN (0.859) | SDXL factorial | `research/demos/docs/scene-generator-paper.md` §5.2; math doc §4 |
-| 2 | Static bus, dynamic query: K/V byte-identical, Q cosine 0.9999→0.8399 | SDXL | `research/demos/docs/scene-generator-paper.md` |
+| 2 | Static bus, dynamic query: K/V byte-identical, candidate-vs-base Q cosine 0.9999→0.8399 as carried states diverge | SDXL | `research/demos/docs/scene-generator-paper.md`; `.../scene-generator/sources/qkv-findings.md` |
 | 3 | E20 source→formed store block 0.924 / rescue 0.871; replicates Gemma/SmolLM2/held-out Qwen and 7B (rescue 0.770, block 0.595, wrong −0.026) | 42/34/79/40 | `.../2026-09-30-full-layer-sweeps/FINDINGS-E20-mediation.md`; `.../2026-10-02-e20-cross-family/FINDINGS.md`; `.../2026-10-02-scale-9b-scaffold/PAPER-SECTION.md` |
 | 3 | Recipient formation (L12 seed) rescue 16/16, block 14/14; early-band patch donor 0/15; Python/copy generality | Qwen2.5-1.5B | `.../2026-10-01-qwen-scaffold-context-poc/FINDINGS.md:62`; `.../2026-10-01-qwen-formation-replay/FINDINGS.md` |
-| 3 | Formation over time (prereg): best single layer 0.732/0.804; freeze band attn+MLP 0.904/1.023; cut consumer→subject 0.871→0.010, 0.985→0.015; pre-band freeze 0.675 | 42/model; Qwen, Gemma | `saturn/experiments/2026-10-02-formation-over-time/results/FOT_analysis.json` |
+| 3 | Formation over time (prereg; decisive P2a/P3b falsified, thesis refined): best single layer 0.732/0.804; freeze band attn+MLP 0.904/1.023 (F2 fired); cut consumer→subject 0.871→0.010, 0.985→0.015 | 42/model; Qwen, Gemma | `saturn/experiments/2026-10-02-formation-over-time/results/FOT_analysis.json` |
 | 3 | Install timing decides edit; call-0 lesion MAE 20.82 vs call-14 2.15; temporal closure 0.712/0.403/exact | FLUX.2 Klein 4B | `research/demos/scene-editing.md`; `.../artifacts/closure/temporal-closure-summary.json` |
 | 3 | Mamba transition composition 3/3 vs endpoint-sum 0; L0→L18–20 donkey/Vienna +4.59/+7.65, restore removes 90–92% | Mamba-130M | `.../2026-09-03-mamba-transition-conjunction-rosetta/FINDINGS.md`; `.../2026-10-01-connected-architecture/mamba/FINDINGS.md` |
 | 3 | Mamba commit = write, not clock (retest γ=15–142): release hurts 0/6, dt via write 6/6, writer-specific 1/6 | Mamba 130M/370M/2.8B | `saturn/experiments/2026-10-02-mamba-clock-retest/FINDINGS.md` |
@@ -71,7 +72,7 @@ Paths relative to `~/domains`. "Companion" means the claim is carried by Paper 1
 | 5 | Cross-family formed-state→consumer core RMSE 0.0928 vs 0.8526 (n=2+2+1); color reader misses 8/8 | FLUX+Mamba+Qwen | `saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/FINDINGS.md` |
 | 6 | v_proj row permutation collapses profile (0.955→0.049); null nets collapse, top-1 0/96 (incompetent) | Qwen2.5-1.5B | `.../scaffold-confirmation/qwen-predictive/FINDINGS.md`; `.../2026-10-02-p2-reviewer-experiments/results/A_analysis.json` |
 | 6 | Pythia developmental trajectory; continuation training writer +0.445 vs matched-depth ~0 (Mamba wrong-label +0.448) | Pythia; Qwen/Mamba | `.../scaffold-dynamic-circuits/development/FINDINGS.md`; `.../2026-10-02-native-role-learning-timeline/FINDINGS.md` |
-| 7 | Scene compiler 21/21 byte-exact, 7 specimens / 5 families; wrong-source 57–88, wrong-sign 64–97, perm 7–11 | 7 specimens, 5 families | `research/demos/docs/scene-generator-paper.md`; `.../artifacts/reports/cross-model-replication.json` |
+| 7 | Scene compiler 21/21 byte-exact, 7 specimens (3 SDXL-family) / 5 families; FLUX.2 wrong-source 54.5–94.3, wrong-sign 60.0–89.3, perm 4.6–22.8 (SDXL wrong-sign 94.29) | 7 specimens, 5 families | `research/demos/docs/scene-generator-paper.md`; `.../reports/cross-model-replication.json`; `.../reports/flux2-klein.json` |
 | 7 | XNOR inverts 148/150; frozen-site install 1.011 vs −0.133; page-out 0/96; archive 4/4 vs 0/4; ancestry 6/6 vs 1/6 | Qwen/Mamba | `obsidian/2026-08-17-151407-...md`; `.../scaffold-dynamic-circuits/ar/results/panel-02e83e9ae183/report.json`; `.../source-frame-stack/FINDINGS.md`; `.../spectral-virtual-context/FINDINGS.md`; `.../2026-09-25-book-index-two-source-coherence/FINDINGS.md` |
 | 10 | Cross-family common graph NULL: connected forecast ties additive (0.015099); role-matcher gap 0.0386 | 3 held; Qwen route | `saturn/experiments/2026-10-01-connected-architecture/qwen/FINDINGS.md`; `.../scaffold-dynamic-circuits/ssm/E4_ALIGNMENT.md` |
 | 11 | Attribution graph sees L0, misses commit band (≤0.08 vs 0.83 K/V cut) | companion; Gemma-2-2B | `saturn/experiments/2026-09-30-circuit-tracer-head-to-head/FINDINGS.md` |

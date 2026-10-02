@@ -111,7 +111,10 @@ This test was prereg-frozen. Qwen job-eaf503028c04, Gemma job-9acb76a12273; cana
 1. **No single band layer carries the store.** The best single layer reaches 0.732 (Qwen) and 0.804 (Gemma) of full-band rescue, below the 0.90 threshold. The commit is distributed across the band.
 2. **The band's own computation is not needed.** Freezing the band's attention and MLP leaves rescue intact (Qwen 0.904, Gemma 1.023). The content is present in $x_{\ell_0,i}$ at band entry; each band layer's $W_K^\ell,W_V^\ell$ projects it into the readable store.
 3. **The consumer reads at the subject position.** Cutting consumer→subject attention collapses rescue (0.871→0.010; 0.985→0.015). Cutting consumer→other positions does not.
-4. **Pre-band depth builds the store, family-dependently.** Freezing pre-band L13–21 cuts Qwen rescue 0.871→0.675.
+4. **Prereg disclosure.** The decisive "band builds the store" prediction (P2a) FAILED in both families and its falsifier F2 FIRED. P3b failed and F3b fired: blocking the subject's reads of earlier positions leaves rescue intact (Qwen loses a small ~0.06). P1c failed: the ramp is non-monotone and non-additive. The prereg passes were P1a, P1b, P2c, P3a-i and P3a-ii. So the test refuted "built inside the band" and supported "committed at the band, formed before it".
+5. **Correction (2026-10-02 validity review).** An earlier draft of this item cited "pre-band L13–21 freeze cuts Qwen 0.871→0.675" as formation-over-time evidence. That number comes from `2026-10-02-p1-reviewer-experiments` (`rescue_late_freeze_mid`, 0.675 [0.611, 0.713]). There it missed its own 0.20 threshold in Qwen and was a no-op in Gemma (0.990 vs 0.985; F_A4_freeze_noop fired). It is NOT positive evidence for pre-band construction.
+   - The positive formed-over-depth evidence is the L11/L12 residual seed run through native layers (16/16 rescue; early-band K/V transplant 0/15), together with items 1–3 here.
+   - *Where* in the pre-band depth the content forms is not localized by any run so far.
 
 Role reading:
 - writer = depth up to band entry (formation);
@@ -119,7 +122,7 @@ Role reading:
 - carried state = K/V cache;
 - reader = consumer attention at the subject position.
 
-This is exactly the architecture's "formed over ordered execution, committed, later read". It also refines it: the late band is the **commit/read-out zone**, not the formation zone.
+This is the architecture's "formed over ordered execution, committed, later read". It also refines it: the late band is the **commit/read-out zone**, not the formation zone. The formation locus inside the pre-band depth remains open.
 
 ### 3.3 Ancestry: state is a function of ordered history, not of the token set
 
@@ -162,7 +165,7 @@ So $\Delta_{K\times V}\alpha=1-0.66201-0.71808+0.72139=0.3413>0$. The sign and p
 
 **[Pred] Joint row permutation is exactly invariant.** For softmax attention over a set without positional terms in K, $o$ is invariant to jointly permuting $(k_j,v_j)$ pairs. Token row is therefore a basis coordinate, not the lookup address. The key vector is the address.
 
-**[Meas]** Joint permutation gives α 0.859 with the same semantics but altered composition. K-only gives 0.436 and V-only 0.627; wrong-K 0.358, wrong-V 0.413. FLUX.2 row permutation gives MAE 7–11 vs 57–97 for the wrong-source and wrong-sign controls.
+**[Meas]** Joint permutation gives α 0.859 with the same semantics but altered composition. K-only gives 0.436 and V-only 0.627; wrong-K 0.358, wrong-V 0.413. FLUX.2 row permutation gives RGB MAE 4.6–22.8, against wrong-source 54.5–94.3 and wrong-sign 60.0–89.3 (`research/demos/artifacts/scene-generator/artifacts/reports/flux2-klein.json`, 3 prompts; an earlier draft cited 7–11 / 57–97 from a different run). FLUX.2 joint attention may give text tokens positions, so exact invariance is not predicted there; the theorem applies to SDXL-style cross-attention.
 
 The residual gap from exact invariance is an **open check**. Candidate causes: not every row-indexed path was jointly permuted (padding/mask, pooled), or reduction-order non-associativity amplified chaotically over the sampling trajectory. Run it fp64 at one site before citing the 0.859 as anything but "near-invariant".
 
@@ -235,7 +238,7 @@ Install source $S_A$ for $k<k_0$ and $S_B$ after. The output is $I(k_0)=R(\Phi^{
 - **[Meas]** Eye-geometry register inserted after $t_0,t_1,t_2,t_3$ retains 0.342 / 0.488 / 0.675 / 1.0 of the final effect. The register is progressively formed, not a one-shot write.
 
 **Static bus, dynamic query.** $K_\ell,V_\ell$ are fixed per prompt, while $Q_{\ell,k}=W_Q^\ell h_{\ell,k}(s_k)$ moves with the carried state.
-- **[Meas]** K/V are byte-identical across calls while Q cosine drifts 0.9999 → 0.8399.
+- **[Meas]** K/V are byte-identical across calls, while the cosine between an edited run's queries and the base run's queries falls from 0.99990 (call 0, block 0) to 0.83993 (call 14, block 0) (`research/demos/artifacts/scene-generator/sources/qkv-findings.md:72,80`). With the prompt K/V fixed, the address diverges as the carried image states diverge: the address is generated by carried state. (An earlier draft misdescribed this as within-run drift.)
 - This is the static/dynamic split of §1.3 in one measurement: weights plus compiled K/V are $L_m$; $\alpha(Q_k,K)$ is $G(c,u)$ at time $k$.
 
 ## 8. Mamba recurrence and the clock

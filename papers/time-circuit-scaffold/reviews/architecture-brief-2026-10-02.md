@@ -36,7 +36,7 @@ The machinery recurs. The operations, sources, addresses, payloads and state var
   - **Mamba backend:** the VM exports and resumes Mamba state the same way.
   - **Why it is evidence:** the VM works because the scaffold is fixed and state is formed in time. Correct installs reproduce native behavior, while wrong-site, wrong-source and wrong-sign installs fail. "Ancestry changes meaning" (Prefill(A‖B) ≠ Mount(A,B), 6/6 vs 1/6) is a direct time-formation result.
 
-## Paper spine: properties, each replicated across families
+## Paper spine: properties and their family coverage
 
 | Property | Original passing evidence (from the outline, architectural paper, 10-01 posts and VM checklist) |
 |---|---|
@@ -46,7 +46,7 @@ The machinery recurs. The operations, sources, addresses, payloads and state var
 | **4. Newly written state changes later reads** (the loop) | **Two-update** France→Germany with the visible token fixed. **Route→write→future:** key-only transfer exact; L23–27 closure on 3 fresh held contexts. **History×row** 4-cell decomposition: history +1.28–1.58, row opposing, on 4 held contexts. **Mamba:** S2 closure exact; fresh CPU dog/cat (+2.74). **SDXL:** writer→successor→later writer; a stale writer matches its immediate output but diverges later. |
 | **5. The scaffold predicts held behavior** | **Frozen 24-coordinate relation profile:** 8/8. **Mamba 27-coordinate profile:** capital 8/8, identity 4/4. **Cross-family:** a partial state/consumer core, with its nulls. |
 | **6. It lives in trained weights** | **v_proj** row permutation collapses the profile. **C8** controlled native learning. **Pythia** developmental trajectory. **C6** acquisition. |
-| **7. The VM is the architecture made executable** | **Scene compiler:** 21/21 across 7 specimens / 5 diffusion families, with wrong-source/sign controls (57–97 MAE). **XNOR:** inverts 148/150. **Frozen-site install:** 1.011 vs wrong site −0.133. **Page-out:** 0/96 checkpoint reads. **Archive:** 4/4 vs 0/4. **Exact fork/replay/export:** Qwen and Mamba. **Shared ancestry with private futures.** |
+| **7. The VM is the architecture made executable** | **Scene compiler:** 21/21 across 7 specimens (3 SDXL-family) / 5 diffusion families, with wrong-source/sign controls (FLUX.2 wrong-source 54.5–94.3, wrong-sign 60.0–89.3 MAE). **XNOR:** inverts 148/150. **Frozen-site install:** 1.011 vs wrong site −0.133. **Page-out:** 0/96 checkpoint reads. **Archive:** 4/4 vs 0/4. **Exact fork/replay/export:** Qwen and Mamba. **Shared ancestry with private futures.** |
 
 ## What tonight's (2026-10-02) checks are, relative to this architecture
 
@@ -63,7 +63,7 @@ The machinery recurs. The operations, sources, addresses, payloads and state var
   - the function vector;
   - the pre-band subject freeze;
   - the Mamba A-only clock-dose.
-- **Mamba retention latch:** the clock measurement stands (0.03–0.07 vs 1–8). Its causal role is untested; tonight's dose did not test it.
+- **Mamba commit = write, not retention (resolved by the aligned retest):** the clock-outlier correlation stands as a measured correlate (writer survival 0.63–0.90 vs the network median), but the preregistered clock retest (γ=15–142, forcing the writer's survival to the median) shows the commit lowers to the writer W, not to retention — releasing retention hurts in 0/6 cells, dt acts via the write in 6/6 and via retention in 0/6, and the prereg's own discriminator that retention beats a matched write went 4/6 only as a near-tie (≤0.07 nats). Verdict: RETENTION_NOT_COMMIT_LEVER; the write is the lever.
 
 ## Honest limits to keep
 
@@ -88,16 +88,16 @@ The scene generator is the architecture written as a program. The prompt is comp
 Feature it as a centerpiece with image examples, not as an appendix line. Source: research/demos/docs/scene-generator-paper.md, research/demos/scene-generator.md, research/demos/scene-editing.md, research/demos/flux-relations-and-transport.md.
 
 **Exact-execution results**
-- **Exact closure:** the SDXL compiled source reproduces the native image byte-for-byte on 3 previously unused prompts. It reproduces 21/21 native RGB endpoints across 7 specimens and 5 families (SDXL ×2, FLUX.1, FLUX.2, Chroma, Krea2), with 0 model loads.
+- **Exact closure:** the SDXL compiled source reproduces the native image byte-for-byte on 3 previously unused prompts. It reproduces 21/21 native RGB endpoints across 7 specimens and 5 families (three SDXL-family specimens, FLUX.1, FLUX.2, Chroma, and Krea2), with 0 model loads.
 - **Controls at the same site:**
   - a wrong source renders the *other prompt's* scene;
   - a wrong sign renders blank grey;
-  - FLUX.2 MAE: wrong-source 57–88, wrong-sign 64–97, permuted rows 7–11, complete 0.0;
+  - FLUX.2 MAE (flux2-klein.json, 3 prompts): wrong-source 54.5–94.3, wrong-sign 60.0–89.3, permuted rows 4.6–22.8, complete 0.0;
   - SDXL: wrong-sign 94.29.
 - **Address vs payload (SDXL Q×K×V factorial):**
   - K selects where and V supplies what: k-only permutation α 0.436, v-only permutation 0.627, wrong-K 0.358, wrong-V 0.413, joint-row permutation 0.859, compiled 1.000;
   - the K×V interaction is Δα 0.3413.
-- **Static bus, dynamic query:** K/V are byte-identical across scheduler calls, while the live Q cosine drifts from 0.9999 to 0.8399. This is the scaffold/dynamic split in one measurement.
+- **Static bus, dynamic query:** K/V are byte-identical across scheduler calls, while edited-vs-base query cosine falls from 0.9999 (call 0) to 0.8399 (call 14): the address diverges with the carried state. This is the scaffold/dynamic split in one measurement.
 
 **Time on the scaffold (scene editing)**
 - **Install timing decides the edit:**
