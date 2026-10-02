@@ -1,0 +1,45 @@
+{
+  "schema": "phase2-argmax-sd-v1",
+  "ddof": 0,
+  "definition": "SD across admitted facts of argmax_layer(resid_write), per (model, op)",
+  "source_reports": {
+    "qwen15": "peritem-job-9a3d0b5139ec",
+    "gemma2": "peritem-job-06001771bc33"
+  },
+  "models": {
+    "qwen15": {
+      "identity": {
+        "n": 42,
+        "S1_argmax_write_sd": 3.809821416946593,
+        "median_argmax_layer": 10.0
+      },
+      "color": {
+        "n": 22,
+        "S1_argmax_write_sd": 5.452272253590491,
+        "median_argmax_layer": 0.0
+      },
+      "shape": {
+        "n": 6,
+        "S1_argmax_write_sd": 1.8633899812498247,
+        "median_argmax_layer": 2.0
+      }
+    },
+    "gemma2": {
+      "identity": {
+        "n": 42,
+        "S1_argmax_write_sd": 4.012240342048103,
+        "median_argmax_layer": 13.0
+      },
+      "color": {
+        "n": 25,
+        "S1_argmax_write_sd": 3.046309242345563,
+        "median_argmax_layer": 6.0
+      },
+      "shape": {
+        "n": 11,
+        "S1_argmax_write_sd": 2.4528613751330983,
+        "median_argmax_layer": 1.0
+      }
+    }
+  }
+}

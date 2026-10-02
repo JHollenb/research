@@ -6,7 +6,7 @@ Three panels, one matplotlib process, no GPU:
   F2B  store necessity                     (F2_scaffold_poc_store_necessity.json)
   F2C  write-formation falsifier           (phase2_sitemap_analysis.json,
                                             confirm_fal3_analysis.json,
-                                            Phase-2 argmax SD from FINDINGS-addendum recompute)
+                                            phase2_argmax_sd.json [run compute_phase2_argmax.py])
 
 F2C plots, per cell, the frozen argmax locator (S1) and the commit locator (S2) for the
 Phase-2 maps AND the preregistered fresh-color retest, with the four-layer threshold. The
@@ -40,7 +40,7 @@ ax = axes[0]
 keys = ['coord_main (SCAFFOLD localization)', 'coord*op (op-specific weighting)',
         'coord*binding (which-fact-queried weighting)', 'coord*lex (FACT weighting)',
         'coord*template (template weighting)', 'coord*order (order weighting)']
-short = ['coord\n(scaffold)', 'coord x op', 'coord x\nbinding', 'coord x\nfact', 'coord x\ntemplate', 'coord x\norder']
+short = ['coord', 'coord x op', 'coord x\nbinding', 'coord x\nfact', 'coord x\ntemplate', 'coord x\norder']
 vals = [read[k] for k in keys]
 bars = ax.bar(short, vals, color=['#1e3a8a', '#2563eb', '#93c5fd', '#f59e0b', '#fbbf24', '#fde68a'])
 ax.set_ylabel("fraction of profile variance")
@@ -64,10 +64,11 @@ ax.set_ylim(0, .95); ax.tick_params(axis='x', labelsize=8)
 
 # ---- F2C: falsifier, frozen argmax (S1) vs commit (S2), Phase-2 AND confirm ----
 ax = axes[2]
-# Phase-2 per-cell S1 (frozen argmax SD) from FINDINGS-addendum recompute (audit-verified:
-# Qwen color 5.45, Gemma identity 4.01 MATCH); S2 (commit SD) from phase2 JSON.
-p2_s1 = {('qwen15', 'identity'): 3.81, ('qwen15', 'color'): 5.45, ('qwen15', 'shape'): 1.86,
-         ('gemma2', 'identity'): 4.01, ('gemma2', 'color'): 3.05, ('gemma2', 'shape'): 2.45}
+# Phase-2 per-cell S1 (frozen argmax SD) read from phase2_argmax_sd.json, which
+# compute_phase2_argmax.py derives from the per-item reports; S2 (commit SD) from phase2 JSON.
+_argmax = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                      "phase2_argmax_sd.json")))["models"]
+p2_s1 = {(m, op): _argmax[m][op]["S1_argmax_write_sd"] for m in _argmax for op in _argmax[m]}
 def p2_s2(m, op):
     return phase2[m]['band_location_primary_write_commit'][op]['write_commit_sd']
 

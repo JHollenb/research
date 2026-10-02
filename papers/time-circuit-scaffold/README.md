@@ -78,23 +78,7 @@ All six experiments have landed:
 
 ## Abstract
 
-In a trained model the layer where a factual answer commits does not move with the input. Across
-42 fresh facts the commit lands at Gemma-2-2B layer 22 with standard deviation zero and at
-Qwen2.5-1.5B layer 23 (SD 1.16), and a preregistered retest on fresh colors (48 Qwen, 106 Gemma)
-holds the color commit input-invariant under all three frozen locators. We call the fixed schedule
-— seed, formation, commit, store, consumer — the time scaffold, and the per-input computation on it
-a space circuit: the operation re-weights a recurring reader, the fact selects which stored row is
-read. Byte-identical stored state acquires query-dependent authority (median 3.130 nats, 16/16). A
-reader profile frozen before evaluation predicts held relation contexts in all eight; permuting
-the value-projection rows collapses it. In a re-analysis the operation's weighting carries eleven
-times the fact-like variance and 84.0% of store necessity; this split is learned, collapsing to
-~1% in random or shuffled nets — themselves incompetent (top-1 0/96), bounding the claim to
-learned, not scaffold-versus-any-competent-net. Of three preregistered falsifiers two held and the
-third, a write-window locator, fired in two of six earlier cells; the retest cleared the color cell
-under all three locators, while the argmax locator still trips on the identity plateau (Gemma 4.06,
-commit SD 0.00), as preregistered; the cross-family common graph remains a null. The same
-organization holds in a state-space and a diffusion model; standard attribution tools find the
-space circuit, not the scaffold.
+In a trained model the layer where a factual answer commits does not move with the input. Across 42 fresh facts the commit layer (located by the close of the write window, a post-hoc commit locator) lands at Gemma-2-2B layer 22 (SD 0.00) and Qwen2.5-1.5B layer 23 (SD 1.16), and a preregistered retest on fresh colors (48 Qwen, 106 Gemma) holds the color commit input-invariant under all three frozen locators. We call the fixed schedule the time scaffold, and the per-input computation on it a space circuit: the operation re-weights a recurring reader, the fact selects which stored row is read. Byte-identical stored state acquires query-dependent authority (median 3.130 nats, 16/16). A frozen reader profile predicts held relation contexts in all eight; permuting the value-projection rows collapses it. In a re-analysis the operation's weighting carries eleven times the fact-like variance and 84.0% of store necessity; this split is learned, collapsing to ~1% in random or shuffled nets — themselves incompetent (top-1 0/96), bounding the claim to learned, not scaffold-versus-any-competent-net. Of three preregistered falsifiers two held and the third, a write-window locator, fired in two of six earlier cells; the color retest clears all three locators, while the argmax still trips on the identity plateau (Gemma 4.06, commit SD 0.00), as preregistered; the cross-family common graph remains a null. The same organization holds in a state-space and a diffusion model, where attribution tools find the space circuit, not the scaffold.
 
 ## Evidence map (claim → source path)
 
@@ -112,7 +96,7 @@ cited here, not re-derived.
 | 4 | Same bytes, different query → query-selective harm 3.130 / 0.583 / 3.021 nats, 16/16 | 16 contrasts/op, 128 pairing checks; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-qwen-scaffold-context-poc/FINDINGS.md` |
 | 4 | Operation re-weights a recurring reader (within-op cosine 0.92–0.999; across-op 0.336) | Qwen2.5-1.5B, Gemma-2-2B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
 | 4 | Fact moves which row is read (selected-row cosine 0.61–0.70 vs reader 0.95–0.96) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
-| 5 | Read-site variance (RETROSPECTIVE re-analysis): coord×op 29.0% vs fact-like 2.7% (coord×fact 1.1% + coord×binding 1.6%); coord main 42.2% (null pending) | 1,152 cells; Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_F3_qwen_predictive_readmap.json` |
+| 5 | Read-site variance (RETROSPECTIVE re-analysis): coord×op 29.0% vs fact-like 2.7% (coord×fact 1.1% + coord×binding 1.6%); coord main 42.2% (null ran; learned — see Fig A / row below) | 1,152 cells; Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_F3_qwen_predictive_readmap.json` |
 | 5 | Store necessity: op 84.0%, fact 3.2%, op×fact 2.0%, residual 10.4% (64 cells) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_scaffold_poc_store_necessity.json` |
 | 5 | Read-site split is LEARNED: coord→1.2–1.4%, op:fact 19.0→~1 in random/shuffled nets; v_proj permute keeps 11.9; nulls incompetent (top-1 0/96) | random-init + shuffled Qwen2.5-1.5B | `saturn/experiments/2026-10-02-p2-reviewer-experiments/FINDINGS-AC-coordinator.md` (job-48af2d6fc73c) |
 | 4 | Operation weighting is NOT_FV: additive op vector at L24 gives 0/14 flips, +2.19 nats, erases identity route without building relational one | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-p2-reviewer-experiments/FINDINGS-AC-coordinator.md` (job-5d7cf4e4b3d8) |
