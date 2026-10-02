@@ -1,42 +1,67 @@
-# The Time Circuit Is the Scaffold
+# The Commit Layer Does Not Move
 
 Paper 2 of the circuits pair, by Jacob Hollenbeck. The architecture paper.
-Companion: Paper 1, [Time-Formed Circuits in Transformers](../time-formed-circuits/).
+Companion: Paper 1, [Time-Formed Circuits in Transformers](../time-formed-circuits/paper.md).
 
 - Manuscript: [paper.md](paper.md)
 - Figures: [figures/](figures/)
+- Reviews and response: [reviews/](reviews/)
 
 ## Status
 
-Submission manuscript, 2026-10-02. Audience: frontier-lab interpretability researchers.
-Reviewer critiques will arrive by message and drive revision.
+Submission manuscript, 2026-10-02, round-1 revision after three reviews
+(`reviews/round1-interp-reviewer.md` 5/10, `reviews/round1-evidence-audit.md`,
+`reviews/round1-priorart-clarity.md`); point-by-point response in
+`reviews/round1-response.md`.
 
-Main text about 6,300 words across 12 sections; abstract 220 words; three appendices
-(experiment table, methods, reproducibility). Seven figures. All numbers measured on
-stock Hugging Face eager execution in float32 unless a line says otherwise; effective
-n is stated per claim. A relational-operation addendum that closes the
-operation-versus-fact read-map separation prospectively on fresh facts is preregistered
-and running at submission time; its placeholder is in Section 5
-(`<!-- TODO addendum: relational op -->`), and its numbers will be dropped in there.
+Main text about 8,000 words across 13 sections; abstract 220 words; three appendices.
+Nine figures. All numbers measured on stock Hugging Face eager execution in float32
+unless a line says otherwise; effective n is stated per claim.
+
+Four running experiments are marked by placeholders in the text, to be filled on landing:
+
+- `<!-- TODO confirm-color -->` (§5): preregistered confirmatory re-run of the Qwen color
+  write-commit cell that crossed FAL-3, with ≥40 fresh color facts and both statistics frozen.
+- `<!-- TODO P2-A null -->` (§5): untrained / weight-shuffled null for the read-site split,
+  the control that would license reading the coordinate main effect as the scaffold's share.
+- `<!-- TODO P2-B sliding causality -->` (§3): attention-type switch to break the
+  sliding-vs-global parity confound in Gemma-2.
+- `<!-- TODO P2-C function vectors -->` (§4): Todd-style operation-vector equivalence test.
+- `<!-- TODO addendum: relational op -->` (§5): relational operation on fresh facts that
+  separates operation from fact on the read side prospectively.
+
+## Honesty corrections made in round 1
+
+- FAL-3 (`sd_argmax_write > 4`) **was crossed** by the Qwen color cell (SD 4.17). The paper
+  now states plainly, in abstract, §1, §5, and §13, that two of three falsifiers held and one
+  fired; the robust-statistic and two-fact-exclusion readings that pull it under threshold are
+  labeled post hoc. Figure 5 (panel F2C) shows the crossing against the threshold line.
+- The read-site split (42.2 / 29.0 / 1.1) is a **retrospective re-analysis** of pre-freeze
+  data; only the per-fact commit location is prospective and preregistered. The two are now
+  kept separate.
+- The 42.2% coordinate main effect is **not** presented as the scaffold's learned share; the
+  text leads with the operation-to-fact-like interaction ratio (~11×) and defers the
+  main-effect reading to an untrained null.
 
 ## Abstract
 
-A model builds the state controlling its answer over a forward pass: seeded, formed
-through ordered execution, committed to a late store, read by a consumer. We show this
-time circuit is a fixed scaffold. The location where the store forms and is read is set
-by architecture and training; it does not move when the fact, the operation, or the
-template changes. What changes per input is a space circuit on it: the operation
-re-weights a recurring reader, the fact selects which stored row is read. We hold a
-model fixed and decompose the variance of its causal site maps. In Qwen2.5-1.5B a
-crossed read-site map attributes 42.2% of variance to which coordinate is read and
-29.0% to the operation's weighting, but 1.1% to the fact (1,152 cells); store necessity
-at the committed band is 84.0% operation and 3.2% fact (64 cells). Per fresh fact the
-commit layer is input-invariant: Gemma-2-2B commits at layer 22 (SD 0.00, 42 facts),
-Qwen2.5-1.5B at layer 23 (SD 1.16). A reader profile frozen before evaluation predicts
-held relation contexts in all eight; permuting the trained value-projection rows
-collapses it. The same organization appears in a state-space and a diffusion model;
-standard attribution tools find the space circuit and miss the scaffold. The
-cross-family common-graph claim ties a plain additive baseline — a null.
+In a trained model the layer where a factual answer commits does not move with the input.
+Across 42 fresh facts the commit lands at Gemma-2-2B layer 22 with standard deviation exactly
+zero, and at Qwen2.5-1.5B layer 23 (SD 1.16); this per-fact invariance is the paper's
+preregistered prospective result. We call the fixed schedule — seed, formation, commit, store,
+consumer — the time scaffold, and the per-input computation on it a space circuit (a locally
+decisive, per-position operation): the operation re-weights a recurring reader, the fact
+selects which stored row is read. Re-analyzing a fixed model's causal site maps, the
+operation's weighting carries about eleven times the fact-like variance
+(coordinate-by-operation 29.0% versus coordinate-by-fact-and-binding 2.7%); store necessity is
+84.0% operation and 3.2% fact. Byte-identical stored state acquires query-dependent authority
+(median 3.130 nats, 16/16). A reader profile frozen before evaluation predicts held relation
+contexts in all eight; permuting the trained value-projection rows collapses it, so the
+scaffold lives in the weights. The same organization is consistent across a state-space and a
+diffusion model, and standard attribution tools find the space circuit while missing the
+scaffold. Two of three preregistered falsifiers held; the third was crossed in one underpowered
+cell under the frozen statistic, and a confirmatory re-run is in progress. The cross-family
+common-graph claim ties a plain additive baseline — a null.
 
 ## Evidence map (claim → source path)
 
@@ -45,41 +70,47 @@ cited here, not re-derived.
 
 | § | Claim | Effective n / model | Source |
 |---|---|---|---|
-| 3 | Gemma-2-2B commits only on sliding-window layers (L16–22 carry 0.58; global layers write ≤0) | 8–42 items/cell, single seed; Gemma-2-2B | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md`, `FINDINGS-E19-window-necessity.md` |
-| 3 | Commit at ~0.69–0.83 depth across sizes (Mamba 130M L20 / 370M L39 / 2.8B L44) | single seed; Mamba-130M/370M/2.8B | `saturn/experiments/2026-09-30-mamba-full-layer-sweeps/FINDINGS.md` |
-| 3 | Commit is a depth-fixed write port; retention is a correlate | 6 cells × 3 prompts; Mamba-130M/370M/2.8B | `saturn/experiments/2026-10-02-mamba-writer-clock-dose/FINDINGS.md` |
-| 3 | Formation window closes at the commit layer (Qwen0.5B L21→L22, Mamba L19→L20) | single seed; 4 models | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E16-residual-writes.md` |
-| 3 | Band necessity is distributed (Qwen1.5B best single 0.08, band L22–27 0.96) | single seed; Qwen2.5-1.5B | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E19-window-necessity.md` |
-| 3,5 | Commit layer input-invariant per fresh fact (Gemma L22 SD 0.00; Qwen L23 SD 1.16) | 42 identity facts/model | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
-| 4 | Same bytes, different query → query-selective harm 3.130 / 0.583 / 3.021 nats, 16/16 | 32 same-parent pairs; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-qwen-scaffold-context-poc/FINDINGS.md` |
+| 3 | Gemma-2-2B commits on sliding-window layers (L16–22 carry 0.58); parity-confounded, causal test running | 8–42 items/cell, single seed; Gemma-2-2B | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md`, `FINDINGS-E19-window-necessity.md` (companion) |
+| 3 | Commit at ~0.69–0.83 depth across sizes (Mamba 130M L20 / 370M L39 / 2.8B L44) | single seed; Mamba-130M/370M/2.8B | `saturn/experiments/2026-09-30-mamba-full-layer-sweeps/FINDINGS.md` (companion) |
+| 3 | Commit is a depth-fixed write port; retention is a correlate | 6 cells × 3 prompts; Mamba | `saturn/experiments/2026-10-02-mamba-writer-clock-dose/FINDINGS.md` (companion) |
+| 3 | Formation window closes near commit (Qwen0.5B L21→L22 sharp; Pythia 0.95@L17→0.48@L18→0.01@L22 gradual) | single seed; 4 models | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E16-residual-writes.md` (companion) |
+| 3,5 | Commit layer input-invariant per fresh fact (Gemma L22 SD 0.00; Qwen L23 SD 1.16) — PROSPECTIVE/preregistered | 42 identity facts/model | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
+| 4 | Same bytes, different query → query-selective harm 3.130 / 0.583 / 3.021 nats, 16/16 | 16 contrasts/op, 128 pairing checks; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-qwen-scaffold-context-poc/FINDINGS.md` |
 | 4 | Operation re-weights a recurring reader (within-op cosine 0.92–0.999; across-op 0.336) | Qwen2.5-1.5B, Gemma-2-2B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
 | 4 | Fact moves which row is read (selected-row cosine 0.61–0.70 vs reader 0.95–0.96) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
-| 5 | Read-site variance: coord 42.2%, coord×op 29.0%, coord×fact 1.1% (1,152 cells) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md`, `results/F2_F3_qwen_predictive_readmap.json` |
-| 5 | Store necessity: op 84.0%, fact 3.2% (64 cells) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_scaffold_poc_store_necessity.json` |
-| 5 | Three preregistered falsifiers, none triggered | Qwen2.5-1.5B, Gemma-2-2B | `.../2026-10-02-site-variance-decomposition/PREREG.md`, `FROZEN.json` |
-| 6 | Frozen 24-coord profile predicts held relation 8/8 (cosine .954 vs .566; RMSE .029 vs .149) | 8 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/FINDINGS.md` |
+| 5 | Read-site variance (RETROSPECTIVE re-analysis): coord×op 29.0% vs fact-like 2.7% (coord×fact 1.1% + coord×binding 1.6%); coord main 42.2% (null pending) | 1,152 cells; Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_F3_qwen_predictive_readmap.json` |
+| 5 | Store necessity: op 84.0%, fact 3.2%, op×fact 2.0%, residual 10.4% (64 cells) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_scaffold_poc_store_necessity.json` |
+| 5 | Three preregistered falsifiers: two held, FAL-3 crossed (Qwen color SD 4.17 > 4) | Qwen2.5-1.5B, Gemma-2-2B | `.../2026-10-02-site-variance-decomposition/PREREG.md`, `FROZEN.json`, `phase2_sitemap_analysis.json` |
+| 6 | Frozen 24-coord profile predicts held relation (raw-RMSE 8/8; cosine 7/8 all-row, 8/8 competent; .954 vs .566) | 8 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/FINDINGS.md` |
 | 6 | Full v_proj row permutation collapses the profile (.955→.049 relation) | 4 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/FINDINGS.md` |
 | 7 | Mamba shared state, two operations; H-only transfer 12/12; 27-coord profile capital 8/8 | 12 rows; Mamba-130M | `saturn/experiments/2026-10-02-mamba-operation-clock-debugger/FINDINGS.md` |
-| 7 | Diffusion static bus / per-prompt program; 21/21 byte-exact; early vs late install | 7 specimens, 5 families; FLUX/SDXL | `obsidian/blog/2026-09-30-165158-the-scene-generator-survey-the-machine-is-prompt-agnostic-the-program-is-not.md`, `research/demos/scene-editing.md` |
+| 7 | Diffusion static bus / per-prompt program; 21/21 byte-exact; wrong-source/sign 57–97 MAE; early vs late install | 7 specimens, 5 families | `obsidian/blog/2026-09-30-165158-the-scene-generator-survey...md` (21/21, 57–97 MAE line 153), `research/demos/scene-editing.md` |
 | 8 | France→Germany two-update feedback (1 of 3 held competent + dev) | 1/3 held; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/qwen-feedback/FINDINGS.md` |
 | 8 | Frozen-reference payload changes B 7/8, preserves A 8/8 | 2 values × 2 orders; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-qwen-frozen-reference-payload/FINDINGS.md` |
 | 8 | Source→store mediation (block 0.924, rescue 0.871, 42 rows) | companion; Qwen2.5-1.5B | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E20-mediation.md` (Paper 1) |
+| 10 | Scene compiler: sealed program reproduces native pixels 21/21; wrong-source/sign 57–97 vs 0.0 | 7 specimens, 5 families; 3 control prompts | `research/demos/scene-generator.md`, `.../reports/cross-model-replication.json`; controls blog `2026-09-02-071815` |
+| 10 | Program not steering vector: XOR 148/150 vs 0/150; hostile XNOR inverts 148/150 | 150 spans; Qwen2.5/Qwen3 | `obsidian/2026-08-17-151407-all-experiments-composite-survey.md` (lines 265–267) |
+| 10 | Frozen-site install: right 1.011 vs wrong-site −0.133 vs shuffled −0.607; K/V 0.602 vs −0.153 | 14 held facts (6/14 competent); Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-dynamic-circuits/ar/results/panel-02e83e9ae183/report.json` |
+| 10 | Archive page read: selected 4/4, absent/wrong 0/4 | 2,048-page archive; Qwen | `saturn/experiments/2026-09-24-spectral-virtual-context/FINDINGS.md` |
+| 10 | Bit-exact fork/replay + page-out (4/4+4/4 over 32 tok; Mamba 64/64; 0/96 checkpoint reads) | single seed; Qwen/Mamba | blog `2026-09-06-015603`, `saturn/experiments/2026-09-30-source-frame-stack` |
 | 9 | Connected forecast ties additive exactly (MAE .015099 vs .014593), wins 1/3 | 3 held; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-connected-architecture/qwen/FINDINGS.md` |
-| 9 | Role-matcher ≈ depth null (6.9125 vs 6.9511) | opened outcomes | `research/papers/scaffolds-and-dynamic-circuits/architectural-paper.md:433` |
+| 9 | Role-matcher ≈ depth null (6.9125 vs 6.9511, gap 0.0386) | opened outcomes | `saturn/experiments/2026-10-01-scaffold-dynamic-circuits/ssm/results/e4-e1-e2-e3-alignment.json`, `ssm/E4_ALIGNMENT.md` |
 | 9 | Cross-family core = 2+2+1 rows (RMSE .0928 vs .8526); color reader misses 8/8 | 2 FLUX + 2 Mamba + 1 Qwen | `saturn/experiments/2026-10-01-scaffold-confirmation/FINDINGS.md`, `cross-family/FINDINGS.md` |
-| 10 | Attribution graph sees L0, misses commit band (≤0.08 interchange vs 0.83 K/V cut) | companion; 12+8 items, Gemma-2-2B | `saturn/experiments/2026-09-30-circuit-tracer-head-to-head/FINDINGS.md` (Paper 1) |
+| 11 | Attribution graph sees L0, misses commit band (≤0.08 interchange vs 0.83 K/V cut) | companion; 12+8 items, Gemma-2-2B | `saturn/experiments/2026-09-30-circuit-tracer-head-to-head/FINDINGS.md` (Paper 1) |
 
 ## Figure sources
 
 | Figure | Content | Source |
 |---|---|---|
 | fig1_scaffold_schematic.png | Scaffold + space-circuit schematic | authored for this paper |
-| fig2_band_location.png | Commit-layer stability per fact | decisive test F1 |
+| fig2_band_location.png | Commit-layer stability per fact | decisive test panel F1 |
 | fig3_same_patch_query.png | Same-patch / different-query harm | authored from scaffold-context FINDINGS |
-| fig4_reader_cosine.png | Reader cosine within-op vs across-op | decisive test F3 |
-| fig5_variance_decomposition.png | Variance bars (coord/op/fact/template) | decisive test F2 |
+| fig4_reader_cosine.png | Reader cosine within-op vs across-op | decisive test panel F3 |
+| fig5_variance_decomposition.png | 3 panels: read-site (F2A), store necessity (F2B), per-fact write-SD incl. FAL-3 crossing (F2C) | decisive test panels F2A–F2C |
 | fig6_confirmation_results.png | Frozen profile vs competitors + permutation | scaffold-confirmation |
 | fig7_honest_null.png | Connected forecast tie + role-matcher null | authored from honest-null numbers |
+| fig8_scene_compiler_proof.png | Sealed program reproduces native render byte-exact | scene-generator proof sheet |
+| fig9_qkv_controls_proof.png | Wrong-program / wrong-sign / shuffled-row controls diverge | scene-generator control sheet |
 
 ## What is deliberately excluded
 
@@ -87,4 +118,6 @@ The cross-family common role graph is reported as a null (Section 9), not a head
 Internal tooling names, experiment codes, and job identifiers are confined to Appendix A.
 The retired causal-mask-defective feedback instrument is named once in Limitations with
 the results it does not touch. The scaffold claim is bounded to the measured models:
-two transformers, one state-space model, one diffusion family, single seed.
+two transformers, one state-space model, one diffusion family, single seed. The
+constructive systems of Section 10 show the site is fixed and shared across inputs, not
+that it is learned (that rests on the Section 6 weight permutation).
