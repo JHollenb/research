@@ -18,13 +18,19 @@ Main text about 8,000 words across 13 sections; abstract 220 words; three append
 Nine figures. All numbers measured on stock Hugging Face eager execution in float32
 unless a line says otherwise; effective n is stated per claim.
 
-Two running experiments remain as placeholders; three have landed:
+One running experiment remains as a placeholder; four have landed:
 
 - `<!-- TODO confirm-color -->` (§5, running): preregistered confirmatory re-run of the cells
   that fired the write-window falsifier, with fresh color facts and all three per-fact locators
   (argmax, commit, necessity-argmin) frozen in advance.
-- `<!-- TODO P2-B sliding causality -->` (§3, running): attention-type switch to break the
-  sliding-vs-global parity confound in Gemma-2.
+- P2-B sliding causality (§3, Figure B): **landed.** The Gemma-2 commit tracks depth, not
+  attention type. At our 17-token prompts the sliding-window mask equals the full causal mask, so
+  swapping a layer's attention type is an exact no-op (0.0 logit change) while a real window-4
+  mask shifts logits by 19.6; the per-layer commit profile is byte-identical under the swap
+  (positive L16/18/20/22, non-positive global L17/L21). The alternation is confounded with layer
+  parity, not caused by attention type; long-context causality is untested (Gemma-3 unavailable).
+  Source: `.../2026-10-02-p2-reviewer-experiments/results/B_analysis.json` (job-0b7652b2112d,
+  Gemma-2-2B, 42 identity items, fp32 eager).
 - P2-A null (§5, Figure A): **landed.** The read-site split is learned. In random-init and
   weight-shuffled nets the coordinate main effect falls to 1.2–1.4% and the op:fact ratio from
   19.0 to ~1 (v_proj permute keeps 11.9). The reviewer's "coord is trivial" hypothesis failed.
@@ -86,7 +92,7 @@ cited here, not re-derived.
 
 | § | Claim | Effective n / model | Source |
 |---|---|---|---|
-| 3 | Gemma-2-2B commits on sliding-window layers (L16–22 carry 0.58); parity-confounded, causal test running | 8–42 items/cell, single seed; Gemma-2-2B | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md`, `FINDINGS-E19-window-necessity.md` (companion) |
+| 3 | Gemma-2-2B commit lands at late layers L16–22 (carry 0.58); coincides with sliding-window layers but tracks depth not attention type — type flip is an exact no-op (0.0) at 17-token prompts, commit profile byte-identical; long-context untested (Gemma-3 unavailable) | 8–42 items/cell, single seed; Gemma-2-2B | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E17-isolated-kv-writes.md`, `FINDINGS-E19-window-necessity.md` (companion); `saturn/experiments/2026-10-02-p2-reviewer-experiments/results/B_analysis.json` (job-0b7652b2112d) |
 | 3 | Commit at ~0.69–0.83 depth across sizes (Mamba 130M L20 / 370M L39 / 2.8B L44) | single seed; Mamba-130M/370M/2.8B | `saturn/experiments/2026-09-30-mamba-full-layer-sweeps/FINDINGS.md` (companion) |
 | 3 | Commit is a depth-fixed write port; retention is a correlate | 6 cells × 3 prompts; Mamba | `saturn/experiments/2026-10-02-mamba-writer-clock-dose/FINDINGS.md` (companion) |
 | 3 | Formation window closes near commit (Qwen0.5B L21→L22 sharp; Pythia 0.95@L17→0.48@L18→0.01@L22 gradual) | single seed; 4 models | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E16-residual-writes.md` (companion) |

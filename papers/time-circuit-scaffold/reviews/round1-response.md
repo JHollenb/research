@@ -14,7 +14,7 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 | H2 | Read-site split (42.2/29.0/1.1) is retrospective, not the preregistered prospective result. | Done. Separated: the per-fact commit location is the preregistered prospective measurement; the split is a retrospective re-analysis of pre-freeze data on an op set incl. relation. Section renamed. | Abstract; §1; §5 opening + both split paras; §5 header |
 | H3 | "42.2% = scaffold's share" is not defensible without a null. | Done. Lead with the interaction ratio (coord×op 29.0% : fact-like 2.7% ≈ 11×); report fact-like = coord×fact 1.1% + coord×binding 1.6%; do not read 42.2% as the learned share; untrained/shuffled null running. | Abstract; §5; Fig 5 caption; `<!-- TODO P2-A null -->` |
 | H4 | §3 Pythia window numbers misassigned; "fails immediately after" false for Pythia. | Done. Corrected to 0.95@L17, 0.48@L18, 0.01 by L22 (gradual); kept Qwen0.5B/Mamba as the sharp-edge exemplars. | §3 para 2 |
-| H5 | Sliding-window commit is parity-confounded (Gemma-2 strictly alternates). | Done. State the parity confound; softened "predicts"→"coincides with"; type-switch causal test running. | §3 para 1; `<!-- TODO P2-B sliding causality -->` |
+| H5 | Sliding-window commit is parity-confounded (Gemma-2 strictly alternates). | **Landed** (§3, Figure B). The type-switch causal test ran: at 17-token prompts the sliding mask equals the full causal mask, so a type flip is an exact no-op (0.0 logit change; a real window-4 mask shifts logits 19.6), and the commit profile is byte-identical (positive L16/18/20/22, non-positive global L17/L21). Commit tracks depth/index, not attention type. Long-context untested (Gemma-3 unavailable). | §3 para 1; Figure B |
 | H6 | State the function-vector / staged-inference mapping and claim the delta. | Done. Mapping to Geva/Lad (scaffold), Todd/Hendel (operation weighting), Feng & Steinhardt (row) in §1 with the delta (per-fact causal invariance + interaction split + cross-arch). FV-equivalence test running; XNOR hostile-inverse shows the installed object is a program, not a steering vector. | §1; §4; §10; `<!-- TODO P2-C function vectors -->` |
 
 ## Interpretability reviewer (5/10)
@@ -23,7 +23,7 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 |---|---|
 | §2 null model missing for the split | **Landed** (§5, Figure A). The null confirms the split is learned: coord→1.2–1.4%, op:fact 19.0→~1 in random/shuffled nets. The reviewer's A-P1 (coord-main trivial) failed; A-F3 fired. Bounded by null incompetence (top-1 0/96). |
 | Fact factor low-powered (2 lex × 2 bindings) → 1.1% partly a design artifact | Done; stated in §5, and the per-fact band location is given as the direct fact-invariance test. |
-| §3 sliding-window causal control | Running (`<!-- TODO P2-B sliding causality -->`). |
+| §3 sliding-window causal control | **Landed** (§3, Figure B). Type flip is an exact no-op (0.0) at our prompt lengths; commit profile byte-identical; tracks depth not attention type; long-context untested (Gemma-3 unavailable). |
 | §4 lead result "expected" (attention weights a queried row more) | Acknowledged in §1 mapping; the novelty claimed is the byte-identical same-parent isolation and the variance split, not the phenomenon. |
 | Soften "same organization appears" in SSM/diffusion to "consistent with" | Done; §7 retitled and reworded, Table 1 added, abstract and §13 softened. |
 | Fig 5 caption: 2 panels described but PNG has 3; residual 10.4% unstated | Done; caption now describes F2A/F2B/F2C, the 10.4% residual, op×fact 2.0%, and notes F2C plots the commit-locator SDs while the frozen argmax falsifier (2/6 cells) is reported in §5. |
@@ -73,9 +73,16 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 
 ## Running (placeholders in text)
 
-`<!-- TODO confirm-color -->` (§5), `<!-- TODO P2-B sliding causality -->` (§3).
+`<!-- TODO confirm-color -->` (§5).
 
 **Landed since round 1:**
+- **P2-B sliding causality** (§3, Figure B): the Gemma-2 commit tracks depth, not attention type.
+  At 17-token prompts the sliding-window mask equals the full causal mask, so a layer type flip is
+  an exact no-op (0.0 logit change) while a real window-4 mask shifts logits 19.6; the per-layer
+  commit profile is byte-identical under the swap (positive L16/18/20/22, non-positive global
+  L17/L21). The alternation is confounded with layer parity, not caused by attention type;
+  long-context untested (Gemma-3 unavailable). Source: `.../2026-10-02-p2-reviewer-experiments/
+  results/B_analysis.json` (job-0b7652b2112d, Gemma-2-2B, 42 identity items, fp32 eager).
 - **P2-A null** (§5, Figure A): the read-site split is learned — in random-init and weight-shuffled
   nets the coordinate main effect falls to 1.2–1.4% and the op:fact ratio from 19.0 to ~1 (v_proj
   permute keeps 11.9). The reviewer's "coord-main is trivial" hypothesis (A-P1) failed; A-F3 fired.
