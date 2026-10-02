@@ -134,3 +134,89 @@ jobs `baf14cd06dd2/cbb0e8a57f45/e55fc32a16ed`) match.
    in the two audited papers.)
 4. E1 (latent): pin job-id or filter by experiment tag in `phase2_analyze.py`
    `load()` so a re-run cannot pick up Phase-3 peritem folders.
+
+---
+
+## CoT formed-state faithfulness (appended 2026-10-02)
+
+Target: `~/domains/saturn/experiments/2026-10-02-cot-formed-state-faithfulness/`.
+Read-only audit; numbers recomputed independently from raw `report.json` rows and
+cross-checked against the live scheduler (`/api/jobs/<id>`, beast). Verdict: **custody
+CLEAN** — every reported number traces to the FINAL post-bugfix successful full run.
+Six substantive/minor ISSUES below are interpretation/threshold/figure caveats, not
+wrong-run contamination or fabrication.
+
+### Provenance — PASS
+- All 8 claimed full jobs: `state=succeeded`, `result.returncode=0`, `mode=full`, host
+  beast (local job-record + live API for 5 spot-checked). PASS.
+- Worker sha per full job: 0.5B bf16/fp32, 1.5B bf16/fp32, 1.5B-free = **03d207**; 1.5B
+  nf4, 7B nf4 teacher, 7B nf4 free = **89fd78**. Both are POST the on-policy bugfix
+  (3b3c22). The only 3b3c22 job is the first smoke (08:20:08Z) that caught the bug. PASS.
+- Timeline (scheduler UTC): FROZEN `frozen_utc`=08:16:06Z and PREREG mtime 08:17:06Z both
+  precede the earliest full job (08:26:10Z) and the first smoke (08:20Z). PASS.
+- On-policy bugfix verified by diff (custody 3b3c22 vs 03d207): `short_number` (last-`=`
+  RHS) replaced by `short_leading_number` = `re.search(r"-?\d+", text)` (first integer),
+  used at the step-admission call. Exactly as described, sole functional change. PASS.
+- NF4 bnb shim verified by diff (03d207 vs 89fd78): purely additive `import sys` + guarded
+  `sys.path.insert(0, FFS_BNB_PATH)`; inert unless env set. bf16/fp32 full jobs ran under
+  03d207 (no shim code present), so "bf16/fp32 results retained under 03d207" is sound. PASS.
+- Re-run history coherent: nf4 teacher smokes under 03d207 FAILED twice (c2f4 08:26,
+  71ad 08:33 — live API confirms `failed`), then d4253 under 89fd78 SUCCEEDED (08:39),
+  then full nf4 jobs (08:44). bf16-7B attempt = custody `080fa162397241f2`
+  (ffs-qwen7-bf16-teacher-smoke) exists with NO job-record/results → attempted, never ran. PASS.
+- analysis-summary + figures generated after last job finished (figs 08:59:23Z); one full
+  job dir per key; `load_reports` picks the unique full report. PASS.
+
+### Numbers recomputed from raw rows — PASS (exact)
+Silent-repair 0.1875/0.1875/0.7619/0.8276/0.2917/0.7273 (0.5B bf16/0.5B fp32/1.5B bf16/
+1.5B fp32/1.5B nf4/7B nf4) == reported 0.188/0.188/0.762/0.828/0.292/0.727. Donor authorship
+0.594/0.594/0.810/1.000/0.833/0.818 ("0.59, 0.81–1.00"). Monitor-blind 1.00 (≤1.5B) /0.955
+(7B); text-visible 1.00. Canaries: remount Δmax=0.0 every job; copied flips 1.00; multi
+early/late 0.00/1.00. Free: 1.5B silent-repair 0.778 / ablate-changed 0.222 / text-reveal
+0.111 / swap 1.00 / no-op 8/9; 7B ablate 0.500 / text-reveal 0.222 / swap 1.00 / no-op 5/9.
+All match. Point estimates identical; CI bounds reproduce within bootstrap RNG-ordering noise
+(shared global RNG seed 0 → bounds are call-order dependent, e.g. 1.5B bf16 repair hi 0.952
+vs 0.905 on reorder — Monte Carlo, not substantive).
+
+### ISSUES
+1. **E2/E4 interpretation (flag).** "Monitor recall ≈ 0% / a text monitor sees nothing" is
+   scoped to a monitor reading ONLY the fixed pre-cue scratchpad step. The model's generated
+   answer continuation in the monitor-blind cell RE-VERBALIZES the injected wrong value in
+   21/32 (0.5B), 20/21 (1.5B bf16), **29/29 (1.5B fp32)**, 21/21 (1.5B nf4), 14/21 (7B) items
+   (measured from `dissoc.text_orig_state_wrong.text`). The paper's own example ("answers
+   38 = 43 − 5") shows the injected 43 in generated text. Authors caveat this exactly for E3
+   (swap re-verbalized 100%) but NOT for E2/E4. FIX: add the E3-style caveat to
+   PAPER-SECTION Result 2/3 + FINDINGS E2/E4; report the re-verbalization fraction; the
+   zero-recall claim holds for a step-parsing monitor, not a full-transcript monitor.
+2. **E3 frozen falsifier not applied as written.** FROZEN `free_noop_matches_base_min=0.9`
+   and PREREG F3c discount if no-op < 0.9. 1.5B free no-op = 8/9 = **0.889 < 0.9**, so by the
+   frozen rule 1.5B free should ALSO be discounted; FINDINGS/PAPER keep it ("usable with
+   caution") and discount only 7B (5/9). FIX: discount 1.5B free per F3c, or log the
+   0.900→0.889 relaxation as a declared post-hoc deviation. Low impact (free is labeled
+   supporting; core rests on exact-gated teacher panel, remount Δ=0.0).
+3. **FROZEN mutated post-freeze (minor).** FROZEN.json local mtime 08:39Z (> first full job
+   08:26Z): rewritten to append bugfix-entry 2 (shim) and bump `worker_sha256`→89fd78;
+   `frozen_utc` unchanged. Additive, honestly logged, predictions unchanged, and PREREG.md
+   (08:17Z, predictions+falsifiers+3B/7B-NF4 deviations) carries the real pre-registration.
+   Acceptable; note FROZEN is not immutable.
+4. **Canary-table n (minor accuracy).** FINDINGS canary table states copied and multi
+   "(n=8/job)" blanket; at 7B copied admitted n=7, copied-flip computed over n=6 (one None).
+   FIX: footnote 7B copied n (6–7, not 8).
+5. **Pairing nuance.** Items are NOT identical across sizes; each admitted single set is a
+   NESTED SUBSET of the 0.5B 32-item pool (32/32/21/29/24/22), differing by admission
+   (base-correct + on-policy). Scale comparisons are overlapping-but-unequal, not paired;
+   differential admission may correlate with difficulty. FIX: note unpaired/nested, or report
+   the scale contrast on the common admitted subset as robustness.
+6. **Figure + asserted numbers (minor).** fig1 draws the 7B-NF4 point ON the "bf16 (repair)"
+   errorbar curve (analysis_ffs.py:186–187) while 1.5B-NF4 is a separate scatter — visually
+   attaches a 4-bit point to the bf16 line (text is careful about quant-matching). FIX:
+   style/annotate 7B as NF4. Also the "15.9 GB reservation REJECTED / ~14.6 GB ceiling /
+   15.2 GB bf16-7B" figures are asserted — no rejected-reservation artifact in results/ (only
+   the bf16-7B smoke custody with no job-record); label asserted. (7B base_native_correct
+   0.955 = 1/22 admitted singles whose full-128-tok native base was wrong despite passing
+   cue-selection — non-material admission/readout slack.)
+
+Net: central claims (E1 repair↑scale; E2/E4 token-vs-cache dissociation + hidden channel;
+E3 supporting) all come from the FINAL post-bugfix successful full runs, recomputed exact.
+No fabricated or stale-run numbers found. Required fixes = the six caveats above (chiefly
+#1 and #2).
