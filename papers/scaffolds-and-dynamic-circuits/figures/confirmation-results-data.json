@@ -1,0 +1,125 @@
+{
+  "schema": "scaffold-confirmation-figure-data-v1",
+  "sources": [
+    {
+      "path": "saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/results/qwen-predictive-held-20ede7e6e0c0/context-analysis.json",
+      "sha256": "24678eb770f297dee16ab59849c891ae5407934b91132c57ed99fe5768d5f531",
+      "selected_record": "context_profile_summaries, dose=0, view=native_competent_readout_applicable"
+    },
+    {
+      "path": "saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/results/qwen-predictive-followup-organization_1.0-c6a7ade0e793/followup-analysis.json",
+      "sha256": "9e80e16338bab234cd62d78aa9b95cb8afc9597479445566f4dd8d10c9aeada3",
+      "selected_record": "organization.same_four_context_summaries, view=all_rows"
+    }
+  ],
+  "panel_a": {
+    "metric": "raw_rmse_no_fit",
+    "aggregation": "Median across context-level mean profiles among contexts with registered native competence/readout applicability; no CI.",
+    "scope": "Frozen held-context profile. Identity n=4 contexts; color and relation n=8 context combinations. The eight combinations are 2 lexical sets x 2 templates x 2 orders, not eight independent lexical worlds.",
+    "operations": {
+      "identity": {
+        "context_n": 4,
+        "binding_rows_included": 6,
+        "mapped_raw_rmse": 0.20379701295987174,
+        "operation_blind_raw_rmse": 0.13976324976976884
+      },
+      "color": {
+        "context_n": 8,
+        "binding_rows_included": 15,
+        "mapped_raw_rmse": 0.11917113769389863,
+        "operation_blind_raw_rmse": 0.10892025584669442
+      },
+      "relation": {
+        "context_n": 8,
+        "binding_rows_included": 15,
+        "mapped_raw_rmse": 0.029334042604812753,
+        "operation_blind_raw_rmse": 0.1488559424193866
+      }
+    }
+  },
+  "panel_b": {
+    "metric": "mapped_signed_cosine_median",
+    "aggregation": "Median across the same four context-level mean profiles at each dose, all-row dose-matched summary; no CI.",
+    "scope": "Separately sealed post-held exploratory permutation of output rows in L22/L23 v_proj. The 100% arm permutes all 256 output rows. It is not a chronological training assay or a whole-model weight permutation, and native competence falls at strong dose.",
+    "operations": {
+      "identity": [
+        {
+          "dose": 0.0,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.9313522544172868
+        },
+        {
+          "dose": 0.05,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.9242423942132929
+        },
+        {
+          "dose": 0.2,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.9046587215048753
+        },
+        {
+          "dose": 1.0,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.5693892898728105
+        }
+      ],
+      "color": [
+        {
+          "dose": 0.0,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.8380728357692235
+        },
+        {
+          "dose": 0.05,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.8339087143226834
+        },
+        {
+          "dose": 0.2,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.7939015387056199
+        },
+        {
+          "dose": 1.0,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.11026597724667711
+        }
+      ],
+      "relation": [
+        {
+          "dose": 0.0,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.954831161847856
+        },
+        {
+          "dose": 0.05,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.9519715991315711
+        },
+        {
+          "dose": 0.2,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.9461072392785037
+        },
+        {
+          "dose": 1.0,
+          "context_n": 4,
+          "binding_rows_included": 8,
+          "mapped_signed_cosine": 0.048628714111583635
+        }
+      ]
+    }
+  }
+}
