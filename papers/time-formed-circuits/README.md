@@ -31,7 +31,7 @@ Paths are repo-relative to `~/domains/`.
 | Formation windows: Qwen L24 0.57, L27 0.37; SmolLM2 L23 0.07; Pythia-410M L22 0.01 (3.1) | as stated | `.../full-layer-sweeps/FINDINGS-E16-residual-writes.md` |
 | Window necessity table; best w3 Qwen 0.23, Gemma 0.18; Qwen0.5B L20-21 0.99 (3.2, Table 1, Fig S1) | as stated | `.../full-layer-sweeps/FINDINGS-E19-window-necessity.md` |
 | P1-B identity-clustered CIs (Table 2), effective n 14/27/14/13 ids: Qwen block [0.732,1.075]/[0.639,0.860], Gemma [0.740,0.838], SmolLM2 [0.653,0.832]; all rescue/block lower bounds >0 (3.3, 3.4) | as stated | `saturn/experiments/2026-10-02-p1-reviewer-experiments/FINDINGS.md` (part B); `results/B_clustered_stats.json` |
-| P1-A formation vs propagation: late 0.871, early -0.028, seed-layer -0.010, linear-pred 0.023 (R2 -0.13), mid-freeze 0.675 (3.5, Fig 3) | as stated | `saturn/experiments/2026-10-02-p1-reviewer-experiments/FINDINGS.md` (part A); `results/A_analysis.json`; `job-802a7371546f` |
+| P1-A formation vs propagation (Qwen + Gemma): Qwen late 0.871, early -0.028, seed-layer -0.010, linear-pred 0.023 (R2 -0.13), mid-freeze 0.675 (drop 0.197); Gemma late 0.985, early -0.028, seed-layer 0.080, linear-pred 0.100 (R2 -0.06), mid-freeze 0.990 (drop -0.005, falsifier fired) (3.5, Fig 3) | as stated | `saturn/experiments/2026-10-02-p1-reviewer-experiments/FINDINGS.md` (part A); `results/A_analysis.json`; `job-802a7371546f`, `job-d37efcecae3e` |
 | Isolated late write 0.81 at Qwen L23 and Gemma L22 (3.2) | 0.81 / 0.81 | `.../full-layer-sweeps/` (E15/E17); E6 FINDINGS line 53 |
 | Read: best single-layer necessity 0.074; L23 restore 1.22; one-hot join 1.02, 88% (4) | as stated | `saturn/experiments/2026-09-30-e13-time-circuit-read-join/FINDINGS.md` |
 | Exact-row join = oracle at commit; repetition 1.00 vs semantic 0.00 (4) | as stated | `saturn/experiments/2026-09-30-e18-bucket-join-time-reads/FINDINGS.md` |
@@ -77,7 +77,7 @@ Appendix D (supplementary):
 ## Open gaps
 
 RESOLVED in rounds 2-3 (numbers in the body; custody audit of the P1 experiments **PASSED**, FROZEN with byte-identical predictions across versions, the identity-clustered intervals reproduced exactly, a genuine leave-one-identity-out fit, and the error-node reimplementation matching the library):
-- **P1-A formation vs propagation** — late band 0.871 beats seed-layer (-0.010), early band (-0.028), and a linear image of the seed (0.023, held-out R2 -0.13); mid-freeze cuts the transplant to 0.675, a drop of 0.197 that undershoots the 0.20 prereg (reported as a near miss). Framing scoped to Qwen2.5-1.5B; 77% of the store survives the freeze and the intervening layers add ~23%. Gemma replication still in flight.
+- **P1-A formation vs propagation (two models)** — in Qwen the late band 0.871 beats seed-layer (-0.010), early band (-0.028), and a linear image of the seed (0.023, held-out R2 -0.13); mid-freeze cuts the transplant to 0.675 (drop 0.197, a near miss of the 0.20 prereg). Gemma replicates the two fitting-free legs (late 0.985 vs seed-layer 0.080, early -0.028; linear-pred 0.100, held-out R2 -0.06) but its freeze is a no-op (0.990 vs 0.985, drop -0.005), so the freeze-no-op falsifier fired. The construction leg is unsupported in both models; the fitting-free legs (not early/seed K/V, not a linear image of the seed) replicate across both.
 - **P1-B identity-clustered bootstrap** — Table 2 now reports identity-clustered CIs and effective n (14/27/14/13 identities); every block/rescue lower bound stays above zero; under clustering the wrong-identity CI includes 0 in all 4 cells, so candidate top-1 (not the signed fraction) is the content control.
 - **P1-C error-node swap** — split by behavior: identity misses even under matched feature+error interchange (0.31, flips 3/12); color recovers (0.99, 8/8). §5 scoped to an MLP-transcoder basis and the formed identity store.
 
@@ -87,5 +87,4 @@ Still RUNNING (`<!-- TODO 9B scale -->`):
 Owed:
 - Sub-layer-grain sweep of a distributed cell (heads, key vs value, positions in the band).
 - A second model or behavior for the circuit-tracer head-to-head, to make the instrument-coverage result a trend.
-- Gemma-2-2B replication of the P1-A formation test.
 - External-lab / external-harness replication; all results here are one lab, stock eager attention (stock SDPA for the §8 arithmetic cells).
