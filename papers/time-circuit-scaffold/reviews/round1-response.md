@@ -21,7 +21,7 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 
 | Point | Action |
 |---|---|
-| §2 null model missing for the split | Running (`<!-- TODO P2-A null -->`); until it lands we claim only the ratio, not the 42.2%. |
+| §2 null model missing for the split | **Landed** (§5, Figure A). The null confirms the split is learned: coord→1.2–1.4%, op:fact 19.0→~1 in random/shuffled nets. The reviewer's A-P1 (coord-main trivial) failed; A-F3 fired. Bounded by null incompetence (top-1 0/96). |
 | Fact factor low-powered (2 lex × 2 bindings) → 1.1% partly a design artifact | Done; stated in §5, and the per-fact band location is given as the direct fact-invariance test. |
 | §3 sliding-window causal control | Running (`<!-- TODO P2-B sliding causality -->`). |
 | §4 lead result "expected" (attention weights a queried row more) | Acknowledged in §1 mapping; the novelty claimed is the byte-identical same-parent isolation and the variance split, not the phenomenon. |
@@ -29,7 +29,7 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 | Fig 5 caption: 2 panels described but PNG has 3; residual 10.4% unstated | Done; caption now describes F2A/F2B/F2C, the 10.4% residual, op×fact 2.0%, and notes F2C plots the commit-locator SDs while the frozen argmax falsifier (2/6 cells) is reported in §5. |
 | F-label (F1/F2/F3) vs Fig-number mismatch | Done; captions now name the decisive-test panels (F1, F3, F2A–F2C). |
 | Fig 1 caption/box overlap; Fig 3 "0.583" occlusion | Done; both figures regenerated. |
-| Experiment C (FV equivalence) | Running (`<!-- TODO P2-C function vectors -->`); §10 adds the XNOR hostile-inverse evidence that the installed object is not a steering vector. |
+| Experiment C (FV equivalence) | **Landed** (§4, Figure C): additive op vector at L24 gives 0/14 flips, +2.19 nats, erases the identity route without building the relational one — NOT_FV. §10 XNOR adds that the installed object is not a steering vector. |
 
 ## Evidence audit
 
@@ -73,10 +73,20 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 
 ## Running (placeholders in text)
 
-`<!-- TODO confirm-color -->` (§5), `<!-- TODO P2-A null -->` (§5),
-`<!-- TODO P2-B sliding causality -->` (§3), `<!-- TODO P2-C function vectors -->` (§4).
+`<!-- TODO confirm-color -->` (§5), `<!-- TODO P2-B sliding causality -->` (§3).
 
-**Landed since round 1:** the relational-operation addendum (§5, Table 1) — capital-of on 40
-fresh facts separates operation from fact prospectively (within-op per-item cosine 0.74–0.99;
-identity~capital 0.20–0.22; identity~color 0.84–0.91). FAL-2b (cosine) not triggered; FAL-2a
-(sum-of-squares) fired for Gemma and is reported as frozen.
+**Landed since round 1:**
+- **P2-A null** (§5, Figure A): the read-site split is learned — in random-init and weight-shuffled
+  nets the coordinate main effect falls to 1.2–1.4% and the op:fact ratio from 19.0 to ~1 (v_proj
+  permute keeps 11.9). The reviewer's "coord-main is trivial" hypothesis (A-P1) failed; A-F3 fired.
+  A-P2/A-P3 passed; A-P4 passed in trained (0.997 vs 0.485) but failed for random_init (Δ+0.350),
+  reported honestly, not as spurious. Bound stated: nulls incompetent (top-1 0/96) — shows learned,
+  not scaffold-vs-any-competent-net. Disclosed: jackknife (not bootstrap) CI; frozen manifest
+  re-sealed after results.
+- **P2-C function vectors** (§4, Figure C): additive Todd-style op vector at L24 gives no top-1 flip
+  (0/14), +2.19 nats relation, and erases the identity route without building the relational one —
+  operation weighting is NOT_FV. Bounded negative (all-heads FV, fixed coefficient, extracted
+  including held contexts, L24 top of grid).
+- **Relational addendum** (§5, Table 1): capital-of on 40 fresh facts separates operation from fact
+  prospectively (within-op per-item cosine 0.74–0.99; identity~capital 0.20–0.22; identity~color
+  0.84–0.91). FAL-2b (cosine) not triggered; FAL-2a (sum-of-squares) fired for Gemma, reported as frozen.

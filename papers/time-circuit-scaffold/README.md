@@ -18,16 +18,21 @@ Main text about 8,000 words across 13 sections; abstract 220 words; three append
 Nine figures. All numbers measured on stock Hugging Face eager execution in float32
 unless a line says otherwise; effective n is stated per claim.
 
-Four running experiments are marked by placeholders in the text; a fifth (the relational addendum) has landed:
+Two running experiments remain as placeholders; three have landed:
 
-- `<!-- TODO confirm-color -->` (§5): preregistered confirmatory re-run of the cells that
-  fired the write-window falsifier, with fresh color facts and all three per-fact locators
+- `<!-- TODO confirm-color -->` (§5, running): preregistered confirmatory re-run of the cells
+  that fired the write-window falsifier, with fresh color facts and all three per-fact locators
   (argmax, commit, necessity-argmin) frozen in advance.
-- `<!-- TODO P2-A null -->` (§5): untrained / weight-shuffled null for the read-site split,
-  the control that would license reading the coordinate main effect as the scaffold's share.
-- `<!-- TODO P2-B sliding causality -->` (§3): attention-type switch to break the
+- `<!-- TODO P2-B sliding causality -->` (§3, running): attention-type switch to break the
   sliding-vs-global parity confound in Gemma-2.
-- `<!-- TODO P2-C function vectors -->` (§4): Todd-style operation-vector equivalence test.
+- P2-A null (§5, Figure A): **landed.** The read-site split is learned. In random-init and
+  weight-shuffled nets the coordinate main effect falls to 1.2–1.4% and the op:fact ratio from
+  19.0 to ~1 (v_proj permute keeps 11.9). The reviewer's "coord is trivial" hypothesis failed.
+  Caveat: nulls are incompetent (top-1 0/96), so the control shows learned, not scaffold-vs-any-
+  competent-net. Source: `.../2026-10-02-p2-reviewer-experiments/FINDINGS-AC-coordinator.md`.
+- P2-C function vectors (§4, Figure C): **landed.** An additive Todd-style operation vector at
+  L24 gives no top-1 flip (0/14), relation target +2.19 nats, and erases the identity route
+  without building the relational one — the operation weighting is NOT_FV. Same source.
 - Relational-operation addendum (§5, Table 1): **landed.** Capital-of on 40 fresh facts
   separates operation from fact prospectively — within-op per-item cosine 0.74–0.99,
   identity~capital 0.204/0.218, identity~color 0.842/0.911 (read-back ops share a reader);
@@ -49,9 +54,10 @@ Four running experiments are marked by placeholders in the text; a fifth (the re
 - The read-site split (42.2 / 29.0 / 1.1) is a **retrospective re-analysis** of pre-freeze
   data; only the per-fact commit location is prospective and preregistered. The two are now
   kept separate.
-- The 42.2% coordinate main effect is **not** presented as the scaffold's learned share; the
-  text leads with the operation-to-fact-like interaction ratio (~11×) and defers the
-  main-effect reading to an untrained null.
+- The 42.2% coordinate main effect is not asserted as the scaffold's learned share on faith;
+  the text leads with the operation-to-fact-like interaction ratio (~11×), and the untrained
+  null (Figure A) has now run and confirms the whole split is learned (coordinate structure
+  collapses to ~1% in random/shuffled nets), bounded by the nulls' incompetence (top-1 0/96).
 
 ## Abstract
 
@@ -90,6 +96,8 @@ cited here, not re-derived.
 | 4 | Fact moves which row is read (selected-row cosine 0.61–0.70 vs reader 0.95–0.96) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
 | 5 | Read-site variance (RETROSPECTIVE re-analysis): coord×op 29.0% vs fact-like 2.7% (coord×fact 1.1% + coord×binding 1.6%); coord main 42.2% (null pending) | 1,152 cells; Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_F3_qwen_predictive_readmap.json` |
 | 5 | Store necessity: op 84.0%, fact 3.2%, op×fact 2.0%, residual 10.4% (64 cells) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_scaffold_poc_store_necessity.json` |
+| 5 | Read-site split is LEARNED: coord→1.2–1.4%, op:fact 19.0→~1 in random/shuffled nets; v_proj permute keeps 11.9; nulls incompetent (top-1 0/96) | random-init + shuffled Qwen2.5-1.5B | `saturn/experiments/2026-10-02-p2-reviewer-experiments/FINDINGS-AC-coordinator.md` (job-48af2d6fc73c) |
+| 4 | Operation weighting is NOT_FV: additive op vector at L24 gives 0/14 flips, +2.19 nats, erases identity route without building relational one | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-p2-reviewer-experiments/FINDINGS-AC-coordinator.md` (job-5d7cf4e4b3d8) |
 | 5 | Three preregistered falsifiers: two held; write-window falsifier fired as frozen (argmax locator) in 2/6 cells — Qwen color 5.45, Gemma identity 4.01; commit-locator SDs 0.00–4.17 | Qwen2.5-1.5B, Gemma-2-2B | `.../2026-10-02-site-variance-decomposition/PREREG.md`, `FROZEN.json`, `phase2_sitemap_analysis.json`, `FINDINGS-addendum-draft.md` (FAL-3 reconciliation) |
 | 6 | Frozen 24-coord profile predicts held relation (raw-RMSE 8/8; cosine 7/8 all-row, 8/8 competent; .954 vs .566) | 8 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/FINDINGS.md` |
 | 6 | Full v_proj row permutation collapses the profile (.955→.049 relation) | 4 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/FINDINGS.md` |
@@ -121,6 +129,8 @@ cited here, not re-derived.
 | fig7_honest_null.png | Connected forecast tie + role-matcher null | authored from honest-null numbers |
 | fig8_scene_compiler_proof.png | Sealed program reproduces native render byte-exact | scene-generator proof sheet |
 | fig9_qkv_controls_proof.png | Wrong-program / wrong-sign / shuffled-row controls diverge | scene-generator control sheet |
+| figA_null_variance_split.png | Read-site split collapses in random/shuffled nets (learned) | reviewer experiment A |
+| figC_fv_reproduction.png | Additive operation function vector fails to reproduce the weighting | reviewer experiment C |
 
 ## What is deliberately excluded
 
