@@ -2,9 +2,13 @@
 title: "The Answer Follows the Cache (working name: Formed-State Faithfulness)"
 author: Jacob Hollenbeck
 type: research-paper-readme
-status: workshop-scale note (round-2 revision; E1 corrected to recompute-from-prompt; probe negative)
+status: Parked 2026-10-02 after round 2 (4/10, fold recommended); content will likely fold into Paper 2
 date: 2026-10-02
 ---
+
+> **Parked 2026-10-02 after round 2 (4/10, fold recommended).** Kept as an accurate record; its
+> content will likely fold into the companion paper (Paper 2). Only evidence-accuracy fixes were
+> applied after round 2 (see `reviews/round2-response.md`).
 
 # The Answer Follows the Cache: A Reasoning Step's Formed State Can Override Its Written Token
 
@@ -80,7 +84,7 @@ Paths under `~/domains/`. The primary experiment directory is abbreviated
 | C4 | Token-visible channel: written-token swap dominates input swap, ×4 families; plain-incapable → chain-capable | SmolLM2-1.7B 8.02 vs 0.94; Qwen2.5-0.5B 9.23 vs 0.88; Qwen3-8B 14.18 vs 0.53; Qwen3-30B-A3B 11.59 vs 1.64; plain -0.54→+2.40, pc 1.00→9.60 | `saturn/experiments/2026-08-21-ird-fruit-battery/README.md` (Addenda F1-R, F2-R, F3-R; F-E) |
 | C5 | Hidden channel load-bearing: state-only edit changes answer, written value correct (written-step-blind) | 1.00 @0.5B/1.5B (bf16, fp32, NF4); 0.955 @7B NF4 [0.864,1.000], n per table | `EXP/results/analysis-summary.json` (`monitor_blind_change_rate`); `EXP/FINDINGS-draft.md` (Exp 2) |
 | C5b | Text-only cell (written value wrong, state restored correct): token pull falls with scale | 0.469 @0.5B bf16, 0.5625 @0.5B fp32, 0.00 @1.5B (all prec), 0.095 @7B | `EXP/results/analysis-summary.json` (`text_wrong_state_orig_rate`) |
-| C6 | Text-visible edit changes answer (co-varies channels; baseline) | 1.00 everywhere | `EXP/results/analysis-summary.json` (`text_visible_change_rate`) |
+| C6 | Text-visible edit changes answer (co-varies channels; baseline) | 1.00 on every row where measured; **not measured at 3B (n/a)** — dissociation panel never ran 3B | `EXP/results/analysis-summary.json` (`text_visible_change_rate`) |
 | C7 | Directed state authorship (sufficiency): donor state → donor answer, rises with scale | 0.594 @0.5B → 0.810 @1.5B bf16 / 1.000 @1.5B fp32 / 0.818 @7B NF4 | `EXP/results/analysis-summary.json` (`swap_cf_authored`) |
 | C8 | **RETRACTED reading** — repair rate R1 (now = recompute-from-prompt, not a hidden channel; scale-growth retracted, rate non-monotone across the full curve); kept only in Appendix G | 0.188 (0.5B) / 0.762 (1.5B) / 0.531 (3B base); see CA1/CA2 | `EXP/results/analysis-summary.json` (`repair_rate`); `EXP/FINDINGS-addendum-2-draft.md` |
 | C9 | Repair rate R1 on the 4-bit axis (supplementary precision characterization) | 0.292 (1.5B) → 0.727 (7B NF4) | `EXP/results/analysis-summary.json` (`repair_rate`) |

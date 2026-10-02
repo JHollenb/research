@@ -112,12 +112,14 @@ Overwriting only the stored state with a wrong value's, with the written value l
 | 1.5B | bfloat16 | 21 | 1.00 [1.00, 1.00] | 1.00 |
 | 1.5B | float32 | 29 | 1.00 [1.00, 1.00] | 1.00 |
 | 1.5B | NF4 | 21 | 1.00 [1.00, 1.00] | 1.00 |
-| 3B (base) | bfloat16 | 32 | 1.00 [1.00, 1.00] | 1.00 |
+| 3B (base) | bfloat16 | 32 | 1.00 [1.00, 1.00] | n/a |
 | 7B | NF4 | 22 | 0.955 [0.864, 1.000] | 1.00 |
 
-*Note on n.* For 1.5B NF4 the dissociation denominator (items with a valid 2×2 cell) is 21, the text-visible denominator 23, and the repair denominator (Section 7) 24; the counts differ because the cells have different validity requirements.
+*3B provenance.* The 3B (base) state-only point comes from the control worker's `swap_changed` field (job-52b8771fc5ef, worker rev 3b4db8d2, pre-resample), not the main 2×2 dissociation panel, which never ran 3B; by definition it is the same monitor-blind swap quantity. The text-visible channel was therefore never measured at 3B (n/a); it was 1.00 on every row where it was run.
 
-The forward pass runs on the cache, so overwriting the step's cache with another value's state and getting that value's answer is close to a sanity check; the surprise would be the opposite. We therefore read this as confirming that the answer region *uses* the step's stored state, and as establishing the dissociation, not as a capacity number in any information-theoretic sense. The visible-token channel is at least as strong (1.00 everywhere), as expected.
+*Note on n.* For 1.5B NF4 the dissociation denominator (items with a valid 2×2 cell) is 21, the text-visible denominator 23, and the repair denominator (the Appendix G precision control, job-4a5981fa28fc) 24; the counts differ because the cells have different validity requirements.
+
+The forward pass runs on the cache, so overwriting the step's cache with another value's state and getting that value's answer is close to a sanity check; the surprise would be the opposite. We therefore read this as confirming that the answer region *uses* the step's stored state, and as establishing the dissociation, not as a capacity number in any information-theoretic sense. The visible-token channel is at least as strong (1.00 on every row where it was measured; not measured at 3B), as expected.
 
 ### 4.3 The injected value usually reappears in the transcript
 
@@ -245,7 +247,7 @@ All runs: Qwen2.5, greedy, one seed, stock attention with native causal masks, o
 
 | Prediction (frozen before runs) | Outcome |
 |---|---|
-| State-only change at least 0.30 at 1.5B and 7B; text-visible at least as large | Met: 1.00 at 0.5B/1.5B/3B, 0.955 at 7B; text-visible 1.00. Continuation re-verbalizes the injected value on 0.66-1.00 of changed items, so the blind label is for a step-reading monitor |
+| State-only change at least 0.30 at 1.5B and 7B; text-visible at least as large | Met: 1.00 at 0.5B/1.5B/3B, 0.955 at 7B; text-visible 1.00 on every row where it was measured (not measured at 3B). Continuation re-verbalizes the injected value on 0.66-1.00 of changed items, so the blind label is for a step-reading monitor |
 | (Addendum 2, control A) R3 ≥ 0.70 for validity; R2 ≤ 0.5·R1 ⇒ recompute-from-prompt | Met and confirmed at 0.5B and 3B (R3 1.000; R2 ≈ 0). 1.5B mask destructive (R3 0.571), resolved by the resample control |
 | (Addendum 2, control A') tracks-original ≈ 0 if no hidden channel; R4 ≥ R1 − 0.15 for sanity | tracks-original 0.000 at 0.5B and 1.5B (no hidden channel). R4 bound met at 0.5B; missed at 1.5B (0.450) — partial pass, still recompute-from-prompt |
 | (Addendum 2, control B) probe swap-decode recall ≥ 0.70 | NOT met: 0.19 / 0.19 / 0.00 at 0.5B / 1.5B / 3B. A single-layer linear probe does not reliably decode the swapped value |
