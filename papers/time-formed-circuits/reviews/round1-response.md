@@ -65,3 +65,17 @@ Retraction guards (auditor confirmed all hold) are unchanged: no retracted resul
 - **"authors" (verb)** is left unglossed; its meaning (the state causes the model to output that token) is clear in every use and a definition would add noise. Flag if a reviewer still trips on it.
 - **Physical section reorder to promote §5** not done (see C above); foregrounding was done instead.
 - **Falcon-H1** retained as a boundary row rather than cut, because it is the one hybrid specimen and marks where the anatomy is not yet established.
+
+---
+
+## Round-2 integration (2026-10-02): the three flagged experiments are done
+
+The reviewer's three "most change my mind" experiments ran (`saturn/experiments/2026-10-02-p1-reviewer-experiments/`; custody audit RUNNING, numbers may be revised).
+
+| Placeholder | Result | Where |
+|---|---|---|
+| P1-A formation vs propagation | FORMATION, not propagation: late band rescues 0.871 vs seed-layer -0.010, early band -0.028, and a linear image of the seed 0.023 (held-out R2 -0.13); freezing the intervening layers cuts rescue to 0.675 (−0.197, a near miss of the 0.20 prereg, CIs non-overlapping); the seed still authors through redundant paths (0.994). Gemma replication in flight. | §3.5, Fig 4, App A |
+| P1-B identity-clustered bootstrap | Dissociation survives honest CIs in all four cells; Table 2 now carries identity-clustered intervals and effective n (14/27/14/13 identities); every block/rescue lower bound > 0. Wrong-identity retained-fraction CI includes 0 in 3/4 cells, so the candidate top-1 (wrong-donor wins 0.75-1.00) is the content control. | §3.3, §3.4 Table 2, App B |
+| P1-C error-node swap | Split by behavior: identity misses even under a matched feature+error interchange (0.31, flips 3/12; error-only -0.15) — the store is in attention-formed K/V/residual state, not features or error nodes, which STRENGTHENS the blind spot and answers Marks 2024; color recovers (0.99, 8/8), so the color miss was reconstruction error. §5 retitled "...the formed identity store..."; abstract/intro hook now "matched feature+error interchange moves identity ≤0.31 vs native 0.94." | §5, Fig 6, abstract, App A |
+
+Figure set grew to eight (schematic, E20 bars, window necessity, formation, circuit-tracer, error interchange, FLUX, Mamba). Only `TODO 9B scale` remains open.
