@@ -1,61 +1,80 @@
 ---
-title: "Formed-State Faithfulness"
+title: "Two Channels of a Reasoning Step (working name: Formed-State Faithfulness)"
 author: Jacob Hollenbeck
 type: research-paper-readme
-status: submission-manuscript (custody audit in progress)
+status: submission-manuscript (round-1 revision; custody audit complete; Controls A-D running)
 date: 2026-10-02
 ---
 
-# Formed-State Faithfulness: A Reasoning Step's Causal Role Splits Into the Token a Monitor Sees and the Cache It Cannot
+# Two Channels of a Reasoning Step: The Token a Monitor Reads and the Cache It Does Not
 
-Paper: [`paper.md`](paper.md). Audience: frontier-lab chain-of-thought monitoring and interpretability teams.
+Working name: *Formed-State Faithfulness*. Paper: [`paper.md`](paper.md). Audience: frontier-lab
+chain-of-thought monitoring and interpretability teams.
 
 ## Abstract
 
-Chain-of-thought monitoring assumes that reading what a model writes tells you what the model
-used. We measure how far that assumption holds for a single arithmetic reasoning step whose written
-value is not restated in the prompt. We separate the step's causal role into a token-visible channel
-(the written value a monitor can read) and a hidden-state channel (the key/value cache the step
-forms, which the text does not expose). Every intervention is gated by an exact-restore control that
-reproduces the base answer bit-for-bit. Two results stand out. The hidden channel has near-total
-capacity: overwriting only the step's cached state with a wrong value's state, while the written
-value stays correct, changes the completed answer on 100% of items at 0.5B and 1.5B parameters
-(n=21-32) and 95% at 7B (n=22), across three precisions; a monitor reading the correct chain sees
-nothing. This is a capacity measurement made with an artificial edit, not a claim that models hide
-reasoning. The natural gap grows with scale: after a step's cached state is removed, larger models
-silently re-derive it and still answer correctly more often (0.19 at 0.5B to 0.76 at 1.5B in
-bfloat16, non-overlapping CIs; replicated 0.29 to 0.73 on a 4-bit axis), and when the model writes
-its own chain the regenerated text announces the removal only 11% of the time. Removal-based
-faithfulness metrics therefore under-count a step's role, increasingly with scale. Visible
-chain-of-thought is an upper bound on monitorability, not a measure of it.
+Chain-of-thought monitoring assumes that reading what a model writes reveals what it used. We test
+this on a single arithmetic step whose value the prompt never restates (Qwen2.5, 0.5B-7B), editing
+the key/value cache the step forms, under an exact-restore control that reproduces the base answer
+bit-for-bit. Our cleanest result is natural and scale-dependent: after a step's cached state is
+removed, the model still answers correctly far more often at larger scale, the removal unannounced
+in the text. On common items the still-correct rate rises from 0.095 (0.5B) to 0.762 (1.5B), so
+removal-based attribution under-measures the effect of removing a step. Whether this is internal
+re-derivation or recomputation from operands still in the prompt is a control we are running. A
+precision control rules out a floating-point artifact; 4-bit quantization roughly halves the rate.
+Separately, a maximal edit shows the hidden-state channel is load-bearing: overwriting only the
+cached state, written value held correct, flips the answer on 95-100% of items. A step-reading
+monitor is blind to this, but the model usually re-verbalizes the injected value (0.66-1.00), so a
+full-transcript monitor recovers most. Reading written reasoning steps bounds monitorability rather
+than measuring it. Scope: synthetic arithmetic, greedy, one seed.
 
 ## Status
 
-- **Submission manuscript (custody-audit corrections applied).** Pre-registration and falsifiers
-  frozen before any run.
+- **Round-1 revision.** Pre-registration and falsifiers frozen before any run. Custody audit
+  complete (point estimates recomputed exactly from the final post-bug-fix full runs; no fabricated
+  or stale numbers). Workshop-ready; main-venue pending the running controls below.
 - **Primary evidence:** `~/domains/saturn/experiments/2026-10-02-cot-formed-state-faithfulness/`
   (findings, pre-registration, frozen manifest, per-job results, analysis summary, figures).
-- **Custody audit complete.** Point estimates recomputed exactly from the final post-bug-fix full
-  runs; no fabricated or stale numbers. Six corrections applied in this version: (1) the
-  hidden-channel result is scoped to a step-reading monitor and the answer-continuation
-  re-verbalization fractions are now reported (Sections 4.3, 7.1); (2) both free-running arms are
-  discounted by the frozen no-op canary (8/9 and 5/9 below 0.90), free is exploratory only;
-  (3) scale comparisons are unpaired/nested, with a common-subset robustness check (Section 5.3);
-  (4) Figure 2 redrawn with two separate precision axes and the 7B point marked NF4; (5) the 7B
-  copied-canary n (6/6) footnoted and the VRAM figures labeled asserted; (6) the post-freeze
-  additive amendment to the frozen manifest disclosed (Appendix D). Further reviewer corrections
-  will be folded in with a changelog.
+- **Round-1 reviewer corrections applied:** (1) central reframe — the silent-repair result is
+  stated as measured compensation under removal, with the recompute-from-prompt confound flagged
+  plainly and the mechanism left open pending Control A; overclaims ("silently re-derive / under-counts
+  a step's role / grows with capability") softened in Sections 5, 7, 10. (2) Re-led abstract/intro
+  with the natural silent-repair scale result (common-subset 0.095→0.762); demoted "near-total
+  capacity"; promoted the full-transcript recovery (Section 4.3). (3) Title changed to the
+  two-channel framing (robust to how Control A falls). (4) "monitor-blind" → "written-step-blind"
+  throughout; step-reading vs full-transcript monitor separated (zero recall stated as by
+  construction). (5) Fig 1 schematic built (no placeholder); Fig 3 given a re-verbalization/recovery
+  series; Fig 4 moved to Appendix F. (6) §3 compressed to a paragraph + Appendix E; §6 compressed;
+  §4.4-4.6 merged; scope caveat ≤2 substantive statements; "formed state" defined in §2. (7) Prior
+  art added: self-repair/Hydra (McGrath 2023; Rushing & Nanda 2024; Bugaud 2026), implicit/latent
+  reasoning (Yu 2024; Yang 2024; Biran 2024), Radhakrishnan 2023; Paper-1 overlap sharpened to a
+  new-contribution list. (8) Evidence-audit fixes 1-10 applied (see below).
+- **Controls running** (placeholders in paper): A repair-from-prompt (decisive mechanism test),
+  B probe-based state monitor, C bfloat16-7B via paged execution + Qwen2.5-3B, D natural word problems.
 - All runs measured on one RTX 4080, greedy, one seed, stock attention with native causal masks.
   Confidence intervals are 95% item-level bootstrap (10,000 resamples).
+
+## Evidence-audit fixes applied (round-1)
+
+1. README abstract no longer headlines the discounted 11% free-running number (dropped).
+2. Table 1 vs Table 2 n mismatch for 1.5B NF4 (21/23/24) explained in a table note.
+3. Table F1 (free) 7B n footnoted (header 9 vs 8 scored for ablate).
+4. §3 provenance stated inline (prior battery, different task/models) + Appendix E.
+5. Text-only 2×2 cell now reported (§4.1: 0.47/0.56 at 0.5B, 0.00 at 1.5B, 0.10 at 7B).
+6. Fig 2 caption "overlap" softened to "sit on/near" (1.5B fp32 diamond at 0.83).
+7. Appendix C E3 row tagged discounted.
+8. VRAM figures labeled asserted at first mention (§2.2) and Appendix D.
+9. Status consistent (audit complete).
+10. Superseded primary `fig1_repair_vs_scale.png` not referenced in paper (confirmed).
 
 ## Figures
 
 | Figure | File | Source |
 |---|---|---|
-| 1 (planned) | `<!-- TODO: VM trace render -->` placeholder in `paper.md` | trace visualizer in preparation |
-| 2 Silent repair vs scale | `figures/fig2_repair_vs_scale.png` | redrawn from `EXP/results/analysis-summary.json` (two separate precision axes; 7B marked NF4). Supersedes primary `figures/fig1_repair_vs_scale.png`, which drew the 7B-NF4 point on the bf16 line |
-| 3 Token-vs-state dissociation | `figures/fig3_token_vs_state.png` | copied from primary `figures/fig2_token_vs_state.png` |
-| 4 Free-running chain-of-thought | `figures/fig4_free_running.png` | copied from primary `figures/fig3_free_running.png` |
+| 1 Two-lane schematic (§2.4) | `figures/fig1_two_lane_schematic.png` | built this round (static schematic: visible token lane vs formed-cache lane + the three interventions). Replaces the earlier VM-trace placeholder |
+| 2 Silent repair vs scale (§5.5) | `figures/fig2_repair_vs_scale.png` | drawn from `EXP/results/analysis-summary.json` (two separate precision axes; 7B marked NF4). Supersedes primary `fig1_repair_vs_scale.png`, which drew the 7B-NF4 point on the bf16 line |
+| 3 Token-vs-state + recovery (§4.3) | `figures/fig3_token_vs_state.png` | rebuilt this round from analysis-summary + raw re-verbalization rows: added the full-transcript recovery series (0.66-1.00) |
+| F1 Free-running (Appendix F) | `figures/fig4_free_running.png` | copied from primary `fig3_free_running.png`; demoted to appendix (discounted panel) |
 
 ## Evidence map (claim → source path)
 
@@ -68,7 +87,8 @@ Paths under `~/domains/`. The primary experiment directory is abbreviated
 | C2 | Copied point-read canary flips the answer | 1.00 (n=8/run; n=6-7 at 7B) | `EXP/results/analysis-summary.json` (`copied_unmount_changed`) |
 | C3 | Early-vs-late canary: early inert, late decisive | early 0.00, late 1.00 (n=8) | `EXP/results/analysis-summary.json` (`multi_early_changed`, `multi_late_changed`) |
 | C4 | Token-visible channel: written-token swap dominates input swap, ×4 families; plain-incapable → chain-capable | SmolLM2-1.7B 8.02 vs 0.94; Qwen2.5-0.5B 9.23 vs 0.88; Qwen3-8B 14.18 vs 0.53; Qwen3-30B-A3B 11.59 vs 1.64; plain -0.54→+2.40, pc 1.00→9.60 | `saturn/experiments/2026-08-21-ird-fruit-battery/README.md` (Addenda F1-R, F2-R, F3-R; F-E) |
-| C5 | Hidden channel capacity: state-only edit changes answer, written value correct (monitor-blind) | 1.00 @0.5B/1.5B (bf16, fp32, NF4); 0.955 @7B NF4 [0.864,1.000], n per table | `EXP/results/analysis-summary.json` (`monitor_blind_change_rate`); `EXP/FINDINGS-draft.md` (Exp 2) |
+| C5 | Hidden channel load-bearing: state-only edit changes answer, written value correct (written-step-blind) | 1.00 @0.5B/1.5B (bf16, fp32, NF4); 0.955 @7B NF4 [0.864,1.000], n per table | `EXP/results/analysis-summary.json` (`monitor_blind_change_rate`); `EXP/FINDINGS-draft.md` (Exp 2) |
+| C5b | Text-only cell (written value wrong, state restored correct): token pull falls with scale | 0.469 @0.5B bf16, 0.5625 @0.5B fp32, 0.00 @1.5B (all prec), 0.095 @7B | `EXP/results/analysis-summary.json` (`text_wrong_state_orig_rate`) |
 | C6 | Text-visible edit changes answer (co-varies channels; baseline) | 1.00 everywhere | `EXP/results/analysis-summary.json` (`text_visible_change_rate`) |
 | C7 | Directed state authorship (sufficiency): donor state → donor answer, rises with scale | 0.594 @0.5B → 0.810 @1.5B bf16 / 1.000 @1.5B fp32 / 0.818 @7B NF4 | `EXP/results/analysis-summary.json` (`swap_cf_authored`) |
 | C8 | Silent repair rises with scale, bfloat16 axis (clean) | 0.188 [0.062,0.344] (0.5B) → 0.762 [0.571,0.952] (1.5B); +0.57, non-overlapping | `EXP/results/analysis-summary.json` (`repair_rate`); `EXP/figures/fig1_repair_vs_scale.png` |
@@ -80,7 +100,7 @@ Paths under `~/domains/`. The primary experiment directory is abbreviated
 | C14 | Free-running: silent repair of removed step, text usually silent | @1.5B ablate silent-repair 0.778, text-reveals 0.111 [0,0.333], answer-changed 0.222 | `EXP/results/analysis-summary.json` (`free.qwen15/bf16`) |
 | C15 | Free-running boundary: coherent injected value is re-verbalized | swap text-reveals 1.000 both sizes | `EXP/results/analysis-summary.json` (`free.*.swap_text_reveals`) |
 | C16 | Free-running BOTH sizes discounted by frozen no-op canary (threshold 0.90) | free no-op 8/9=0.889 @1.5B, 5/9=0.556 @7B | `EXP/results/analysis-summary.json` (`noop_matches_base`); `EXP/PREREG.md` + `EXP/FROZEN.json` (F3c, `free_noop_matches_base_min`=0.9) |
-| C17 | Monitor recall: a STEP-reading monitor has ~0% recall on the state-only edit (derived); a FULL-TRANSCRIPT monitor recovers most because the model re-verbalizes the injected value | re-verbalize among monitor-blind-changed items: 21/32 (0.5B), 20/21 (1.5B bf16), 29/29 (1.5B fp32), 21/21 (1.5B nf4), 14/21 (7B) | measured from raw `report.json` rows (`steps.s1v.dissoc.text_orig_state_wrong.text` vs `mistake_value`); matches custody audit |
+| C17 | Monitor recall: a STEP-reading monitor has ~0% recall on the state-only edit (by construction); a FULL-TRANSCRIPT monitor recovers most because the model re-verbalizes the injected value | re-verbalize among written-step-blind-changed items: 21/32 (0.5B), 20/21 (1.5B bf16), 29/29 (1.5B fp32), 21/21 (1.5B nf4), 14/21 (7B) | measured from raw `report.json` rows (`steps.s1v.dissoc.text_orig_state_wrong.text` vs `mistake_value`); matches custody audit |
 | C17b | Scale rise and NF4 deflation survive on common (paired) item subsets | 0.5B→1.5B bf16 common n=21: 0.095→0.762; 1.5B→7B nf4 common n=17: 0.353→0.824; all-six common n=11: 0.091/0.818(bf16)/0.273(nf4)/0.818(7B) | computed from raw `report.json` rows (`steps.s1v.unmount.repaired` by item name) |
 | C18 | Deviations: 3B uncached; 7B bf16 exceeds card → NF4; shim inert on non-4-bit paths | — | `EXP/FROZEN.json` (`deviations`, `smoke_bugfixes`); `EXP/FINDINGS-draft.md` (Deviations) |
 | C19 | Confounded precedent de-confounded here (prior E10; later step individually decisive, not a strict time circuit) | swap authorship 19/32, 30/30; removal-wrong 26/32, 3/30 | `research/papers/time-formed-circuits/paper.md` (E10 row); `saturn/experiments/2026-10-01-e10-completed-answer-rerun/FINDINGS.md`; `.../2026-10-01-e10-cot-intermediate-steps/VERIFICATION-2026-10-01.md` |
@@ -94,16 +114,24 @@ Full runs: teacher — 0.5B bf16 `job-8acc379d0951`, 0.5B fp32 `job-bd0bf96a7a27
 7B NF4 `job-bc10cd445816`; free — 1.5B bf16 `job-602f0c494da4`, 7B NF4 `job-f904b4749690` (discounted).
 Full binding records in `EXP/results/job-bindings/`.
 
-## Citations (arXiv IDs verified 2026-10-02 via web search)
+## Citations (arXiv IDs verified via web search 2026-10-02)
 
-Lanham et al. 2023 (2307.13702); Turpin et al. 2023 (2305.04388, NeurIPS 2023);
+Round-0: Lanham et al. 2023 (2307.13702); Turpin et al. 2023 (2305.04388, NeurIPS 2023);
 Chen et al. 2025 (2505.05410); Korbak et al. 2025 (2507.11473);
 Pfau, Merrill, Bowman 2024 (2404.15758); Baker et al. 2025 (2503.11926);
 Paul, West, Bosselut, Faltings 2024 (2402.13950); Bentham, Stringham, Marasović 2024 (2402.14897);
 Miller, Chughtai, Saunders 2024 (2407.08734).
+Round-1 additions: McGrath et al. 2023 Hydra Effect (2307.15771); Rushing & Nanda 2024 (2402.15390,
+ICML 2024); Bugaud 2026 (TrustNLP 2026, pp. 515-527, no arXiv — as cited in Paper 1); Yu 2024
+(2411.15862); Yang et al. 2024 (2402.16837, ACL 2024); Biran et al. 2024 (2406.12775, EMNLP 2024);
+Radhakrishnan et al. 2023 (2307.11768).
 
-## Known open items for revision
+## Known open items (running controls / future work)
 
-- Custody-audit corrections to the primary numbers (audit was running at submission).
-- Figure 1 (hidden-vs-visible trace render) is a placeholder pending the trace visualizer.
-- Natural-language reasoning at scale, a bfloat16 7B point, and multi-seed runs are future work.
+- Control A (decisive): repair-from-prompt — ablate step + cut operand access; resolves whether the
+  scale result is hidden re-derivation (monitorability loss) or benign recompute-from-prompt.
+- Control B: probe-based state monitor (does a linear probe read the "hidden" channel?).
+- Control C: bfloat16 7B via paged/offload + Qwen2.5-3B, so each axis has >2 points off the
+  4-bit-deflated axis.
+- Control D: natural word problems (operands not trivially present as clean prompt tokens).
+- Secondary: zero/resample-ablation comparison to harden Section 5 against mean-ablation OOD; multi-seed.
