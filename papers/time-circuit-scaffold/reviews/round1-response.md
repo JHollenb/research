@@ -10,7 +10,7 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 
 | # | Point | Action | Location |
 |---|---|---|---|
-| H1 | "Three falsifiers, none triggered" is false: FAL-3 (`sd_argmax_write > 4`) was crossed by Qwen color (SD 4.17). | Done. State plainly that two held and FAL-3 fired; label the robust-statistic (≤2.06) and two-fact-exclusion readings post hoc; treat the cell as a crossed falsifier pending a preregistered re-run. | Abstract; §1 overview; §5 falsifier para; §13; Fig 5 caption (F2C shows the crossing) |
+| H1 | "Three falsifiers, none triggered" is false: the write-window falsifier fired. (Coordinator second correction: the frozen statistic is the SD of the per-item argmax write layer; it fired in 2 of 6 cells — Qwen color 5.45, Gemma identity 4.01 — and the earlier "4.17" is a post-hoc commit-locator SD, not the frozen statistic.) | Done. State that two held and the write-window falsifier fired as frozen in 2/6 cells; the frozen argmax locator tracks a noisy plateau; under a post-hoc commit locator the band is invariant in 5/6 cells; every per-fact SD is now labeled by locator; confirmatory run freezes all three locators. | Abstract; §1 overview; §3; §5 band + falsifier paras; §13; Fig 2 and Fig 5 captions; Appendix C |
 | H2 | Read-site split (42.2/29.0/1.1) is retrospective, not the preregistered prospective result. | Done. Separated: the per-fact commit location is the preregistered prospective measurement; the split is a retrospective re-analysis of pre-freeze data on an op set incl. relation. Section renamed. | Abstract; §1; §5 opening + both split paras; §5 header |
 | H3 | "42.2% = scaffold's share" is not defensible without a null. | Done. Lead with the interaction ratio (coord×op 29.0% : fact-like 2.7% ≈ 11×); report fact-like = coord×fact 1.1% + coord×binding 1.6%; do not read 42.2% as the learned share; untrained/shuffled null running. | Abstract; §5; Fig 5 caption; `<!-- TODO P2-A null -->` |
 | H4 | §3 Pythia window numbers misassigned; "fails immediately after" false for Pythia. | Done. Corrected to 0.95@L17, 0.48@L18, 0.01 by L22 (gradual); kept Qwen0.5B/Mamba as the sharp-edge exemplars. | §3 para 2 |
@@ -26,7 +26,7 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 | §3 sliding-window causal control | Running (`<!-- TODO P2-B sliding causality -->`). |
 | §4 lead result "expected" (attention weights a queried row more) | Acknowledged in §1 mapping; the novelty claimed is the byte-identical same-parent isolation and the variance split, not the phenomenon. |
 | Soften "same organization appears" in SSM/diffusion to "consistent with" | Done; §7 retitled and reworded, Table 1 added, abstract and §13 softened. |
-| Fig 5 caption: 2 panels described but PNG has 3; residual 10.4% unstated | Done; caption now describes F2A/F2B/F2C, the 10.4% residual, op×fact 2.0%, and the FAL-3 crossing. |
+| Fig 5 caption: 2 panels described but PNG has 3; residual 10.4% unstated | Done; caption now describes F2A/F2B/F2C, the 10.4% residual, op×fact 2.0%, and notes F2C plots the commit-locator SDs while the frozen argmax falsifier (2/6 cells) is reported in §5. |
 | F-label (F1/F2/F3) vs Fig-number mismatch | Done; captions now name the decisive-test panels (F1, F3, F2A–F2C). |
 | Fig 1 caption/box overlap; Fig 3 "0.583" occlusion | Done; both figures regenerated. |
 | Experiment C (FV equivalence) | Running (`<!-- TODO P2-C function vectors -->`); §10 adds the XNOR hostile-inverse evidence that the installed object is not a steering vector. |

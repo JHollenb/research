@@ -20,8 +20,9 @@ unless a line says otherwise; effective n is stated per claim.
 
 Four running experiments are marked by placeholders in the text, to be filled on landing:
 
-- `<!-- TODO confirm-color -->` (§5): preregistered confirmatory re-run of the Qwen color
-  write-commit cell that crossed FAL-3, with ≥40 fresh color facts and both statistics frozen.
+- `<!-- TODO confirm-color -->` (§5): preregistered confirmatory re-run of the cells that
+  fired the write-window falsifier, with fresh color facts and all three per-fact locators
+  (argmax, commit, necessity-argmin) frozen in advance.
 - `<!-- TODO P2-A null -->` (§5): untrained / weight-shuffled null for the read-site split,
   the control that would license reading the coordinate main effect as the scaffold's share.
 - `<!-- TODO P2-B sliding causality -->` (§3): attention-type switch to break the
@@ -32,10 +33,15 @@ Four running experiments are marked by placeholders in the text, to be filled on
 
 ## Honesty corrections made in round 1
 
-- FAL-3 (`sd_argmax_write > 4`) **was crossed** by the Qwen color cell (SD 4.17). The paper
-  now states plainly, in abstract, §1, §5, and §13, that two of three falsifiers held and one
-  fired; the robust-statistic and two-fact-exclusion readings that pull it under threshold are
-  labeled post hoc. Figure 5 (panel F2C) shows the crossing against the threshold line.
+- The write-window falsifier (frozen as `sd_argmax_write > 4`, the SD of the per-item argmax
+  write layer) **fired in two of six cells**: Qwen color 5.45 and Gemma identity 4.01. The
+  earlier "4.17" is a different, post-hoc quantity (the commit-locator SD on the same 22 Qwen
+  color items), not the frozen statistic. The frozen argmax locator lands on a noisy early
+  write-gain plateau (median argmax layer 0 for Qwen color, 13 for Gemma identity); under a
+  post-hoc commit locator the band is input-invariant in five of six cells (Gemma identity SD
+  0.00/42 facts; Qwen color the exception at 4.17). The paper states this in abstract, §1, §3,
+  §5, §13, and the Fig 5 caption, labels the commit locator as post hoc, and says which locator
+  each SD uses; a confirmatory run freezing all three locators is in progress.
 - The read-site split (42.2 / 29.0 / 1.1) is a **retrospective re-analysis** of pre-freeze
   data; only the per-fact commit location is prospective and preregistered. The two are now
   kept separate.
@@ -45,22 +51,22 @@ Four running experiments are marked by placeholders in the text, to be filled on
 
 ## Abstract
 
-In a trained model the layer where a factual answer commits does not move with the input.
-Across 42 fresh facts the commit lands at Gemma-2-2B layer 22 with standard deviation exactly
-zero, and at Qwen2.5-1.5B layer 23 (SD 1.16); this per-fact invariance is the paper's
-preregistered prospective result. We call the fixed schedule — seed, formation, commit, store,
-consumer — the time scaffold, and the per-input computation on it a space circuit (a locally
-decisive, per-position operation): the operation re-weights a recurring reader, the fact
-selects which stored row is read. Re-analyzing a fixed model's causal site maps, the
-operation's weighting carries about eleven times the fact-like variance
-(coordinate-by-operation 29.0% versus coordinate-by-fact-and-binding 2.7%); store necessity is
-84.0% operation and 3.2% fact. Byte-identical stored state acquires query-dependent authority
-(median 3.130 nats, 16/16). A reader profile frozen before evaluation predicts held relation
-contexts in all eight; permuting the trained value-projection rows collapses it, so the
-scaffold lives in the weights. The same organization is consistent across a state-space and a
-diffusion model, and standard attribution tools find the space circuit while missing the
-scaffold. Two of three preregistered falsifiers held; the third was crossed in one underpowered
-cell under the frozen statistic, and a confirmatory re-run is in progress. The cross-family
+In a trained model the layer where a factual answer commits does not move with the input:
+across 42 fresh facts the commit layer, located by the close of the write window, lands at
+Gemma-2-2B layer 22 with standard deviation zero and at Qwen2.5-1.5B layer 23 (SD 1.16). We
+call the fixed schedule — seed, formation, commit, store, consumer — the time scaffold, and the
+per-input computation on it a space circuit (a locally decisive, per-position operation): the
+operation re-weights a recurring reader, the fact selects which stored row is read. In a
+re-analysis of the site maps, the operation's weighting carries eleven times the fact-like
+variance (coordinate-by-operation 29.0% versus coordinate-by-fact-and-binding 2.7%); store
+necessity is 84.0% operation and 3.2% fact. Byte-identical stored state acquires query-dependent
+authority (median 3.130 nats, 16/16). A reader profile frozen before evaluation predicts held
+relation contexts in all eight; permuting the trained value-projection rows collapses it, so the
+scaffold lives in the weights. The same organization holds in a state-space and a diffusion
+model; attribution tools find the space circuit, not the scaffold. Two of three preregistered
+falsifiers held; the third fired in two of six cells (its frozen locator tracks a noisy
+plateau), so the commit-invariance uses a post-hoc locator pending a confirmatory run. The
+cross-family
 common-graph claim ties a plain additive baseline — a null.
 
 ## Evidence map (claim → source path)
@@ -74,13 +80,13 @@ cited here, not re-derived.
 | 3 | Commit at ~0.69–0.83 depth across sizes (Mamba 130M L20 / 370M L39 / 2.8B L44) | single seed; Mamba-130M/370M/2.8B | `saturn/experiments/2026-09-30-mamba-full-layer-sweeps/FINDINGS.md` (companion) |
 | 3 | Commit is a depth-fixed write port; retention is a correlate | 6 cells × 3 prompts; Mamba | `saturn/experiments/2026-10-02-mamba-writer-clock-dose/FINDINGS.md` (companion) |
 | 3 | Formation window closes near commit (Qwen0.5B L21→L22 sharp; Pythia 0.95@L17→0.48@L18→0.01@L22 gradual) | single seed; 4 models | `saturn/experiments/2026-09-30-full-layer-sweeps/FINDINGS-E16-residual-writes.md` (companion) |
-| 3,5 | Commit layer input-invariant per fresh fact (Gemma L22 SD 0.00; Qwen L23 SD 1.16) — PROSPECTIVE/preregistered | 42 identity facts/model | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
+| 3,5 | Commit layer input-invariant per fresh fact (Gemma L22 SD 0.00; Qwen L23 SD 1.16) — commit locator (post hoc; preregistered argmax locator fired, see §5) | 42 identity facts/model | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
 | 4 | Same bytes, different query → query-selective harm 3.130 / 0.583 / 3.021 nats, 16/16 | 16 contrasts/op, 128 pairing checks; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-qwen-scaffold-context-poc/FINDINGS.md` |
 | 4 | Operation re-weights a recurring reader (within-op cosine 0.92–0.999; across-op 0.336) | Qwen2.5-1.5B, Gemma-2-2B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
 | 4 | Fact moves which row is read (selected-row cosine 0.61–0.70 vs reader 0.95–0.96) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/FINDINGS.md` |
 | 5 | Read-site variance (RETROSPECTIVE re-analysis): coord×op 29.0% vs fact-like 2.7% (coord×fact 1.1% + coord×binding 1.6%); coord main 42.2% (null pending) | 1,152 cells; Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_F3_qwen_predictive_readmap.json` |
 | 5 | Store necessity: op 84.0%, fact 3.2%, op×fact 2.0%, residual 10.4% (64 cells) | Qwen2.5-1.5B | `saturn/experiments/2026-10-02-site-variance-decomposition/results/F2_scaffold_poc_store_necessity.json` |
-| 5 | Three preregistered falsifiers: two held, FAL-3 crossed (Qwen color SD 4.17 > 4) | Qwen2.5-1.5B, Gemma-2-2B | `.../2026-10-02-site-variance-decomposition/PREREG.md`, `FROZEN.json`, `phase2_sitemap_analysis.json` |
+| 5 | Three preregistered falsifiers: two held; write-window falsifier fired as frozen (argmax locator) in 2/6 cells — Qwen color 5.45, Gemma identity 4.01; commit-locator SDs 0.00–4.17 | Qwen2.5-1.5B, Gemma-2-2B | `.../2026-10-02-site-variance-decomposition/PREREG.md`, `FROZEN.json`, `phase2_sitemap_analysis.json`, `FINDINGS-addendum-draft.md` (FAL-3 reconciliation) |
 | 6 | Frozen 24-coord profile predicts held relation (raw-RMSE 8/8; cosine 7/8 all-row, 8/8 competent; .954 vs .566) | 8 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/FINDINGS.md` |
 | 6 | Full v_proj row permutation collapses the profile (.955→.049 relation) | 4 contexts; Qwen2.5-1.5B | `saturn/experiments/2026-10-01-scaffold-confirmation/FINDINGS.md` |
 | 7 | Mamba shared state, two operations; H-only transfer 12/12; 27-coord profile capital 8/8 | 12 rows; Mamba-130M | `saturn/experiments/2026-10-02-mamba-operation-clock-debugger/FINDINGS.md` |
@@ -106,7 +112,7 @@ cited here, not re-derived.
 | fig2_band_location.png | Commit-layer stability per fact | decisive test panel F1 |
 | fig3_same_patch_query.png | Same-patch / different-query harm | authored from scaffold-context FINDINGS |
 | fig4_reader_cosine.png | Reader cosine within-op vs across-op | decisive test panel F3 |
-| fig5_variance_decomposition.png | 3 panels: read-site (F2A), store necessity (F2B), per-fact write-SD incl. FAL-3 crossing (F2C) | decisive test panels F2A–F2C |
+| fig5_variance_decomposition.png | 3 panels: read-site (F2A), store necessity (F2B), per-fact write-commit SD under the commit locator (F2C; frozen argmax statistic reported in §5, not plotted) | decisive test panels F2A–F2C |
 | fig6_confirmation_results.png | Frozen profile vs competitors + permutation | scaffold-confirmation |
 | fig7_honest_null.png | Connected forecast tie + role-matcher null | authored from honest-null numbers |
 | fig8_scene_compiler_proof.png | Sealed program reproduces native render byte-exact | scene-generator proof sheet |
