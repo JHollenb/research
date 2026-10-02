@@ -74,5 +74,9 @@ All numeric changes were re-verified against the cited source FINDINGS/JSON this
 ## Running (placeholders in text)
 
 `<!-- TODO confirm-color -->` (§5), `<!-- TODO P2-A null -->` (§5),
-`<!-- TODO P2-B sliding causality -->` (§3), `<!-- TODO P2-C function vectors -->` (§4),
-`<!-- TODO addendum: relational op -->` (§5).
+`<!-- TODO P2-B sliding causality -->` (§3), `<!-- TODO P2-C function vectors -->` (§4).
+
+**Landed since round 1:** the relational-operation addendum (§5, Table 1) — capital-of on 40
+fresh facts separates operation from fact prospectively (within-op per-item cosine 0.74–0.99;
+identity~capital 0.20–0.22; identity~color 0.84–0.91). FAL-2b (cosine) not triggered; FAL-2a
+(sum-of-squares) fired for Gemma and is reported as frozen.

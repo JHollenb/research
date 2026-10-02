@@ -18,7 +18,7 @@ Main text about 8,000 words across 13 sections; abstract 220 words; three append
 Nine figures. All numbers measured on stock Hugging Face eager execution in float32
 unless a line says otherwise; effective n is stated per claim.
 
-Four running experiments are marked by placeholders in the text, to be filled on landing:
+Four running experiments are marked by placeholders in the text; a fifth (the relational addendum) has landed:
 
 - `<!-- TODO confirm-color -->` (§5): preregistered confirmatory re-run of the cells that
   fired the write-window falsifier, with fresh color facts and all three per-fact locators
@@ -28,8 +28,12 @@ Four running experiments are marked by placeholders in the text, to be filled on
 - `<!-- TODO P2-B sliding causality -->` (§3): attention-type switch to break the
   sliding-vs-global parity confound in Gemma-2.
 - `<!-- TODO P2-C function vectors -->` (§4): Todd-style operation-vector equivalence test.
-- `<!-- TODO addendum: relational op -->` (§5): relational operation on fresh facts that
-  separates operation from fact on the read side prospectively.
+- Relational-operation addendum (§5, Table 1): **landed.** Capital-of on 40 fresh facts
+  separates operation from fact prospectively — within-op per-item cosine 0.74–0.99,
+  identity~capital 0.204/0.218, identity~color 0.842/0.911 (read-back ops share a reader);
+  FAL-2b (cosine) not triggered, FAL-2a (sum-of-squares) fired for Gemma (0.58 ≥ 0.42),
+  reported as frozen. Source: `.../site-variance-decomposition/FINDINGS-addendum-draft.md`
+  (jobs job-9693441af910 Qwen, job-756b971f9486 Gemma).
 
 ## Honesty corrections made in round 1
 
