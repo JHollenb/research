@@ -89,9 +89,38 @@ is flagged as the experiment that would flip the verdict. No new claim was added
    §8.2 Table 6 figures (sourced to `ea-pythia160m.json`/`ea-pythia410m.json`), already independently
    verified in the evidence audit; left as-is.
 
+## Round-2 follow-up experiments (landed during revision; custody PASS)
+
+The reviewers' top-ranked experiments were then run (`round2/`), and the placeholders are now filled
+with measured results, reported honestly:
+
+- **Current-model fwd+bwd (numerics change #1 / essential experiment).** Qwen3-1.7B, one FP32
+  forward+backward vs FP64 (`job-d1ee1d4d716f`): the swamping precondition is present (worst-head
+  key-mean ratio 63×, median-head 2.2×, ~98% slow-pair energy) but the BF16 attention-gradient error
+  is **mild** — worst-layer dQ 1.9% (FA2 2.0%) → 1.2% (key-mean) → 1.1% (full B(x)), only ~1.6×.
+  **This is logged as a FAILED preregistered prediction** (the PREREG expected a several-fold cut),
+  with the protocol deviation stated (seq 256 on 1.7B vs the PREREG's seq 512 on Qwen3-4B). I did
+  **not** write "confirms"; the text says the large-additive-key-mean regime where §8.4's benefit was
+  measured did not reproduce on this current model, consistent with §5.2 (Qwen3's invariant is the
+  QK-norm gain). Qwen3-4B was killed for VRAM (~15.4 GB on the 16 GB card) — a hardware scope limit.
+  New §7.4 + an inline figure.
+- **Step64000 dose at n=3 (numerics change #5).** plain BF16 gap +0.0001/+0.0041/+0.0021 (mean
+  +0.0021), B(x) +0.0010/+0.0017/+0.0007, all within ~0.004 — vs the +0.0232 three-order-mean gap at
+  step143000 (per-order +0.0215/+0.0271/+0.0211). The dose-response holds across orders. Added the
+  provenance note that the step64000 control was preregistered 212 s after the s2/s3 jobs were
+  submitted but before any result existed.
+- **Gap trajectory (numerics change #2).** Added the 3-order figure and the honest disclosure that
+  the step-1000 endpoint gap (+0.044) **overstates the steady-state advantage** a longer run would
+  show. bf16 one-step error falls 148% → **66–80%** (66% seed-1234, 78%/80% the other two) — corrected
+  from the earlier single-order "66%."
+
+All round-2 numbers re-derived from `round2/results/gauge-qwen3-1.7b.json` this session; the custody
+audit on them passed.
+
 ## Net
 
-The FAIL is fixed and every flagged number is corrected and re-derived from the raw JSON. The two
-new honesty disclosures (transient gap; key-mean is the sole loss-mover) are in the body. The
-remaining gap to main-track acceptance is scale, addressed only by the owed current-model
-experiment, which is flagged, not claimed.
+The FAIL is fixed and every flagged number is corrected and re-derived from the raw JSON. The new
+honesty disclosures (transient gap; key-mean is the sole loss-mover; the **failed** current-model
+prediction; the step64000 prereg timing) are in the body. The training-side story is now explicitly
+bounded to the large-additive-key-mean regime (≤410M Pythia); the remaining main-track lever is a
+larger-VRAM current-model run, flagged and not claimed.
