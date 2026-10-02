@@ -4,6 +4,7 @@ subtitle: "Causal evidence for state-dependent semantic computation"
 type: research-paper
 status: empirical-draft
 date: 2026-10-01
+updated: 2026-10-01T17:36:48-07:00
 author: Jacob Hollenbeck
 companion_to:
   - ../space-and-time-circuits/paper.md
@@ -329,7 +330,9 @@ The architectural hypothesis would be useful if a role scaffold allowed a compil
 
 Frozen address policies predict where donor state can be installed. In the selector assay, each held state assembly is sealed before evaluating its query and continuation. That supplies an outcome-free assembly precursor. The payload still comes from a native donor prefix, and semantic token positions are supplied. There is no learned mapping from a desired semantic change to a new payload, no compiler comparison against operation-blind or site-matched baselines, and no autonomous circuit induction.
 
-Earlier scene-generator work motivates compiling object and scene factors through model-state interfaces. This campaign adds evidence that a single changed word need not contain the full relation payload and that carrier and live conditioning allocate different attributes at a given cut. A practical compiler should therefore keep source address, contextual payload, time, writer, and native consumer distinct.
+Separate scene-generator records supply constructive results beyond the historical selector assembly precursor. The [packaged complete-source report](../../demos/artifacts/scene-generator/artifacts/reports/cross-model-replication.json) retains 21/21 exact native RGB endpoints across seven specimens and five family labels; requested prompts pass through native conditioning and projection before target rendering, without a target image or independent target trajectory as input. This is source-before-outcome execution, not a learned replacement semantic parser. [Held SDXL interaction programs](../../../saturn/experiments/2026-09-02-sdxl-centered-edge-basis-resolver-rosetta/FINDINGS-address-native-rgb.md) additionally predict bounded in-family conjunction payloads from development charts and supplied semantic row alignment. An unseen factor family leaves most of its interaction energy outside the fitted span. These records are developed in the [architectural synthesis](architectural-paper.md) and are not pooled into this campaign's sample count.
+
+This campaign adds evidence that a single changed word need not contain the full relation payload and that carrier and live conditioning allocate different attributes at a given cut. A practical compiler should therefore keep source address, contextual payload, time, writer, and native consumer distinct.
 
 If the broader architecture is established, it could support more reusable scene controls and semantic state programs. The current paper does not demonstrate a new general scene generator, cross-family tensor portability, inference speedup from circuit extraction, or replacement of dense native execution.
 

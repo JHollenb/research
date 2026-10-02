@@ -5,7 +5,7 @@ author: Jacob Hollenbeck
 type: research-paper
 status: revised-architectural-draft
 date: 2026-10-01
-updated: 2026-10-01T17:22:02-07:00
+updated: 2026-10-01T17:36:48-07:00
 evidence_cutoff: "Completed artifacts inspected on 2026-10-01, including scaffold-confirmation predictive, two-update feedback, weight-organization and prospective cross-family packets"
 companion_to: ../space-and-time-circuits/time-emphasis-paper.md
 outline: outline.md
@@ -126,7 +126,7 @@ The experiments use frozen pretrained models unless a developmental comparison i
 
 Intervention branches start from the same immutable parent wherever their contracts allow. We preserve native, no-op, counterfactual, wrong-source, wrong-site/time, sign, dose, and random controls as separate measurements. A source seed can be oracle supplied while its later mediator is recipient formed. We report both facts rather than calling the entire procedure donor-free.
 
-The scientific observation is a native effect: changed answer evidence, continuation, register, or image. Activation cosine, energy, rank, and attention are supporting measurements. Exact reinstall and replay establish instrument fidelity; they do not certify a semantic mechanism. The corrected routing experiment additionally compares against uninstrumented eager execution: a wrapper can reproduce itself exactly while sharing a causal-mask defect. The new feedback packet instead uses fused TokenMachine native-layer execution with derived causal masks; its separate L22 observer reproduces that capture exactly. Every-cycle equivalence to monolithic `model.forward` is not claimed. Historical E6 remains qualified by its mask audit. [Qwen routing], [Two-update feedback]
+The scientific observation is a native effect: changed answer evidence, continuation, register, or image. Activation cosine, energy, rank, and attention are supporting measurements. Exact reinstall and replay establish instrument fidelity; they do not certify a semantic mechanism. The corrected routing experiment additionally compares against uninstrumented eager execution: a wrapper can reproduce itself exactly while sharing a causal-mask defect. The new feedback packet instead uses fused TokenMachine native-layer execution with derived causal masks; its separate L22 observer reproduces that capture exactly. Every-cycle equivalence to monolithic `model.forward` is not claimed. Historical E6/E8 selector measurements remain disqualified as native causal evidence by their mask audit. [Qwen routing], [Two-update feedback]
 
 ### 4.2 Selection history and effective sample size
 
@@ -504,7 +504,7 @@ Frozen Qwen2.5-1.5B contains a reused causal interface whose semantic authority 
 
 Diffusion and Mamba provide convergent family-local evidence for contextual sources, live state-dependent execution, writers, and carried representations. A frozen comparative profile prospectively aligns their formed-state/native-consumer core, with a later competent Qwen appendix; it does not certify the entire shared graph. Strong Qwen value-projection row disorder alters the signed role profile, linking this organization to final weights without establishing its acquisition chronology. The scene generator establishes complete native source compilation before outcomes and bounded prediction of held semantic interaction payloads. Saturn makes model-produced state retainable and executable, while native autoregressive and diffusion execution already consume evolving state through externally supplied clocks.
 
-These findings support scaffold instances and a comparative circuit-class hypothesis, now strengthened by prospective microscopic recurrence, bounded two-update semantic mediation, and a prospective partial cross-family core. The remaining extensions are fuller formation/read/write prediction in previously unexamined models/task families, learning-time acquisition, broader feedback replication, and automatic addressing if claimed. They are separate from the completed tests and the architecture already measured.
+These findings support scaffold instances and a comparative circuit-class hypothesis, now strengthened by prospective microscopic recurrence, a bounded two-update semantic path, and a prospective partial cross-family core. The remaining extensions are fuller formation/read/write prediction in previously unexamined models/task families, learning-time acquisition, broader feedback replication, and automatic addressing if claimed. They are separate from the completed tests and the architecture already measured.
 
 ## Appendix A Evidence ledger
 
@@ -526,7 +526,7 @@ This ledger separates the historical thirteen-package campaign from predecessor 
 | First-wave Mamba | Two sizes; separate discovery and held cells | State-operand roles; later semantic query inapplicable |
 | Mamba transition composition | Original three applicable cells; replication has 3/8 competent cells in 130M and 2/8 in 370M | Ordered staged/direct execution; supplied legend and host Fourier implementation |
 | Historical selector packets | 0.5B and exact-policy 1.5B campaign records | Predecessor causal-mask qualification required; immutable counts retained |
-| Qwen routing mediation | Three already-open contexts; fixed L4/L22/L23; 141 physical forwards | Native-qualified row clamp/transfer; distributed selector effects; later new-store mediation pending |
+| Qwen routing mediation | Three already-open contexts; fixed L4/L22/L23; 141 physical forwards | Native-qualified row clamp/transfer; distributed selector effects; specifically route-produced L23 store mediation pending |
 | Qwen scratchpad handoff | 0.5B admits 32 single, eight multi-step, eight copied rows; 1.5B admits 30, eight, eight | K/V consumption and rederived-step effects; teacher-forced and on-policy, one greedy seed |
 | Pythia development | Three discovery and four held prompts over six real checkpoints | Developmental sensitivity; repeated rows and shuffle incompetence |
 | Prompt-source compiler | Twenty-one-row packaged join, five family labels | Native-source-before-outcome execution; semantic fidelity to native output |

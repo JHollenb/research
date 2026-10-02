@@ -4,7 +4,7 @@ subtitle: "How context-dependent semantic programs inhabit recurring execution i
 type: research-paper
 status: evidence-grounded-draft
 date: 2026-10-01
-updated: 2026-10-01T17:20:59-07:00
+updated: 2026-10-01T17:36:48-07:00
 author: Jacob Hollenbeck
 companion: ../space-and-time-circuits/time-emphasis-paper.md
 outline: outline.md
