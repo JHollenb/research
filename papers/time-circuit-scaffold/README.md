@@ -70,6 +70,7 @@ Paths relative to `~/domains`. "Companion" means the claim is carried by Paper 1
 | 4 | Mamba S2 closure exact; fresh CPU dog→cat +2.74 (conv-dominant); SDXL stale-writer diverges later | Mamba-130M; SDXL | `.../connected-architecture/mamba/POST_HELD_FINDINGS.md`; `.../scaffold-graph-identification/mamba-cpu/FINDINGS.md`; `.../connected-architecture/diffusion/FINDINGS.md` |
 | 5 | Frozen 24-coord relation profile 8/8 (0.954 vs 0.566); Mamba 27-coord capital 8/8, identity 4/4 | 8; Qwen2.5-1.5B / Mamba-130M | `.../scaffold-confirmation/qwen-predictive/FINDINGS.md`; `.../mamba-operation-clock-debugger/FINDINGS.md` |
 | 5 | Cross-family formed-state→consumer core RMSE 0.0928 vs 0.8526 (n=2+2+1); color reader misses 8/8 | FLUX+Mamba+Qwen | `saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/FINDINGS.md` |
+| 5 | Fit-free locator predicts commit band blind: Phase A mean IoU 0.615 vs depth 0.490 (Pythia peak L16 = commit, 0.571 vs 0.000; Gemma miss); Phase B Phi-2 6/6 (block 0.515 vs depth 0.065), OLMo-2 5/6 (S5 single-layer fail) | 4 Phase-A cells + 2 blind (Phi-2 / OLMo-2-1B); Qwen-7B deferred | `saturn/experiments/2026-10-02-attention-band-locator/FINDINGS.md`; `results/phaseA_scorecard.json`; `results/phaseB_scorecard_{phi2,olmo2}.json` |
 | 6 | v_proj row permutation collapses profile (0.955→0.049); null nets collapse, top-1 0/96 (incompetent) | Qwen2.5-1.5B | `.../scaffold-confirmation/qwen-predictive/FINDINGS.md`; `.../2026-10-02-p2-reviewer-experiments/results/A_analysis.json` |
 | 6 | Pythia developmental trajectory; continuation training writer +0.445 vs matched-depth ~0 (Mamba wrong-label +0.448) | Pythia; Qwen/Mamba | `.../scaffold-dynamic-circuits/development/FINDINGS.md`; `.../2026-10-02-native-role-learning-timeline/FINDINGS.md` |
 | 7 | Scene compiler 21/21 byte-exact, 7 specimens (3 SDXL-family) / 5 families; FLUX.2 wrong-source 54.5–94.3, wrong-sign 60.0–89.3, perm 4.6–22.8 (SDXL wrong-sign 94.29) | 7 specimens, 5 families | `research/demos/docs/scene-generator-paper.md`; `.../reports/cross-model-replication.json`; `.../reports/flux2-klein.json` |
@@ -89,6 +90,7 @@ Paths relative to `~/domains`. "Companion" means the claim is carried by Paper 1
 | fig_eye_color_timing.png / fig_eye_geometry_timing.png | Property 3: install timing on the time axis | scene-editing reproduction |
 | fig_chair_transport.png | Property 3: spatiotemporal conjunction | transport experiment |
 | fig6_confirmation_results.png | Property 5/6: frozen profile + v_proj permutation | scaffold-confirmation |
+| locator_R_curves.png | Property 5 (§7.1): fit-free locator R_ℓ curves, locator vs true vs depth band, Phase A + blind Phase B | attention-band-locator figures |
 | fig9_qkv_controls_proof.png | Property 7: wrong-source / wrong-sign / shuffled controls | scene-generator control sheet |
 | fig7_honest_null.png | §10: connected-forecast tie + role-matcher null | authored |
 | fig2_band_location.png | Appendix D1: commit-location (weak symptom) | decisive-test panel F1 |
