@@ -262,6 +262,13 @@ is the measured error from skipping it: median ~2.5 nats of baseline movement, 1
 install-conclusion flips, half of which survive a format-matched baseline, reproduced at instruct
 and 7B.
 
+The recipe is available as an mdb `BenchSession` example
+(`saturn-pub/packages/mdb/examples/pass_indexed_baseline.py`) and reproduces the R0 drift on the
+same four scenes: run on Beast through mrun in BF16 (mdb's Qwen lane refuses FP32), its per-pass
+median drift is +3.33 / +2.08 / +2.22 nats at passes 1–3 (base FP32 +3.13 / +2.20 / +2.06), all
+three medians positive, with the fact-span K/V bit-identity canary exact (max-abs 0.0) on every
+scene (MEASURED, `job-30443c340ead`).
+
 ## 8. Limitations
 
 Synthetic two-fact scenes with templated turns; greedy decoding; a single seed (the model is
@@ -317,6 +324,15 @@ fact-span key/value invariance across passes, determinism, and the drift-consist
 model execution was on a single host via the lab's job scheduler; no numbers were produced on a
 laptop. No decoded model-output strings are stored — token ids, log-probabilities, booleans and
 sha256 only.
+
+The headline numbers are also bound to their receipt files in a saturn-pub evidence claim registry
+at `papers/evidence-registry/` (append-only, hash-chained, standard-library only). The Section 3 R0
+drift (+3.125/+2.202/+2.063 nats, all positive) and the Section 5 R2 11/12 install-conclusion flips
+are covered by `pib-r0-drift-r2-flips-base`
+(`2026-10-02-pass-indexed-baseline/results/pass-indexed-35d4adaeed36/analysis.json`); the Section 6
+two-regime replication table is covered by `pib-instruct15b-raw` (9/12 flips), `pib-instruct15b-chat`
+(0/12), `pib-instruct7b-raw-bf16` (4/12) and `pib-instruct7b-chat-bf16` (0/12), one per cell. Re-check
+offline with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`.
 
 ## References
 

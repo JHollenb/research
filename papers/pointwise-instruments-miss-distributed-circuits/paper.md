@@ -200,6 +200,8 @@ The attribution-graph comparison (§4.9) is summarized, with job ids and hashes,
 
 Every result file from the preregistered panel, first run and rerun, is in [`experiments/2026-09-22-sae-comparison/results/`](experiments/2026-09-22-sae-comparison/results/), with the environment, model commits and file hashes for each run.
 
+The paper's central tables are also bound to their receipt bytes in a saturn-pub evidence claim registry at `../evidence-registry/` (append-only, hash-chained, standard-library only): `pim-prereg-panel-sae-v2` covers the §4.3 preregistered panel and the §4.4 SAE arms (the rerun `combined_summary_v2.json` in the results directory above). Re-check offline, without loading a model, with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`, which re-hashes the receipt and flips the claim to `stale` on any drift.
+
 ## References
 
 [1] K. Meng, D. Bau, A. Andonian, Y. Belinkov. Locating and Editing Factual Associations in GPT. arXiv:2202.05262, 2022.
