@@ -1,0 +1,103 @@
+{
+  "schema": "saturn-pub-circuit-tracer-panel-v1",
+  "frozen_utc": "2026-10-02",
+  "model": "google/gemma-2-2b",
+  "transcoder_set": "gemma (Gemma Scope per-layer transcoders)",
+  "top_k": 20,
+  "admission_rule": "A candidate is admitted iff the native google/gemma-2-2b greedy top-1 next token (fp32 reference forward) equals the first token of its answer string. Candidates failing admission are recorded (with the native top-1 they produced) and dropped; they are never replaced, re-phrased, or supplemented post hoc. The replacement model's clean (no-op) top-1 is used only as a pre-filter to skip attribution on candidates that will not be admitted; the admission of record is the fp32 native top-1.",
+  "decision_rule": {
+    "name": "circuit-tracer-native-edge",
+    "version": "1",
+    "metric": "consumer_logprob_drop",
+    "units": "nats",
+    "present_threshold": 0.5,
+    "absent_threshold": 0.1,
+    "note": "drop = logprob(target|clean) - logprob(target|intervention). native_necessary iff drop>=0.5; native_effect_absent iff drop<=0.1; inconclusive between. These are the existing default_edge_rule thresholds and are NOT tuned after seeing results."
+  },
+  "group_interventions": {
+    "topk_zero_ablate": {"multiplier": 0.0, "description": "jointly set every top-k feature to 0 (joint zero-ablation)"},
+    "topk_steer_-2x": {"multiplier": -2.0, "description": "jointly steer every top-k feature to -2x its natural activation (the attribution-graphs paper's steering)"}
+  },
+  "graph_prediction_modes": {
+    "frozen_attention_iterative": {"freeze_attention": true, "constrained_layers": null, "note": "circuit-tracer feature_intervention DEFAULT; attention patterns and LayerNorm held fixed, MLP/transcoder effects propagate. The mode circuit-tracer's own intervention demos use."},
+    "unconstrained_iterative": {"freeze_attention": false, "constrained_layers": null, "note": "nothing frozen; attention and LayerNorm recompute in response to the intervention."},
+    "direct_effects": {"freeze_attention": true, "constrained_layers": "range(0, n_layers)", "note": "freeze attention + LayerNorm denominators + all out-of-range MLPs; the fully linearized attribution (the regime the attribution GRAPH edges themselves are computed in)."}
+  },
+  "agreement_categories": ["agree_small", "agree_large", "invert", "mixed", "no_graph_prediction"],
+  "statistics": {
+    "bootstrap": {"n_resamples": 10000, "ci": 0.95, "seed": 0, "note": "percentile bootstrap over edges (resampling edges) for single-feature agreement rate; over prompts for per-family rates and group rates"}
+  },
+  "families": [
+    "multi_hop_factual",
+    "capitals",
+    "antonyms",
+    "translation",
+    "acronym_abbreviation",
+    "arithmetic_sequence",
+    "category_rhyme"
+  ],
+  "prompts": [
+    {"name": "mh_dallas",   "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing Dallas is", "answer": " Austin"},
+    {"name": "mh_houston",  "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing Houston is", "answer": " Austin"},
+    {"name": "mh_la",       "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing Los Angeles is", "answer": " Sacramento"},
+    {"name": "mh_sf",       "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing San Francisco is", "answer": " Sacramento"},
+    {"name": "mh_miami",    "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing Miami is", "answer": " Tallahassee"},
+    {"name": "mh_chicago",  "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing Chicago is", "answer": " Springfield"},
+    {"name": "mh_seattle",  "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing Seattle is", "answer": " Olympia"},
+    {"name": "mh_nyc",      "family": "multi_hop_factual", "prompt": "Fact: the capital of the state containing New York City is", "answer": " Albany"},
+
+    {"name": "cap_japan",   "family": "capitals", "prompt": "The capital of Japan is the city of", "answer": " Tokyo"},
+    {"name": "cap_france",  "family": "capitals", "prompt": "The capital of France is the city of", "answer": " Paris"},
+    {"name": "cap_italy",   "family": "capitals", "prompt": "The capital of Italy is the city of", "answer": " Rome"},
+    {"name": "cap_germany", "family": "capitals", "prompt": "The capital of Germany is the city of", "answer": " Berlin"},
+    {"name": "cap_spain",   "family": "capitals", "prompt": "The capital of Spain is the city of", "answer": " Madrid"},
+    {"name": "cap_russia",  "family": "capitals", "prompt": "The capital of Russia is the city of", "answer": " Moscow"},
+    {"name": "cap_china",   "family": "capitals", "prompt": "The capital of China is the city of", "answer": " Beijing"},
+    {"name": "cap_egypt",   "family": "capitals", "prompt": "The capital of Egypt is the city of", "answer": " Cairo"},
+
+    {"name": "ant_hot",     "family": "antonyms", "prompt": "The opposite of hot is", "answer": " cold"},
+    {"name": "ant_up",      "family": "antonyms", "prompt": "The opposite of up is", "answer": " down"},
+    {"name": "ant_big",     "family": "antonyms", "prompt": "The opposite of big is", "answer": " small"},
+    {"name": "ant_fast",    "family": "antonyms", "prompt": "The opposite of fast is", "answer": " slow"},
+    {"name": "ant_happy",   "family": "antonyms", "prompt": "The opposite of happy is", "answer": " sad"},
+    {"name": "ant_black",   "family": "antonyms", "prompt": "The opposite of black is", "answer": " white"},
+    {"name": "ant_open",    "family": "antonyms", "prompt": "The opposite of open is", "answer": " closed"},
+    {"name": "ant_light",   "family": "antonyms", "prompt": "The opposite of light is", "answer": " dark"},
+
+    {"name": "tr_fr_cat",   "family": "translation", "prompt": "The French word for cat is", "answer": " chat"},
+    {"name": "tr_fr_dog",   "family": "translation", "prompt": "The French word for dog is", "answer": " chien"},
+    {"name": "tr_fr_water", "family": "translation", "prompt": "The French word for water is", "answer": " eau"},
+    {"name": "tr_es_house", "family": "translation", "prompt": "The Spanish word for house is", "answer": " casa"},
+    {"name": "tr_es_dog",   "family": "translation", "prompt": "The Spanish word for dog is", "answer": " perro"},
+    {"name": "tr_es_water", "family": "translation", "prompt": "The Spanish word for water is", "answer": " agua"},
+    {"name": "tr_es_cat",   "family": "translation", "prompt": "The Spanish word for cat is", "answer": " gato"},
+    {"name": "tr_de_yes",   "family": "translation", "prompt": "The German word for yes is", "answer": " ja"},
+
+    {"name": "ac_nasa",     "family": "acronym_abbreviation", "prompt": "NASA stands for the National Aeronautics and Space", "answer": " Administration"},
+    {"name": "ac_cpu",      "family": "acronym_abbreviation", "prompt": "The abbreviation CPU stands for Central Processing", "answer": " Unit"},
+    {"name": "ac_usa",      "family": "acronym_abbreviation", "prompt": "The abbreviation USA stands for the United States of", "answer": " America"},
+    {"name": "ac_nba",      "family": "acronym_abbreviation", "prompt": "The abbreviation NBA stands for the National Basketball", "answer": " Association"},
+    {"name": "ac_fbi",      "family": "acronym_abbreviation", "prompt": "The abbreviation FBI stands for the Federal Bureau of", "answer": " Investigation"},
+    {"name": "ac_dna",      "family": "acronym_abbreviation", "prompt": "The abbreviation DNA stands for deoxyribonucleic", "answer": " acid"},
+    {"name": "ac_uk",       "family": "acronym_abbreviation", "prompt": "The abbreviation UK stands for the United", "answer": " Kingdom"},
+    {"name": "ac_phd",      "family": "acronym_abbreviation", "prompt": "The abbreviation PhD stands for Doctor of", "answer": " Philosophy"},
+
+    {"name": "ar_2p2",      "family": "arithmetic_sequence", "prompt": "2 + 2 =", "answer": " 4"},
+    {"name": "ar_3p4",      "family": "arithmetic_sequence", "prompt": "3 + 4 =", "answer": " 7"},
+    {"name": "ar_10m3",     "family": "arithmetic_sequence", "prompt": "10 - 3 =", "answer": " 7"},
+    {"name": "ar_5p5",      "family": "arithmetic_sequence", "prompt": "5 + 5 =", "answer": " 10"},
+    {"name": "ar_after7",   "family": "arithmetic_sequence", "prompt": "The number that comes right after 7 is", "answer": " 8"},
+    {"name": "ar_count",    "family": "arithmetic_sequence", "prompt": "1, 2, 3, 4,", "answer": " 5"},
+    {"name": "ar_even",     "family": "arithmetic_sequence", "prompt": "2, 4, 6, 8,", "answer": " 10"},
+    {"name": "ar_days",     "family": "arithmetic_sequence", "prompt": "Monday, Tuesday,", "answer": " Wednesday"},
+
+    {"name": "cat_rose",    "family": "category_rhyme", "prompt": "A rose is a kind of", "answer": " flower"},
+    {"name": "cat_apple",   "family": "category_rhyme", "prompt": "An apple is a kind of", "answer": " fruit"},
+    {"name": "cat_hammer",  "family": "category_rhyme", "prompt": "A hammer is a kind of", "answer": " tool"},
+    {"name": "cat_robin",   "family": "category_rhyme", "prompt": "A robin is a kind of", "answer": " bird"},
+    {"name": "cat_trumpet", "family": "category_rhyme", "prompt": "A trumpet is a kind of", "answer": " instrument"},
+    {"name": "cat_salmon",  "family": "category_rhyme", "prompt": "A salmon is a kind of", "answer": " fish"},
+    {"name": "rh_cat",      "family": "category_rhyme", "prompt": "A word that rhymes with cat is", "answer": " hat"},
+    {"name": "rh_light",    "family": "category_rhyme", "prompt": "A word that rhymes with light is", "answer": " night"}
+  ]
+}
