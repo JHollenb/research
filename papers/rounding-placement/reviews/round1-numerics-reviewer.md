@@ -2,7 +2,7 @@
 
 **Reviewer persona:** training/inference numerics (FP8/BF16 stacks, FlashAttention kernels, KV-cache quant).
 **Verdict:** borderline reject at a top main track as-is; clear accept at a workshop. **Score 5/10.**
-**Disclosure:** READ-ONLY review. I re-derived the load-bearing numbers from the cited raw JSONs in-session (results below). The scheduler was unreachable from this host (LAN blocked: `No route to host` to `192.168.68.68:9025`), so I could not inspect the running training-continuation job directly.
+**Disclosure:** READ-ONLY review. I re-derived the load-bearing numbers from the cited raw JSONs in-session (results below). The scheduler was unreachable from this host (LAN blocked: `No route to host` to `<scheduler-host>:9025`), so I could not inspect the running training-continuation job directly.
 
 ---
 

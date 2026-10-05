@@ -98116,7 +98116,7 @@
       "experiment": "recorder-physiology",
       "metrics_logged": 0,
       "run_id": "2917395543df459790e374ed4ab07e35",
-      "tracking_uri": "http://192.168.68.202:5000"
+      "tracking_uri": "http://tracking.internal:5000"
     }
   },
   "schema": "saturn-rosetta-cross-family-manalysis-report-v1",
@@ -98136,7 +98136,7 @@
         "experiment": "recorder-physiology",
         "metrics_logged": 0,
         "run_id": "2917395543df459790e374ed4ab07e35",
-        "tracking_uri": "http://192.168.68.202:5000"
+        "tracking_uri": "http://tracking.internal:5000"
       }
     },
     "trackio": {

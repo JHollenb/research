@@ -544654,7 +544654,7 @@
           "experiment": "recorder-physiology",
           "metrics_logged": 0,
           "run_id": "bdc418a3e97f4fcd94f0950f178529e0",
-          "tracking_uri": "http://192.168.68.202:5000"
+          "tracking_uri": "http://tracking.internal:5000"
         }
       },
       "trackio": {
