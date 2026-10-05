@@ -1,0 +1,27 @@
+{
+  "files": {
+    "README.md": "d7cca1eba514f535c1a428e4f32925d69489133453a1788b67fd6b00a1a819e8",
+    "evidence/README.md": "49db7fd49be1ebb1f1ff082657bf161ff925e8a4722d610bad973891b8e425dc",
+    "evidence/capture_review.py": "91d960b9b97ebad2685b255a3c5f4bdbe980f09a5f2065d4d48aa3f448f03b1d",
+    "evidence/coadmission-isolated.log": "39b9a0a4618b07827f22d5824fd62450aaf766fdf8b15f1b4fea8607ee14b776",
+    "evidence/coadmission-isolated.xml": "8707123409da027c311f703611d2c3308a75f8e62cb0cf8ee2eb57d25fe973f2",
+    "evidence/compiler-tests.log": "dce16e12bd5bd9b324d70d28cf533d290cddbf4fc492b0cb97a1e5a9c0926c6a",
+    "evidence/compiler-tests.xml": "da994f562334128389261c41f9209f99c636ac04bb42593b6a52fae92635bd47",
+    "evidence/prior/automatic-campaign-qwen25-0.5b-v3-cpu-30x-v1.json": "a1a93e3fd76825756a7d2c4d91799554c0bbc0b457aeb94e2829e5e64cc068f0",
+    "evidence/prior/cuda-graph-primary-4dc54fcd1048.json": "402e1c9d91929399e4480028a265ae30db6e8e49b665f8b010f50b34e1f8871b",
+    "evidence/prior/profile-fusion-qwen25-0.5b-cuda-v1.json": "461bc417f20cc26614d90bf8e67a52ae72da0c1cbf78543bef1fd4274a0b2a62",
+    "evidence/prior/resident-batch-service-qwen25-0.5b-cuda-v1.json": "df251ac23172a3d4ed16653f41bc33450c8937f7e12a422ec8f07a847391afb4",
+    "evidence/prior/sciencegraph-qwen25-0.5b-v3-cpu-30x-v2.json": "06fc912c63ffe3dedb143023643347bd730c29ac52eebcfd3edea323e5d1b96d",
+    "evidence/reproduce.py": "eeb250689e29d40032dc89ab140944d54372d4d089803279f99538ab43f7201f",
+    "evidence/review-snapshot.json": "034e3ceface3447804ede07ad03fe50fbb488ec7ec7377a081d79bf323c64dba",
+    "evidence/review-tests.log": "79b3f863b9be00fc79c6f549674d86653032a1b496cd1ea50c10d2042b8434e1",
+    "evidence/review-tests.xml": "1fabe3ce43974061abb851c2cef8ff7681ed2a55b37e67237ebfb22e45841c0f",
+    "evidence/runtime-tests.log": "479657d1e4c18a6b554dd87281079b6c7f0f613bff2915e84708948e57790d46",
+    "evidence/runtime-tests.xml": "1ebe0e0fee5ce1336fe7b6e62263e6a551904b797ec3fb46a74d3484e3e9624e",
+    "evidence/test-commands.json": "4ea4d32bbbb4bed537cc38d5d529daf8ddc758b756b3a33c4cb28a83ade02b2a",
+    "evidence/test-source-records.json": "f61d905e9602b0c81cfa032d782a47de7aed3f4db7218e229f74649dbae1b8ce",
+    "evidence/verify.py": "a61630f71cea68acaa5487452c940a54334317192f384fcdb91bb3faf6639a45",
+    "paper.md": "4574fd48ab0a5401a2e2f3fb7258a95277f7012759044dcc6389bf29aafb96d9"
+  },
+  "schema": "mrun-paper-bundle-sha256-v1"
+}

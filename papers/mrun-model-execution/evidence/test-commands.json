@@ -1,0 +1,79 @@
+{
+  "schema": "mrun-review-test-commands-v1",
+  "working_directory": "mrun",
+  "launcher": "common/bin/common exec python -m pytest -q",
+  "environment": {
+    "MRUN_RUN_MODEL_TESTS": "0",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "suites": {
+    "review-tests": [
+      "tests/test_models_local_discovery.py",
+      "tests/test_policy.py",
+      "tests/test_selector.py",
+      "tests/test_engine_profiles.py",
+      "tests/test_estimate.py",
+      "tests/test_reservation.py",
+      "tests/test_scheduler.py",
+      "tests/test_guard.py",
+      "tests/test_os_limit.py",
+      "tests/test_client_submit.py",
+      "tests/test_light_client_planning.py",
+      "tests/test_client_preflight.py",
+      "tests/test_submit_preflight.py",
+      "tests/test_guarded_admission.py",
+      "tests/test_store_provenance.py",
+      "tests/test_qstore_lifecycle.py",
+      "tests/test_qstore_fp32.py",
+      "tests/test_workplan.py",
+      "tests/test_workplan_compiler.py",
+      "tests/test_candidate_campaign.py",
+      "tests/test_sciencegraph.py",
+      "tests/test_paged_output_contract_kv.py",
+      "tests/test_kv_statecut.py",
+      "tests/test_science_runtime.py",
+      "tests/test_inference_app.py",
+      "tests/test_native_runtime_contracts.py"
+    ],
+    "runtime-tests": [
+      "tests/test_engine_gapfill.py",
+      "tests/test_engine_runtime_reporting.py",
+      "tests/test_prefix_kv.py",
+      "tests/test_qwen35_statecut.py",
+      "tests/test_qwen3_moe_statecut.py",
+      "tests/test_qwen3_moe_ragged_decode.py",
+      "tests/test_native_generation_service.py",
+      "tests/test_native_sampling.py",
+      "tests/test_native_speculative_runtime.py",
+      "tests/test_decompiler_core.py",
+      "tests/test_decompiler_reference.py",
+      "tests/test_decompiler_mamba_reference.py",
+      "tests/test_openai_protocol.py",
+      "tests/test_batch_invariant.py",
+      "tests/test_moe_stream.py",
+      "tests/test_paged_lora.py",
+      "tests/test_fleet_integration.py",
+      "tests/test_agent_payload_pythonpath.py",
+      "tests/test_payload_sandbox.py"
+    ],
+    "compiler-tests": [
+      "tests/test_graph_compiler.py",
+      "tests/test_work_template_binding.py",
+      "tests/test_typed_capture_workplan.py",
+      "tests/test_campaign_benchmark.py",
+      "tests/test_capture_benchmark.py",
+      "tests/test_cuda_graph_promotions.py",
+      "tests/test_automatic_campaign.py",
+      "tests/test_resident_worker.py",
+      "tests/test_resident_advanced.py",
+      "tests/test_graph_pool.py",
+      "tests/test_graph_compiler.py",
+      "tests/test_science_config.py",
+      "tests/test_native_benchmark.py"
+    ],
+    "coadmission-isolated": [
+      "tests/test_fleet_integration.py::test_small_jobs_coadmit_past_legacy_slot_cap"
+    ]
+  }
+}

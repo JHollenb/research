@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="17.318" timestamp="2026-09-29T12:01:08.804422-07:00" hostname="Jakes-MacBook-Pro.local"><testcase classname="tests.test_fleet_integration" name="test_small_jobs_coadmit_past_legacy_slot_cap" time="17.144" /></testsuite></testsuites>

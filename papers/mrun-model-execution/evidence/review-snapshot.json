@@ -1,0 +1,1834 @@
+{
+  "capability_diagnostic": {
+    "actual_forward_acts": {
+      "exception": "NotImplementedError",
+      "message": "an MoE layer has routed per-expert activations"
+    },
+    "advertised_mlp_acts": true
+  },
+  "containment_formula": {
+    "probe_default_ram_mb": 4096.0,
+    "ram_kill_ceiling_for_4096_mb": 4608.0
+  },
+  "created_utc": "2026-09-29T19:02:20.412989+00:00",
+  "environment": {
+    "machine": "arm64",
+    "packages": {
+      "mrun": "0.1.0",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "torch": "2.13.0",
+      "transformers": "5.14.1"
+    },
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "python": "3.10.14 (main, Aug 30 2024, 13:27:55) [Clang 15.0.0 (clang-1500.3.9.4)]"
+  },
+  "estimator_diagnostic": {
+    "added_logits_mb": 2489.3,
+    "configuration_found_by_estimator": false,
+    "expected_logits_mb": 2489.319424,
+    "forward_mb": 553.6,
+    "instrument": "unittest.mock.patch of _model_dims; no model execution",
+    "logits_assertion_with_explicit_dims": true,
+    "recorder_assertion_with_explicit_dims": true,
+    "recorder_forward_ratio": 10.758489884393063,
+    "recorder_mb": 5955.9,
+    "supplied_dimensions": {
+      "head_dim": 64,
+      "heads": 14,
+      "hidden": 896,
+      "kv_heads": 2,
+      "layers": 24,
+      "vocab": 151936
+    }
+  },
+  "live": {
+    "health": {
+      "ok": true
+    },
+    "hosts": [
+      {
+        "artifact_inventory_rows": 58,
+        "cuda": true,
+        "mps": false,
+        "name": "beast",
+        "os": "linux",
+        "ram_total_mb": 66508.767232,
+        "telemetry_timestamp": 1790708538.9022982,
+        "vram_total_mb": 16376.0
+      },
+      {
+        "artifact_inventory_rows": 35,
+        "cuda": false,
+        "mps": true,
+        "name": "mbp1",
+        "os": "darwin",
+        "ram_total_mb": 19327.352832,
+        "telemetry_timestamp": 1790708537.481642,
+        "vram_total_mb": 0.0
+      }
+    ],
+    "requested": true,
+    "version": {
+      "protocol": 2,
+      "version": "0.1.0"
+    }
+  },
+  "planning_observations": [
+    {
+      "model": "qwen2.5-0.5b",
+      "plan": {
+        "artifact_id": null,
+        "artifact_kind": null,
+        "artifact_locator": {},
+        "artifact_mount": null,
+        "backend": "hf",
+        "device": "cpu",
+        "dtype": "float32",
+        "engine_options": {},
+        "engine_profile": "hf-reference",
+        "est_ram_mb": 2410.0,
+        "est_vram_mb": 0.0,
+        "est_wall_s": null,
+        "max_batch": 16,
+        "model": "qwen2.5-0.5b",
+        "ram_limit_mb": 3204.0,
+        "reasons": [
+          "host=synthetic-cpu ram=64000MB cuda=False mps=False ane=False task=forward",
+          "dtype=float32 (canonical reference; bf16 is opt-in only)",
+          "device=cpu (canonical; mps/mlx are explicit opt-ins)",
+          "backend=hf (batched canonical; est 2410+act 55MB fits budget 44800MB)",
+          "max_batch=16 threads=4 ram_limit=3204MB (est x 1.3)"
+        ],
+        "threads": 4,
+        "weights_gb": 2.4
+      },
+      "synthetic_host": "synthetic-cpu"
+    },
+    {
+      "model": "qwen3-30b-a3b",
+      "plan": {
+        "artifact_id": null,
+        "artifact_kind": null,
+        "artifact_locator": {},
+        "artifact_mount": null,
+        "backend": "paged",
+        "device": "cpu",
+        "dtype": "float32",
+        "engine_options": {},
+        "engine_profile": "paged-int8",
+        "est_ram_mb": 2048.0,
+        "est_vram_mb": 0.0,
+        "est_wall_s": null,
+        "max_batch": 16,
+        "model": "qwen3-30b-a3b",
+        "ram_limit_mb": 2733.4,
+        "reasons": [
+          "host=synthetic-cpu ram=64000MB cuda=False mps=False ane=False task=forward",
+          "dtype=float32 (canonical reference; bf16 is opt-in only)",
+          "device=cpu (canonical; mps/mlx are explicit opt-ins)",
+          "backend=paged (est 120410+act 55MB > budget 44800MB = 70% of host RAM; paged artifact/profile selected)",
+          "max_batch=16 threads=4 ram_limit=2733MB (est x 1.3)"
+        ],
+        "threads": 4,
+        "weights_gb": 144.0
+      },
+      "synthetic_host": "synthetic-cpu"
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "plan": {
+        "artifact_id": null,
+        "artifact_kind": null,
+        "artifact_locator": {},
+        "artifact_mount": null,
+        "backend": "hf",
+        "device": "cuda",
+        "dtype": "bfloat16",
+        "engine_options": {},
+        "engine_profile": "hf-reference",
+        "est_ram_mb": 1410.0,
+        "est_vram_mb": 1117.7,
+        "est_wall_s": null,
+        "max_batch": 64,
+        "model": "qwen2.5-0.5b",
+        "ram_limit_mb": 3072.0,
+        "reasons": [
+          "host=synthetic-cuda ram=64000MB cuda=True mps=False ane=False task=forward",
+          "dtype=bfloat16 (cuda tensor-core default; gated 2026-07-15: argmax 12/12, fc winners 6/6, content-lift \u03940.03%, det exact \u2014 see 2026-07-15-cuda-dtype-parity; fp32 oracle via dtype='fp32' or MRUN_TORCH_DTYPE=fp32)",
+          "device=cuda (host has cuda)",
+          "TF32 forced OFF on cuda (breaches 4-decimal stats)",
+          "backend=hf (batched canonical; est 1410+act 118MB fits budget 44800MB)",
+          "max_batch=64 threads=4 ram_limit=3072MB (est x 1.3)"
+        ],
+        "threads": 4,
+        "weights_gb": 1.2
+      },
+      "synthetic_host": "synthetic-cuda"
+    },
+    {
+      "model": "qwen3-30b-a3b",
+      "plan": {
+        "artifact_id": null,
+        "artifact_kind": null,
+        "artifact_locator": {},
+        "artifact_mount": null,
+        "backend": "qwen3-moe-cuda",
+        "device": "cuda",
+        "dtype": "bfloat16",
+        "engine_options": {},
+        "engine_profile": "qwen3-moe-cuda",
+        "est_ram_mb": 6144.0,
+        "est_vram_mb": 10900.4,
+        "est_wall_s": null,
+        "max_batch": 8,
+        "model": "qwen3-30b-a3b",
+        "ram_limit_mb": 7987.2,
+        "reasons": [
+          "host=synthetic-cuda ram=64000MB cuda=True mps=False ane=False task=forward",
+          "dtype=bfloat16 (cuda tensor-core default; gated 2026-07-15: argmax 12/12, fc winners 6/6, content-lift \u03940.03%, det exact \u2014 see 2026-07-15-cuda-dtype-parity; fp32 oracle via dtype='fp32' or MRUN_TORCH_DTYPE=fp32)",
+          "device=cuda (host has cuda)",
+          "TF32 forced OFF on cuda (breaches 4-decimal stats)",
+          "backend=qwen3-moe-cuda (est 60410+act 118MB > budget 44800MB = 70% of host RAM; paged artifact/profile selected)",
+          "qwen3-moe-cuda is profile-gated: auto only for qwen3_moe VRAM overflow; explicit for other callers pending diverse-route quality/traffic gates",
+          "resident estimate=10894.1MB (cache requested/effective=7100.0/7100.0MB, codec=fp8, page=4.734976MB, max_active_pages=128, device_staging_slabs=1, BF16 skeleton + staging)",
+          "host estimate=6144.0MB (base=6144.0MB + effective expert tier=0.0MB)",
+          "KV reservation=6.3MB (batch=8, capacity=8, 98304 bytes/token/stream)",
+          "max_batch capped at measured B8 decode envelope",
+          "max_batch=8 threads=4 ram_limit=7987MB (est x 1.3)"
+        ],
+        "threads": 4,
+        "weights_gb": 72.0
+      },
+      "synthetic_host": "synthetic-cuda"
+    }
+  ],
+  "schema": "mrun-model-execution-review-v1",
+  "source": {
+    "branch": "feat/diffusers-phase-cuda",
+    "dirty_status": "M README.md\n M docs/API.md\n M docs/QWEN3-MOE-CUDA.md\n M docs/TRANSACTIONAL-MICROSCOPE.md\n M src/mrun/agent/config.py\n M src/mrun/agent/executor.py\n M src/mrun/agent/hostinfo.py\n M src/mrun/agent/main.py\n M src/mrun/cli.py\n M src/mrun/client/api.py\n M src/mrun/client/submit.py\n M src/mrun/diffusion/nonflux.py\n M src/mrun/diffusion/phase.py\n M src/mrun/diffusion/program.py\n M src/mrun/diffusion/qstore.py\n M src/mrun/engine/__init__.py\n M src/mrun/engine/base.py\n M src/mrun/engine/kernels/paged_forward.py\n M src/mrun/engine/kernels/segmented_gqa_decode.py\n M src/mrun/engine/paged.py\n M src/mrun/engine/qwen3_moe_cuda.py\n M src/mrun/engine/statecut.py\n M src/mrun/mlops/env.py\n M src/mrun/mlops/publish.py\n M src/mrun/models.py\n M src/mrun/policy.py\n M src/mrun/selector.py\n M src/mrun/server/app.py\n M src/mrun/server/db.py\n M src/mrun/server/reservation.py\n M src/mrun/server/scheduler.py\n M tests/test_agent_payload_pythonpath.py\n M tests/test_client_submit.py\n M tests/test_diffusion_nonflux_checkpoint.py\n M tests/test_diffusion_phase.py\n M tests/test_diffusion_program.py\n M tests/test_diffusion_qstore.py\n M tests/test_engine_gapfill.py\n M tests/test_fleet_integration.py\n M tests/test_kv_statecut.py\n M tests/test_mlops.py\n M tests/test_paged_output_contract_kv.py\n M tests/test_qstore_fp32.py\n M tests/test_qwen3_moe_cuda.py\n M tests/test_qwen3_moe_ragged_decode.py\n M tests/test_reservation.py\n M tests/test_scheduler.py\n M tests/test_sciencegraph.py\n M tests/test_selector.py\n M tests/test_server_job_diagnostics.py\n?? src/mrun/engine/qwen3_moe_statecut.py\n?? src/mrun/payload_sandbox.py\n?? tests/test_cli_attach_lock.py\n?? tests/test_light_client_planning.py\n?? tests/test_payload_sandbox.py\n?? tests/test_qwen3_moe_statecut.py",
+    "files": [
+      {
+        "bytes": 2497,
+        "path": "mrun/src/mrun/__init__.py",
+        "sha256": "945eb396a59f365c2904044ef12100f7c0e24c08bdc311583de8c247f00bd4ba"
+      },
+      {
+        "bytes": 0,
+        "path": "mrun/src/mrun/agent/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 31,
+        "path": "mrun/src/mrun/agent/__main__.py",
+        "sha256": "bc143cdb7df8917d3a2260db1653c582205188b2229f0364df3f0a86cea177be"
+      },
+      {
+        "bytes": 5007,
+        "path": "mrun/src/mrun/agent/config.py",
+        "sha256": "81705a80e53908580deb27eaced8924fab6cb51e10d2485ab246d9b83dc75b07"
+      },
+      {
+        "bytes": 12207,
+        "path": "mrun/src/mrun/agent/dispatch_guard.py",
+        "sha256": "dac795368449ccac43322c05cb993122428fd44a399cbbde55eafd6e78466583"
+      },
+      {
+        "bytes": 28822,
+        "path": "mrun/src/mrun/agent/executor.py",
+        "sha256": "8abc9fe04ff8821708262c8effd9a237dfd12e5b6d9eac80eb59c1a3c73a0986"
+      },
+      {
+        "bytes": 11386,
+        "path": "mrun/src/mrun/agent/hostinfo.py",
+        "sha256": "9892630700a9b5fc4fd837e7ea770eca827955d8d6a2beb61db1c49f73efc511"
+      },
+      {
+        "bytes": 10920,
+        "path": "mrun/src/mrun/agent/main.py",
+        "sha256": "fa1b498f5b6e84259c2f14c9807bf012db57d82a0d0e0956b8c4b22dd1e8656e"
+      },
+      {
+        "bytes": 5972,
+        "path": "mrun/src/mrun/analysis_campaign.py",
+        "sha256": "44b0108bdcdd192451e8c8f7779a75c490aa587f7ee740e9a11863c2d2970b98"
+      },
+      {
+        "bytes": 6753,
+        "path": "mrun/src/mrun/arch.py",
+        "sha256": "3ffa69c8aba02a6a8b67b027f56e3f77bf86cee050b901474de0318c8c8001a4"
+      },
+      {
+        "bytes": 9578,
+        "path": "mrun/src/mrun/catalog.py",
+        "sha256": "a05ab41ffba0a262ada40b2ea467a6266284074ed07ed08e7dc6a68d39d67695"
+      },
+      {
+        "bytes": 8729,
+        "path": "mrun/src/mrun/claims.py",
+        "sha256": "ee04cbf5ba8f0375e521300c72586b461773645186471472436292c16234ab67"
+      },
+      {
+        "bytes": 73075,
+        "path": "mrun/src/mrun/cli.py",
+        "sha256": "ffc82c236490b70d453b6b33ff6cd70cf476922533baf197df7bb5dfabd5256e"
+      },
+      {
+        "bytes": 191,
+        "path": "mrun/src/mrun/client/__init__.py",
+        "sha256": "09dafffa428ced52379aef803dfa3ec43cd9c28680095b3b396e9de370da6817"
+      },
+      {
+        "bytes": 4606,
+        "path": "mrun/src/mrun/client/api.py",
+        "sha256": "34c290bed9b141bc84abc247db6743ec0627594dcd5687488fcef96417a0b731"
+      },
+      {
+        "bytes": 7341,
+        "path": "mrun/src/mrun/client/localrun.py",
+        "sha256": "cdc9f82c84964a81a4652264edb796369a04e6f5f851ea913f61ef15cd0b2cf2"
+      },
+      {
+        "bytes": 24988,
+        "path": "mrun/src/mrun/client/preflight.py",
+        "sha256": "23b4edd836663bd9f0bacd00b9ee7e6d5b4d553e92f5101360372883274157ba"
+      },
+      {
+        "bytes": 45611,
+        "path": "mrun/src/mrun/client/submit.py",
+        "sha256": "8094e7feabe47d7661387c54b848311882b748e406cd546badbfe26fe7b6418e"
+      },
+      {
+        "bytes": 12473,
+        "path": "mrun/src/mrun/compiler/__init__.py",
+        "sha256": "d0bc1c1df1ec226e77eb004048c752e35bb32cce37e3f2754e00dd3bee8f58f5"
+      },
+      {
+        "bytes": 28846,
+        "path": "mrun/src/mrun/compiler/adapters.py",
+        "sha256": "d17db345051eb866dff6fa1f421733f24a988d71f0f25be06a3fc278c0addc8f"
+      },
+      {
+        "bytes": 3430,
+        "path": "mrun/src/mrun/compiler/artifacts.py",
+        "sha256": "a65925df1f04ca0ceb35ef29b80d02e8f733724ad9d559eaa43024932ad96173"
+      },
+      {
+        "bytes": 30493,
+        "path": "mrun/src/mrun/compiler/benchmark.py",
+        "sha256": "6ece44ee0454244cba652b8572097058d21b4920ea11a65b1a11eee9f5533e5a"
+      },
+      {
+        "bytes": 10685,
+        "path": "mrun/src/mrun/compiler/bundle.py",
+        "sha256": "d34d0b4a9c210a083f9dc3f040d914e91d5262b2c2ec69ac0490adadc0df562e"
+      },
+      {
+        "bytes": 6591,
+        "path": "mrun/src/mrun/compiler/cache.py",
+        "sha256": "eb72fafab6ee7d864313276856f6cf6c813aa06aa1afde5ae7e7642fb9304553"
+      },
+      {
+        "bytes": 51975,
+        "path": "mrun/src/mrun/compiler/campaign.py",
+        "sha256": "1632b0aaa1c858965012c4fcbff89776a6cc9c3161bcf14bccdbb29653e0aa5e"
+      },
+      {
+        "bytes": 39589,
+        "path": "mrun/src/mrun/compiler/campaign_benchmark.py",
+        "sha256": "ee79738cd75df12ebc6b86cbd09faa7eb3e8ea3870859d678c723d16d088f33d"
+      },
+      {
+        "bytes": 29210,
+        "path": "mrun/src/mrun/compiler/campaign_factorial.py",
+        "sha256": "c41bd6b82156374e2b323ac46d595750dd8f778b263dfde14c2d836096109b18"
+      },
+      {
+        "bytes": 41773,
+        "path": "mrun/src/mrun/compiler/capture_benchmark.py",
+        "sha256": "37804d38bd4912c34fe05379359c46825fb2561937b1db4a8c8cab5e0bc6fdbc"
+      },
+      {
+        "bytes": 6892,
+        "path": "mrun/src/mrun/compiler/cohort.py",
+        "sha256": "a2b4cd897bca02331f03f3e69845646ec2a1db9c45eeffca22dcb1ed07804edc"
+      },
+      {
+        "bytes": 8490,
+        "path": "mrun/src/mrun/compiler/cost.py",
+        "sha256": "4c14afb5beb9e18ffc43fc9e7006cc19cee1ca5df8a5bc148e74e75b3f4e5d2b"
+      },
+      {
+        "bytes": 13362,
+        "path": "mrun/src/mrun/compiler/debug_branch_adapter.py",
+        "sha256": "5cc8ce471fb4e4181055be223bb7fa85de9397a02f919b40010e0332575c63cf"
+      },
+      {
+        "bytes": 5908,
+        "path": "mrun/src/mrun/compiler/evidence.py",
+        "sha256": "436b87d4597e37b5909d80f287a3c61fdbea7fce94f0efbde15cca572c702fdb"
+      },
+      {
+        "bytes": 71008,
+        "path": "mrun/src/mrun/compiler/executable.py",
+        "sha256": "9bea790881c09ec58cc9f637a30a25664b8b69f88ce4a2547eaf9fad7d7afe17"
+      },
+      {
+        "bytes": 86780,
+        "path": "mrun/src/mrun/compiler/graph.py",
+        "sha256": "22410ad5e3fe035968f590dd969422eed1e267715059f2e3774c10e2307a201d"
+      },
+      {
+        "bytes": 56386,
+        "path": "mrun/src/mrun/compiler/graph_passes.py",
+        "sha256": "d4845bebe9038ca387d9a6f661b4b2c046b811015f4083d3aef91a7072ba5ef4"
+      },
+      {
+        "bytes": 10129,
+        "path": "mrun/src/mrun/compiler/identity.py",
+        "sha256": "20504dc9077277d5b15e21c3cab9110c1a6760db347e2c5300f144c0282b1bb0"
+      },
+      {
+        "bytes": 111640,
+        "path": "mrun/src/mrun/compiler/ir.py",
+        "sha256": "44bdc42f5717589208621265fbe9312e32c7fb86820766cc34c601ba7769f088"
+      },
+      {
+        "bytes": 42009,
+        "path": "mrun/src/mrun/compiler/lowering.py",
+        "sha256": "c8a3dfd800483c9e07e4eebb27fe51e240ffd228b06437bf3927bf7da4ecbb69"
+      },
+      {
+        "bytes": 16440,
+        "path": "mrun/src/mrun/compiler/memory.py",
+        "sha256": "1815e6ec59b6cb2e0b9bf04cb4b376a841bcfb866a83e7988aefc13e5fe44217"
+      },
+      {
+        "bytes": 10535,
+        "path": "mrun/src/mrun/compiler/phase_evidence.py",
+        "sha256": "7eeb3fc141ed8a7b693b1830426daa14b1502830d3973811095130b5b9cd8a33"
+      },
+      {
+        "bytes": 4860,
+        "path": "mrun/src/mrun/compiler/profile_fusion.py",
+        "sha256": "f6d677c59229642388d86a8415bd4b02d562e6980657efaa79e293ceb6cdeb5a"
+      },
+      {
+        "bytes": 22090,
+        "path": "mrun/src/mrun/compiler/promotions.py",
+        "sha256": "5dc50907fbdfaaeac23d85754d7c973c4798cfdd9d032697965394fed322ca99"
+      },
+      {
+        "bytes": 3023,
+        "path": "mrun/src/mrun/compiler/residency.py",
+        "sha256": "2a5a5589a68d321c45d6e412de16b11c2a6566c57aedc244998efdf0eb529200"
+      },
+      {
+        "bytes": 4132,
+        "path": "mrun/src/mrun/compiler/resident_program.py",
+        "sha256": "b224dfddf5e0d474a17c53f510dd2c2e98efc95a1d3f0dc8ea100c2fde759d81"
+      },
+      {
+        "bytes": 7347,
+        "path": "mrun/src/mrun/compiler/resident_promotions.py",
+        "sha256": "54915b0d43aee595416a29338895fb98d2939b11feced35ff2e5f83fadf06f0b"
+      },
+      {
+        "bytes": 50178,
+        "path": "mrun/src/mrun/compiler/sciencegraph.py",
+        "sha256": "09baadfe3e99874c4ac91bdea36e1e48cee6d6d15749263c96d12faa848950ca"
+      },
+      {
+        "bytes": 6147,
+        "path": "mrun/src/mrun/compiler/temporal.py",
+        "sha256": "aa0a75242892c625e2d8885fccd744e7e4bfc1fb87b4a2651d35ad093f2c6c97"
+      },
+      {
+        "bytes": 7343,
+        "path": "mrun/src/mrun/compiler/trace.py",
+        "sha256": "9fc9002460795d30d56a51166f164beed949e688dd566c6390aec01e67c3063d"
+      },
+      {
+        "bytes": 53466,
+        "path": "mrun/src/mrun/compiler/work_floor.py",
+        "sha256": "b907d5edc27eea01a9ecfdd6712493197c04681591bb4724e4e8edeb4b6210e2"
+      },
+      {
+        "bytes": 714,
+        "path": "mrun/src/mrun/decode/__init__.py",
+        "sha256": "620d9f97f541b248a0952e766b5a6a46181415cffce709ae1b048c9de58d5131"
+      },
+      {
+        "bytes": 751,
+        "path": "mrun/src/mrun/decode/_paths.py",
+        "sha256": "c67fe0c8ccc28b73d8f1bd2d4d35665998da443410b0f711d61f7168bcd1b2c5"
+      },
+      {
+        "bytes": 1577,
+        "path": "mrun/src/mrun/decode/architecture.py",
+        "sha256": "1a053347ca3d3125815d4fcae6fd6c7ffdbfdc730828981afc3b02aae28e4dec"
+      },
+      {
+        "bytes": 10488,
+        "path": "mrun/src/mrun/decode/attention.py",
+        "sha256": "16cf4b99ffbf0147e2b38a5aa87b8c64510f6c64c71f5b8f968ca6ae308e00cc"
+      },
+      {
+        "bytes": 7007,
+        "path": "mrun/src/mrun/decode/control_dissociate.py",
+        "sha256": "32a469b52555a0820e16cdee1be0f23a63fb6588b13040da7a0d17821d115d7c"
+      },
+      {
+        "bytes": 3803,
+        "path": "mrun/src/mrun/decode/decode.py",
+        "sha256": "c9896c701845c9e3049ab2bb8a7df9b3d2087f39de7423fd386495dbac2c873b"
+      },
+      {
+        "bytes": 5360,
+        "path": "mrun/src/mrun/decode/graft_decode.py",
+        "sha256": "42ffdffe7c9f8f9c173b6d7444f622cca028306c230353767258d0e2c11a5cd7"
+      },
+      {
+        "bytes": 6754,
+        "path": "mrun/src/mrun/decode/loaders.py",
+        "sha256": "a328f42aa6b003db4d102eb14146c8552cfb4ea7077e6fd9d904484dc2c7324b"
+      },
+      {
+        "bytes": 16322,
+        "path": "mrun/src/mrun/decode/metrics.py",
+        "sha256": "9197ef487c7d5191a2110ef15a4ee93046ac273d602be64e7ea3ad49fb73d1f9"
+      },
+      {
+        "bytes": 14273,
+        "path": "mrun/src/mrun/decode/mlp_dag.py",
+        "sha256": "e5490502e35ebbb12f10adb3412e2870ad5eabafd6374c830f6f3db1bf6b3349"
+      },
+      {
+        "bytes": 9309,
+        "path": "mrun/src/mrun/decode/mlp_families.py",
+        "sha256": "2b8427704b038e9fe7a9a7c950ee31dce03f43716bd5a96902012a81cbb14204"
+      },
+      {
+        "bytes": 18283,
+        "path": "mrun/src/mrun/decode/model_physical.py",
+        "sha256": "1509ebe54e213b515a1cd0b3a75f62b0d12bf4c0b74d780f41d48a44acd17a90"
+      },
+      {
+        "bytes": 8671,
+        "path": "mrun/src/mrun/decode/report.py",
+        "sha256": "caae2817c0a0d174426b0e3347c01720d1b686fcf6a59758718d3a964b73bc09"
+      },
+      {
+        "bytes": 2261,
+        "path": "mrun/src/mrun/decode/roles.py",
+        "sha256": "e1b55106faae582075bf37c14125d46072efb373adfc63b3107499404d3a54b6"
+      },
+      {
+        "bytes": 14081,
+        "path": "mrun/src/mrun/decode/rosetta_roles.py",
+        "sha256": "a206bbd167195bc77ba0a6626224a7558b3ad6c24f52e0c1c3d3a3d10e411f36"
+      },
+      {
+        "bytes": 3066,
+        "path": "mrun/src/mrun/decode/slm_scan.py",
+        "sha256": "ccdd1aecd9dedf9a312cc875fac48df2e787e39b32413469c3aac48a70c4c468"
+      },
+      {
+        "bytes": 4219,
+        "path": "mrun/src/mrun/decode/spectral_code.py",
+        "sha256": "b25671adbd0543b94d72f0fcb2f9fea91273d12b820d72f21c575ebd9ee88569"
+      },
+      {
+        "bytes": 11919,
+        "path": "mrun/src/mrun/decompiler/__init__.py",
+        "sha256": "0b18bc321c0c5d859576c1b12ea356d61bd48393e8d6f6ac1413f25b003218f6"
+      },
+      {
+        "bytes": 6117,
+        "path": "mrun/src/mrun/decompiler/_json.py",
+        "sha256": "bde8eb01223d29727937708f327a7d8b0fb2a7a5367b95fcd4af11dfdda34f2a"
+      },
+      {
+        "bytes": 226189,
+        "path": "mrun/src/mrun/decompiler/adapters.py",
+        "sha256": "a56bbf380d06ede1c26a70077fc37ea164cd0efdbbfd60600b582bbef3c135b5"
+      },
+      {
+        "bytes": 27348,
+        "path": "mrun/src/mrun/decompiler/cli.py",
+        "sha256": "462f734671c535a1382a925cbe23c533bd6e1834820529a531dc76b400915962"
+      },
+      {
+        "bytes": 8443,
+        "path": "mrun/src/mrun/decompiler/compiler.py",
+        "sha256": "a30439c090c685e5cefbc71b29fb75d4f0ced4c869138ef71d96a9a27e069507"
+      },
+      {
+        "bytes": 61646,
+        "path": "mrun/src/mrun/decompiler/cuda_native.py",
+        "sha256": "f9360cc498b8521f593889d723d10c7849dc880a1fe2a45f9575faeceedc6cbc"
+      },
+      {
+        "bytes": 50688,
+        "path": "mrun/src/mrun/decompiler/emitter.py",
+        "sha256": "94c20789cdb8a7365f4f88a962e061074775f142eff31c1a7cb97117532e1843"
+      },
+      {
+        "bytes": 2382,
+        "path": "mrun/src/mrun/decompiler/errors.py",
+        "sha256": "86d56887c26bcd21e907cd075acbf54743231459322040ee5d0d742395b30836"
+      },
+      {
+        "bytes": 86091,
+        "path": "mrun/src/mrun/decompiler/ir.py",
+        "sha256": "b60149fa6faecc99e94d501af68d9ee5b4f9e044d081fec3f0aef9f2ce651f1d"
+      },
+      {
+        "bytes": 15252,
+        "path": "mrun/src/mrun/decompiler/matching.py",
+        "sha256": "e73067ad91b32009065c47c78d3e534b4a14067f15c6eaa40c8e87a58dc7caf9"
+      },
+      {
+        "bytes": 54990,
+        "path": "mrun/src/mrun/decompiler/mlx_hybrid.py",
+        "sha256": "aecce4644b34df302ce82aeff39d703a722c175b7ece33536a4d5c5cb55244d5"
+      },
+      {
+        "bytes": 59770,
+        "path": "mrun/src/mrun/decompiler/mlx_lowbit.py",
+        "sha256": "44d746e6da4868f2e04aa50059db953bde64222fd9a10bd1dacd3574417bd11a"
+      },
+      {
+        "bytes": 73538,
+        "path": "mrun/src/mrun/decompiler/mlx_mixtral_expert_store.py",
+        "sha256": "4412f047eb6d8c6c4fa443bdeaa32d041ccf53430b4b24c8cac4a4e39e16f443"
+      },
+      {
+        "bytes": 111951,
+        "path": "mrun/src/mrun/decompiler/mlx_native.py",
+        "sha256": "a61c9268b897d39047ee7ddaca5cbcd92738009f7ddf5a90a09b876cbc49634b"
+      },
+      {
+        "bytes": 20995,
+        "path": "mrun/src/mrun/decompiler/plugins.py",
+        "sha256": "49ff7efc1068f998ba0465bf4eacd42d821b4f63933c3a5805f19d9bdfc09a83"
+      },
+      {
+        "bytes": 55825,
+        "path": "mrun/src/mrun/decompiler/qwen35_adapter.py",
+        "sha256": "8f0166b40146573d70434465f68ef406b3252c953bc66edb82f358d27a391a88"
+      },
+      {
+        "bytes": 24706,
+        "path": "mrun/src/mrun/decompiler/qwen35_stateful.py",
+        "sha256": "6f4c9fafbce74ddd9f9e21082a739427ee09dcddc97ff63f035526644930041f"
+      },
+      {
+        "bytes": 210020,
+        "path": "mrun/src/mrun/decompiler/reference.py",
+        "sha256": "304c4146679d9928763b6bdfe86d67a150f5b5b8a7d3a1e5dd5407205ca0c267"
+      },
+      {
+        "bytes": 28641,
+        "path": "mrun/src/mrun/decompiler/reports.py",
+        "sha256": "adbdcb1a767c0307a7fbcdd1186f83e5f999e0996299974d872b4e1f18dfc6e5"
+      },
+      {
+        "bytes": 38836,
+        "path": "mrun/src/mrun/decompiler/source.py",
+        "sha256": "8583528f40508fa5832c743ca83b0b260c2fad3c2622a7086305d29c7be30b9d"
+      },
+      {
+        "bytes": 42412,
+        "path": "mrun/src/mrun/decompiler/stateful_reference.py",
+        "sha256": "f1810d50196075e2c92934618e0829efbef33c4a076684a5be858c0a7e097ac3"
+      },
+      {
+        "bytes": 34054,
+        "path": "mrun/src/mrun/decompiler/tensor_index.py",
+        "sha256": "7cfe127dce4bb1824e7c153d468795fb7df74188c1eccb576953d71cbd6e2c0c"
+      },
+      {
+        "bytes": 3099,
+        "path": "mrun/src/mrun/device.py",
+        "sha256": "f72982696716422989f3f75869a62e0ca043c2d96c9e8543184fe9b6d0142127"
+      },
+      {
+        "bytes": 7684,
+        "path": "mrun/src/mrun/diagnostics.py",
+        "sha256": "be21214568d33513bea7347b9bd9c37976527c33dbae6ab645288250d6847a8c"
+      },
+      {
+        "bytes": 7351,
+        "path": "mrun/src/mrun/diffusion/__init__.py",
+        "sha256": "b42a1735efcd2bf2252846a96434b2816f6eb088946a2bce2e81d3b3b1782b6e"
+      },
+      {
+        "bytes": 8061,
+        "path": "mrun/src/mrun/diffusion/cache.py",
+        "sha256": "74ff908cc2678d9c8263877a3ad4f70c44abddef0565e2648756c624b6c2cb06"
+      },
+      {
+        "bytes": 11007,
+        "path": "mrun/src/mrun/diffusion/distill.py",
+        "sha256": "58013416b0868e541ca0ce30ccd6bbe4843fd0886f3fb48404ba5c0152bb2678"
+      },
+      {
+        "bytes": 10134,
+        "path": "mrun/src/mrun/diffusion/hybrid.py",
+        "sha256": "d7643ab5f358b2b07cd493fcbe0ecc6182dc07fd7f90f6220a0f075fbb850720"
+      },
+      {
+        "bytes": 4963,
+        "path": "mrun/src/mrun/diffusion/interop.py",
+        "sha256": "df964184f3eefb71fff856dd293164572c131894ce6c5d8f22883145deafa5cd"
+      },
+      {
+        "bytes": 24882,
+        "path": "mrun/src/mrun/diffusion/io.py",
+        "sha256": "6acfb795683cd3451ddcae8fce65e478a8ca9f7cf9f40d5cb634914760add9cd"
+      },
+      {
+        "bytes": 35662,
+        "path": "mrun/src/mrun/diffusion/native.py",
+        "sha256": "d57ef73f31f95a9c37cd9eaa977064b3b2b25a061e7d5331bd3b151e5a926451"
+      },
+      {
+        "bytes": 146560,
+        "path": "mrun/src/mrun/diffusion/nonflux.py",
+        "sha256": "6537988aa0d32aee29094f205d785d566e7173b9bd99f6f8fd7965ed817ee664"
+      },
+      {
+        "bytes": 152390,
+        "path": "mrun/src/mrun/diffusion/phase.py",
+        "sha256": "adb71412163334cb68d193741870b7f3f2d84082bec449a90e222494af15a0f0"
+      },
+      {
+        "bytes": 118901,
+        "path": "mrun/src/mrun/diffusion/program.py",
+        "sha256": "87e7f099c5eb22a7e277d89f31bc609f478fdad716c37bb0cbcc0ac13790f183"
+      },
+      {
+        "bytes": 50038,
+        "path": "mrun/src/mrun/diffusion/qstore.py",
+        "sha256": "434006aa539ed273945f7591cf6970fd10a46cab48c29473555a104e9f26d1cf"
+      },
+      {
+        "bytes": 21118,
+        "path": "mrun/src/mrun/diffusion/resources.py",
+        "sha256": "ba7df00a464585d4749e611739e1e0527b1b3d429ad1be7ce418810453d885b4"
+      },
+      {
+        "bytes": 3837,
+        "path": "mrun/src/mrun/diffusion/saturn_kernels.py",
+        "sha256": "5fd726e5bc5dc03479490e7d69e37a21bad814a92b4a9419c7abf7c7e02c9ec2"
+      },
+      {
+        "bytes": 18022,
+        "path": "mrun/src/mrun/diffusion/scene.py",
+        "sha256": "e40666cf16a2f05d336ea6bd9a7854e005c0b97b35e2838c2d0cdbba6928a172"
+      },
+      {
+        "bytes": 14267,
+        "path": "mrun/src/mrun/diffusion/scheduler.py",
+        "sha256": "c5ad99fbaf859d9d080db4194d8740ae52f1efdeabea2c2cfb2fb772d3fc58f5"
+      },
+      {
+        "bytes": 14684,
+        "path": "mrun/src/mrun/diffusion/service.py",
+        "sha256": "fe78c6006af846dbe22e2ce242ad03727eab427b664a0fb275c8739f7e3ef8bf"
+      },
+      {
+        "bytes": 12304,
+        "path": "mrun/src/mrun/diffusion/tiled.py",
+        "sha256": "27978c7e66ea924141a1f730f6503be3c964b026614da6f9d0cddd772e6792bc"
+      },
+      {
+        "bytes": 6342,
+        "path": "mrun/src/mrun/diffusion/train.py",
+        "sha256": "dcd70ff594bae444bf649257d846ceabc81110c8cbf36c402adc58ffe28807f4"
+      },
+      {
+        "bytes": 22643,
+        "path": "mrun/src/mrun/dx.py",
+        "sha256": "8ca351db2c427972bec394514c5777aaf99836500a116bf3954cd80c39d2a20a"
+      },
+      {
+        "bytes": 6652,
+        "path": "mrun/src/mrun/dx_cas.py",
+        "sha256": "6e2700190f97029b2bf3b107eb00ca549b327e2d941006000ea765ebc5888337"
+      },
+      {
+        "bytes": 9494,
+        "path": "mrun/src/mrun/dx_custody.py",
+        "sha256": "6feb878af2b7cecedf10326d558160f3844b648ae843f27a36c75d8dd91adc17"
+      },
+      {
+        "bytes": 20928,
+        "path": "mrun/src/mrun/engine/__init__.py",
+        "sha256": "b81b648f45da541a582dffdae2949c2ff9fb96260aea4ed1d98609f5c0686be7"
+      },
+      {
+        "bytes": 18127,
+        "path": "mrun/src/mrun/engine/_base_impl.py",
+        "sha256": "7f92616038f7893d970320329ce3a4424a1ff70c1c50db2bc2b48b7d575a835b"
+      },
+      {
+        "bytes": 30711,
+        "path": "mrun/src/mrun/engine/ane.py",
+        "sha256": "ba59ad704cac6f8946e20c4f0cae9b5fd4240bf92bc718f13e15e63b8415520f"
+      },
+      {
+        "bytes": 9015,
+        "path": "mrun/src/mrun/engine/base.py",
+        "sha256": "8f15f23543fb1ba9acada04ae4169127e9783c6b818be5fc2c3862485ab3a6ec"
+      },
+      {
+        "bytes": 41196,
+        "path": "mrun/src/mrun/engine/causal_family.py",
+        "sha256": "3a46d5fc75b7bf95ca66e7a9e839c8adc8d154a21114f8a81201eea30601eeeb"
+      },
+      {
+        "bytes": 51577,
+        "path": "mrun/src/mrun/engine/component_builder.py",
+        "sha256": "43cbb5eb1f98f153f5f61632748b314dacf07457764a3fffaa163ce2a2526e34"
+      },
+      {
+        "bytes": 78488,
+        "path": "mrun/src/mrun/engine/continuous.py",
+        "sha256": "b5aa72360c36be1e72e0f9957f3a47686ade4629de889609895f608ebdcdb1ff"
+      },
+      {
+        "bytes": 135407,
+        "path": "mrun/src/mrun/engine/dense_qstore_cuda.py",
+        "sha256": "06f83c50a41608fdd54cb6724f367de9466ff429a289d414c0ac4e978a5ec24e"
+      },
+      {
+        "bytes": 14757,
+        "path": "mrun/src/mrun/engine/graph_pool.py",
+        "sha256": "6277e1543f9af34454c7334473c7094fcf5544101773b6e9f6fcbd87171091b1"
+      },
+      {
+        "bytes": 39069,
+        "path": "mrun/src/mrun/engine/hf.py",
+        "sha256": "7f39efe76a816c6a6e3e534855207245f38900667144d56fc223cdec0d862d3c"
+      },
+      {
+        "bytes": 441,
+        "path": "mrun/src/mrun/engine/kernels/__init__.py",
+        "sha256": "4fcf337c1836b58879b0ebace14af4285e5874474e5f82f401b05c6677fedb88"
+      },
+      {
+        "bytes": 17502,
+        "path": "mrun/src/mrun/engine/kernels/batch_invariant.py",
+        "sha256": "c848011ab4256cf32506e4aca1fb243812b5eaff38b5b824c8b45422a2c7117b"
+      },
+      {
+        "bytes": 10159,
+        "path": "mrun/src/mrun/engine/kernels/body_only_qstore.py",
+        "sha256": "4caee9efac0d92e968e2ca913709af101cf9633aebdb30eb134c57f87728f8c5"
+      },
+      {
+        "bytes": 88056,
+        "path": "mrun/src/mrun/engine/kernels/composite_qstore.py",
+        "sha256": "a4cf07b363705c4a94a8921a661b40134004ff101d744014011576fad234141c"
+      },
+      {
+        "bytes": 104333,
+        "path": "mrun/src/mrun/engine/kernels/dense_qstore_cuda.py",
+        "sha256": "0f99bd561d6bac84e2ae54ac6d7f380fe4f624e514f496cb1f26feb375e942b7"
+      },
+      {
+        "bytes": 22926,
+        "path": "mrun/src/mrun/engine/kernels/expert_queue.py",
+        "sha256": "263134fadc002a165130fd501ebe23c5e86673408164a0d7735a31aaf8fe3e8e"
+      },
+      {
+        "bytes": 33160,
+        "path": "mrun/src/mrun/engine/kernels/lexical.py",
+        "sha256": "a787710fe29c0495c7d7f6b2964128829452579054f113f6fcb216ad4b10f172"
+      },
+      {
+        "bytes": 15689,
+        "path": "mrun/src/mrun/engine/kernels/lexical_compiler.py",
+        "sha256": "3c22695ba362d58cff4fafe723814932b334a3739fe11f4026f49c3f82ef5a8e"
+      },
+      {
+        "bytes": 27905,
+        "path": "mrun/src/mrun/engine/kernels/linked_qstore.py",
+        "sha256": "8191dc98602d7b8651f507af5649f9e455ac258619888b2b5e87501256d8a89b"
+      },
+      {
+        "bytes": 147450,
+        "path": "mrun/src/mrun/engine/kernels/paged_forward.py",
+        "sha256": "6b924bba40346016d1e5b4f468806e8597c33a0700cf497a1020335f26fbc9d6"
+      },
+      {
+        "bytes": 71602,
+        "path": "mrun/src/mrun/engine/kernels/qstore.py",
+        "sha256": "53d633ae14990bc1ab09ae92ac1e37a4ffbfe2e870bb49d612f1848318ff6762"
+      },
+      {
+        "bytes": 29915,
+        "path": "mrun/src/mrun/engine/kernels/qstore_build.py",
+        "sha256": "27337844d501e513e3cefd975e837ad0748779f0e892a23887f683fb22660152"
+      },
+      {
+        "bytes": 10163,
+        "path": "mrun/src/mrun/engine/kernels/qstore_fp32_build.py",
+        "sha256": "fbb091e4a1ddf2dec3fea63de64b80acd8c9a77408c134f743475c619d9b1988"
+      },
+      {
+        "bytes": 6050,
+        "path": "mrun/src/mrun/engine/kernels/qstore_int2.py",
+        "sha256": "4b8aba1b8ed0c4be0c9425a6cfa02158508d837765a9f461523584e29612dc7b"
+      },
+      {
+        "bytes": 5653,
+        "path": "mrun/src/mrun/engine/kernels/qstore_int3.py",
+        "sha256": "c17fe30a9fc35b6c95e78f6ea06b81a75fd0a24f84060d398dca1f3d146a3cee"
+      },
+      {
+        "bytes": 5906,
+        "path": "mrun/src/mrun/engine/kernels/qstore_int4.py",
+        "sha256": "36f6f4ac6223ef2923be98cca57401176d8ff742d665d48279fcf2385191e428"
+      },
+      {
+        "bytes": 29170,
+        "path": "mrun/src/mrun/engine/kernels/segmented_gqa_decode.py",
+        "sha256": "18b9a90b1eee977f8c96ce6cf0f8d8cfa7a46e3083ad5de607572e62afbed559"
+      },
+      {
+        "bytes": 16206,
+        "path": "mrun/src/mrun/engine/kernels/source_cuda_int8.py",
+        "sha256": "ecd1bf370e968c531c44f64bc096c87ba0253b3c9a5a44af27205ff1d3e3e889"
+      },
+      {
+        "bytes": 28033,
+        "path": "mrun/src/mrun/engine/kernels/token_address_map.py",
+        "sha256": "ad31a9671bd755d32dc2f2101a9809e143ec8c00280bd34eefc024a7e6d5c8bf"
+      },
+      {
+        "bytes": 8638,
+        "path": "mrun/src/mrun/engine/kernels/w8a8.py",
+        "sha256": "904b609ef3f67e01fb9be34b46a7ec0d8882cfe8c59b7d5fd608dec6261c573f"
+      },
+      {
+        "bytes": 6815,
+        "path": "mrun/src/mrun/engine/leaderboard.py",
+        "sha256": "4bad8a38455df5fa1a175080df17640611b26429e64690ec6c0959d0f79f7079"
+      },
+      {
+        "bytes": 22577,
+        "path": "mrun/src/mrun/engine/mlx.py",
+        "sha256": "8f8a71d0793429f5a347b8fed4e6632a2c9b6504d3eb381559d371990daed653"
+      },
+      {
+        "bytes": 119212,
+        "path": "mrun/src/mrun/engine/mlx_component.py",
+        "sha256": "14f46af506e217e15835049e35d271e4d9d26087bf7cdc989602ce427e018200"
+      },
+      {
+        "bytes": 18597,
+        "path": "mrun/src/mrun/engine/moe_stream.py",
+        "sha256": "940d52edb4ddc27ceb48b58c46eb03938d0fa38f38c27f6e499d2f0cbdf2634d"
+      },
+      {
+        "bytes": 7073,
+        "path": "mrun/src/mrun/engine/multifabric.py",
+        "sha256": "cad79e196c18c5785bfa52535ac5e0cff2d8ebdc03c26506976584efd14735e4"
+      },
+      {
+        "bytes": 7228,
+        "path": "mrun/src/mrun/engine/multifabric_proc.py",
+        "sha256": "b576cca68e5417dd430bbf5857e0a44af6a49872dcf5ee57ae2c9efa57063c1a"
+      },
+      {
+        "bytes": 103985,
+        "path": "mrun/src/mrun/engine/olmoe_cuda.py",
+        "sha256": "fdebf236b3f6bd07fe4ac8ba423d44b7fbbf852c688fdb989bf216759eed2092"
+      },
+      {
+        "bytes": 82279,
+        "path": "mrun/src/mrun/engine/paged.py",
+        "sha256": "042bf7f0ced99b488623feffb1d7aef64067e237c79c427474ed42c428817df5"
+      },
+      {
+        "bytes": 40333,
+        "path": "mrun/src/mrun/engine/paged_reactor.py",
+        "sha256": "35dc29ee802bca1b29ef7a5643067715eefc2d821e67c9275dd87f60c2fcbe7c"
+      },
+      {
+        "bytes": 10560,
+        "path": "mrun/src/mrun/engine/profiles.py",
+        "sha256": "9f0882838db4f8fa934c8953a0cb8d6b52f6a48d596b9cf2bab13e42a76a14a1"
+      },
+      {
+        "bytes": 8870,
+        "path": "mrun/src/mrun/engine/qwen35_statecut.py",
+        "sha256": "8ba5365f936b75ebd7678daf1e74293089ba0dd554789b65c5338b9f9adc2f38"
+      },
+      {
+        "bytes": 21723,
+        "path": "mrun/src/mrun/engine/qwen3_moe_cli.py",
+        "sha256": "4f761cf646181d56267fce9d7a12747ebf98697d7449fbd324c4ef84d110490b"
+      },
+      {
+        "bytes": 210663,
+        "path": "mrun/src/mrun/engine/qwen3_moe_cuda.py",
+        "sha256": "cf32377db2f1059e53eb3007bae7f11bbc033cc93d4101a4b615dbbf0abbca8a"
+      },
+      {
+        "bytes": 18246,
+        "path": "mrun/src/mrun/engine/qwen3_moe_statecut.py",
+        "sha256": "2b7a795f645b05a08466998e4baa337aa508cf157865d8b1bc559b1a0cc5260c"
+      },
+      {
+        "bytes": 43997,
+        "path": "mrun/src/mrun/engine/reactor.py",
+        "sha256": "97b3ba2220c7bd4f4a1d5072287163ab7912304b1b93c63abf2e340ce514d84e"
+      },
+      {
+        "bytes": 15924,
+        "path": "mrun/src/mrun/engine/report.py",
+        "sha256": "f6a3565577100eceb2f48af5288c8af8a1d3cb25ae975c511347a91964337f16"
+      },
+      {
+        "bytes": 13377,
+        "path": "mrun/src/mrun/engine/resident_worker.py",
+        "sha256": "bccc3717f42fb02e8d58d871ed1ece803a800aa663273fcd10c0a7f6b18d0dd6"
+      },
+      {
+        "bytes": 61011,
+        "path": "mrun/src/mrun/engine/statecut.py",
+        "sha256": "aadb73d521114d46b63b9727a7c95240961385b8c2094a2d3955c58a51940a95"
+      },
+      {
+        "bytes": 19728,
+        "path": "mrun/src/mrun/estimate.py",
+        "sha256": "c0b7bc85c76bdea097af2abedb76fcc5039604558da688abe9567aede64c64f1"
+      },
+      {
+        "bytes": 4856,
+        "path": "mrun/src/mrun/execute.py",
+        "sha256": "26ff63ed8e9ddedded6f287ea9e9e842b892944be4ea1691ae5bb0c67f0060ec"
+      },
+      {
+        "bytes": 2128,
+        "path": "mrun/src/mrun/fingerprint/__init__.py",
+        "sha256": "fef2e6b6410056ceab79db226137ebf40457b3f9bf8e3afcd4ab26493295bb03"
+      },
+      {
+        "bytes": 11373,
+        "path": "mrun/src/mrun/fingerprint/api.py",
+        "sha256": "31a072075e9fb31bd99f95ff8f8ed4382e7b8a04d072bab14205a5e29af922d0"
+      },
+      {
+        "bytes": 4917,
+        "path": "mrun/src/mrun/fingerprint/cli.py",
+        "sha256": "e6b6e81dfaed4ab2ce96ff923128dba231e2e034f9eb540387995b52ebef5440"
+      },
+      {
+        "bytes": 15639,
+        "path": "mrun/src/mrun/fingerprint/lineup.py",
+        "sha256": "c773fa9ed8d917edd6b92eabc35ab5babca7fa40d4d98fa15e3d9effbff28ade"
+      },
+      {
+        "bytes": 19641,
+        "path": "mrun/src/mrun/fingerprint/reader.py",
+        "sha256": "fbf36751d6b443b43dca032b3bad357b591e553a05359d9078ae49aaf7d0803b"
+      },
+      {
+        "bytes": 13020,
+        "path": "mrun/src/mrun/fingerprint/rows.py",
+        "sha256": "3a0f7df75512160f5b3d846034e6a58364a915b421d3e713c44b6fa7c17f0ce5"
+      },
+      {
+        "bytes": 13857,
+        "path": "mrun/src/mrun/fingerprint/spectrum.py",
+        "sha256": "777c353a6563708aa9f489c1200e67aee6a4819fda44f0ac3ad27279fa36c97c"
+      },
+      {
+        "bytes": 12276,
+        "path": "mrun/src/mrun/fp8.py",
+        "sha256": "2ed598a338dd3e031ff0cff7572904e41d9ce9588f0e05129dbcd5827704ed71"
+      },
+      {
+        "bytes": 5260,
+        "path": "mrun/src/mrun/guard.py",
+        "sha256": "de943373bf8c4732109d416a2fda39d51cef6845b5486b54c97cfd87d3bc32fb"
+      },
+      {
+        "bytes": 3076,
+        "path": "mrun/src/mrun/hf_cache.py",
+        "sha256": "d3566209bb1c8edd0a25f6efb5ba77e9d80562b553bc97fe0b3e977408d3b60c"
+      },
+      {
+        "bytes": 811,
+        "path": "mrun/src/mrun/ids.py",
+        "sha256": "11cb8872f873537905c1a767dc87de56cd910ba812b71e954683654850e3d1d2"
+      },
+      {
+        "bytes": 1613,
+        "path": "mrun/src/mrun/inference/__init__.py",
+        "sha256": "15feece84a111863d71f9ee143afc5f39e974f009dffcf64bd508765df680286"
+      },
+      {
+        "bytes": 56773,
+        "path": "mrun/src/mrun/inference/app.py",
+        "sha256": "eb505fbe90805583c65f09429a44122d9f456519379f3885a8e261eb913cdd52"
+      },
+      {
+        "bytes": 17339,
+        "path": "mrun/src/mrun/inference/chat.py",
+        "sha256": "295f858836891a131b89068faa867a0df76f17b9aa7bd53b8b6073c1163c792d"
+      },
+      {
+        "bytes": 23023,
+        "path": "mrun/src/mrun/inference/cli.py",
+        "sha256": "f92e5d4593b059f1ba752eba69c5c5c97d8a2d13bf38003bb95c80b56e69313d"
+      },
+      {
+        "bytes": 59736,
+        "path": "mrun/src/mrun/inference/loader.py",
+        "sha256": "4451f3a591eb9667a0908a09beed28f1f3fcddba267b8e24936136ba2794d9f4"
+      },
+      {
+        "bytes": 10104,
+        "path": "mrun/src/mrun/inference/openai_protocol.py",
+        "sha256": "c678766309000bf14563e260d18af9932a3a33a2f4404561668b510989e884ee"
+      },
+      {
+        "bytes": 11727,
+        "path": "mrun/src/mrun/inference/operations.py",
+        "sha256": "7ca44d3d55fed379a0b473d162771792a250d453398fdf52abd69a739d132ef2"
+      },
+      {
+        "bytes": 14160,
+        "path": "mrun/src/mrun/inference/web_ui.py",
+        "sha256": "dca501d35f3d29861da7bf52b5ed902696f08e65d3cbcf9f633c2ea883851383"
+      },
+      {
+        "bytes": 2126,
+        "path": "mrun/src/mrun/io.py",
+        "sha256": "a773e5005984e7410403639424355fe3fd125d4cb44fabd044b0d5478ec92b0b"
+      },
+      {
+        "bytes": 993,
+        "path": "mrun/src/mrun/mlops/__init__.py",
+        "sha256": "b5b30420c433a743cd83fa622f7332072fa6269ddd2b146955c1c408eb2da7e3"
+      },
+      {
+        "bytes": 8553,
+        "path": "mrun/src/mrun/mlops/env.py",
+        "sha256": "f947139730a2183d7e92d589b211dc1a9946d200c9cf7ee731b594c5511ea7d2"
+      },
+      {
+        "bytes": 1333,
+        "path": "mrun/src/mrun/mlops/postprocess.py",
+        "sha256": "ed0dc841af669125a2858fe9ff04429ff8523e30ee0ff81be78f484b6024f828"
+      },
+      {
+        "bytes": 6413,
+        "path": "mrun/src/mrun/mlops/publish.py",
+        "sha256": "dc1346688b67857f3520f7941685ceb3bc6192c13ff6d5ecff57a0e1f6c21b55"
+      },
+      {
+        "bytes": 41761,
+        "path": "mrun/src/mrun/mlops/registry.py",
+        "sha256": "f4b39d3e4bd115ca2ff36f54a4c80ccb61e3746650a0267e27346052d472da86"
+      },
+      {
+        "bytes": 6073,
+        "path": "mrun/src/mrun/mlops/sink.py",
+        "sha256": "93d215c9170d162766438c1ce7319ede4ae4886d59beab8b0f1b97c8a3309f97"
+      },
+      {
+        "bytes": 2732,
+        "path": "mrun/src/mrun/mlops/tracking.py",
+        "sha256": "30ec33059ab0f5ae4832b100ea93135afb531856e849cfbe1a01e32fc7fda851"
+      },
+      {
+        "bytes": 28606,
+        "path": "mrun/src/mrun/models.py",
+        "sha256": "12f839e5ad794fec98418c386d015fe499212a0f7fb4ea347c95c2b645c76dce"
+      },
+      {
+        "bytes": 1154,
+        "path": "mrun/src/mrun/mri/__init__.py",
+        "sha256": "868b3a8bb209bf96a59fa5dd6865633ed09af44325c8cde50d1c03a0782a0968"
+      },
+      {
+        "bytes": 8151,
+        "path": "mrun/src/mrun/mri/api.py",
+        "sha256": "41e9536ff8f4675e797265ce451de0b94064960546ed943029a48e2331363980"
+      },
+      {
+        "bytes": 27933,
+        "path": "mrun/src/mrun/mri/card.py",
+        "sha256": "94189b6c7106c84c5b97faa6b710bfc81e55d05d196f51b6a9328e9d1e65f421"
+      },
+      {
+        "bytes": 17621,
+        "path": "mrun/src/mrun/mri/deepseek_v4_parity.py",
+        "sha256": "8f36bff65ce3df8aa06e37aca00df8e4c7ec5de829768ecf7a33a242280047b8"
+      },
+      {
+        "bytes": 36617,
+        "path": "mrun/src/mrun/mri/deepseek_v4_stream.py",
+        "sha256": "6725cc23afc3afad1e9fe76a8549a99f3e55a722037ed32f8cec450f0f8c3c51"
+      },
+      {
+        "bytes": 17104,
+        "path": "mrun/src/mrun/mri/moe.py",
+        "sha256": "ba62446989d45126eb6033f9000d677cbe2d6ec6ed21cdb085b2ee310a954fd3"
+      },
+      {
+        "bytes": 61592,
+        "path": "mrun/src/mrun/mri/moe_stream.py",
+        "sha256": "873ddc5a9d4d7267eb1b8bc2af2a69fb8e11e5479727a899e5c4e2ac51cfdcf2"
+      },
+      {
+        "bytes": 11244,
+        "path": "mrun/src/mrun/mri/paged.py",
+        "sha256": "79eb36d9d3df1647fdd105d2ee65d2b9fb790e7a00063d4fc58b250f75c57c84"
+      },
+      {
+        "bytes": 4246,
+        "path": "mrun/src/mrun/mri/salience.py",
+        "sha256": "e96801dc6b8943304fae4c058d6ff74e473c13cacd190b8e1bc302c4aa411f85"
+      },
+      {
+        "bytes": 7731,
+        "path": "mrun/src/mrun/orchestrate.py",
+        "sha256": "43c52c1bd05918f7fb794a76447b6d3bebfe52b76d746b34351b5126937ee4ae"
+      },
+      {
+        "bytes": 8618,
+        "path": "mrun/src/mrun/os_limit.py",
+        "sha256": "83743bd8f83dbb615545f0d662452f82bf646a4cfc2be89d968971c2a4bf14fa"
+      },
+      {
+        "bytes": 2195,
+        "path": "mrun/src/mrun/paths.py",
+        "sha256": "87fbc50d25fb0677d0eeb9d494e4b833434991394c5a5673d1c647f2c6ef67d0"
+      },
+      {
+        "bytes": 11210,
+        "path": "mrun/src/mrun/payload_sandbox.py",
+        "sha256": "069241b87c6f2d36d8f2f86817e18b22f1e67d475874b7f2ea591fa5060eb7ce"
+      },
+      {
+        "bytes": 46219,
+        "path": "mrun/src/mrun/policy.py",
+        "sha256": "f06d94c28f538d17f20763fbbd7ab29930fa566833b0184c82f9f6bdda578286"
+      },
+      {
+        "bytes": 6442,
+        "path": "mrun/src/mrun/protocol.py",
+        "sha256": "6405214e7ccfb669040035ec6f879a9e972d0863697bea83095dff4b2d0d5539"
+      },
+      {
+        "bytes": 3925,
+        "path": "mrun/src/mrun/recorder/__init__.py",
+        "sha256": "e7cec4a8d62a28529dd05a3e37fd1116620dfa50946ce4c3946bf913f10facd2"
+      },
+      {
+        "bytes": 6316,
+        "path": "mrun/src/mrun/recorder/_util.py",
+        "sha256": "eb071e20d45c3fb91640ae84fd9febe41136dab01ad3b2669df457dfe1d091a2"
+      },
+      {
+        "bytes": 14217,
+        "path": "mrun/src/mrun/recorder/attention.py",
+        "sha256": "5a48eaf12a321479efb0bff4213756898ee7992e90a3bdff5c6fca594760913d"
+      },
+      {
+        "bytes": 4459,
+        "path": "mrun/src/mrun/recorder/attention_heads.py",
+        "sha256": "dd63715a8990f65ea643f6eff02e4b6668cc2e42956077cd1baa7a33a00148d7"
+      },
+      {
+        "bytes": 3560,
+        "path": "mrun/src/mrun/recorder/banks.py",
+        "sha256": "6124c5dc8e75e44b480ffd6f7d13429c761a87fe96fd2294643f6b9b5fe2d160"
+      },
+      {
+        "bytes": 12232,
+        "path": "mrun/src/mrun/recorder/candidates.py",
+        "sha256": "6999c0c93daa2526033d4678924392cbe9fe40c7d4bdcb88dc6d14d6d1ccee97"
+      },
+      {
+        "bytes": 49710,
+        "path": "mrun/src/mrun/recorder/capture.py",
+        "sha256": "19e135d726c0a3674181c44027dd365316d92229561b90e34c5db8d081b51d2c"
+      },
+      {
+        "bytes": 16998,
+        "path": "mrun/src/mrun/recorder/causal_heads.py",
+        "sha256": "ceb739ef44baa704c16fb5f44f06f28530cdadaa0e7ea789e33db622d9b6f9dd"
+      },
+      {
+        "bytes": 26252,
+        "path": "mrun/src/mrun/recorder/causal_mlp.py",
+        "sha256": "c4b5c1f7b6b61579ce45f448984ccd243c4d03bb346c56d3acb9c6728605babc"
+      },
+      {
+        "bytes": 177,
+        "path": "mrun/src/mrun/recorder/common/__init__.py",
+        "sha256": "a21a4a660f948a2f7b4b5d908af92f2a8dc146d3f7ecf7dd4002f3a26e9c4cf6"
+      },
+      {
+        "bytes": 9296,
+        "path": "mrun/src/mrun/recorder/common/ablation.py",
+        "sha256": "656a0229f60a516c7996101dafed022636153505fc2664371d97b1ea31055d38"
+      },
+      {
+        "bytes": 2303,
+        "path": "mrun/src/mrun/recorder/common/axes.py",
+        "sha256": "fcea7d97098afc314b7107084ef3329f83fef42151106a0b67ec32836397a96d"
+      },
+      {
+        "bytes": 1912,
+        "path": "mrun/src/mrun/recorder/common/inputs.py",
+        "sha256": "a6d81330280cb61400707f756e3f2e5db04cfc1ebe59677a1e7b2ae7afb50391"
+      },
+      {
+        "bytes": 5730,
+        "path": "mrun/src/mrun/recorder/common/leverage.py",
+        "sha256": "a32a444adb0087a213f79494050c1a8c35d3ca14a69e932b46952cd5c8b77b8b"
+      },
+      {
+        "bytes": 9929,
+        "path": "mrun/src/mrun/recorder/common/nulls.py",
+        "sha256": "15db9d7a14a119863c4d875a07c499df00d0921639bc67333328c28205910139"
+      },
+      {
+        "bytes": 343,
+        "path": "mrun/src/mrun/recorder/common/tensors.py",
+        "sha256": "6a26d35f346a5c5e203bd4fa732ddc4750985dac164a394da3d5252c5d270d45"
+      },
+      {
+        "bytes": 4169,
+        "path": "mrun/src/mrun/recorder/content_axes.py",
+        "sha256": "bf0c0b76ab7bd5970bf5b29dd56fb37f764a5ed7495b46027082ab4d834d6f81"
+      },
+      {
+        "bytes": 41569,
+        "path": "mrun/src/mrun/recorder/physiology.py",
+        "sha256": "4eb3f5b90cb09a47edaa9d0198f5ed3d4b033d91b7b86c9f5143ba9f7939b6ca"
+      },
+      {
+        "bytes": 30911,
+        "path": "mrun/src/mrun/recorder/prompt_conditioned.py",
+        "sha256": "9f2e5c75754c54c3d0576d23ac1f86ebf9ad28332e650823eaa22c91479f4da3"
+      },
+      {
+        "bytes": 1667,
+        "path": "mrun/src/mrun/recorder/prose.py",
+        "sha256": "236402fda0ec3b935888998a3983e787041a8d96e41784392e78d80b264a200c"
+      },
+      {
+        "bytes": 13460,
+        "path": "mrun/src/mrun/recorder/tasks.py",
+        "sha256": "6b55461db3ca5462af5982ce0214eb5fb512634b82503bfd8d567b41affd2912"
+      },
+      {
+        "bytes": 2719,
+        "path": "mrun/src/mrun/render/__init__.py",
+        "sha256": "761d8cec3e00c307516980e12bb39a9bd8ca8291708df948872d637c010f4a0b"
+      },
+      {
+        "bytes": 50891,
+        "path": "mrun/src/mrun/render/atlas3d.py",
+        "sha256": "c8fe93fa9f9e82cd86ace1cede4ad42a219f0ebb838159784b5cede33b164b52"
+      },
+      {
+        "bytes": 13097,
+        "path": "mrun/src/mrun/render/causal_map3d.py",
+        "sha256": "c07787194c0b25dadde6f0b63fa0e517bd8fe897fde71f2b572ff6cebb124638"
+      },
+      {
+        "bytes": 24296,
+        "path": "mrun/src/mrun/render/hierarchy3d.py",
+        "sha256": "62988ad30de0dbeecb00a4c8d0c552a050f15a709ae412a6b52e156ae6bdfce0"
+      },
+      {
+        "bytes": 17487,
+        "path": "mrun/src/mrun/render/relational3d.py",
+        "sha256": "451e4b1f22ba0f9d26b461a5b4f17b13cd08dc00bde5fa69264113619a7a6119"
+      },
+      {
+        "bytes": 30790,
+        "path": "mrun/src/mrun/render/weather_maps.py",
+        "sha256": "3cc39955bc0fa4696a57d58ca1c965529f91903ddbeed2d1765b6ef3b988540e"
+      },
+      {
+        "bytes": 4603,
+        "path": "mrun/src/mrun/resources.py",
+        "sha256": "8d559f273d8e1f479d0958628f5eb77789954df5b2b304b5940d14f3c50cde3e"
+      },
+      {
+        "bytes": 12017,
+        "path": "mrun/src/mrun/runtime/__init__.py",
+        "sha256": "d831c286e01b2a0c2c0188f174b2c6a2352de70b28c549e8c2980f64d4fa0c09"
+      },
+      {
+        "bytes": 20461,
+        "path": "mrun/src/mrun/runtime/benchmark.py",
+        "sha256": "d781ca01ab429af48be80014e31b0896c834c089a76e5c464ee2f4e78f28f30d"
+      },
+      {
+        "bytes": 77446,
+        "path": "mrun/src/mrun/runtime/contracts.py",
+        "sha256": "31ace3bad9b9793415aa81d2e64df5dc402ce7d5a662cca0a1b66d7ca15d4a41"
+      },
+      {
+        "bytes": 70924,
+        "path": "mrun/src/mrun/runtime/dense_cuda.py",
+        "sha256": "94776f1ac740b9abc240801a5d1e06448a2be5c46d7da655e233f654f636f16b"
+      },
+      {
+        "bytes": 24807,
+        "path": "mrun/src/mrun/runtime/dense_cuda_batch.py",
+        "sha256": "ef134f759b68b566cd2417598fbd7364a050e8a7261a3e2a2bcb51098d9b2ae4"
+      },
+      {
+        "bytes": 2620,
+        "path": "mrun/src/mrun/runtime/inference/__init__.py",
+        "sha256": "7db88dfeaf792de5857cc6018321de722bbe08cadc3bc9678d24be21ba9b09e1"
+      },
+      {
+        "bytes": 27334,
+        "path": "mrun/src/mrun/runtime/inference/schemas.py",
+        "sha256": "bbabf049f86233bd1f6342a76c45cd3a12b20564da5241d9c5712a5879659114"
+      },
+      {
+        "bytes": 74663,
+        "path": "mrun/src/mrun/runtime/inference/service.py",
+        "sha256": "0ad7a1ad9a4a105fe6873d73b8303a1c738c85bfd8bcee5ef078210913c90db7"
+      },
+      {
+        "bytes": 51483,
+        "path": "mrun/src/mrun/runtime/inference/session.py",
+        "sha256": "a28766a3b884f937936f3a6fa3eaf2a093088e59db3805cf74da94eef107c8e8"
+      },
+      {
+        "bytes": 70399,
+        "path": "mrun/src/mrun/runtime/mlx_mamba.py",
+        "sha256": "eea8b099844bd6b19152761b6c2da30333c19b04a6721b009b7b3ad37ed36d63"
+      },
+      {
+        "bytes": 53792,
+        "path": "mrun/src/mrun/runtime/mlx_mixtral_expert_paged.py",
+        "sha256": "d5915c41066f6101dfceb70e60581899398a3d50d6847960706fae6b96e11567"
+      },
+      {
+        "bytes": 139512,
+        "path": "mrun/src/mrun/runtime/mlx_native.py",
+        "sha256": "6dc9a52b1c5effad20550c57e56073043e1307e07acfa17a4f95edac2582da50"
+      },
+      {
+        "bytes": 31603,
+        "path": "mrun/src/mrun/runtime/mlx_paged_attention.py",
+        "sha256": "84cdcbe7c63eeac1c0d9ca8939bdb3b35002b590965874e5a30175d862168a60"
+      },
+      {
+        "bytes": 57663,
+        "path": "mrun/src/mrun/runtime/mlx_paged_kv.py",
+        "sha256": "e1717e60ae1cca69301c25e2b102ac6773dc9dfbb6b35da06fff62f067c0707e"
+      },
+      {
+        "bytes": 12159,
+        "path": "mrun/src/mrun/runtime/mlx_quantized_kv.py",
+        "sha256": "1fbaa8987697263d716d33795f8fdb6a410e9c5d72a47c4cde0dd8999fef6914"
+      },
+      {
+        "bytes": 78837,
+        "path": "mrun/src/mrun/runtime/native_backends.py",
+        "sha256": "588436d2d2d7856a29d3504f3a2b990deb99aac0abeb606fe24b51d1ca31e549"
+      },
+      {
+        "bytes": 10491,
+        "path": "mrun/src/mrun/runtime/placement.py",
+        "sha256": "d7e1764ef6485d6ef1b204b30cb5f51f645f722be72c07041587af77072a6707"
+      },
+      {
+        "bytes": 55341,
+        "path": "mrun/src/mrun/runtime/qwen3_moe_continuous.py",
+        "sha256": "49e90205dc6b3158b62ab88f28d927c6e09ec13565cf8c29e7bc417b7a7d9c3f"
+      },
+      {
+        "bytes": 29527,
+        "path": "mrun/src/mrun/runtime/resident_advanced.py",
+        "sha256": "8314d90d4822b78024375023099f95b2534f7f37cd297938773e730ef803223b"
+      },
+      {
+        "bytes": 2858,
+        "path": "mrun/src/mrun/runtime/sampling.py",
+        "sha256": "759878f6e2d0c6bcc9fa9fd34e7eda81d7db5bf6be526276386975eedd8167da"
+      },
+      {
+        "bytes": 67083,
+        "path": "mrun/src/mrun/runtime/speculative.py",
+        "sha256": "1946f3921c92207cf49b541f0d7307b49be652b0e592df34db736c037bba3752"
+      },
+      {
+        "bytes": 483,
+        "path": "mrun/src/mrun/science/__init__.py",
+        "sha256": "82259b6b60689440a4ddf6db1ede329a426256a99840a02a5e6aed0e7807c9f4"
+      },
+      {
+        "bytes": 35501,
+        "path": "mrun/src/mrun/science/benchmark.py",
+        "sha256": "4f9405ec35e163549cc84056e0a11516670ccdbb4cae47151d4c945ba439c1b6"
+      },
+      {
+        "bytes": 9939,
+        "path": "mrun/src/mrun/science/cli.py",
+        "sha256": "e47988bbbf9006240a5d6a20e823c5ba47adb75ff7e7b6e09fc10142377ae98f"
+      },
+      {
+        "bytes": 14142,
+        "path": "mrun/src/mrun/science/config.py",
+        "sha256": "50c1a67b58d31d00d13b89f531d6a9326df1edb663e178774e85679e917ca8e8"
+      },
+      {
+        "bytes": 28934,
+        "path": "mrun/src/mrun/science/qwen3_moe_page_trace.py",
+        "sha256": "770263e55bbb2534bf449950dd07ff272309c87c1a8c7a381301a68d3879b8ae"
+      },
+      {
+        "bytes": 11791,
+        "path": "mrun/src/mrun/science/runtime.py",
+        "sha256": "6229124af0783365241625439d31a98fb263da5c7a6f65101c455b6466bebac9"
+      },
+      {
+        "bytes": 22746,
+        "path": "mrun/src/mrun/selector.py",
+        "sha256": "df8c7b44027e515ec320fe132a2bfe3631a0376260bdc0eb5cdd681c708e8dbd"
+      },
+      {
+        "bytes": 0,
+        "path": "mrun/src/mrun/server/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 345,
+        "path": "mrun/src/mrun/server/__main__.py",
+        "sha256": "792a4f21f5f16d2bae2dc0aaca2c157a95f5a155cf3fa88a44ab789f4bc2c134"
+      },
+      {
+        "bytes": 108512,
+        "path": "mrun/src/mrun/server/app.py",
+        "sha256": "20c616af413b0b68bf4a65d8a38b07d3e78ccdcb674148ff3c5f59561595b8e7"
+      },
+      {
+        "bytes": 81913,
+        "path": "mrun/src/mrun/server/db.py",
+        "sha256": "2292b9348779279a25bd16b6fffcb256c90bdc20f725e67cfca6826c5d20aace"
+      },
+      {
+        "bytes": 2617,
+        "path": "mrun/src/mrun/server/executable_inventory.py",
+        "sha256": "ce4779ce50fa0fbce35fbe7557c79d564175d11b3a7c30743608f47fd98a3ce7"
+      },
+      {
+        "bytes": 22059,
+        "path": "mrun/src/mrun/server/reservation.py",
+        "sha256": "98dafde808d2a2103988180feaaaa6398cc0b1f6ddcbe74fc95a78dd0496e35f"
+      },
+      {
+        "bytes": 29948,
+        "path": "mrun/src/mrun/server/scheduler.py",
+        "sha256": "de14403ef27d59aa66212b9aa92610125a382c20aff5adc2ff7e42629e89efd7"
+      },
+      {
+        "bytes": 16745,
+        "path": "mrun/src/mrun/store_provenance.py",
+        "sha256": "5e1f059302a25233f0f769584d2fa7fd29d0f9f62ae12e0f26badf719398617a"
+      },
+      {
+        "bytes": 839,
+        "path": "mrun/src/mrun/tapes/__init__.py",
+        "sha256": "a911027f99e7ac5c062e21e53e1523c51c8326abc9856eef51abda65664646aa"
+      },
+      {
+        "bytes": 11525,
+        "path": "mrun/src/mrun/tapes/bridge.py",
+        "sha256": "d8c0d61eada9eb3319fe89eade58aeeca20d009a2396019275ccb0c707ce4703"
+      },
+      {
+        "bytes": 18853,
+        "path": "mrun/src/mrun/tapes/store.py",
+        "sha256": "321ce947eeedbfba5df8413fefda2e5e8adc4624c1eef4c61a1058b3d93c92f8"
+      },
+      {
+        "bytes": 0,
+        "path": "mrun/src/mrun/testing/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 12734,
+        "path": "mrun/src/mrun/testing/causal_paged.py",
+        "sha256": "6931595e3cb56f8af6428dbafaec356f9f9ad0797fed64b4d7d69c20581e6ca7"
+      },
+      {
+        "bytes": 9215,
+        "path": "mrun/src/mrun/testing/cuda_parity.py",
+        "sha256": "64f67e2cc17f1a9ef1ebf3421cb68164a3bbaccf4aaa326ad2e4c53fcd7cf18f"
+      },
+      {
+        "bytes": 11475,
+        "path": "mrun/src/mrun/testing/dense_cuda_selected.py",
+        "sha256": "f804d22075e74f39187f2406733e7980a9700af707d8c44c0ee3f429d436133c"
+      },
+      {
+        "bytes": 13180,
+        "path": "mrun/src/mrun/testing/paged_behavior.py",
+        "sha256": "449cec628db288210e57adcb2a3cb74ab60c219bc998b8810815da522235e214"
+      },
+      {
+        "bytes": 1520,
+        "path": "mrun/src/mrun/testing/parity.py",
+        "sha256": "94f753d7c049f29e3150795bd1b01c97ede2dd6cf8931963eaaf3900adefa8b0"
+      },
+      {
+        "bytes": 3528,
+        "path": "mrun/src/mrun/testing/qstore_identity.py",
+        "sha256": "12dff801204a14cb6c4b8761ad6da225bce358772e4e6e5ea950e55c8141a1b7"
+      },
+      {
+        "bytes": 19270,
+        "path": "mrun/src/mrun/testing/signature.py",
+        "sha256": "10deb7cc2d3a37cfd2cc221b1e31ea51f6524b205526395def086d2c70ef1d93"
+      },
+      {
+        "bytes": 246,
+        "path": "mrun/src/mrun/tools/__init__.py",
+        "sha256": "9e4b39c1527d39c63691bec1cb8be384f4e6580c37e9b39edd25e8012ed5f81b"
+      },
+      {
+        "bytes": 4301,
+        "path": "mrun/src/mrun/tools/launch_overhead.py",
+        "sha256": "637e09e1fbb1b06e68585cf0715c2dbd5bf55cdf65d5fd73ff06a2d546442555"
+      },
+      {
+        "bytes": 15603,
+        "path": "mrun/src/mrun/tools/stream_build.py",
+        "sha256": "52156aec0f792a39f8ad9d44d061ffd2ffd22ea40fdb806737042c351ee24947"
+      },
+      {
+        "bytes": 279,
+        "path": "mrun/src/mrun/training/__init__.py",
+        "sha256": "dbed3259ddff1c6c9fd5149590082384d9eb89b8f3be5d7fefaabb8e3faea074"
+      },
+      {
+        "bytes": 13105,
+        "path": "mrun/src/mrun/training/logging.py",
+        "sha256": "7a5b83e3ec3bbc51b6b5cb538f29dc3279b88fbbc48e38f8c15628ab4b8015d5"
+      },
+      {
+        "bytes": 23182,
+        "path": "mrun/src/mrun/training/paged_lora.py",
+        "sha256": "514c71a921d58a173f994b6275983880f0bfd9f864407dfd8c4a22b684a3e504"
+      },
+      {
+        "bytes": 23401,
+        "path": "mrun/src/mrun/training/paged_lora_parity.py",
+        "sha256": "9c476da2d43237d71dedfb4e2e4bdb56fcd0e60b0342166f8049c7ffe7110c04"
+      },
+      {
+        "bytes": 123215,
+        "path": "mrun/docs/API.md",
+        "sha256": "8eb067fd92810ca721756fd7c28fe7445e25549189523b49c1b90d94853c95ff"
+      },
+      {
+        "bytes": 54186,
+        "path": "mrun/docs/WORKPLAN.md",
+        "sha256": "320f1bcdec6a4c56fd13b81cd8e450fb36441c024b67618143e0bd897602cf25"
+      },
+      {
+        "bytes": 20680,
+        "path": "mrun/docs/ARCHITECTURE.md",
+        "sha256": "bd5b4d8bc754c84f51de788ce9d62274b0b2c4b7a2f4452eca1a4f680bf4ecea"
+      },
+      {
+        "bytes": 4096,
+        "path": "mrun/docs/ENGINE-SELECTION.md",
+        "sha256": "d4e9b60a713a39ba5ff9852fa66df0b5cfca6d4a215ff7aa4967ac85a5b31bc2"
+      },
+      {
+        "bytes": 17042,
+        "path": "mrun/docs/SURFACE.md",
+        "sha256": "5479e21fac362fa547c8534ead89bab4ab5ecb7bc2093527999e9326ce5a5d57"
+      },
+      {
+        "bytes": 33238,
+        "path": "mrun/docs/NATIVE-INFERENCE.md",
+        "sha256": "7bd807dd6645b2221abbfcdc95ead8b991e792bbcdbd83cb5c231293d636662c"
+      },
+      {
+        "bytes": 31962,
+        "path": "mrun/docs/SCIENTIFIC-BENCHMARKS.md",
+        "sha256": "283519381d31e43b93e04267c756de85b33b50b026b202f18ab01871907a6c87"
+      },
+      {
+        "bytes": 14556,
+        "path": "mrun/docs/DIFFUSERS-PHASE-CUDA.md",
+        "sha256": "e088467b716d4891ef0efbc3d69246a3b3bcab7608ae5ce56e36917f73468a98"
+      },
+      {
+        "bytes": 23957,
+        "path": "mrun/docs/QWEN3-MOE-CUDA.md",
+        "sha256": "582fb2ed53f3f8faa5425d6eddbdc8f04ce68cdd0c4652828867dcd13cc2d344"
+      },
+      {
+        "bytes": 12339,
+        "path": "mrun/docs/DENSE-QSTORE-CUDA.md",
+        "sha256": "daf1431c9d421bda0e4ae53dc0e17b65cba42bd7c8034720b885350c6dfd61dc"
+      },
+      {
+        "bytes": 5140,
+        "path": "mrun/docs/OLMOE-CUDA.md",
+        "sha256": "1376daf648a107c66065f99a59185853259a98f4b3b8defd2669e4bd168f26d1"
+      },
+      {
+        "bytes": 6232,
+        "path": "mrun/docs/APPLE-RUNTIME.md",
+        "sha256": "11668a0b9dcdaf09327656dad48b27f46d73da71c14349f9deeaa3e8f0d057a0"
+      }
+    ],
+    "head": "f002ce776e14143114e232ed6af872808a3de160",
+    "source_python_count": 286,
+    "source_records_digest": "51101d0f1169936c94a524e277797b55517a79797b825a83e5aa367035172431"
+  },
+  "tests": {
+    "coadmission-isolated": {
+      "errors": 0,
+      "failures": 0,
+      "nonpassing": [],
+      "passed": 1,
+      "seconds": 17.318,
+      "skipped": 0,
+      "tests": 1,
+      "unique_cases": 1
+    },
+    "compiler-tests": {
+      "errors": 0,
+      "failures": 0,
+      "nonpassing": [],
+      "passed": 130,
+      "seconds": 4.305,
+      "skipped": 0,
+      "tests": 130,
+      "unique_cases": 130
+    },
+    "review-tests": {
+      "errors": 0,
+      "failures": 2,
+      "nonpassing": [
+        {
+          "class": "tests.test_estimate",
+          "message": "assert 9932.1 > (3758.1 * 5)",
+          "name": "test_recorder_task_holds_all_layer_attention",
+          "outcome": "failure"
+        },
+        {
+          "class": "tests.test_estimate",
+          "message": "assert 524.3000000000002 == 2489.319424 \u00b1 49.7864\n  \n  comparison failed\n  Obtained: 524.3000000000002\n  Expected: 2489.319424 \u00b1 49.7864",
+          "name": "test_count_logits_adds_a_vocab_scaled_term",
+          "outcome": "failure"
+        },
+        {
+          "class": "tests.test_qstore_fp32",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_real_qwen_fp32_paged_matches_hf_fp32_winners",
+          "outcome": "skipped"
+        }
+      ],
+      "passed": 466,
+      "seconds": 8.731,
+      "skipped": 1,
+      "tests": 469,
+      "unique_cases": 469
+    },
+    "runtime-tests": {
+      "errors": 0,
+      "failures": 1,
+      "nonpassing": [
+        {
+          "class": "tests.test_engine_gapfill",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_hf_gapfill_batched_matches_scalar_and_taps_work",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_engine_gapfill",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_paged_gapfill_resid_and_batched_patch_parity",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_qwen3_moe_ragged_decode",
+          "message": "requires CUDA and Triton",
+          "name": "test_segmented_gqa_cuda_kernel_matches_compact_cpu_reference",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_qwen3_moe_ragged_decode",
+          "message": "requires CUDA and Triton",
+          "name": "test_cow_segmented_gqa_cuda_kernel_matches_compact_cpu_reference",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_qwen3_moe_ragged_decode",
+          "message": "requires CUDA and Triton",
+          "name": "test_segmented_kv_scatter_accepts_independent_fused_qkv_view_strides",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_native_sampling",
+          "message": "could not import 'mlx.core': No module named 'mlx'",
+          "name": "test_mlx_sampling_executes_on_metal_and_matches_simple_policy",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_paged_lora",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_paged_lora_init_parity[qwen2.5-0.5b]",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_paged_lora",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_paged_lora_init_parity[qwen3-0.6b]",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_paged_lora",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_paged_lora_grad_check",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_paged_lora",
+          "message": "set MRUN_RUN_MODEL_TESTS=1 to run cached model tests",
+          "name": "test_paged_lora_overfit_collapses",
+          "outcome": "skipped"
+        },
+        {
+          "class": "tests.test_fleet_integration",
+          "message": "AssertionError: three fitting jobs never co-admitted; last states={'job-186f5f219aa1': 'succeeded', 'job-b507d96f0236': 'succeeded', 'job-b204aa91d048': 'succeeded'}",
+          "name": "test_small_jobs_coadmit_past_legacy_slot_cap",
+          "outcome": "failure"
+        }
+      ],
+      "passed": 247,
+      "seconds": 176.744,
+      "skipped": 10,
+      "tests": 258,
+      "unique_cases": 258
+    }
+  }
+}

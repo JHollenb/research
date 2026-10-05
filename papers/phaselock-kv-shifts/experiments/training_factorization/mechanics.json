@@ -1,0 +1,137 @@
+{
+  "scope": "CPU float64 mathematical mechanics; no pretrained model, optimizer trajectory, or GPU timing",
+  "seed": 34272,
+  "torch_version": "2.13.0",
+  "score_max_abs_differences": {
+    "relative": 3.552713678800501e-15,
+    "pair_expansion": 3.9968028886505635e-15,
+    "bias_expansion": 2.6645352591003757e-15,
+    "page_frames": 3.552713678800501e-15
+  },
+  "parameter_gradient_max_abs_differences": {
+    "WQ": {
+      "relative": 3.552713678800501e-15,
+      "page_frames": 3.552713678800501e-15,
+      "analytical_bias_cancellation": 7.105427357601002e-15
+    },
+    "WK": {
+      "relative": 2.220446049250313e-15,
+      "page_frames": 1.7763568394002505e-15,
+      "analytical_bias_cancellation": 2.6645352591003757e-15
+    },
+    "WV": {
+      "relative": 8.881784197001252e-16,
+      "page_frames": 1.7763568394002505e-15,
+      "analytical_bias_cancellation": 1.3322676295501878e-15
+    },
+    "bQ": {
+      "relative": 2.6645352591003757e-15,
+      "page_frames": 4.440892098500626e-15,
+      "analytical_bias_cancellation": 4.9404924595819466e-15
+    },
+    "bK": {
+      "relative": 2.4980018054066022e-15,
+      "page_frames": 1.7763568394002505e-15,
+      "analytical_bias_cancellation": 1.021405182655144e-14
+    },
+    "bV": {
+      "relative": 8.881784197001252e-16,
+      "page_frames": 8.881784197001252e-16,
+      "analytical_bias_cancellation": 8.881784197001252e-16
+    },
+    "omega": {
+      "relative": 1.687538997430238e-14,
+      "page_frames": 1.9539925233402755e-14,
+      "analytical_bias_cancellation": 1.7763568394002505e-14
+    }
+  },
+  "analytical_bias_cancellation": {
+    "probability_max_abs_difference": 2.220446049250313e-16,
+    "logit_row_shift_identity_max_abs_difference": 1.7763568394002505e-15,
+    "note": "Linear pre-RoPE key bias only. This changes floating-point execution while preserving real-arithmetic probabilities and parameter gradients. Not a general replacement for GProj."
+  },
+  "manual_backward_max_abs_differences": {
+    "dq": 8.881784197001252e-16,
+    "dk": 1.7763568394002505e-15,
+    "omega": 5.329070518200751e-15
+  },
+  "pairwise_gradient_max_abs_difference": 4.904063266586434e-15,
+  "integer_relative_phase_offsets": [
+    {
+      "offset": 16777216,
+      "max_relative_angle_difference": 0.0,
+      "max_score_difference": 0.0,
+      "max_parameter_gradient_difference": 0.0,
+      "word_difference_identity": true
+    },
+    {
+      "offset": 4294967296,
+      "max_relative_angle_difference": 0.0,
+      "max_score_difference": 0.0,
+      "max_parameter_gradient_difference": 0.0,
+      "word_difference_identity": true
+    },
+    {
+      "offset": 5000000000,
+      "max_relative_angle_difference": 0.0,
+      "max_score_difference": 0.0,
+      "max_parameter_gradient_difference": 0.0,
+      "word_difference_identity": true
+    },
+    {
+      "offset": 1152921504606846976,
+      "max_relative_angle_difference": 0.0,
+      "max_score_difference": 0.0,
+      "max_parameter_gradient_difference": 0.0,
+      "word_difference_identity": true
+    }
+  ],
+  "key_bias_gradient_norm": {
+    "with_rope": 3.15383875264235,
+    "without_rope": 2.5176617391872307e-15,
+    "note": "A pre-RoPE key bias is not a common post-RoPE key translation. Its gradient need not vanish."
+  },
+  "learned_polar_coordinate_adjoint": {
+    "max_abs_difference": 4.440892098500626e-16,
+    "common_content_phase_gradient_sum_max_abs": 4.440892098500626e-16,
+    "note": "Smooth explanatory coordinates with independent log amplitudes and angles; no integer quantization, polar storage, or model training claim."
+  },
+  "bf16_row_mass": -0.0029296875,
+  "common_key_leak": [
+    {
+      "common_key": 0,
+      "exact_first_coordinate": 0.0,
+      "bf16_operand_first_coordinate": 0.0,
+      "projected_first_coordinate": 0.0
+    },
+    {
+      "common_key": 256,
+      "exact_first_coordinate": 0.0,
+      "bf16_operand_first_coordinate": -0.09375,
+      "projected_first_coordinate": 0.0
+    },
+    {
+      "common_key": 65536,
+      "exact_first_coordinate": 0.0,
+      "bf16_operand_first_coordinate": -24.0,
+      "projected_first_coordinate": 0.0
+    },
+    {
+      "common_key": 1048576,
+      "exact_first_coordinate": 0.0,
+      "bf16_operand_first_coordinate": -384.0,
+      "projected_first_coordinate": 0.0
+    }
+  ],
+  "integer_centered_numerator": {
+    "sum": 0,
+    "score_gradient_max_abs_difference": 0.0,
+    "note": "Conservation before conversion is exact. Rounding each reconstructed operand to BF16 breaks it again. This is a quantized surrogate, not the derivative of literal integer rounding."
+  },
+  "frequency_error_angle_bounds": {
+    "32768": 2.3968449810713143e-05,
+    "131072": 9.587379924285257e-05,
+    "16777216": 0.01227184630308513,
+    "5000000000": 3.657295198167899
+  }
+}

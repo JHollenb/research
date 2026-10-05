@@ -1,0 +1,1049 @@
+{
+  "benchmark": {
+    "acquisition": "alternating-independent-compiled",
+    "atol": 0.0002,
+    "branch_pack_fingerprint": "247687801c05bc847be188520c4906f5d42d7a690e14fab389c2487d24712a5e",
+    "compiled_median_seconds": 0.24840647950622952,
+    "compiled_seconds": [
+      0.245460957987234,
+      0.24874204200750683,
+      0.2460311670001829,
+      0.24953958399419207,
+      0.24761312500049826,
+      0.24262687499867752,
+      0.2480709170049522,
+      0.24795420799637213,
+      0.24677770800190046,
+      0.25828058399201836,
+      0.2398133329988923,
+      0.25070616700395476,
+      0.2507539999933215,
+      0.2559207080048509,
+      0.24450508400332183,
+      0.2383732080052141,
+      0.23021929099923,
+      0.24256483299541287,
+      0.24326445799670182,
+      0.2412827080115676,
+      0.2537899169983575,
+      0.24927391699748114,
+      0.25668187500559725,
+      0.24941050000779796,
+      0.2537928340025246,
+      0.2518892919906648,
+      0.2830178750009509,
+      0.2663239999965299,
+      0.23752562499430496,
+      0.2531894169951556
+    ],
+    "exact_winners": true,
+    "fingerprint": "151f2ded7001365d3da21cf8960453073264e88794d2b59a271443b8af57ab4b",
+    "graph_fingerprint": "a527b12e1d47dac2526543a3e5fe3b5cbbfee2a649cddab23a031082451f6d0a",
+    "independent_median_seconds": 3.4101124790031463,
+    "independent_seconds": [
+      3.3382528749934863,
+      3.4087211250007385,
+      3.3819022920069983,
+      3.3159170409926446,
+      3.329995375010185,
+      3.4914690000005066,
+      3.6382563329971163,
+      3.417015665996587,
+      3.370163874991704,
+      3.455675124991103,
+      3.629220000002533,
+      3.3949808749894146,
+      3.45775612500438,
+      3.3907058750046417,
+      3.4117714580061147,
+      3.3949871660006465,
+      3.3842097080050735,
+      3.2640212920086924,
+      3.2055837920052,
+      3.594429000004311,
+      3.342708083000616,
+      3.4582262909971178,
+      3.537718125007814,
+      3.495551208005054,
+      3.4259267500019632,
+      3.365705167001579,
+      3.536390458000824,
+      3.5147494999982882,
+      3.411503833005554,
+      3.2218370420014253
+    ],
+    "logical_branches": 16,
+    "max_abs_score_delta": 1.621246337890625e-05,
+    "min_speedup": 10.0,
+    "paired_interval_method": "normal-approximation-on-log-ratios",
+    "paired_log_ratio_lower_95": 13.514879204379845,
+    "paired_speedup_median": 13.68025932305553,
+    "paired_speedup_min": 12.49529012253711,
+    "paired_speedups": [
+      13.599934190622294,
+      13.703839919822908,
+      13.745828763249675,
+      13.288140454180693,
+      13.448379907177715,
+      14.390281373485676,
+      14.66619455808472,
+      13.780833540226032,
+      13.656678726288153,
+      13.37953891686219,
+      15.13352053707246,
+      13.541672770003542,
+      13.789435562728702,
+      13.24904850974534,
+      13.953785345255898,
+      14.242318565962268,
+      14.699939754468241,
+      13.45628404456477,
+      13.177361865368187,
+      14.89716784773481,
+      13.171161890652455,
+      13.873197535673427,
+      13.782500711944191,
+      14.015252797679983,
+      13.49891049314609,
+      13.36184297634341,
+      12.49529012253711,
+      13.19726911597935,
+      14.362677008374781,
+      12.725006756751883
+    ],
+    "qualified": true,
+    "schema": "mrun-intervention-sciencegraph-benchmark-v2",
+    "speedup": 13.727953013873085
+  },
+  "branch_count": 16,
+  "cut_layer": 12,
+  "environment": {
+    "device": "cpu",
+    "platform": "macOS-15.6-arm64-arm-64bit",
+    "python": "3.11.13",
+    "torch": "2.13.0"
+  },
+  "graph": {
+    "branch_pack": {
+      "candidate_projections": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "candidate_union": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fingerprint": "247687801c05bc847be188520c4906f5d42d7a690e14fab389c2487d24712a5e",
+      "fork": {
+        "branches": [
+          {
+            "branch_id": "clean",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": []
+          },
+          {
+            "branch_id": "zero-00",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-01",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-02",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-03",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-04",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-05",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-06",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-07",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-08",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-09",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-10",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-11",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-12",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-13",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110,
+                  111
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          },
+          {
+            "branch_id": "zero-14",
+            "candidate_token_ids": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "interventions": [
+              {
+                "indices": [
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  117,
+                  118,
+                  119
+                ],
+                "layer": 12,
+                "op": "zero",
+                "payload_id": null,
+                "port": "mlp_down_input",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "cut": {
+          "layer": 12,
+          "prompt_sha256": "7561dde6c413fa2240e5df2958f2e39a512e0023c135b7f3e56ced4a3f8c3f78"
+        }
+      },
+      "model_identity": "qwen2.5-0.5b@651eee7f9ec5a4e30db593e73fac948288c185bb2dcd8e5c9437a6c9b0524ccc#f40708a40006f6af5312d3db21eddf20ffe5526a9cdd4462a10aecc3740c1dc6",
+      "numerical_contract": "paged-qstore-row-int8-float32",
+      "payload_specs": [],
+      "row_head_patch_maps": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "row_patch_maps": [
+        [],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110,
+                  111
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "layer": 12,
+            "ops": [
+              {
+                "indices": [
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  117,
+                  118,
+                  119
+                ],
+                "op": "zero",
+                "value": null
+              }
+            ]
+          }
+        ]
+      ],
+      "row_resid_patch_maps": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "schema": "mrun-intervention-branch-pack-v2"
+    },
+    "fingerprint": "a527b12e1d47dac2526543a3e5fe3b5cbbfee2a649cddab23a031082451f6d0a",
+    "prompt_token_ids": [
+      785,
+      6722,
+      315,
+      9625,
+      374
+    ],
+    "schema": "mrun-intervention-sciencegraph-v2"
+  },
+  "max_branch_batch": null,
+  "model": "qwen2.5-0.5b",
+  "model_identity": "qwen2.5-0.5b@651eee7f9ec5a4e30db593e73fac948288c185bb2dcd8e5c9437a6c9b0524ccc#f40708a40006f6af5312d3db21eddf20ffe5526a9cdd4462a10aecc3740c1dc6",
+  "neurons_per_branch": 8,
+  "num_layers": 24,
+  "numerical_contract": "paged-qstore-row-int8-float32",
+  "prompt": "The capital of France is",
+  "prompt_token_count": 5,
+  "schema": "mrun-intervention-sciencegraph-real-model-gate-v1"
+}

@@ -1,0 +1,56 @@
+........................................................................ [ 15%]
+........FF.............................................................. [ 30%]
+........................................................................ [ 46%]
+........................................................................ [ 61%]
+..........................s............................................. [ 76%]
+........................................................................ [ 92%]
+.....................................                                    [100%]
+=================================== FAILURES ===================================
+_________________ test_recorder_task_holds_all_layer_attention _________________
+
+    def test_recorder_task_holds_all_layer_attention():
+        from mrun.estimate import estimate_activation_mb
+    
+        fwd = estimate_activation_mb("qwen2.5-0.5b", seq_lens=[512], batch=16, task="forward")
+        rec = estimate_activation_mb("qwen2.5-0.5b", seq_lens=[512], batch=16, task="recorder")
+>       assert rec > fwd * 5  # 24 layers of attention maps vs 1
+E       assert 9932.1 > (3758.1 * 5)
+
+tests/test_estimate.py:201: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  mrun.estimate:estimate.py:241 estimate_activation_mb: no cached config for 'qwen2.5-0.5b'; using fallback dims (hidden=2048, layers=24, heads=16, vocab=32000) — cache config.json for accuracy
+WARNING  mrun.estimate:estimate.py:241 estimate_activation_mb: no cached config for 'qwen2.5-0.5b'; using fallback dims (hidden=2048, layers=24, heads=16, vocab=32000) — cache config.json for accuracy
+__________________ test_count_logits_adds_a_vocab_scaled_term __________________
+
+    def test_count_logits_adds_a_vocab_scaled_term():
+        from mrun.estimate import estimate_activation_mb
+    
+        # opt-in logits term: [B,T,vocab] fp32 on a 152k-vocab model is a multi-GB addition, and it is
+        # OFF by default (so the calibrated fleet planner is unchanged).
+        without = estimate_activation_mb("qwen2.5-0.5b", seq_lens=[64], batch=64, task="forward")
+        with_logits = estimate_activation_mb(
+            "qwen2.5-0.5b", seq_lens=[64], batch=64, task="forward", count_logits=True
+        )
+        added = with_logits - without
+        expected = 64 * 64 * 151936 * 4 / 1e6  # B*T*vocab*fp32
+>       assert added == pytest.approx(expected, rel=0.02)
+E       assert 524.3000000000002 == 2489.319424 ± 49.7864
+E         
+E         comparison failed
+E         Obtained: 524.3000000000002
+E         Expected: 2489.319424 ± 49.7864
+
+tests/test_estimate.py:215: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  mrun.estimate:estimate.py:241 estimate_activation_mb: no cached config for 'qwen2.5-0.5b'; using fallback dims (hidden=2048, layers=24, heads=16, vocab=32000) — cache config.json for accuracy
+WARNING  mrun.estimate:estimate.py:241 estimate_activation_mb: no cached config for 'qwen2.5-0.5b'; using fallback dims (hidden=2048, layers=24, heads=16, vocab=32000) — cache config.json for accuracy
+=============================== warnings summary ===============================
+../common/.venv/lib/python3.10/site-packages/fastapi/testclient.py:1
+  /Users/jakeholl/domains/common/.venv/lib/python3.10/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_estimate.py::test_recorder_task_holds_all_layer_attention
+FAILED tests/test_estimate.py::test_count_logits_adds_a_vocab_scaled_term - a...
+2 failed, 466 passed, 1 skipped, 1 warning in 8.99s

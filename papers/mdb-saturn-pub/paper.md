@@ -507,6 +507,11 @@ execution package; github.com/JHollenb/mrun-pub); no private access, workspace o
 are required (`saturn-pub/packages/mdb/docs/INSTALL.md`). Model weights and local result
 archives are not bundled.
 
+## Changelog
+
+- **2026-10-05 (verification pass).** Test count measured on the v0.4.0 checkout (480 passed, 1 skipped) in place of the unmeasured release figure; the causal-mask defect in Section 6 cited to its record (time-circuit-scaffold Limitations; the 2026-10-01 routing re-run) instead of being called unrecorded; every Section 3 and Section 4 headline spot-checked against its source file.
+- **2026-10-05.** First draft.
+
 ## References
 
 - nnsight / NDIF — 2407.14561.

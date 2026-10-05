@@ -354,6 +354,12 @@ two-regime replication table is covered by `pib-instruct15b-raw` (9/12 flips), `
 (0/12), `pib-instruct7b-raw-bf16` (4/12) and `pib-instruct7b-chat-bf16` (0/12), one per cell, and the three chat-template cells with unsaturated reads by `pib-chat-unsat-05b`, `pib-chat-unsat-referential`, `pib-chat-unsat-distractor` and the cross-cell correlation by `pib-chat-unsat-p3-spearman`. Re-check
 offline with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`.
 
+## Changelog
+
+- **2026-10-05 (chat regime, unsaturated reads).** Added the three chat-template cells (0.5B-Instruct scene-pinned reads 0.005 nats; 1.5B-Instruct referential reads 2.23 nats with the install effect mis-sized by 2.72 nats between baselines, 0 of 12 binary flips; distractor read 0.077 nats) and the cross-cell correlation (Spearman 0.91 over 60 cells). Rewrote the Section 6 chat paragraphs and the abstract sentence so the chat-regime claim is a mis-sized effect that tracks read unsaturation. Registry claims `pib-chat-unsat-*` bind these cells.
+- **2026-10-05 (instruct and 7B).** Added the instruct-weight and 7B replication in the plain-text and chat-template regimes (Section 6) and the evidence-registry paragraph in the appendix.
+- **2026-10-02.** First draft: R0 drift, the format-versus-content control, the R2 install-conclusion flips, the recipe.
+
 ## References
 
 [1] F. Zhang, N. Nanda. *Towards Best Practices of Activation Patching in Language Models.*

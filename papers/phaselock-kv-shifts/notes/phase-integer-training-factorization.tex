@@ -1,0 +1,329 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\sm}{\operatorname{softmax}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\sig}{\operatorname{sigmoid}}
+\newcommand{\silu}{\operatorname{SiLU}}
+\newcommand{\sg}{\operatorname{stopgrad}}
+\title{Phase Integers in Training:\\Expand the Model, Then Factor the Invariants}
+\author{Working derivation for the PhaseLock research program}
+\date{30 September 2026}
+
+\begin{document}
+\maketitle
+
+\textbf{Conclusion.} Fixed integer phase can belong in both the forward and backward of ordinary transformer training. It represents the positional rotation group; learned content and its optimizer can remain floating point. The stronger candidate is a combination of exact relative-phase bookkeeping, algebraic removal of row-constant key components before rounding, and a conservation-aware attention adjoint. Current PhaseLock alone does not repair BF16 softmax-gradient mass leakage.
+
+\textbf{Status.} These are real-arithmetic derivations and one small CPU/FP64 mechanics probe. No pretrained model was trained, no production kernel was implemented, and no training-quality or speed advantage is established. Fixed quantized frequencies define a slightly different model from unquantized RoPE. All exact group identities below apply to that selected frequency law; decoded trigonometry and tensor contractions still have finite-precision errors.
+
+\section{Expand one full training step}
+
+Let $h_i^\ell\in\RR^D$ be the residual state at token $i$, layer $\ell$. Suppress the layer index inside one attention block. Use column vectors, one attention head, even head width $d$, scale $\alpha=d^{-1/2}$, causal support $L_i$, and no attention dropout initially. Multiple heads concatenate their outputs; grouped-query attention sums all query-head contributions into their shared key/value head.
+
+For a pre-normalized decoder,
+\begin{align}
+ x_i &= \operatorname{RMSNorm}_{\gamma_A}(h_i),\\
+ q_i &= W_Qx_i+b_Q,& k_j&=W_Kx_j+b_K,&v_j&=W_Vx_j+b_V,\\
+ \bar q_i&=R(p_i)q_i,&\bar k_j&=R(p_j)k_j,\\
+ s_{ij}&=\alpha\bar q_i^\top\bar k_j,&
+ P_{ij}&=\frac{\exp(s_{ij}-m_i)}{\sum_{t\in L_i}\exp(s_{it}-m_i)},\\
+ o_i&=\sum_{j\in L_i}P_{ij}v_j,&
+ t_i&=h_i+W_O\operatorname{concat}_a(o_i^a)+b_O,\\
+ n_i&=\operatorname{RMSNorm}_{\gamma_M}(t_i),&
+ a_i&=W_Gn_i+b_G,&c_i&=W_Un_i+b_U,\\
+ f_i&=W_D[\silu(a_i)\odot c_i]+b_D,&
+ h_i^{\ell+1}&=t_i+f_i.
+\end{align}
+Here $m_i=\max_{j\in L_i}s_{ij}$ is a numerical softmax shift. After the final layer,
+\begin{equation}
+ z_i=W_{\rm vocab}\operatorname{RMSNorm}(h_i^{L})+b_{\rm vocab},\qquad
+ \mathcal L=-\frac1T\sum_{i\in S}\log\sm(z_i)_{y_i},\quad T=|S|.
+\end{equation}
+The derivative at the readout is
+\begin{equation}
+ \frac{\partial\mathcal L}{\partial z_i}=
+ \frac{\sm(z_i)-e_{y_i}}{T}.
+\end{equation}
+Backpropagation composes the adjoints of these blocks. The loss is nonlinear in all layers, but the positional structure remains local to each attention block. If a model has Q/K normalization, compose its adjoint between the affine projection and RoPE; the relative-phase identities still apply to the resulting $q,k$. The affine-bias factorization later in this note then requires separate qualification.
+
+\subsection{Complete the non-attention adjoints}
+
+For $y=Wh+b$ and incoming derivative $\bar y$, the local rules are
+\begin{equation}
+ \bar h=W^\top\bar y,\qquad \bar W=\bar y h^\top,\qquad\bar b=\bar y,
+\end{equation}
+with sums over tokens/batches when parameters are shared. For $r=\sqrt{D^{-1}h^\top h+\epsilon}$ and $x=\gamma\odot h/r$,
+\begin{equation}
+ \bar h=\frac{\gamma\odot\bar x}{r}
+ -\frac{h\,h^\top(\gamma\odot\bar x)}{D r^3},\qquad
+ \bar\gamma=\bar x\odot h/r.
+\end{equation}
+For $w=\silu(a)\odot c$ and incoming $\bar w$,
+\begin{align}
+ \bar a&=(\bar w\odot c)\odot\sig(a)[1+a(1-\sig(a))],\\
+ \bar c&=\bar w\odot\silu(a).
+\end{align}
+Residual additions copy their incoming derivative into each branch and sum the resulting contributions. There is no general reduction of these nonlinear computations to modular phase arithmetic.
+
+With parameter derivative $G_t$ an AdamW step is
+\begin{align}
+ M_t&=\beta_1 M_{t-1}+(1-\beta_1)G_t,\\
+ V_t&=\beta_2 V_{t-1}+(1-\beta_2)G_t\odot G_t,\\
+ W_{t+1}&=(1-\eta\lambda)W_t-
+ \eta\frac{\widehat M_t}{\sqrt{\widehat V_t}+\epsilon_A}.
+\end{align}
+Thus attention-gradient error contaminates both optimizer moments. Finite outputs and a finite loss do not establish accurate updates. Integer positional metadata does not replace floating-point master parameters or optimizer state.
+
+\section{Expand RoPE and all projection-bias terms}
+
+For each channel pair $m$, define
+\begin{equation}
+ R_m(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix},
+ \qquad J=\begin{bmatrix}0&-1\\1&0\end{bmatrix}.
+\end{equation}
+The full $R(p)$ is block diagonal with angles $p\omega_m$. Its real-arithmetic group law gives
+\begin{equation}
+ R(p_i)^\top R(p_j)=R(p_j-p_i),\qquad
+ s_{ij}=\alpha q_i^\top R(p_j-p_i)k_j.
+\end{equation}
+This relative-position identity is the standard RoPE construction, not a new PhaseLock result. See \href{https://arxiv.org/html/2104.09864v5}{RoFormer}.
+
+Write $r_{ij}=p_j-p_i$ and $A_{ij}=R(r_{ij})$. Expanding both projections,
+\begin{align}
+ s_{ij}/\alpha={}&x_i^\top W_Q^\top A_{ij}W_Kx_j
+ +x_i^\top W_Q^\top A_{ij}b_K\\
+ &+b_Q^\top A_{ij}W_Kx_j+b_Q^\top A_{ij}b_K.
+\end{align}
+For $q_{im}=(q_x,q_y)$ and $k_{jm}=(k_x,k_y)$,
+\begin{align}
+ C_{ijm}&=q_xk_x+q_yk_y,&D_{ijm}&=q_yk_x-q_xk_y,\\
+ s_{ij}&=\alpha\sum_m\left[C_{ijm}\cos(r_{ij}\omega_m)
+ +D_{ijm}\sin(r_{ij}\omega_m)\right].
+\end{align}
+Equivalently, if $Q_{im}=q_x+\mathrm i q_y$ and $K_{jm}=k_x+\mathrm i k_y$,
+\begin{equation}
+ s_{ij}=\alpha\operatorname{Re}\sum_m\overline{Q_{im}}K_{jm}
+ \exp(\mathrm i r_{ij}\omega_m).
+\end{equation}
+The factorization is learned content times deterministic phase. It does not remove the softmax or make full attention a linear-time operator.
+
+\section{Differentiate the relative-phase form}
+
+Let $u_i=\partial\mathcal L/\partial o_i$, $a_{ij}=u_i^\top v_j$, and $\mu_{a,i}=\sum_jP_{ij}a_{ij}$. Then
+\begin{align}
+ g_{ij}&=\frac{\partial\mathcal L}{\partial s_{ij}}
+ =P_{ij}(a_{ij}-\mu_{a,i}),&\sum_jg_{ij}&=0,\\
+ \bar q_i^{\rm pre}&=\alpha\sum_jg_{ij}A_{ij}k_j,\\
+ \bar k_j^{\rm pre}&=\alpha\sum_i g_{ij}A_{ij}^\top q_i,\\
+ \bar v_j&=\sum_iP_{ij}u_i.
+\end{align}
+The superscript ``pre'' labels derivatives of unrotated vectors, not derivatives of $\bar q,\bar k$. Consequently,
+\begin{align}
+ \nabla W_Q&=\sum_i\bar q_i^{\rm pre}x_i^\top,&\nabla b_Q&=\sum_i\bar q_i^{\rm pre},\\
+ \nabla W_K&=\sum_j\bar k_j^{\rm pre}x_j^\top,&\nabla b_K&=\sum_j\bar k_j^{\rm pre},\\
+ \nabla W_V&=\sum_j\bar v_jx_j^\top,&\nabla b_V&=\sum_j\bar v_j,\\
+ \bar x_i&=W_Q^\top\bar q_i^{\rm pre}+W_K^\top\bar k_i^{\rm pre}+W_V^\top\bar v_i.
+\end{align}
+These are ordinary parameter gradients. Fixed integer phase simply supplies $A_{ij}$ and its transpose. The integer positions/frequencies need no gradients.
+
+If attention dropout uses multiplier $d_{ij}$, replace $a_{ij}$ by $d_{ij}u_i^\top v_j$ and $\bar v_j$ by $\sum_i d_{ij}P_{ij}u_i$. The zero-sum score-gradient identity survives. Lifting a value bias once per row requires care because $\sum_jd_{ij}P_{ij}$ is not identically one for an individual dropout realization.
+
+\section{Put the rotation group on an integer phase ring}
+
+Let $M=2^B$, with fixed frequency increments
+\begin{equation}
+ F_m=\operatorname{round}\left(\frac{M\omega_m}{2\pi}\right),\qquad
+ \Phi_m(p)=pF_m\pmod M.
+\end{equation}
+Compute relative words before decoding:
+\begin{equation}
+ \Delta\Phi_{ijm}=(\Phi_m(p_j)-\Phi_m(p_i))\pmod M
+ =(p_j-p_i)F_m\pmod M.
+\end{equation}
+A common origin shift cancels exactly as integer arithmetic:
+\begin{equation}
+ \Delta\Phi(p_i+c,p_j+c)=\Delta\Phi(p_i,p_j).
+\end{equation}
+Decode $\theta_{ijm}=2\pi\Delta\Phi_{ijm}/M$ only at the rotation consumer. The backward uses $-\Delta\Phi\pmod M$. In the ideal real-arithmetic model, common shifts preserve every forward result, loss, and content-parameter gradient when mask/support and other positional features are unchanged. In a finite-precision implementation, identical relative words consumed by an identical deterministic execution path give identical results; separate absolute-angle decoding or different contraction orders need not be bit-identical.
+
+The number of tokens seen by an optimizer is not the position range of one attention context. Standard short-sequence pretraining often resets positions per sequence, so repairing enormous absolute indices alone should not be assumed to improve its loss.
+
+\textbf{Use integers before floating-point conversion.} Reducing relative words exactly and then decoding avoids large-angle formation. Decoding two large absolute angles and subtracting them forfeits that advantage.
+
+\subsection{Frequency approximation and aliasing}
+
+With $\widetilde\omega_m=2\pi F_m/M$,
+\begin{equation}
+ |\widetilde\omega_m-\omega_m|\leq\pi/M,\qquad
+ |r(\widetilde\omega_m-\omega_m)|\leq\pi|r|/M.
+\end{equation}
+For $B=32$, the angle bound is $2.40\times10^{-5}$ radians at $r=32768$, $9.59\times10^{-5}$ at $r=131072$, and $3.66$ radians at $r=5\times10^9$. Huge stream age is harmless for a short window; huge attended separation is a different claim. Choose $B$ using $M\geq\pi R_{\max}/\epsilon_\theta$, then also measure the resulting score/gradient error: a small angle alone need not be harmless when vector magnitudes are large.
+
+Every phase coordinate repeats after at most $M$ token steps; individual frequencies can repeat sooner. Keep logical token addresses and causal ordering separately in sufficiently wide integers. Phase words are not unique token identities. Wider phase rings or a split high/low representation need explicit lowering and overflow contracts.
+
+\section{Factor attention into page-relative frames}
+
+Let query page $a$ have origin $o_a$ and key page $b$ origin $o_b$. Define
+\begin{equation}
+ q_i^a=R(p_i-o_a)q_i,\qquad k_j^b=R(p_j-o_b)k_j.
+\end{equation}
+Then
+\begin{equation}
+ s_{ij}=\alpha(q_i^a)^\top R(o_b-o_a)k_j^b.
+\end{equation}
+Indeed $R(p_i-o_a)^\top R(o_b-o_a)R(p_j-o_b)=R(p_j-p_i)$. Its adjoint is
+\begin{align}
+ \nabla q_i^a&=\alpha\sum_j g_{ij}R(o_b-o_a)k_j^b,\\
+ \nabla k_j^b&=\alpha\sum_i g_{ij}R(o_a-o_b)q_i^a.
+\end{align}
+Pulling these derivatives back through the local rotations reproduces the previous unrotated-vector derivatives. Integer words carry both local offsets and page-origin differences.
+
+This can move rotation work to tile boundaries and support consistent rematerialization. It is an optimization hypothesis, not a measured training speedup. All tiles still share the correct softmax denominator and causal support. Moving a page's coordinate origin is not equivalent to changing relative positions or removing tokens.
+
+\section{Factor away the large additive key bias before rounding}
+
+This is a specific training candidate suggested by the expansion. For linear pre-RoPE keys, set $\kappa_j=W_Kx_j$, so $k_j=\kappa_j+b_K$. Write
+\begin{align}
+ s_{ij}/\alpha
+ &=q_i^\top A_{ij}\kappa_j+q_i^\top A_{ij}b_K\\
+ &=q_i^\top A_{ij}\kappa_j+q_i^\top b_K
+   +q_i^\top(A_{ij}-I)b_K.
+\end{align}
+The middle term is constant across the keys for one query. Therefore
+\begin{equation}
+ \sm_j(s_{ij})=\sm_j\left(\alpha q_i^\top
+ [A_{ij}\kappa_j+(A_{ij}-I)b_K]\right).
+\end{equation}
+This preserves the loss and all parameter gradients in real arithmetic, including gradients of the trainable bias. It does \emph{not} delete the position-dependent part of the bias. Numerically it permits separate content storage and avoids adding a huge bias into a small content vector before a low-precision cast.
+
+For one pair,
+\begin{equation}
+ (R(\theta)-I)b=(\cos\theta-1)b+\sin\theta\,Jb.
+\end{equation}
+Evaluate $\cos\theta-1=-2\sin^2(\theta/2)$ and use a signed reduced angle near zero. This avoids subtracting nearly equal floating-point numbers for slow rotary pairs. The bias derivative becomes
+\begin{equation}
+ \nabla b_K=\alpha\sum_{i,j}g_{ij}(A_{ij}^\top-I)q_i,
+\end{equation}
+which equals the ordinary derivative because every row of $g$ sums to zero. The new expression builds the near-invariant part out of the operation rather than asking a later reduction to cancel it.
+
+\textbf{Boundaries.} An additive key bias before RoPE is not a common post-RoPE translation: $R(p_j)b_K$ varies with $j$. Its gradient generally does not vanish. Q/K normalization can make $b_K$ inseparable from content; normalized keys require their own decomposition. Per-page centering also changes each tile's logit offset differently, so tile offsets must be restored when merging globally normalized attention. This candidate removes a known common bias component; other key offsets and sharp-attention errors still require conservation handling.
+
+For values without attention dropout,
+\begin{equation}
+ o_i=W_V\sum_jP_{ij}x_j+b_V.
+\end{equation}
+The value bias can be lifted once because probability mass is one. A cast probability row $r$ instead has mass $m=\sum_jr_j$ and produces $m b_V$ if used naively. Any fused affine-value implementation must declare whether it preserves the intended normalized operation or the old rounded kernel's arithmetic.
+
+\section{Factor the softmax adjoint into differences}
+
+For one query row write $p_j=P_{ij}$, $a_j=a_{ij}$, and use \emph{post-RoPE} keys $\bar k_j$. The Jacobian is
+\begin{equation}
+ J_{\sm}=\diag(p)-pp^\top,\qquad J_{\sm}\mathbf1=0.
+\end{equation}
+Expanding $g_j=p_j(a_j-\sum_t p_ta_t)$ gives
+\begin{equation}
+ g_j=\sum_t p_jp_t(a_j-a_t).
+\end{equation}
+Factor the query derivative into pairwise exchanges:
+\begin{align}
+ \nabla\bar q
+ &=\alpha\sum_jg_j\bar k_j\\
+ &=\alpha\sum_{j<t}p_jp_t(a_j-a_t)(\bar k_j-\bar k_t).
+\end{align}
+Common key and value components cancel before multiplication. For an unrotated query multiply this result by $R(p_i)^\top$. This complete-graph expression is an explanatory factorization: implementing it literally is quadratic \emph{within each attention row} and is generally too expensive.
+
+The numerical issue is that $t_j=\operatorname{BF16}(g_j)$ can have $\rho=\sum_jt_j\ne0$. A common post-RoPE key offset $c$ then changes the query contraction by $\alpha\rho c$. Integer positional phases do not remove $\rho$.
+
+\href{https://arxiv.org/html/2609.34272v1}{Broken Symmetry in BF16 Attention} restores the constraint through GProj. With the actual cast probability row $r$ and $m=\sum_jr_j$,
+\begin{equation}
+ t^\perp=t-(\rho/m)r,\qquad\sum_jt_j^\perp=0
+\end{equation}
+in exact post-cast arithmetic. The contractions can use factorized corrections without recasting $t^\perp$:
+\begin{align}
+ \nabla\bar q_i&=\alpha\left[\sum_jt_{ij}\bar k_j-
+ \lambda_i\sum_jr_{ij}\bar k_j\right],\\
+ \nabla\bar k_j&=\alpha\left[\sum_it_{ij}\bar q_i-
+ \sum_i r_{ij}\lambda_i\bar q_i\right],\quad\lambda_i=\rho_i/m_i.
+\end{align}
+Correction arithmetic still rounds; the cited paper measures its accuracy. Recasting a corrected row to BF16 can break conservation again. The strongest practical starting point is integer relative phase \emph{plus} an established conservation-aware adjoint, not a claim that integer phase alone cures the paper's failure.
+
+\section{A separate integer-conservation construction}
+
+Phase integers live in an additive modular group. Probability mass and signed gradient conservation have a different algebra. For an exploratory rational surrogate, let $n_j\geq0$ be integer probability numerators, $N=\sum_jn_j>0$, $\widehat p_j=n_j/N$, and approximate $a_j$ by $A_j/S$. Define
+\begin{equation}
+ C=\sum_jn_jA_j,\quad H_j=n_j(NA_j-C),\quad
+ \widehat g_j=\frac{H_j}{SN^2}.
+\end{equation}
+Then
+\begin{equation}
+ \sum_jH_j=NC-CN=0
+\end{equation}
+as exact integers with sufficient accumulator width. This demonstrates that conservation can be represented structurally. It does not establish an efficient kernel, the exact derivative of literal rounding, or accuracy relative to the unquantized softmax. It is a declared surrogate derivative for a quantized probability/value row. Converting each operand independently to BF16 breaks the guarantee again. Mass accumulators must avoid overflow rather than intentionally wrap modulo the phase ring.
+
+Do not begin by quantizing every training gradient. First implement the already justified positional representation and conservation correction; explore rational or balanced-flow operands only if the remaining numerical/cost evidence motivates them.
+
+\section{If the model learns phases or frequencies}
+
+There is also a content-phase factorization. For explanatory polar coordinates, write $Q_{im}=e^{u_{im}}e^{\mathrm i\varphi_{im}}$ and $K_{jm}=e^{w_{jm}}e^{\mathrm i\psi_{jm}}$. With $A_{ijm}=e^{u_{im}+w_{jm}}$ and $\delta_{ijm}=\psi_{jm}-\varphi_{im}+r_{ij}\omega_m$,
+\begin{equation}
+ s_{ij}=\alpha\sum_m A_{ijm}\cos\delta_{ijm}.
+\end{equation}
+Its coordinate derivatives are
+\begin{align}
+ \nabla u_{im}&=\alpha\sum_jg_{ij}A_{ijm}\cos\delta_{ijm},&
+ \nabla w_{jm}&=\alpha\sum_ig_{ij}A_{ijm}\cos\delta_{ijm},\\
+ \nabla\varphi_{im}&=\alpha\sum_jg_{ij}A_{ijm}\sin\delta_{ijm},&
+ \nabla\psi_{jm}&=-\alpha\sum_ig_{ij}A_{ijm}\sin\delta_{ijm}.
+\end{align}
+Thus magnitude learning and orientation learning use different tangent components, and a common content-phase shift obeys $\sum_i\nabla\varphi_{im}+\sum_j\nabla\psi_{jm}=0$. Integer words could carry the orientation additions while floating-point magnitudes and optimizer moments carry the learned signal. These explanatory coordinates do not justify converting an existing affine network into low-bit polar storage; zero magnitude is a singular polar coordinate, and the ordinary parameter gradients must still be obtained by the chain rule.
+
+For a real trainable frequency $\omega_m$,
+\begin{equation}
+ \frac{\partial\mathcal L}{\partial\omega_m}=
+ \alpha\sum_{i,j}g_{ij}r_{ij}\,
+ q_{im}^\top J R_m(r_{ij}\omega_m)k_{jm}.
+\end{equation}
+The factor $r_{ij}$ makes long-distance frequency learning sensitive even when forward phase errors are small. If the forward uses $F_m=\operatorname{round}(M\omega_m/2\pi)$, its literal derivative is zero almost everywhere and discontinuous at thresholds. A continuous master frequency with quantized forward and a straight-through/custom derivative is an explicit surrogate choice, not the exact derivative of the integer model. Changing $F_m$ also invalidates cached rotated tensors and phase tables.
+
+For a trainable angle $\varphi$, $y=R(\varphi)x$ has
+\begin{equation}
+ \nabla x=R(-\varphi)\nabla y,\qquad
+ \frac{\partial\mathcal L}{\partial\varphi}=(\nabla y)^\top Jy.
+\end{equation}
+A modular phase word can carry the forward rotation, while a continuous master or fractional remainder retains sub-word optimizer updates. This may be useful for genuinely rotational modules. Reparameterizing arbitrary weights into magnitude and phase changes the optimizer geometry, and low-bit polar storage has not been a quality win in our current PhaseLock specimens. Keep ordinary content weights and optimizer state unchanged in the first experiment.
+
+\section{Mechanics evidence and the next Saturn branch panel}
+
+The accompanying \texttt{experiments/training\_factorization/probe.py} used six tokens, three channel pairs, affine Q/K/V projections, a causal mask, and one upstream derivative in CPU FP64. Its \texttt{mechanics.json} records:
+\begin{itemize}
+ \item Expanded bias/pair scores, relative-phase scores, and page-frame scores agree with ordinary RoPE within $4\times10^{-15}$.
+ \item Their Q/K/V weight and bias gradients, and a continuous-frequency gradient, agree within $2\times10^{-14}$.
+ \item Analytic key-bias cancellation preserves probabilities within $2.3\times10^{-16}$ and all inspected gradients within $1.8\times10^{-14}$.
+ \item Relative integer-phase scores and content-parameter gradients are unchanged exactly at common offsets $2^{24}$, $2^{32}$, $5\times10^9$, and $2^{60}$ in this reference execution.
+ \item The paper's four-key cast witness is reproduced: common key $65536$ turns an exact zero gradient coordinate into $-24$; factorized projection restores zero in the probe. This is a reproduction of the paper's witness, not an independent discovery.
+\end{itemize}
+These checks establish algebraic mechanics on one toy specimen, not a model-quality trend.
+
+For real-model work, use one resident mrun lease and Saturn's existing training boundary/controller. Capture one parent including weights, buffers, gradients, optimizer moments/topology, RNG, data cursor, numerical contract, and any rematerialization/cache state. Keep phase width, frequency words, trig lowering, mask/support, and conservation arithmetic bound to the execution identity.
+
+First fork a crossed panel: native versus integer-phase forward, each with native versus conservation-corrected backward. Inspect Q/K/V, logits, probability mass, score-gradient mass, Q/K gradients, optimizer updates, and a shared downstream future. Then add analytic key-bias cancellation as a separate arm for an applicable model. Start with frozen captured tensors and one optimizer step before short reversible update intervals. Retain rejected futures as evidence and rewind exact parents. Monitor mean-key amplification, near-one-hot attention, slow-pair bias, per-row gradient error, future loss, and measured cost as observations; use hard stops only for broken mechanics or unsafe continuation.
+
+The practical candidate is therefore
+\begin{equation}
+ \boxed{\text{integer relative phase}+
+ \text{analytic common-component removal}+
+ \text{conservation-aware adjoint}.}
+\end{equation}
+Each term has a distinct job and must be tested separately before attributing a training improvement to PhaseLock.
+
+\end{document}

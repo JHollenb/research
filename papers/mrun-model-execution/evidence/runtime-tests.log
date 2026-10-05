@@ -1,0 +1,45 @@
+...................ss.............................sss................... [ 27%]
+...............s........................................................ [ 55%]
+.............................................................ssss....... [ 83%]
+..F.......................................                               [100%]
+=================================== FAILURES ===================================
+_________________ test_small_jobs_coadmit_past_legacy_slot_cap _________________
+
+fleet = <mrun.client.api.Api object at 0x15c3ea8f0>
+
+    def test_small_jobs_coadmit_past_legacy_slot_cap(fleet):
+        api = fleet
+        code = "import time; print('coadmit-start', flush=True); time.sleep(12); print('coadmit-done')"
+        ids = [
+            _submit(api, "coadmit", code, ram_mb=200, config={"code": code, "idx": i})
+            for i in range(3)
+        ]
+        deadline = time.time() + 45
+        last: dict[str, str] = {}
+        while time.time() < deadline:
+            jobs = {jid: api.json("GET", f"/api/jobs/{jid}") for jid in ids}
+            last = {jid: job["state"] for jid, job in jobs.items()}
+            if sum(job["state"] == "running" for job in jobs.values()) == 3:
+                break
+            time.sleep(0.25)
+        else:
+>           raise AssertionError(f"three fitting jobs never co-admitted; last states={last}")
+E           AssertionError: three fitting jobs never co-admitted; last states={'job-186f5f219aa1': 'succeeded', 'job-b507d96f0236': 'succeeded', 'job-b204aa91d048': 'succeeded'}
+
+tests/test_fleet_integration.py:880: AssertionError
+----------------------------- Captured stdout call -----------------------------
+mrun-agent: leased job-186f5f219aa1 (coadmit) reservation={'ram_mb': 200.0, 'vram_mb': 0.0, 'cpu_threads': 1, 'disk_gb': 1.0, 'est_wall_s': None, 'source': 'declared'}
+mrun-agent: leased job-b507d96f0236 (coadmit) reservation={'ram_mb': 200.0, 'vram_mb': 0.0, 'cpu_threads': 1, 'disk_gb': 1.0, 'est_wall_s': None, 'source': 'declared'}
+mrun-agent: leased job-b204aa91d048 (coadmit) reservation={'ram_mb': 200.0, 'vram_mb': 0.0, 'cpu_threads': 1, 'disk_gb': 1.0, 'est_wall_s': None, 'source': 'declared'}
+mrun-agent: inventory pushed (35 entries)
+mrun-agent: inventory pushed (35 entries)
+----------------------------- Captured stderr call -----------------------------
+mrun: submitted job-186f5f219aa1 (coadmit) reservation={'ram_mb': 200.0, 'vram_mb': 0.0, 'cpu_threads': 1, 'disk_gb': 1.0, 'est_wall_s': None, 'source': 'declared'}
+mrun: WARNING queued but waiting: testhost: ram: need 712MB (ceiling) > avail 703MB (total 19327 - baseline 11629 - committed 4096 - margin 2899); guarded-auth-host: telemetry stale (host asleep/offline); ordinary-legacy-host: telemetry stale (host asleep/offline)
+mrun: submitted job-b507d96f0236 (coadmit) reservation={'ram_mb': 200.0, 'vram_mb': 0.0, 'cpu_threads': 1, 'disk_gb': 1.0, 'est_wall_s': None, 'source': 'declared'}
+mrun: WARNING queued but waiting: testhost: ram: need 712MB (ceiling) > avail 703MB (total 19327 - baseline 11629 - committed 4096 - margin 2899); guarded-auth-host: telemetry stale (host asleep/offline); ordinary-legacy-host: telemetry stale (host asleep/offline)
+mrun: submitted job-b204aa91d048 (coadmit) reservation={'ram_mb': 200.0, 'vram_mb': 0.0, 'cpu_threads': 1, 'disk_gb': 1.0, 'est_wall_s': None, 'source': 'declared'}
+mrun: WARNING queued but waiting: testhost: ram: need 712MB (ceiling) > avail 703MB (total 19327 - baseline 11629 - committed 4096 - margin 2899); guarded-auth-host: telemetry stale (host asleep/offline); ordinary-legacy-host: telemetry stale (host asleep/offline)
+=========================== short test summary info ============================
+FAILED tests/test_fleet_integration.py::test_small_jobs_coadmit_past_legacy_slot_cap
+1 failed, 247 passed, 10 skipped in 176.75s (0:02:56)

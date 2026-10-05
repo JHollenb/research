@@ -1,0 +1,290 @@
+{
+  "schema": "mrun-review-test-source-v1",
+  "files": [
+    {
+      "path": "mrun/tests/test_agent_payload_pythonpath.py",
+      "bytes": 5822,
+      "sha256": "fd7259f3f554ed16098373a343548e0b38f839e1502261667bbeedab6a5a9aed"
+    },
+    {
+      "path": "mrun/tests/test_automatic_campaign.py",
+      "bytes": 2091,
+      "sha256": "4b972ba11a8f762836b0dd1d6dc8924101b673afa3a149249f2c8c8d0a1130d6"
+    },
+    {
+      "path": "mrun/tests/test_batch_invariant.py",
+      "bytes": 7650,
+      "sha256": "87875561cf2fe2ca91d981574e309519ef7ec4739dccf5a7817f4071a8b95553"
+    },
+    {
+      "path": "mrun/tests/test_campaign_benchmark.py",
+      "bytes": 18594,
+      "sha256": "5dc9cac61bd10c53d072ad52cd7fc012175e5a9697947c1f3a566d67fe04bbc5"
+    },
+    {
+      "path": "mrun/tests/test_candidate_campaign.py",
+      "bytes": 29430,
+      "sha256": "1a948055d699456db23e2a323e80bf9a6a477eec095a66b809cc0ca2658adb48"
+    },
+    {
+      "path": "mrun/tests/test_capture_benchmark.py",
+      "bytes": 17094,
+      "sha256": "57ca46b48bcfe025525387a11dbdc8cec2574de7d3e96bf73bd1e4cc047331e8"
+    },
+    {
+      "path": "mrun/tests/test_client_preflight.py",
+      "bytes": 11831,
+      "sha256": "7ce4bf2aa55150cff5870e24e1e12f9b3d70f8fbc23e4d7fd4dd3445f434d138"
+    },
+    {
+      "path": "mrun/tests/test_client_submit.py",
+      "bytes": 26091,
+      "sha256": "5fea83fc1a085f3558cc7360d255c62a028b4b454edb69030b47f1bb55b5d3c7"
+    },
+    {
+      "path": "mrun/tests/test_cuda_graph_promotions.py",
+      "bytes": 8718,
+      "sha256": "25f69c927f960f55bb50613bc752e0dfeb13f262ec35be2714c27151903beea9"
+    },
+    {
+      "path": "mrun/tests/test_decompiler_core.py",
+      "bytes": 28312,
+      "sha256": "4c936bd40582ac846d6b7ffdd18b606f88f47304d158929eefe213dafb8af134"
+    },
+    {
+      "path": "mrun/tests/test_decompiler_mamba_reference.py",
+      "bytes": 9114,
+      "sha256": "eaa3b3b789fdf12f4f4028abc4f858eaa2fb726e7332d85688fc12eb82bb73e8"
+    },
+    {
+      "path": "mrun/tests/test_decompiler_reference.py",
+      "bytes": 10435,
+      "sha256": "c6bb1df81ba2a9d221f35f9eb98121e58842f7d97997d1c65ae2d05b30a932a2"
+    },
+    {
+      "path": "mrun/tests/test_engine_gapfill.py",
+      "bytes": 17128,
+      "sha256": "1226947832c3f5d6ac6331293ea15e98639afe42b5b127bd9bdcbb14d2751349"
+    },
+    {
+      "path": "mrun/tests/test_engine_profiles.py",
+      "bytes": 1824,
+      "sha256": "60e9e6ecebbfd1c21bb5496acf41d13c08f6921b657f97cde8c606cfed41ba02"
+    },
+    {
+      "path": "mrun/tests/test_engine_runtime_reporting.py",
+      "bytes": 6959,
+      "sha256": "4abb45a39e270ea1d28f69e8808f0da2becf79624ce13d7616d290b613d7c0b2"
+    },
+    {
+      "path": "mrun/tests/test_estimate.py",
+      "bytes": 8974,
+      "sha256": "72f3f15212c1a1be44f004cf6e3d9ad3c76ba9669548ba26ca09d4c35c5fceb4"
+    },
+    {
+      "path": "mrun/tests/test_fleet_integration.py",
+      "bytes": 58588,
+      "sha256": "209c43a48806ea1055b71b765e00f15075515bdbd503c2f697e5b0c0af8f3800"
+    },
+    {
+      "path": "mrun/tests/test_graph_compiler.py",
+      "bytes": 22234,
+      "sha256": "f40ab0b14424dbe4601a6cc2feecc2fa6f82655e6f56453a5303f70d366fb84d"
+    },
+    {
+      "path": "mrun/tests/test_graph_pool.py",
+      "bytes": 5862,
+      "sha256": "82dd3b4e3e150b79a12cc3a3d0a2c42b27457610f032fe892d6ad6f93b6a6d06"
+    },
+    {
+      "path": "mrun/tests/test_guard.py",
+      "bytes": 3630,
+      "sha256": "e9ea03cc4175fee072ba60404df5103cef0b3f2f71e38b0bd1202d4a47735595"
+    },
+    {
+      "path": "mrun/tests/test_guarded_admission.py",
+      "bytes": 20495,
+      "sha256": "2071be3d44e567cc4d52683fbf331959a2c8eff1f935c6c6acf5262ace9ba6d5"
+    },
+    {
+      "path": "mrun/tests/test_inference_app.py",
+      "bytes": 14397,
+      "sha256": "8598df4eae1ca184295bebede051c9e4cec072d2162eef2a9c19c52b6d3a9edf"
+    },
+    {
+      "path": "mrun/tests/test_kv_statecut.py",
+      "bytes": 19501,
+      "sha256": "5444d9fbb48fb4e48358141d76ecd4ebcef29aed3950f1be5db5cff83f46cd21"
+    },
+    {
+      "path": "mrun/tests/test_light_client_planning.py",
+      "bytes": 1422,
+      "sha256": "b29cf1368fa135c424e66f657ef43faafccbacec0421b7a3012ce30bf7ac9eb7"
+    },
+    {
+      "path": "mrun/tests/test_models_local_discovery.py",
+      "bytes": 3545,
+      "sha256": "b0b4239de8e39cb37885b088edba490e3101a8a0670db4429c28b2af5f71ace6"
+    },
+    {
+      "path": "mrun/tests/test_moe_stream.py",
+      "bytes": 39262,
+      "sha256": "e199b9245b2e12aa85b5e79024d2359bc25ab8e51f1e607141c4b9fb4bae9048"
+    },
+    {
+      "path": "mrun/tests/test_native_benchmark.py",
+      "bytes": 6256,
+      "sha256": "43e4dbae6952bd0784ff0df93fdd3809b16581edfacffab3a036c42c5a8b343d"
+    },
+    {
+      "path": "mrun/tests/test_native_generation_service.py",
+      "bytes": 48638,
+      "sha256": "f74b638a14b1b82807a9546e028777154b8972deccc193534f0bcd287481cbe5"
+    },
+    {
+      "path": "mrun/tests/test_native_runtime_contracts.py",
+      "bytes": 17317,
+      "sha256": "128a997512d6235531c6df583712995a0d3c371f2956c1ac0f8d76121f43af5d"
+    },
+    {
+      "path": "mrun/tests/test_native_sampling.py",
+      "bytes": 5354,
+      "sha256": "49fa4d246dd40e89e225e18f7a5bc4eb9e0d0a7a29a08b32d1c518c2f1f833ff"
+    },
+    {
+      "path": "mrun/tests/test_native_speculative_runtime.py",
+      "bytes": 30749,
+      "sha256": "1ae6c097dddb5ef97f8e41709f0e833d73afe0ad76de0033282ea97c74d3cd77"
+    },
+    {
+      "path": "mrun/tests/test_openai_protocol.py",
+      "bytes": 4146,
+      "sha256": "78ca2fcc0e49b40ac6210e11d3061e668f3e6f77bfae1eeebcd56d019f5c8515"
+    },
+    {
+      "path": "mrun/tests/test_os_limit.py",
+      "bytes": 5400,
+      "sha256": "0a11b1b633d9829f66ea4c5fb767357620d53ebdc93704d8e71f0f813e5f7fe3"
+    },
+    {
+      "path": "mrun/tests/test_paged_lora.py",
+      "bytes": 3862,
+      "sha256": "647efa33744e6280848218e72df64b992b12ca6ad48298b3e1570bc210194f88"
+    },
+    {
+      "path": "mrun/tests/test_paged_output_contract_kv.py",
+      "bytes": 16729,
+      "sha256": "455e533a60abaebafc1347c1152d68a79a64d7ea326c6da4f13731aac0723bcd"
+    },
+    {
+      "path": "mrun/tests/test_payload_sandbox.py",
+      "bytes": 3446,
+      "sha256": "79a57ea72bd9483e8d50910032a028bbb73df53de0faea6525c83225a446a85b"
+    },
+    {
+      "path": "mrun/tests/test_policy.py",
+      "bytes": 18237,
+      "sha256": "7e8180451fb50cdbec083f4940780d5886a4d8bcfa7baf76033a3022acee9396"
+    },
+    {
+      "path": "mrun/tests/test_prefix_kv.py",
+      "bytes": 3822,
+      "sha256": "368d3fd8e4f4143449cdf5103bc4199422801a5ce9dd2bb172e9942e7a1a6815"
+    },
+    {
+      "path": "mrun/tests/test_qstore_fp32.py",
+      "bytes": 17104,
+      "sha256": "ea04eab3e0be3fde0705996ffcb7358e874b8ee4e80efeda08420043c00f39d4"
+    },
+    {
+      "path": "mrun/tests/test_qstore_lifecycle.py",
+      "bytes": 6639,
+      "sha256": "97c0ec655d46d6fc29c550c0bb56a474ad49bf5f1f75ea81971ea5d60607c16f"
+    },
+    {
+      "path": "mrun/tests/test_qwen35_statecut.py",
+      "bytes": 2158,
+      "sha256": "5bf2e060536647eb15416af5480f667c254796351ef1432fdf977d69f562d310"
+    },
+    {
+      "path": "mrun/tests/test_qwen3_moe_ragged_decode.py",
+      "bytes": 16938,
+      "sha256": "40000268bd4575dd31fd991e2d477b3edf8706c522d780ee3c14fd931cb22250"
+    },
+    {
+      "path": "mrun/tests/test_qwen3_moe_statecut.py",
+      "bytes": 7395,
+      "sha256": "e0a6699e381ecd8ab5bddb54ce9e6bba53cb4db1697ebb9f551f59a7047fedf5"
+    },
+    {
+      "path": "mrun/tests/test_reservation.py",
+      "bytes": 17087,
+      "sha256": "0d43a05fdfafede0ce2e91238ef9f2cbaa0056fc6def2160d5f12fccbee8bfa8"
+    },
+    {
+      "path": "mrun/tests/test_resident_advanced.py",
+      "bytes": 7641,
+      "sha256": "d8e2223044e56801b093b4eed8d43050d484504c26d462402d8fb904c134a6cb"
+    },
+    {
+      "path": "mrun/tests/test_resident_worker.py",
+      "bytes": 5011,
+      "sha256": "134f9013ad95353c5e9edcb36bc757f4c7fba38421621727b1afd2a219097eed"
+    },
+    {
+      "path": "mrun/tests/test_scheduler.py",
+      "bytes": 31069,
+      "sha256": "d3639813f57fab6b24c4ef52a89b0bd59f45f517486399b1c8fc6f89bcd0dc4d"
+    },
+    {
+      "path": "mrun/tests/test_science_config.py",
+      "bytes": 5213,
+      "sha256": "e0549aa434d35f0ac963aafe8084f123f10b634f0410f0d5097a330b3cfb75ff"
+    },
+    {
+      "path": "mrun/tests/test_science_runtime.py",
+      "bytes": 6481,
+      "sha256": "e610ca276b01f0021e6dadcdbd076f6888f87ad9ab4c5fa862c83b11a6794145"
+    },
+    {
+      "path": "mrun/tests/test_sciencegraph.py",
+      "bytes": 27872,
+      "sha256": "da9386b6094e28c07fa23c12a61f48bcedde0cb1b70b967ada5ea9abacb5416d"
+    },
+    {
+      "path": "mrun/tests/test_selector.py",
+      "bytes": 10796,
+      "sha256": "1f675b791d379114f3b1c347e20f532b84d81d9a297e89bd1600058a0b28d1b3"
+    },
+    {
+      "path": "mrun/tests/test_store_provenance.py",
+      "bytes": 19991,
+      "sha256": "b0e53289a73c31fc52f049ffc224b47cbaeb3c78089a5d3f5530a9ef99f6b5ec"
+    },
+    {
+      "path": "mrun/tests/test_submit_preflight.py",
+      "bytes": 3489,
+      "sha256": "ffa31b1b7dc9cf36b8be956458eac1a49d2376e410ff8bafbb44a481c4304a63"
+    },
+    {
+      "path": "mrun/tests/test_typed_capture_workplan.py",
+      "bytes": 6810,
+      "sha256": "b4fd7bc272d41ec23de3e961104eea98174f53a81ac1bf63a4a1af9a523f03a0"
+    },
+    {
+      "path": "mrun/tests/test_work_template_binding.py",
+      "bytes": 23651,
+      "sha256": "1b1963857168c2cf1c66d6a03ad3ab62bf8cfcbf02ae150dbe774e165a545d6d"
+    },
+    {
+      "path": "mrun/tests/test_workplan.py",
+      "bytes": 21153,
+      "sha256": "8a45e2428634de119d3211a301f66abebe9dbdf6cc718260c7406e2da8aae70a"
+    },
+    {
+      "path": "mrun/tests/test_workplan_compiler.py",
+      "bytes": 16966,
+      "sha256": "2643ad61dcf0cd9c9cdc1a72a1d6d735fdcc4ef85dfcc050b8654b37931015ed"
+    }
+  ]
+}
