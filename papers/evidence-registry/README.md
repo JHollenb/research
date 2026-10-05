@@ -84,3 +84,8 @@ then `/Users/jakeholl/domains/saturn-pub/.venv/bin/python build_registry.py`.
   three papers. `pim-prereg-panel-sae-v2` points at `combined_summary_v2.json` so the
   pointwise table is covered by a claim id; this is the one receipt here outside the
   handoff list.
+
+
+## Appended 2026-10-05 (late)
+
+`append_2026-10-05_late.py` adds five claims (registry now 18, verify 18/18): `tfc-e20-causal-band-table2` (time-formed-circuits causal-band rows / Fig 7), and `pib-chat-unsat-referential`, `pib-chat-unsat-05b`, `pib-chat-unsat-distractor`, `pib-chat-unsat-p3-spearman` (pass-indexed-baseline §6 chat cells).
