@@ -9,39 +9,49 @@ Companion: Paper 1, [Time-Formed Circuits in Transformers](../time-formed-circui
 
 ## Status
 
-Submission manuscript, 2026-10-02 (rebuild). The spine is the seven properties of the
-time-scaffold architecture, each with within-family
-evidence in at least two of the three families (diffusion, transformer, state-space; coverage
-stated per property in the paper), built from the original passing experiments and the
-model virtual machine. Formal backbone: `reviews/architecture-math-2026-10-02.md`
-([Thm]/[Id]/[Meas]/[Pred]); architecture brief: `reviews/architecture-brief-2026-10-02.md`;
-rebuild log: `reviews/rebuild-notes.md`.
+Submission manuscript, 2026-10-05 (findings-first rebuild). The manuscript now leads with the
+measured findings (§1), states the hypothesis and a C1–C8 falsifier scoreboard (§2), adds related
+measured results from the same runtime framed as static-infrastructure-versus-dynamic-routing (§3),
+states the prior-art delta (§4), and gives an outside-replication list (§5). The full within-family
+evidence for the seven architecture properties, the diffusion scene-generator controls, and the
+disclosed retractions are carried by the companion paper and the superseded
+`../scaffolds-and-dynamic-circuits/` drafts. Formal backbone:
+`reviews/architecture-math-2026-10-02.md`; architecture brief:
+`reviews/architecture-brief-2026-10-02.md`; rebuild log: `reviews/rebuild-notes.md`.
 
-Thesis: **dynamic circuits loop through a stable time scaffold.** The scaffold is a reusable
-organization of causal roles (source, reader/transition, writer, carried state, consumer),
-identified by intervening on recurring roles and finding they stay causally useful as prompts,
-payloads, and operations change — not a commit-layer index. "Static" means a fixed lowering
-and alignment with high interchange-intervention accuracy; location-fixedness is a weak symptom.
+Thesis (the named hypothesis): **dynamic circuits loop through a stable time scaffold.** The
+scaffold is a reusable organization of causal roles (source, reader/transition, writer, carried
+state, consumer), identified by intervening on recurring roles rather than by a layer index. The
+headline sentence is a framing no deterministic stateful network can violate; the falsifiable core
+is a **store/router factorization**, scored in the paper. The surviving statement is: a late commit
+band exists per model for this task family, its location is architecture-dependent, and it must be
+found causally rather than by attention salience.
 
 All numbers measured through the unchanged native consumer on stock Hugging Face eager
 execution (float32 for language/SSM; native pipeline precision for diffusion, RGB equality by
 decoded-array and hash). Effective n stated per claim; most LM/SSM results single-seed,
-diffusion panels 2–5 seeds. Lab identifiers and job IDs are confined to Appendix A.
+diffusion panels 2–5 seeds. Experiment identifiers and job IDs are confined to Appendix C.
 
 ## Abstract
 
-A circuit in a neural network is usually drawn as a wiring diagram, but the computation that
-controls a model's output is better described as a dynamic circuit looping through a stable time
-scaffold. The scaffold is a reusable organization of causal roles — a contextual source, a live
-reader, a writer, carried state, and a native consumer — laid out along ordered execution
-(denoising steps, depth-plus-position, or recurrent transitions). On each step an operation reads
-the carried state, acts through recurring writer and consumer roles, changes that state, and
-influences the next operation; the machinery recurs while the sources, addresses, payloads, doses,
-and timings vary per input. We report seven properties with family coverage stated per property, not uniform replication,
-and keep the honest limits explicit: the cross-family common graph is a null, the diffusion
-source-sufficiency result is architectural custody rather than discovery, and several location-index
-and variance-ratio checks test a proxy and are reported with their limits in an appendix. (Full
-abstract in paper.md.)
+A trained language model, read for factual recall, factors into a small store that later computation
+reads by address and an input-dependent routing program computed from carried state. We report that
+factorization findings-first. (1) A byte-identical stored key/value state takes different causal
+authority when only the question changes: patching the queried fact adds a median 3.130 nats of harm
+for color (16 of 16) and 0.583 nats for position (16 of 16). (2) A 24-coordinate reader profile
+frozen before evaluation predicts held relation effects in all eight contexts, beating three sealed
+competitors (cosine 0.954 vs 0.566), and permuting the two trained value projections collapses it
+(relation 0.955 to 0.049). (3) Fine-tuning conserves where the store is read while rewriting how it
+is routed, and the band code transfers base-to-derivative (0.92) but not derivative-to-base (coder
+0.34, math 0.05). (4) A fit-free locator predicts the commit band blind in two new families (Phi-2 6
+of 6, OLMo-2 5 of 6) but reads salience, not causality: on deeper models the necessary band must be
+found by causal search (GPT-2 XL block 0.888 at the causal band vs 0.160 at the blind band). (5) One
+band frozen before data ties a strong per-input rival across three operation classes (0.85 to 1.00).
+(6) The cross-family common role graph is a null, and a function-vector account of the reader fails.
+Of eight commitments, six hold for this task family, one fired this week (blind findability in deep
+nets), and two more are narrowed by firings this week (band-only key/value retrieves at 0.000;
+borrowed routing smuggles a donor's answer through MLP gates). Evidence is one laboratory, one
+harness, mostly single seed, at and below 7B. (Full abstract in paper.md.)
 
 ## Evidence map (property → claim → source)
 

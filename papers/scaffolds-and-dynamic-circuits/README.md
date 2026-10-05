@@ -7,6 +7,8 @@ updated: 2026-10-01
 
 # Scaffolds and Dynamic Circuits
 
+> **Superseded by [`../time-circuit-scaffold/`](../time-circuit-scaffold/paper.md).** These are earlier drafts of the same thesis, retained for their method and figures; the publishable manuscript is the findings-first `time-circuit-scaffold/paper.md`.
+
 The current [architectural draft](architectural-paper.md) is the main synthesis. It follows the updated [outline](outline.md) and incorporates Qwen's fixed interface, same-patch/different-query contrasts, 42-row formed-store mediation, microscopic readers, coding/copy/alias successors, diffusion and Mamba comparisons, prospective source and payload compilers, native feedback, executable memory, and the completed confirmation campaign. The [plain-language summary](summary.md) explains the bounded architecture result for a broader audience. The [focused bridge draft](bridge-paper.md) develops the formation-to-consumption argument. The revised [empirical campaign manuscript](paper.md) integrates the historical thirteen-package campaign with the later predictive, feedback, weight-correspondence, and cross-family confirmation results. The [evidence-status audit](evidence-status-audit-2026-10-01.md) is the receipt map and records both what was known at its original inspection and the current filesystem state.
 
 The [precise route/write/future packet](../../../saturn/experiments/2026-10-01-qwen-route-write-future-attribution/FINDINGS.md) now tests the formerly open L22-route-produced L23 row against a later native reader. Its exact key/access effect, counteracting L23 score contribution, and distributed L23–27 closure have been incorporated without changing its fixed-bridge/unchanged-greedy scope.
