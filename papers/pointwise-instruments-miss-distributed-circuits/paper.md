@@ -205,7 +205,7 @@ Every result file from the preregistered panel, first run and rerun, is in [`exp
 [16] J. Hollenbeck. Integral Residual Dynamics: Models Consume Trajectory Functionals, Not Sites. [../integral-residual-dynamics/paper.md](../integral-residual-dynamics/paper.md), 2026.
 [17] D. Agarwal. Relation Before Entity: Deferred Commitment in Language Model Factual Recall. ICML 2026 Mechanistic Interpretability Workshop. arXiv:2609.17537.
 [18] B. Cheng, J. Zhang. Single-Position Intervention Fails: Distributed Output Templates Drive In-Context Learning. arXiv:2605.04061, 2026.
-[19] Factual retrieval in language models is redundant, distributed, and non-contiguous across components. arXiv:2606.21345, 2026. (Descriptive title; verify exact title and authors before submission.)
+[19] Hochman, H., Shapira, N., Goldberg, Y. Factual Retrieval in LLMs Is a Redundant, Distributed and Non-Contiguous Process. arXiv:2606.21345, 2026.
 [20] R. Hendel, M. Geva, A. Globerson. In-Context Learning Creates Task Vectors. Findings of EMNLP 2023. arXiv:2310.15916.
 [21] E. Todd, M. L. Li, A. S. Sharma, A. Mueller, B. C. Wallace, D. Bau. Function Vectors in Large Language Models. ICLR 2024. arXiv:2310.15213.
 [22] A. Mazur, N. Konovalova, A. Alanov. DifFRACT: Diffusion Feature Reconstruction and Attribution for Circuit Tracing. arXiv:2606.15796, 2026.

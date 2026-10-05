@@ -381,7 +381,7 @@ Every result traces to a preregistration and a findings record under `saturn/exp
 
 - **[Agarwal 2026]** D. Agarwal. Relation Before Entity: Deferred Commitment in Language Model Factual Recall. ICML 2026 Mechanistic Interpretability Workshop. arXiv:2609.17537.
 - **[Ameisen 2025]** E. Ameisen, J. Lindsey, et al. Circuit Tracing: Revealing Computational Graphs in Language Models. Transformer Circuits Thread, 2025.
-- **[arXiv 2606.21345]** Factual retrieval in language models is redundant, distributed, and non-contiguous across components. arXiv:2606.21345, 2026. (Descriptive title; verify exact title and authors before submission.)
+- **[arXiv 2606.21345]** Hochman, H., Shapira, N., Goldberg, Y. Factual Retrieval in LLMs Is a Redundant, Distributed and Non-Contiguous Process. arXiv:2606.21345, 2026.
 - **[Basu 2023]** S. Basu, N. Zhao, V. Morariu, S. Feizi, V. Manjunatha. Localizing and Editing Knowledge in Text-to-Image Generative Models. ICLR 2024. arXiv:2310.13730.
 - **[Bugaud 2026]** Z. Bugaud. Single-Layer Activation Edits Easily Corrupt Factual Recall but Rarely Repair It. Proceedings of the 6th Workshop on Trustworthy NLP (TrustNLP 2026), pp. 515-527.
 - **[Cheng & Zhang 2026]** B. Cheng, J. Zhang. Single-Position Intervention Fails: Distributed Output Templates Drive In-Context Learning. arXiv:2605.04061, 2026.
