@@ -37,25 +37,40 @@ two) and a known numeric circuit on Pythia-160M (for the third). That single-cir
 disqualified the gradient attribution, certified the write-site scan for a narrow question,
 and found the subspace trace was not a calibrated site-localizer. The question this note
 answers is whether those single-circuit verdicts transfer. We score all three instruments,
-plus standard baselines, against the ground-truth circuits of **84 of the 86** InterpBench
-models, reporting per-model node-level ROC-AUC against the published node set (and edge-level
-AUROC for the two edge-attribution baselines). We preregistered four predictions and
-hash-froze the scorer before the run. Measured means across 84 models: activation patching
-0.941, EAP-IG 0.924, EAP 0.883 (the published ordering, P4 pass); gradient×activation 0.642
-in its faithful centered-standard-deviation form and 0.783 in its magnitude form;
-direct-logit write-site 0.484 (baseline-relative) and 0.693 (raw); subspace trace 0.772
-(matched-rank random subspace 0.657, rank-1 0.761); random null 0.498. Two of the three
-single-circuit verdicts transferred in direction — the gradient attribution is disqualified
-for node localization (P1), and the write-site scan's scope boundary holds, so its mandated
-baseline-relative form scores below chance for circuit-node recovery (P2 fail). The third did
-not: the subspace trace's single-circuit failure was **falsified** here (P3a, P3b), yet its
-own decisive control still denies it concept-specificity (the concept subspace beats a
-matched-rank random subspace by only ~0.11–0.17 AUROC), so it is a degraded activation patch,
-not a concept localizer. The conclusion is a caution about calibration: one known circuit
-under-determines the deployment constraints an instrument earns. Caveat: for a reproducible
-environment reason we sample inputs in-distribution to match the benchmark's sampler rather
-than calling its compiled generator; the gold baseline reaching 0.94 bounds the damage, but
-absolute AUROCs may shift.
+plus standard baselines, against the ground-truth circuits of all **86** InterpBench models
+(the 84 Tracr-compiled tasks as the aggregate, the two IOI models reported separately),
+reporting per-model node-level ROC-AUC against the published node set (and edge-level AUROC for
+the two edge-attribution baselines). We preregistered four predictions and hash-froze the
+scorer before the first run, and preregistered three more (P5–P7) before the real-generator
+rerun. We score on two node universes and take as **primary** the
+**no-embedding** universe (attention-head and MLP nodes only), because the embedding is a
+trivial ground-truth positive on 83 of 84 models and inflates the all-nodes score. We then
+**re-ran the entire audit with the benchmark's own data generators** (Tracr/iit) on all **86**
+models — including the two IOI models the first pass had skipped — in place of the
+in-distribution sampler the first pass used. Measured no-embedding means under the real
+generator (84 Tracr models): activation patching 0.990, EAP-IG 0.976, EAP 0.892 (the published
+ordering; P4 holds); edge-level AUROC, the benchmark's own metric, EAP 0.868 / EAP-IG 0.894.
+Both lab instruments, in the exact forms their single-circuit calibration mandated, sit **at
+chance** — gradient×activation 0.499 and direct-logit write-site 0.462 against a 0.493 null —
+while dropping the one deployment constraint each carried from its grokked circuit rescues it
+(grad×activation without the norm division 0.842; write-site without the random-direction
+baseline subtraction 0.708–0.809). The subspace trace (0.665) is statistically
+**indistinguishable from a matched-rank random subspace** (0.644), so once the embedding
+artifact is removed its single-circuit failure **replicates**. The headline result is that the
+method ranking is **robust to the data generator**: every per-method mean shifts by < 0.1
+between the synthetic and real generators (max 0.083) and the ordering is preserved (Spearman
+0.98), so all three single-circuit verdicts transfer **in direction** — what each instrument
+fails is the specific deployment constraint it carried (the grad×act norm division, the
+write-site baseline-relative rule, the subspace "concept = site" reading), not the underlying
+signal. The two IOI models are reported separately: under the benchmark's own non-contrastive
+(independent-resample) corruption even exhaustive patching is uninformative (0.50), a property
+of the IOI generator rather than of the instruments. The forward is validated against an
+independent TransformerLens implementation (Tracr relmax 3.7e-5; the IOI LayerNorm forward
+2.1e-6). The first pass's load-bearing data-generator caveat is thus closed — the ranking it
+reported survives the real generator — and its one over-general claim (that the subspace
+failure was *falsified*) is corrected: it was an all-nodes embedding artifact. The conclusion
+is a caution about calibration: one known circuit under-determines the deployment constraints
+an instrument earns.
 
 ## 1. Motivation: calibrate before you trust, and on how many circuits?
 
@@ -89,17 +104,19 @@ transformer is two layers, LayerNorm-free, periodic, and algorithmically degener
 reached there may be a fact about that circuit rather than about the instrument. **The
 question of this note is whether single-circuit verdicts transfer.** We re-run all three
 instruments — ported faithfully, same aggregations, same mandated controls — against a
-benchmark of 84 independently published circuits, next to the standard baselines, and read off
-a qualification table with the deployment constraint each method earns.
+benchmark of 86 independently published circuits (84 Tracr-compiled, aggregated; two IOI,
+reported separately), next to the standard baselines, and read off a qualification table with
+the deployment constraint each method earns.
 
 ## 2. Benchmark and ground truth
 
 InterpBench [2407.14494] distributes 86 semi-synthetic transformers (84 Tracr-compiled tasks
 plus two IOI variants), each with its ground-truth edge set in `edges.pkl` and its weights in
-`ll_model.pth`. Across all 86 configs the Tracr family shares a structure we rely on:
-`normalization_type = None` (no LayerNorm), standard positional embeddings, sequential
-attention→MLP, gelu, two layers, four heads, small `d_model`. We use the HuggingFace repo
-`cybershiptrooper/InterpBench` at commit `a1242a84…`.
+`ll_model.pth`. The 84 Tracr models share a structure we rely on: `normalization_type = None`
+(no LayerNorm), standard positional embeddings, sequential attention→MLP, gelu, two layers, four
+heads, small `d_model`. The two IOI models differ — six layers, `LNPre` LayerNorm (parameter-
+free), the gpt2 vocabulary — and are scored with a matching LayerNorm forward (§3, §7). We use
+the HuggingFace repo `cybershiptrooper/InterpBench` at commit `a1242a84…`.
 
 **Ground-truth node set.** Each `edges.pkl` is a list of `(writer, reader)` string edges in
 the ACDC hook namespace, e.g. `blocks.1.attn.hook_result[2] → blocks.1.hook_q_input[2]`. We
@@ -110,15 +127,21 @@ promote edge endpoints to *node* granularity: attention-head nodes `('a', layer,
 node universe per model is every such node; a node is a ground-truth positive iff it is an
 endpoint of some circuit edge after promotion. Node universes are small — median 12 nodes with
 2 ground-truth positives (range 12–37 nodes), which makes a single model's AUROC coarse and is
-why we aggregate across 84 models. For the two edge-attribution baselines we additionally score
-the factorized writer→reader edge set directly (median 137-edge universe, 2 ground-truth edges).
+why we aggregate across 84 models. Crucially, the embedding is a ground-truth positive on 83 of
+84 models (49 of 84 have exactly `{embed, m0}`), a trivial positive that inflates the all-nodes
+AUROC; we therefore take the **no-embedding** universe (attention-head + MLP nodes only, ground
+truth restricted the same way; median non-embedding positive count = 1) as the **primary** node
+metric and report all-nodes as secondary (§5.1–5.2). For the two edge-attribution baselines we
+additionally score the factorized writer→reader edge set directly (median 137-edge universe,
+2 ground-truth edges) — the benchmark's own metric.
 
-**Scored set: 84 of 86.** We score the 84 Tracr-compiled models (81 categorical, i.e.
-`d_vocab_out > 1`; 3 regression, `d_vocab_out == 1`). The two IOI models (`ioi`,
-`ioi_next_token`) are excluded for two reasons (Section 7): their 42 MB weight files could not
-be downloaded intact under a network throttle during the session, and — more fundamentally —
-they are non-Tracr IOI models for which this note's synthetic-input assumptions (BOS index,
-uniform value tokens) do not hold, so their results would be unfaithful even if loaded.
+**Scored set: all 86.** We score the 84 Tracr-compiled models (81 categorical, i.e.
+`d_vocab_out > 1`; 3 regression, `d_vocab_out == 1`) and the two IOI models. The first pass
+excluded the IOI models (truncated downloads; a synthetic sampler that did not fit them); the
+rerun re-downloads their weights intact (42 MB each) and scores them with the benchmark's own
+IOI generator and a matching LayerNorm forward. They are reported **separately** (§5.8, §7):
+their corruption is the benchmark's own non-contrastive re-sample, under which even exhaustive
+patching is uninformative, so folding them into the Tracr aggregates would be misleading.
 
 ## 3. Methods
 
@@ -267,32 +290,80 @@ augmentation, labelled as such.
 
 ## 5. Results
 
-### 5.1 Headline: node-level AUROC across 84 models (MEASURED)
+> **Primary metric and data (revised 2026-10-05).** Two changes make the headline below the
+> primary one. (i) The **no-embedding node universe** (attention-head + MLP nodes only) is the
+> **primary** metric: the embedding is a ground-truth positive on 83 of 84 models and 49 of 84
+> have exactly `{embed, m0}`, so the all-nodes score is inflated by a trivial positive (median
+> non-embedding positive count = 1). (ii) The audit was **re-run with the benchmark's own data
+> generators** (Tracr/iit) on all **86** models — including the two IOI models — in place of
+> the first pass's in-distribution sampler. §5.1 is the primary (no-embedding, real) result;
+> §5.2 is the all-nodes universe with a real-generator column added; §5.4 reports every
+> verdict, including the rerun's P5–P7. Five extra score variants isolate *which* part of each
+> instrument fails (the aggregator vs the carried deployment constraint).
 
-| method | kind | mean | median | min | max | frac beats null+0.1 |
-|---|---|---:|---:|---:|---:|---:|
-| **activation patching** | baseline — gold (exhaustive resample) | **0.941** | 1.000 | 0.667 | 1.000 | 1.000 |
-| **EAP-IG** | baseline (EAP + integrated gradients) | **0.924** | 1.000 | 0.444 | 1.000 | 0.988 |
-| **EAP** | baseline (edge attribution patching) | **0.883** | 0.900 | 0.500 | 1.000 | 0.940 |
-| gradient×activation (magnitude) | instrument, magnitude variant | 0.783 | 0.900 | 0.185 | 1.000 | 0.810 |
-| **subspace trace** | instrument (concept-subspace causal trace) | 0.772 | 0.770 | 0.400 | 1.000 | 0.821 |
-| subspace, rank-1 control | instrument control | 0.761 | 0.845 | 0.250 | 1.000 | 0.714 |
-| write-site (raw) | instrument, no-baseline variant | 0.693 | 0.791 | 0.033 | 1.000 | 0.631 |
-| subspace, random control | instrument control (matched-rank random) | 0.657 | 0.661 | 0.000 | 1.000 | 0.571 |
-| **gradient×activation (centered-std)** | instrument (faithful port) | 0.642 | 0.697 | 0.050 | 0.875 | 0.679 |
-| **write-site (baseline-relative)** | instrument (mandated form) | 0.484 | 0.439 | 0.000 | 1.000 | 0.321 |
-| random null | mean of 400 random vectors/model | 0.498 | 0.498 | 0.486 | 0.517 | 0.000 |
+### 5.1 Primary — no-embedding node universe, synthetic → real generator (MEASURED, 84 Tracr)
 
-### 5.2 Edge-level AUROC (84 models, edge methods only, MEASURED)
+| method | synthetic | real | Δ | role |
+|---|---:|---:|---:|---|
+| activation patching | 0.994 | **0.990** | −0.004 | baseline (gold) |
+| EAP-IG | 0.970 | **0.976** | +0.006 | baseline |
+| EAP | 0.935 | **0.892** | −0.043 | baseline |
+| grad×act, std no-norm (`std_raw`) | 0.826 | 0.842 | +0.016 | grad×act repair: drop the norm |
+| grad×act, magnitude (`mag`) | 0.798 | 0.827 | +0.029 | crude zero-baseline attribution patch |
+| write-site, RMS no-baseline (`rms_raw`) | 0.806 | 0.809 | +0.003 | write-site repair: drop the baseline |
+| write-site, RMS baseline-relative (`rms`) | 0.757 | 0.778 | +0.021 | write-site, RMS aggregation |
+| write-site, std no-baseline (`raw`) | 0.731 | 0.708 | −0.023 | write-site without the baseline |
+| subspace trace | 0.662 | 0.665 | +0.004 | instrument 3 |
+| subspace, matched-rank random control | 0.667 | 0.644 | −0.023 | control |
+| subspace, rank-1 control | 0.717 | 0.635 | −0.083 | control |
+| grad×act, magnitude/norm | 0.493 | 0.523 | +0.030 | |mean|/norm |
+| grad×act, rms/norm | 0.484 | 0.506 | +0.021 | rms/norm |
+| **grad×act (centered-std/norm) — instrument A lab form** | 0.481 | **0.499** | +0.018 | **mandated form → chance** |
+| **write-site (baseline-relative) — instrument B lab form** | 0.479 | **0.462** | −0.017 | **mandated form → chance** |
+| random null | 0.493 | 0.493 | 0.000 | null |
 
-| method | mean | median | min | max |
+The ranking is **robust to the data generator**: every per-method mean shifts by < 0.1
+(max 0.083, `subspace_rank1`) and the ordering is preserved (Spearman 0.982; max rank
+displacement 2, among statistically-tied neighbours; 0 methods change tier) — **P5 and P6
+pass**. The two lab instruments in their mandated forms sit at the 0.493 null; removing the one
+constraint each carried from its single grokked circuit rescues it (the norm division for
+grad×act: 0.499 → 0.842; the random-direction baseline subtraction for the write-site scan:
+0.462 → 0.708/0.809). The concept subspace is statistically indistinguishable from a
+matched-rank random subspace (0.665 vs 0.644, edge +0.021).
+
+### 5.2 All-nodes node universe (secondary; first-pass synthetic with a real-generator column, MEASURED)
+
+| method | kind | synth mean | **real mean** | median (synth) | min | max | frac beats null+0.1 |
+|---|---|---:|---:|---:|---:|---:|---:|
+| **activation patching** | baseline — gold (exhaustive resample) | 0.941 | **0.942** | 1.000 | 0.667 | 1.000 | 1.000 |
+| **EAP-IG** | baseline (EAP + integrated gradients) | 0.924 | **0.925** | 1.000 | 0.444 | 1.000 | 0.988 |
+| **EAP** | baseline (edge attribution patching) | 0.883 | **0.852** | 0.900 | 0.500 | 1.000 | 0.940 |
+| gradient×activation (magnitude) | instrument, magnitude variant | 0.783 | 0.797 | 0.900 | 0.185 | 1.000 | 0.810 |
+| **subspace trace** | instrument (concept-subspace causal trace) | 0.772 | 0.775 | 0.770 | 0.400 | 1.000 | 0.821 |
+| subspace, rank-1 control | instrument control | 0.761 | 0.712 | 0.845 | 0.250 | 1.000 | 0.714 |
+| write-site (raw) | instrument, no-baseline variant | 0.693 | 0.670 | 0.791 | 0.033 | 1.000 | 0.631 |
+| subspace, random control | instrument control (matched-rank random) | 0.657 | 0.649 | 0.661 | 0.000 | 1.000 | 0.571 |
+| **gradient×activation (centered-std)** | instrument (faithful port) | 0.642 | 0.645 | 0.697 | 0.050 | 0.875 | 0.679 |
+| **write-site (baseline-relative)** | instrument (mandated form) | 0.484 | 0.475 | 0.439 | 0.000 | 1.000 | 0.321 |
+| random null | mean of 400 random vectors/model | 0.498 | 0.498 | 0.498 | 0.486 | 0.517 | 0.000 |
+
+On the all-nodes universe the subspace trace shows a spurious edge over its random control
+(0.772 vs 0.657 synthetic; 0.775 vs 0.649 real) — this is the **embedding artifact**: restoring
+the clean embedding subspace at the `embed` node trivially recovers the metric. On the
+no-embedding primary universe (§5.1) that edge vanishes.
+
+### 5.3 Edge-level AUROC (84 Tracr, edge methods only; synthetic → real, MEASURED)
+
+Edge-level AUROC over the factorized writer→reader edge set is the benchmark's own metric.
+
+| method | synth mean | real mean | synth median | real median |
 |---|---:|---:|---:|---:|
-| EAP | 0.877 | 0.981 | 0.422 | 1.000 |
-| EAP-IG | 0.895 | 0.993 | 0.478 | 1.000 |
+| EAP | 0.877 | 0.868 | 0.981 | 0.978 |
+| EAP-IG | 0.895 | 0.894 | 0.993 | 0.994 |
 
-EAP-IG ≥ EAP at the edge level as well as the node level.
+EAP-IG ≥ EAP at the edge level as well as the node level, under both generators.
 
-### 5.3 Categorical vs regression split (means, MEASURED)
+### 5.4 Categorical vs regression split (means, synthetic all-nodes, MEASURED)
 
 | method | categorical (n=81) | regression (n=3) |
 |---|---:|---:|
@@ -306,17 +377,37 @@ EAP-IG ≥ EAP at the edge level as well as the node level.
 The regression subsample is three models and its means are weak; we report it for completeness
 and do not draw regression-specific conclusions.
 
-### 5.4 Preregistered verdicts (MEASURED)
+### 5.5 Preregistered verdicts (MEASURED)
 
-| # | prediction | measured | verdict |
+**First pass (frozen P1–P4, all-nodes, synthetic) — and the same four under the real generator.**
+All four keep their pass/fail status when the synthetic sampler is replaced by the benchmark's
+own generator (last column):
+
+| # | prediction | synthetic (all-nodes) | verdict | real (all-nodes) |
+|---|---|---|---|---|
+| **P1** | median gradxact < median act_patch − 0.10 | 1.000 − 0.697 = **0.303** | **PASS** — grad×act disqualified | gap **0.326** → PASS |
+| **P2** | writesite ≥ null+0.1 on ≥60% of models | **32.1%** | **FAIL** — write-site not informative | **29.8%** → FAIL |
+| **P3a** | median subspace ≤ median null + 0.05 | 0.770 vs 0.498 (**+0.272**) | **FALSIFIED** | +0.262 → FALSIFIED |
+| **P3b** | median \|subspace − subspace_rand\| ≤ 0.10 | **0.170** | **FALSIFIED** | **0.186** → FALSIFIED |
+| **P4** | mean eap ∈ [0.65,0.95]; eap_ig ≥ eap−.05; act_patch ≥ eap−.05 | 0.883 / 0.924 / 0.941 | **PASS** | 0.852 / 0.925 / 0.942 → PASS |
+
+**Rerun predictions P5–P7 (no-embedding primary universe, preregistered in `PREREG-rerun.md`).**
+
+| # | prediction | measured (real) | verdict |
 |---|---|---|---|
-| **P1** | median gradxact < median act_patch − 0.10 | 1.000 − 0.697 = **0.303** | **PASS** — gradient×activation disqualified |
-| **P2** | writesite ≥ null+0.1 on ≥60% of models | **32.1%** | **FAIL** — write-site not informative for circuit nodes |
-| **P3a** | median subspace ≤ median null + 0.05 | 0.770 vs 0.498 (**+0.272**) | **FALSIFIED** |
-| **P3b** | median \|subspace − subspace_rand\| ≤ 0.10 | **0.170** | **FALSIFIED** |
-| **P4** | mean eap ∈ [0.65,0.95]; eap_ig ≥ eap−.05; act_patch ≥ eap−.05 | 0.883 / 0.924 / 0.941 | **PASS** |
+| **P5** | no-embedding method ordering preserved synthetic → real | Spearman **0.982**; max rank displacement 2 (tied neighbours); 0 methods change tier | **PASS** |
+| **P6** | every per-method mean shifts \|real − synth\| < 0.10 | max shift **0.083** (no-emb) / 0.049 (all-nodes) | **PASS** |
+| **P7** | audit verdicts keep status on no-emb | V1 grad×act lab = chance (0.499 vs null 0.493); V2 write-site lab = chance (0.462); V3 **subspace ≈ random** (concept edge **+0.021**, the single-circuit failure **replicates**); V4 EAP regime (0.892/0.976/0.990) | **PASS (all four)** |
 
-### 5.5 Interpretation (ASSERTED where noted)
+The P3 reconciliation: on **all-nodes** the concept subspace beats its matched-rank random
+control (edge +0.116 synthetic / +0.126 real), which the first pass read as *falsifying* the
+single-circuit "subspace fails to localize" verdict. That edge is the **embedding artifact** —
+it comes from restoring the clean embedding subspace at the trivial `embed` node. On the
+no-embedding primary universe the edge is **+0.021** (synthetic −0.006), so the subspace trace
+is **not** a concept localizer and the single-circuit failure **replicates** (V3). All three
+single-circuit verdicts therefore transfer in direction once the embedding artifact is removed.
+
+### 5.6 Interpretation (ASSERTED where noted)
 
 **The baselines reproduce the literature ordering.** Exhaustive patching and the
 integrated-gradient attribution are strong and nearly indistinguishable at the top (0.941,
@@ -347,18 +438,29 @@ question — which component writes a given output feature — but should not be
 circuit membership across depth.
 
 **The subspace trace is a degraded activation patch, not a concept localizer (ASSERTED).** On
-these shallow, LayerNorm-free compiled circuits the trace attains a respectable 0.772 AUROC and
-beats the null on 82% of models — so the single-circuit *failure* (recovery no better than
-random) does **not** replicate here (P3a, P3b both falsified). But the method's own decisive
-control exposes what it is doing: a matched-rank random subspace reaches 0.657 and a rank-1
-subspace 0.761, so the concept subspace's advantage over a random subspace of the same rank is
-only ~0.11 (difference of means) to 0.17 (per-model median of the absolute difference) AUROC.
+the all-nodes universe the trace attains 0.772 AUROC and beats a matched-rank random subspace
+by ~0.11 (means) — which the first pass read as *not* replicating the single-circuit failure.
+But that edge is the **embedding artifact** (§5.1–5.2): it is produced by restoring the clean
+embedding subspace at the trivial `embed` node. On the **no-embedding primary universe** the
+concept subspace (0.665) and a matched-rank random subspace (0.644) are statistically
+indistinguishable — concept edge +0.021 (synthetic −0.006) — so the single-circuit failure
+**replicates**, and the first pass's "P3 falsified" was an artifact of scoring the embedding.
 The signal is dominated by generic low-rank activation restoration — a degraded activation
 patch — not by the concept being localized to the node. A high subspace-restore recovery is
 therefore not evidence that the traced concept lives at that node, which is the same caution
 [2311.17030] raise about subspace activation patching.
 
-### 5.6 Per-prediction / per-method deployment constraints
+**The failing part is the deployment constraint, not the aggregator (ASSERTED, no-embedding).**
+The five extra score variants localize each disqualification. grad×act: the lab form divides
+the per-input attribution by the node norm, and *that division* is what kills it — dropping it
+lifts the standard-deviation form from 0.499 to 0.842 and the magnitude form from 0.523 to
+0.827, both to baseline-competitive territory; the std-vs-magnitude aggregator choice is
+secondary. Write-site: the lab form subtracts a matched random-direction share, and *that
+subtraction* is the problem — the raw scans are competitive (0.708 std / 0.809 RMS) while the
+mandated baseline-relative std form collapses to 0.462 (chance). Each instrument's one
+carried-over rule from its single grokked circuit is exactly the rule that fails to transfer.
+
+### 5.7 Per-prediction / per-method deployment constraints
 
 | method | verdict for InterpBench node localization | deployment constraint earned (ASSERTED) |
 |---|---|---|
@@ -368,6 +470,33 @@ therefore not evidence that the traced concept lives at that node, which is the 
 | gradient×activation (centered-std) | **DISQUALIFIED for node localization** (0.642; P1) | do not use the standard-deviation "content" pooling to find circuit nodes; the magnitude form (0.783) is a crude EAP and is far better |
 | write-site (baseline-relative) | **DISQUALIFIED as a circuit-node detector** (0.484; P2 fail) | keep it for "which component writes this output feature"; it credits only direct-to-logit writers, so cross-depth circuit nodes are invisible and the mandated random-direction subtraction drives them negative |
 | subspace trace | **QUALIFIED-WITH-CAVEAT as an importance proxy** (0.772) | usable as a cheap importance score on shallow circuits; do **not** read its recovery as concept localization — a matched-rank random subspace nearly matches it |
+
+The AUROCs in this table are the first-pass all-nodes numbers; the no-embedding primary universe
+(§5.1) sharpens every verdict in the same direction — the two disqualified instruments fall to
+chance (grad×act 0.499, write-site 0.462 vs null 0.493), and the subspace trace's edge over its
+matched-rank random control vanishes (0.665 vs 0.644), so its "importance proxy" is a generic
+low-rank activation patch with no concept specificity. The qualified/disqualified assignments
+are unchanged under the real generator (P5/P6/P7, §5.5).
+
+### 5.8 IOI models (reported separately, MEASURED)
+
+The two IOI models are scored with the same methods and the `MiniLN` LayerNorm forward
+(full-logit reconstruction vs TransformerLens: relmax 2.1e-6 for `ioi`, 5.0e-7 for
+`ioi_next_token`), `n_data = 128`. They are kept out of the Tracr aggregates because the
+benchmark's own IOI corruption is an independent re-sample (not an ABC/name-swap): patching a
+node with another valid IOI sentence's activation barely moves the KL-to-clean, so even
+exhaustive patching cannot localize. No-embedding AUROC (GT positives / nodes in parentheses):
+
+| model | act_patch | EAP | EAP-IG | grad×act (lab) | grad×act (mag) | grad×act (std_raw) | write-site (lab) | subspace | subspace_rand |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| ioi (4/30) | 0.500 | 0.500 | 0.500 | 0.490 | 0.712 | 0.981 | 0.692 | 0.529 | 0.519 |
+| ioi_next_token (13/30) | 0.500 | 0.500 | 0.500 | 0.475 | 0.652 | 0.606 | 0.638 | 0.357 | 0.421 |
+
+The gold `act_patch` and both EAP variants sit exactly at 0.500 — a property of the IOI data
+generator, not of the instruments. This is the mirror image of the Tracr result: there the real
+generator leaves the ranking intact, here it removes the signal that patching needs, which is
+itself the paper's point that the data generator is load-bearing. Full per-method and all-nodes
+rows are in `results/real_full.json`.
 
 ## 6. What transfers from one grokked circuit, and what does not
 
@@ -387,73 +516,89 @@ it fails there (0.484, below chance in its mandated form). That is not a contrad
 original verdict; it is a confirmation of the original scope boundary. What transferred is the
 *deployment constraint*, which is the part of a single-circuit verdict most worth trusting.
 
-**Subspace trace — falsified.** The single-circuit verdict was that the trace fails to localize
-— on a known numeric circuit and a grokked toy its recovery was no better than random or
-rank-1. That failure did **not** reproduce here: across 84 circuits the trace is genuinely
-informative (0.772, 82% beat-null). The single-circuit result over-generalized from a substrate
-(Pythia-160M, deep, LayerNorm'd, a concept subspace that rotates across layers) where a fixed
-input-defined subspace patched at deeper residual points is the wrong object, to a claim about
-the instrument. On the shallow, LayerNorm-free compiled circuits here the same object is a usable
-(if generic) importance score. The deeper *control-based* conclusion — concept ≈ random
-subspace, so this is not a concept localizer — survives (the concept edge is only ~0.11–0.17
-AUROC), but the headline failure verdict was substrate-specific.
+**Subspace trace — transferred (corrected).** The single-circuit verdict was that the trace
+fails to localize — recovery no better than a matched-rank random or rank-1 subspace. The first
+pass reported this *falsified* on all-nodes (the concept subspace beat its random control by
+~0.11), but that edge is the **embedding artifact**: it is produced at the trivial `embed` node.
+On the no-embedding primary universe the concept subspace (0.665) and a matched-rank random
+subspace (0.644) are statistically indistinguishable — concept edge +0.021 — so the
+control-based verdict (concept ≈ random subspace, i.e. not a concept localizer) **replicates**.
+The trace remains a usable *generic* low-rank importance score on these shallow circuits, but
+the "this concept lives at this node" reading does not transfer.
 
-**The honest conclusion (ASSERTED).** Two of three single-circuit verdicts transferred in
-direction; one was falsified. A single known circuit is enough to *raise* a disqualification
-hypothesis and to characterize a mechanism, but it under-determines the deployment constraints an
-instrument earns — most sharply when the one circuit is structurally special (here: shallow and
-LayerNorm-free vs deep and normalized). Calibration should be read as a lower bound on the
-evidence an instrument needs, not an upper one: a verdict reached on one circuit should be stated
-with its substrate, and a benchmark of many circuits can both confirm a transfer and overturn an
-over-generalized failure.
+**The honest conclusion (ASSERTED).** With the embedding artifact removed and the benchmark's
+own data generators used on all 86 models, **all three** single-circuit verdicts transfer *in
+direction*: what each instrument fails is the specific deployment constraint it carried from its
+one grokked circuit — the grad×act norm division, the write-site baseline-relative subtraction,
+and the subspace "concept = site" reading — not the underlying signal, which the norm-free /
+baseline-free / random-subspace controls recover. A single known circuit is enough to *raise* a
+disqualification hypothesis and to name its mechanism, but it under-determines the exact
+deployment constraint, and — as the first pass's all-nodes "P3 falsified" shows — a thin scoring
+universe can even invert the verdict. Calibration should be read as a lower bound on the evidence
+an instrument needs: state the substrate of any single-circuit verdict, score on a non-trivial
+node universe, and treat a benchmark of many known circuits as the thing that turns a
+single-circuit hypothesis into a usable constraint. That the ranking is unchanged under the
+benchmark's real generator (P5/P6) is what licenses trusting these constraints.
 
 ## 7. Threats to validity
 
-We state these in full because the first one is load-bearing.
+The first pass's two load-bearing threats — the data generator and the reimplemented forward —
+are now **closed** by the rerun; we state the original caveats and their resolution in full.
 
-1. **Data-generator deviation (primary caveat).** InterpBench's own `case.get_clean_data()`
-   requires Tracr (jax/dm-haiku), which was uninstallable during the session under a severe
-   external-bandwidth collapse (~3–15 KB/s). The scorer instead samples in-distribution random
-   token sequences matching the benchmark's own random sampler — BOS at position 0 (index
-   `d_vocab−2`), value tokens drawn uniformly from `0..d_vocab−3` at the remaining positions,
-   full length `n_ctx` — and uses the ACDC-standard faithfulness-to-the-clean-run metric (KL for
-   categorical, output L2 for regression), which needs no ground-truth labels and no high-level
-   model. The method *ranking* is expected to be robust to this, but absolute AUROCs could shift
-   with the original generator. The gold activation patch reaching 0.941 (and recovering the
-   published circuits) bounds the damage: a badly mismatched input distribution would not let
-   exhaustive patching recover the ground truth at 0.94.
+1. **Data-generator deviation — CLOSED.** The first pass could not install Tracr (jax/dm-haiku)
+   under a severe external-bandwidth collapse (~3–15 KB/s), so it sampled in-distribution random
+   token sequences with an *assumed* encoding (BOS at `d_vocab−2`, value tokens `0..d_vocab−3`).
+   The rerun installs the real stack offline (laptop-downloaded linux-cp310 wheels — jaxlib 0.4.30
+   etc. — `scp`ed to a `venv-tracr`) and uses the benchmark's **own** generators on all 86 models:
+   `case.get_clean_data()`/`get_corrupted_data()` for Tracr and iit `IOIDatasetWrapper` for IOI.
+   The real encoding differs materially from the first pass's assumption (e.g. case 3 real BOS
+   index = 0, not 4; case 4 real position-0 token = 2, not 5), so the first pass's clean run was
+   partly out-of-distribution. Yet the method ranking is unchanged: every per-method mean shifts
+   by < 0.1 (max 0.083) and the ordering is preserved (Spearman 0.98) — P5 and P6 (§5.5). The
+   caveat the first pass flagged as load-bearing therefore does not change any conclusion; the
+   ACDC-standard faithfulness-to-the-clean-run metric (KL / output-L2) is retained throughout.
 
-2. **Reimplemented forward; no TransformerLens.** For the same bandwidth reason, the scorer
-   reimplements the HookedTransformer forward in pure torch rather than installing TransformerLens
-   1.19. These models have no LayerNorm (`normalization_type = None` on all 86), standard
-   positional embeddings, sequential attention→MLP, and gelu, which makes a faithful forward
-   small. It is validated **per model** by an exact direct-logit-attribution reconstruction of
-   the model's own logits (sum of every node's direct write plus biases, projected through the
-   unembedding): relative error ~1e-7 on every model (the absolute error reaches 1.5 only because
-   some Tracr compiled logits reach ~4×10⁶). The baselines reproducing the published ordering is a
-   second, independent check.
+2. **Reimplemented forward — now independently validated.** The scorer still reimplements the
+   HookedTransformer forward in pure torch (for the Tracr models, `normalization_type = None`; for
+   the IOI models, a `MiniLN` forward that adds the exact parameter-free `LNPre` + `ln_final`).
+   Beyond the first pass's residual-sum direct-logit-attribution accounting check (which validates
+   the *accounting*, not the attention computation), the forward is now validated against an
+   **independent TransformerLens 2.18.0 implementation** (HookedTransformer from each
+   `ll_model_cfg.pkl`): worst max-abs relative error **3.72e-5** over the 84 non-IOI models
+   (63 causal + 21 bidirectional) and **2.1e-6** for the IOI `MiniLN` full-logit reconstruction.
+   The baselines reproducing the published ordering is a second, independent check.
 
 3. **Execution environment.** All model execution ran on a single workstation as a plain remote
    shell CPU process, outside the lab's job scheduler (whose worker contract is specific to a
-   different stack and was not reachable without a tunnel); the run is a single sequential CPU
-   process. No numbers were produced on a laptop.
+   different stack and was not reachable without a tunnel); each run is a single sequential CPU
+   process. Data generation (the Tracr/jax/iit stack) and scoring (the pure-torch stack, the same
+   torch as the first pass) ran in separate venvs so the real-vs-synthetic comparison is
+   apples-to-apples. No numbers were produced on a laptop (laptop work was wheel/model download
+   and `scp` only).
 
-4. **Single data draw, single seed.** `n_data = 256` clean + 256 corrupted per model, one seed.
-   No extra seeds were run (the comparison is across 84 models, not across seeds).
+4. **Single data draw, single seed.** `n_data = 256` clean + 256 corrupted per Tracr model
+   (128 per IOI model, for memory), one seed (clean 42, corrupt 43). The comparison is across 84
+   models, not across seeds.
 
-5. **Coarse per-model AUROC.** The median node universe is 12 nodes with 2 ground-truth
-   positives, so a single model's AUROC takes few discrete values; this is mitigated by
-   aggregating over 84 models and is why we report medians and beat-null fractions alongside
-   means.
+5. **Coarse per-model AUROC, and a thin node universe.** The median node universe is 12 nodes
+   with 2 ground-truth positives, so a single model's AUROC takes few discrete values (mitigated
+   by aggregating over 84 models). More consequentially, the embedding is a ground-truth positive
+   on 83 of 84 models, which inflates the all-nodes AUROC; we therefore make the **no-embedding
+   universe** (attention-head + MLP nodes only) the primary metric and report all-nodes as
+   secondary. The first pass's "P3 falsified" was a direct consequence of scoring the embedding
+   (§5.5).
 
-6. **84 of 86.** The two IOI models are excluded — their weight files could not be downloaded
-   intact under the throttle, and they are non-Tracr models for which the synthetic-input
-   assumptions do not hold (they need an IOI-appropriate generator). Regression is a 3-model
-   subsample; its means are reported but not interpreted.
+6. **All 86 scored; IOI with a generator caveat.** The two IOI models are now included (their
+   42 MB weight files were re-downloaded intact — the first pass's curl copies were truncated to
+   2.2/10 MB). They are reported separately because the benchmark's own IOI corruption is an
+   **independent re-sample** (not an ABC/name-swap), so patching a node with another valid IOI
+   sentence's activation barely moves the KL-to-clean and even exhaustive patching is uninformative
+   (0.50) — a property of the IOI data generator, not of the instruments. Regression is still a
+   3-model subsample; its means are reported but not interpreted.
 
 7. **Node vs edge granularity for P4.** InterpBench's paper reports edge-AUROC; the primary
-   comparison here is node-AUROC, with edge-AUROC reported as an augmentation (0.877 / 0.895) and
-   consistent with the node-level ordering.
+   comparison here is node-AUROC, with edge-AUROC reported alongside (synthetic 0.877 / 0.895 →
+   real 0.868 / 0.894) and consistent with the node-level ordering under both generators.
 
 ## 8. Recommendation
 
@@ -487,9 +632,43 @@ Runs (a plain remote-shell CPU process on one workstation; the lab's scheduler w
 `results/edge_full.json`; plus three-model smokes (cases 3, 4, 11) for pipeline validation only.
 Ground truth: HuggingFace `cybershiptrooper/InterpBench` at commit
 `a1242a84f8a4d07d1be9a8f5ec710415198016b2`; benchmark code `github.com/FlyingPumba/InterpBench`.
-Forward validation: direct-logit-attribution reconstruction relative error ~1e-7 on every model.
+
+Real-generator rerun (2026-10-05): preregistration `PREREG-rerun.md` and frozen hashes
+`FROZEN-rerun.json` (SHA-256: `gen_real_data.py` `18505003…`, `worker_real.py` `ce325006…`,
+`worker_edge_real.py` `962e99fa…`; `worker.py`/`worker_edge.py` reused unchanged). New code:
+`gen_real_data.py` (benchmark generators → per-case input tensors, run in a `venv-tracr` built
+offline from laptop-downloaded linux-cp310 wheels), `worker_real.py` (reuses `worker.py`; adds
+real-data loading, the no-embedding universe, five score variants, and `MiniLN` for the IOI
+LayerNorm forward), `worker_edge_real.py`, `analyze_rerun.py`. Raw results: `results/real_full.json`
+(node, 86 models — `auroc_all`, `auroc_noemb`, `null_*`, per-method scores, `kind`,
+`dla_recon_err`/`tl_recon_relerr`), `results/real_edge_full.json` (edge, 84 Tracr),
+`results/rerun_analysis.json` (synthetic-vs-real tables + P5–P7). Comparison baseline:
+`results_audit_ext.json` (the same 15 methods and two universes rescored on the synthetic
+sampler). Forward validation: residual-sum direct-logit-attribution per model (accounting), the
+baselines recovering the published circuits, and an **independent TransformerLens** comparison
+(84 non-IOI models, worst max-abs relative error 3.72e-5; IOI `MiniLN` full-logit relerr 2.1e-6;
+`results/tl_forward_check.json`).
 
 Figures and their data file are listed in `figures/README.md`.
+
+## Changelog
+
+- **2026-10-05 (v2, real-generator rerun).** Re-ran the full audit with InterpBench's own data
+  generators (Tracr/iit) on all **86** models, replacing the first pass's synthetic
+  in-distribution sampler, and added the two IOI models (LayerNorm forward, validated to 2.1e-6
+  against TransformerLens). Made the **no-embedding** node universe primary (the embedding is a
+  trivial ground-truth positive on 83/84 models). Added five score variants that localize each
+  instrument's failure to its carried deployment constraint (norm division; baseline-relative
+  subtraction). Results: the method ranking is robust to the real generator — every per-method
+  mean shifts < 0.1 (max 0.083) and the ordering is preserved (Spearman 0.98); **P5, P6, P7
+  pass**, and the frozen all-nodes P1–P4 keep their status. Corrected the first pass's one
+  over-general claim: "P3 falsified" was an all-nodes embedding artifact; on the no-embedding
+  universe the subspace trace is indistinguishable from a matched-rank random subspace (concept
+  edge +0.021), so the single-circuit failure **replicates** and all three single-circuit
+  verdicts now transfer in direction. Closed the first pass's load-bearing data-generator and
+  reimplemented-forward caveats. Abstract, §2, §5, §6, §7 updated accordingly.
+- **2026-10-05 (v1).** Initial audit: 84 Tracr models, synthetic in-distribution sampler,
+  all-nodes node universe; P1 pass, P2 fail, P3 (all-nodes) falsified, P4 pass.
 
 ## References
 
