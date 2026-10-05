@@ -91,3 +91,5 @@ then `/Users/jakeholl/domains/saturn-pub/.venv/bin/python build_registry.py`.
 `append_2026-10-05_late.py` adds five claims (registry now 18, verify 18/18): `tfc-e20-causal-band-table2` (time-formed-circuits causal-band rows / Fig 7), and `pib-chat-unsat-referential`, `pib-chat-unsat-05b`, `pib-chat-unsat-distractor`, `pib-chat-unsat-p3-spearman` (pass-indexed-baseline §6 chat cells).
 
 `append_2026-10-05_interpbench_real.py` adds `iai-real-generator-noemb-84models` (instrument-audit §5.1 real-generator primary table; array-rooted receipt, fingerprint path). Registry now 19.
+
+`append_2026-10-05_scaffold_tools.py` adds six time-circuit-scaffold claims (`tcs-*`: query-gated authority, held reader profile, fine-tune asymmetry, cross-operation band, null nets + function vector, routing transfer) and `mdb-circuit-tracer-flagship-corrected`. Registry now 26 claims, verify 26/26.

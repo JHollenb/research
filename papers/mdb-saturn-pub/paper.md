@@ -344,6 +344,8 @@ ASSERTED: these five share the contract's primitives — capture, fork, declared
 native-consumer judgment, and hash-pinned offline re-derivation — and none is an external user
 (§6).
 
+The corrected flagship numbers above are bound to `flagship-summary.json` in the evidence registry as `mdb-circuit-tracer-flagship-corrected`; the Section 3 demonstration rows are not yet registered, which Section 7 lists among the open items.
+
 ## 5. Comparison with prior art
 
 We claim no primitive as novel; each has a close antecedent, cited with its delta. The table is

@@ -164,6 +164,8 @@ A third party can run all of this from the public release on stock Hugging Face 
 
 The reader-profile prediction froze a 24-coordinate profile and three competitors before any held context was opened. The blind locator froze its statistic, three candidate band rules, and the single selection criterion with source hashes before any score was computed, and wrote each model's predicted band to a hash-frozen file one to two minutes before the scoring job was created. The cross-operation band and the arithmetic joint-rescue prediction are in the break-it preregistration. The deep-model causal-band sweep added a joint-window amendment, documented before the scored jobs, and reports a split-halves selection check (197/200 and 200/200). Several reader-profile freezes rest on a file-timestamp record rather than a hash; this is stated where it applies. Because the toolchain has shown a silent correctness defect in a retired instrument, the headline claims should be re-derived by independent groups on stock execution.
 
+**Evidence claim registry.** The headline numbers of Sections 1.1, 1.2, 1.3, 1.5, 1.6 and 2.1 are bound to their primary records in `papers/evidence-registry/claims.jsonl` as `tcs-query-gated-authority`, `tcs-reader-profile-held`, `tcs-finetune-asymmetry`, `tcs-breakit-cross-operation`, `tcs-null-nets-function-vector` and `tcs-routing-transfer-gates`; the causal-band rows cited from the companion are `tfc-e20-causal-band-table2`. Re-check offline with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`.
+
 ## Appendix C. Experiment and job identifiers
 
 Paths relative to `~/domains`. Harness and experiment names are confined to this appendix.
