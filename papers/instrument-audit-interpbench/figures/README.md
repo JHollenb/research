@@ -40,3 +40,24 @@ form closing most of the gap.
 
 - Data: `results/full.json`, fields `node_auroc['act_patch']`, `node_auroc['gradxact']`
   (and optionally `node_auroc['gradxact_mag']`), split by `categorical`.
+
+## Regeneration
+
+Both PNGs are produced by `make_figures.py` (light single-process matplotlib; no models loaded),
+reading AUROC values directly from
+`saturn/experiments/2026-10-05-interpbench-method-audit/results/full.json` (path relative to `~/domains/`;
+86 records, 2 with `ok=false` and no `node_auroc` → 84 usable models).
+
+```bash
+cd ~/domains/research/papers/instrument-audit-interpbench/figures && python3 make_figures.py
+```
+
+- `fig1-method-auroc-strip.png` — Figure 1. Per-method node-AUROC strip (84 dots/method),
+  methods ordered by mean AUROC descending, mean marked, random-null band drawn as
+  `[min(random), max(random)] = [0.486, 0.517]` across the 84 models. Baselines bold; the two
+  subspace controls (`subspace_rand`, `subspace_rank1`) marked distinctly.
+- `fig2-actpatch-vs-gradxact.png` — Figure 2. Per-model scatter, x = `node_auroc['act_patch']`,
+  y = `node_auroc['gradxact']`, identity line, split by `categorical` (81) vs regression (3), with
+  `node_auroc['gradxact_mag']` overlaid.
+
+Style: white background, Okabe–Ito palette, 300 dpi, no in-image titles (captions live in the paper).
