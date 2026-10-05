@@ -38,16 +38,7 @@ and/or the 1-nat-threshold conclusion in 11 of 12 pass≥1 cells; a format-match
 none of the 11 flips. The effect reproduces on instruction-tuned weights
 (Qwen2.5-1.5B-Instruct: median drift 2.76 nats, 9 of 12 cells flip) and at 7B
 (Qwen2.5-7B-Instruct, median drift 1.99 nats, baseline-difference 1.04 nats, 4 of 12 cells cross the sign/1-nat flip line) **when the multi-turn context is plain text, the regime the
-base measurement used**. It *attenuates to zero* in the idiomatic chat-template regime
-(1.5B-Instruct: median drift 0.002 nats, 0 of 12 cells flip), for a mechanistic reason the base
-experiment's own control predicts: the base drift is ~half turn-formatting and ~half carried
-content; a chat-template baseline is already turn-formatted, removing the formatting half, and an
-instruct model saturates on scene-determined reads (the always-present scene pins the answer), so
-the carried-content half adds ~0 and both baselines agree. This is a boundary condition, not a
-contradiction: when the baseline does not move, scoring against the fixed parent is harmless; the
-error is large exactly when the scored read is not already saturated. The recipe to avoid it is one
-any careful evaluator would endorse — build the baseline by running the earlier turns natively, then
-continue. Our contribution is the measured size of the error, and the regimes in which it bites.
+base measurement used**. Under the idiomatic chat template the error vanishes only on saturated reads (1.5B-Instruct: median drift 0.002 nats, 0 of 12 cells flip), for a mechanistic reason the base experiment's own control predicts: a chat-template baseline is already turn-formatted, removing the formatting half, and an instruct model saturates on scene-determined reads, so the carried-content half adds nothing and both baselines agree. It returns in full on a harder, referential chat read on the same model (median drift 2.23 nats; the reported install effect changes by a median of 2.72 nats between baselines), where it surfaces as a materially mis-sized effect rather than a binary sign or threshold flip, and across chat cells its size tracks the unsaturation of the read (Spearman 0.91 over 60 per-pass cells). The error is therefore large exactly when the scored read is not already saturated and the earlier turns bear on it. The recipe to avoid it is one any careful evaluator would endorse: build the baseline by running the earlier turns natively, then continue. Our contribution is the measured size of the error, and the regimes in which it bites.
 
 ## 1. The problem
 
@@ -212,6 +203,9 @@ The result depends on the regime, and the dependence is informative.
 | Qwen2.5-1.5B-Instruct | chat | 0.002 | 0 |
 | Qwen2.5-7B-Instruct | raw | 1.99 | 4 (bdiff 1.04) |
 | Qwen2.5-7B-Instruct | chat | 0.000 | 0 |
+| Qwen2.5-0.5B-Instruct | chat, scene-pinned reads | 0.005 | 0 |
+| Qwen2.5-1.5B-Instruct | chat, referential reads | **2.23** | 0 (bdiff **2.72**) |
+| Qwen2.5-1.5B-Instruct | chat, distractor read | 0.077 | 0 (bdiff 0.39) |
 
 In the **raw-text** regime the base phenomenon reproduces on instruct weights: the later-pass
 baseline moves by nats (1.5B-Instruct median 2.76, all per-pass medians positive) and the install
@@ -219,24 +213,50 @@ conclusion flips in a majority of cells (9/12; pass-1 sign flip, passes 2–3 th
 in the base). A not-length-matched format-matched control leaves 4 of those flips in place, i.e.
 some are carried-content-driven, consistent with the base's rigorous decomposition.
 
-In the **chat-template** regime the effect attenuates to zero on 1.5B-Instruct (median drift 0.002
-nats, 0/12 flips). Two things remove it, and both are predicted by the base experiment's own
-control. First, the base's +2.54-nat drift is ~half *turn formatting*; a chat-template *fixed*
-baseline is already a formatted turn, so that half is absent by construction. Second, the
-carried-content half comes from a later read drawing on the model's own earlier answers — but on
-these fully-specified scenes the answer is pinned by the always-present scene, and an
-instruction-tuned model reads it with near-certainty (identity/color fix-logprob ≈ −0.000), so its
-own earlier answer adds nothing and the two baselines agree. When the baselines agree, there is no
-error to make.
+In the chat-template regime the effect attenuates to zero *when the scored read is saturated* — but
+not otherwise, and the condition is what matters. On the fully-specified scenes the identity and
+color reads are pinned by the always-present scene (system message), and an instruction-tuned model
+reads them with near-certainty (fixed-parent gold logprob ≈ −0.000); its own earlier answer then adds
+nothing, both baselines agree, and the drift is 0.002 nats on Qwen2.5-1.5B-Instruct (0/12 flips) and
+1.4e-5 on Qwen2.5-7B-Instruct. Two mechanisms combine to produce this: a chat-template *fixed*
+baseline is already a formatted turn, so the formatting half of the base drift is absent by
+construction; and the scene-pinned read is saturated, so the carried-content half adds nothing.
 
-This is a boundary on the base claim, not a refutation. The fixed-parent error is real and large
-precisely when the scored read is *not* already saturated — a weaker model, a harder or referential
-read, or a plain-text continuation where turn formatting is itself informative. It is harmless
-exactly when it is small (saturated reads, where both baselines coincide). The lesson for an
-evaluator is therefore conditional but simple: you cannot tell in advance whether your read is in
-the saturated regime, so build the pass-indexed baseline anyway — it costs one extra native
-continuation and it is never wrong, whereas the fixed parent is wrong by nats whenever the read has
-room to move.
+The error returns, still under the chat template, as soon as the scored read is not saturated. On a
+harder, referential read on Qwen2.5-1.5B-Instruct — teacher-forced turns of the form "repeat the
+animal you named earlier" and "repeat your previous answer", whose answer the fixed parent cannot
+supply because it contains no earlier answer (fixed-parent gold logprob −4.1 to −6.2 nats) — the
+pass-indexed native and the fixed parent disagree by a median of 2.23 nats over passes ≥ 1, and the
+reported effect of a late key/value install changes by a median of 2.72 nats depending on which
+baseline is used (for example, at the second turn the install reads as −6.0 nats of harm against the
+fixed parent but −1.4 nats against the pass-indexed native). Across all chat-template cells measured
+here and in the sibling run, the size of the baseline error tracks the unsaturation of the read:
+Spearman(|drift|, −fixed-parent logprob) = 0.91 over 60 per-pass cells. The fixed-parent error is
+therefore real and large in the chat regime precisely when the scored read is not already saturated —
+the "harder or referential read" of the base claim — and it is harmless only when it is small, on the
+saturated reads where both baselines coincide.
+
+Two qualifications follow from the measurements and refine the base claim. First, in this
+instruction-tuned chat regime the error surfaces as a large materially-changed *number* — the same
+install scored against the wrong baseline is reported several nats too large — rather than as a binary
+sign or 1-nat-threshold *flip*: the referential-read cell gives 0 of 12 sign-or-1-nat flips because
+the install effect is strongly negative against both baselines (the same pattern as the 7B plain-text
+cell, where the baseline difference is ≈ 1 nat but the install is strong under both baselines). The
+sign/threshold flips of the base measurement require the moderate regime in which the install effect
+sits near a decision boundary; the chat template pushes instruct reads to the extremes (saturated, or
+off-distribution) and so reproduces the large *baseline movement* without the binary *flip*. An
+evaluator should therefore compare the two baselines on the reported effect size, not only on whether
+a sign or threshold conclusion changes. Second, "a weaker model" is not by itself sufficient:
+Qwen2.5-0.5B-Instruct still saturates the easy fully-specified reads (median |drift| 0.005 nats, no
+read below −0.5 nat), and a four-animal distractor scene does not unsaturate the identity read either,
+because first-mention bias pins the first same-side animal over its same-color neighbour by 7.7 nats.
+Unsaturation also is not sufficient on its own: an unsaturated read the conversation does not bear on
+("which is the second animal on the left", fixed-parent logprob −6.8 nats) does not drift
+(≈ 0.08 nat), because the pass-indexed context adds no information the read uses. The error is large
+exactly when the read is both unsaturated *and* informed by the earlier turns — which is the common
+case for the referential reads a multi-turn interpretability experiment actually scores.
+
+The three added chat cells are preregistered in `saturn/experiments/2026-10-05-pass-indexed-chat-unsaturated/` with four frozen predictions; the two that bear on the claim are that at least one chat arm drifts by a median of 1 nat or more (passed, 2.23) and that the size of the drift tracks the unsaturation of the read across chat cells (passed, Spearman 0.91). The prediction that the referential arm would also cross the sign or 1-nat flip line failed (0 of 12), which is why the chat-regime claim is stated as a mis-sized effect rather than a flipped conclusion. The lesson for an evaluator is therefore conditional but simple: you cannot tell in advance whether your read is in the saturated regime, so build the pass-indexed baseline anyway. It costs one extra native continuation and it is never wrong, whereas the fixed parent is wrong by nats whenever the read has room to move and the earlier turns bear on it.
 
 ## 7. Recommendation and recipe
 
@@ -317,7 +337,7 @@ The 1.5B-base measurement and the format-vs-content control are preregistered in
 `FROZEN.json`; primary job `job-35d4adaeed36`, control job `job-5dbbbeee0dea`, both on frozen
 Qwen2.5-1.5B weights, FP32 eager, greedy, seed 0). The instruct and 7B replication is preregistered
 in `saturn/experiments/2026-10-05-pass-indexed-instruct-7b/` (`PREREG.md`, `FROZEN.json`; jobs
-job-23194c4f1d09 (raw) and job-2e4198b3de14 (chat) for Qwen2.5-1.5B-Instruct and job-8243f04af7c7 (raw) and job-1d9876bd8f78 (chat) for Qwen2.5-7B-Instruct), with on-disk
+job-23194c4f1d09 (raw) and job-2e4198b3de14 (chat) for Qwen2.5-1.5B-Instruct and job-8243f04af7c7 (raw) and job-1d9876bd8f78 (chat) for Qwen2.5-7B-Instruct), and the three chat-template cells with unsaturated reads in `saturn/experiments/2026-10-05-pass-indexed-chat-unsaturated/` (`PREREG.md`, `FROZEN.json`; jobs job-7d1a89ea97a7 for Qwen2.5-0.5B-Instruct, job-6fe222d7fd5f for the referential reads and job-7cec3eb6012f for the distractor read on Qwen2.5-1.5B-Instruct, FP32 eager; the vendored 2026-10-05 instrument is reused byte-identically for the 0.5B cell and imported for the other two), with on-disk
 weight custody sha256 asserted before load. Each experiment folder carries the worker, the analyzer,
 the frozen predictions, every collected report, and the canary results (exact no-op self-install,
 fact-span key/value invariance across passes, determinism, and the drift-consistency identity). All

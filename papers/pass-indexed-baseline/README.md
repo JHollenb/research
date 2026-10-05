@@ -15,7 +15,9 @@ the error is when you use the fixed parent instead: on Qwen2.5-1.5B (base) the l
 answer log-probability moves by a median ~2.5 nats, and scoring a late key/value install against
 the fixed parent flips the sign and/or the 1-nat-threshold conclusion in 11 of 12 pass≥1 cells; a
 format-matched baseline removes none of those flips, so the error is carried content, not
-formatting. We replicate the sign/threshold flips on an instruction-tuned model and at 7B. The
+formatting. We replicate the sign/threshold flips on an instruction-tuned model and at 7B in plain text; under
+the chat template the error vanishes on saturated reads and returns on referential reads (median
+drift 2.23 nats, install effect mis-sized by 2.72 nats between baselines). The
 recipe is what any careful evaluator would already do; the contribution is the measured size of
 the error you make when you skip it.
 
