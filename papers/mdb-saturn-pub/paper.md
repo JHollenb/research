@@ -50,7 +50,7 @@ forkable sessions, byte-exact replay with hash-chained receipts, native-consumer
 transactional training control in one contract. We state in full what is not yet
 demonstrated, including that there is no external user yet, that the efficiency wins are not
 equal-semantics serving claims, and that a sibling attention-intervention harness once emitted
-confident but invalid results until a measured address-alignment check caught it. Three
+confident but invalid results from a causal-mask defect that its own replay checks did not catch. Three
 demonstrations needed before a main-track submission are named and marked not yet done.
 
 ## 1. The problem
@@ -269,10 +269,7 @@ MDB's installed-wheel mechanics and bounded model-backed proofs are recorded in
 Release validation of the `saturn-pub` package itself is version-specific (MEASURED,
 `saturn-pub/docs/validation.md`): v0.1.0 — 35 tests passed on Python 3.10 and 3.12, six example
 scripts; v0.2.0 — 79 tests passed, 11 offline example scripts; a FLUX.2 extension — 38 tests; a
-writer/notebook extension — 45 tests. At the time of writing the public repository
-(github.com/JHollenb/saturn-pub, v0.4.0) reports **479 tests passing** with CI green on Python
-3.10 and 3.12; that aggregate figure is a release claim and is **not measured** against a file
-in this checkout (the in-repo `validation.md` counts above are).
+writer/notebook extension — 45 tests. On the v0.4.0 checkout the full suite runs **480 passed, 1 skipped** (MEASURED, `pytest -q` in `saturn-pub/`, 2026-10-05, Python 3.12 venv, 33 s); the CI-green claim on Python 3.10 is from the public repository's release notes and is not re-measured here.
 
 ### 3.3 The evidence plane and the version-control forest
 
@@ -459,12 +456,7 @@ Stated in full.
   attention layout it does not match, "rather than silently mismeasured"
   (`saturn-pub/src/saturn_pub/certificate/panel.py`), and the circuit-tracer integration verifies
   its residual-write address numerically (reported max-abs fp32 difference) rather than assuming
-  it (`saturn-pub/docs/circuit-tracer.md`, "The address alignment is measured, not assumed"). As
-  reported by the author, an earlier sibling attention-intervention harness produced
-  confident-but-invalid results from a causal-mask defect until exactly this measured
-  address-alignment check exposed the discrepancy; the specific defect's receipt is **not
-  measured** here (no file in this checkout records it), and the guardrails above are the general
-  form of the fix. ASSERTED: a measured alignment check and a fail-closed family gate are what
+  it (`saturn-pub/docs/circuit-tracer.md`, "The address alignment is measured, not assumed"). The defect itself is on record (MEASURED, `research/papers/time-circuit-scaffold/paper.md`, Limitations, and `saturn/experiments/2026-10-01-qwen-routing-mediation/FINDINGS.md`): an earlier feedback-and-selector instrument installed a custom attention function without its matching causal mask, so a multi-token query chunk could attend to future tokens, and the result passed the instrument's own replay checks. The instrument was retired, the affected routing measurement was re-run on untouched eager execution with zero future attention in every preceding query row, and the guardrails above are the general form of the fix. ASSERTED: a measured alignment check and a fail-closed family gate are what
   separate a usable harness from one that is confidently wrong.
 - **In-process `Act`s are not a security sandbox (ASSERTED).** The declared-visibility closure is
   a scientific contract; adapters and callable `Act`s execute trusted Python
@@ -495,8 +487,7 @@ Three demonstrations are named and **not yet done** (ASSERTED):
 
 The public toolkit is `saturn-pub` (import `saturn_pub`), version **0.4.0**, licensed
 **Apache-2.0** (MEASURED, `saturn-pub/pyproject.toml`; `saturn-pub/LICENSE`). The repository is
-public at github.com/JHollenb/saturn-pub (cite the repository; the 479-tests / CI-green figure is
-a release claim stated at time of writing, not verified against a file here).
+public at github.com/JHollenb/saturn-pub (cite the repository; test count MEASURED in §3.2).
 
 ```bash
 # saturn-pub (in-process sessions, forks, acts, receipts, evidence, training)

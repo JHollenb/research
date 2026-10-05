@@ -43,8 +43,8 @@ controller with a persistent version-control forest (the **Future Forest**).
   vLLM-SGLang / Cartridges / Git-Theta) with the delta for each.
 - Section 6 — limitations, in full: no external user yet; the efficiency wins are not
   equal-semantics; mount ≠ prefill (6/6 vs 1/6); the Future Forest flagship is a reindex;
-  bounded adapter coverage; and the causal-mask defect a sibling harness emitted before a
-  measured address-alignment check caught it.
+  bounded adapter coverage; and the causal-mask defect a retired sibling harness carried past its
+  own replay checks (on record in the time-circuit-scaffold paper).
 - Section 7 — the three demonstrations the paper still needs before a main-track submission
   (outside user reproduces from an exported cut; an equal-semantics cost win; an end-to-end
   pipeline no other framework runs), marked not yet done.
