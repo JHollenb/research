@@ -1,5 +1,5 @@
 ---
-title: "One Grokked Circuit Is Not a Certificate: Auditing Three Interpretability Instruments Against 84 Known Circuits"
+title: "One Grokked Circuit Is Not a Certificate: Auditing Three Interpretability Instruments Against 86 Known Circuits"
 type: research-paper
 status: draft
 date: 2026-10-05
@@ -7,7 +7,7 @@ updated: 2026-10-05
 tags: [interpretability, mechanistic-interpretability, circuit-discovery, method-audit, benchmark, interpbench, activation-patching, attribution-patching, subspace]
 ---
 
-# One Grokked Circuit Is Not a Certificate: Auditing Three Interpretability Instruments Against 84 Known Circuits
+# One Grokked Circuit Is Not a Certificate: Auditing Three Interpretability Instruments Against 86 Known Circuits
 
 **A method-audit note: do single-circuit verdicts on an interpretability instrument transfer to a benchmark of known circuits?**
 
