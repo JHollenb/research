@@ -42,7 +42,7 @@ batch four; a 2,048-page frozen-model archive read 4/4; a scene compiler reprodu
 native RGB endpoints across five diffusion families; and a Mamba virtual memory with
 bit-exact fork and 2.2x10^-4 staged replay. Five first users already rely on the contract,
 including a preregistered circuit-tracer edge arbitration on Gemma-2-2B (single-feature
-graph-vs-native agreement 0.857 [0.835, 0.879]). We claim no novelty over any single
+graph-vs-native agreement 0.846 [0.824, 0.868]). We claim no novelty over any single
 primitive: each has a close antecedent in prior work, which we cite with its delta. The
 honest novelty is the *combination* — transformer + SSM + diffusion, durable cross-process
 forkable sessions, byte-exact replay with hash-chained receipts, native-consumer judging, and
@@ -219,7 +219,7 @@ claim (ASSERTED; blog evidence review,
 
 ## 3. What is measured
 
-Each row is MEASURED at the cited file. Several demonstrations live in the lab's Saturn research
+Each row is MEASURED at the cited file. Several demonstrations live in the lab's research
 workspace (`saturn/`), summarized in the blog evidence review cited above; the public toolkit
 packages (`saturn-pub/`) carry the contract and the qualification records.
 
@@ -332,33 +332,13 @@ the base experiment's own control predicts.
 
 **One Grokked Circuit Is Not a Certificate**
 (`research/papers/instrument-audit-interpbench/paper.md`). Scores three in-house instruments
-plus standard baselines against the ground-truth circuits of **84 of 86** InterpBench models,
-with four preregistered predictions and a hash-frozen scorer. Measured node-level mean AUROC:
-activation patching **0.941**, EAP-IG **0.924**, EAP **0.883** (published ordering, P4 pass);
-gradient x activation 0.642 (faithful) / 0.783 (magnitude); direct-logit write-site 0.484
-(baseline-relative) / 0.693 (raw); subspace trace 0.772 (matched-rank random 0.657, rank-1
-0.761); random null 0.498. Verdicts: P1 pass, P2 fail, P3a/P3b falsified. The headline numbers
+plus standard baselines against the ground-truth circuits of all **86** InterpBench models (84 Tracr-compiled aggregated, two IOI reported separately), with the benchmark's own data generators, seven preregistered predictions and a hash-frozen scorer. Measured no-embedding node-level mean AUROC over the 84 Tracr models: activation patching **0.990**, EAP-IG **0.976**, EAP **0.892** (the published ordering); gradient x activation 0.499 in its calibrated form and 0.842 without the norm division; direct-logit write-site 0.462 baseline-relative and 0.809 as a raw RMS; subspace trace 0.665 against a matched-rank random subspace 0.644; random null 0.493. The method ranking is unchanged between the synthetic and real generators (Spearman 0.98). The headline numbers
 are bound to receipt bytes in a `saturn-pub` evidence claim registry
 (`research/papers/evidence-registry/`) re-checkable offline with
 `saturn-pub evidence claims verify --check`.
 
 **circuit-tracer native-edge arbitration (flagship)**
-(`saturn-pub/docs/circuit-tracer.md`; data
-`saturn-pub/experiments/circuit_tracer/summary.json`). Takes an attribution graph's edges and
-lets the unchanged native Gemma-2-2B consumer arbitrate each, through the `saturn_pub.trial`
-seam. Over a **preregistered** panel (sha256 frozen before the run) of 56 candidate prompts
-across 7 task families, admission = native fp32 greedy top-1 equals target, `top_k = 20`,
-thresholds 0.5/0.1 nats: **50 of 56 admitted**, 1000 single-feature edges + 100 group
-interventions, five RTX-4080 jobs at ≤11 min each. The native adapter validated first:
-stepped-vs-native max-abs logit delta **4.5x10^-5**, 16/16 greedy exact, mid-layer cut
-fresh-process replay exact, streamed == resident bitwise (max logit delta **0.0**), peak VRAM
-**2.4 GB streamed vs 10.6 GB resident**. Single features: **0** individually native-necessary
-(expected under a redundant circuit), graph-vs-native agreement **0.857 [0.835, 0.879]**, invert
-**0.016 [0.009, 0.024]** (16 edges). Group interventions (50 prompts): steering the top-20 set
-to −2x activation flips the native top-1 on **12 of 50** (graph agrees large on 15; agreement
-0.50 [0.36, 0.64]); joint zero-ablation never flips the top-1 (0.34 [0.22, 0.48]) yet the graph
-predicts a large drop on 13. Transcoder error nodes carried **11.4–18.5%** (median 14.0%) of
-node influence the feature circuit never exposes.
+(corrected run: `research/papers/pointwise-instruments-miss-distributed-circuits/experiments/2026-10-05-attribution-graphs/flagship-summary.json`; the sealed per-prompt bundles are in `saturn-pub/experiments/circuit_tracer/`, whose `docs/circuit-tracer.md` text still describes the withdrawn first run). Takes an attribution graph's edges and lets the unchanged native Gemma-2-2B consumer arbitrate each, through the `saturn_pub.trial` seam. Over a **preregistered** panel (sha256 frozen before the run) of 56 candidate prompts across 7 task families, admission = native fp32 greedy top-1 equals target, `top_k = 20`, thresholds 0.5/0.1 nats: **50 of 56 admitted**, 1000 single-feature edges + 100 group interventions. The native adapter validated first: stepped-vs-native max-abs logit delta **4.5x10^-5**, 16/16 greedy exact, mid-layer cut fresh-process replay exact, streamed == resident bitwise (max logit delta **0.0**), peak VRAM **2.4 GB streamed vs 10.6 GB resident**. Single features: **13 of 1000** individually native-necessary, graph-vs-native agreement **0.846 [0.824, 0.868]**, invert **0.001 [0.000, 0.003]**. Group interventions (50 prompts): steering the top-20 set to −2x activation flips the native top-1 on **45 of 50** (graph agrees large on 47; agreement 0.96 [0.90, 1.00]); joint zero-ablation flips **15 of 50** (agreement 0.56 [0.42, 0.70]). Transcoder error nodes carried **11.4–18.5%** (median 14.0%) of node influence the feature circuit never exposes. A first run of this comparison read the tool's activation array in the wrong order and mis-dosed every native intervention (0 single features necessary, 12 of 50 steer flips, no zero-ablation flips); an independent reimplementation caught it, and the whole panel was rerun under the unchanged preregistration. That episode is itself a measured instance of the verification contract (§6).
 
 ASSERTED: these five share the contract's primitives — capture, fork, declared `Act`,
 native-consumer judgment, and hash-pinned offline re-derivation — and none is an external user
@@ -509,6 +489,7 @@ archives are not bundled.
 
 ## Changelog
 
+- **2026-10-05 (consistency pass).** The circuit-tracer flagship paragraph now reports the corrected rerun (13/1000 necessary, agreement 0.846, −2x steer 45/50, zero-ablation 15/50) in place of the withdrawn first-run numbers it had copied from `saturn-pub/docs/circuit-tracer.md`, and names the first run as a verification episode; the InterpBench summary in Section 4 now quotes that paper's real-generator primary numbers.
 - **2026-10-05 (verification pass).** Test count measured on the v0.4.0 checkout (480 passed, 1 skipped) in place of the unmeasured release figure; the causal-mask defect in Section 6 cited to its record (time-circuit-scaffold Limitations; the 2026-10-01 routing re-run) instead of being called unrecorded; every Section 3 and Section 4 headline spot-checked against its source file.
 - **2026-10-05.** First draft.
 

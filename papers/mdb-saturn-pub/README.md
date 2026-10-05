@@ -38,7 +38,7 @@ controller with a persistent version-control forest (the **Future Forest**).
   the packaged qualification records, and the evidence plane / Future Forest numbers.
 - Section 4 — first users: Time-Formed Circuits, Single-Site Tests Miss Distributed Stores,
   Pass-Indexed Baseline, the InterpBench instrument audit, and the circuit-tracer flagship
-  (Gemma-2-2B single-feature graph-vs-native agreement 0.857 [0.835, 0.879]).
+  (Gemma-2-2B single-feature graph-vs-native agreement 0.846 [0.824, 0.868]).
 - Section 5 — comparison with prior art (nnsight / pyvene / TransformerLens / Patchscopes /
   vLLM-SGLang / Cartridges / Git-Theta) with the delta for each.
 - Section 6 — limitations, in full: no external user yet; the efficiency wins are not

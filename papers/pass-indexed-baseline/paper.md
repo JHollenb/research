@@ -284,7 +284,7 @@ and 7B.
 
 The recipe is available as an mdb `BenchSession` example
 (`saturn-pub/packages/mdb/examples/pass_indexed_baseline.py`) and reproduces the R0 drift on the
-same four scenes: run on Beast through mrun in BF16 (mdb's Qwen lane refuses FP32), its per-pass
+same four scenes: run on the lab's GPU host in BF16 (the mdb Qwen adapter does not offer FP32), its per-pass
 median drift is +3.33 / +2.08 / +2.22 nats at passes 1–3 (base FP32 +3.13 / +2.20 / +2.06), all
 three medians positive, with the fact-span K/V bit-identity canary exact (max-abs 0.0) on every
 scene (MEASURED, `job-30443c340ead`).
