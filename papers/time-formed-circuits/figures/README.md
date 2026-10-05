@@ -11,6 +11,7 @@ Each figure below lists the data file it is (or should be) generated from. Paths
 | `fig3-formation.png` | Fig 3. Where the transplantable store lives (Qwen2.5-1.5B and Gemma-2-2B): late band vs seed-layer, earlier band, and a linear prediction of the band from the seed. | `saturn/experiments/2026-10-02-p1-reviewer-experiments/results/A_analysis.json`. |
 | `fig4-error-interchange.png` | **[review]** Fig 4. E6 side-by-side: feature-only, matched feature-and-error, and error-only operators **against the native key/value cut** (whole-path solid, second-half dashed), identity vs color. | `saturn/experiments/2026-10-02-p1-reviewer-experiments/results/C_analysis.json`; native-cut reference from `saturn/experiments/2026-09-30-circuit-tracer-head-to-head/` (`job-ed4ce1ac5974`). |
 | `fig5-flux-quadrants.png` | **[review]** Fig 5. FLUX four-quadrant 2×2 (single-call vs all-call, necessity vs sufficiency) with the four measured bounds, plus the five-seed color necessity strip. | 2×2 bounds from `saturn/experiments/2026-09-30-flux2-joint01-time-accumulation/FINDINGS.md` (0.5620 / 0.20743 / 0.91309 / 0.01101); 5-seed strip from `saturn/experiments/2026-09-30-e7-flux-color-multiseed/`. |
+| `fig6-blind-band-families.png` | Fig 6. Four-family blind-band dissociation bars (OLMo-2-1B, Pythia-1.4B, Phi-2, GPT-2 XL). | `saturn/experiments/2026-10-05-e20-nonqwen-families/results/analysis.json`; rendered copy of `results/e20_nonqwen_dissociation_bars.png`. |
 
 ## Appendix D (supplementary)
 
