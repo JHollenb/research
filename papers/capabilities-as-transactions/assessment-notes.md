@@ -252,6 +252,125 @@ The same four-quadrant signature recurs in three autoregressive models above 1B 
 3. A head-to-head on Gemma-2-2B (public SAEs exist) showing attribution graphs or ACDC miss what the certificate finds.
 4. A one-number completeness score for the FLUX route.
 
+## 11. Mamba lineage and the SSM test (same day)
+
+Read for this section:
+- `obsidian/blog/2026-07-19-from-fast-mamba-to-a-100x-model-runtime.md`
+- `saturn/experiments/2026-08-13-mamba-phase8-atomic-act/README.md`
+- `saturn/experiments/2026-08-21-wall-a-addressing/README.md:1712` (Addendum AC)
+- `saturn/experiments/2026-09-02-mamba-state-source-rosetta/FINDINGS.md`
+- `saturn/experiments/2026-09-03-mamba-transition-conjunction{,-replication}-rosetta/FINDINGS.md`
+- the Black Mamba posts (2026-09-18, 09-19, 09-30)
+- `saturn/experiments/2026-09-24-language-phase-black-mamba-vm/FINDINGS.md`
+- the model-virtual-memory posts (2026-09-24, 09-29)
+- `saturn/experiments/2026-09-25-book-index-two-source-coherence/FINDINGS.md`
+
+**Lineage (MEASURED unless noted):**
+1. **Runtime origin (Jul 19).** A resident MLX Mamba-2.8B ran at 34.2 tok/s, while the paged QStore CPU path ran at 0.27 tok/s. The gap led to the separation of checkpoint bytes, executable pages, request state, work schedule, output contract and numerical contract. That separation is the basis of mrun and Saturn's model virtual memory.
+2. **First family-local transactional Act (Aug 13).** Mamba-130M, `job-837e008fea8e`. Mamba mutates its cache in place, so the Act refuses caller-owned caches and returns state only after a full forward commits; abort discards both. This is where commit/abort in Saturn VM comes from.
+3. **Discovery input (Aug 5–11).** Mamba-1.4B was one of the two foreign conditioners whose contrast with native Qwen exposed the FLUX route: full-state rescue 0.817.
+4. **The SSM certificate attempt (Aug 21, Addendum AC).**
+   - Design: the conv1d-output carrier cut, fp32.
+   - Parity smoke `job-beb10c04a81d` succeeded.
+   - Mamba-2.8B cell `job-a97cb1825d39` ended `killed_vram`, so the SSM certificate question was never answered.
+   - The earlier hidden-state cut was the wrong cut, and transformers also fail there.
+5. **The family-native source state (Sep 2).** In Mamba-130M it is the per-layer pair (convolution state C_ℓ, recurrent state H_ℓ). Sealing and rehydrating it reproduces the native continuation 64/64 tokens with zero logit error, and every destructive control diverges at token 1.
+6. **Ordered transitions compose; endpoint sums do not (Sep 3).**
+   - Cached composite, staged two-step transition with an intermediate StateCut, and reversed order: 3/3 on native-competent targets. Deletions: 4/4.
+   - Additive full-state and recurrent-only endpoints: 0/3.
+   - Staged states are byte-exact to direct execution.
+   - Jobs `job-86dd44afaf69`; replication `job-ce9ce61407e0` and `job-76199bb99a65` across two layouts and Mamba-130M/370M.
+   - This is SSM-side path dependence: the analogue of "late dose cannot buy back early steps".
+7. **Black Mamba (Sep 18–30).** An owned synthetic recurrent organism, not pretrained Mamba, so it is design evidence only.
+   - Local clocks hold 24/24 facts through 4,096 distractors; a global clock falls to 0/24.
+   - Explicit deletion works better on the event clock than under global ticks.
+   - Black Mamba banks became the physical pages of the language VM (SQuAD 2.0 panels: E5 retrieval → typed phase Registrar → signed capability → paged Black Mamba → Qwen answer).
+   - The 2026-09-30 quotient analysis (laptop only, same-day; confirm independently before citing): exact compression is impossible short of full rank under per-coordinate clocks with tanh writes, while balanced truncation keeps 98–99% of decisions at 16 of 32 dimensions.
+8. **Model virtual memory (Sep 24–29).**
+   - Prefill(A‖B) ≠ Mount(Prefill(A), Prefill(B)): jointly compiled pages matched native first-step top-1 on 6/6 panels, independently compiled pages on 1/6.
+   - `CausalContextVM` (`job-97e3192c594e`) reproduced exact logits from an exported cut in a fresh process.
+   - This is the K/V-cache form of the time-formation claim.
+
+**Use in the paper (applied to `space-and-time-circuits/paper.md`):**
+- §3: Mamba lineage of the runtime and the transactional Act.
+- §6.3: the SSM state of play and the transition-conjunction evidence.
+- §8: model virtual memory coherence, and local time as a design principle.
+- Appendix A: E5 redesigned.
+
+**E5 redesign** (queued after this note):
+- Four-quadrant certificate on Mamba at the family-native (C_ℓ, H_ℓ) cut, through Saturn's Mamba state program.
+- Single site = one layer's state; whole path = all layers or the second half.
+- Mamba-1.4B in fp32 first; Mamba-2.8B only with a measured VRAM reservation.
+- Canary: G-AC1 parity on SmolLM2-1.7B.
+- Either outcome is reportable.
+
+**Runs in flight (queued 2026-09-30 through mrun on Beast, `saturn/` not `saturn-pub`):**
+- E1: FLUX off-route span sweep (`saturn/experiments/2026-09-30-flux2-offroute-span-sweep/`).
+- E2b: ablation-method sensitivity (`saturn/experiments/2026-09-30-ablation-method-sensitivity/`).
+- E3: isolated-swap reruns plus public AR bundles (`saturn/experiments/2026-09-30-isolated-swap-reruns/`, bundle under `research/papers/space-and-time-circuits/evidence/ar-certificates/`).
+
+## 12. Experiment results (2026-09-30, MEASURED; FINDINGS.md in each `saturn/experiments/2026-09-30-*` directory)
+
+All three experiments passed canaries that reproduced the published numbers exactly or within tolerance.
+
+**E1, FLUX off-route span sweep** (`job-4eebfe403976`, two seeds, six strict axes).
+
+| arm | certified |
+|---|---|
+| historical route | 6/6 |
+| all-joint ceiling | 6/6 (the route reaches 93–95% of it) |
+| `joint.0–1` only | 6/6 |
+| `j2–j4` without `s0` | 5/6 |
+| image stream at the same blocks | 1/6 |
+| `single.1–4` | 0/6 |
+| `single.10–13` | 0/6 |
+
+- The carrier is the text stream through the joint region, and it is redundant within that region.
+- The "just the bridge" objection is partly upheld: it is the joint-region conditioning pathway, but not any span. The historical route is one certified instance of it, not a unique route.
+
+**E2b, ablation-method sensitivity** (`job-43479ccebd46`, `job-0e7f1e51394c`, `job-76991cc209c4`).
+- **Language-model sink:** robust to zero, mean, resample and filler ablation (SmolLM2, Qwen2.5-0.5B; L12/L18 sampled).
+- **FLUX route:** whole-path necessity appears only under source-state replacement:
+
+| method | dp |
+|---|---|
+| source state | −0.934 |
+| zero | +0.026 |
+| mean | −0.367 |
+| resample | −0.03 |
+
+  This is an interchange claim, not deletion. The joint region compensates for deleting the route's outputs.
+
+**E3, isolated full single-layer sweeps** (`job-1be7f297d707`, `job-478bbaddb07b`, `job-096fb0a5197a`).
+- The Qwen2.5-1.5B canary reproduces.
+- SmolLM2 color passes (best single layer 0.098).
+- **SmolLM2 identity fails.** L19 carries 0.305 of necessity and 0.991 of single-layer write; the original L12/L18 sampling missed it.
+- Qwen3-8B: write half clean (0.0018 single vs 1.000 all); the necessity share is degenerate under the scene prior.
+- The public bundle for the 8B and 30B receipts verifies ALL PASS (`research/papers/space-and-time-circuits/evidence/ar-certificates/`).
+
+**Net effect on the paper's claims:**
+- The *time* claim still stands where it was measured: single-step vs all-step on FLUX, and second-half K/V in LMs.
+- Three sharpenings are required:
+  1. The FLUX carrier is a redundant joint-region text-stream bridge.
+  2. FLUX necessity is interchange-only until E1b's whole-region deletion test.
+  3. LM certificates need full single-layer sweeps. SmolLM2 identity is now a mixed space/time case.
+- Clean, fully swept LM time cells so far: Qwen2.5-1.5B identity, SmolLM2 color, Gemma-2-2B (published panel).
+
+**E5, Mamba at the family-native (C_ℓ, H_ℓ) state cut** (`job-c84d8b675d30` and others).
+- Certified on sampled layers: Mamba-2.8B identity (single site 2.4%, W2_all 1.00) and counting (0.9%); Mamba-370M identity; Mamba-130M identity.
+- The same 2.8B fails at the conv1d cut (trace write 0.44) and at the hidden cut (L32 = 108.8%).
+- SSMs join the time-circuit class at their native cut.
+- Qualification: single-site necessity was sampled at L_mid and L_q3 only. A full sweep is owed (E3b).
+- The SmolLM2 parity canary was exact.
+
+**E1b, time accumulation and deletion on the joint region** (`job-67631847af7f`).
+- Single-step fails and all-step passes (interchange four-quadrant) for j0, j1, j0+j1, the whole joint region, and the route. Time accumulation is a property of the carrier region.
+- Zero and mean deletion of the whole joint-region text stream does not revert the image (zero +0.03 to +0.08), and joint.0–1 is not the re-supply (Δ ≤ 0.011).
+- Necessity is interchange-only region-wide. Hypothesis: the conditioning survives in the residual.
+
+**Queued or proposed:**
+- E3b, full single-layer sweeps for Qwen2.5-0.5B, Qwen3-30B, Pythia-410M and Mamba-2.8B / 370M / 130M: proposed.
+
 ## Sources (web, this session)
 
 - [Single-Position Intervention Fails (arXiv 2605.04061)](https://arxiv.org/html/2605.04061)

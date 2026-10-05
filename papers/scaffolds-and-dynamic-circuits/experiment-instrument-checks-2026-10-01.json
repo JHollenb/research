@@ -1,0 +1,1299 @@
+{
+  "schema": "architecture-instrument-audit-offline-checks-v1",
+  "created_at_utc": "2026-10-02T02:17:25.816560+00:00",
+  "scope": "Scoped artifact/source and model-free adversarial verification; E10/E20/connected lanes. Tiny CPU tensor tests instantiate no model. Historical raw scientific records unchanged.",
+  "e20": {
+    "report_sha256": "be6d326fcf4867809159dcd6355af097af7b6ce9fcec1c680fac99c923fd5b26",
+    "verifier_sha256": "561e3e1d9c505989bdb063217a0ed917ebc6851083704eaf00b01b1b27f42832",
+    "mechanics_status": "verified",
+    "checks": {
+      "mechanics_checks_passed": 6,
+      "mechanics_checks_total": 6,
+      "scientific_effect_checks": 0
+    },
+    "fault_injection": [
+      {
+        "fixture": "missing-row",
+        "rejected": true,
+        "diagnostics": [
+          "context 2 row count is incomplete",
+          "context 2 subjects are incomplete, duplicated, or out of order"
+        ]
+      },
+      {
+        "fixture": "wrong-ratio",
+        "rejected": true,
+        "diagnostics": [
+          "row 0.mediated_fraction: ratio does not match raw operands"
+        ]
+      },
+      {
+        "fixture": "nonfinite-observation",
+        "rejected": true,
+        "diagnostics": [
+          "non-finite numeric observations found"
+        ]
+      },
+      {
+        "fixture": "missing-log-marker",
+        "rejected": true
+      }
+    ],
+    "historical_report_unchanged": true
+  },
+  "e10": {
+    "runs": [
+      {
+        "report": "results/full-5c53b6865f0f/report.json",
+        "sha256": "624aa8a49ee4852096cc05120ffba7be647367403743a4177a74ba9fe67853a0",
+        "status": "record-consistent",
+        "arm_readouts_reparsed": 224,
+        "admitted": 48,
+        "problems": []
+      },
+      {
+        "report": "results/big15-f62de8e717a0/report.json",
+        "sha256": "8bbdddf9e3bd09fe6f791fb934604541d76a599683f2a2d3a0e6177e1fde65f2",
+        "status": "record-consistent",
+        "arm_readouts_reparsed": 216,
+        "admitted": 46,
+        "problems": []
+      }
+    ],
+    "readout_scope_audit": "../../../saturn/experiments/2026-10-01-e10-cot-intermediate-steps/results/corrections/2026-10-01-architecture-audit/readout-scope.json",
+    "diagnostic_fixtures_passed": 6
+  },
+  "followup_search": {
+    "scheduler_records_examined": 2058,
+    "matched_cot_jobs": [
+      "job-ba4b18486f3b",
+      "job-8fa1e41f6adb",
+      "job-07c76f467c86",
+      "job-b81804b429a0",
+      "job-f52ff856aae4",
+      "job-fba19173fcb8",
+      "job-5c53b6865f0f",
+      "job-f62de8e717a0"
+    ],
+    "scope": "Fresh scheduler list plus local reports/source; not proof that no unindexed experiment exists."
+  },
+  "connected_diffusion": [
+    {
+      "job_id": "job-14884dd5226e",
+      "phase": "development",
+      "steps": 28,
+      "report_file_sha256": "4d38209f59f111e0092b8354718366e208a1273c68006e106e17725b5168d076",
+      "verifier_source_sha256": "7856899a23ff6467d2e9dbe565396e043d48b84891986054422055d41e70dbef",
+      "snapshot_custody": [
+        {
+          "path": "payload/carrier_math.py",
+          "passed": true
+        },
+        {
+          "path": "payload/coarse_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/nonflux_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/portability_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/run_saturn_rosetta_manalysis.py",
+          "passed": true
+        },
+        {
+          "path": "payload/source_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/verify.py",
+          "passed": true
+        },
+        {
+          "path": "payload/writer_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "sources/PLAN.md",
+          "passed": true
+        },
+        {
+          "path": "sources/README.md",
+          "passed": true
+        },
+        {
+          "path": "sources/analyze.py",
+          "passed": true
+        },
+        {
+          "path": "sources/config.json",
+          "passed": true
+        },
+        {
+          "path": "sources/submit.py",
+          "passed": true
+        },
+        {
+          "path": "sources/verify.py",
+          "passed": true
+        },
+        {
+          "path": "sources/worker.py",
+          "passed": true
+        },
+        {
+          "path": "staged/carrier_math.py",
+          "passed": true
+        },
+        {
+          "path": "staged/coarse_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_README.md",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_analyze.py",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_submit.py",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_verify.py",
+          "passed": true
+        },
+        {
+          "path": "staged/nonflux_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/portability_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/run_saturn_rosetta_manalysis.py",
+          "passed": true
+        },
+        {
+          "path": "staged/saturn_debug_request.json",
+          "passed": true
+        },
+        {
+          "path": "staged/saturn_run_config.json",
+          "passed": true
+        },
+        {
+          "path": "staged/source_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/verify.py",
+          "passed": true
+        },
+        {
+          "path": "staged/worker.py",
+          "passed": true
+        },
+        {
+          "path": "staged/writer_runtime.py",
+          "passed": true
+        }
+      ],
+      "verification": {
+        "schema": "saturn-connected-architecture-diffusion-verification-v1",
+        "mechanics_status": "passed",
+        "instrument_status": "executed",
+        "checks": {
+          "schema": {
+            "status": "passed",
+            "observed": "saturn-connected-architecture-diffusion-report-v1",
+            "expected": "saturn-connected-architecture-diffusion-report-v1"
+          },
+          "report_mechanics_status": {
+            "status": "passed",
+            "observed": "passed"
+          },
+          "freeze_before_held": {
+            "status": "passed",
+            "phase": "development",
+            "digest_valid": true,
+            "frozen_before_held": true,
+            "authority": "phase custody diagnostic; calibration does not claim held closure"
+          },
+          "source_hashes": {
+            "status": "passed",
+            "report": {
+              "carrier_math.py": "31cdbe89a1bcc1fde40817c674d487f1a1673f0969e8dd673db678084f4d638d",
+              "coarse_runtime.py": "e52b1b119cda64186a210dd007cbb5e31a132583ee656e5f4bac9053506811b3",
+              "nonflux_runtime.py": "8df42c4a9a9e68115adea7874ca88c5eb913763d4d9287e8cad3eb6f65201b2e",
+              "portability_runtime.py": "091a2e14b4498165deaf94d06e4b1ce4ee27301ac212652039bd3c8ba29c56ce",
+              "run_saturn_rosetta_manalysis.py": "8a0f25515addebef398043ebf5d66c2fbfbd9232e28fed6ec0ae342d66ca8ca9",
+              "source_runtime.py": "8961104e0888605c5e06bd2e26ae1b50dc2505cca80b1ddd78a34613629989dc",
+              "verify.py": "e9f0168d3a047547ae2c62a7befb8be85e7d27f64ee2fe6a20e20abad7db7e64",
+              "worker.py": "53fecd2962a422039476357f4e5e3423950d01e89dc0b8462c5befd2525033cb",
+              "writer_runtime.py": "2123d710524eda0c3a4b8369eee1df26690f851d8f7d2f8f7e70a5f3dcbddb01"
+            },
+            "request": {
+              "carrier_math.py": "31cdbe89a1bcc1fde40817c674d487f1a1673f0969e8dd673db678084f4d638d",
+              "coarse_runtime.py": "e52b1b119cda64186a210dd007cbb5e31a132583ee656e5f4bac9053506811b3",
+              "nonflux_runtime.py": "8df42c4a9a9e68115adea7874ca88c5eb913763d4d9287e8cad3eb6f65201b2e",
+              "portability_runtime.py": "091a2e14b4498165deaf94d06e4b1ce4ee27301ac212652039bd3c8ba29c56ce",
+              "run_saturn_rosetta_manalysis.py": "8a0f25515addebef398043ebf5d66c2fbfbd9232e28fed6ec0ae342d66ca8ca9",
+              "source_runtime.py": "8961104e0888605c5e06bd2e26ae1b50dc2505cca80b1ddd78a34613629989dc",
+              "verify.py": "e9f0168d3a047547ae2c62a7befb8be85e7d27f64ee2fe6a20e20abad7db7e64",
+              "worker.py": "53fecd2962a422039476357f4e5e3423950d01e89dc0b8462c5befd2525033cb",
+              "writer_runtime.py": "2123d710524eda0c3a4b8369eee1df26690f851d8f7d2f8f7e70a5f3dcbddb01"
+            }
+          },
+          "request_binding": {
+            "status": "passed",
+            "report": "c333282206def7ab801518d884bb0cfe5df659701d13617f3ff2e8981828deec",
+            "request": "c333282206def7ab801518d884bb0cfe5df659701d13617f3ff2e8981828deec"
+          },
+          "freeze_binding": {
+            "status": "passed",
+            "lowering_identity": {
+              "steps": 28,
+              "guidance": 7.0,
+              "resolution": [
+                512,
+                512
+              ],
+              "model_identity": {
+                "backend": "cuda",
+                "dtype": "bfloat16",
+                "family": "sdxl",
+                "model_abi_id": "John6666--wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_id": "John6666/wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_key": "wai-nsfw-illustrious-v150",
+                "offload_strategy": "sequential_cpu",
+                "revision": "main"
+              }
+            },
+            "expected_lowering_identity": {
+              "guidance": 7.0,
+              "model_identity": {
+                "backend": "cuda",
+                "dtype": "bfloat16",
+                "family": "sdxl",
+                "model_abi_id": "John6666--wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_id": "John6666/wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_key": "wai-nsfw-illustrious-v150",
+                "offload_strategy": "sequential_cpu",
+                "revision": "main"
+              },
+              "resolution": [
+                512,
+                512
+              ],
+              "steps": 28
+            },
+            "held_row_ids": [
+              "held-lantern-bowl-seed-88307"
+            ],
+            "expected_held_row_ids": [
+              "held-lantern-bowl-seed-88307"
+            ],
+            "held_input_sha256": "68fb5d23436f2db3c07290e9f2e2b9cf48326fdbf4c2af3a2a80c28e60cbe83c",
+            "expected_held_input_sha256": "68fb5d23436f2db3c07290e9f2e2b9cf48326fdbf4c2af3a2a80c28e60cbe83c"
+          },
+          "row_mechanics": {
+            "status": "passed",
+            "rows": [
+              {
+                "row_id": "dev-mug-clock-seed-88301",
+                "arm_set_complete": true,
+                "native_replay_exact": true,
+                "step_zero_identity_recorded": true,
+                "step_zero_latent_equal": true,
+                "step_zero_schedule_equal": true,
+                "matched_pre_cut_nonzero": true,
+                "stale_pre_cut_nonzero": true,
+                "stale_has_live_crossing_measurement": true,
+                "full_reinstall_exact": true,
+                "pre_cut_applicability": {
+                  "matched_current_live": "applicable",
+                  "crossed_stale": "applicable",
+                  "scientific_authority": "diagnostic only; no null or trend gate"
+                },
+                "full_reinstall_closure_diagnostic": "exact-reinstall",
+                "mechanics_status": "passed"
+              }
+            ]
+          },
+          "serving_authority": {
+            "status": "passed",
+            "ledger": {
+              "crossed_stale_endpoint_read": "evaluation_control_only",
+              "current_live_requested_prefix_recomputed_at_recipient": true,
+              "current_recipient_latent_read": true,
+              "host_supplied_numerical_recomputation": [
+                "endpoint_reversal",
+                "tree_stats",
+                "rgb_axes"
+              ],
+              "native_semantic_content_authority": "native up1 -> up2 -> scheduler -> VAE -> RGB",
+              "requested_prompt_conditioner_read": true,
+              "separately_evolving_target_trajectory_read_by_serving_path": false,
+              "target_endpoint_read_by_current_live_arm": false,
+              "target_image_read_by_writer_or_serving_path": false
+            }
+          },
+          "image_archive": {
+            "status": "passed",
+            "png_count": 11,
+            "freeze_manifest_present": true
+          },
+          "image_hashes": {
+            "status": "passed",
+            "checked": [
+              {
+                "label": "development/dev-mug-clock-seed-88301/native/requested",
+                "path": "dev-mug-clock-seed-88301-native-requested-0-0.png",
+                "png_sha256": "333e0e80cd749f59863cf5fa691651de6708edb06d2359fef094477be70dd2ec",
+                "rgb_sha256": "4bb6279fd40e066f5638fcc8c76f5d3c625a9e00813c5697a9ef31078ae1f611",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/native/requested-repeat",
+                "path": "dev-mug-clock-seed-88301-native-requested-repeat-0-0.png",
+                "png_sha256": "333e0e80cd749f59863cf5fa691651de6708edb06d2359fef094477be70dd2ec",
+                "rgb_sha256": "4bb6279fd40e066f5638fcc8c76f5d3c625a9e00813c5697a9ef31078ae1f611",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/native/source",
+                "path": "dev-mug-clock-seed-88301-native-source-0-0.png",
+                "png_sha256": "f293f01632af835d7974ca6717129daa98098667330a9d82077bb54a83283d31",
+                "rgb_sha256": "96bcc2c96e49445466357356f2c76b7c4adadd3f6f682fe3047f30801128d883",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/arm/crossed-stale",
+                "path": "dev-mug-clock-seed-88301-crossed-stale.png",
+                "png_sha256": "e6a34b2063dc40cd2eccc244b4ff6fb40cf69d1a758d67b1782056fa772dcce1",
+                "rgb_sha256": "1fa0304121d57dcb206dc8075f1e957c9a297f2ad8ee656a5c12cc94b5286b5b",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/arm/crossed-stale-wrong-sign",
+                "path": "dev-mug-clock-seed-88301-crossed-stale-wrong-sign.png",
+                "png_sha256": "c62907a1d5d2f29a58139f0454bf4291424db624b8e635c357c38d19129c6ef0",
+                "rgb_sha256": "e8ff744cb1f36a7e44f3511c016ad7b8f8b13a95d04f05d911176d545a804d05",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/arm/matched-current-live",
+                "path": "dev-mug-clock-seed-88301-matched-current-live.png",
+                "png_sha256": "7b784570687eea59ca97dd1fdc3115b21e1e95ef89e3ca0c01bad1e268e4b1bb",
+                "rgb_sha256": "db7f09bae907e70178948078b86719543b164da00362856581fa4572672ca115",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/arm/matched-current-live-full",
+                "path": "dev-mug-clock-seed-88301-matched-current-live-full.png",
+                "png_sha256": "333e0e80cd749f59863cf5fa691651de6708edb06d2359fef094477be70dd2ec",
+                "rgb_sha256": "4bb6279fd40e066f5638fcc8c76f5d3c625a9e00813c5697a9ef31078ae1f611",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/arm/native-requested",
+                "path": "dev-mug-clock-seed-88301-native-requested.png",
+                "png_sha256": "333e0e80cd749f59863cf5fa691651de6708edb06d2359fef094477be70dd2ec",
+                "rgb_sha256": "4bb6279fd40e066f5638fcc8c76f5d3c625a9e00813c5697a9ef31078ae1f611",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "development/dev-mug-clock-seed-88301/arm/recipient-noop",
+                "path": "dev-mug-clock-seed-88301-recipient-noop.png",
+                "png_sha256": "d7868e5545ad2a97944a4c793a2b2ce441986d382586186e50a70e7abb41ec21",
+                "rgb_sha256": "05a545746b8ff09b9240b271b59b56f4fcd2a2a4dd5556d4aa6fa9746f99619f",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              }
+            ],
+            "failures": []
+          }
+        },
+        "scientific_status": "not_assessed; verifier only protects custody and declared mechanics"
+      }
+    },
+    {
+      "job_id": "job-1ed0f0ec506b",
+      "phase": "held",
+      "steps": 28,
+      "report_file_sha256": "c0ef77ec44624a1029651d2f74d74de2ee41c5b4f27a2cbb5eaa55af3a86fb95",
+      "verifier_source_sha256": "7856899a23ff6467d2e9dbe565396e043d48b84891986054422055d41e70dbef",
+      "snapshot_custody": [
+        {
+          "path": "payload/carrier_math.py",
+          "passed": true
+        },
+        {
+          "path": "payload/coarse_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/nonflux_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/portability_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/run_saturn_rosetta_manalysis.py",
+          "passed": true
+        },
+        {
+          "path": "payload/source_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "payload/verify.py",
+          "passed": true
+        },
+        {
+          "path": "payload/writer_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "sources/PLAN.md",
+          "passed": true
+        },
+        {
+          "path": "sources/README.md",
+          "passed": true
+        },
+        {
+          "path": "sources/analyze.py",
+          "passed": true
+        },
+        {
+          "path": "sources/config.json",
+          "passed": true
+        },
+        {
+          "path": "sources/submit.py",
+          "passed": true
+        },
+        {
+          "path": "sources/verify.py",
+          "passed": true
+        },
+        {
+          "path": "sources/worker.py",
+          "passed": true
+        },
+        {
+          "path": "staged/carrier_math.py",
+          "passed": true
+        },
+        {
+          "path": "staged/coarse_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_README.md",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_analyze.py",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_submit.py",
+          "passed": true
+        },
+        {
+          "path": "staged/collection_verify.py",
+          "passed": true
+        },
+        {
+          "path": "staged/nonflux_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/portability_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/run_saturn_rosetta_manalysis.py",
+          "passed": true
+        },
+        {
+          "path": "staged/saturn_debug_request.json",
+          "passed": true
+        },
+        {
+          "path": "staged/saturn_run_config.json",
+          "passed": true
+        },
+        {
+          "path": "staged/source_runtime.py",
+          "passed": true
+        },
+        {
+          "path": "staged/verify.py",
+          "passed": true
+        },
+        {
+          "path": "staged/worker.py",
+          "passed": true
+        },
+        {
+          "path": "staged/writer_runtime.py",
+          "passed": true
+        }
+      ],
+      "verification": {
+        "schema": "saturn-connected-architecture-diffusion-verification-v1",
+        "mechanics_status": "passed",
+        "instrument_status": "executed",
+        "checks": {
+          "schema": {
+            "status": "passed",
+            "observed": "saturn-connected-architecture-diffusion-report-v1",
+            "expected": "saturn-connected-architecture-diffusion-report-v1"
+          },
+          "report_mechanics_status": {
+            "status": "passed",
+            "observed": "passed"
+          },
+          "freeze_before_held": {
+            "status": "passed",
+            "phase": "held",
+            "digest_valid": true,
+            "frozen_before_held": true,
+            "authority": "phase custody diagnostic; calibration does not claim held closure"
+          },
+          "source_hashes": {
+            "status": "passed",
+            "report": {
+              "carrier_math.py": "31cdbe89a1bcc1fde40817c674d487f1a1673f0969e8dd673db678084f4d638d",
+              "coarse_runtime.py": "e52b1b119cda64186a210dd007cbb5e31a132583ee656e5f4bac9053506811b3",
+              "nonflux_runtime.py": "8df42c4a9a9e68115adea7874ca88c5eb913763d4d9287e8cad3eb6f65201b2e",
+              "portability_runtime.py": "091a2e14b4498165deaf94d06e4b1ce4ee27301ac212652039bd3c8ba29c56ce",
+              "run_saturn_rosetta_manalysis.py": "8a0f25515addebef398043ebf5d66c2fbfbd9232e28fed6ec0ae342d66ca8ca9",
+              "source_runtime.py": "8961104e0888605c5e06bd2e26ae1b50dc2505cca80b1ddd78a34613629989dc",
+              "verify.py": "e9f0168d3a047547ae2c62a7befb8be85e7d27f64ee2fe6a20e20abad7db7e64",
+              "worker.py": "53fecd2962a422039476357f4e5e3423950d01e89dc0b8462c5befd2525033cb",
+              "writer_runtime.py": "2123d710524eda0c3a4b8369eee1df26690f851d8f7d2f8f7e70a5f3dcbddb01"
+            },
+            "request": {
+              "carrier_math.py": "31cdbe89a1bcc1fde40817c674d487f1a1673f0969e8dd673db678084f4d638d",
+              "coarse_runtime.py": "e52b1b119cda64186a210dd007cbb5e31a132583ee656e5f4bac9053506811b3",
+              "nonflux_runtime.py": "8df42c4a9a9e68115adea7874ca88c5eb913763d4d9287e8cad3eb6f65201b2e",
+              "portability_runtime.py": "091a2e14b4498165deaf94d06e4b1ce4ee27301ac212652039bd3c8ba29c56ce",
+              "run_saturn_rosetta_manalysis.py": "8a0f25515addebef398043ebf5d66c2fbfbd9232e28fed6ec0ae342d66ca8ca9",
+              "source_runtime.py": "8961104e0888605c5e06bd2e26ae1b50dc2505cca80b1ddd78a34613629989dc",
+              "verify.py": "e9f0168d3a047547ae2c62a7befb8be85e7d27f64ee2fe6a20e20abad7db7e64",
+              "worker.py": "53fecd2962a422039476357f4e5e3423950d01e89dc0b8462c5befd2525033cb",
+              "writer_runtime.py": "2123d710524eda0c3a4b8369eee1df26690f851d8f7d2f8f7e70a5f3dcbddb01"
+            }
+          },
+          "request_binding": {
+            "status": "passed",
+            "report": "9eeb110c6b371522889580a789f8a90226800a78fc36b91851beb71a982e2d63",
+            "request": "9eeb110c6b371522889580a789f8a90226800a78fc36b91851beb71a982e2d63"
+          },
+          "freeze_binding": {
+            "status": "passed",
+            "lowering_identity": {
+              "steps": 28,
+              "guidance": 7.0,
+              "resolution": [
+                512,
+                512
+              ],
+              "model_identity": {
+                "backend": "cuda",
+                "dtype": "bfloat16",
+                "family": "sdxl",
+                "model_abi_id": "John6666--wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_id": "John6666/wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_key": "wai-nsfw-illustrious-v150",
+                "offload_strategy": "sequential_cpu",
+                "revision": "main"
+              }
+            },
+            "expected_lowering_identity": {
+              "guidance": 7.0,
+              "model_identity": {
+                "backend": "cuda",
+                "dtype": "bfloat16",
+                "family": "sdxl",
+                "model_abi_id": "John6666--wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_id": "John6666/wai-nsfw-illustrious-sdxl-v150-sdxl",
+                "model_key": "wai-nsfw-illustrious-v150",
+                "offload_strategy": "sequential_cpu",
+                "revision": "main"
+              },
+              "resolution": [
+                512,
+                512
+              ],
+              "steps": 28
+            },
+            "held_row_ids": [
+              "held-lantern-bowl-seed-88307"
+            ],
+            "expected_held_row_ids": [
+              "held-lantern-bowl-seed-88307"
+            ],
+            "held_input_sha256": "68fb5d23436f2db3c07290e9f2e2b9cf48326fdbf4c2af3a2a80c28e60cbe83c",
+            "expected_held_input_sha256": "68fb5d23436f2db3c07290e9f2e2b9cf48326fdbf4c2af3a2a80c28e60cbe83c"
+          },
+          "row_mechanics": {
+            "status": "passed",
+            "rows": [
+              {
+                "row_id": "held-lantern-bowl-seed-88307",
+                "arm_set_complete": true,
+                "native_replay_exact": true,
+                "step_zero_identity_recorded": true,
+                "step_zero_latent_equal": true,
+                "step_zero_schedule_equal": true,
+                "matched_pre_cut_nonzero": true,
+                "stale_pre_cut_nonzero": true,
+                "stale_has_live_crossing_measurement": true,
+                "full_reinstall_exact": true,
+                "pre_cut_applicability": {
+                  "matched_current_live": "applicable",
+                  "crossed_stale": "applicable",
+                  "scientific_authority": "diagnostic only; no null or trend gate"
+                },
+                "full_reinstall_closure_diagnostic": "exact-reinstall",
+                "mechanics_status": "passed"
+              }
+            ]
+          },
+          "serving_authority": {
+            "status": "passed",
+            "ledger": {
+              "crossed_stale_endpoint_read": "evaluation_control_only",
+              "current_live_requested_prefix_recomputed_at_recipient": true,
+              "current_recipient_latent_read": true,
+              "host_supplied_numerical_recomputation": [
+                "endpoint_reversal",
+                "tree_stats",
+                "rgb_axes"
+              ],
+              "native_semantic_content_authority": "native up1 -> up2 -> scheduler -> VAE -> RGB",
+              "requested_prompt_conditioner_read": true,
+              "separately_evolving_target_trajectory_read_by_serving_path": false,
+              "target_endpoint_read_by_current_live_arm": false,
+              "target_image_read_by_writer_or_serving_path": false
+            }
+          },
+          "image_archive": {
+            "status": "passed",
+            "png_count": 11,
+            "freeze_manifest_present": true
+          },
+          "image_hashes": {
+            "status": "passed",
+            "checked": [
+              {
+                "label": "held/held-lantern-bowl-seed-88307/native/requested",
+                "path": "held-lantern-bowl-seed-88307-native-requested-0-0.png",
+                "png_sha256": "1721aac71fba7822a0febc0a2a9027efd1c5070f2b15156506bd40c34c5236fc",
+                "rgb_sha256": "09628c22c35aa43ccf41be5876bee6bf9f1819019035beecd2430067406c7506",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/native/requested-repeat",
+                "path": "held-lantern-bowl-seed-88307-native-requested-repeat-0-0.png",
+                "png_sha256": "1721aac71fba7822a0febc0a2a9027efd1c5070f2b15156506bd40c34c5236fc",
+                "rgb_sha256": "09628c22c35aa43ccf41be5876bee6bf9f1819019035beecd2430067406c7506",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/native/source",
+                "path": "held-lantern-bowl-seed-88307-native-source-0-0.png",
+                "png_sha256": "8093b822c69ad91415030a7769c250e7b9204eabdd804bec43a4b1946681ec88",
+                "rgb_sha256": "5860e0aa1bf6812f2243e9288ec3b4deaee32c9f8616d577de52fbfaba0f0f20",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/arm/crossed-stale",
+                "path": "held-lantern-bowl-seed-88307-crossed-stale.png",
+                "png_sha256": "7f59a509ec010c3f86619e33748cdaa55027fea38d0c420dad102a096c2bad21",
+                "rgb_sha256": "114d5e57cc027c517a086485c4650cf32204d5060044b6698d4637ae6043a818",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/arm/crossed-stale-wrong-sign",
+                "path": "held-lantern-bowl-seed-88307-crossed-stale-wrong-sign.png",
+                "png_sha256": "c28c7fe6701e47d67342f12d5af771919c490c4be61aeb6cce37d354792219bb",
+                "rgb_sha256": "f093f135d398a2a91cf1d935e26aad4b240fbb3d5451a5fcf6a149915298ec61",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/arm/matched-current-live",
+                "path": "held-lantern-bowl-seed-88307-matched-current-live.png",
+                "png_sha256": "28eac40e6efc15539d44e292e9428d75ae582344f57a1a7aa25c73c091118528",
+                "rgb_sha256": "2e26f87461702d0c3c607be9d6a6788d4eba0da081453e7fe76e5cc424617e0d",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/arm/matched-current-live-full",
+                "path": "held-lantern-bowl-seed-88307-matched-current-live-full.png",
+                "png_sha256": "1721aac71fba7822a0febc0a2a9027efd1c5070f2b15156506bd40c34c5236fc",
+                "rgb_sha256": "09628c22c35aa43ccf41be5876bee6bf9f1819019035beecd2430067406c7506",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/arm/native-requested",
+                "path": "held-lantern-bowl-seed-88307-native-requested.png",
+                "png_sha256": "1721aac71fba7822a0febc0a2a9027efd1c5070f2b15156506bd40c34c5236fc",
+                "rgb_sha256": "09628c22c35aa43ccf41be5876bee6bf9f1819019035beecd2430067406c7506",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              },
+              {
+                "label": "held/held-lantern-bowl-seed-88307/arm/recipient-noop",
+                "path": "held-lantern-bowl-seed-88307-recipient-noop.png",
+                "png_sha256": "31afc9ba2f85eb1854faa83c736277ee6848eab6c5f3e1ef48459c5b1c1de4ca",
+                "rgb_sha256": "f1da9d2bb89b091810a47006989df6c3af824816e3e5584b4a3d858092e9a793",
+                "shape": [
+                  512,
+                  512,
+                  3
+                ]
+              }
+            ],
+            "failures": []
+          }
+        },
+        "scientific_status": "not_assessed; verifier only protects custody and declared mechanics"
+      }
+    }
+  ],
+  "connected_qwen": {
+    "report_corruption_tests_passed": 5,
+    "tiny_tensor_delivery_tests_passed": 3,
+    "tests_construct_real_models": false,
+    "historical_raw_rows_reclassified": 0,
+    "verification_outputs": [
+      "../../../saturn/experiments/2026-10-01-connected-architecture/qwen/results/corrections/2026-10-01-instrument-audit/development-verification.json",
+      "../../../saturn/experiments/2026-10-01-connected-architecture/qwen/results/corrections/2026-10-01-instrument-audit/held-verification.json"
+    ],
+    "read_mass_scope": "host-recomputed softmax diagnostic; native attention-weight parity not established"
+  },
+  "comparative_qualification": {
+    "tests_passed": 5,
+    "qualification_file_sha256": "6b8e6b602b99c19162cb74f2a3295558370bec4c17f32b2bf0d1f72111d7e3aa",
+    "qualification_path": "../../../saturn/experiments/2026-10-01-scaffold-confirmation/QUALIFICATION-2026-10-01.json",
+    "signed_and_undefined_observations_retained": true,
+    "hard_scientific_gates_added": 0
+  },
+  "c1_logical_lane_qualification": {
+    "verification_path": "../../../saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/results/corrections/2026-10-01-instrument-audit/postrun-verification.json",
+    "verification_file_sha256": "883a330e6fee3f964023f059454acc5a82bc9aa01b328002977d0fde6f6bb276",
+    "mechanics_status": "valid",
+    "logical_lanes": 4736,
+    "collapsed_content_keys": 4691,
+    "collision_excess": 45,
+    "errors": [],
+    "historical_verification_preserved": true
+  },
+  "connected_acquisition": {
+    "tests_passed": 8,
+    "verification_records": [
+      {
+        "phase": "development",
+        "verification_path": "../../../saturn/experiments/2026-10-01-connected-architecture/acquisition/results/corrections/2026-10-01-instrument-audit/development-verification.json",
+        "verification_file_sha256": "bd4053457780b40136539fa3c71e19d6c326ab2b6a46378d3b89387d4eb5422b",
+        "integrity_status": "passed",
+        "mechanics_status": "passed",
+        "rows": 4,
+        "errors": [],
+        "historical_report_unchanged": true
+      },
+      {
+        "phase": "held",
+        "verification_path": "../../../saturn/experiments/2026-10-01-connected-architecture/acquisition/results/corrections/2026-10-01-instrument-audit/held-verification.json",
+        "verification_file_sha256": "15fc70b0aa20bdd01ff05a5f8ff2bed4a2ab777beca3ec75697085d0668a5bca",
+        "integrity_status": "legacy-compatible",
+        "mechanics_status": "passed",
+        "rows": 16,
+        "errors": [],
+        "historical_report_unchanged": true
+      }
+    ],
+    "raw_rows_retained_in_analysis": 20,
+    "optional_diagnostics_have_no_primary_attribution_veto": true,
+    "analysis_path": "../../../saturn/experiments/2026-10-01-connected-architecture/acquisition/results/corrections/2026-10-01-instrument-audit/analysis.json",
+    "model_runs_launched": 0
+  },
+  "freeze_lineage_repair": {
+    "lineage_tests_passed": {
+      "qwen": 3,
+      "mamba": 4,
+      "diffusion": 6
+    },
+    "cross_lane_import_check": {
+      "status": "passed",
+      "rows": [
+        {
+          "lane": "qwen",
+          "resolved_helper": "/Users/jakeholl/domains/saturn/experiments/2026-10-01-connected-architecture/qwen/freeze_lineage.py",
+          "correct_helper": true
+        },
+        {
+          "lane": "mamba",
+          "resolved_helper": "/Users/jakeholl/domains/saturn/experiments/2026-10-01-connected-architecture/mamba/freeze_lineage.py",
+          "correct_helper": true
+        },
+        {
+          "lane": "diffusion",
+          "resolved_helper": "/Users/jakeholl/domains/saturn/experiments/2026-10-01-connected-architecture/diffusion/freeze_lineage.py",
+          "correct_helper": true
+        }
+      ]
+    },
+    "postrepair_verification": [
+      {
+        "lane": "qwen",
+        "phase": "development",
+        "mechanics_status": "valid",
+        "lineage": null,
+        "errors": [],
+        "output": "../../../saturn/experiments/2026-10-01-connected-architecture/qwen/results/corrections/2026-10-01-instrument-audit/freeze-development-verification.json",
+        "output_file_sha256": "64d3eeb071b3a1de3120fb5037f159cb21d9dfd5090f490db516c0557006caa5",
+        "audit_source_sha256": {
+          "freeze_lineage.py": "2d824509487187b2a04b0f6de100e8e3878fbed8d9a53b5a2da2acbfb97547d2",
+          "verify.py": "752df69b28842ef5a7cb400b894c513c59ea36fd6f7071b454ffbdf8f42caa06"
+        },
+        "raw_report_path": "saturn/experiments/2026-10-01-connected-architecture/qwen/results/development/run-d2ba66ad63b7/report.json",
+        "historical_report_file_sha256": "7593abbb4e03a0862c7882e7bccc7de3e0461a5d357c5e098e9fcd508ac93674",
+        "historical_report_unchanged": true
+      },
+      {
+        "lane": "qwen",
+        "phase": "held",
+        "mechanics_status": "valid",
+        "lineage": {
+          "status": "historical-unbound"
+        },
+        "errors": [],
+        "output": "../../../saturn/experiments/2026-10-01-connected-architecture/qwen/results/corrections/2026-10-01-instrument-audit/freeze-held-verification.json",
+        "output_file_sha256": "4a227a0e2e84d0ca817a89958fdfe7e65a4284e48302ffc8aed1de1f565c3183",
+        "audit_source_sha256": {
+          "freeze_lineage.py": "2d824509487187b2a04b0f6de100e8e3878fbed8d9a53b5a2da2acbfb97547d2",
+          "verify.py": "752df69b28842ef5a7cb400b894c513c59ea36fd6f7071b454ffbdf8f42caa06"
+        },
+        "raw_report_path": "saturn/experiments/2026-10-01-connected-architecture/qwen/results/held/run-78226c05b8a9/report.json",
+        "historical_report_file_sha256": "4e3337b4935aa71bef2dd5b224cac462c85e7af59e777140ec655a6be82c3d92",
+        "historical_report_unchanged": true
+      },
+      {
+        "lane": "mamba",
+        "phase": "held",
+        "mechanics_status": "valid",
+        "lineage": {
+          "status": "historical-unbound",
+          "authority": "additive prospective report-byte binding; legacy freeze field remains separate"
+        },
+        "errors": [],
+        "output": "../../../saturn/experiments/2026-10-01-connected-architecture/mamba/results/corrections/2026-10-01-instrument-audit/held-verification.json",
+        "output_file_sha256": "ab2783634ed70d6831406c7756f8a0b56dfcfc4ad9889d75301a84d754dd52d7",
+        "audit_source_sha256": {
+          "freeze_lineage.py": "37746b3ef32ad5719499a2b709a6fa5cc31b57f28ced33d7a89abd30ce9e1c88",
+          "verify.py": "e436dfcb12de85685dd02fd56608e7a48a8605ec906ed9bd10c1b5a702cd567b"
+        },
+        "raw_report_path": "saturn/experiments/2026-10-01-connected-architecture/mamba/results/held/run-f2943e224e03/report.json",
+        "historical_report_file_sha256": "89db49aa1373c36a8c7427513f01d81c6dab94f35ed777876137d640e88791e9",
+        "historical_report_unchanged": true
+      },
+      {
+        "lane": "diffusion",
+        "phase": "development",
+        "mechanics_status": "passed",
+        "lineage": {
+          "status": "not-applicable",
+          "authority": "held-only prospective lineage check"
+        },
+        "output": "../../../saturn/experiments/2026-10-01-connected-architecture/diffusion/results/corrections/2026-10-01-instrument-audit/development-verification-v2.json",
+        "checks": {
+          "development_report_lineage": "not-applicable",
+          "schema": "passed",
+          "report_mechanics_status": "passed",
+          "freeze_before_held": "passed",
+          "source_hashes": "passed",
+          "request_binding": "passed",
+          "freeze_binding": "passed",
+          "row_mechanics": "passed",
+          "serving_authority": "passed",
+          "image_archive": "passed",
+          "image_hashes": "passed"
+        },
+        "output_file_sha256": "72a94f4b66170c8617d869083633337a13b61f7a59fd7ca48ed501e2b83ac73b",
+        "audit_source_sha256": {
+          "freeze_lineage.py": "7853f3e918d550167972e2d6f4f82f9da103fddc2905e400c178e24649da9542",
+          "verify.py": "de52854290a4ca1b2e538701beb5288aeb82f17e7ff7c20a029421a41e4f4f3b"
+        },
+        "raw_report_path": "saturn/results/connected-architecture-diffusion/job-14884dd5226e/report.json",
+        "historical_report_file_sha256": "4d38209f59f111e0092b8354718366e208a1273c68006e106e17725b5168d076",
+        "historical_report_unchanged": true
+      },
+      {
+        "lane": "diffusion",
+        "phase": "held",
+        "mechanics_status": "passed",
+        "lineage": {
+          "status": "historical-unbound",
+          "authority": "additive prospective lineage check"
+        },
+        "output": "../../../saturn/experiments/2026-10-01-connected-architecture/diffusion/results/corrections/2026-10-01-instrument-audit/held-verification-v2.json",
+        "checks": {
+          "development_report_lineage": "historical-unbound",
+          "schema": "passed",
+          "report_mechanics_status": "passed",
+          "freeze_before_held": "passed",
+          "source_hashes": "passed",
+          "request_binding": "passed",
+          "freeze_binding": "passed",
+          "row_mechanics": "passed",
+          "serving_authority": "passed",
+          "image_archive": "passed",
+          "image_hashes": "passed"
+        },
+        "output_file_sha256": "bcf0ec845aeb5515a34d5c461d82e9d5b54a94638d4d542c88e1f47350a94446",
+        "audit_source_sha256": {
+          "freeze_lineage.py": "7853f3e918d550167972e2d6f4f82f9da103fddc2905e400c178e24649da9542",
+          "verify.py": "de52854290a4ca1b2e538701beb5288aeb82f17e7ff7c20a029421a41e4f4f3b"
+        },
+        "raw_report_path": "saturn/results/connected-architecture-diffusion/job-1ed0f0ec506b/report.json",
+        "historical_report_file_sha256": "c0ef77ec44624a1029651d2f74d74de2ee41c5b4f27a2cbb5eaa55af3a86fb95",
+        "historical_report_unchanged": true
+      }
+    ],
+    "mamba_native_qualification_authority": "per-operation semantic applicability diagnostic; no discovery veto",
+    "post_collection_binding_proves_prior_chronology": false,
+    "sdxl_historical_source_map_preserved": true,
+    "sdxl_held_source_mismatch_rejected_at_submit": true,
+    "held_dry_run_launched_a_model_job": false
+  },
+  "final_validation": {
+    "completed_at_utc": "2026-10-02T03:32:53.203823+00:00",
+    "regression_cases_passed": 40,
+    "regression_suites": [
+      {
+        "lane": "qwen",
+        "cases_passed": 11,
+        "exit_code": 0,
+        "output": "test_binds_raw_report_bytes_and_canonical_seal_separately (test_freeze_lineage.QwenFreezeLineageTest) ... ok\ntest_find_requires_one_exact_completed_report (test_freeze_lineage.QwenFreezeLineageTest) ... ok\ntest_schema_corruption_and_report_byte_mutation_fail_closed (test_freeze_lineage.QwenFreezeLineageTest) ... ok\ntest_component_and_zero_delivery_preserve_the_complement (test_payload_delivery.PayloadTests) ... ok\ntest_corrupt_value_only_delivery_is_not_exempt (test_payload_delivery.PayloadTests) ... ok\ntest_nonzero_value_is_not_accepted_as_zero_delivery (test_payload_delivery.PayloadTests) ... ok\ntest_each_payload_failure_is_rejected_even_with_a_valid_seal (test_verify_integrity.IntegrityTests) ... ok\ntest_each_required_mechanics_failure_is_rejected (test_verify_integrity.IntegrityTests) ... ok\ntest_existing_held_report_survives (test_verify_integrity.IntegrityTests) ... ok\ntest_optional_free_arm_failure_does_not_erase_required_results (test_verify_integrity.IntegrityTests) ... ok\ntest_required_arm_cannot_be_present_but_unexecuted (test_verify_integrity.IntegrityTests) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.281s\n\nOK\n"
+      },
+      {
+        "lane": "mamba",
+        "cases_passed": 4,
+        "exit_code": 0,
+        "output": "test_binds_file_bytes_and_canonical_report_seal (test_freeze_lineage.MambaFreezeLineageTest) ... ok\ntest_canonical_digest_in_legacy_field_is_not_used_as_file_sha (test_freeze_lineage.MambaFreezeLineageTest) ... ok\ntest_schema_or_report_mutation_fails_closed (test_freeze_lineage.MambaFreezeLineageTest) ... ok\ntest_semantic_unavailability_is_diagnostic_not_lineage_failure (test_freeze_lineage.MambaFreezeLineageTest) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n"
+      },
+      {
+        "lane": "diffusion",
+        "cases_passed": 6,
+        "exit_code": 0,
+        "output": "test_canonical_only_legacy_field_cannot_claim_raw_report_bytes (test_freeze_lineage.DiffusionFreezeLineageTest) ... ok\ntest_development_lineage_is_not_applicable (test_freeze_lineage.DiffusionFreezeLineageTest) ... ok\ntest_historical_source_map_is_preserved_but_admission_rejects_mismatch (test_freeze_lineage.DiffusionFreezeLineageTest) ... ok\ntest_post_collection_freeze_binds_raw_file_and_canonical_seal (test_freeze_lineage.DiffusionFreezeLineageTest) ... ok\ntest_report_mutation_and_find_ambiguity_fail_closed (test_freeze_lineage.DiffusionFreezeLineageTest) ... ok\ntest_verifier_does_not_downgrade_marked_lineage_to_history (test_freeze_lineage.DiffusionFreezeLineageTest) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.014s\n\nOK\n"
+      },
+      {
+        "lane": "acquisition",
+        "cases_passed": 8,
+        "exit_code": 0,
+        "output": "test_complete_binding_passes (test_contract.AcquisitionContractTests) ... ok\ntest_freeze_byte_change_after_request_is_rejected (test_contract.AcquisitionContractTests) ... ok\ntest_incomplete_or_wrong_phase_development_is_rejected (test_contract.AcquisitionContractTests) ... ok\ntest_nonfinite_next_state_is_mechanics_failure_and_preserved (test_contract.AcquisitionContractTests) ... ok\ntest_original_collected_reports_remain_valid (test_contract.AcquisitionContractTests) ... ok\ntest_predicted_ids_layers_tokenizer_and_prediction_are_bound (test_contract.AcquisitionContractTests) ... ok\ntest_repeated_checkpoint_ids_bind_once (test_contract.AcquisitionContractTests) ... ok\ntest_stale_development_hash_rejected (test_contract.AcquisitionContractTests) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.061s\n\nOK\n"
+      },
+      {
+        "lane": "comparative",
+        "cases_passed": 5,
+        "exit_code": 0,
+        "output": "test_fixed_joint_coordinate_is_not_an_independent_row (test_qualification_comparative.QualificationBookkeepingTests) ... ok\ntest_nonfinite_fixture_is_json_safe_and_marked_undefined (test_qualification_comparative.QualificationBookkeepingTests) ... ok\ntest_quantized_match_fixture_exposes_minus_four_countertrend (test_qualification_comparative.QualificationBookkeepingTests) ... ok\ntest_signed_ratios_keep_negative_and_above_one_values (test_qualification_comparative.QualificationBookkeepingTests) ... ok\ntest_zero_denominator_is_undefined_and_observation_remains_counted (test_qualification_comparative.QualificationBookkeepingTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+      },
+      {
+        "lane": "e10",
+        "cases_passed": 6,
+        "exit_code": 0,
+        "output": "test_addition_rhs_is_also_ambiguous (test_audit_readout.ReadoutScopeTests) ... ok\ntest_compound_rhs_is_not_a_final_number (test_audit_readout.ReadoutScopeTests) ... ok\ntest_eos_number_remains_a_candidate (test_audit_readout.ReadoutScopeTests) ... ok\ntest_last_equation_can_finish_the_expression (test_audit_readout.ReadoutScopeTests) ... ok\ntest_missing_answer_is_not_a_numeric_failure (test_audit_readout.ReadoutScopeTests) ... ok\ntest_unparsed_text_is_not_certified_by_finding_a_number (test_audit_readout.ReadoutScopeTests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+      }
+    ],
+    "source_ast_parse_files": 29,
+    "source_files": [
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/submit.py",
+        "byte_sha256": "8f8605bc7e8fc86ae43b57b0df50c37bda414c5949f1a600e155b997fbcfcd12"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/worker.py",
+        "byte_sha256": "7462b3afc5bc64857192c1ba28fdd1be67e658f7a838e968db44399a1f0453f4"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/verify.py",
+        "byte_sha256": "752df69b28842ef5a7cb400b894c513c59ea36fd6f7071b454ffbdf8f42caa06"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/freeze_lineage.py",
+        "byte_sha256": "2d824509487187b2a04b0f6de100e8e3878fbed8d9a53b5a2da2acbfb97547d2"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/mamba/submit.py",
+        "byte_sha256": "321b5bd6d6e34140638696d711ab40050deae52f20a389049a5036897cdc40bc"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/mamba/worker.py",
+        "byte_sha256": "eeac39497084904222f41a846d216c548e5d593758ada1acbb0fb08208f3a7eb"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/mamba/verify.py",
+        "byte_sha256": "e436dfcb12de85685dd02fd56608e7a48a8605ec906ed9bd10c1b5a702cd567b"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/mamba/freeze_lineage.py",
+        "byte_sha256": "37746b3ef32ad5719499a2b709a6fa5cc31b57f28ced33d7a89abd30ce9e1c88"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/diffusion/submit.py",
+        "byte_sha256": "4d5e5b6f50171512d1322692aa8bc5b40c199f2edbc94af69c543d7119276e8d"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/diffusion/worker.py",
+        "byte_sha256": "6e6a6812f762d0070440f1aa636e67675536591a22a1c84a14e6bca23ed3cea8"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/diffusion/verify.py",
+        "byte_sha256": "de52854290a4ca1b2e538701beb5288aeb82f17e7ff7c20a029421a41e4f4f3b"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/diffusion/freeze_lineage.py",
+        "byte_sha256": "7853f3e918d550167972e2d6f4f82f9da103fddc2905e400c178e24649da9542"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/submit.py",
+        "byte_sha256": "3852670dbd1ed5be890bf9583608f20c31cfe573b8788608015625dcd1cb2fca"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/worker.py",
+        "byte_sha256": "f0ef092c7a9de24ce136437b6ec57205bec36f6cc3863b17e002efc5464a8944"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/verify.py",
+        "byte_sha256": "db1ea8604d17250eb1032b5a7464ffa558c632a9a46d460d09ffa7726275c6a9"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/contract.py",
+        "byte_sha256": "4a0f3f24b740dffde23888885cef9102ed75bf8c3a02b5258efcacdd66d05249"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/mamba/analyze.py",
+        "byte_sha256": "4bf29fe0dfa0afd8a337df9ef73ea5f4c2a75a3aa5162abcdf9f80fca04d6ae5"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/analyze.py",
+        "byte_sha256": "ac0e28dfcf0e0f5f0f468f6658765efac1427a7725a0709ccaefa39e8ec3d2e0"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/test_freeze_lineage.py",
+        "byte_sha256": "fb0ffed7236c62ea88819b57caeaeb00bdc83b24868e1010c4920032ba14692f"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/test_payload_delivery.py",
+        "byte_sha256": "2356d98c382122d6a40998ec288a58a2663e1b690635cdb5e15753c948ebf74b"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/qwen/test_verify_integrity.py",
+        "byte_sha256": "a0bc516fcc50c1fcdfa58d56a3b8f14bc05d578f660b2d46cbb78cbf0ed6b822"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/mamba/test_freeze_lineage.py",
+        "byte_sha256": "d710cf4c93e65599785871b103aad86103e45c619291a6ad4ea83fc3dfd2af38"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/diffusion/test_freeze_lineage.py",
+        "byte_sha256": "8f41aa15222cceb5d2be77e82cfd1d1b18b28faa6b3045ca79fb2547fc7e1a5d"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/tests/test_contract.py",
+        "byte_sha256": "3054f6bd20605e43fa6849d10d8af578037c6cef08b1a67f8cb014e088f1508b"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/qualification_comparative.py",
+        "byte_sha256": "b42a20a7285efd16ba30c76a155e617f1934a17965f144be1968a2251420ead2"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/tests/test_qualification_comparative.py",
+        "byte_sha256": "ac177ba17583b553bcf1731f0a6fd1badb0fb05c1584a19953617b53a9ff6b6e"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/qwen-predictive/postrun_verify.py",
+        "byte_sha256": "9c5b0d620142efc585ff998f2ed80808c63b1435808d7d61c53de2c4c655cc29"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-e10-cot-intermediate-steps/audit_readout.py",
+        "byte_sha256": "403f040f8283a2b635582c658c553947cb87c67e4336a742a883daa29cf6b499"
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-e10-cot-intermediate-steps/test_audit_readout.py",
+        "byte_sha256": "95a4325d5b20aaa94888fcc4de7c986a04cc040751b3bf3ab3b111b382847a21"
+      }
+    ],
+    "scoped_git_diff_checks": [
+      "research papers",
+      "saturn audited experiment paths and ledger",
+      "obsidian two audited blog posts"
+    ],
+    "local_links_checked": 758,
+    "local_link_documents": [
+      "research/papers/scaffolds-and-dynamic-circuits/experiment-instrument-audit-2026-10-01.md",
+      "research/papers/scaffolds-and-dynamic-circuits/outline.md",
+      "research/papers/scaffolds-and-dynamic-circuits/architectural-paper.md",
+      "research/papers/scaffolds-and-dynamic-circuits/bridge-paper.md",
+      "research/papers/scaffolds-and-dynamic-circuits/paper.md",
+      "research/papers/scaffolds-and-dynamic-circuits/README.md",
+      "research/papers/scaffolds-and-dynamic-circuits/summary.md",
+      "research/papers/space-and-time-circuits/paper.md",
+      "research/papers/space-and-time-circuits/summary.md",
+      "obsidian/blog/2026-10-01-134012-open-question-reasoning-and-monitorability.md",
+      "obsidian/blog/2026-10-01-131907-saturn-vm-model-virtual-memory-evidence-checklist.md",
+      "saturn/experiments/2026-10-01-connected-architecture/qwen/FINDINGS.md",
+      "saturn/experiments/2026-10-01-connected-architecture/mamba/FINDINGS.md",
+      "saturn/experiments/2026-10-01-connected-architecture/acquisition/FINDINGS.md",
+      "saturn/experiments/2026-10-01-connected-architecture/diffusion/FINDINGS.md",
+      "saturn/experiments/2026-10-01-scaffold-confirmation/QUALIFICATION-2026-10-01.md",
+      "saturn/experiments/2026-10-01-e10-cot-intermediate-steps/READOUT-QUALIFICATION-2026-10-01.md",
+      "saturn/docs/INSTRUMENT-DEFECT-LEDGER.md"
+    ],
+    "broken_local_links": [],
+    "raw_byte_rechecks": [
+      {
+        "path": "saturn/experiments/2026-10-01-e10-cot-intermediate-steps/results/full-5c53b6865f0f/report.json",
+        "byte_sha256": "624aa8a49ee4852096cc05120ffba7be647367403743a4177a74ba9fe67853a0",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-e10-cot-intermediate-steps/results/big15-f62de8e717a0/report.json",
+        "byte_sha256": "8bbdddf9e3bd09fe6f791fb934604541d76a599683f2a2d3a0e6177e1fde65f2",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-09-30-full-layer-sweeps/results/e20-qwen15-e1f652e80f43/report.json",
+        "byte_sha256": "be6d326fcf4867809159dcd6355af097af7b6ce9fcec1c680fac99c923fd5b26",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-dynamic-circuits/ar/results/continuation-24d2a7164160/report.json",
+        "byte_sha256": "a76cacd50d38d29fa121e449175c232e19e61b49330ea75961a44a8287c2c300",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/analysis-unblinded-v1/analysis.json",
+        "byte_sha256": "799ddb8a90a59ce65cd4b78b70e078d805a0bdb9b748651026278acb9baac797",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/role-contract.json",
+        "byte_sha256": "45eb662777911be424dbeb9fb858dec667e20d92d2379efa7a91682e7f1b64c0",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/runs/diffusion-held-v1/report.json",
+        "byte_sha256": "38a548834a8e7ee4071e95fb05f59de8b2d1e9d674eb8608ca976a9641bd21b9",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/runs/mamba-held-v1/report.json",
+        "byte_sha256": "fb0bd42c03d3343e63044ad314c17ec32cec8058773387cf2dc26dd4193c9fb3",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-scaffold-confirmation/cross-family/qwen-appendix/qwen-comparative-analysis-1a141a746afa.json",
+        "byte_sha256": "7ae54c0b7a076807a81ef3e6e7e8bf5a8467450fed30677003651c9774f7d7af",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/results/development/run-0254adcb56ab/report.json",
+        "byte_sha256": "eb64e5a6ad3df54d5f6b96760a36e7f3012ae98aa742ca8ea12d8fc719136eef",
+        "unchanged": true
+      },
+      {
+        "path": "saturn/experiments/2026-10-01-connected-architecture/acquisition/results/held/run-5b8f4c754a56/report.json",
+        "byte_sha256": "123423d3fff19dd2d89abdb62fd2189241269fcac5da86ebf57d4ec2896d960b",
+        "unchanged": true
+      }
+    ],
+    "model_jobs_launched": 0,
+    "training_jobs_launched": 0
+  }
+}

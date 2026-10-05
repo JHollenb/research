@@ -33,6 +33,8 @@ The 2026-10-01 status update reconciles the completed experiments through E20 wi
 
 E14 shows attention-dominated formed-state dependence, partial SSM writing and no strong concentrated SSM writer or new strict certificate. The [pinned report and verifier](evidence/hybrid-attn-ssm/README.md) are bundled here. This narrows the recurring late-writer claim while preserving the FLUX result. E10's corrected account distinguishes use of an already cached consumed step from regeneration of that step after intervention.
 
+The [completed-answer E10 reproduction](../../../saturn/experiments/2026-10-01-e10-completed-answer-rerun/FINDINGS.md) now retains longer native continuations and the missing checking trajectories. It narrows the all-row necessity reading, explains the five multiplication flags as a leading-number format mismatch, and preserves directed donor authorship. Both final model jobs ran through mrun; prior reports and failed attempts remain intact.
+
 E20 directly connects an L12 residual seed to endogenous L22–27 subject K/V
 and the native consumer in Qwen2.5-1.5B identity: blocking the band removes a
 median 0.924 of seed logprob gain, and transplanting it into an unseeded

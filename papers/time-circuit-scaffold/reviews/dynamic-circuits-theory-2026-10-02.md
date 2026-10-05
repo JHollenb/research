@@ -39,11 +39,11 @@ So the measurement shows that **the address diverges as the carried states of tw
 - MLP and SSM gates;
 - normalisation gains.
 
-The scaffold is the fixed weights plus the fixed lowering of roles to sites. Payloads enter **linearly given $\Gamma$**. Every non-additive effect, including bindings, relations and K×V conjunctions, passes through a change in $\Gamma$. $\Gamma$ is a function of the carried state, so the carried state both stores content and selects what is read next. That is the formal reason it carries the load for relations.
+The scaffold is the fixed weights plus the fixed lowering of roles to sites. Payloads enter **linearly given $\Gamma$** at a model-internal pre-readout boundary. At that boundary, non-additive effects such as bindings, relations and K×V conjunctions must pass through a change in $\Gamma$. $\Gamma$ is a function of the carried state, so the carried state both stores content and selects what is read next. This is the formal reason carried-state routing is a candidate mechanism for relations. Endpoint scores can add consumer curvature even when $\Gamma$ is frozen, so this is not a universal statement about every reported endpoint.
 
 Five results organise the document:
 
-1. **Conditional linearity [Thm, §2.3].** Freeze the routing signature (attention probabilities, gates, normalisation scales). The network is then affine in every payload, and every 4-cell interaction between source edits is exactly zero. Interactions are routing-mediated by construction.
+1. **Conditional linearity [Thm, §2.3].** Freeze the routing signature (attention probabilities, gates, normalisation scales). A model-internal pre-readout tensor, including raw logits before log-softmax, is then affine in every payload, and its 4-cell interaction between source edits is exactly zero. A log-probability, decoded token, RGB image, or other downstream consumer can add curvature; frozen-routing collapse on such an endpoint is therefore a measured routing-mediated trend, not the theorem's exact zero.
 2. **Single-read lemma [Id, §3.2].** In one attention read with a fixed query:
    - the content of row $b$ cannot change the *relative* selection among other rows;
    - V-only edits of distinct rows are exactly additive.
@@ -149,18 +149,20 @@ $$
 
 The end-to-end Jacobian $\prod_\ell\mathcal J^\ell=I+\sum_\ell\Delta^\ell+\sum_{\ell<\ell'}\Delta^{\ell'}\Delta^\ell+\dots$ expands into paths. The second-order products $\mathcal Q^{\ell'}\mathcal V^{\ell}$ and $\mathcal K^{\ell'}\mathcal V^{\ell}$ are the Q- and K-composition terms: a payload written at $\ell$ changes an address read at $\ell'$. These are the only places where carried state re-routes.
 
-### 2.3 Conditional linearity: interactions are routing
+### 2.3 Conditional linearity: pre-readout interactions are routing-mediated
 
-**[Thm] Conditional payload-linearity.** Fix $\Gamma$ to the values of a reference run:
+**[Thm] Conditional payload-linearity at a model-internal boundary.** Let $Y_0$ be a model-internal pre-readout tensor (or raw logits before log-softmax). Fix $\Gamma$ to the values of a reference run:
 - replace each softmax by the reference probabilities;
 - replace each gate by its reference value;
 - replace each normalisation by the linear map $x\mapsto g\odot x/\mathrm{rms}_{\mathrm{ref}}$.
 
-Every layer is then linear in its input, and the whole forward pass, and in diffusion the affine scheduler loop, is affine in all additive source edits: embeddings, residual seeds, V rows. Consequently, for any two edits $\delta_a,\delta_b$ the 4-cell interaction $i=Y_{11}-Y_{10}-Y_{01}+Y_{00}$ is exactly 0 under frozen $\Gamma$.
+Every layer is then linear in its input, and the whole model-internal forward pass, and in diffusion the affine scheduler state before any nonlinear renderer, is affine in all additive source edits: embeddings, residual seeds, V rows. Consequently, for any two edits $\delta_a,\delta_b$ the 4-cell interaction $i=Y_{0,11}-Y_{0,10}-Y_{0,01}+Y_{0,00}$ is exactly 0 under frozen $\Gamma$.
 - *Proof.* A composition of affine maps is affine, and the mixed second difference of an affine function vanishes. ∎
 - *Toy check.* Two sequential reads with Q-composition: live interaction norm 0.0098, frozen-routing interaction $2.4\times10^{-16}$ (`checks.py`).
 
-**[Thm] Corollary: where interactions come from.** Write the live output as $Y(\delta)=F(\Gamma(\delta),\delta)$, with $F(\Gamma,\cdot)$ affine for each $\Gamma$. Then
+This identity does not propagate unchanged through a nonlinear consumer. If $Y=C(Y_0)$, then $C$ can contribute an interaction even when the model-internal routing and payload path are frozen. In particular, RP2 scores the target log-probability after log-softmax; its near-zero frozen interaction is an empirical collapse on that endpoint, not an exact raw-logit identity. A minimal counterexample is logits $(a+b,0)$ for $a,b\in\{0,1\}$: the raw-logit interaction is zero, while the target-logprob interaction after log-softmax is approximately $-0.19355$. A raw-logit or pre-readout replication is the settling test for the theorem. A bounded follow-up now supplies that check for three RP2 lexical contexts: all-frozen raw interactions are approximately $-9.54\times10^{-6}$, $-7.63\times10^{-6}$, and $2.48\times10^{-5}$, with raw dose $R^2>0.99999999996$; the log-probability endpoint retains small curvature ([raw-readout successor](../../../../saturn/experiments/2026-10-02-routing-readout-correction/FINDINGS.md)).
+
+**[Thm] Corollary: where model-internal interactions come from.** Write the model-internal output as $Y_0(\delta)=F(\Gamma(\delta),\delta)$, with $F(\Gamma,\cdot)$ affine for each $\Gamma$. Then
 
 $$
 i=\Delta_a\Delta_b\big[F(\Gamma(\delta),\delta)-F(\Gamma_{\mathrm{ref}},\delta)\big],
@@ -172,7 +174,7 @@ $$
 i\approx\Big\langle\tfrac{\partial F}{\partial\Gamma},\tfrac{\partial^2\Gamma}{\partial\delta_a\partial\delta_b}\Big\rangle+\Big\langle\tfrac{\partial^2F}{\partial\Gamma\,\partial\delta},\ \tfrac{\partial\Gamma}{\partial\delta_b}\otimes\delta_a+\tfrac{\partial\Gamma}{\partial\delta_a}\otimes\delta_b\Big\rangle+\tfrac{\partial^2F}{\partial\Gamma^2}\Big[\tfrac{\partial\Gamma}{\partial\delta_a},\tfrac{\partial\Gamma}{\partial\delta_b}\Big].
 $$
 
-Every term carries a derivative of $\Gamma$. Because $\Gamma$ is a function of carried state ($q=W_QN(x)$, gates, norms), **every conjunction is mediated by carried state.** That is the formal content of "the carried state both stores and selects".
+Every non-affine term in the model-internal output carries a derivative of $\Gamma$. If the reported endpoint is $Y=C(Y_0)$, its consumer Hessian contributes an additional $H_C$ term even when $\Gamma$ is frozen. Because $\Gamma$ is a function of carried state ($q=W_QN(x)$, gates, norms), the RP2 result supports a carried-state routing explanation for its tested cells; it does not by itself establish that every endpoint conjunction is routing-only.
 
 ### 2.4 Definition of the dynamic circuit, and when it is sparse
 
@@ -243,12 +245,12 @@ because $\log\alpha_a-\log\alpha_c=q^\top(k_a-k_c)/\sqrt d$. Changing $k_b$ resc
 - Alternatively, it was written into $a$'s residual by $a$ reading $b$ (K-composition). The binding then lives in $a$'s carried row.
 - *Proof.* This is Lemma (b) plus the definition of $q_r$. ∎
 
-**[Thm] Conjunction-of-contents requires a nonlinearity acting on carried state.** By Lemma (a) and conditional linearity, a non-additive $g(c_a,c_b)$ cannot arise from the payload path alone. It arises in one of three ways:
+**[Thm] Conjunction-of-contents requires a nonlinearity somewhere in the measured path.** By Lemma (a) and conditional linearity, a non-additive $g(c_a,c_b)$ cannot arise from the payload path alone at a fixed model-internal read. It can arise in one of three ways:
 - a routing change: K×V within one row, or Q-composition across rows;
 - a gate acting on a residual that already holds both contents (MLP, consumer);
 - consumer curvature.
 
-All three act on carried state.
+The first two are model-internal carried-state paths. Consumer curvature can contribute after the carried-state readout, so an endpoint interaction alone does not identify a routing mechanism.
 
 ### 3.3 Locality theorems
 
@@ -609,10 +611,9 @@ Direct test: P9.
 
 Each prediction gives its derivation, how it discriminates, a protocol on existing Saturn machinery, and a falsifier.
 
-**P1 — Frozen-routing additivity. Most important.**
+**P1 — Frozen-routing additivity at the model-internal boundary. Most important.**
 - **Derivation.** §2.3.
-- **Prediction.** For any 4-cell of source edits:
-  - with $\Gamma$ frozen to the base cell's routing (attention probabilities at every self- and cross-attention call, gates and norm scales), $|i_{\text{frozen}}|\le0.25\,|i_{\text{live}}|$;
+- **Prediction.** For any 4-cell of source edits, the raw-logit or model-internal pre-readout interaction is exactly zero with $\Gamma$ frozen to the base cell's routing (attention probabilities at every self- and cross-attention call, gates and norm scales). On a downstream endpoint such as target log-probability or RGB, the preregistered $|i_{\text{frozen}}|\le0.25\,|i_{\text{live}}|$ is an empirical collapse criterion, not an exact-zero theorem, because consumer curvature can remain.
   - the single-factor main effects persist, at a reduced magnitude.
 - **Freezing only cross-attention** (SDXL) or only one band's attention (Qwen) apportions $i$ between those routing sites and the rest.
 - **What each alternative predicts.**
@@ -626,7 +627,7 @@ Each prediction gives its derivation, how it discriminates, a protocol on existi
   - Replay edited V with frozen probabilities and frozen GroupNorm statistics.
   - Measure $i$ on the factor-specific axis.
 - **Qwen protocol.** Composed `A|P` 4-cell (colour edit × position-binding edit). Freeze L16–27 attention probabilities by an eager-attention probability override; route-write-future already overwrote L22 probabilities.
-- **Falsifier.** $|i_{\text{frozen}}|\ge0.75|i_{\text{live}}|$ → the conjunction is computed by a fixed nonlinear unit on payloads (FixC), not by state-dependent routing.
+- **Falsifier.** A large frozen interaction at the model-internal pre-readout boundary, or after a matched consumer-curvature control, supports a fixed nonlinear unit on payloads (FixC). Endpoint-only survival is not sufficient to distinguish FixC from consumer curvature.
 
 **P2 — The stale-pointer signature for relational installs.** Qwen.
 - **Derivation.** §3.2, §3.7.
@@ -717,7 +718,7 @@ Each prediction gives its derivation, how it discriminates, a protocol on existi
 - **What each alternative predicts.** A token-keyed STab predicts that the colour row alone suffices.
 - **Falsifier.** The colour-word row alone gives target/off-target ratio ≥ the bound-set ratio.
 
-The three most important are **P1** (it tests the core claim that interactions are routing through carried state), **P2** (it explains the alias limit and predicts its failure mode) and **P5** (it turns time-indexed authority into a composition rule a symbol table can use).
+The three most important are **P1** (it tests whether the measured interaction is routing-mediated through carried state, with a bounded raw-logit boundary check now completed for three contexts while the exact theorem remains conditional), **P2** (it explains the alias limit and predicts its failure mode) and **P5** (it turns time-indexed authority into a composition rule a symbol table can use).
 
 ### 6.3 Mapping to the two experiments being preregistered
 
@@ -779,7 +780,7 @@ The panel's own comments label background "coarse / early", hair "mid" and eye c
 
 ## 8. Summary of what is new relative to `architecture-math-2026-10-02.md`
 
-**[Thm] Conditional payload-linearity (§2.3).** Every interaction is routing, and routing is a function of carried state.
+**[Thm] Conditional payload-linearity (§2.3).** Model-internal pre-readout interactions are routing-mediated under the stated freeze; endpoint interactions may also include consumer curvature, and routing is a function of carried state.
 
 **[Id] Query-path covariance and the two-candidate reduction (§2.2).** The address path is $\mathrm{Cov}_\alpha(v,k)$, with gain $\alpha(1-\alpha)$. It is the same factor as the K×V interaction, which peaks at $\alpha^*=1/(1+\sqrt E)$.
 

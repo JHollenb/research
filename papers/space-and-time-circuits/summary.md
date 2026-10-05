@@ -110,12 +110,12 @@ The manuscript is a consolidation of this circuit/formation thread, rather than 
 
 The original IRD C7 scratchpad swaps changed answers across four model families, but the manipulated scratchpad already stated the answer. That establishes causal copying. A later [model-virtual-memory pilot](../../../saturn/experiments/2026-09-30-mvm-mamba-cot/FINDINGS.md) motivated a design in which the answer requires a further operation on an intermediate that is never restated.
 
-[E10](../../../saturn/experiments/2026-10-01-e10-cot-intermediate-steps/FINDINGS.md) holds visible base text fixed, mean-ablates or counterfactually replaces a step's K/V rows, and observes the model's greedy final answer. It compares those state interventions with text mistake insertion and truncation, and restores original pages as a control.
+[E10](../../../saturn/experiments/2026-10-01-e10-cot-intermediate-steps/READOUT-QUALIFICATION-2026-10-01.md) holds visible base text fixed, mean-ablates or counterfactually replaces a step's K/V rows, and observes a 14-token greedy number-parser readout. It compares those state interventions with text mistake insertion and truncation, and restores original pages as a control.
 
 | Recorded result | Qwen2.5-0.5B | Qwen2.5-1.5B |
 |---|---:|---:|
 | Non-copied single-intermediate items | 32 | 30 |
-| Intermediate unmount changes answer | 32/32 | 30/30 |
+| Intermediate unmount changes bounded parser readout | 32/32 | 30/30 |
 | Intermediate swap produces the correct counterfactual answer | 15/32 | 30/30 |
 | Two-step chain: early value unmount changes answer | 0/8 | 0/8 |
 | Two-step chain: later value unmount changes answer | 8/8 | 8/8 |
@@ -123,7 +123,9 @@ The original IRD C7 scratchpad swaps changed answers across four model families,
 | Two-step chain: whole-scratchpad unmount changes answer | 8/8 | 8/8 |
 | Maximum recorded remount sequence-logprob delta | 0.0 | 0.0 |
 
-The single-intermediate result supports causal use of non-restated arithmetic state on admitted, scaffolded synthetic items. It does not establish an automated monitor of free-generated long reasoning or hidden motives.
+The single-intermediate result supports causal use of non-restated arithmetic state on admitted, scaffolded synthetic items. In 8/32 and 24/30 removal strings, the parser reads an operand from an unfinished compound RHS such as `= 42 - 5`, so the historical rates do not demonstrate wrong completed final answers on every item. The probability metric includes the baseline worked expression through its selected number. Directed counterfactual authorship survives this qualification. The result does not establish an automated monitor of freely generated long reasoning or hidden motives.
+
+The [subsequent completed-answer mrun reproduction](../../../saturn/experiments/2026-10-01-e10-completed-answer-rerun/FINDINGS.md) collects all 48 original rows per checkpoint while retaining the 32/30 historical primary intervention denominator. Removal ends wrong on 26/32 and 3/30, repairs correctly on 6/32 and 25/30, and leaves two Qwen1.5 rows unresolved at the budget. Completed donor answers occur on 19/32 and 30/30. All eight later-step multiplications complete correctly on both models despite leading-number flag patterns of 0/8 and 3/8. The stored intermediate is causally active; it is not universally necessary for the model to reach a correct longer answer. Generated early-swap branches author donor answers on 8/8, while removal diagnostics retain a first-result stopping-stage confound. Historical outcomes, numerical regimes, and admission remain unchanged.
 
 **The chain does not meet the strict path-distributed subtype at scratchpad-step grain.** Its later step is individually necessary and its counterfactual state is individually sufficient to direct the answer. Pooling the inert early step with the decisive later step gives 50% average single-step flips, but the strict definition concerns every singleton. Whole-path removal does not exceed the strongest singleton on the binary answer-change endpoint.
 

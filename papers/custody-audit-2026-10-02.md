@@ -294,3 +294,153 @@ tok/s (B(x) costs 8.2% over bf16) ✓.
 
 Net: every headline number comes from the FINAL post-fix successful runs, recomputed exact. No
 fabricated or stale-run numbers. Required fixes = the 5 nits above (chiefly #1 pointer, #2 metric).
+
+## CoT addendum-2 (saturn/experiments/2026-10-02-cot-formed-state-faithfulness) — audited 2026-10-02 ~03:20 PDT
+
+Verdict: ISSUES (numbers real; wording/provenance and one prereg-metric deviation need fixes).
+
+- **Numbers recomputed from results/*/report.json: MATCH.** 0.5B job-87c47cb47c2b, 1.5B job-e3c984961358, 3B job-52b8771fc5ef (only 3B run; no resample arm). R1/R2/R3/R4/R4s/tracks_old and CIs equal analysis-addendum-summary.json. Old (02:42) and new (02:59) jobs agree field-by-field on all shared arms at 0.5B and 1.5B (0 differing fields), so the 02:57 worker change is empirically additive (only `resample` added).
+- **Worker shas (from custody-addendum/*/worker_ffs_ctrl.py):** 02:39 smoke bb5003c7 (pre no_grad fix); 02:41-02:42 jobs incl. 0.5B/1.5B/3B first runs 3b4db8d2; 02:59+ jobs (0.5B/1.5B rerun, A' smoke, 7B) 50ebb297. FROZEN header worker_sha256 = 50ebb297 (post-hoc overwrite; header is not the sha the 3B/first runs used). PREREG-addendum-2.md still says bb5003c7. 3B table row ran on 3b4db8d2.
+- **Rule timing: NOT independently proven.** FROZEN-addendum-2.json mtime 02:57:13, PREREG 02:57:30; no earlier copy exists, neither is inside the job payloads (custody holds only worker+run-config+request). The worker contains no thresholds. smoke_bugfixes log documents both worker edits. Claim "frozen before any job" is asserted, not measured.
+- **7B:** job-366e400ba3aa is CANCELLED; live job is job-050706578e6c (queued, beast VRAM-blocked at check time).
+- **3B:** report model_id Qwen/Qwen2.5-3B, path .../Qwen2.5-3B, 36 layers, hidden 2048, 2 KV heads (verified on beast config.json): architecture is 3B. Base (not Instruct) rests on the directory name only.
+- **Probe B deviates from prereg.** Prereg: flag = probe-decoded == mistake_value != visible. Code reports "decoded differs from visible by >=2" (0.84/0.81/0.97); the prereg metric (swap_decode_mistake_recall) is 0.19/0.19/0.00, below the 0.70 bar. No false-positive rate on unswapped items; lambda chosen by best LOO decode on the same items.
+- **Overclaims:** "tracks_old = 0 at every tested scale" is only 0.5B and 1.5B. 1.5B R4=0.45 vs R1=0.762 misses the frozen A' bar (R4 >= R1-0.15). R3 invalid at 1.5B so R2 there is uninterpretable.
+
+## P1 reviewer experiments (saturn/experiments/2026-10-02-p1-reviewer-experiments) — audited 2026-10-02
+
+Verdict: **PASS** — every reported number recomputed exact from the FINAL successful full runs;
+predictions genuinely frozen before data. Minor ISSUES below (wording/code-vs-prereg; none change a
+verdict). Scope: Qwen A (`job-802a7371546f`), C (`job-5b8f55665345`), B reanalysis. Gemma A still in
+flight (ignored per instruction). Live state via tunnel 19025; raw recompute from report rows.
+
+### Custody — predictions frozen, config-only edits after jobs
+- **FROZEN.json mtime 03:06 postdates the Qwen A (02:35) and C (02:36) jobs — BENIGN.** Per-submission
+  snapshots `results/pA-source-custody/<id>/{FROZEN.json,custody.json}` (SHA-logged) show three FROZEN
+  versions: `e16f5c48` (01:13, first jobs), `62de34`(02:34, used by final `job-802a7371546f`),
+  `1c4a7e69` (03:06 = current on disk). The **`predictions` block is BYTE-IDENTICAL across all three.**
+  Only diffs: qwen ram 20000→16000 / vram 9000→11000, gemma vram 11000→13300 / ram→22000 (right-size
+  after RAM kills) and a gemma `model_path` added for the in-flight retry. No threshold touched after data.
+- **PREREG 01:07:13 precedes first submission** (`job-64761294e4b3`, custody 01:13, created 01:18);
+  early FROZEN captured 01:13 pre-job. **e6 reference block unchanged across versions.**
+- **B = no-GPU reanalysis of the correct pre-existing reports:** E20 `e1f652e80f43`, cross-family
+  `fab52bcf3cce`/`a66b102614e3`/`c128e07da015` (confirmed in `B_clustered_stats.json` paths + analyze_B
+  CELLS). They predate PREREG (created 00:22 / 10-01 12:15) — expected for a reanalysis.
+
+### Final-run selection — correct
+- **Qwen A `job-802a7371546f` is the ONLY non-smoke full run** (smoke=False, 42 rows/42 admitted, 14
+  ids, fp32, cuda, `attn_implementation="eager"` per run_sae_comparison.py; peak vram 7453 MB < 11000).
+  Earlier `64761294e4b3` & `17e19c8876b5` both **`killed_ram`** (no report.json); `f9a869fc1725` smoke(3).
+- **C `job-5b8f55665345` is the ONLY non-smoke** (20 items/0 err, nnsight/bf16/gemma scope, 26 layers);
+  `pC-113291/34e127/44552` are smoke(3).
+- **Gemma A in flight:** `job-3032b252ea01` FAILED (no report); `job-ba057e05a6f7` QUEUED (the 03:06
+  submission). FINDINGS reports only Qwen for A; A_analysis.json has only the qwen cell. Honest.
+
+### Recompute from raw — all MATCH
+- **A (802a rows):** late 0.8713, early −0.0279, seed_layer −0.0101, linear_pred 0.0227, freeze_mid
+  0.6747, seed_freeze 0.9944; held_R2 −0.126 (in-sample 0.544); late−early 0.899, late−freeze 0.1967.
+- **A LOO-by-identity is REAL** (`_ridge_loo_predict`: weights solved on groups != held subject). Only
+  leakage = X-standardization + a single global alpha chosen on full LOO; both **conservative** (bias
+  toward the linear map *succeeding*), so the "linear image fails" conclusion is strengthened. Code
+  comment accurately discloses this. `do_linear` fires (14 ids ≥ 4).
+- **B clustered CIs reproduced EXACTLY** by independent seed-0 bootstrap for all 4 cells (block/rescue/
+  wrong), ids 14/27/14/13. qwen_pub also **independently confirmed by the paper's own
+  `cluster-sensitivity.json`** (block [0.732,1.075], rescue [0.835,0.894]). P-B2 (block & rescue lower
+  CI >0) holds all cells; P-B3 wrong upper ≤0.052 all cells.
+- **29-vs-27 CONFIRMED:** held-out report has 29 distinct subjects over all rows, 27 admitted ('ant',
+  'elk' dropped in tokenization/admission). FINDINGS explanation accurate.
+- **C (5b8f):** features_only id 0.044/0.079/0.077, color 0.313/0.319/0.359; features_plus_error id
+  0.126/0.294/0.314, color 0.576/0.996/0.990; error_only id −0.122/−0.148/−0.149; flips id fpe 2→3/12,
+  eo 0/12, color fpe 7/8→8/8; noop max|dlp|=0.0. **P-C2 (error_only>features_only) FALSE — reported honestly.**
+- **C reimplemented loop ≡ library:** `_perform_fe` adds decoder deltas via
+  `transcoders._get_decoder_vectors` at `get_feature_output_loc(layer).output` (the library's own site),
+  plus error_delta; worker cross-checks against real `model.feature_intervention`. Reimpl−library median
+  diff 0.0055 (id) / 0.030 (color); library noop exactly 0. Equivalent.
+- **P-A4 near-miss honest:** 0.197 < 0.20 disclosed in FINDINGS caveat (a); PAPER-SECTION reports
+  0.871→0.675 without claiming the threshold passed (non-overlapping CIs are the real evidence).
+- **FINDINGS.md == FINDINGS-draft.md** (only promotion header differs) — no numbers altered in promotion.
+
+### ISSUES (all minor; none change a verdict)
+1. **Validation bound overstated.** FINDINGS: "max per-item |diff| ≤ 0.06" for reimpl-vs-library; measured
+   color max = **0.0623** (id 0.0551). Fix to "≤0.063". Medians within 0.03 — validation still holds.
+2. **analyze_C gate hardcodes tol 0.08**, not FROZEN `P_C0_...tol`=0.05, and is named `_within_0.05`.
+   Passes at both (|0.044−0.08|=0.036) so immaterial; fix to read the frozen tolerance + rename.
+3. **B label string "held-out, 29 ids"** in B_clustered_stats.json / analyze_B while n=27 is actually
+   used; FINDINGS table correctly says 27. Cosmetic — fix the label.
+4. **C provenance thin:** report echoes transcoder set "gemma" but not commit `bd577315` (pinned in
+   PREREG/FROZEN); ct_version "?"; A report lacks an attn_impl field (eager enforced in code). Record them.
+5. **FROZEN mtime optics:** leave the 62de34 final-job snapshot as canonical, or note in FINDINGS that the
+   03:06 FROZEN edit is config/model_path only (predictions unchanged) to pre-empt a reviewer flag.
+
+## Relational addendum (Phase 3) — audited 2026-10-02
+
+Verdict: PASS on custody and recomputation; ISSUES on wording (5, none change a verdict if reworded).
+
+Custody (measured): PREREG-addendum.md and FROZEN-addendum.json mtime 00:31:43 PDT (1790926303). Job created_ts: smoke 258dbd06988b 1790926394 (+91 s), Qwen 9693441af910 1790926649 (+346 s), Gemma 756b971f9486 1790926654 (+351 s). All succeeded. FROZEN-addendum `frozen_utc` is date-only (2026-10-02), so mtime is the only timestamp evidence. Local results dirs exist for all three jobs (Gemma peritem-job-756b971f9486: report, log, receipt). Final jobs have 112 items; smoke has 9.
+
+Recomputed from per-item reports (all match the draft): across-op identity~capital 0.204/0.218, identity~color 0.842/0.911; SS op/fact 0.726/0.274 (Qwen), 0.419/0.581 (Gemma); capital commit L22 SD 0.00 n=40 in both.
+
+ISSUES and required wording:
+1. Capital SD 0.00 uses the POST-HOC write_commit locator (last layer >=0.5*max), not the frozen argmax. Frozen argmax SD for capital is 5.39 (Qwen, range 2-22) and 2.14 (Gemma, range 8-15). Qwen capital would fire FAL-3 (>4) under the frozen statistic. Say: "capital commit SD 0.00 (post-hoc write-commit locator); frozen argmax SD 5.39 Qwen / 2.14 Gemma." Delete "rock-stable" and "strong-signal counterpoint" or qualify with this.
+2. The "denoised" cosine is NOT across fact. Code (`within_op_across_template_cos_denoised`) averages over facts within each template, then cosines across templates (capital: 2 contexts = 1 pair; others 3). PREREG says only "denoised by template" with no operationalization; the P_cosine_gap >=0.90 threshold was preregistered, the exact denoising is post hoc. Per-item across-fact cosines are lower: Qwen 0.749/0.735/0.988, Gemma 0.895/0.865/0.807 (identity/color/capital), so the >=0.90 prediction fails on the undenoised statistic for most cells. Relabel the column "across-template (fact-averaged)" and add the per-item numbers.
+3. "within - across gap ~0.75" is stated from denoised values; per-item Gemma capital gap is 0.81-0.22 = 0.59.
+4. Qwen "6.4 GB" is the smoke peak; the final Qwen job peak VRAM is 7.4 GB, and elapsed is 41 s, not 37 s. Qwen "112 items" is generated; 104 admitted (color 8 excluded), Gemma 107 admitted of 112.
+5. "Frozen before the run" is supported only by file mtime (+346 s), not a frozen timestamp or hash.
+
+## B(x) round 2 — audited 2026-10-02
+
+Scope: saturn/experiments/2026-10-02-bx-training-continuation/round2/ (FINDINGS, PREREG, PAPER-SECTION, figures, results/gauge-qwen3-1.7b.json) plus parent results. Verdict: PASS on numbers (all recomputed from raw job JSON); ISSUES on wording and one custody-ordering disclosure. No verdict changes.
+
+Recomputed (measured):
+- Gauge job-d1ee1d4d716f (succeeded, 14 s, peak 8.4 GB): worst-layer dQ (dq_fro max) plain 1.85% (~1.9), FA2 1.99% (2.0), key-mean 1.19% (1.2), B(x) 1.11% (1.1). Key-mean ratio worst 63.4, median 2.18; slow-pair median 98.6%; pmax 0.531; leak_share 0.28%. All match.
+- Step64000 gaps (final held t=1000 minus ref): s1234 job-582dfd0974e9 (round-1 job "full-mid-s0", data-seed default 1234) bf16 +0.0001 / B(x) +0.0010; s2 job-404ea69b737e +0.0041/+0.0017; s3 job-4a367f68488a +0.0021/+0.0007. Mean plain 0.0021. Match. Step143000 plain +0.0215/+0.0271/+0.0211, mean 0.0232 (a 3-order mean; FINDINGS does not say so).
+- Trajectory (plain minus B(x), 3 orders: full6-s1234, core4-s2, core4-s3): @300 0.073/0.055/0.043, mean 0.057, max 0.073; @1000 0.039/0.042/0.051, mean 0.044. Match.
+- Qwen3-4B kills: job-ddc749bdf91b 15372 MB > ceiling 13200; job-6ee3405e1d98 15416 > 13750. Match "about 15.4 GB". job-3d62b45daadd failed in 4 s: model id "Qwen/Qwen3-1.7B" with HF_HUB_OFFLINE=1 (not in HF cache); rerun used local path /mnt/big/llm-models/Qwen3-1.7B. Excluded from results; FINDINGS does not mention it.
+
+Custody: round-2 PREREG.md mtime 1790933932 (02:38:52). d1ee1d4d716f created 1790935552 (+1620 s) and the Qwen3-4B jobs later, so the gauge experiment is preregistered. BUT s2/s3 jobs were created 1790933719/1790933723 (212 s BEFORE the PREREG mtime; s2 started 02:36:21) and 3d62b45daadd at 1790933847. No results existed (s2 finished 02:46). "Frozen before reading any result" holds; "frozen before the jobs" does not for Exp 2.
+
+ISSUES and fixes:
+1. Trajectory "bf16 error 148% to 66%" is s1234 only (0.656). Other orders end 78% (s2) and 80% (s3); 3-order mean about 74%. Reword to "148% to 66-80%".
+2. Aggregation inconsistency: "worst 63x" is max over heads, "median 2.2" is median over layers of per-head medians; median of per-layer max is 3.5. Say "median head 2.2".
+3. PREREG says seq 512 and a primary 4B target; the 1.7B was run at seq 256 and is the only point. PREREG prediction (key-mean removal cuts error several-fold) was NOT met: 1.9 to 1.2% (1.6x). State as a failed prediction, not "confirms".
+4. Say that +0.0232 is the 3-order mean of step143000, and that PREREG postdates the s2/s3 submissions (no results seen).
+5. Cite job-3d62b45daadd failure (offline HF cache) and the 4B VRAM ceilings in FINDINGS.
+
+## P2 reviewer A/C (saturn/experiments/2026-10-02-p2-reviewer-experiments) - audited 2026-10-02
+
+Verdict: PASS with wording ISSUES. No prediction or threshold changed after data. All numbers recompute.
+
+### Custody (measured)
+- FROZEN.json (mtime 04:38:37, frozen_at 11:38Z = 04:38 local) postdates the full jobs (job-48af2d6fc73c created 04:32:28, job-5d7cf4e4b3d8 04:32:36, both finished 04:34). FROZEN holds only sha256 hashes, no predictions. Current PREREG.md sha 7763c848... (mtime 01:09:13, never touched since) equals `design_sha256` in the config of ALL six jobs (killed, smoke, full). Predictions/thresholds therefore could not have changed after data. Current null_worker.py (c1d5cc19...) and fv_worker.py (1173b637...) equal the `worker_sha256` of both full jobs and both smokes (mtime 02:49, before them). The killed jobs ran earlier worker versions (null acea3353..., fv 903f9c3a...), consistent with the FROZEN declaration (in-place random_init, device_map load).
+- Payload custody declared==sealed==executed for all six jobs. Job classes: job-9a79e6dbc681 (nullA) and job-968eb35d569e (fvC): smoke, killed_ram 01:56 (RSS 6424/5918 MB > 5913 ceiling). job-7681e8304c79 and job-2383f71ef3af: SMOKE (payload smoke=true, succeeded 03:54, 25 s/17 s). Full (smoke=false): job-48af2d6fc73c, job-5d7cf4e4b3d8. Reports in results/ are the full ones.
+- submit.py (mtime 04:38, hash sealed in FROZEN) was last written after the full jobs; its pre-run version is not recoverable. Config-level fields in the jobs are intact, so no effect on results.
+- The old FROZEN.json was overwritten (no copy), so the first seal is unverifiable; the PREREG-hash match above is the substitute evidence.
+
+### A recompute (reran analyze_A.py on raw report; identical to results/A_analysis.json)
+Full 4-lex coord / coord x op / coord x fact / ratio [leave-one-lex-out min,max] / native top-1: trained .381/.304/.0159/19.05 [16.3,30.6]/62; vproj_permute .343/.240/.0203/11.85 [10.9,18.2]/51; weight_shuffle .0137/.0178/.0286/0.62 [0.61,1.91]/0; random_init .0116/.0390/.0355/1.10 [0.82,2.54]/0. Canary trained {a,b}: 42.16/28.96/1.06 (within 2 pp). coord x op trained/null: 7.79x (random_init), 17.07x (weight_shuffle). A-P4 relation, held {c,d}: trained .997 vs blind .485 (+0.512); random_init .781 vs .431 (+0.350, confirmed); weight_shuffle -0.539; vproj +0.121.
+
+### C recompute
+L_inj=24 (dev = lex-a-canonical-forward, 2 rows; eval = the other 7 contexts x 2 bindings = 14, disjoint: confirmed). Switches 0/14 both ops; dlp relation +2.185 (reported), color +0.159. C-P2 cos(idfv,rel) -0.385, cos(idfv,id) -0.281, cos(id,rel) +0.598; L23.KV0.value -0.808 -> +0.007. C-P1/C-P2 and verdict logic are in PREREG (01:09), before every C job.
+
+### ISSUES and exact fixes
+1. FROZEN.json says `held_evaluation_opened: false` and "No held outcomes opened before this seal." False as of 04:38 (A/C reports 04:34, analyses 04:35). Reword: "Seal records hashes only; A/C results had been read at seal time; predictions fixed by PREREG.md hash 7763c848 present in every job config."
+2. FINDINGS "19.0 [16.3, 30.6]" is a 4-point leave-one-lex-out jackknife range, not a CI; PREREG promised a bootstrap. Write "jackknife range", and note the deviation. The A-P3 "CI lower bound > 1" check is on that range.
+3. A-P4: random_init relation +0.350 FAILS "does not beat blind". Also weight_shuffle color +0.307 and random_init identity +0.234 are positive. Keep "FAILED (partially)"; the "spurious" reading is post hoc (random_init coord main is 1.2%, so the cosine is on near-zero profiles).
+4. C-P2: PREREG says "majority of held contexts"; implementation is one cosine of means over 6 held contexts x 2 bindings (n=12). The route clause is nominally met (L22.KV1.value -0.030 -> -0.017; L23.KV0 less loaded). Say "cosine clause failed; route clause weakly met".
+5. C: FV extracted from ALL contexts including held (leak, favors FV; negative result is conservative). L_inj=24 is the top of the grid (4..24; L26 untested) and was chosen on 2 dev rows. dlp +2.19 nats with 0/14 top-1 flips: report "no top-1 flip, target logprob +2.19 nats (relation)", not bare NOT_FV. Coefficient fixed 1.0, all heads (already caveated).
+6. A-P1 "FAILED" is correct (coord .012-.014 in nulls; A-F3 fired).
+
+## Confirm-color run (appended 2026-10-02, read-only audit)
+
+Scope: PREREG-confirm.md, FROZEN-confirm.json, FINDINGS-confirm.md, analysis/confirm_analyze.py, results/confirm_fal3_analysis.json, jobs 8b550b584da4 (Qwen full), b7d05acf8192 (Gemma full), smokes 110498b5abc5 / d6965f4855f6. No model runs. All items MEASURED unless marked asserted.
+
+1. Freeze order: PASS (mtime evidence only). PREREG-confirm.md and FROZEN-confirm.json both have mtime 01:13:53 and are unmodified since. Earliest confirm job (Qwen smoke 110498b5abc5) created 01:14:04; full jobs created 03:18:56 (Qwen) and 04:41:51 (Gemma). Caveat: directory is not under git and no hash of the freeze was recorded, so "unchanged" rests on mtime.
+2. Job pinning: PASS. CONFIRM_JOBS = {qwen15: 8b550b584da4, gemma2: b7d05acf8192} (the stale 9ee0a16fae1c is gone); both reports have smoke=False, 126 / 154 items; assertion in load_confirm checks model and colorC; analysis JSON pinned_job_ids match. Smokes (3 colors) are not used. Pin edit (04:42:01) came after Gemma submission (04:41:51), harmless.
+3. Recomputation: PASS. Independent recompute reproduces every table value: Qwen colorC n=48 S1/S2/S3 = 2.84/1.44/1.76; Gemma colorC n=106 = 3.44/0.90/0.97; Qwen identity n=42 = 3.81/1.16/1.89; Gemma identity signal-admitted n=41 = 4.06/0.00/0.65 (all-admitted n=42 S1 4.01). Identity canary S2 medians L23 (Qwen) and L22 (Gemma) confirmed.
+4. Worker change: PASS with caveat. The pre-change worker (sha 81f64b74...) is not archived, so a literal diff is impossible; the current file is c37ebe6f... (matches Gemma full job config). Code reading: ContextRunner uses no padding, equal-length rows, all ops row-wise (attention within sequence), candidate set stays full, subj_pos set by the same template diff. Chunking and expandable_segments therefore do not change semantics. Numerics are not bit-identical across batch sizes: old-worker smoke (batch 3) vs chunked/full run (batch 16 Gemma, 42 Qwen) differ by <=1.8e-5 nats (Gemma) / <=4.1e-5 (Qwen) across clean_lp, resid_write, necessity and fine_band, with identical admission and argmax. Empirical canary: Gemma identity (14-subject batches, unchunked) vs Phase-2 job-06001771bc33 per-item values: 42/42 items, max abs diff 0 (bit-identical), same worker path. Verdict: numerics-neutral to ~1e-5 nats, immaterial to SD statistics (asserted for flat-plateau argmax ties; none observed in 12 smoke items).
+5. Freshness and admission: PASS on rule, ISSUE on count. No overlap with Phase-2's 10 colors. Admission applied as frozen: 0 admitted items with drop <1.0 nat; every admitted item has max write gain >=1.5 (min 2.16 Qwen colorC, 1.78 Gemma colorC), so the 1.5 filter excludes 0 colorC items (Gemma identity excludes 1 of 42, min 1.45). Exclusions: Qwen presented 42 of 56 colors (14 silently dropped by the tokenization/single-token filter: magenta, indigo, maroon, scarlet, khaki, aqua, emerald, burgundy, mauve, cobalt, fuchsia, apricot, lilac, sepia), 36 of 84 items failed read-back, 48 admitted = 27 unique colors. Gemma presented 56 of 56, 6 of 112 failed read-back, 106 admitted = 54 unique colors.
+
+Issues to state in FINDINGS-confirm.md:
+- FROZEN says >=40 fresh color subjects; Qwen has 27 unique admitted colors (42 presented). The "48" is 27 colors x up to 2 templates, not independent facts. The 14 tokenizer drops are not mentioned.
+- "numerics-neutral" should read "numerics-neutral to ~2e-5 nats (batch-size kernel variation), not bit-identical; old worker not archived."
+- Freeze evidence is file mtime only.
