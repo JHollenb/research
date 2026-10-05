@@ -579,3 +579,14 @@ only in the `../time-circuit-scaffold/` companion link and in Appendix A experim
 
 *Prepared read-only; no paper was edited and no experiment was run. Every quoted number names its source
 file; all ranked-list and readiness judgments are ASSERTED.*
+
+## Addendum (2026-10-05, after the review)
+
+Resolved by the coordinator the same day; the body above is left as written.
+
+- **Cross-paper mismatch (iii).** mdb-saturn-pub §4 had copied the withdrawn first-run circuit-tracer numbers from `saturn-pub/docs/circuit-tracer.md`; it now reports the corrected rerun that pointwise §4.9 carries (13/1000 necessary, agreement 0.846 [0.824, 0.868], −2× steer 45/50, zero-ablation 15/50) and names the first run as a verification episode. The saturn-pub docs text still describes the first run and is out of scope here.
+- **Stale restatement.** mdb-saturn-pub §4 now quotes instrument-audit's primary no-embedding real-generator numbers (0.990 / 0.976 / 0.892).
+- **Vocabulary (iv).** pass-indexed §7 no longer names the host or the scheduler; mdb-saturn-pub no longer names the lab workspace by codename. Tool-level names in the tools paper (StateCut, Act, Future Forest, mrun-pub) are public API names and stay.
+- **Registry.** 19 → 41 claims (verify 41/41, chain_ok). time-circuit-scaffold now has six of its own (`tcs-*`), mdb-saturn-pub eight (`mdb-*`), and the specific unbound numbers listed above for time-formed (FLUX bounds, 7B, original panel), pointwise (FLUX, LM grid, instrument trial, §4.9), pass-indexed (format-vs-content control) and instrument-audit (edge level) are bound.
+- **Citation.** arXiv:2606.21345 was verified against the arXiv listing earlier in the day; the pointwise changelog now says so.
+- **Still open, as the review states:** outside replication for every paper; the three tools-paper demonstrations; a behaviour-matched competent control for scaffold §1.2; a sub-layer sweep.

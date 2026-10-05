@@ -7,7 +7,7 @@ updated: 2026-10-05
 
 # Research Papers
 
-Six manuscripts are current. Everything else in this directory is an earlier draft, a parked note, or a companion that one of the six absorbed; those are listed at the end with what superseded them. Headline numbers across the six are bound to their result files in the [evidence registry](evidence-registry/README.md) (19 claims, re-checkable offline with `saturn-pub evidence claims verify --check`).
+Six manuscripts are current. Everything else in this directory is an earlier draft, a parked note, or a companion that one of the six absorbed; those are listed at the end with what superseded them. Headline numbers across the six are bound to their result files in the [evidence registry](evidence-registry/README.md) (41 claims, re-checkable offline with `saturn-pub evidence claims verify --check`).
 
 ## Current manuscripts
 

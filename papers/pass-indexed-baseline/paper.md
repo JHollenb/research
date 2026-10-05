@@ -351,7 +351,7 @@ drift (+3.125/+2.202/+2.063 nats, all positive) and the Section 5 R2 11/12 insta
 are covered by `pib-r0-drift-r2-flips-base`
 (`2026-10-02-pass-indexed-baseline/results/pass-indexed-35d4adaeed36/analysis.json`); the Section 6
 two-regime replication table is covered by `pib-instruct15b-raw` (9/12 flips), `pib-instruct15b-chat`
-(0/12), `pib-instruct7b-raw-bf16` (4/12) and `pib-instruct7b-chat-bf16` (0/12), one per cell, and the three chat-template cells with unsaturated reads by `pib-chat-unsat-05b`, `pib-chat-unsat-referential`, `pib-chat-unsat-distractor` and the cross-cell correlation by `pib-chat-unsat-p3-spearman`. Re-check
+(0/12), `pib-instruct7b-raw-bf16` (4/12) and `pib-instruct7b-chat-bf16` (0/12), one per cell, and the three chat-template cells with unsaturated reads by `pib-chat-unsat-05b`, `pib-chat-unsat-referential`, `pib-chat-unsat-distractor` and the cross-cell correlation by `pib-chat-unsat-p3-spearman`; the Section 4 format-versus-content decomposition by `pib-format-content-control`. Re-check
 offline with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`.
 
 ## Changelog

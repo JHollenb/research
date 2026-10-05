@@ -93,3 +93,5 @@ then `/Users/jakeholl/domains/saturn-pub/.venv/bin/python build_registry.py`.
 `append_2026-10-05_interpbench_real.py` adds `iai-real-generator-noemb-84models` (instrument-audit §5.1 real-generator primary table; array-rooted receipt, fingerprint path). Registry now 19.
 
 `append_2026-10-05_scaffold_tools.py` adds six time-circuit-scaffold claims (`tcs-*`: query-gated authority, held reader profile, fine-tune asymmetry, cross-operation band, null nets + function vector, routing transfer) and `mdb-circuit-tracer-flagship-corrected`. Registry now 26 claims, verify 26/26.
+
+`append_2026-10-05_remaining.py` adds the bindings the 2026-10-05 submission review asked for: time-formed FLUX four-condition / 7B / original panel, pointwise FLUX / LM grid / instrument trial, pass-indexed format-vs-content control, instrument-audit edge level, and the seven mdb-saturn-pub Section 3 demonstration rows. Registry now 41 claims, verify 41/41. One receipt (`mdb-demo-scene-compiler-rgb`) lives under `research/demos`, which is not yet committed to this repository.

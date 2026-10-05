@@ -344,7 +344,7 @@ ASSERTED: these five share the contract's primitives — capture, fork, declared
 native-consumer judgment, and hash-pinned offline re-derivation — and none is an external user
 (§6).
 
-The corrected flagship numbers above are bound to `flagship-summary.json` in the evidence registry as `mdb-circuit-tracer-flagship-corrected`; the Section 3 demonstration rows are not yet registered, which Section 7 lists among the open items.
+The corrected flagship numbers above are bound to `flagship-summary.json` in the evidence registry as `mdb-circuit-tracer-flagship-corrected`; the seven Section 3.1 demonstration rows are bound to their report files as `mdb-demo-shared-kv-ancestry`, `mdb-demo-durable-residency`, `mdb-demo-cuda-vmm-aliasing`, `mdb-demo-routed-working-set`, `mdb-demo-archive-read`, `mdb-demo-scene-compiler-rgb` and `mdb-demo-mamba-fork-replay`.
 
 ## 5. Comparison with prior art
 

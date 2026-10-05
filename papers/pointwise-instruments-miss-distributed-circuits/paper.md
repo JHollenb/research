@@ -200,7 +200,7 @@ The attribution-graph comparison (§4.9) is summarized, with job ids and hashes,
 
 Every result file from the preregistered panel, first run and rerun, is in [`experiments/2026-09-22-sae-comparison/results/`](experiments/2026-09-22-sae-comparison/results/), with the environment, model commits and file hashes for each run.
 
-The paper's central tables are also bound to their receipt bytes in a saturn-pub evidence claim registry at `../evidence-registry/` (append-only, hash-chained, standard-library only): `pim-prereg-panel-sae-v2` covers the §4.3 preregistered panel and the §4.4 SAE arms (the rerun `combined_summary_v2.json` in the results directory above). Re-check offline, without loading a model, with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`, which re-hashes the receipt and flips the claim to `stale` on any drift.
+The paper's central tables are also bound to their receipt bytes in a saturn-pub evidence claim registry at `../evidence-registry/` (append-only, hash-chained, standard-library only): `pim-prereg-panel-sae-v2` covers the §4.3 preregistered panel and the §4.4 SAE arms (the rerun `combined_summary_v2.json` in the results directory above). Re-check offline, without loading a model, with `saturn-pub evidence claims verify --check --registry papers/evidence-registry/claims.jsonl`, which re-hashes the receipt and flips the claim to `stale` on any drift. The FLUX four-condition bounds (§4.1), the language-model grid (§4.3), the blind-graded trial (§5) and the corrected attribution-graph run (§4.9) are bound by `pim-flux-four-condition`, `pim-lm-grid`, `pim-instrument-trial` and `mdb-circuit-tracer-flagship-corrected`.
 
 ## References
 
@@ -234,6 +234,7 @@ The paper's central tables are also bound to their receipt bytes in a saturn-pub
 
 Attribution-graph extension (2026-10-05). No earlier measured number was altered.
 
+- **2026-10-05 (bindings and citation check).** Reference [19] (arXiv:2606.21345, Hochman, Shapira and Goldberg) was verified against the arXiv listing; §4.1, §4.3, §4.9 and §5 headline numbers are bound in the evidence registry.
 - **§4.9 added — attribution graphs.** Preregistered 56-prompt panel on Gemma-2-2B with Gemma Scope transcoders and circuit-tracer: 13/1,000 single graph features necessary; top-20 joint ablation flips 15/50 (all 8 two-hop; matched-random 5/50); −2× steer 45/50 (random 20/50); top-100 ablation 64% (random 8%); the tool's intervention predictions mostly under-predict the native effect; unconstrained mode most accurate. Abstract, §6 (our own mis-dosed first run, caught and rerun) and §7 (refs [23]–[25]) updated.
 
 Submission-readiness pass (2026-10-05). No measured number was altered.

@@ -20,3 +20,5 @@ edge-level table rests on `results/edge_full.json`, also array-rooted, and is no
 registered here.)
 
 The real-generator primary table (§5.1) and the IOI cells (§5.8) are bound to `results/real_full.json` by the claim `iai-real-generator-noemb-84models` (appended 2026-10-05; registry 19 claims, `verify --check` 19/19).
+
+The edge-level real-generator table (§5.3) is bound to `results/real_edge_full.json` by `iai-edge-real-84models` (registry 41 claims).
