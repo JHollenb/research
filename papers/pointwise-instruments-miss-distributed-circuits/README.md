@@ -7,7 +7,9 @@ updated: 2026-09-22
 
 # Single-Site Tests Miss Distributed Stores
 
-[The paper](paper.md) shows measured cases where single-site activation patching reports "no necessary component" while the same components across all diffusion steps, or the same token's key/value entries across the second half of a language model, both remove and carry the behavior. It adds a preregistered comparison with a standard sparse-autoencoder workflow (SAELens, public GPT-2 and Gemma Scope SAEs; GPT-2 cross-checked in TransformerLens) and a blind-graded comparison in which four standard readouts gave the wrong verdict in 4 of 4 graded cases.
+[The paper](paper.md) shows measured cases where single-site activation patching reports "no necessary component" while the same components across all diffusion steps, or the same token's key/value entries across the second half of a language model, both remove and carry the behavior. It adds a preregistered comparison with a standard sparse-autoencoder workflow (SAELens, public GPT-2 and Gemma Scope SAEs; GPT-2 cross-checked in TransformerLens) and a blind-graded comparison in which four standard readouts gave the wrong verdict in 4 of 4 graded cases — on cases chosen because failure was expected, so the trial shows the failure modes exist, not how often they occur.
+
+The 2026-10-05 pass folds in two sharpenings from the theory companion (`../integral-residual-dynamics/paper.md`): §4.7, the isolated-swap gotcha in one number (in-forward 0.99 vs isolated 0.00), and §4.8, the transport-cut result (single-site necessity 1.0–1.5% at the key/value cut rises to 172–236% at the residual-stream cut, so the certificate is about a cut, not an architecture). See the paper's CHANGELOG.
 
 - [`paper.md`](paper.md): the paper.
 - [`appendix-execution-model.md`](appendix-execution-model.md): how the exact capture-and-replay experiments are run, how that compares with TransformerLens, nnsight and pyvene, and measured costs.

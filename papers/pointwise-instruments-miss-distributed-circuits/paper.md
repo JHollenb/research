@@ -125,6 +125,14 @@ Writing the target displacement at different subsets of the four FLUX steps and 
 
 ![Figure 2. Write schedule vs outcome for fox → lion in FLUX.2 Klein 4B (seed 7217). "Progress" is 1 − pixel MAD to the target render, normalized by source-to-target MAD. The late double-dose arm scores 0.16 but visibly renders a lion, so progress measures reproduction of the target image, not whether the identity changed.](figures/fig2-write-schedule.png)
 
+### 4.7 The isolated swap, in one number
+
+The single most important implementation detail is which swap you run. An *in-forward* key/value swap lets the subject token's own attention read the replaced entries, so a "single-layer" edit silently becomes multi-layer; the *isolated* swap (§2) replaces the cached entries after the subject has finished computing and then runs only later tokens. The two can disagree completely: in Qwen2.5-1.5B identity, swapping layer 0's keys and values in-forward removes **0.99** of the effect, while the same swap done in isolation removes **0.00** (§4.3). A single-site test with the in-forward implementation would report a sharply localized early mechanism that does not exist. The first run of our own preregistered panel used in-forward swaps; the error was found in code review and rerun under a dated amendment, and both runs are kept.
+
+### 4.8 The certificate is about a cut, not an architecture
+
+Whether the distributed signature appears depends on the *transport cut*, not on the model family. The theory companion runs a control that moves only the cut: single-site necessity at the key/value cut is **1.0–1.5%** of the path effect (the distributed signature), and moving the cut to the residual (hidden) stream sends the *same two transformers' single-site necessity to **172–236%***, because the residual stream carries everything downstream of the cut, so one early residual cut is near-maximally necessary (§2, point 1). A state-space (Mamba-family) model likewise fails to certify at a residual-stream cut. Reading a residual-cut null as "this architecture lacks the mechanism" is therefore a cut artifact; the distributed store is addressed by the key/value cache, and the certificate is a statement about a cut, not an architecture. These two sharpenings are developed in the theory companion [16].
+
 ## 5. Four readouts that give the wrong verdict
 
 To make the practical consequence concrete, we preregistered six cases in which a common readout and the downstream model could disagree, ran both arms on matched inputs, and had a fresh grader with no project context compare anonymized readings against a frozen rubric. The success criterion, fixed in advance, was that the standard arm misreport in at least three of the four main cases.
@@ -155,7 +163,9 @@ The criterion was met: 4 of 4 main cases graded as misreports, 5 counting the re
 
 ## 7. Related work
 
-Activation patching and causal tracing [1, 2] and path patching [8] are the tools this paper examines, and Zhang and Nanda [3] and Heimersheim and Nanda [4] show that conclusions depend on metric and granularity. McGrath et al. [5] document the Hydra effect, where later layers compensate for an ablated attention layer, and Rushing and Nanda [6] study self-repair more broadly; our single-layer nulls are consistent with these compensation effects and extend them to per-layer key/value caches and diffusion steps. Sparse autoencoders [9] and the public SAEs we use [11, 12], with SAELens [10] and TransformerLens [14], are the standard feature-level toolkit; sparse feature circuits [15] rank features across layers with attribution, and our SAE-global arm is a simplified version of that procedure. Attribution patching [13] supplies the ranking score. Our companion paper [7] identifies and certifies the FLUX.2 route used in §4.1.
+Activation patching and causal tracing [1, 2] and path patching [8] are the tools this paper examines, and Zhang and Nanda [3] and Heimersheim and Nanda [4] show that conclusions depend on metric and granularity. McGrath et al. [5] document the Hydra effect, where later layers compensate for an ablated attention layer, and Rushing and Nanda [6] study self-repair more broadly; our single-layer nulls are consistent with these compensation effects and extend them to per-layer key/value caches and diffusion steps. Sparse autoencoders [9] and the public SAEs we use [11, 12], with SAELens [10] and TransformerLens [14], are the standard feature-level toolkit; sparse feature circuits [15] rank features across layers with attribution, and our SAE-global arm is a simplified version of that procedure. Attribution patching [13] supplies the ranking score. Our companion paper [7] identifies and certifies the FLUX.2 route used in §4.1, and the theory companion [16] gives the four-quadrant certificate and the transport-cut result folded into §4.8.
+
+The delta from prior distributed-mechanism work is the isolated-versus-in-forward cut (§4.7), the full key/value and per-step sweeps that overturn sampled single-site certificates, and a standard SAE workflow run on public tools and models. Related findings report the same distribution without the single-vs-whole-path test: deferred relation-before-entity commitment across four decoder models [17], 0% single-position against up to 96% multi-position in-context transfer in LLaMA/Qwen/Gemma [18], and redundant, distributed, non-contiguous factual retrieval [19]; task and function vectors read a compact carrier at one site [20, 21]. On the diffusion side, DifFRACT trains timestep-conditioned transcoders on a FLUX diffusion transformer and intervenes across every denoising step [22], which is the feature-level analogue of our all-step quadrant.
 
 ## 8. Reproduce
 
@@ -192,3 +202,19 @@ Every result file from the preregistered panel, first run and rerun, is in [`exp
 [13] A. Syed, C. Rager, A. Conmy. Attribution Patching Outperforms Automated Circuit Discovery. arXiv:2310.10348, 2023.
 [14] N. Nanda, J. Bloom, and contributors. TransformerLens. https://github.com/TransformerLensOrg/TransformerLens, 2022.
 [15] S. Marks, C. Rager, E. J. Michaud, Y. Belinkov, D. Bau, A. Mueller. Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models. arXiv:2403.19647, 2024.
+[16] J. Hollenbeck. Integral Residual Dynamics: Models Consume Trajectory Functionals, Not Sites. [../integral-residual-dynamics/paper.md](../integral-residual-dynamics/paper.md), 2026.
+[17] D. Agarwal. Relation Before Entity: Deferred Commitment in Language Model Factual Recall. ICML 2026 Mechanistic Interpretability Workshop. arXiv:2609.17537.
+[18] B. Cheng, J. Zhang. Single-Position Intervention Fails: Distributed Output Templates Drive In-Context Learning. arXiv:2605.04061, 2026.
+[19] Factual retrieval in language models is redundant, distributed, and non-contiguous across components. arXiv:2606.21345, 2026. (Descriptive title; verify exact title and authors before submission.)
+[20] R. Hendel, M. Geva, A. Globerson. In-Context Learning Creates Task Vectors. Findings of EMNLP 2023. arXiv:2310.15916.
+[21] E. Todd, M. L. Li, A. S. Sharma, A. Mueller, B. C. Wallace, D. Bau. Function Vectors in Large Language Models. ICLR 2024. arXiv:2310.15213.
+[22] A. Mazur, N. Konovalova, A. Alanov. DifFRACT: Diffusion Feature Reconstruction and Attribution for Circuit Tracing. arXiv:2606.15796, 2026.
+
+## CHANGELOG
+
+Submission-readiness pass (2026-10-05). No measured number was altered.
+
+- **§4.7 added — the isolated swap, in one number.** Crystallizes the in-forward-versus-isolated gotcha (Qwen2.5-1.5B layer 0: 0.99 vs 0.00) as its own short section, folded from the theory companion; §4.3 keeps the detailed treatment.
+- **§4.8 added — the certificate is about a cut, not an architecture.** Folds in the transport-cut result from the theory companion: single-site necessity 1.0–1.5% at the key/value cut jumps to 172–236% at the residual-stream cut in the same transformers, so a residual-cut null is a cut artifact, not an architecture property.
+- **Related work (§7)** now states the delta against prior distributed-mechanism work and adds references [16]–[22]: the IRD theory companion, Agarwal 2026 (deferred commitment), Cheng & Zhang 2026 (single vs multi-position), arXiv:2606.21345 (non-contiguous factual retrieval), Hendel 2023 and Todd 2024 (task/function vectors), and DifFRACT (timestep-conditioned transcoders on FLUX). The arXiv:2606.21345 title is a descriptive placeholder pending verification.
+- The blind-trial framing (cases chosen because failure was expected; the four-readout result shows the failure modes exist, not how often) was already in the abstract and §5 and is unchanged.
