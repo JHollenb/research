@@ -1,6 +1,6 @@
 # Time-Formed Circuits: Formation, Commitment, and Causal Use
 
-Jacob Hollenbeck. Submission manuscript. Target: arXiv + an interpretability venue; audience = frontier-lab interpretability researchers.
+Jacob Hollenbeck. Submission manuscript.
 
 ## Abstract
 
@@ -8,14 +8,11 @@ Activation patching and attribution graphs disagree about where a circuit lives.
 
 ## Status
 
-- **paper.md**: Round-4 revision. ~11,900 words, 11 main sections plus Appendices A-D. Submission draft (not committed by this author; the coordinator commits). Abstract 200 words.
-- Built on the `space-and-time-circuits/time-emphasis-paper.md` spine, with the cross-family E20 replication, the Mamba write-vs-retention retest, a full attribution-graph (circuit-tracer) section, the 7B scale test, the blind location test, and the round-2 reviewer experiments integrated.
-- Round-1 and round-2 reviews with point-by-point responses (`reviews/round1-response.md`, `reviews/round2-response.md`).
-- **Round-3:** scoped §5 to an MLP-transcoder feature-and-error basis with the out-of-basis mechanism stated first and the magnitude-asymmetry and n=12 cautions added; added Vig 2020, Olsson 2022, Feng & Steinhardt 2023, a Meng/Hase delta row, and named the transplant as resample/interchange patching; demoted the window-necessity and Mamba figures to Appendix D, merged the two Gemma feature figures into one, and split the worst long sentences. Custody audit of the P1 experiments **PASSED (FROZEN, byte-identical predictions across versions)**.
-- **Round-4 (consistency pass with the companion):** replaced the pre-band-freeze formation leg with the preregistered formation-over-time result (best single layer 0.732/0.804, band attn+MLP freeze 0.904/1.023, consumer-to-subject cut 0.871→0.010 / 0.985→0.015; P1a/P1b/P2c/P3a pass, P2a/P3b/P1c fail), concluding committed-at-the-band, formed-before-it, with the pre-band locus not localized; the positive formed-over-depth evidence is the L11/L12 residual seed (16/16 rescue, 14/14 block, early fact-span 0/15). Replaced the inert k∈{0.5,2} Mamba clock-dose with the aligned retention retest (γ=15–142; release-hurts 0/6, dt-via-write 6/6, writer-specific 1/6, retention-beats-write 4/6 near-tie; verdict RETENTION_NOT_COMMIT_LEVER). Added the 7B block-and-rescue (rescue 0.770, block 0.595, wrong −0.026, commit ~L21) and the blind depth-fraction location test (rule falsified on Pythia-1.4B, dissociation relocated to L13–17 with commit ~L16, OLMo-1B unavailable). Re-scoped the companion pointer to a fixed role lowering rather than a fixed commit-layer index; Fig S2 now carries the retest figure. No `TODO 9B scale` remains; Gemma-2-9B stays unavailable.
-- **Round-5 (submission-readiness pass, 2026-10-05):** grounded the operational vocabulary in standard activation-patching terms via a Terminology paragraph in §2.1 (seed / formed store / readout); re-led §5 with the matched feature-and-error interchange and stated both E6 denominators (0.31/0.99 on n=12/8; native 0.83/0.84 on the 42/25 sweep); switched §7.1 to lead with the matched clock-dose test (retention +0.0322 / write −0.0664 / joint −0.0343 nats, 1 prompt/1 seed) with the aligned retest kept as corroboration; added §8.1 (frozen late band is operation-general: recall/arithmetic/two-hop, with the two-positioned arithmetic commit); added a `TODO-REPLICATION` marker after Table 2 for the non-Qwen families; added arXiv:2606.21345 and Syed 2023 to related work; reworded "scaffold"/"custody" in the body and appendices; added a CHANGELOG. No measured number changed. See the paper's CHANGELOG.
-- Numbers trace to opened source files (see evidence map). No internal tool names, job IDs, or experiment numbers appear in the body; experiment numbers and job IDs appear only in Appendix A.
-- Figures: five in the main body plus two supplementary in Appendix D. Fig 1 (schematic), Fig 2 (dissociation, regenerated with identity-clustered CIs), Fig 3 (formation), Fig 4 (error interchange), Fig 5 (FLUX); Fig S1 (window necessity), Fig S2 (Mamba) in Appendix D.
+- **paper.md**: submission draft, about 14,500 words, eleven main sections plus Appendices A–D, 200-word abstract. Seven figures in the body and two supplementary.
+- Central result: the block-and-rescue dissociation with an independent recipient (§3.3–3.4), replicated in three families with identity-clustered intervals, on held-out identities, at 7B, and in four further families with the band fixed blind; the two deep-model block misses resolved by a causal window sweep (§3.4, Figure 7).
+- Instrument result: a matched MLP-transcoder feature-and-error interchange reaches 0.31 of the identity answer against 0.94 for a native key/value cut (§5, Figure 4), with both denominators stated.
+- Diffusion instance: the four-condition path-distributed signature in FLUX.2 (§6), with the weighted-additive caveat.
+- Vocabulary is standard activation-patching language, grounded in §2.1; experiment identifiers and job IDs appear only in Appendix A. Review rounds and point-by-point responses are in `reviews/`; the changelog at the end of the paper records every revision.
 
 ## Evidence map (claim -> source path)
 
@@ -71,6 +68,8 @@ Main body:
 | `figures/fig3-formation.png` | copied from `.../2026-10-02-p1-reviewer-experiments/figures/figA_formation.png` | P1-A formation vs propagation bars |
 | `figures/fig4-error-interchange.png` | copied from `.../2026-10-02-p1-reviewer-experiments/figures/figC_error_interchange.png` | P1-C feature-only / matched feature+error / error-only vs native cut, identity vs color |
 | `figures/fig5-flux-quadrants.png` | generated from the four measured bounds in the FLUX findings | FLUX four-condition signature |
+| `figures/fig6-blind-band-families.png` | generated from `.../2026-10-05-e20-nonqwen-families/results/analysis.json` | blind-band dissociation in four further families |
+| `figures/fig7-causal-band-curves.png` | copied from `.../2026-10-05-e20-causal-band-phi2-gpt2xl/results/causal_band_curves.png` | joint window-necessity sweep and single-layer profiles for the two deep models |
 
 Appendix D (supplementary):
 
@@ -83,19 +82,8 @@ Appendix D (supplementary):
 
 ## Open gaps
 
-RESOLVED in rounds 2-3 (numbers in the body; custody audit of the P1 experiments **PASSED**, FROZEN with byte-identical predictions across versions, the identity-clustered intervals reproduced exactly, a genuine leave-one-identity-out fit, and the error-node reimplementation matching the library):
-- **P1-A formation vs propagation (two models)** — in Qwen the late band 0.871 beats seed-layer (-0.010), early band (-0.028), and a linear image of the seed (0.023, held-out R2 -0.13); Gemma replicates the two fitting-free legs (late 0.985 vs seed-layer 0.080, early -0.028; linear-pred 0.100, held-out R2 -0.06). The pre-band subject-layer freeze (Qwen 0.675/drop 0.197; Gemma 0.990/drop -0.005, freeze-no-op falsifier fired) is uninformative and is not used as evidence. The fitting-free legs (not early/seed K/V, not a linear image of the seed) replicate across both models.
-- **Formation-over-time (band-internal locus, two models)** — the preregistered test places the late band as the commit and read-out zone: best single layer 0.732/0.804 (P1a, P1b), freezing the band's own attn+MLP leaves rescue intact 0.904/1.023 (P2c), consumer→subject cut collapses rescue 0.871→0.010 / 0.985→0.015 (P3a); the decisive "band builds the store" P2a failed (F2 fired), P3b failed (F3b fired), P1c failed. Reading: committed at the band, formed before it; pre-band locus not localized. Positive formed-over-depth evidence is the L11/L12 residual seed (16/16 rescue, 14/14 block, early fact-span 0/15).
-- **P1-B identity-clustered bootstrap** — Table 2 now reports identity-clustered CIs and effective n (14/27/14/13 identities); every block/rescue lower bound stays above zero; under clustering the wrong-identity CI includes 0 in all 4 cells, so candidate top-1 (not the signed fraction) is the content control.
-- **P1-C error-node swap** — split by behavior: identity misses even under matched feature+error interchange (0.31, flips 3/12); color recovers (0.99, 8/8). §5 scoped to an MLP-transcoder basis and the formed identity store.
-- **7B scale** (§3.4, §10) — the block-and-rescue reproduces at 7B (rescue 0.770, block 0.595, wrong -0.026, n=40; commit ~L21). Block is lower only because the commit spreads across several late layers a six-layer mediator cannot all capture. No positive mediation above 7B; Qwen3-30B's in-forward certificate did not survive the isolated cut.
-- **Mamba retention retest** (§7.1) — the aligned retest (γ=15-142) refutes the clock-stop-as-commit reading: release-hurts 0/6, dt-via-write 6/6, writer-specific 1/6, retention-beats-write 4/6 near-tie; verdict RETENTION_NOT_COMMIT_LEVER. The earlier k∈{0.5,2} dose was inert by construction and is dropped.
-- **Blind location test** (§10) — the depth-fraction band-location rule is falsified blind on Pythia-1.4B (predicted band carries almost nothing) while the dissociation relocates to L13-17 (commit ~L16); OLMo-1B unavailable. Location-fixedness is a weak symptom, developed in the companion.
-
-Still open:
-- **Gemma-2-9B** (sliding-plus-global specimen) is unavailable, so the attention-pattern scale test above 7B is still open.
-
-Owed:
-- Sub-layer-grain sweep of a distributed cell (heads, key vs value, positions in the band).
-- A second model or behavior for the circuit-tracer head-to-head, to make the instrument-coverage result a trend.
-- External-lab / external-harness replication; all results here are one lab, stock eager attention (stock SDPA for the §8 arithmetic cells).
+- **Scale above 7B.** No positive mediation result above Qwen2.5-7B; Gemma-2-9B (sliding-plus-global attention) was unavailable.
+- **Phi-2 necessity.** The causal window sweep raises block from 0.03 to 0.49 but no quarter-depth window reaches the 0.6 threshold; its necessity is partly distributed (§3.4).
+- **Sub-layer grain.** The late band is localized at the layer grain; heads, key-versus-value, and positions within the band are not swept.
+- **Second instrument cell.** The attribution-graph head-to-head is one model and one behavior pair.
+- **Outside replication.** Every number is one laboratory and one harness, single seed; the E20 package on OLMo-2-1B is the cheapest replication to hand out.

@@ -4,7 +4,6 @@ author: Jacob Hollenbeck
 type: research-paper
 status: workshop-scale note (round-2 revision)
 date: 2026-10-02
-venue_target: interpretability / AI-safety workshop
 evidence_cutoff: 2026-10-02
 companion: ../time-formed-circuits/
 working_name: "Formed-State Faithfulness"

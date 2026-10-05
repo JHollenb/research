@@ -12,8 +12,8 @@ date: 2026-10-02
 
 # The Answer Follows the Cache: A Reasoning Step's Formed State Can Override Its Written Token
 
-Working name: *Formed-State Faithfulness*. Paper: [`paper.md`](paper.md). Audience: frontier-lab
-chain-of-thought monitoring and interpretability teams.
+Working name: *Formed-State Faithfulness*. Paper: [`paper.md`](paper.md). Audience:
+chain-of-thought monitoring and interpretability work.
 
 ## Abstract
 

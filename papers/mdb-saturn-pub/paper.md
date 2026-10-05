@@ -4,7 +4,6 @@ author: Jacob Hollenbeck
 type: research-paper
 status: draft
 date: 2026-10-05
-venue_target: "tools / datasets-and-benchmarks track (cf. nnsight 2407.14561, pyvene 2403.07809)"
 evidence_cutoff: 2026-10-05
 tags: [tools, interpretability, systems, transformers, state-space-models, diffusion, causal-intervention, reproducibility, receipts, model-virtual-memory]
 ---

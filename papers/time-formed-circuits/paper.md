@@ -4,7 +4,6 @@ author: Jacob Hollenbeck
 type: research-paper
 status: submission
 date: 2026-10-02
-venue_target: arXiv + interpretability venue
 evidence_cutoff: 2026-10-02
 tags: [interpretability, transformers, causal-mediation, key-value-state, diffusion, circuit-formation]
 ---
@@ -186,7 +185,7 @@ Query-derived semantic selection remains open. A predecessor-based query address
 
 ## 5. An MLP-transcoder feature basis cannot reach the formed identity store on Gemma-2-2B
 
-If the formed store is the circuit's center of mass, the methods the target audience builds should be tested against it. We run a published attribution-graph pipeline, circuit-tracer with Gemma Scope transcoders [Hanna 2025; Lieberum 2024], against the identity and color band in Gemma-2-2B, on a matched head-to-head panel of 12 identity and 8 color items.
+If the formed store is the circuit's center of mass, the methods built to find circuits should be tested against it. We run a published attribution-graph pipeline, circuit-tracer with Gemma Scope transcoders [Hanna 2025; Lieberum 2024], against the identity and color band in Gemma-2-2B, on a matched head-to-head panel of 12 identity and 8 color items.
 
 The result leads with the matched operator and splits by behavior. Even a fully matched interchange of transcoder features and their reconstruction-error nodes moves the identity answer a median 0.31 of the way to the filler on the 12-item panel, against 0.94 for a native key/value cut; the same matched operator recovers color to 0.99. The identity band is attention-formed and lies outside an MLP-replacement feature basis by construction, so the basis cannot express it however complete the feature interchange; the color store, by contrast, becomes visible once the error nodes are included. Two denominators are in play and we keep them separate: the feature-operator fractions (0.31 identity, 0.99 color) are the matched head-to-head panel of 12 identity and 8 color items, while the native cut's second-half flip rates of 0.83 identity and 0.84 color come from the model's separate 42-identity and 25-color formation sweep.
 
@@ -444,6 +443,6 @@ Submission-readiness pass (2026-10-05). No measured number was altered; claims w
 - **§8.1** added: the frozen late band is operation-general (recall, arithmetic, two-hop), with the two-positioned arithmetic commit. Numbers from the break-it retest (Appendix A, break-it row).
 - **Vocabulary.** The operational terms are grounded in standard activation-patching language in §2.1 (seed, formed store, readout) and used as grounded shorthands; "scaffold" in the body reworded to "scratchpad"/"functional role"; appendix "custody" reworded to "verification". Genuinely private tool, experiment, and job identifiers remain confined to Appendix A.
 - **Replication (2026-10-05).** Table 2 gains four blind-band rows (OLMo-2-1B, Pythia-1.4B, Phi-2, GPT-2 XL) from `saturn/experiments/2026-10-05-e20-nonqwen-families/`, with Figure 6 and a paragraph on the sufficiency/necessity split; abstract and §10 updated to match.
-- **Causal band (2026-10-05, later).** Table 2 gains two causal-band rows for the deep models from `saturn/experiments/2026-10-05-e20-causal-band-phi2-gpt2xl/`: GPT-2 XL block 0.160 -> 0.888 at L31-42, Phi-2 0.033 -> 0.485 at L21-28; Figure 7, the §3.4 interpretation, the abstract sentence and the §10 cell count (necessity 7/8) updated. The band-selection step was checked by split halves (coordinator reanalysis of the sweep rows, same medians on held-out halves).
+- **Causal band (2026-10-05, later).** Table 2 gains two causal-band rows for the deep models from `saturn/experiments/2026-10-05-e20-causal-band-phi2-gpt2xl/`: GPT-2 XL block 0.160 -> 0.888 at L31-42, Phi-2 0.033 -> 0.485 at L21-28; Figure 7, the §3.4 interpretation, the abstract sentence and the §10 cell count (necessity 7/8) updated. The band-selection step was checked by split halves (reanalysis of the sweep rows, same medians on held-out halves).
 - **Prior art.** Added arXiv:2606.21345 (distributed, non-contiguous factual retrieval) and Syed 2023 (attribution patching) to Related work and references.
 - 19/32 is used throughout for the 0.5B computed-swap authorship; 15/32 (an older 14-token readout) appears nowhere.

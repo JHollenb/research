@@ -2,18 +2,41 @@
 title: Research Papers
 type: research-documentation
 status: active
-updated: 2026-09-30
+updated: 2026-10-05
 ---
 
 # Research Papers
 
-- [mrun: Auditable Model Execution Across a Heterogeneous Compute Fleet](mrun-model-execution/README.md): a source-backed systems paper on planning, fleet admission, paging, batching, state transactions, compiled reuse, and model-run verification.
-- [Rotation Swamping: Why BF16 Cannot Move RoPE Keys, and Why QK-Norm Makes It Worse](phaselock-kv-shifts/README.md) (draft; formerly PhaseLock): repeated low-precision key rerotation loses slow RoPE channels; block shifts and immutable keys avoid it.
-- [Single-Site Tests Miss Distributed Stores](pointwise-instruments-miss-distributed-circuits/README.md): measured cases in FLUX.2 and three language-model families where no single step or layer is necessary or sufficient but the whole path is both, plus a blind-graded comparison of four standard readouts against the model's own output.
-- [Integral Residual Dynamics: Models Consume Trajectory Functionals, Not Sites](integral-residual-dynamics/README.md): the theory-and-certificate companion to the distributed-store measurements — the object `R = 𝓘(r(t))`, the four-quadrant certificate and its suite C1–C8, the cross-family sink grid (8/8), the scale floor, the transport-cut result, and the consumption kernel with its 2026-09-22 correction.
-- [Capabilities as Support-Aware Transactions: The Final Boss Is a Role, Not a Layer](capabilities-as-transactions/README.md): a behavior carried as an addressed, time-accumulated joint key/value transaction and committed by an unchanged native consumer — the cross-family dossier with denominators, how it differs from a static circuit, the honest leaks, and a blind auto-detection trial that produced a trend without a certificate.
-- [A New Class of Circuits: Space and Time](space-and-time-circuits/README.md) (outline draft): consolidates the certified FLUX.2 route, the single-site measurement paper, IRD, and the final-boss drafts into one argument — space (localized) circuits vs time-accumulated circuits, the four-quadrant certificate, static infrastructure vs dynamic circuits, and editing consequences.
-- [The Circuit That Survived Its Coordinates](../bfl/docs/certified-semantic-circuits/README.md): the certified distributed semantic route in FLUX.2 Klein 4B.
-- [Score Multi-Turn Interventions Against the Pass-Indexed Native, Not a Fixed Parent](pass-indexed-baseline/README.md) (draft): a methods note — when you intervene inside a multi-turn context, the baseline is the model's own continuation with the same earlier turns already run, not the single-turn parent; measured drift ~2.5 nats and 11/12 install-conclusion flips on Qwen2.5-1.5B, reproduced on instruct weights and at 7B in the plain-text regime and shown to attenuate (and why) in the chat regime.
-- [One Grokked Circuit Is Not a Certificate: Auditing Three Interpretability Instruments Against 86 Known Circuits](instrument-audit-interpbench/README.md) (draft): a method-audit note — scoring three in-house instruments (gradient×activation, direct-logit write-site scan, concept-subspace trace) and standard baselines against the ground-truth circuits of 84 of the 86 InterpBench models, with four preregistered predictions and a hash-frozen scorer; the baselines reproduce the published ordering (activation patching 0.941 ≥ EAP-IG 0.924 ≥ EAP 0.883), two single-circuit verdicts transfer in direction and one (the subspace trace) is falsified, so one known circuit under-determines the deployment constraints an instrument earns.
-- [mdb and saturn-pub: Durable, Receipted, Forkable Execution of Frozen Transformer, State-Space and Diffusion Models](mdb-saturn-pub/README.md) (draft): a tools / datasets-and-benchmarks note on the two public packages (`saturn-pub` in-process sessions/forks/Acts/receipts/evidence/training; `mdb` durable cross-process sessions, memory residency and offline model-free verification) that run a frozen model as one receipted, forkable, durable transaction across transformer, SSM and diffusion families; every primitive has a close antecedent (nnsight, pyvene, Patchscopes, vLLM/SGLang, Cartridges, Git-Theta) and the honest novelty is the combination, with cross-family measured demonstrations (40.91% shared-K/V reduction with 8/8 tokens; CUDA-VMM bit-identical; 1.859× working-set; 21/21 RGB across 5 diffusion families; Mamba bit-exact fork) and a full limitations section.
+Six manuscripts are current. Everything else in this directory is an earlier draft, a parked note, or a companion that one of the six absorbed; those are listed at the end with what superseded them. Headline numbers across the six are bound to their result files in the [evidence registry](evidence-registry/README.md) (19 claims, re-checkable offline with `saturn-pub evidence claims verify --check`).
+
+## Current manuscripts
+
+| | Paper | One line | Strongest evidence |
+|---|---|---|---|
+| 1 | [Time-Formed Circuits: Formation, Commitment, and Causal Use](time-formed-circuits/README.md) | Some circuits are built over depth; the formed state commits to a late key/value band that can be moved between models. | Block removes 73–92%, independent-recipient transplant restores 71–99%, eight decoder families, four blind; matched transcoder interchange 0.31 vs native cut 0.94. |
+| 2 | [Single-Site Tests Miss Distributed Stores](pointwise-instruments-miss-distributed-circuits/README.md) | Single-step or single-layer patching reports "nothing necessary" where the whole path is necessary and sufficient. | FLUX.2 22% / 0.13% / 91%; LM single layer ≤18% vs second half 81–104%; preregistered SAELens and Gemma Scope head-to-head; blind-graded instrument trial with verifiers. |
+| 3 | [One Grokked Circuit Is Not a Certificate](instrument-audit-interpbench/README.md) | Calibrating an instrument on one known circuit under-determines the constraints it earns. | All 86 InterpBench circuits, real generators, hash-frozen scorer; baselines 0.990 / 0.976 / 0.892; two lab instruments at chance in their certified forms, rescued by one constraint change. |
+| 4 | [Score Multi-Turn Interventions Against the Pass-Indexed Native](pass-indexed-baseline/README.md) | The baseline for a mid-context intervention is the model's own continuation, not the single-turn parent. | 2.5-nat drift, 11 of 12 conclusions flip on Qwen2.5-1.5B; replicates on instruct and 7B in plain text; chat template mis-sizes the effect by 2.7 nats on referential reads. |
+| 5 | [Dynamic Circuits Loop Through a Stable Time Scaffold](time-circuit-scaffold/README.md) | The architecture hypothesis, stated with eight falsifiers and their status. | Query-gated authority 16/16, prospective reader profile 8/8, fine-tune asymmetry; two falsifiers fired and are reported as such. |
+| 6 | [mdb and saturn-pub](mdb-saturn-pub/README.md) | Tools note for the two public packages that run a frozen model as a receipted, forkable, durable transaction across families. | Cross-family demonstrations (bit-identical CUDA-VMM aliasing, 21/21 RGB parity across five diffusion families, bit-exact Mamba fork); novelty claimed only for the combination. |
+
+Suggested reading order: 1, 2, 3, then 4 as the methods companion, 5 for the theory, 6 for the tooling.
+
+## Supporting documents
+
+- [The Circuit That Survived Its Coordinates](../bfl/docs/certified-semantic-circuits/README.md): the certified distributed semantic route in FLUX.2 Klein 4B that paper 2 builds on.
+- [Evidence registry](evidence-registry/README.md): the claim ledger and the script that built it.
+- [Submission review, 2026-10-02](submission-review-2026-10-02.md) and its successor [2026-10-05](submission-review-2026-10-05.md): reviewer-style readiness assessments of the current manuscripts.
+
+## Earlier drafts and parked notes
+
+| Directory | Status |
+|---|---|
+| [space-and-time-circuits](space-and-time-circuits/README.md) | Outline and early draft; its spine became paper 1. |
+| [scaffolds-and-dynamic-circuits](scaffolds-and-dynamic-circuits/README.md) | Three drafts of the architecture thesis; superseded by paper 5. |
+| [integral-residual-dynamics](integral-residual-dynamics/README.md) | Theory companion to paper 2; its two usable results (isolated-swap, transport cut) were folded into paper 2 §4.7–4.8. |
+| [capabilities-as-transactions](capabilities-as-transactions/README.md) | Cross-family dossier on a behavior as a joint key/value transaction; shelved, its measured cells live in paper 1 and paper 5. |
+| [formed-state-faithfulness](formed-state-faithfulness/README.md) | Parked after review; chain-of-thought formed-state result, to fold into paper 5. |
+| [phaselock-kv-shifts](phaselock-kv-shifts/README.md) | Rotation swamping in low-precision RoPE keys; numerics draft, standalone. |
+| [rounding-placement](rounding-placement/README.md) | Where to round in low-precision attention; numerics draft, standalone. |
+| [clocked-ledger-memory](clocked-ledger-memory/README.md) | Exact time-aware memory for a frozen language model; standalone draft. |
