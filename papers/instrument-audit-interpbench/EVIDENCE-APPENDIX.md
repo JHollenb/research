@@ -18,3 +18,5 @@ this claim was registered through the same public `DependencyFingerprint`/`Claim
 the identical file bytes; `verify` treats it like any other file-kind entry. The §5.2
 edge-level table rests on `results/edge_full.json`, also array-rooted, and is not separately
 registered here.)
+
+The real-generator primary table (§5.1) and the IOI cells (§5.8) are bound to `results/real_full.json` by the claim `iai-real-generator-noemb-84models` (appended 2026-10-05; registry 19 claims, `verify --check` 19/19).
