@@ -1,0 +1,215 @@
+{
+  "schema": "bfl-demo-controls-v1",
+  "experiment": "exp1",
+  "model_id": "black-forest-labs/FLUX.2-klein-4B",
+  "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "backend": "diffusers-native-flux2-klein",
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "python": "3.14.6",
+    "diffusers": "0.39.0"
+  },
+  "source_sha256": "14d96ffa32ddf3e677b99971ab92419769e8ad0edd428cd27c3f91c61d2fdd30",
+  "tiny": false,
+  "size": 256,
+  "steps": 4,
+  "encode_rss_mb": 5676.3046875,
+  "adapter_identity": "a09191c5ff813af77bf89d8e4b9a07237befb67c1aef3e722322d3491250fcd0",
+  "execution": {
+    "family": "flux2-klein",
+    "adapter": "native-boundary-v2",
+    "granularity": "block",
+    "dtype": "torch.bfloat16",
+    "device": {
+      "type": "cuda",
+      "index": 0
+    },
+    "batch": {
+      "size": 1,
+      "guidance": 1.0,
+      "reference_images": false
+    },
+    "environment_versions": {
+      "torch": "2.13.0+cu130",
+      "diffusers": "0.39.0",
+      "python": "3.14.6"
+    },
+    "model_program": "project->joint_block[*]->single_block[*]->norm/proj_readout->flow_commit",
+    "kernel": {
+      "transformer": "Flux2Transformer2DModel",
+      "scheduler": "FlowMatchEulerDiscreteScheduler"
+    },
+    "numeric_scope": {
+      "inference_mode": true,
+      "autocast": false,
+      "stochastic_sampling": false,
+      "tf32_matmul": false,
+      "torch_num_threads": 4,
+      "deterministic_algorithms": false,
+      "float32_matmul_precision": "highest",
+      "tensor_layout": "state-slot-bound-stride"
+    },
+    "guidance": 1.0,
+    "reference_images": false,
+    "decoder_normalization_device": "cpu",
+    "parity": "same-program-exact"
+  },
+  "smoke": {
+    "stepped_vs_native_exact": true,
+    "statecut_resume_exact": true,
+    "cut_boundary": "diffusion-step:2/project",
+    "zero_dose_bytes_exact": true,
+    "passed": true
+  },
+  "specimens": [
+    {
+      "id": "scene-seed9001",
+      "axis": "scene",
+      "seed": 9001,
+      "prompts": {
+        "source": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+        "donor": "a photorealistic red fox standing in a sunlit desert at noon, warm red light",
+        "hostile": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light"
+      },
+      "cuts": {
+        "cut0": {
+          "P_route": 0.911709558963268,
+          "P_swap": 1.0,
+          "d": 0.08829044103673199,
+          "original_P": 0.9164435267365753
+        },
+        "cut2": {
+          "P_route": 0.1655915687017584,
+          "P_swap": 0.14598889347260302,
+          "d": 0.18276170398611777,
+          "original_P": 0.1651337439486651
+        }
+      },
+      "hostile_cut0": {
+        "route_own_progress": 0.9520891424462125,
+        "route_target_progress": -0.5293254194600614,
+        "swap_own_progress": 1.0,
+        "d_hostile": 0.047910857553787496
+      },
+      "rollback_latent_bytes_exact": true,
+      "peak_vram_mb": 7591.798828125
+    },
+    {
+      "id": "scene-seed1337",
+      "axis": "scene",
+      "seed": 1337,
+      "prompts": {
+        "source": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+        "donor": "a photorealistic red fox standing in a sunlit desert at noon, warm red light",
+        "hostile": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light"
+      },
+      "cuts": {
+        "cut0": {
+          "P_route": 0.906300859091621,
+          "P_swap": 1.0,
+          "d": 0.09369914090837905,
+          "original_P": 0.907
+        },
+        "cut2": {
+          "P_route": 0.09570613110955317,
+          "P_swap": 0.06716136309130083,
+          "d": 0.16037368969482127,
+          "original_P": 0.095
+        }
+      },
+      "hostile_cut0": {
+        "route_own_progress": 0.9501187492987523,
+        "route_target_progress": -0.5064928854878978,
+        "swap_own_progress": 1.0,
+        "d_hostile": 0.04988125070124773
+      },
+      "rollback_latent_bytes_exact": true,
+      "peak_vram_mb": 7601.8857421875
+    },
+    {
+      "id": "subject-seed4242",
+      "axis": "subject",
+      "seed": 4242,
+      "prompts": {
+        "source": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+        "donor": "a photorealistic red cat sitting in fresh snow at dawn, soft red light",
+        "hostile": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light"
+      },
+      "cuts": {
+        "cut0": {
+          "P_route": 0.9706646107302178,
+          "P_swap": 1.0,
+          "d": 0.0293353892697822,
+          "original_P": 0.971
+        },
+        "cut2": {
+          "P_route": 0.09816396423868823,
+          "P_swap": 0.04566231099425866,
+          "d": 0.12459608772859901,
+          "original_P": 0.099
+        }
+      },
+      "hostile_cut0": {
+        "route_own_progress": 0.9232742884971491,
+        "route_target_progress": -0.3997923343097898,
+        "swap_own_progress": 1.0,
+        "d_hostile": 0.07672571150285089
+      },
+      "rollback_latent_bytes_exact": true,
+      "peak_vram_mb": 7601.8857421875
+    },
+    {
+      "id": "subject-seed9001",
+      "axis": "subject",
+      "seed": 9001,
+      "prompts": {
+        "source": "a photorealistic red fox sitting in fresh snow at dawn, soft red light",
+        "donor": "a photorealistic red cat sitting in fresh snow at dawn, soft red light",
+        "hostile": "a photorealistic blue fox sitting in fresh snow at dawn, soft blue light"
+      },
+      "cuts": {
+        "cut0": {
+          "P_route": 0.8944442748670052,
+          "P_swap": 1.0,
+          "d": 0.10555572513299477,
+          "original_P": 0.904
+        },
+        "cut2": {
+          "P_route": 0.3578717499392262,
+          "P_swap": 0.3173489504616386,
+          "d": 0.169913524603945,
+          "original_P": 0.358
+        }
+      },
+      "hostile_cut0": {
+        "route_own_progress": 0.9520891424462125,
+        "route_target_progress": -2.8049363025822007,
+        "swap_own_progress": 1.0,
+        "d_hostile": 0.047910857553787496
+      },
+      "rollback_latent_bytes_exact": true,
+      "peak_vram_mb": 7601.8857421875
+    }
+  ],
+  "decisions": {
+    "cut0": "partial",
+    "cut2": "partial"
+  },
+  "route_sites": [
+    "after:joint.2",
+    "after:joint.3",
+    "after:joint.4",
+    "after:single.0"
+  ],
+  "cut_steps": [
+    0,
+    2
+  ],
+  "contact_sheet": "contact-sheet-exp1.png",
+  "peak_vram_mb": 7601.8857421875,
+  "elapsed_s": 135.88150869699894,
+  "peak_rss_mb": 8932.421875,
+  "ok": true
+}

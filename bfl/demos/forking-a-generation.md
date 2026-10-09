@@ -24,9 +24,9 @@ edited, and resumed through the unchanged denoiser, scheduler, and decoder. Inje
 content-specific edit early moves the final image toward the intended scene or subject with
 progress **0.904–0.971** across two semantic axes and two seeds each; a hostile donor instead
 drags the branch toward *its own* content (0.926–0.953), and an equal-size random edit does not.
-The same edit applied halfway through denoising is much weaker (0.095–0.358). After every branch,
+The same edit applied halfway through denoising scores much lower (0.095–0.358), though on the subject axis it still turns the fox into a cat in the source's pose. After every branch,
 exact scalar replay restores the parent image and final latent **bit-for-bit**. This is a
-replicated causal-editing trend on one pinned checkpoint, not a portable learned editor.
+replicated causal-editing trend on one pinned checkpoint, not a portable learned editor. A follow-up control shows an early full-dose route edit is a near-complete prompt swap (89–97% of the way); the value here is exact branching and localization, not a stronger edit than prompting.
 
 ![Forking one FLUX.2 generation (scene axis, seed 9001). The first three cells are the endpoints: source, correct donor (desert fox), hostile donor (blue fox). An early full-dose edit lands the desert scene; the hostile edit turns the fox blue; the sham collapses to noise; the same edit at the halfway cut barely moves the image.](../artifacts/counterfactual-diffusion-futures/scene-seed9001.png)
 
@@ -77,8 +77,8 @@ byte-identical (md5 `d46abb8f…`), so it appears once below.
 
 ### Fork, edit, resume — and selectively
 
-Early full-dose edits land the donor; hostile edits land the hostile donor; late edits mostly wash
-out. The replication passes 4/4.
+Early full-dose edits land the donor; hostile edits land the hostile donor; late edits score low
+(see the prompt-swap section for what the score misses). The replication passes 4/4.
 
 | specimen | early correct | hostile: target / own | sham target | late correct |
 |---|---:|---:|---:|---:|
@@ -160,12 +160,52 @@ transfers only *part* of the target behavior, so this stays exploratory.
 
 ## Is this more than swapping the prompt?
 
-A full-dose edit of this route from step 0 may be close to simply swapping the prompt at that step
-— both change the text-stream state the suffix reads. The controls above rule out several nulls
-(generic perturbation, energy-matched noise, wrong timing, sign flip) but do not yet separate an
-early full-dose edit from prompt replacement. A direct control comparing the two is being run.
+No. We checked by re-running the four fork specimens with public code
+([saturn-pub](https://github.com/JHollenb/saturn-pub), branch `pub/bfl-demo-controls`, commit
+`6583fb2`) and adding a second arm: run the source prompt up to the cut, then hand the denoiser the
+donor's prompt encoding for the remaining steps, with no route edit. The decision rule was written
+down before the run ([pre-registration](../artifacts/route-vs-prompt-swap/PREREG.md)).
 
-<!-- PROMPT-SWAP-CONTROL -->
+First, the route edit reproduced: progress matched the original panel to within 0.01 in all eight
+specimen × cut cells, and a no-edit resume and a zero-dose edit were byte-identical to the native
+run.
+
+| specimen | cut | route edit P | prompt swap P | route-vs-swap gap `d` |
+|---|---:|---:|---:|---:|
+| scene, seed 9001 | 0 | 0.912 | 1.000 | 0.088 |
+| scene, seed 1337 | 0 | 0.906 | 1.000 | 0.094 |
+| subject, seed 4242 | 0 | 0.971 | 1.000 | 0.029 |
+| subject, seed 9001 | 0 | 0.894 | 1.000 | 0.106 |
+| scene, seed 9001 | 2 | 0.166 | 0.146 | 0.183 |
+| scene, seed 1337 | 2 | 0.096 | 0.067 | 0.160 |
+| subject, seed 4242 | 2 | 0.098 | 0.046 | 0.125 |
+| subject, seed 9001 | 2 | 0.358 | 0.317 | 0.170 |
+
+`d = MAD(route image, swap image) / MAD(source, donor)`. A prompt swap at step 0 is just the donor
+run, so its progress is 1.000 by construction.
+
+At step 0 the route edit is a slightly incomplete prompt swap: it gets 89–97% of the way to the
+donor image and lands within 3–11% of it. The missing part is what the image stream already absorbed
+from the prompt in `joint.0` and `joint.1`, before the route begins. The hostile-donor edit behaves
+the same way (0.923–0.952 toward its own target, within 5–8% of a hostile prompt swap). So the fork
+panel's early-edit and hostile-donor numbers measure how much of the prompt's effect passes through
+this route, not an editing ability beyond prompting. The pre-registered verdict is "partial" at both
+cuts: closer than "route differs" (`d > 0.25`), but outside the strict "same" band (`|ΔP| ≤ 0.05`
+and `d ≤ 0.10`).
+
+At the halfway cut the two arms are close (the route edit is 0.02–0.05 higher), and both look weak
+by the progress score. The images say something the score hides: on the subject axis, both arms
+still turn the fox into a cat. They keep the source's pose, framing and lighting, so pixel distance
+to the donor stays large. On the scene axis neither arm moves the fox to the desert. Late edits
+can still change *what* the object is; they cannot change *where things are*. A pixel-distance
+score counts only the second.
+
+![Halfway cut (step 2 of 4). Pairs left to right: subject seed 4242 route edit / prompt swap, subject seed 9001 route edit / prompt swap, scene seed 9001 route edit / prompt swap. Both subject arms turn the fox into a cat while keeping the source's pose; neither scene arm reaches the desert.](../artifacts/route-vs-prompt-swap/cut2-route-vs-swap.png)
+
+What the fork machinery adds is therefore not a stronger edit than prompting. It is exact,
+reversible branching of a real generation at a chosen step, a way to localize *where* prompt
+information travels (the route-ablation tests in the [certified route](certified-semantic-route.md)
+page), and a clean place to run controls.
 
 What is *not* reducible to prompt-swapping is the surrounding structure: bitwise parent recovery,
 the hostile-donor specificity, the early-to-late influence drop, and moving an object while a
@@ -193,7 +233,8 @@ protected write holds its pixels fixed.
 - Wall-picture: the route edit alone does not preserve the object (needs a protected write); one of four seeds under-reached the older 0.90 return threshold; placement is a prompt-level target, not a calibrated world coordinate; no donor-free spatial capability.
 - Causal clock: whole-latent replacement imports the reference portrait's composition, and whole-image DINOv2 conflates identity with background, so these are whole-image trends, not face-crop recognition; regional editing trades identity for scene; the panel is small (one model, one resolution, few steps, small seed set); image-stream role labels are operational, not claims that a site owns a human semantic, and may not transfer across families.
 - Route×time search is raw/exploratory: the selected edit transfers only part of the target behavior, and it avoids cross-prompt text replacement (text lengths differ) by testing a shape-safe image-stream boundary.
-- Open: is a step-0 full-dose route edit distinguishable from a prompt swap? (control pending, above.)
+- A step-0 full-dose route edit is a near-complete prompt swap (89–97% of the way, see above); the fork panel does not show an editing ability beyond prompting.
+- Progress is a pixel-distance score. It under-counts late edits that change object identity but keep the source layout (fox → cat at the halfway cut).
 
 ## Reproduce and inspect
 
