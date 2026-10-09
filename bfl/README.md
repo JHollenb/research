@@ -1,89 +1,96 @@
-# Black Forest Labs Research
+# Debugging FLUX like software
 
-This is the single narrative entry point for the Black Forest Labs work committed on `main`. It follows the original main-path survey order rather than maintaining separate “main,” “additional,” and “index” experiment catalogs.
+We treat Black Forest Labs' FLUX image models as programs we can stop, inspect, edit and resume. A
+generation can be paused at any denoising step, saved bit-for-bit, forked into branches, edited at a
+named internal location, and finished by the unmodified model. Every claim is judged on the final
+image the real denoiser, scheduler and decoder produce, never on an internal similarity score alone.
 
-On the `additional-experiments` branch, the broader historical demo and artifact catalog is retained alongside this main-path narrative. Use the [experiment index](index.md) to navigate those additional reports and their local proof bundles.
+| Native FLUX.2 encoder | Foreign encoder (SmolLM2) | Native state donated back |
+|---|---|---|
+| ![Native blue fox](artifacts/cross-family-conditioner-repair/heldout-native-qwen.png) | ![SmolLM2 renders a clean but wrong image](artifacts/cross-family-conditioner-repair/heldout-smol.png) | ![Donating the native encoder output restores the exact fox](artifacts/cross-family-conditioner-repair/heldout-smol-qwen-donor.png) |
 
-The research treats FLUX as an executable image program. We capture typed state from conditioner through denoiser, scheduler, and VAE; fork matched futures from one parent; intervene at a declared route, phase, or carrier; and let the native RGB consumer decide whether the intervention mattered.
+*Swap FLUX.2's text encoder for a different language model and the frozen image generator still
+draws a clean picture, just the wrong one. Feed the native encoder's output back through the same
+interface and the exact native image returns. The defect lives entirely on the text side.
+[Full experiment](demos/swapping-the-text-encoder.md).*
 
-The main-branch program is strongest where systems and causal evidence meet: exact phase-resident serving, consumer-closed route promotion, cross-family conditioner compilation, model-family tracer breadth, recipient-native repair, typed topology and interaction controls, and timing-sensitive hotpatches. Supporting main-branch demos extend the same execution surface to the three-part semantic circuit object series, a twenty-axis route panel, and semantic-object register portability.
+## Start here
 
-## Main-branch research map
+The full write-up of the core result is the paper
+**[The Circuit That Survived Its Coordinates](docs/certified-semantic-circuits/paper.md)**: a
+recurring route through FLUX.2 Klein 4B that carries prompt meaning into the image, tested with nine
+pre-registered causal checks across twenty prompt edits. It also reports seven measurement
+traps we think affect published interpretability results.
 
-| priority | report | what it establishes |
+The demos below are shorter, visual reports. Read them in this order:
+
+| | Demo | What it shows |
 |---:|---|---|
-| 1 | [Exact Phase-Resident Serving](demos/exact-phase-resident-serving.md) | Byte-exact pixel and PNG parity with explicit phase-residency contracts. The prepared-phase and setup-inclusive speed denominators are reported separately. |
-| 2 | [Route Cartographer with Consumer-Closed Promotion](demos/route-cartographer-consumer-closure.md) | A candidate is promoted only when the native image consumer improves; otherwise the candidate is rejected and the prior state is restored exactly. |
-| 3 | [Cross-Family Conditioner Compilation: FLUX.2 Rosetta to FLUX.1 Replay](demos/cross-compiled-conditioner.md) | The original FLUX.2 Qwen/SmolLM2/Mamba campaign reaches strong full-state rescue and near-closure on seen prompts; the later FLUX.1 extension carries checkpoint, replay, debugger, and causal instrumentation across a second conditioner ABI while held-out semantics remain incomplete. |
-| 4 | [Multi-Model Structural Tracer](demos/multi-model-structural-tracer.md) | The pinned FLUX cohort shares a coarse role grammar and search order, while concrete addresses, payloads, and causal meanings remain topology-local. |
-| 5 | [Recipient-Native Capability Patch](demos/recipient-native-capability-patch.md) | A small recipient-local patch survives a fresh process and uninstalls exactly. The held-out collateral failure remains part of the result. |
-| 6 | [Typed Snake Topology Repair and Interaction Residual](demos/typed-snake-topology-interaction.md) | A route changes a closed green coil into an open S-shaped snake under ablation, wrong-axis, dose, held-out, and sham controls; paired edits also expose a nonlinear interaction residual. |
-| 7 | [Real FLUX Hotpatch Cinema](demos/real-hotpatch-cinema.md) and [Counterfactual Diffusion Futures](demos/counterfactual-diffusion-futures.md) | The same intervention has much more authority at early denoising cuts than at late cuts, hostile donors steer toward their own factor, and exact parent rollback remains available. |
-| supporting | [Twenty-Axis Native Semantic Route Circuit](demos/twenty-axis-semantic-route-circuit.md) | One typed route is tested against many visual factors with strict, carrier-level, and open rows kept separate. |
-| supporting | [Semantic Circuit Object Part I](demos/semantic-circuit-object-part-I.md) | A causal route can be compiled into a model-facing object symbol: lexical address, payload, writer, spatial interpretation, and native image consumer. |
-| supporting | [Semantic Circuit Object Part II](demos/semantic-circuit-object-part-II.md) | That symbol can become durable debugger I/O: a typed manifest survives readback and drives property, dose, wrong-address, composition, and isolation tests. |
-| supporting | [Semantic Circuit Object Part III](demos/semantic-circuit-object-part-III.md) | The semantic object is present across the tested FLUX models, but its address grain and carrier change with the conditioner: sharp Qwen rows versus T5 noun-phrase windows. |
-| follow-up | [Scene Relations and Instance Binding](demos/scene-relations-and-instance-binding.md) | A compact action signal reaches new objects, but the declared object pointer does not enter the numerical writer. Spectral instance reads and native same-parent cuts separate action content, target direction, and visual contact. |
+| 1 | [Bitwise-exact state cuts and replay](demos/exact-serving-and-replay.md) | A generation can be saved mid-flight and resumed with zero error across five checkpoints (64/64 images byte-identical). This is what makes every edit below trustworthy. |
+| 2 | [One route carries twenty prompt edits](demos/certified-semantic-route.md) | Visual companion to the paper. Six of twenty contrasts pass all nine tests; eleven more pass all but the strict pixel thresholds. Single-step patching misses the route because FLUX re-reads the prompt at every step. |
+| 3 | [Forking a generation mid-flight](demos/forking-a-generation.md) | Early edits move the image to the donor's content (0.90–0.97), a hostile donor pulls toward its own content, and the parent is recovered bit-for-bit. Includes a control against simply swapping the prompt. |
+| 4 | [Editing one object by writing its prompt rows](demos/objects-as-editable-values.md) | A fox turns white (0.92 / 0.94 on two seeds) while its neighbour stays put. Subtracting two row values and writing the difference turns a different scene's mug blue. |
+| 5 | [The object interface across FLUX models](demos/objects-across-flux-models.md) | The same interface works on FLUX.2 base, distilled and 9B, and on FLUX.1. The text encoder sets the grain: one token row in FLUX.2 (Qwen3), a noun-phrase window in FLUX.1 (T5). |
+| 6 | [Swapping the text encoder](demos/swapping-the-text-encoder.md) | SmolLM2 and Mamba adapters give clean but semantically wrong images; native donation restores them exactly. Held-out semantics remain incomplete. |
+| 7 | [Steering which camera a character reaches for](demos/scene-relations.md) | Adding one non-action direction to hidden state switches which of two cameras a character touches, while the action rows stay byte-identical. |
+| 8 | [Small, targeted repairs](demos/small-targeted-repairs.md) | A 104 KB write fixes a counting error (three apples → five) in the distilled model; the collateral damage on ordinary prompts is reported alongside. |
+| 9 | [Searching for edits that help the image](demos/searching-for-edits.md) | Propose internal edits, keep only those that improve the final image, roll back the rest exactly. A selector abstains when it is outside its calibrated range. |
+| 10 | [What seven FLUX checkpoints share](demos/flux-family-anatomy.md) | Provenance and structure across the family: the conditioners are stock Qwen3 and Mistral models, the 9B-KV denoiser is a structured rewrite of 9B, and counting accuracy collapses past four objects. |
+| — | [Learning where to read before writing](demos/learning-where-to-read.md) | A language-model companion (Pythia, Qwen): separating "where to read" from "what to write" in an intervention. |
 
-The order above is the main-branch presentation order. This page describes only reports and evidence committed on `main`.
+Earlier report names map to these pages in the [index of former report names](index.md).
 
-## Semantic circuit object series
+## Terms used throughout
 
-The three object demos answer different questions in sequence; they are a progression from causal discovery, to an executable debugger representation, to cross-model portability.
+| term | meaning |
+|---|---|
+| `joint.i`, `single.i` | The i-th dual-stream (text + image) transformer block, and the i-th later block where the two streams are merged. Numbering is per checkpoint: Klein 4B has 5 joint blocks, Schnell has 19. |
+| route | The internal locations an edit writes to. The recurring one: the text-stream outputs of `joint.2`–`joint.4` plus the text rows of `single.0`, at every denoising step. |
+| source, donor, target | The source is the image being edited; the donor is a second run (same seed, different prompt) whose hidden state is copied in; the target is the donor's own image. |
+| dose | How much of the donor difference is written: `h_source + dose · (h_donor − h_source)`. Dose 0 is an exact no-op. |
+| progress `P` | `1 − MAD(I, I_target) / MAD(I_source, I_target)` on RGB pixels: 0 = unchanged, 1 = the target image. |
+| sham | A control edit with the same size as the real one but a random or wrong direction. |
+| hostile donor | A donor that differs on a different attribute (a blue fox when the edit is "desert"). A real effect should follow the donor's own content. |
+| exact replay | Resuming a saved state with no edit reproduces the original pixels and latent byte-for-byte. |
+| register | A saved slice of hidden state (for example the prompt rows that carry one object) that we can read and write. |
 
-| part | question answered | evidence and boundary |
-|---|---|---|
-| **Part I — Creating Symbols** | Can a causal semantic circuit become an object-like symbol that the native FLUX.2 consumer can use? | Establishes the route, lexical rows, typed manifest, property edits, wrong-address separation, isolation, and first value-level read/transform/write result on Klein 4B. This is the foundation, not a universal object API. |
-| **Part II — Objects Become Debugger I/O** | Can that symbol be represented as durable, typed debugger data rather than a visual description? | Builds the inverse map, registry, deep property map, manifest fingerprint, stress battery, OOD/composition controls, and contextual isolation tests. It validates the interface and exposes where compact properties give way to relational context. |
-| **Part III — Semantic Object Registers Across FLUX** | Does the object survive when the checkpoint, scale, and conditioner family change? | Replicates the interface across FLUX.2 base/distilled/9B and FLUX.1 Schnell, diagnoses cross-conditioner wrong-object writes, tests value algebra, and exercises manifest write-back. The semantic object persists as a typed contract, while address grain, payload geometry, and position behavior remain model-local. |
+## Models
 
-Read the parts in order when the question is “what is the object?”: Part I establishes that there is a consumer-closed causal object interface; Part II makes it inspectable and executable; Part III tests whether the interface is a model-family phenomenon rather than a Klein 4B scene artifact.
+All runs pin a Hugging Face revision. Most causal work uses distilled FLUX.2 Klein 4B at 256² or 512²,
+four denoising steps, guidance 1.0, BF16, on one RTX 4080 (16 GB).
 
-## Models and checkpoints
-
-The main tracer and instrumentation cohort is explicitly pinned:
-
-| model/checkpoint | revision | topology or boundary | main-branch evidence |
+| checkpoint | revision | blocks | used for |
 |---|---|---|---|
-| `black-forest-labs/FLUX.1-schnell` | `741f7c3ce8b383c54771c7003378a50191e9efe9` | 19 joint + 38 single | Static tracer profile, family comparison, and NP-window-local object-register evidence |
-| `black-forest-labs/FLUX.2-klein-base-4B` | `a3b4f4849157f664bdbc776fd7453c2783562f4d` | 5 joint + 20 single | Matched base/distilled diagnosis, tracer profile, and native-CFG object-register replication |
-| `black-forest-labs/FLUX.2-klein-4B` | `e7b7dc27f91deacad38e78976d1f2b499d76a294` | 5 joint + 20 single | Primary serving, route, patch, object, snake, and hotpatch specimen; cross-conditioner wrong-object diagnosis |
-| `black-forest-labs/FLUX.2-klein-9B` | `92196c8e11f7b6cf2b7493e037d8c5345c559216` | 8 joint + 24 single | Tracer profile, bounded trajectory/readout evidence, and object-register replication under sequential offload |
-| `black-forest-labs/FLUX.2-klein-9b-kv` | `a6dfb36eca3a3906eb2fd460795adfb844e5fcce` | 8 joint + 24 single | Native reference-K/V tracer and cache-path evidence |
-| `black-forest-labs/FLUX.2-dev` | `26afe3a78bb242c0a8bb181dcc8937bb16e5c66c` | 8 joint + 48 merged/single | Component-decoupled runtime and forward-only tracer evidence |
-| `black-forest-labs/FLUX.2-small-decoder` | `a3efc24f613ef42d9428af62fdbd6f5fd8856c4a` | Decoder-only boundary | Decoder compatibility and efficiency boundary |
+| `black-forest-labs/FLUX.2-klein-4B` | `e7b7dc27f91deacad38e78976d1f2b499d76a294` | 5 joint + 20 single | Most demos |
+| `black-forest-labs/FLUX.2-klein-base-4B` | `a3b4f4849157f664bdbc776fd7453c2783562f4d` | 5 joint + 20 single | Base vs distilled comparisons, object replication |
+| `black-forest-labs/FLUX.2-klein-9B` | `92196c8e11f7b6cf2b7493e037d8c5345c559216` | 8 joint + 24 single | Object replication, family anatomy, exact replay |
+| `black-forest-labs/FLUX.2-klein-9b-kv` | `a6dfb36eca3a3906eb2fd460795adfb844e5fcce` | 8 joint + 24 single | Family anatomy, replay boundary |
+| `black-forest-labs/FLUX.2-dev` | `26afe3a78bb242c0a8bb181dcc8937bb16e5c66c` | 8 joint + 48 single | Paged execution, family anatomy |
+| `black-forest-labs/FLUX.1-schnell` | `741f7c3ce8b383c54771c7003378a50191e9efe9` | 19 joint + 38 single | Object interface across encoders, encoder swap |
+| `black-forest-labs/FLUX.2-small-decoder` | `a3efc24f613ef42d9428af62fdbd6f5fd8856c4a` | decoder only | Decoder substitution |
 
-Most causal and serving reports use distilled FLUX.2 Klein 4B at revision `e7b7dc27f91deacad38e78976d1f2b499d76a294`. The cross-conditioner report adds the original FLUX.2 native-Qwen, SmolLM2, and Mamba campaign plus the later FLUX.1 Schnell extension at revision `741f7c3ce8b383c54771c7003378a50191e9efe9`; it is the main demo that crosses a conditioner-family boundary while keeping the native image consumer authoritative. The recipient-native patch is the matched exception: it compares full-capacity Klein base 4B at 50 steps/guidance 4 with the distilled recipient at four steps/guidance 1, then serves the recipient-bound package without the donor.
+## Speed numbers and their baselines
 
-## What `joint.*` means
+Speed is a side benefit of exact state handling, not the result. Each number below names what it is
+compared against.
 
-`joint.i` is the ordinal `i` of a joint or double-stream transformer block in that checkpoint’s own denoiser. `single.i` is the ordinal `i` of a later single-stream block after the streams have merged. These names are typed structural coordinates, not globally shared layer IDs, tensor weights, or semantic labels.
-
-The recurring route vocabulary `joint.2 → joint.3 → joint.4 → single.0` gives the next experiment a useful search order. It does not mean those blocks have the same physical depth: Schnell has 19 joint blocks, Klein 4B has 5, and Klein 9B, Klein 9B-KV, and Dev have 8. The static tracer’s recurring abstraction is a coarse role grammar around operation/MLP-heavy blocks, attention-facing address/selector/payload/carrier interfaces, early joint interaction, and later merged single-stream processing. That grammar is a portable instrumentation schema and homology prior, not a universal circuit map.
-
-Any payload, basis, readout, semantic label, intervention dose, or causal effect must be revalidated on the recipient checkpoint. The address syntax is reusable; the topology, state basis, semantic content, and native-consumer effect are local.
-
-## Portability and claim boundaries
-
-The main branch establishes portability at the instrumentation level: model inventory, shape-budget tracing, normalized role records, typed route records, and checkpoint-scoped tracer cards can be reused across the pinned cohort. It does not establish that a payload or semantic circuit learned on Klein 4B transfers unchanged to Schnell, Klein 9B, Klein 9B-KV, Dev, or the Small Decoder.
-
-The native denoiser, scheduler, VAE, and final RGB image are the authority. Carrier cosine, a static role label, a clean visualization, or a valid ABI is useful instrumentation but not a semantic capability certificate. A failed terminal gate narrows that test; it does not erase a promising subthreshold trend or prove that the mechanism is absent.
-
-## Speed accounting
-
-The phase-resident speedups have different denominators, and the research instrumentation itself is not silently included in the pure replay numbers:
-
-| result | denominator | outside or amortized work |
+| number | what it measures | baseline |
 |---|---|---|
-| `10.66×` generation | Prepared-phase denoise loops on pinned Klein 4B at 512² and four steps | Model load, prompt encoding, phase capture/transfer, and separate tracer/MRI/circuit passes |
-| `6.25×` end-to-end | Setup-inclusive request benchmark | Separate research-only instrumentation passes |
-| `7.993×` suffix replay | Resume from an already captured entering-`k` state | Prefix execution, checkpoint creation, and validation |
-| `4,696×` cache hit | Reference-state lookup | Reference capture and the full edit render |
+| 10.66× (12.73× in a later same-day panel) | Per-image denoise time after encoding every prompt once and keeping the denoiser resident | The diffusers pipeline's CPU-offload schedule on a 16 GB card, where encoder and denoiser cannot both stay resident |
+| 6.25× (7.02×) | The same, including model load and prompt encoding | Same offload baseline |
+| 7.993× | Replaying one remaining denoiser call instead of all eight | A full eight-call trajectory; saving the checkpoint is not counted |
+| 2× | Editing from a saved step-2 reference state (0.175 s vs 0.350 s) | Rendering the edit from scratch |
 
-The exact serving receipt records `load_wall_s = 0.370`, `encode_phase_wall_s = 1.247`, and `swap_to_denoise_wall_s = 2.173` separately from `gen_wall_total_s = 4.855`. The 10× generation result is therefore replay after phase preparation; the 6.25× result is the setup-inclusive comparison. The expensive research instrumentation is a separate cost, not a hidden part of either denominator.
+## Scope
 
-## Evidence and navigation
+Results hold for the pinned checkpoints, resolutions and seeds each page states. Internal locations,
+saved values and doses are local to one checkpoint: the address *scheme* transfers across the FLUX
+family, but a saved edit does not, and every new checkpoint has to earn its own evidence. Each page ends
+with its own list of limits and open questions.
 
-Every report names its model, checkpoint, backend, consumer, intervention boundary, controls, and claim status. The [demo directory](demos/) contains the native-consumer reports, [tracer documentation](docs/tracer/README.md) contains the seven checkpoint-scoped profiles, and [artifact bundles](artifacts/) contain receipts, proof sheets, reports, and verification scripts.
+## Reproduce
 
-The durable conclusion is narrower than the most exciting images: FLUX execution can be made typed, branchable, replayable, and consumer-closed across the main-branch cohort. The instrumentation is portable enough to guide search. Circuit payloads and semantic meanings remain local until a new checkpoint earns its own evidence.
+Each demo links an artifact bundle in [`artifacts/`](artifacts/) with run records, reports, images and,
+where available, an offline `verify.py`. The paper ships a single-file CPU verifier. Public
+re-runs of selected controls use [saturn-pub](https://github.com/JHollenb/saturn-pub). Per-checkpoint
+structural profiles are in [`docs/tracer/`](docs/tracer/README.md).

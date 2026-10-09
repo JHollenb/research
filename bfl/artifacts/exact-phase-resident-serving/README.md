@@ -1,6 +1,6 @@
 # Exact phase-resident serving: cross-model evidence bundle
 
-This bundle contains the compact evidence for the [Exact Phase-Resident Serving, Replay, and Edit Caching Across FLUX](../../demos/exact-phase-resident-serving.md) demo. It joins the original Klein-4B receipts to the 2026-08-19 phase-parity and reference-edit cross-model campaigns.
+This bundle contains the compact evidence for the [Exact Phase-Resident Serving, Replay, and Edit Caching Across FLUX](../../demos/exact-serving-and-replay.md) demo. It joins the original Klein-4B receipts to the 2026-08-19 phase-parity and reference-edit cross-model campaigns.
 
 ## Original receipts
 

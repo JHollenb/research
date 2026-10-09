@@ -167,7 +167,7 @@ path.
 | **4,696× edit-cache replay** | FLUX.2 Klein-4B repeated edit: replay a captured trajectory (37 µs median) vs recompute (0.174 s); 4/4 edits exact | measured (receipt) |
 | **1.665× / 3.507× on Qwen3-30B, realistic workloads** | four common-prefix branch panels (code completion, document QA, planning, explanation), 320 generated tokens: hot replay 66.530 s vs warm native batching 110.777 s and warm scalar 233.301 s (sums of per-workload values) | measured (receipt) |
 
-The results files behind the numbers in this section and in §2 are in unpublished internal reports\*, except the phase-resident diffusion serving result, which is published with its receipts in [`bfl/demos/exact-phase-resident-serving.md`](../../bfl/demos/exact-phase-resident-serving.md).
+The results files behind the numbers in this section and in §2 are in unpublished internal reports\*, except the phase-resident diffusion serving result, which is published with its receipts in [`bfl/demos/exact-phase-resident-serving.md`](../../bfl/demos/exact-serving-and-replay.md).
 
 \* Unpublished internal documents. Ask the publisher for more information.
 

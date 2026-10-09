@@ -8,7 +8,7 @@ claim_status: observations-trends-and-working-inferences
 
 # BFL Tracer Documentation
 
-This is the checkpoint-scoped documentation for the Black Forest Labs tracer campaign. The [multi-model tracer demo](../../demos/multi-model-structural-tracer.md) carries the short claim: the pinned FLUX cohort has a stable coarse role grammar, while concrete addresses, payloads, and causal meanings remain topology-local. These cards retain the model-specific anatomy and live-assay boundaries behind that claim.
+This is the checkpoint-scoped documentation for the Black Forest Labs tracer campaign. The [multi-model tracer demo](../../demos/flux-family-anatomy.md) carries the short claim: the pinned FLUX cohort has a stable coarse role grammar, while concrete addresses, payloads, and causal meanings remain topology-local. These cards retain the model-specific anatomy and live-assay boundaries behind that claim.
 
 ## Checkpoint atlas
 
