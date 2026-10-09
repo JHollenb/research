@@ -68,7 +68,7 @@ The compact version is:
 
 The experiment changes one boundary while freezing the image program behind it:
 
-~~~mermaid
+```mermaid
 flowchart LR
     Q["Native Qwen / T5+CLIP"] --> ABI["Recipient conditioner ABI"]
     S["SmolLM2"] --> A["Cross-family adapter"]
@@ -77,7 +77,7 @@ flowchart LR
     ABI --> B["Frozen native FLUX body"]
     B --> D["Scheduler + VAE"]
     D --> RGB["RGB image"]
-~~~
+```
 
 For FLUX.2, the native target carrier is a '[512, 7680]' Qwen-side field.
 SmolLM2 and Mamba are separately mapped into that field. For FLUX.1, SmolLM2
@@ -180,9 +180,9 @@ the requested character or setting.
 
 | Seen prompt: the repair works locally | Held-out prompt: the meaning does not travel reliably |
 |---|---|
-| ![Native FLUX.2 red fox](../../../saturn/results/rosetta-cross-family-manalysis/tecm-scheduler-closure/job-ffb476166198/native_qwen_fox.png) | ![Native FLUX.2 astronaut corgi](../../../saturn/results/rosetta-cross-family-manalysis/tecm-scheduler-closure/job-ffb476166198/native_qwen_corgi.png) |
+| ![Native FLUX.2 red fox](../artifacts/cross-compiled-conditioner/native_qwen_fox.png) | ![Native FLUX.2 astronaut corgi](../artifacts/cross-compiled-conditioner/native_qwen_corgi.png) |
 | **Native Qwen** | **Native Qwen** |
-| ![Scheduler-closed FLUX.2 red fox](../../../saturn/results/rosetta-cross-family-manalysis/tecm-scheduler-closure/job-ffb476166198/scheduler_closed_fox.png) | ![Scheduler-closed FLUX.2 held-out dog](../../../saturn/results/rosetta-cross-family-manalysis/tecm-scheduler-closure/job-ffb476166198/scheduler_closed_corgi.png) |
+| ![Scheduler-closed FLUX.2 red fox](../artifacts/cross-compiled-conditioner/scheduler_closed_fox.png) | ![Scheduler-closed FLUX.2 held-out dog](../artifacts/cross-compiled-conditioner/scheduler_closed_corgi.png) |
 | **Scheduler-closed foreign-conditioned branch** | **Scheduler-closed foreign-conditioned branch** |
 
 _Figure 1. The left pair is a seen-prompt repair; the right pair is the
@@ -230,7 +230,7 @@ The image cosine is deliberately not treated as a semantic gate. The visual
 result is the clearer read: the adapted branch remains active and structured,
 but it does not keep the recipient's lexical identity.
 
-![FLUX.1 native versus adapted red/blue contrast](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/images/semantic-contrast/contact-sheet.png)
+![FLUX.1 native versus adapted red/blue contrast](../artifacts/cross-compiled-conditioner/semantic-contrast-contact-sheet.png)
 
 _Figure 2. Native FLUX.1 outputs are on the left; SmolLM2-adapted outputs are
 on the right. The native branch preserves the fox contrast. The adapted
@@ -242,7 +242,7 @@ quirk. Across a lighthouse, astronaut corgi, oranges, and snowy cabin, the
 adapted images remain coherent while the requested object or scene identity
 drifts.
 
-![FLUX.1 held-out native versus adapted comparison](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/images/held-out/contact-sheet.png)
+![FLUX.1 held-out native versus adapted comparison](../artifacts/cross-compiled-conditioner/held-out-contact-sheet.png)
 
 _Figure 3. The broad scene/style scaffold is more stable than object identity.
 “Same scene” here means a retained low-frequency visual scaffold, not
@@ -292,7 +292,7 @@ joint.3 → joint.4: 0.3275
 joint.4 → single.0: 0.2626
 ~~~
 
-![FLUX.1 causal checkpoint montage](../../../saturn/results/rosetta-cross-family-manalysis/flux1-native-fixed/images/causal-checkpoint-panel/montage.png)
+![FLUX.1 causal checkpoint montage](../artifacts/cross-compiled-conditioner/causal-checkpoint-panel-montage.png)
 
 _Figure 4. The FLUX.1 causal panel keeps the snow scene and latent recipe
 fixed while interventions move the red/blue state. It shows a live,
@@ -406,9 +406,9 @@ portability study with open joints—not as a finished model interchange result.
 - [FLUX.1 result JSON](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/result.json)
 - [FLUX.1 run receipt](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/run-receipt.json)
 - [FLUX.1 artifact manifest and SHA-256 hashes](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/artifact-manifest.json)
-- [FLUX.1 adapted/native red-blue contact sheet](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/images/semantic-contrast/contact-sheet.png)
-- [FLUX.1 held-out contact sheet](../../../saturn/results/flux1-cross-compiled/job-a2cd2f54c6f4/images/held-out/contact-sheet.png)
-- [FLUX.1 causal montage](../../../saturn/results/rosetta-cross-family-manalysis/flux1-native-fixed/images/causal-checkpoint-panel/montage.png)
+- [FLUX.1 adapted/native red-blue contact sheet](../artifacts/cross-compiled-conditioner/semantic-contrast-contact-sheet.png)
+- [FLUX.1 held-out contact sheet](../artifacts/cross-compiled-conditioner/held-out-contact-sheet.png)
+- [FLUX.1 causal montage](../artifacts/cross-compiled-conditioner/causal-checkpoint-panel-montage.png)
 
 ### Runtime implementation
 

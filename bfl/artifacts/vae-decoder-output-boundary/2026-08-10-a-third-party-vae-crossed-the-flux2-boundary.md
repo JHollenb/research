@@ -170,7 +170,7 @@ The two images are visibly the same fox scene and composition, but not pixel-ide
 
 | Native Klein VAE | MageFlow VAE |
 |---|---|
-| ![Native Klein VAE render](../../saturn/results/vae-swap/compatibility/mageflow/job-77c66bf6a310/native.png) | ![MageFlow VAE render](../../saturn/results/vae-swap/compatibility/mageflow/job-77c66bf6a310/alternate.png) |
+| ![Native Klein VAE render](native.png) | ![MageFlow VAE render](alternate.png) |
 
 The image-level cosine is much closer than the direct FP32 tensor cosine. That is not surprising:
 the generated latent came from the native Klein denoiser rather than from the synthetic standard-
@@ -249,8 +249,8 @@ cross it, visibly change the renderer, and still run as a typed SATURN suffix.
 - [MageFlow acquisition report](../../saturn/results/vae-swap/download/mageflow/job-cffe21be2e4e/report.json)
 - [MageFlow FP32 boundary report](../../saturn/results/vae-swap/mageflow-fp32/job-6674e1aaf551/report.json)
 - [SATURN MageFlow swap report](../../saturn/results/vae-swap/compatibility/mageflow/job-77c66bf6a310/report.json)
-- [Native paired image](../../saturn/results/vae-swap/compatibility/mageflow/job-77c66bf6a310/native.png)
-- [MageFlow paired image](../../saturn/results/vae-swap/compatibility/mageflow/job-77c66bf6a310/alternate.png)
+- [Native paired image](native.png)
+- [MageFlow paired image](alternate.png)
 - [FP32 probe worker](../../saturn/workers/run_saturn_mageflow_vae_fp32_probe.py)
 - [SATURN VAE swap worker](../../saturn/workers/run_saturn_vae_swap.py)
 - [MageFlow model card](https://huggingface.co/MinhNH232331M/MageFlow-VAE-diffusers)

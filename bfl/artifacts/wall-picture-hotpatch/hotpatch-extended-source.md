@@ -31,15 +31,15 @@ This is seed `4242`, the same specimen used in the retained custody montage. The
 
 ### Before: source artifact
 
-![Seed 4242 source artifact: framed artwork centered on the wall](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed4242__source.png)
+![Seed 4242 source artifact: framed artwork centered on the wall](gallery-seed4242__source.png)
 
 ### After: accepted target artifact
 
-![Seed 4242 accepted target artifact: the unchanged framed artwork moved to the right](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed4242__cut0_target_dose100.png)
+![Seed 4242 accepted target artifact: the unchanged framed artwork moved to the right](gallery-seed4242__cut0_target_dose100.png)
 
 The image above is the accepted protected artifact, not merely the raw native model donor. The raw donor is retained separately so that we can inspect what the native route produced before the protected-object write:
 
-![Seed 4242 raw native target donor, retained as diagnostic evidence](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed4242__target_donor_native.png)
+![Seed 4242 raw native target donor, retained as diagnostic evidence](gallery-seed4242__target_donor_native.png)
 
 Keeping those two planes separate is the central accounting decision in this experiment. The native donor tells us what the model’s route did. The accepted artifact tells us what the declared hotpatch, including the protected-object contract, delivered.
 
@@ -155,18 +155,18 @@ The independent post-collection check compared every source/destination crop for
 
 Each montage keeps the source, target-dose curve, opposite branch, sham, scalar confirmation, and rollback context together. The four fixed-seed galleries are retained as visual evidence:
 
-- [seed 4242 gallery](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed4242__cinema.png)
-- [seed 9001 gallery](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed9001__cinema.png)
-- [seed 1337 gallery](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed1337__cinema.png)
-- [seed 7217 gallery](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed7217__cinema.png)
+- [seed 4242 gallery](gallery-seed4242__cinema.png)
+- [seed 9001 gallery](gallery-seed9001__cinema.png)
+- [seed 1337 gallery](gallery-seed1337__cinema.png)
+- [seed 7217 gallery](gallery-seed7217__cinema.png)
 
-![Seed 4242 complete Hotpatch Cinema montage](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed4242__cinema.png)
+![Seed 4242 complete Hotpatch Cinema montage](gallery-seed4242__cinema.png)
 
-![Seed 9001 complete Hotpatch Cinema montage](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed9001__cinema.png)
+![Seed 9001 complete Hotpatch Cinema montage](gallery-seed9001__cinema.png)
 
-![Seed 1337 complete Hotpatch Cinema montage](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed1337__cinema.png)
+![Seed 1337 complete Hotpatch Cinema montage](gallery-seed1337__cinema.png)
 
-![Seed 7217 complete Hotpatch Cinema montage](../../saturn/results/wall-picture-hotpatch-cinema/job-51c36838fd4c/gallery-seed7217__cinema.png)
+![Seed 7217 complete Hotpatch Cinema montage](gallery-seed7217__cinema.png)
 
 ## Why the small batch is persuasive
 
