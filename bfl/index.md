@@ -28,7 +28,7 @@ keep their original directory names. Start from the [README](README.md) for the 
 | `recipient-native-capability-patch.md` | [Small, targeted repairs in a distilled FLUX.2 model](demos/small-targeted-repairs.md) |
 | `route-cartographer-consumer-closure.md` | [Searching for internal edits, keeping only the ones that improve the image](demos/searching-for-edits.md) |
 | `scene-circuit-certificate.md` | [One route carries twenty prompt edits into a FLUX image](demos/certified-semantic-route.md) |
-| `scene-relations-and-instance-binding.md` | [Steering which camera a character reaches for, from one direction in hidden state](demos/scene-relations.md) |
+| `scene-relations-and-instance-binding.md` | [Scene relations: three lessons from a result we demoted](demos/scene-relations.md) |
 | `semantic-circuit-object-part-I.md` | [Editing one object in FLUX.2 by writing the prompt rows that carry it](demos/objects-as-editable-values.md) |
 | `semantic-circuit-object-part-II.md` | [Editing one object in FLUX.2 by writing the prompt rows that carry it](demos/objects-as-editable-values.md) |
 | `semantic-circuit-object-part-III.md` | [The object interface ports across FLUX models, at a grain set by the text encoder](demos/objects-across-flux-models.md) |

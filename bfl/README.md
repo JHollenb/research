@@ -32,11 +32,11 @@ The demos below are shorter, visual reports. Read them in this order:
 | 4 | [Editing one object by writing its prompt rows](demos/objects-as-editable-values.md) | A fox turns white (0.92 / 0.94 on two seeds) while its neighbour stays put. Subtracting two row values and writing the difference turns a different scene's mug blue. |
 | 5 | [The object interface across FLUX models](demos/objects-across-flux-models.md) | The same interface works on FLUX.2 base, distilled and 9B, and on FLUX.1. The text encoder sets the grain: one token row in FLUX.2 (Qwen3), a noun-phrase window in FLUX.1 (T5). |
 | 6 | [Swapping the text encoder](demos/swapping-the-text-encoder.md) | SmolLM2 and Mamba adapters give clean but semantically wrong images; native donation restores them exactly. Held-out semantics remain incomplete. |
-| 7 | [Steering which camera a character reaches for](demos/scene-relations.md) | Adding one non-action direction to hidden state switches which of two cameras a character touches, while the action rows stay byte-identical. |
-| 8 | [Small, targeted repairs](demos/small-targeted-repairs.md) | A 104 KB write fixes a counting error (three apples → five) in the distilled model; the collateral damage on ordinary prompts is reported alongside. |
-| 9 | [Searching for edits that help the image](demos/searching-for-edits.md) | Propose internal edits, keep only those that improve the final image, roll back the rest exactly. A selector abstains when it is outside its calibrated range. |
-| 10 | [What seven FLUX checkpoints share](demos/flux-family-anatomy.md) | Provenance and structure across the family: the conditioners are stock Qwen3 and Mistral models, the 9B-KV denoiser is a structured rewrite of 9B, and counting accuracy collapses past four objects. |
+| 7 | [Small, targeted repairs](demos/small-targeted-repairs.md) | A 104 KB write fixes a counting error (three apples → five) in the distilled model; the collateral damage on ordinary prompts is reported alongside. |
+| 8 | [Searching for edits that help the image](demos/searching-for-edits.md) | Propose internal edits, keep only those that improve the final image, roll back the rest exactly. A selector abstains when it is outside its calibrated range. |
+| 9 | [What seven FLUX checkpoints share](demos/flux-family-anatomy.md) | Provenance and structure across the family: the conditioners are stock Qwen3 and Mistral models, the 9B-KV denoiser is a structured rewrite of 9B, and counting accuracy collapses past four objects. |
 | — | [Learning where to read before writing](demos/learning-where-to-read.md) | A language-model companion (Pythia, Qwen): separating "where to read" from "what to write" in an intervention. |
+| — | [Scene relations: three lessons from a demoted result](demos/scene-relations.md) | A camera-steering result that turned out close to a prompt swap. Kept for three lessons: averaged hidden states are not neutral, an edit argument can be metadata only, and a scene should be checked before an intervention is scored. |
 
 Earlier report names map to these pages in the [index of former report names](index.md).
 

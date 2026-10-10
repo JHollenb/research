@@ -1,0 +1,158 @@
+{
+  "schema": "bfl-demo-controls-v1",
+  "experiment": "exp2b",
+  "model_id": "black-forest-labs/FLUX.2-klein-4B",
+  "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "backend": "diffusers-native-flux2-klein",
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "python": "3.14.6",
+    "diffusers": "0.39.0"
+  },
+  "source_sha256": "29fd3a813d841ea82a518a9f5e297d943633094051ccc02c9c349881acd82d02",
+  "tiny": false,
+  "size": 512,
+  "steps": 4,
+  "variant": "B",
+  "gate_decision": "Variant B passed (coordinator non-blinded read: left ~14/16, right ~15/16); Variant A not used (crowded/ambiguous).",
+  "encode_rss_mb": 5674.3515625,
+  "prompts": {
+    "neutral": "a photo of a person seated at a wooden table between two large cameras on separate tripods",
+    "left": "a photo of a person seated at a wooden table between two large cameras on separate tripods, reaching out with one hand and firmly gripping the lens of the camera on the left side of the image",
+    "right": "a photo of a person seated at a wooden table between two large cameras on separate tripods, reaching out with one hand and firmly gripping the lens of the camera on the right side of the image"
+  },
+  "predicate": "firmly gripping the lens",
+  "predicate_rows": [
+    28,
+    29,
+    30,
+    31
+  ],
+  "predicate_tokens": [
+    " firmly",
+    " gripping",
+    " the",
+    " lens"
+  ],
+  "adapter_identity": "a09191c5ff813af77bf89d8e4b9a07237befb67c1aef3e722322d3491250fcd0",
+  "execution": {
+    "family": "flux2-klein",
+    "adapter": "native-boundary-v2",
+    "granularity": "block",
+    "dtype": "torch.bfloat16",
+    "device": {
+      "type": "cuda",
+      "index": 0
+    },
+    "batch": {
+      "size": 1,
+      "guidance": 1.0,
+      "reference_images": false
+    },
+    "environment_versions": {
+      "torch": "2.13.0+cu130",
+      "diffusers": "0.39.0",
+      "python": "3.14.6"
+    },
+    "model_program": "project->joint_block[*]->single_block[*]->norm/proj_readout->flow_commit",
+    "kernel": {
+      "transformer": "Flux2Transformer2DModel",
+      "scheduler": "FlowMatchEulerDiscreteScheduler"
+    },
+    "numeric_scope": {
+      "inference_mode": true,
+      "autocast": false,
+      "stochastic_sampling": false,
+      "tf32_matmul": false,
+      "torch_num_threads": 4,
+      "deterministic_algorithms": false,
+      "float32_matmul_precision": "highest",
+      "tensor_layout": "state-slot-bound-stride"
+    },
+    "guidance": 1.0,
+    "reference_images": false,
+    "decoder_normalization_device": "cpu",
+    "parity": "same-program-exact"
+  },
+  "text_width": 3072,
+  "seq_len": 512,
+  "smoke": {
+    "stepped_vs_native_exact": true,
+    "statecut_resume_exact": true,
+    "writeback_bytes_exact": true,
+    "passed": true
+  },
+  "judge_dir": "judge",
+  "judge_key": "judge-key.json",
+  "contact_sheets": [
+    "contact-sheet-exp2b-00.png",
+    "contact-sheet-exp2b-01.png",
+    "contact-sheet-exp2b-02.png",
+    "contact-sheet-exp2b-03.png",
+    "contact-sheet-exp2b-04.png",
+    "contact-sheet-exp2b-05.png",
+    "contact-sheet-exp2b-06.png",
+    "contact-sheet-exp2b-07.png"
+  ],
+  "native_viability_sheet": "native-left-right-viability.png",
+  "arms": {
+    "neutral": {
+      "requested_side": "none",
+      "n": 16
+    },
+    "native_left": {
+      "requested_side": "left",
+      "n": 16
+    },
+    "native_right": {
+      "requested_side": "right",
+      "n": 16
+    },
+    "M": {
+      "requested_side": "left",
+      "n": 16
+    },
+    "M+D_rest": {
+      "requested_side": "right",
+      "n": 16
+    },
+    "M-D_rest": {
+      "requested_side": "left",
+      "n": 16
+    },
+    "M+D_pred": {
+      "requested_side": "right",
+      "n": 16
+    },
+    "M-D_pred": {
+      "requested_side": "left",
+      "n": 16
+    }
+  },
+  "seeds": [
+    8101,
+    8111,
+    8117,
+    8123,
+    8147,
+    8161,
+    8167,
+    8171,
+    8179,
+    8191,
+    8209,
+    8219,
+    8221,
+    8231,
+    8233,
+    8237
+  ],
+  "n_images": 128,
+  "peak_vram_mb": 7770.4169921875,
+  "judging": "blinded; not judged by worker; primary=M\u00b1D_rest requested-side contact",
+  "elapsed_s": 603.6639415789978,
+  "peak_rss_mb": 8839.0390625,
+  "ok": true
+}
