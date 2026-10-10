@@ -831,7 +831,9 @@
       "--seed",
       "1"
     ],
-    "state": "running"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-none-seed1-20261009T231908.json",
+    "collected": true
   },
   {
     "job_id": "job-274d22c5f67f",
@@ -847,7 +849,9 @@
       "--seed",
       "2"
     ],
-    "state": "running"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-none-seed2-20261009T231748.json",
+    "collected": true
   },
   {
     "job_id": "job-5c890242cca8",
@@ -863,7 +867,9 @@
       "--seed",
       "1"
     ],
-    "state": "running"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc0-seed1-20261009T231644.json",
+    "collected": true
   },
   {
     "job_id": "job-03478308f85d",
@@ -879,7 +885,9 @@
       "--seed",
       "2"
     ],
-    "state": "running"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc0-seed2-20261009T231849.json",
+    "collected": true
   },
   {
     "job_id": "job-e0102f37b057",
@@ -895,7 +903,9 @@
       "--seed",
       "1"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-none-seed1-20261009T231743.json",
+    "collected": true
   },
   {
     "job_id": "job-59e0a3f99801",
@@ -911,7 +921,9 @@
       "--seed",
       "2"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-none-seed2-20261009T231850.json",
+    "collected": true
   },
   {
     "job_id": "job-001e31daffd6",
@@ -927,7 +939,9 @@
       "--seed",
       "1"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc4-seed1-20261009T231935.json",
+    "collected": true
   },
   {
     "job_id": "job-89c27225d0fe",
@@ -943,7 +957,9 @@
       "--seed",
       "2"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc4-seed2-20261009T231836.json",
+    "collected": true
   },
   {
     "job_id": "job-9a7082cbf095",
@@ -959,7 +975,9 @@
       "--seed",
       "1"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-none-seed1-20261009T231649.json",
+    "collected": true
   },
   {
     "job_id": "job-c14d96aad3dd",
@@ -975,7 +993,9 @@
       "--seed",
       "2"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-none-seed2-20261009T231932.json",
+    "collected": true
   },
   {
     "job_id": "job-a694947f897d",
@@ -991,7 +1011,9 @@
       "--seed",
       "1"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc3-seed1-20261009T232334.json",
+    "collected": true
   },
   {
     "job_id": "job-d79cf7d5ad5c",
@@ -1007,6 +1029,8 @@
       "--seed",
       "2"
     ],
-    "state": "queued"
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc3-seed2-20261009T232331.json",
+    "collected": true
   }
 ]

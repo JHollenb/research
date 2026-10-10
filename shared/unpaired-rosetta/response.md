@@ -1,7 +1,7 @@
 ---
 title: "Reading Is Not Authoring: A Scaffold Axis, Two Ceilings and a Fidelity Gap in Unpaired Cross-Modal Alignment"
 subtitle: "A response to Schnaus, Dagès, Cremers, Wang and Isola, 'Shared Geometry as a Rosetta Stone' (arXiv 2610.09411)"
-status: "DRAFT 1.1 (2026-10-09). E0, E3, part of E1 and part of E5 measured; claims rescored on effect size (no arbitrary bars); E1 measured except E1b; E2, E5 rest running; E4 design only."
+status: "DRAFT 1.2 (2026-10-09). Gate detector measured over 3 seeds. E0, E3, part of E1 and part of E5 measured; claims rescored on effect size (no arbitrary bars); E1 measured except E1b; E2, E5 rest running; E4 design only."
 date: 2026-10-09
 authors: TBD
 code: experiments/ (their library pinned at fdfad84; receipts in experiments/results/)
@@ -18,11 +18,8 @@ code: experiments/ (their library pinned at fdfad84; receipts in experiments/res
 >   draw spread (E2). The only thresholds allowed to decide a claim are a proved inequality, a noise floor, or a
 >   consumer zone measured on FLUX (labelled as FLUX's). Where a bar we set ourselves disagrees with the
 >   effect, both are shown.
-> - **Placeholders.** Each **[PENDING: …]** names the run it waits for:
->   - E1: three remaining arms, plus the Proposition D1 check;
->   - E2: pair-ladder span ceiling and pair selection;
->   - E5: whether removing the scaffold axis improves alignment;
->   - E4: consumer benchmark, not built.
+> - **Placeholders.** E0, E1 (with the D1 check), E2, E3 and E5 (with the gate detector) are measured. One
+>   **[PENDING]** remains: E4, the FLUX consumer benchmark, which is designed but not built.
 
 ## Abstract
 
@@ -53,8 +50,8 @@ axis out of the language side before fitting brings FOSCTTM to **0.036** on the 
 seed-spread runs queued). Our first unpaired detector for the axis failed (FOSCTTM 0.484), because it trusted
 pseudo-pairs from the broken fit. The same projection wrecks MPNet and Qwen3-Embedding (0.043 → 0.361, 0.022 → 0.402), whose top axis is the
 image's own, so it is not a blanket rule. A gate detector that uses no pairs (§3.5) gets this right in all three
-encoders: it gates off gen's axis and leaves the other two alone, choosing the best-FOSCTTM setting each time
-(seed 0; seeds for the closest settings pending). Across three seeds the fix is 0.415 ± 0.055 → 0.038 ± 0.006.
+encoders: it gates off gen's axis and leaves the other two alone, choosing the best-FOSCTTM setting in 9 of 9
+model × seed cases. Across three seeds the fix is 0.415 ± 0.055 → 0.038 ± 0.006.
 
 The other two claims are proved. Span-confined pair baselines have a fidelity ceiling of
 sqrt(top-p eigen-energy). It holds on their data but is loose, and their method needs no pairs to beat these baselines (§5). Retrieval and generation fidelity separate in high dimension
@@ -308,8 +305,16 @@ Seed 0, Beast, SPC holdout:
   FOSCTTM 0.043 vs 0.030, a small cost. S1 is the better selector.
 - **S1 tracks alignment quality across settings.** Rank correlation with −FOSCTTM is 0.94 (Qwen3-Embedding),
   0.94 (MPNet) and 0.77 (Qwen3-gen). For S2 it is 0.83, 0.89 and 0.26.
-- **Thin margin.** MPNet's S1 margin is 0.005 (none vs PC3), and a wrong pick there would cost about 0.013
-  FOSCTTM. Seeds 1–2 for each model's top two settings: **[PENDING]**.
+- **Seeds (measured, seeds 0–2, each model's top two settings).** S1 picks correctly in **9 of 9** model × seed
+  cases, and every pick is also the best-FOSCTTM setting of the pair.
+
+  | model | S1 choice | S1 margin over runner-up (seeds 0 / 1 / 2) | FOSCTTM chosen vs runner-up |
+  |---|---|---|---|
+  | Qwen3-8B gen | gate off PC0 | 0.044 / 0.030 / 0.041 | 0.033–0.044 vs 0.358–0.467 |
+  | Qwen3-Embedding-8B | no gate | 0.017 / 0.023 / 0.013 | 0.013–0.023 vs 0.032–0.050 |
+  | MPNet | no gate | 0.005 / 0.023 / 0.021 | 0.014–0.034 vs 0.030–0.063 |
+
+  MPNet's thin seed-0 margin did not recur.
 
 **What this gives them.** A fully unpaired rule for deciding whether an embedding has a non-visual dominant axis,
 and which one. It fixes their worst long-caption cell (near chance → 0.033) and leaves the encoders that were
@@ -571,7 +576,7 @@ The design is in `experiments/e4_consumer_closure/DESIGN.md`:
 | change | evidence | expected effect | status |
 |---|---|---|---|
 | Report linear CKA (or CKA after deflating the top axis) next to clipped CKA, especially for generative pooling | §3.4: clipped 0.61 vs linear 0.43 for gen | a predictor that no longer over-rates generative pooling | measured on SPC; other corpora untested |
-| Remove the non-visual axis of generative pooling | Lemma A1 + §3.4 + E5 | Qwen3-gen 0.415 → 0.038 FOSCTTM (3 seeds); controls unchanged when the gate detector chooses | measured on the SPC holdout; gate detector G1 holds at seed 0; DCI/DOCCI and their COCO-val protocol untested |
+| Remove the non-visual axis of generative pooling | Lemma A1 + §3.4 + E5 | Qwen3-gen 0.415 → 0.038 FOSCTTM (3 seeds); controls unchanged when the gate detector chooses | measured on the SPC holdout; gate detector correct in 9/9 model × seed cases; DCI/DOCCI and their COCO-val protocol untested |
 | Report α next to FOSCTTM | Prop. D1 + §6.1 (oracles: equal FOSCTTM, α 0.57 vs 0.78) | separates maps that retrieval ranks as equal | measured (E1) |
 | For generation, relax the rotation (e.g. a non-orthogonal correction on a few anchors) | §6.1 decomposition: rotation constraint costs 0.21 median α; unpaired estimation 0.07 ± 0.03 | higher per-item fidelity; better unpaired estimation alone cannot exceed the rotation ceiling | ceiling measured; few-anchor correction untested |
 | ~~Medoid pair selection~~ | E2 | helps span-confined baselines only; their method is unchanged or worse at p = 5 | **not a contribution to their method** |

@@ -49,3 +49,16 @@ job-ae5251813c81 succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc1-20261009T
 job-c4dda63ac912 succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc3-20261009T224706.json
 job-dabdb0e2a71e succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc4-20261009T224831.json
 ALLCOLLECTED
+job-5c890242cca8 succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc0-seed1-20261009T231644.json
+job-9a7082cbf095 succeeded results/e5_scaffold_axis/e5_gates-mpnet-none-seed1-20261009T231649.json
+job-a81ecb931c69 succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-none-seed1-20261009T231908.json
+job-274d22c5f67f succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-none-seed2-20261009T231748.json
+job-03478308f85d succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc0-seed2-20261009T231849.json
+job-e0102f37b057 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-none-seed1-20261009T231743.json
+job-59e0a3f99801 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-none-seed2-20261009T231850.json
+job-001e31daffd6 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc4-seed1-20261009T231935.json
+job-89c27225d0fe succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc4-seed2-20261009T231836.json
+job-c14d96aad3dd succeeded results/e5_scaffold_axis/e5_gates-mpnet-none-seed2-20261009T231932.json
+job-a694947f897d succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc3-seed1-20261009T232334.json
+job-d79cf7d5ad5c succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc3-seed2-20261009T232331.json
+GATESEEDSDONE

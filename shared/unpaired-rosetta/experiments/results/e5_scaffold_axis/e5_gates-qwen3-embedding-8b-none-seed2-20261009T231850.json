@@ -1,0 +1,42 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "candidate": "none",
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "language": "qwen3-embedding-8b",
+    "seed": 2,
+    "smoke": false,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e5_gates-qwen3-embedding-8b-none-seed2",
+  "results": {
+    "row": {
+      "S1_matched_cosine": 0.5123624205589294,
+      "S2_matched_linear_cka": 0.6846301691000485,
+      "candidate": "none",
+      "foscttm_eval_only": 0.0233711855927964,
+      "language": "qwen3-embedding-8b",
+      "matched_pairs": 8780
+    }
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-10T06:18:50Z",
+  "fleet": {
+    "job_id": "job-59e0a3f99801",
+    "host": "beast"
+  }
+}
