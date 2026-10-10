@@ -122,7 +122,7 @@ A behavior taxonomy keeps four capabilities apart rather than averaging them int
 
 ## Limits and open questions
 
-- Provenance, inventories, byte identity, parameter counts, and exact trajectories are the terminal-grade parts. Semantic inheritance, a full genealogy, and a causal explanation of behavior are not established; the P1–P4 distillation questions stay open.
+- Provenance, inventories, byte identity, parameter counts, and exact trajectories are the terminal-grade parts. Semantic inheritance, a full genealogy, and a causal explanation of behavior are not established; open questions about what distillation changed remain open.
 - The structural vocabulary is a search prior, not a universal circuit. Block ordinals are local, so a Klein 4B circuit cannot be copied into 9B, Dev, or FLUX.1 by name without fresh recipient-local validation.
 - Head sensitivity is four heads, one prompt pair, two seeds, scored by image MAD — a sensitivity ordering, not semantic head ownership or a general ranking. Only D0H29 and S22H25 have absolute numbers; the middle two are ordered qualitatively. It is not evidence of invariance under a different finetune.
 - The FLUX.1 lineage null is bounded by its chosen representation and null model; failure to detect an inherited subspace in one witness is not evidence that none exists.

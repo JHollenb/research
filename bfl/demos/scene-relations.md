@@ -33,12 +33,12 @@ two sides.
 ## Why we demoted it
 
 `M + D` is exactly `H_R`, the right-prompt's own state. The prompts differ only in the side word, and
-the action phrase comes *before* that word. FLUX.2's text encoder (Qwen3) is causal, so at the
+the action phrase comes *before* that word. FLUX.2 Klein's text encoder is Qwen3, a decoder-only language model with causal attention, so at the
 encoder output the action rows cannot depend on the side word at all; by `joint.3` they hold only
 5.07–7.89% of the left/right difference, picked up through joint attention. "The target lives outside
 the action rows" was therefore close to guaranteed by the prompt layout, and `M + D_rest` is nearly
 "write the right-prompt's text state", which is a prompt swap. (We confirmed the token order in our
-text-only replica, where the action rows are positions 17–19 and the side word is position 22. The
+text-only replica: in the prompt that passed the scene check the action rows are positions 28–31 and the side word is position 37. The
 original prompt strings are not in the local bundle; the 5–8% energy share is consistent with the same
 order.) The same conclusion holds for the [fork experiments](forking-a-generation.md): a full-dose
 edit there is a near-complete prompt swap.
@@ -73,7 +73,7 @@ least 10/16 seeds before any intervention was scored.
   failed. People mostly held small handheld cameras or touched their face. Contact was about 0/16 left
   and 4/16 right, so the 128 intervention images were not scored.
 - **Attempt 2** (`job-b5269d1e902b`, "…firmly gripping the lens of the camera on the left/right side of
-  the image"): the plain prompts passed, about 14/16 left and 15/16 right (coordinator's non-blinded
+  the image"): the plain prompts passed, about 14/16 left and 15/16 right (a quick non-blinded
   read). The full 8-arm blinded run then completed (`job-0047f8f99d61`, 128 images). **We did not score
   it**, because of the circularity above: a clean score would mostly confirm a prompt swap.
 

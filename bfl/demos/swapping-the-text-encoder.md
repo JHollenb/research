@@ -122,7 +122,7 @@ no-intervention baseline). `P = 0` is the starting image, `P = 1` is the exact n
 | Frozen | denoiser, scheduler, latent init, VAE | same |
 
 Adapters are banks of learned output-slot queries that cross-attend into the source model's
-hidden states (AdamW, lr 2×10⁻⁴, 700 steps against the native encoder's outputs); FLUX.2 runs in
+hidden states (700 steps against the native encoder's outputs); FLUX.2 runs in
 FP8 with sequential CPU offload on one CUDA GPU. Every intervention is an exact scalar
 checkpoint-resume, and all no-op replays reproduce the full native run at zero RGB MAD.
 

@@ -160,9 +160,9 @@ transfers only *part* of the target behavior, so this stays exploratory.
 
 ## Is this more than swapping the prompt?
 
-No. We checked by re-running the four fork specimens with public code
-([saturn-pub](https://github.com/JHollenb/saturn-pub), branch `pub/bfl-demo-controls`, commit
-`6583fb2`) and adding a second arm: run the source prompt up to the cut, then hand the denoiser the
+Mostly not at step 0; partly at step 2. We checked by re-running the four fork specimens with public code
+([saturn-pub](https://github.com/JHollenb/saturn-pub), branch `pub/bfl-demo-controls`; the scored job ran the
+code committed at `04ced12`, results in `6583fb2`) and adding a second arm: run the source prompt up to the cut, then hand the denoiser the
 donor's prompt encoding for the remaining steps, with no route edit. The decision rule was written
 down before the run ([pre-registration](../artifacts/route-vs-prompt-swap/PREREG.md)).
 
@@ -182,18 +182,21 @@ run.
 | subject, seed 9001 | 2 | 0.358 | 0.317 | 0.170 |
 
 `d = MAD(route image, swap image) / MAD(source, donor)`. A prompt swap at step 0 is just the donor
-run, so its progress is 1.000 by construction.
+run, so its progress is 1.000 by construction and at that cut `d` carries the same
+information as `1 − P_route`; only the step-2 rows compare two genuinely different interventions. Each
+specimen is one seed (n = 4).
 
 At step 0 the route edit is a slightly incomplete prompt swap: it gets 89–97% of the way to the
-donor image and lands within 3–11% of it. The missing part is what the image stream already absorbed
-from the prompt in `joint.0` and `joint.1`, before the route begins. The hostile-donor edit behaves
+donor image and lands within 3–11% of it. A plausible reason (not tested here) is that the image stream has already
+absorbed some of the prompt in `joint.0` and `joint.1`, before the route begins. The hostile-donor edit behaves
 the same way (0.923–0.952 toward its own target, within 5–8% of a hostile prompt swap). So the fork
 panel's early-edit and hostile-donor numbers measure how much of the prompt's effect passes through
 this route, not an editing ability beyond prompting. The pre-registered verdict is "partial" at both
 cuts: closer than "route differs" (`d > 0.25`), but outside the strict "same" band (`|ΔP| ≤ 0.05`
 and `d ≤ 0.10`).
 
-At the halfway cut the two arms are close (the route edit is 0.02–0.05 higher), and both look weak
+At the halfway cut the route edit is higher than the prompt swap in all four specimens (by 0.02–0.05,
+`d` 0.13–0.18), so there it is not just a late prompt swap. Both still look weak
 by the progress score. The images say something the score hides: on the subject axis, both arms
 still turn the fox into a cat. They keep the source's pose, framing and lighting, so pixel distance
 to the donor stays large. On the scene axis neither arm moves the fox to the desert. Late edits

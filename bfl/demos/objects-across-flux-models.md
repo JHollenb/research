@@ -93,7 +93,7 @@ A cross-conditioner compiler that fits a small text encoder's output into the Qw
 
 ![Cross-conditioner diagnosis: foreign subject rows write a wolf into the native scene; native rows repair the foreign wolf.](../artifacts/semantic-object-registers/xcond-diagnosis-strip.png)
 
-## 4. Value algebra: the carrier changes the grammar
+## 4. Value algebra: the text encoder changes the grammar
 
 On FLUX.2, `value[row("blue" ball)] - value[row("red" fox)]` added to a second scene's mug row yields a blue mug, sham inert (Part 1). FLUX.1 needs a window-sized version, and it exposes the cost: a +/-3 displacement mined in the foxball prompt is real and sham-controlled (mug region 0.438 vs 0.164), but it turns the red mug into a blue *ball*, because the "blue" window also contains the "ball" rows. Pair mining fixes the identity drag — a donor differing only in `blue ball -> red ball` cancels the neighboring noun, and the cross-scene mug stays a mug — but the color lands orange, not blue. Separating dose from rotation: in the native red-ball context the pair direction reconstructs the blue ball essentially exactly (0.633); in the foreign mug context alpha=1 is orange, alpha=2 turns the mug white, alpha=4 degrades the scene, and blueness never increases. The working account is context rotation in bidirectional T5 coordinates: value algebra is real on both families, but exact cross-scene attribute portability is conditioner-dependent.
 
@@ -126,7 +126,7 @@ The coordinate negative is informative: the executor moved image-stream content 
 - **Exact no-op / determinism gates = 0.0** on every imaging arm — rules out numerical drift.
 - **Norm-matched shams** inert across checkpoints (<=0.13 base-4B, <=0.05 9B, 0.003–0.007 xcond repair) — rules out norm/magnitude effects.
 - **Species-prior control**: the fox resists the mug displacement at its own color row — rules out a global color transform.
-- **Native consumer as authority**: a linear dictionary cannot identify the foreign subject, but the model decodes the rows as wolf — rules out reading the register by carrier-space cosine.
+- **The image decides**: a linear dictionary cannot identify the foreign subject, but the model renders the rows as a wolf — rules out reading the register by cosine similarity of hidden states.
 - **Prompt-disjoint closure** (corgi MAD 87.60 ~ 87.63) — rules out a general cross-conditioner compiler behind the per-prompt repair.
 
 ## Limits and open questions
@@ -134,7 +134,7 @@ The coordinate negative is informative: the executor moved image-stream content 
 - Anchor and most arms use two seeds; the 9B arm is one seed, and no arm establishes arbitrary-prompt or arbitrary-resolution generalization.
 - Single-row addressing is not universal: on the T5 (non-Qwen) conditioner the minimal address is a noun-phrase window, not a row.
 - Exact cross-scene attribute algebra does not hold on T5 — coordinates rotate with sentence context (lands orange, not blue).
-- There is no writable position field here: image-token slot relocation leaves the ball in place or ghosted; a latent-id remapping or another position carrier remains open.
+- There is no writable position field here: image-token slot relocation leaves the ball in place or ghosted; a latent-id remapping or another way to carry position remains open.
 - Struct property donors are synthesized from the requested diff, so those edits are still donor-backed, not donor-free.
 - General prompt-disjoint cross-conditioner compilation fails; the closure is a per-prompt repair capacity.
 - Ordinal route names are topology-local, not aligned layers across models; a saved record, layer number, or tensor basis must not be copied between recipients.

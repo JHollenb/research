@@ -13,8 +13,8 @@ keep their original directory names. Start from the [README](README.md) for the 
 | `cross-compiled-conditioner.md` | [Swapping the text encoder of a frozen image model](demos/swapping-the-text-encoder.md) |
 | `cross-family-conditioner-repair.md` | [Swapping the text encoder of a frozen image model](demos/swapping-the-text-encoder.md) |
 | `diffusion-time-causal-clock.md` | [Forking a FLUX.2 generation mid-flight](demos/forking-a-generation.md) |
-| `distributed-kv-causal-route.md` | [One route carries twenty prompt edits into a FLUX image](demos/certified-semantic-route.md) |
-| `empty-context-positional-scaffold.md` | [One route carries twenty prompt edits into a FLUX image](demos/certified-semantic-route.md) |
+| `distributed-kv-causal-route.md` | [One route tested against twenty prompt contrasts in a FLUX image](demos/certified-semantic-route.md) |
+| `empty-context-positional-scaffold.md` | [One route tested against twenty prompt contrasts in a FLUX image](demos/certified-semantic-route.md) |
 | `exact-phase-resident-serving.md` | [Bitwise-exact state cuts and replay across FLUX](demos/exact-serving-and-replay.md) |
 | `flux1-conditioner-causal-controls.md` | [Swapping the text encoder of a frozen image model](demos/swapping-the-text-encoder.md) |
 | `flux2-dev-paged-execution.md` | [Bitwise-exact state cuts and replay across FLUX](demos/exact-serving-and-replay.md) |
@@ -27,7 +27,7 @@ keep their original directory names. Start from the [README](README.md) for the 
 | `real-hotpatch-cinema.md` | [Forking a FLUX.2 generation mid-flight](demos/forking-a-generation.md) |
 | `recipient-native-capability-patch.md` | [Small, targeted repairs in a distilled FLUX.2 model](demos/small-targeted-repairs.md) |
 | `route-cartographer-consumer-closure.md` | [Searching for internal edits, keeping only the ones that improve the image](demos/searching-for-edits.md) |
-| `scene-circuit-certificate.md` | [One route carries twenty prompt edits into a FLUX image](demos/certified-semantic-route.md) |
+| `scene-circuit-certificate.md` | [One route tested against twenty prompt contrasts in a FLUX image](demos/certified-semantic-route.md) |
 | `scene-relations-and-instance-binding.md` | [Scene relations: three lessons from a result we demoted](demos/scene-relations.md) |
 | `semantic-circuit-object-part-I.md` | [Editing one object in FLUX.2 by writing the prompt rows that carry it](demos/objects-as-editable-values.md) |
 | `semantic-circuit-object-part-II.md` | [Editing one object in FLUX.2 by writing the prompt rows that carry it](demos/objects-as-editable-values.md) |
@@ -35,7 +35,7 @@ keep their original directory names. Start from the [README](README.md) for the 
 | `source-address-control-plane.md` | [Learning where to read before writing](demos/learning-where-to-read.md) |
 | `temporal-carrier-compiler.md` | [Forking a FLUX.2 generation mid-flight](demos/forking-a-generation.md) |
 | `textless-klein-renderer.md` | [Swapping the text encoder of a frozen image model](demos/swapping-the-text-encoder.md) |
-| `twenty-axis-semantic-route-circuit.md` | [One route carries twenty prompt edits into a FLUX image](demos/certified-semantic-route.md) |
+| `twenty-axis-semantic-route-circuit.md` | [One route tested against twenty prompt contrasts in a FLUX image](demos/certified-semantic-route.md) |
 | `typed-snake-topology-interaction.md` | [Small, targeted repairs in a distilled FLUX.2 model](demos/small-targeted-repairs.md) |
 | `vae-decoder-output-boundary.md` | [Bitwise-exact state cuts and replay across FLUX](demos/exact-serving-and-replay.md) |
 | `wall-picture-hotpatch.md` | [Forking a FLUX.2 generation mid-flight](demos/forking-a-generation.md) |

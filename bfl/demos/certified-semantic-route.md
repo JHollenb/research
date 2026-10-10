@@ -1,5 +1,5 @@
 ---
-title: "One route carries twenty prompt edits into a FLUX image"
+title: "One route tested against twenty prompt contrasts in a FLUX image"
 type: experiment-report
 status: "Route certified across twenty contrasts; strict pixel reconstruction is partly seed- and prompt-dependent"
 date: 2026-09-22
@@ -15,7 +15,7 @@ merged_from:
 tags: [flux2, diffusion, interpretability, circuits, causal-mediation, activation-patching]
 ---
 
-# One route carries twenty prompt edits into a FLUX image
+# One route tested against twenty prompt contrasts in a FLUX image
 
 ## What we found
 
@@ -44,7 +44,7 @@ Activation patching and causal mediation (Meng et al. 2022; Wang et al. 2022; Vi
 
 **Score.** *Progress* `P = 1 − MAD(I, I_target) / (MAD(I_source, I_target) + ε)`: 0 = unmoved source, 1 = target image. A few instruments use a symmetric variant `P±` where an unmoved source scores **−1** (flagged at each use).
 
-**Nine tests, three tiers.** The battery is: cross-seed replication, sufficiency, necessity, wrong-axis specificity, energy-matched sham, dose response, edge mediation (ablate one route edge's upstream site, restore only the downstream site, recover ≥50% of the effect), downstream continuation, and exact-replay integrity. **Strict** = all nine on both seeds; **route-certified** = all causal tests but one or both strict pixel thresholds missed (the route is established; perfect pixel reconstruction is not); **open candidate** = also below the 0.50 mediation bar on some edge. All thresholds were frozen in a config file before the panel ran.
+**Nine tests, three tiers.** The battery is: cross-seed replication, sufficiency, necessity, wrong-axis specificity, energy-matched sham, dose response, edge mediation (ablate one route edge's upstream site, restore only the downstream site, recover ≥50% of the effect), downstream continuation, and exact-replay integrity. **Strict** = all nine on both seeds; **route-certified** = all causal tests but one or both strict pixel thresholds missed (the route is established; perfect pixel reconstruction is not); **open candidate** = also below the 0.50 mediation bar on some edge. All thresholds were frozen in a config file before the panel ran (the strict pixel thresholds were calibrated during earlier exploration; see Limits).
 
 ## Results
 
@@ -115,7 +115,7 @@ Intervening on saved key/value state across a 20-site panel (96 paired color-swa
 
 *Nominally empty padding in the conditioning tensor is read as positional state, not ignored.*
 
-The Qwen3 conditioning tensor is `[1, 512, 7,680]`, ~28 tokenizer-active rows and ~494 nominally inactive, consumed without an attention mask. Zeroing just 18 active-adjacent rows (3.5% of occupancy) shifts final RGB MAD by 41.9 and 53.2 across two seeds — rivaling whole-prompt swaps (43.5 and 31.7). Position beats occupancy: zeroing 18 active rows costs 42.7/55.5, but zeroing 205 active rows only 16.4/22.1. Content matters too — empty→empty padding costs 12.5–20.2, empty→unrelated 68.6/76.5 — and 80–89% of the damage enters at step 0. So the "empty" rows are a consumed positional scaffold, matching the paper's §7 finding that the 484 positions beyond the tokenizer are contextualized query states, not inert padding.
+The Qwen3 conditioning tensor is `[1, 512, 7,680]`, ~28 tokenizer-active rows and ~484 nominally inactive, consumed without an attention mask. Zeroing just 18 active-adjacent rows (3.5% of occupancy) shifts final RGB MAD by 41.9 and 53.2 across two seeds — rivaling whole-prompt swaps (43.5 and 31.7). Position beats occupancy: zeroing 18 active rows costs 42.7/55.5, but zeroing 205 active rows only 16.4/22.1. Content matters too — empty→empty padding costs 12.5–20.2, empty→unrelated 68.6/76.5 — and 80–89% of the damage enters at step 0. So the "empty" rows are a consumed positional scaffold, matching the paper's §7 finding that the 484 positions beyond the tokenizer are contextualized query states, not inert padding.
 
 ## Controls
 

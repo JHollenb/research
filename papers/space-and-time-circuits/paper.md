@@ -315,7 +315,7 @@ The cost is generality: these inference assays cover pinned model/backend paths 
 - SmolLM2-1.7B and Mamba-1.4B, attached through trained adapters, drove the frozen denoiser to clean, coherent and semantically wrong images.
 - Contrasting them with the native Qwen encoder located where the semantics diverged downstream. Route flow was 0.9312 native vs 0.5300 with SmolLM2.
 - Full-state rescue reached 0.751 (SmolLM2) and 0.817 (Mamba). Compact selectors reached at most 0.051.
-- At the route's entry, the foreign color separation was damped about 43× [`research/bfl/demos/cross-compiled-conditioner.md`; certified-semantic-circuits §7].
+- At the route's entry, the foreign color separation was damped about 43× [`research/bfl/demos/swapping-the-text-encoder.md`; certified-semantic-circuits §7].
 
 **It can also be found without labels.** We propagated random 5%-norm perturbations of an empty prompt to the return state:
 - the method recovered three of four route sites and the `joint.4 → single.0` edge;
@@ -346,7 +346,7 @@ We tested the route `joint.2 → joint.3 → joint.4 → single.0` against twent
 - **Unopened seeds:** the route gates replicated across the panel. The only route-gate failure missed by 0.002. The strict pixel tier was seed-sensitive.
 - **New prompts written after the route was fixed:** four of six strict contrasts replicated strictly, and all six replicated the route, exactly at the preregistered bar.
 
-**Clean-room audit.** An auditor reproduced every decision and caught 5/5 injected tampering attempts [`research/bfl/demos/twenty-axis-semantic-route-circuit.md`; `research/bfl/artifacts/twenty-axis-semantic-route-circuit/`; certified-semantic-circuits §4].
+**Clean-room audit.** An auditor reproduced every decision and caught 5/5 injected tampering attempts [`research/bfl/demos/certified-semantic-route.md`; `research/bfl/artifacts/twenty-axis-semantic-route-circuit/`; certified-semantic-circuits §4].
 
 ### 5.2 Built over time
 
@@ -377,13 +377,13 @@ These bounds cover all 15 setup/site-set combinations, sharing three baseline ru
 
 These kernels measure reproduction of the target image, not when identity is decided (correction of 2026-09-22) [integral-residual-dynamics §8].
 
-**A second distributed route.** A 20-site key/value route for color binding shows the same pattern [`research/bfl/demos/distributed-kv-causal-route.md`]:
+**A second distributed route.** A 20-site key/value route for color binding shows the same pattern [`research/bfl/demos/certified-semantic-route.md`]:
 - the all-step graft beats every single step;
 - a compact two-site subset fails;
 - native margins are +6.740 forward and +8.830 reverse;
 - 45/96 reverse donor-color collisions leave bilateral specificity open.
 
-**A causal clock.** The same relative dose has a final effect of 0.360 at resume step 1 and 0.078 at step 7 [`research/bfl/demos/diffusion-time-causal-clock.md`].
+**A causal clock.** The same relative dose has a final effect of 0.360 at resume step 1 and 0.078 at step 7 [`research/bfl/demos/forking-a-generation.md`].
 
 **Multi-seed (E7, MEASURED).** The color contrast's necessity holds across five seeds: the original 7217 plus 4242, 9001, 2024 and 1337 (`saturn/experiments/2026-09-30-e7-flux-color-multiseed/`, `job-8d4a3845a671`). The canary reproduces the recorded red↔blue image MAD (70.954 against 70.95) and an exact no-op.
 
@@ -481,7 +481,7 @@ No pooled or global conditioning path exists: the transformer receives only `enc
 
 ### 5.6 The FLUX family
 
-The initial semantic-object interface tests replicated across checkpoints at trend level [`research/bfl/demos/semantic-circuit-object-part-III.md`]. E8 below extends Klein 9B to a two-seed four-quadrant identity result; it passes 8/9 route gates, so it remains short of a strict nine-gate certificate.
+The initial semantic-object interface tests replicated across checkpoints at trend level [`research/bfl/demos/objects-across-flux-models.md`]. E8 below extends Klein 9B to a two-seed four-quadrant identity result; it passes 8/9 route gates, so it remains short of a strict nine-gate certificate.
 
 | checkpoint | result |
 |---|---|
@@ -1201,7 +1201,7 @@ These applications use the separation between source state, formation, storage a
 
 The same structure explains a known puzzle in language-model editing: the layer that causal tracing localizes is not the best layer to edit [Hase 2023]. In a write-once/commit-late store, any layer in the formation window can author the answer. What matters is installing the write before the commit band (§6.1b).
 
-1. **Edits must be installed early.** A content-bound donor edit has 0.904–0.971 authority installed at the first cut, against 0.095–0.358 installed halfway through denoising (4/4). A hostile donor steers toward its own factor (0.926–0.953), shams stay near zero, and every branch rolls back exactly [`research/bfl/demos/real-hotpatch-cinema.md`].
+1. **Edits must be installed early.** A content-bound donor edit has 0.904–0.971 authority installed at the first cut, against 0.095–0.358 installed halfway through denoising (4/4). A hostile donor steers toward its own factor (0.926–0.953), shams stay near zero, and every branch rolls back exactly [`research/bfl/demos/forking-a-generation.md`].
 2. **When a write lands selects what changes** (`job-eb10b3c02dc5`) [`research/demos/scene-editing.md`]:
    - installed late, a write turns the eyes violet and keeps the composition (P 0.069);
    - installed early, the same write moves the image while the eyes stay blue (0.577);
@@ -1210,8 +1210,8 @@ The same structure explains a known puzzle in language-model editing: the layer 
    - Steps 0–1 perform the move. A late-only departure write gives 0.0006 [`saturn/experiments/2026-09-20-flux2-transport-temporal-carrier/FINDINGS.md`].
    - A reach decomposes into grip, route and departure patches whose union is clean 4/4. The action signal grows 8.0–21.9× from joint.0 to joint.4 [`saturn/experiments/2026-09-19-flux2-puppeteer-carrier-origin/FINDINGS.md`].
 4. **Small early writes are amplified.**
-   - Zeroing 18 scaffold rows (3.5%) at step 0 does about as much damage as swapping the whole prompt, and 80–89% of the damage enters at step 0 [`research/bfl/demos/empty-context-positional-scaffold.md`].
-   - A 55,297-parameter patch at joint.2, step 0, repairs counting (three apples to five; held-out exact count 37% → 72%). Its collateral gate fails, with 48% of ordinary prompts disturbed: accumulation cuts both ways [`research/bfl/demos/recipient-native-capability-patch.md`].
+   - Zeroing 18 scaffold rows (3.5%) at step 0 does about as much damage as swapping the whole prompt, and 80–89% of the damage enters at step 0 [`research/bfl/demos/certified-semantic-route.md`].
+   - A 55,297-parameter patch at joint.2, step 0, repairs counting (three apples to five; held-out exact count 37% → 72%). Its collateral gate fails, with 48% of ordinary prompts disturbed: accumulation cuts both ways [`research/bfl/demos/small-targeted-repairs.md`].
 5. **Writing through the carrier from another model.**
    - A foreign language model, bridged through per-symbol anchors, authors through the unchanged consumer at native parity (`job-0706b0497903`, public).
    - Held-out symbols are *read* (21/36 after correcting for template collapse) but not *authored* (sham level). An affine-ceiling argument explains why.
@@ -1481,7 +1481,7 @@ The three claims are therefore distinct: **operational discovery** of a strict p
 |---|---|
 | R1 | **Done**: Figure 1. |
 | R2 | **Done**: independent (the retraction is a Qwen-Coder controller); §5.7 citations tightened. |
-| R3 | Fix mis-citations inherited from the IRD and transaction drafts: the FLUX four-quadrant numbers are `job-7d53e47755f7` (case-1 ledger), not `job-6650205b45eb`; the 30B receipts are `job-7cc5b24954f0` and `job-ef8408d9c3d2`, not `job-38c1c37dd591` (a SmolLM2 smoke job); the scene-edit .9133 is in `research/bfl/demos/scene-circuit-certificate.md`, not `job-3cd13239dd91`. |
+| R3 | Fix mis-citations inherited from the IRD and transaction drafts: the FLUX four-quadrant numbers are `job-7d53e47755f7` (case-1 ledger), not `job-6650205b45eb`; the 30B receipts are `job-7cc5b24954f0` and `job-ef8408d9c3d2`, not `job-38c1c37dd591` (a SmolLM2 smoke job); the scene-edit .9133 is in `research/bfl/demos/certified-semantic-route.md`, not `job-3cd13239dd91`. |
 | R4 | Scale-floor wording after E3b. |
 | R5 | **Done**: Figures 2–5 (`figures/make_figures.py`). |
 | R6 | Commit and redact `research/demos/`. |

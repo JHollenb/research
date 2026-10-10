@@ -170,7 +170,7 @@ A time circuit is the *sink* that space circuits write into (`obsidian/blog/2026
   - *Discovery input.* Mamba-1.4B was one of the two foreign conditioners whose contrast exposed the FLUX route (§4).
   - *Role-portability ABI.* Mamba's conv/recurrent state is one of the family-local lowerers under a common role surface (`saturn/docs/ROLE-PORTABILITY-ABI.md`).
 - **Evidence ladder:** observation → trend → convergent trend → working inference → terminal claim. A failed gate means "not established", never "absent".
-- **Cost:** capture once, fork many. One model load runs 40 logical branches in 8 physical calls (hotpatch-cinema). Cheap-deep resume is 7.993× at k = 7 with exact parity (`research/bfl/demos/diffusion-time-causal-clock.md`).
+- **Cost:** capture once, fork many. One model load runs 40 logical branches in 8 physical calls (hotpatch-cinema). Cheap-deep resume is 7.993× at k = 7 with exact parity (`research/bfl/demos/forking-a-generation.md`).
 
 **TODO [W]:** a one-paragraph comparison with TransformerLens, nnsight and pyvene, adapted from `appendix-execution-model.md`.
 
@@ -186,7 +186,7 @@ A time circuit is the *sink* that space circuits write into (`obsidian/blog/2026
      - route flow is 0.9312 native vs 0.5300 SmolLM2;
      - full-state rescue is 0.751 / 0.817, while compact selectors reach ≤ 0.051;
      - the foreign color separation at the route's entry is damped about 43×.
-   - Sources: `research/bfl/demos/cross-compiled-conditioner.md`, `cross-family-conditioner-repair.md`; `certified-semantic-circuits/paper.md` §7.
+   - Sources: `research/bfl/demos/swapping-the-text-encoder.md`, `cross-family-conditioner-repair.md`; `certified-semantic-circuits/paper.md` §7.
 2. **Promptless rediscovery.** Random 5%-norm perturbations of an empty prompt recover 3 of 4 route sites and the `joint.4 → single.0` edge.
    - Clamp mediation removes 83–95%; downstream donation reconstructs 95–100%.
    - Off-route sham ≤ 0.0951 vs route effects up to 0.697.
@@ -205,7 +205,7 @@ A time circuit is the *sink* that space circuits write into (`obsidian/blog/2026
 **Evidence (public):**
 - **Panel.** Twenty contrasts across twelve categories: 6 strict 9/9, 11 carrier 7/9, 3 candidates.
   - Top strict rows: lighting .935, identity .920, weather .911, fur .894, orientation .873, relation .866.
-  - Sources: `research/bfl/demos/twenty-axis-semantic-route-circuit.md`; `research/bfl/artifacts/twenty-axis-semantic-route-circuit/`.
+  - Sources: `research/bfl/demos/certified-semantic-route.md`; `research/bfl/artifacts/twenty-axis-semantic-route-circuit/`.
 - **Held-out seeds.** Route gates replicated across the panel; the only route failure missed by 0.002 (0.1522 vs 0.15). The strict tier was seed-sensitive (5/14/1).
 - **Held-out prompts.** 4/6 strict and 6/6 route, exactly at the preregistered bar. Source: `certified-semantic-circuits/experiments/2026-09-22-prompt-heldout/`.
 - **Clean-room audit.** 0 decision mismatches; 5/5 tamper injections caught.
@@ -222,8 +222,8 @@ A time circuit is the *sink* that space circuits write into (`obsidian/blog/2026
   - recoveries 83/96 and 88/96;
   - the compact {8,11} subset fails, and all-step beats every single step;
   - caveat: 45/96 reverse donor-color collisions;
-  - source: `research/bfl/demos/distributed-kv-causal-route.md` (public).
-- Causal clock: same dose, k = 1 effect 0.360 / amplification 2.399 vs k = 7 0.078 / 0.523, crossover near k = 4. Source: `research/bfl/demos/diffusion-time-causal-clock.md` (public).
+  - source: `research/bfl/demos/certified-semantic-route.md` (public).
+- Causal clock: same dose, k = 1 effect 0.360 / amplification 2.399 vs k = 7 0.078 / 0.523, crossover near k = 4. Source: `research/bfl/demos/forking-a-generation.md` (public).
 - Consumption kernel (corrected 2026-09-22): front-loaded weights ≈ [0.21, 0.22, 0.08, 0.04].
   - It measures pixel reproduction, not when identity is decided.
   - Late double dose at equal nominal integral: 0.055–0.288, vs all-step 0.522–0.810.
@@ -245,8 +245,8 @@ A time circuit is the *sink* that space circuits write into (`obsidian/blog/2026
 - **Gates.** The wrong-axis (≤ 0.35) and energy-matched sham (≤ 0.35) gates pass on every certified row.
 - **Promptless controls.** Off-route sham ≤ 0.0951; the last merged block's text positions show exactly 0.0.
 - **Leave-one-out.** Removing the `joint.4` text site drops transfer to 0.59 / 0.49.
-- **Local vs whole-state.** Single-token QKV routes score 0.001–0.227, while whole text-state transfer closes every joint edge (weakest 0.911). Source: `research/bfl/demos/route-cartographer-consumer-closure.md:41-43`.
-- **All-joint ceiling, FLUX.1-schnell only.** The route carries 0.6915 = 98% of the all-joint 0.7069 ceiling, all 57 text sites reach 0.7292, and single blocks alone are near-inert. Source: `research/bfl/demos/semantic-circuit-object-part-III.md:100`.
+- **Local vs whole-state.** Single-token QKV routes score 0.001–0.227, while whole text-state transfer closes every joint edge (weakest 0.911). Source: `research/bfl/demos/searching-for-edits.md:41-43`.
+- **All-joint ceiling, FLUX.1-schnell only.** The route carries 0.6915 = 98% of the all-joint 0.7069 ceiling, all 57 text sites reach 0.7292, and single blocks alone are near-inert. Source: `research/bfl/demos/objects-across-flux-models.md:100`.
 - **Operating-point dependence.** At base-4B with 50-step CFG, early joint bands approach the full effect (redundancy). Source: `semantic-circuit-object-part-III.md:76`.
 
 **E1 result (2026-09-30, MEASURED).** Jobs `job-bef367be11de` and `job-4eebfe403976`; record `saturn/experiments/2026-09-30-flux2-offroute-span-sweep/FINDINGS.md`.
@@ -290,7 +290,7 @@ The run used the certified Klein-4B operating point, the six strict axes, two se
 - **Klein 9B:** subject write .743 vs sham .043, port .471 vs .076, one seed (`job-638d05dcbff2`, `job-3e1bc534e0eb`).
 - **FLUX.1-schnell** (T5 + CLIP): same object at noun-phrase-window grain. A single row is sham-level (−.05 / .03), while the ±3 window reaches .56 / .63.
 
-Sources: `research/bfl/demos/semantic-circuit-object-part-III.md` (public); cohort revisions in `research/bfl/README.md`.
+Sources: `research/bfl/demos/objects-across-flux-models.md` (public); cohort revisions in `research/bfl/README.md`.
 
 **Status.** Register-level replication is at trend level. These are *not* nine-gate certificates on those checkpoints.
 
@@ -520,7 +520,7 @@ Source: `saturn/experiments/2026-08-21-ird-fruit-battery/README.md` (private).
 | Eye color | Upstream program about 0.887 targetward | `obsidian/blog/2026-08-28-141114-…:294` |
 | Eye geometry | 0.931; shares 5–7/8 consumer heads with color, but K/V source rows overlap only 10–15/64 | same |
 | Eye color × geometry | Nonadditive residual needed for exact closure | `…105410…:234-238` |
-| Object registers (fox / ball / mug) | Selectivity 13.7× / 9.6×; wrong-address inert; value algebra gives a blue mug (MAD 59.8 vs cat 1.9) | `research/bfl/demos/semantic-circuit-object-part-I.md`, `-II.md` |
+| Object registers (fox / ball / mug) | Selectivity 13.7× / 9.6×; wrong-address inert; value algebra gives a blue mug (MAD 59.8 vs cat 1.9) | `research/bfl/demos/objects-as-editable-values.md`, `-II.md` |
 | Character register (Jen) | Reference-slot bus [1024, 2048); byte-exact native equivalence 2/2; delete → restore exact; 0 training | `research/demos/jen-character-register.md` (untracked) |
 | Sprite register (negative) | Reference-slot swap does not move screen position | `research/demos/jen-sprite-register.md` |
 
@@ -616,7 +616,7 @@ Each result is framed as a consequence of the route being built over time.
 1. **Edits must be installed early.**
    - Hotpatch 4/4: early cut 0.904–0.971, late cut 0.095–0.358.
    - A hostile donor steers to its own target (0.926–0.953); sham ≈ 0; exact rollback.
-   - Source: `research/bfl/demos/real-hotpatch-cinema.md`, `counterfactual-diffusion-futures.md` (public, with verifiers).
+   - Source: `research/bfl/demos/forking-a-generation.md`, `counterfactual-diffusion-futures.md` (public, with verifiers).
 2. **When you write selects what changes.**
    - Violet eyes: a late write gives violet eyes with composition kept (P 0.069); an early write moves the image while the eyes stay blue (0.577).
    - Program-only 0.712, register-only 0.404, both exact.
@@ -627,8 +627,8 @@ Each result is framed as a consequence of the route being built over time.
    - Source: `saturn/experiments/2026-09-20-flux2-transport-temporal-carrier/FINDINGS.md` (private).
    - Puppeteer: ΔRMS grows 8.0–21.9× from joint.0 to joint.4; grip ∪ route ∪ departure is clean 4/4 (`saturn/experiments/2026-09-19-flux2-puppeteer-carrier-origin/FINDINGS.md`, private).
 4. **Small early writes are amplified.**
-   - Empty-context scaffold: 80–89% of the damage enters at step 0 (`research/bfl/demos/empty-context-positional-scaffold.md`).
-   - Apples counting patch: 55,297 params at joint.2 / step 0 turn 3 apples into 5, and held-out exact-count rises 37% → 72%. Its collateral gate *fails* (48% of ordinary prompts disturbed), so accumulation cuts both ways (`research/bfl/demos/recipient-native-capability-patch.md`).
+   - Empty-context scaffold: 80–89% of the damage enters at step 0 (`research/bfl/demos/certified-semantic-route.md`).
+   - Apples counting patch: 55,297 params at joint.2 / step 0 turn 3 apples into 5, and held-out exact-count rises 37% → 72%. Its collateral gate *fails* (48% of ordinary prompts disturbed), so accumulation cuts both ways (`research/bfl/demos/small-targeted-repairs.md`).
    - Temporal carrier compiler: authority by step is 0.035 / 0.228 / 0.508 / 0.722 (`temporal-carrier-compiler.md`).
 5. **Scenes compile.**
    - The prompt lowers to static K/V installed across the run: 21/21 exact across 7 specimens / 5 families; complete install MAE 0.0000, partial fails (`job-5b20cdbb0f15`).
@@ -724,7 +724,7 @@ Costs come from recorded wall-times: FLUX panels run in minutes per group with o
 |---|---|
 | R1 | Timeline figure, Aug 5 → Sep 22, from the week-in-review post and Appendix C. |
 | R2 | Confirm the SDXL writer-clock results are independent of the retracted rank-16 clock controller. |
-| R3 | Fix the mis-cites: diffusion four-quadrant numbers → `job-7d53e47755f7` / case-1 ledger; 30B → `job-7cc5b24954f0` / `job-ef8408d9c3d2`; scene-edit .9133 → `research/bfl/demos/scene-circuit-certificate.md` + `bfl/artifacts/scene-circuit-certificate/` (not `job-3cd13239dd91`). |
+| R3 | Fix the mis-cites: diffusion four-quadrant numbers → `job-7d53e47755f7` / case-1 ledger; 30B → `job-7cc5b24954f0` / `job-ef8408d9c3d2`; scene-edit .9133 → `research/bfl/demos/certified-semantic-route.md` + `bfl/artifacts/scene-circuit-certificate/` (not `job-3cd13239dd91`). |
 | R4 | Reword "certificate arrives with capability" for 410M (strict at step 16000). |
 | R5 | Same-model space + time table for Qwen2.5-0.5B from `job-ec1ab31d35f2` and `job-72f0e98679d5`. |
 | R6 | Commit and redact `research/demos/` before citing (scene-editing, scene-generator, jen, sdxl-decoder). |

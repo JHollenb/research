@@ -90,7 +90,7 @@ As stated by the author; these are to be verified in the deeper dig.
 - **It ties directly to** the `research/bfl/demos/` series: the twenty-axis route, the hotpatch, apples (the recipient capability patch), fox (the semantic circuit object), and the symbol table.
 - **It was found in essentially every diffusion and autoregressive model above about 1B that was checked.**
 - **It laid the groundwork for the scene generator** and for the finding that the residual builds the circuit out over *time*.
-- **The IRD paper is the account of why standard tools failed to find this circuit**, when Saturn found it once the cross-conditioner work succeeded (`research/bfl/demos/cross-compiled-conditioner.md`, `cross-family-conditioner-repair.md`).
+- **The IRD paper is the account of why standard tools failed to find this circuit**, when Saturn found it once the cross-conditioner work succeeded (`research/bfl/demos/swapping-the-text-encoder.md`, `cross-family-conditioner-repair.md`).
 
 ## 6. A second session's line of thought (pasted by the author; not re-verified here)
 

@@ -19,7 +19,7 @@ interface and the exact native image returns. The defect lives entirely on the t
 The full write-up of the core result is the paper
 **[The Circuit That Survived Its Coordinates](docs/certified-semantic-circuits/paper.md)**: a
 recurring route through FLUX.2 Klein 4B that carries prompt meaning into the image, tested with nine
-pre-registered causal checks across twenty prompt edits. It also reports seven measurement
+pre-registered causal checks across twenty prompt contrasts. It also reports seven measurement
 traps we think affect published interpretability results.
 
 The demos below are shorter, visual reports. Read them in this order:
@@ -27,7 +27,7 @@ The demos below are shorter, visual reports. Read them in this order:
 | | Demo | What it shows |
 |---:|---|---|
 | 1 | [Bitwise-exact state cuts and replay](demos/exact-serving-and-replay.md) | A generation can be saved mid-flight and resumed with zero error across five checkpoints (64/64 images byte-identical). This is what makes every edit below trustworthy. |
-| 2 | [One route carries twenty prompt edits](demos/certified-semantic-route.md) | Visual companion to the paper. Six of twenty contrasts pass all nine tests; eleven more pass all but the strict pixel thresholds. Single-step patching misses the route because FLUX re-reads the prompt at every step. |
+| 2 | [One route tested against twenty prompt contrasts](demos/certified-semantic-route.md) | Visual companion to the paper. Six of twenty contrasts pass all nine tests; eleven more pass all but the strict pixel thresholds. Single-step patching misses the route because FLUX re-reads the prompt at every step. |
 | 3 | [Forking a generation mid-flight](demos/forking-a-generation.md) | Pause a generation, branch it, edit it, and recover the parent bit-for-bit. A new control shows an early route edit is a near-complete prompt swap (89–97%), so the value is exact branching and localization. Late edits still change identity (fox → cat) while keeping layout, which pixel scores miss. |
 | 4 | [Editing one object by writing its prompt rows](demos/objects-as-editable-values.md) | A fox turns white (0.92 / 0.94 on two seeds) while its neighbour stays put. Subtracting two row values and writing the difference turns a different scene's mug blue. |
 | 5 | [The object interface across FLUX models](demos/objects-across-flux-models.md) | The same interface works on FLUX.2 base, distilled and 9B, and on FLUX.1. The text encoder sets the grain: one token row in FLUX.2 (Qwen3), a noun-phrase window in FLUX.1 (T5). |

@@ -114,8 +114,8 @@ at an unavailable location, still renders five. Nothing silently reloads the ful
 
 A later **sealed generalization-and-safety gate** expands the test. The repair *transfers*: across
 six paraphrases, three held-out seeds, resolutions 256/512/1024, three object families and 6/6
-donor-free serving cells, exact-count performance rises from **37% to 72%** on the expanded panel
-(+33 points at 1024 px). But the **collateral gate fails**: a binary count detector fires on
+donor-free serving cells, exact-count accuracy on the sealed apple panel rises from **23.3% to 51.1%** (+27.8 points, n = 90 cells),
+on held-out object families from **37% to 72%** (20/54 → 39/54), and at 1024 px from 33.3% to 66.7%. But the **collateral gate fails**: a binary count detector fires on
 **58/120 ≈ 48%** of ordinary prompts, p95 RGB-MAD **41.5** against a ≤ 6.0 bound. The post-mortem is
 the useful part — the detector tracks *rendering style*, not object count (style correlation
 **0.928**, object-multiplicity correlation **0.029**). The patch repairs the declared capability and
@@ -175,7 +175,7 @@ For edits A and B, additive composition predicts the pair as Δ_A + Δ_B, so the
 residual** is I_AB = Δ_AB − Δ_A − Δ_B. Across three edit pairs and two seeds (102 branch replays in
 one resident model), the native joint edit reaches progress **0.901** while the additive estimate
 reaches only **0.396**. Injecting the residual at the route and sweeping its dose gives a
-rising-then-falling curve — **0.568, 0.697, 0.821, 0.901, 0.8175** at doses 0.25/0.5/0.75/1.0/1.25
+rising-then-falling curve — **0.568, 0.697, 0.821, 0.901, 0.8167** at doses 0.25/0.5/0.75/1.0/1.25
 — with controls far below: wrong-time 0.657, wrong-site 0.433, sign-flip 0.266, norm-matched sham
 −0.401. A second, independent panel (lighting × color, seeds 52013/52019) reproduces the effect:
 additive ≈ 0.596, residual at dose 1.00 ≈ 0.894, residual-alone ≈ −0.030 (the residual is not a
@@ -225,7 +225,7 @@ that learned composition is impossible, but a clean rejection of this feature se
 | Seam repair generalizes poorly | 1/4 held-out counts; a count-only evaluator cannot certify a semantic repair; likely a family-conditioned path beyond one rank-8 write. |
 | Snake donor caveat | The invalid early coiled S-curve donor is kept as an instrument-quality note; result holds for the pinned Klein 4B recipe only, not a universal topology editor. |
 | Learned composer | Failed on this feature set, split and seed; does not show learned composition is impossible, and claims no semantic ownership of the residual. |
-| Scope | All four are native-consumer trends on pinned Klein 4B checkpoints, not portable modules. |
+| Scope | All four are trends judged on the final image on pinned Klein 4B checkpoints, not portable modules. |
 
 ## Reproduce and inspect
 
