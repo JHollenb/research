@@ -161,8 +161,8 @@ transfers only *part* of the target behavior, so this stays exploratory.
 ## Is this more than swapping the prompt?
 
 Mostly not at step 0; partly at step 2. We checked by re-running the four fork specimens with public code
-([saturn-pub](https://github.com/JHollenb/saturn-pub), branch `pub/bfl-demo-controls`; the scored job ran the
-code committed at `36ba2c9`, results in `1f58e48`) and adding a second arm: run the source prompt up to the cut, then hand the denoiser the
+([saturn-pub `experiments/bfl_demo_controls`](https://github.com/JHollenb/saturn-pub/tree/main/experiments/bfl_demo_controls); the scored job ran the
+code committed at `3411806`, results in `9a3e27d`, merged to main in `0ba632c`) and adding a second arm: run the source prompt up to the cut, then hand the denoiser the
 donor's prompt encoding for the remaining steps, with no route edit. The decision rule was written
 down before the run ([pre-registration](../artifacts/route-vs-prompt-swap/PREREG.md)).
 

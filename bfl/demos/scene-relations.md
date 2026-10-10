@@ -65,7 +65,7 @@ a parameter that does nothing, and only an end-to-end byte comparison catches it
 ## Lesson 3: check the scene before scoring an intervention
 
 We tried a larger, blinded, text-only replication on public code
-([saturn-pub](https://github.com/JHollenb/saturn-pub), branch `pub/bfl-demo-controls`). The
+([saturn-pub `experiments/bfl_demo_controls`](https://github.com/JHollenb/saturn-pub/tree/main/experiments/bfl_demo_controls)). The
 pre-registered plan required the plain left/right prompts to produce requested-side contact in at
 least 10/16 seeds before any intervention was scored.
 
@@ -98,5 +98,5 @@ more than three seeds.
   offline `verify.py`).
 - 2026-10-09 replication attempts: [`replication-2026-10-09/`](../artifacts/scene-relations-and-instance-binding/replication-2026-10-09/)
   (pre-registration, viability sheets, failure note, run report). The unscored images and the blinding
-  key are in saturn-pub `pub/bfl-demo-controls` (commit `c3f7eb7`), under
+  key are in saturn-pub `main` (merge `0ba632c`), under
   `experiments/bfl_demo_controls/results/exp2b/`.
