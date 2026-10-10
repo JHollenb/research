@@ -50,6 +50,11 @@ uv run python -m e3_pooling_scaffold.prepare  # builds payload/ (captions + thei
 `e3_pooling_scaffold/worker.py` also runs without mrun: `python worker.py --data payload --device cuda`, in any
 env with torch and transformers.
 
+## Figures
+
+`~/domains/common/bin/common exec python experiments/figures/make_figures.py` (from the project folder; needs
+matplotlib) rebuilds `../figures/*.png` from the receipts alone.
+
 ## TODO
 
 - **mrun-pub:** E3 and E4 submit through the private fleet client (`mrun.client.submit.launch`). Port both
