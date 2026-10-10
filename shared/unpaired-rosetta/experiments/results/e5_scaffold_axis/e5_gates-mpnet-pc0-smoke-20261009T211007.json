@@ -1,0 +1,42 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "batch_size": 1500,
+      "num_clusters": 10,
+      "num_iterations": 5,
+      "num_restarts": 3,
+      "num_threads": 2,
+      "num_workers": 2
+    },
+    "candidate": "pc0",
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "language": "mpnet",
+    "seed": 0,
+    "smoke": true,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 2
+  },
+  "experiment": "e5_gates-mpnet-pc0-smoke",
+  "results": {
+    "row": {
+      "S1_matched_cosine": 0.46815431118011475,
+      "S2_matched_linear_cka": 0.4742374868819758,
+      "candidate": "pc0",
+      "foscttm_eval_only": 0.5719494747373687,
+      "language": "mpnet",
+      "matched_pairs": 3000
+    }
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "4eaed8bd4c884c8bba2c122eccf85346076574b0",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T04:10:07Z"
+}

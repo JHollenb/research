@@ -1,0 +1,125 @@
+{
+  "config": {
+    "language": "mpnet",
+    "ours_kwargs": {
+      "batch_size": 1500,
+      "num_clusters": 10,
+      "num_iterations": 5,
+      "num_restarts": 3,
+      "num_threads": 2,
+      "num_workers": 2
+    },
+    "pairs": [
+      5,
+      20
+    ],
+    "seed": 0,
+    "selection": [
+      "random",
+      "medoid"
+    ],
+    "smoke": true,
+    "train": "coco_train2014",
+    "train_size": 3000,
+    "validation": "coco_val2014",
+    "validation_size": 2000,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 2
+  },
+  "experiment": "e2_span_bound-smoke",
+  "results": {
+    "rows": [
+      {
+        "energy": 0.08630167467178135,
+        "energy_kyfan": 0.27350726953339755,
+        "linear": {
+          "alpha_mean": 0.14639458899437202,
+          "foscttm": 0.22411455727863933
+        },
+        "oracle_foscttm": 0.04674012006003002,
+        "orthogonal": {
+          "alpha_mean": 0.03492803298364821,
+          "foscttm": 0.3352526263131566
+        },
+        "ours": {
+          "alpha_mean": 0.32194559336714235,
+          "foscttm": 0.05953576788394197
+        },
+        "p": 5,
+        "selection": "random",
+        "span_rank": 5
+      },
+      {
+        "energy": 0.3314908168323128,
+        "energy_kyfan": 0.5560131935359663,
+        "linear": {
+          "alpha_mean": 0.3351310652927982,
+          "foscttm": 0.10559229614807403
+        },
+        "oracle_foscttm": 0.007349424712356179,
+        "orthogonal": {
+          "alpha_mean": 0.1577514573901401,
+          "foscttm": 0.12933191595797897
+        },
+        "ours": {
+          "alpha_mean": 0.38121538043766656,
+          "foscttm": 0.0341623311655828
+        },
+        "p": 20,
+        "selection": "random",
+        "span_rank": 20
+      },
+      {
+        "energy": 0.11574187351782117,
+        "energy_kyfan": 0.27350726953339755,
+        "linear": {
+          "alpha_mean": 0.172650992689881,
+          "foscttm": 0.24162756378189096
+        },
+        "oracle_foscttm": 0.06698699349674837,
+        "orthogonal": {
+          "alpha_mean": 0.06911415002381303,
+          "foscttm": 0.29471210605302645
+        },
+        "ours": {
+          "alpha_mean": 0.24967148466552488,
+          "foscttm": 0.11801400700350174
+        },
+        "p": 5,
+        "selection": "medoid",
+        "span_rank": 5
+      },
+      {
+        "energy": 0.3667614299935578,
+        "energy_kyfan": 0.5560131935359663,
+        "linear": {
+          "alpha_mean": 0.41425214196446813,
+          "foscttm": 0.07055827913956979
+        },
+        "oracle_foscttm": 0.007896198099049526,
+        "orthogonal": {
+          "alpha_mean": 0.22769054498542335,
+          "foscttm": 0.08825512756378188
+        },
+        "ours": {
+          "alpha_mean": 0.3883963606002113,
+          "foscttm": 0.034431215607803906
+        },
+        "p": 20,
+        "selection": "medoid",
+        "span_rank": 20
+      }
+    ]
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "cd68636b74214019bceedf4b171fb674aad82db3",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T00:39:55Z"
+}

@@ -1,0 +1,42 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "candidate": "pc4",
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+    "seed": 0,
+    "smoke": false,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e5_gates-qwen3-8b-gen-pc4",
+  "results": {
+    "row": {
+      "S1_matched_cosine": 0.46886011958122253,
+      "S2_matched_linear_cka": 0.6305645057668388,
+      "candidate": "pc4",
+      "foscttm_eval_only": 0.45896498249124557,
+      "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "matched_pairs": 8780
+    }
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-10T05:26:47Z",
+  "fleet": {
+    "job_id": "job-3d8951bf1988",
+    "host": "beast"
+  }
+}

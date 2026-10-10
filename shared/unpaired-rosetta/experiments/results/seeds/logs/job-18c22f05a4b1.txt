@@ -1,0 +1,36 @@
+<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour
+Downloading cpython-3.12.14-linux-x86_64-gnu (download) (32.5MiB)
+ Downloaded cpython-3.12.14-linux-x86_64-gnu (download)
+Using CPython 3.12.14
+Creating virtual environment at: /mnt/usb-storage/unpaired-rosetta/venv
+   Updating https://github.com/dominik-schnaus/unpaired-rosetta (fdfad84ea488f29702a61a455be71622c4ff5d49)
+Downloading hf-xet (4.0MiB)
+Downloading scipy (33.7MiB)
+Downloading nvidia-nvjitlink (40.5MiB)
+Downloading scikit-learn (8.7MiB)
+Downloading nvidia-nccl-cu13 (206.0MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cufile (1.2MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading sympy (6.0MiB)
+Downloading numpy (15.9MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading networkx (2.0MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading triton (236.5MiB)
+Downloading torch (528.9MiB)
+  × Failed to download `nvidia-cublas==13.1.1.3`
+  ├─▶ Request failed after 3 retries in 126.0s
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/3b/cd/154ca20c38269e05eff77c1464e6c1da89f50a6390b565e9d82e06bc11e1/nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl`
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/3b/cd/154ca20c38269e05eff77c1464e6c1da89f50a6390b565e9d82e06bc11e1/nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl)
+  ╰─▶ operation timed out
+
+hint: `nvidia-cublas` (v13.1.1.3) was included because `unpaired-rosetta-response` (v0.1.0) depends on `torch` (v2.14.1) which depends on `nvidia-cudnn-cu13` (v9.24.0.43) which depends on `nvidia-cublas`

@@ -1,0 +1,23 @@
+[project]
+name = "unpaired-rosetta-response"
+version = "0.1.0"
+description = "Experiments for our response to Schnaus et al. (arXiv 2610.09411), 'Shared Geometry as a Rosetta Stone'"
+requires-python = ">=3.11"
+dependencies = [
+    # Their library, pinned to the commit we read (2026-10-08). Only unpaired_rosetta/ is installed.
+    "unpaired-rosetta @ git+https://github.com/dominik-schnaus/unpaired-rosetta@fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "pylibmgm==1.1.2",  # their pinned MPOpt version
+    "torch>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "huggingface_hub>=0.24",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+# E3 runs on a CUDA host through mrun; these are only needed there.
+gpu = ["transformers>=4.51", "accelerate"]
+
+[tool.uv]
+package = false

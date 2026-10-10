@@ -1,0 +1,123 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 3,
+      "num_workers": 3
+    },
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "k": 10,
+    "languages": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "seed": 0,
+    "smoke": false,
+    "threshold": 0.3,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 3
+  },
+  "experiment": "e5_scaffold_axis",
+  "results": {
+    "rows": [
+      {
+        "arm": "raw",
+        "foscttm": 0.40727488744372187,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+      },
+      {
+        "arm": "drop1",
+        "foscttm": 0.036242121060530263,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+      },
+      {
+        "arm": "detector",
+        "dropped_pcs": [
+          8
+        ],
+        "foscttm": 0.48438731865932966,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "pseudo_pair_r2": [
+          0.855,
+          0.874,
+          0.535,
+          0.736,
+          0.497,
+          0.492,
+          0.573,
+          0.357,
+          0.277,
+          0.427
+        ]
+      },
+      {
+        "arm": "raw",
+        "foscttm": 0.02163206603301651,
+        "language": "qwen3-embedding-8b"
+      },
+      {
+        "arm": "drop1",
+        "foscttm": 0.4020990495247624,
+        "language": "qwen3-embedding-8b"
+      },
+      {
+        "arm": "detector",
+        "dropped_pcs": [],
+        "foscttm": 0.02163206603301651,
+        "language": "qwen3-embedding-8b",
+        "pseudo_pair_r2": [
+          0.959,
+          0.874,
+          0.898,
+          0.752,
+          0.787,
+          0.637,
+          0.582,
+          0.349,
+          0.716,
+          0.715
+        ]
+      },
+      {
+        "arm": "raw",
+        "foscttm": 0.04326763381690846,
+        "language": "mpnet"
+      },
+      {
+        "arm": "drop1",
+        "foscttm": 0.36139269634817406,
+        "language": "mpnet"
+      },
+      {
+        "arm": "detector",
+        "dropped_pcs": [],
+        "foscttm": 0.04326763381690846,
+        "language": "mpnet",
+        "pseudo_pair_r2": [
+          0.925,
+          0.846,
+          0.871,
+          0.694,
+          0.696,
+          0.701,
+          0.682,
+          0.492,
+          0.395,
+          0.638
+        ]
+      }
+    ]
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "4eaed8bd4c884c8bba2c122eccf85346076574b0",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T03:50:02Z"
+}

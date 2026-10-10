@@ -1,0 +1,78 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "batch_size": 1500,
+      "num_clusters": 10,
+      "num_iterations": 5,
+      "num_restarts": 3,
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arms": [
+      "raw",
+      "drop1",
+      "detector"
+    ],
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "k": 10,
+    "languages": [
+      "mpnet"
+    ],
+    "seed": 0,
+    "smoke": true,
+    "threshold": 0.3,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e5_scaffold_axis-mpnet-smoke",
+  "results": {
+    "rows": [
+      {
+        "arm": "raw",
+        "foscttm": 0.19581340670335165,
+        "language": "mpnet"
+      },
+      {
+        "arm": "drop1",
+        "foscttm": 0.5719479739869935,
+        "language": "mpnet"
+      },
+      {
+        "arm": "detector",
+        "dropped_pcs": [
+          8
+        ],
+        "foscttm": 0.29219534767383687,
+        "language": "mpnet",
+        "pseudo_pair_r2": [
+          0.819,
+          0.544,
+          0.722,
+          0.672,
+          0.549,
+          0.574,
+          0.406,
+          0.323,
+          0.296,
+          0.402
+        ]
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-10T04:03:06Z",
+  "fleet": {
+    "job_id": "job-f2549f851d25",
+    "host": "beast"
+  }
+}

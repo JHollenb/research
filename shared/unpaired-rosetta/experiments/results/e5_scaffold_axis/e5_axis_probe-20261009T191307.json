@@ -1,0 +1,90 @@
+{
+  "config": {
+    "rows": 4096
+  },
+  "experiment": "e5_axis_probe",
+  "results": {
+    "rows": [
+      {
+        "abs_corr_top_pc_with_top_vision_pc": 0.006054423994512306,
+        "clipped_cka": 0.6080627827013533,
+        "corr_top_pc_with_length": null,
+        "heldout_r2_top5_pcs_from_vision": [
+          0.15781555107291784,
+          0.8119707783510572,
+          0.588112858528665,
+          0.6446509260298481,
+          0.32255337164577613
+        ],
+        "linear_cka": 0.432714164318981,
+        "linear_cka_after_drop_k": {
+          "0": 0.432714164318981,
+          "1": 0.5828298134438777,
+          "2": 0.42567926113096954,
+          "3": 0.37699940323081094,
+          "5": 0.3078511101762832
+        },
+        "model": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "mutual_knn10_first1024": 0.21611328423023224,
+        "top_pc_variance_share": 0.13768160405817514
+      },
+      {
+        "abs_corr_top_pc_with_top_vision_pc": 0.8892745069953494,
+        "clipped_cka": 0.6586572697163819,
+        "corr_top_pc_with_length": null,
+        "heldout_r2_top5_pcs_from_vision": [
+          0.8905568098080134,
+          0.763816854661229,
+          0.8242288915942104,
+          0.7200797254248934,
+          0.7799089218581603
+        ],
+        "linear_cka": 0.6572596395083901,
+        "linear_cka_after_drop_k": {
+          "0": 0.6572596395083901,
+          "1": 0.49785316996326434,
+          "2": 0.4472236669923543,
+          "3": 0.36624000588719935,
+          "5": 0.2787433662144342
+        },
+        "model": "qwen3-embedding-8b",
+        "mutual_knn10_first1024": 0.3485351502895355,
+        "top_pc_variance_share": 0.05415885453141082
+      },
+      {
+        "abs_corr_top_pc_with_top_vision_pc": 0.9012108535348101,
+        "clipped_cka": 0.635883493497376,
+        "corr_top_pc_with_length": null,
+        "heldout_r2_top5_pcs_from_vision": [
+          0.876426996722973,
+          0.749053749380452,
+          0.8079705337713413,
+          0.7243926038435193,
+          0.6346619295864265
+        ],
+        "linear_cka": 0.6328512002091609,
+        "linear_cka_after_drop_k": {
+          "0": 0.6328512002091609,
+          "1": 0.4655411981694155,
+          "2": 0.40844087650649036,
+          "3": 0.32474309000846324,
+          "5": 0.26247918945609006
+        },
+        "model": "mpnet",
+        "mutual_knn10_first1024": 0.32988280057907104,
+        "top_pc_variance_share": 0.06704597922685375
+      }
+    ]
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "4eaed8bd4c884c8bba2c122eccf85346076574b0",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T02:13:07Z"
+}

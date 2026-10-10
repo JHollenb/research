@@ -1,0 +1,45 @@
+{
+  "cmd": [
+    "uv",
+    "run",
+    "--project",
+    "{env}",
+    "python",
+    "worker.py",
+    "--data",
+    "payload",
+    "--model",
+    "/mnt/big/llm-models/Qwen3-1.7B",
+    "--items",
+    "2048",
+    "--corpora",
+    "coco_train2014",
+    "StanfordParagraphCaptioning",
+    "--save-dir",
+    "/mnt/usb-storage/unpaired-rosetta-e3/20261009T180501"
+  ],
+  "experiment": "unpaired-rosetta-e3-pooling-scaffold",
+  "model": "/mnt/big/llm-models/Qwen3-1.7B",
+  "note": "E3 pooling scaffold: /mnt/big/llm-models/Qwen3-1.7B bf16, 2 corpora x 2048 items x 2 thinking modes, 128 greedy tokens, batch 64, + mean-pooling forwards; one model load; smoke gate first; stop when both corpora report",
+  "payload_manifest": {
+    "corpora": {
+      "StanfordParagraphCaptioning": {
+        "first_caption": "A large building with bars on the windows in front of it. There is people walking in front of the building. There is a street in front of the building with many cars on it.",
+        "num": 2048,
+        "vision_model": "dinov2_vit-b14@224_mean"
+      },
+      "coco_train2014": {
+        "first_caption": "Closeup of bins of food that include broccoli and bread.",
+        "num": 2048,
+        "vision_model": "dinov2_vit-b14@224_mean"
+      }
+    },
+    "items": 2048
+  },
+  "sha256": {
+    "PREREG.md": "02c3b134dbeb10c225b22e4a014788308a3980679d5a61c2ee1ccf8cfb55d4a4",
+    "their_geometry.py": "4d25e6ff7a70d3513e420c232eecc8f924032772501b04fc442979118069879a",
+    "worker.py": "68b0ebe35fe258b0d96deb1357b8716b05ac5ccc9840b00246924ab9d6f50deb"
+  },
+  "vram_mb": 9000
+}

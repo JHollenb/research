@@ -1,0 +1,112 @@
+{
+  "job_id": "job-9426423166f5",
+  "log_sha256": "87a0ef0a8d0ce83100185a6d04ad68564455bc1687960eff5b651376eb914fb0",
+  "report_present": true,
+  "result": {
+    "diagnostics": {
+      "command": [
+        "uv",
+        "run",
+        "--project",
+        "/home/beast/domains/mrun",
+        "python",
+        "worker.py",
+        "--data",
+        "payload",
+        "--model",
+        "/mnt/big/llm-models/Qwen3-1.7B",
+        "--items",
+        "2048",
+        "--corpora",
+        "coco_train2014",
+        "StanfordParagraphCaptioning",
+        "--save-dir",
+        "/mnt/usb-storage/unpaired-rosetta-e3/20261009T181302"
+      ],
+      "cwd": "/mnt/hdd8tb/mrun-work/job-9426423166f5",
+      "log_path": "/mnt/hdd8tb/mrun-work/job-9426423166f5/job.log",
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1791594785.6775386
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1791594785.7282734
+        },
+        {
+          "name": "process.launch",
+          "ts": 1791594785.7648144
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1791594785.7689638
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1791595458.8724067
+        },
+        {
+          "name": "finished",
+          "ts": 1791595458.8749735
+        }
+      ]
+    },
+    "elapsed_s": 673.2,
+    "executed_payload": null,
+    "failure": null,
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "peak_rss_mb": 3592.1,
+    "peak_vram_mb": 7638.0,
+    "returncode": 0,
+    "status": "ok"
+  },
+  "state": "succeeded",
+  "submission": {
+    "cmd": [
+      "uv",
+      "run",
+      "--project",
+      "{env}",
+      "python",
+      "worker.py",
+      "--data",
+      "payload",
+      "--model",
+      "/mnt/big/llm-models/Qwen3-1.7B",
+      "--items",
+      "2048",
+      "--corpora",
+      "coco_train2014",
+      "StanfordParagraphCaptioning",
+      "--save-dir",
+      "/mnt/usb-storage/unpaired-rosetta-e3/20261009T181302"
+    ],
+    "experiment": "unpaired-rosetta-e3-pooling-scaffold",
+    "model": "/mnt/big/llm-models/Qwen3-1.7B",
+    "note": "E3 pooling scaffold: /mnt/big/llm-models/Qwen3-1.7B bf16, 2 corpora x 2048 items x 2 thinking modes, 128 greedy tokens, batch 64, + mean-pooling forwards; one model load; smoke gate first; stop when both corpora report",
+    "payload_manifest": {
+      "corpora": {
+        "StanfordParagraphCaptioning": {
+          "first_caption": "A large building with bars on the windows in front of it. There is people walking in front of the building. There is a street in front of the building with many cars on it.",
+          "num": 2048,
+          "vision_model": "dinov2_vit-b14@224_mean"
+        },
+        "coco_train2014": {
+          "first_caption": "Closeup of bins of food that include broccoli and bread.",
+          "num": 2048,
+          "vision_model": "dinov2_vit-b14@224_mean"
+        }
+      },
+      "items": 2048
+    },
+    "ram_mb": 8000.0,
+    "sha256": {
+      "PREREG.md": "7440d305079f2dbd758300ed351b325a714d6e5c3736744437a1daa799415e48",
+      "their_geometry.py": "4d25e6ff7a70d3513e420c232eecc8f924032772501b04fc442979118069879a",
+      "worker.py": "d07e0a3ac1d5a2425d4ee31f23d6c3aa3233f53142efd7117ffe8de90360d326"
+    },
+    "vram_mb": 10000.0
+  }
+}

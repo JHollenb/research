@@ -1,0 +1,164 @@
+{
+  "verdicts": {
+    "A1": true,
+    "A2": false,
+    "A3": false,
+    "A4": true,
+    "B1": false,
+    "B2": false,
+    "A2_amended": false
+  },
+  "best_depths": {
+    "coco_train2014|mean/mean_caption": 0.8928571428571429,
+    "coco_train2014|nothink/gen_all": 0.8928571428571429,
+    "StanfordParagraphCaptioning|mean/mean_caption": 1.0,
+    "StanfordParagraphCaptioning|nothink/gen_all": 0.8928571428571429
+  },
+  "A3_best": "nothink/gen_tokcentered_loo20/L25",
+  "effects": {
+    "A2 think tokcentered - gen_all|coco_train2014": {
+      "slices": [
+        -0.0206,
+        -0.0217
+      ],
+      "mean": -0.0211,
+      "sign": "-"
+    },
+    "A2 think tokcentered - gen_all|StanfordParagraphCaptioning": {
+      "slices": [
+        -0.0189,
+        -0.0182
+      ],
+      "mean": -0.0185,
+      "sign": "-"
+    },
+    "A2' think loo20 - gen_all|coco_train2014": {
+      "slices": [
+        -0.0144,
+        -0.0147
+      ],
+      "mean": -0.0146,
+      "sign": "-"
+    },
+    "A2' think loo20 - gen_all|StanfordParagraphCaptioning": {
+      "slices": [
+        -0.0098,
+        -0.0107
+      ],
+      "mean": -0.0102,
+      "sign": "-"
+    },
+    "nothink tokcentered - gen_all|coco_train2014": {
+      "slices": [
+        0.0021,
+        0.0056
+      ],
+      "mean": 0.0038,
+      "sign": "+"
+    },
+    "nothink tokcentered - gen_all|StanfordParagraphCaptioning": {
+      "slices": [
+        0.0236,
+        0.0213
+      ],
+      "mean": 0.0225,
+      "sign": "+"
+    },
+    "nothink loo20 - gen_all|coco_train2014": {
+      "slices": [
+        0.0057,
+        0.0104
+      ],
+      "mean": 0.0081,
+      "sign": "+"
+    },
+    "nothink loo20 - gen_all|StanfordParagraphCaptioning": {
+      "slices": [
+        0.0286,
+        0.0254
+      ],
+      "mean": 0.027,
+      "sign": "+"
+    },
+    "A4 mean_caption - mean_all|coco_train2014": {
+      "slices": [
+        0.0006,
+        0.0032
+      ],
+      "mean": 0.0019,
+      "sign": "+"
+    },
+    "A4 mean_caption - mean_all|StanfordParagraphCaptioning": {
+      "slices": [
+        0.0137,
+        0.012
+      ],
+      "mean": 0.0128,
+      "sign": "+"
+    },
+    "B L25 - L28 mean/mean_all|coco_train2014": {
+      "slices": [
+        0.0139,
+        0.0086
+      ],
+      "mean": 0.0112,
+      "sign": "+"
+    },
+    "B L25 - L28 mean/mean_all|StanfordParagraphCaptioning": {
+      "slices": [
+        0.0084,
+        0.0065
+      ],
+      "mean": 0.0074,
+      "sign": "+"
+    },
+    "B L25 - L28 mean/mean_caption|coco_train2014": {
+      "slices": [
+        0.016,
+        0.0089
+      ],
+      "mean": 0.0124,
+      "sign": "+"
+    },
+    "B L25 - L28 mean/mean_caption|StanfordParagraphCaptioning": {
+      "slices": [
+        -0.0015,
+        -0.0018
+      ],
+      "mean": -0.0017,
+      "sign": "-"
+    },
+    "B L25 - L28 nothink/gen_all|coco_train2014": {
+      "slices": [
+        0.0154,
+        0.0148
+      ],
+      "mean": 0.0151,
+      "sign": "+"
+    },
+    "B L25 - L28 nothink/gen_all|StanfordParagraphCaptioning": {
+      "slices": [
+        0.007,
+        0.0099
+      ],
+      "mean": 0.0084,
+      "sign": "+"
+    },
+    "B L25 - L28 think/gen_all|coco_train2014": {
+      "slices": [
+        -0.0002,
+        -0.0036
+      ],
+      "mean": -0.0019,
+      "sign": "-"
+    },
+    "B L25 - L28 think/gen_all|StanfordParagraphCaptioning": {
+      "slices": [
+        -0.0275,
+        -0.0274
+      ],
+      "mean": -0.0274,
+      "sign": "-"
+    }
+  }
+}

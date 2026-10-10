@@ -1,0 +1,1012 @@
+[
+  {
+    "job_id": "job-18c22f05a4b1",
+    "plan": "smoke",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--smoke",
+      "--languages",
+      "mpnet",
+      "--workers",
+      "4"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-2b51a111b6b7",
+    "plan": "smoke",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--smoke",
+      "--languages",
+      "mpnet",
+      "--workers",
+      "4"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-f2549f851d25",
+    "plan": "smoke",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--smoke",
+      "--languages",
+      "mpnet",
+      "--workers",
+      "4"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_scaffold_axis-mpnet-smoke-20261009T210306.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-1f2ae739c694",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "0"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-757ea9c9b148",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "1"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-bce5d654dd3d",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "2"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-ab4d02a257a5",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "3"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-c54e437050c5",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "4"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-db347bd7364f",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "0",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-0a9029339a27",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "1",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-9eee268f30b3",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "2",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-287b28de766f",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "3",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-651bb75998fa",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "4",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-8ae0c4a4b4bc",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "0",
+      "--languages",
+      "qwen3-embedding-8b"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-e3d7e38a05fd",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "1",
+      "--languages",
+      "qwen3-embedding-8b"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-8cf32354545f",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "2",
+      "--languages",
+      "qwen3-embedding-8b"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-6019a1d70247",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "3",
+      "--languages",
+      "qwen3-embedding-8b"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-ad5d7e7902cc",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "4",
+      "--languages",
+      "qwen3-embedding-8b"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-7b07c73abc21",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "0",
+      "--languages",
+      "mpnet"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-f6d08f3f9b4e",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "1",
+      "--languages",
+      "mpnet"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-96d94b9f06ad",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "2",
+      "--languages",
+      "mpnet"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-0a6c244e7580",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "3",
+      "--languages",
+      "mpnet"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-6b667e8027c7",
+    "plan": "full",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "4",
+      "--languages",
+      "mpnet"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-9ee26f33c072",
+    "plan": "full",
+    "args": [
+      "e2_span_bound.draws"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-a19827215cd6",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.d1_check",
+      "--seed",
+      "0"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e1_fidelity_gap/e1_d1_check-20261009T211416.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-cbf5143973c1",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.d1_check",
+      "--seed",
+      "1"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-957d3053dd75",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.d1_check",
+      "--seed",
+      "2"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-a8f714696947",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.d1_check",
+      "--seed",
+      "3"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-a7c0a776f1c9",
+    "plan": "full",
+    "args": [
+      "e1_fidelity_gap.d1_check",
+      "--seed",
+      "4"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-1403f850fd10",
+    "plan": "core",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "1",
+      "--pairs"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e1_fidelity_gap/e1_fidelity_gap-seed1-20261009T223536.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-b003bc02b0f9",
+    "plan": "core",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "2",
+      "--pairs"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e1_fidelity_gap/e1_fidelity_gap-seed2-20261009T223439.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-36651e53d2a1",
+    "plan": "core",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "3",
+      "--pairs"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-7114fa0f6e40",
+    "plan": "core",
+    "args": [
+      "e1_fidelity_gap.run",
+      "--workers",
+      "4",
+      "--seed",
+      "4",
+      "--pairs"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-6eea9f9b70d8",
+    "plan": "core",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "1",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--arms",
+      "raw",
+      "drop1"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_scaffold_axis-raw-drop1-qwen3-8b-gen-seed1-20261009T220755.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-8ee821ee1594",
+    "plan": "core",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "2",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--arms",
+      "raw",
+      "drop1"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_scaffold_axis-raw-drop1-qwen3-8b-gen-seed2-20261009T221331.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-ec7cfe5ab463",
+    "plan": "core",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "3",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--arms",
+      "raw",
+      "drop1"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-e9560c4bcd7e",
+    "plan": "core",
+    "args": [
+      "e5_scaffold_axis.run",
+      "--workers",
+      "4",
+      "--seed",
+      "4",
+      "--languages",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--arms",
+      "raw",
+      "drop1"
+    ],
+    "state": "cancelled",
+    "collected": true
+  },
+  {
+    "job_id": "job-b5e3cbcd613e",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "none"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-none-20261009T215432.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-5e294daab6db",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc0"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc0-20261009T215449.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-467125d1370f",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc1"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc1-20261009T220234.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-b8260d42e184",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc2"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc2-20261009T220158.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-2a558dd13e9b",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc3"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc3-20261009T222639.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-3d8951bf1988",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc4"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc4-20261009T222647.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-dad1b97f5ccd",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "none"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-none-20261009T222729.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-7d64a2f26c05",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc0"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc0-20261009T222843.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-381659314114",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc1"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc1-20261009T223559.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-d781580808d2",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc2"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc2-20261009T223633.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-3acd94d900f6",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc3"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc3-20261009T223826.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-675411021cf9",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc4"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc4-20261009T223759.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-bdab9ffef9ef",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "none"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-none-20261009T223706.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-8de110fe675a",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc0"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc0-20261009T224032.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-ae5251813c81",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc1"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc1-20261009T224546.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-c30051f82aa7",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc2"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc2-20261009T224349.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-c4dda63ac912",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc3"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc3-20261009T224706.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-dabdb0e2a71e",
+    "plan": "gates",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc4"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e5_scaffold_axis/e5_gates-mpnet-pc4-20261009T224831.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-a81ecb931c69",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "none",
+      "--seed",
+      "1"
+    ],
+    "state": "running"
+  },
+  {
+    "job_id": "job-274d22c5f67f",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "none",
+      "--seed",
+      "2"
+    ],
+    "state": "running"
+  },
+  {
+    "job_id": "job-5c890242cca8",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc0",
+      "--seed",
+      "1"
+    ],
+    "state": "running"
+  },
+  {
+    "job_id": "job-03478308f85d",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidate",
+      "pc0",
+      "--seed",
+      "2"
+    ],
+    "state": "running"
+  },
+  {
+    "job_id": "job-e0102f37b057",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "none",
+      "--seed",
+      "1"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-59e0a3f99801",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "none",
+      "--seed",
+      "2"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-001e31daffd6",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc4",
+      "--seed",
+      "1"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-89c27225d0fe",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidate",
+      "pc4",
+      "--seed",
+      "2"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-9a7082cbf095",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "none",
+      "--seed",
+      "1"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-c14d96aad3dd",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "none",
+      "--seed",
+      "2"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-a694947f897d",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc3",
+      "--seed",
+      "1"
+    ],
+    "state": "queued"
+  },
+  {
+    "job_id": "job-d79cf7d5ad5c",
+    "plan": "gates-seeds",
+    "args": [
+      "e5_scaffold_axis.gates",
+      "--workers",
+      "4",
+      "--language",
+      "mpnet",
+      "--candidate",
+      "pc3",
+      "--seed",
+      "2"
+    ],
+    "state": "queued"
+  }
+]

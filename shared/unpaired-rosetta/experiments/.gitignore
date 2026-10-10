@@ -1,0 +1,6 @@
+.storage/
+.venv/
+__pycache__/
+results/**/raw/
+results/**/*.pt
+e3_pooling_scaffold/payload/

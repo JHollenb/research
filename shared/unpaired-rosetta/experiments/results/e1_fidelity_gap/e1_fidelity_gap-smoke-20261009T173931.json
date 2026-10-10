@@ -1,0 +1,105 @@
+{
+  "config": {
+    "language": "mpnet",
+    "oracle_pairs": 2000,
+    "ours_kwargs": {
+      "batch_size": 1500,
+      "num_clusters": 10,
+      "num_iterations": 5,
+      "num_restarts": 3,
+      "num_threads": 2,
+      "num_workers": 2
+    },
+    "pairs": [
+      10
+    ],
+    "seed": 0,
+    "smoke": true,
+    "train": "coco_train2014",
+    "train_size": 3000,
+    "validation": "coco_val2014",
+    "validation_size": 2000,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 2
+  },
+  "experiment": "e1_fidelity_gap-smoke",
+  "results": {
+    "arms": [
+      {
+        "alpha": {
+          "mean": 0.16702401664327687,
+          "q05": -0.07941750822515739,
+          "q25": 0.013312261835639655,
+          "q50": 0.11109316040680854,
+          "q75": 0.26764548407770716,
+          "q95": 0.6166323094001253
+        },
+        "arm": "ours-p0",
+        "distractor_mean": 0.00020997155600917795,
+        "distractor_q99": 0.41258985967582806,
+        "foscttm": 0.23539494747373688,
+        "share_alpha_ge_flux_renders": 0.0,
+        "share_alpha_le_flux_fails": 0.899
+      },
+      {
+        "alpha": {
+          "mean": 0.31917170276578655,
+          "q05": 0.008669654629924224,
+          "q25": 0.15619460130899704,
+          "q50": 0.3099373458820639,
+          "q75": 0.47519922671060805,
+          "q95": 0.664046354514603
+        },
+        "arm": "ours-p10",
+        "distractor_mean": 0.00012417903092540588,
+        "distractor_q99": 0.42702826982044356,
+        "foscttm": 0.08608354177088547,
+        "share_alpha_ge_flux_renders": 0.0,
+        "share_alpha_le_flux_fails": 0.79
+      },
+      {
+        "alpha": {
+          "mean": 0.5327719506031394,
+          "q05": 0.31461710664809034,
+          "q25": 0.44001144066870546,
+          "q50": 0.5370506707531504,
+          "q75": 0.6310075097377281,
+          "q95": 0.7426916904375459
+        },
+        "arm": "orth-oracle",
+        "distractor_mean": 0.00018511413720993499,
+        "distractor_q99": 0.4670368453782306,
+        "foscttm": 0.0037938969484742372,
+        "share_alpha_ge_flux_renders": 0.0,
+        "share_alpha_le_flux_fails": 0.411
+      },
+      {
+        "alpha": {
+          "mean": 0.6415132186929502,
+          "q05": 0.38858719258048835,
+          "q25": 0.553564340876415,
+          "q50": 0.6575683179375061,
+          "q75": 0.7498439465666249,
+          "q95": 0.8353293416987163
+        },
+        "arm": "lin-oracle",
+        "distractor_mean": 0.00010393170256843726,
+        "distractor_q99": 0.5585574990317184,
+        "foscttm": 0.0042021010505252625,
+        "share_alpha_ge_flux_renders": 0.0035,
+        "share_alpha_le_flux_fails": 0.16
+      }
+    ]
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "cd68636b74214019bceedf4b171fb674aad82db3",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T00:39:31Z"
+}

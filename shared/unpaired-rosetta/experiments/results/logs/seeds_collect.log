@@ -1,0 +1,51 @@
+job-1f2ae739c694 cancelled NO RECEIPT
+job-757ea9c9b148 cancelled NO RECEIPT
+job-bce5d654dd3d cancelled NO RECEIPT
+job-ab4d02a257a5 cancelled NO RECEIPT
+job-c54e437050c5 cancelled NO RECEIPT
+job-db347bd7364f cancelled NO RECEIPT
+job-0a9029339a27 cancelled NO RECEIPT
+job-9eee268f30b3 cancelled NO RECEIPT
+job-287b28de766f cancelled NO RECEIPT
+job-651bb75998fa cancelled NO RECEIPT
+job-8ae0c4a4b4bc cancelled NO RECEIPT
+job-e3d7e38a05fd cancelled NO RECEIPT
+job-8cf32354545f cancelled NO RECEIPT
+job-6019a1d70247 cancelled NO RECEIPT
+job-ad5d7e7902cc cancelled NO RECEIPT
+job-7b07c73abc21 cancelled NO RECEIPT
+job-f6d08f3f9b4e cancelled NO RECEIPT
+job-96d94b9f06ad cancelled NO RECEIPT
+job-0a6c244e7580 cancelled NO RECEIPT
+job-6b667e8027c7 cancelled NO RECEIPT
+job-9ee26f33c072 cancelled NO RECEIPT
+job-cbf5143973c1 cancelled NO RECEIPT
+job-957d3053dd75 cancelled NO RECEIPT
+job-a8f714696947 cancelled NO RECEIPT
+job-a7c0a776f1c9 cancelled NO RECEIPT
+job-a19827215cd6 succeeded results/e1_fidelity_gap/e1_d1_check-20261009T211416.json
+job-467125d1370f succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc1-20261009T220234.json
+job-b8260d42e184 succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc2-20261009T220158.json
+job-6eea9f9b70d8 succeeded results/e5_scaffold_axis/e5_scaffold_axis-raw-drop1-qwen3-8b-gen-seed1-20261009T220755.json
+job-36651e53d2a1 cancelled NO RECEIPT
+job-7114fa0f6e40 cancelled NO RECEIPT
+job-8ee821ee1594 succeeded results/e5_scaffold_axis/e5_scaffold_axis-raw-drop1-qwen3-8b-gen-seed2-20261009T221331.json
+job-ec7cfe5ab463 cancelled NO RECEIPT
+job-e9560c4bcd7e cancelled NO RECEIPT
+job-2a558dd13e9b succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc3-20261009T222639.json
+job-3d8951bf1988 succeeded results/e5_scaffold_axis/e5_gates-qwen3-8b-gen-pc4-20261009T222647.json
+job-dad1b97f5ccd succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-none-20261009T222729.json
+job-7d64a2f26c05 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc0-20261009T222843.json
+job-1403f850fd10 succeeded results/e1_fidelity_gap/e1_fidelity_gap-seed1-20261009T223536.json
+job-b003bc02b0f9 succeeded results/e1_fidelity_gap/e1_fidelity_gap-seed2-20261009T223439.json
+job-381659314114 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc1-20261009T223559.json
+job-d781580808d2 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc2-20261009T223633.json
+job-3acd94d900f6 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc3-20261009T223826.json
+job-675411021cf9 succeeded results/e5_scaffold_axis/e5_gates-qwen3-embedding-8b-pc4-20261009T223759.json
+job-bdab9ffef9ef succeeded results/e5_scaffold_axis/e5_gates-mpnet-none-20261009T223706.json
+job-8de110fe675a succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc0-20261009T224032.json
+job-c30051f82aa7 succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc2-20261009T224349.json
+job-ae5251813c81 succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc1-20261009T224546.json
+job-c4dda63ac912 succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc3-20261009T224706.json
+job-dabdb0e2a71e succeeded results/e5_scaffold_axis/e5_gates-mpnet-pc4-20261009T224831.json
+ALLCOLLECTED

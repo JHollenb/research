@@ -1,0 +1,1635 @@
+{
+  "StanfordParagraphCaptioning": {
+    "mean/caption_span_not_found": 0,
+    "mean/mean_all/L14": {
+      "mean": 0.2982086438640903,
+      "slices": [
+        0.2906387678738887,
+        0.30577851985429183
+      ]
+    },
+    "mean/mean_all/L17": {
+      "mean": 0.2942640184043397,
+      "slices": [
+        0.2861600188698695,
+        0.3023680179388098
+      ]
+    },
+    "mean/mean_all/L20": {
+      "mean": 0.2987158532267754,
+      "slices": [
+        0.28812524400301165,
+        0.3093064624505392
+      ]
+    },
+    "mean/mean_all/L22": {
+      "mean": 0.5328177203141475,
+      "slices": [
+        0.5260624359662097,
+        0.5395730046620855
+      ]
+    },
+    "mean/mean_all/L25": {
+      "mean": 0.5902708699524022,
+      "slices": [
+        0.5849126294126116,
+        0.5956291104921929
+      ]
+    },
+    "mean/mean_all/L28": {
+      "mean": 0.5828517421775781,
+      "slices": [
+        0.5765479245853488,
+        0.5891555597698074
+      ]
+    },
+    "mean/mean_caption/L14": {
+      "mean": 0.3246222047849547,
+      "slices": [
+        0.31735839084313183,
+        0.33188601872677753
+      ]
+    },
+    "mean/mean_caption/L17": {
+      "mean": 0.312091884507835,
+      "slices": [
+        0.30401315112585436,
+        0.3201706178898156
+      ]
+    },
+    "mean/mean_caption/L20": {
+      "mean": 0.3035598734698224,
+      "slices": [
+        0.29312213702046463,
+        0.3139976099191801
+      ]
+    },
+    "mean/mean_caption/L22": {
+      "mean": 0.5374439554145518,
+      "slices": [
+        0.5307895803385474,
+        0.5440983304905562
+      ]
+    },
+    "mean/mean_caption/L25": {
+      "mean": 0.5940152118690579,
+      "slices": [
+        0.5887029248756217,
+        0.5993274988624941
+      ]
+    },
+    "mean/mean_caption/L28": {
+      "mean": 0.5957003890902819,
+      "slices": [
+        0.590239387197625,
+        0.6011613909829389
+      ]
+    },
+    "mean/mean_no_first/L14": {
+      "mean": 0.3190771460342831,
+      "slices": [
+        0.3117538241519148,
+        0.3264004679166514
+      ]
+    },
+    "mean/mean_no_first/L17": {
+      "mean": 0.3071639730110979,
+      "slices": [
+        0.29893512481107964,
+        0.31539282121111617
+      ]
+    },
+    "mean/mean_no_first/L20": {
+      "mean": 0.30037774238184184,
+      "slices": [
+        0.2898201232847513,
+        0.31093536147893236
+      ]
+    },
+    "mean/mean_no_first/L22": {
+      "mean": 0.533610853560492,
+      "slices": [
+        0.5269010880821445,
+        0.5403206190388393
+      ]
+    },
+    "mean/mean_no_first/L25": {
+      "mean": 0.5905555516867109,
+      "slices": [
+        0.5852115088295401,
+        0.5958995945438817
+      ]
+    },
+    "mean/mean_no_first/L28": {
+      "mean": 0.5837199903682491,
+      "slices": [
+        0.5775553170268174,
+        0.5898846637096806
+      ]
+    },
+    "nothink/diagnostics": {
+      "examples": [
+        "If you were to imagine seeing a large building with bars on the windows in front of it, with people walking in front of it and a street with many cars on it, the scene would look something like this:\n\n---\n\n### **Visual Description:**\n\nYou are standing in front of a massive, imposing building. The building is tall and has a strong, rectangular shape, with a prominent front entrance. The windows are large and have bars, giving the building a fortress-like appearance. The bars are clearly visible, and the glass is clean, reflecting the sky and the surrounding street.\n\n**People walking in front of the building** are a mix",
+        "Imagine standing in a cozy, modern kitchen, where the lighting is soft and warm, casting gentle shadows across the surfaces. The scene you've described is a vivid and visual one, blending elements of everyday dining with a touch of artistic detail.\n\nHere's a more detailed description of what it would look like to see this scene:\n\n---\n\n**Scene Overview:**\n\nYou're in a bright, well-lit kitchen, the soft glow of overhead lights casting a warm, golden hue across the room. The air is filled with the scent of freshly cooked food, and the atmosphere is both inviting and slightly casual.\n\n---\n\n**The White Round Plate:**\n\n",
+        "Imagine standing on a green tennis court, the grass soft and vibrant under your feet. A woman in a bright blue tennis outfit stands there, her posture poised and confident. She is wearing a blue tennis racket, its strings taut and ready for action. Her eyes are focused, her expression focused and determined. She swings the racket with precision, the ball soaring through the air, a perfect arc that sends it flying toward the net.\n\nAbove her head, the ball is suspended in mid-air, a moment of stillness before the next swing. The court is alive with the sound of the racket hitting the ball, the rhythm of the game",
+        "Imagine standing on a quiet, open road in a rural landscape, where the sky stretches endlessly above the rolling hills and tall, green trees. A large red and white train, with its distinctive design, glides past, its presence a quiet but powerful reminder of the movement that continues to shape the area.\n\nThe train is a marvel of engineering, with its sleek, white body and bold red accents. The front upper part of the train is a striking red, drawing attention as it moves forward, while the sides are adorned with red stripes and trim, adding a dynamic and energetic feel to the design. The roof, a deep grey, provides",
+        "Imagine standing in a bathroom that is a masterpiece of simplicity and elegance. The space is a serene sanctuary, where every detail has been carefully chosen to create a sense of calm and order. The walls are a soft, porcelain white, reflecting the light in a way that makes the room feel both spacious and intimate. The floor is a smooth, clean tile, perhaps a subtle shade of gray or beige, adding a touch of warmth without overpowering the clean lines of the design.\n\nThe bathroom is a blend of the past and the present. There is a vintage charm in the fixtures\u2014old-fashioned faucets with ornate handles, a clawfoot",
+        "Imagine standing in a cozy kitchen, the warm light of a late afternoon casting soft shadows across the room. You're sitting at a wooden table, the surface a clean, white table top, with a small, brown wooden plate placed gently on it. The plate is slightly worn, as if it has seen many meals and stories, but still holds a sense of warmth and purpose.\n\nOn the plate, four small pizzas are arranged in a neat, symmetrical pattern. Each pizza is a perfect circle, with a thin, golden crust that gives them a satisfying crunch. The toppings are vibrant and colorful: a generous layer of broccoli, red peppers"
+      ],
+      "mean_generated_positions": 127.95654296875,
+      "mean_post_think_positions": 0.0,
+      "scaffold_token_share_by_position": [
+        0.49658203125,
+        0.4892578125,
+        0.40478515625,
+        0.40478515625,
+        0.40478515625,
+        0.3701171875,
+        0.26171875,
+        0.2646484375,
+        0.3916015625,
+        0.25927734375,
+        0.25927734375,
+        0.1376953125,
+        0.171875,
+        0.12255859375,
+        0.13232421875,
+        0.11767578125,
+        0.11328125,
+        0.07568359375,
+        0.0986328125,
+        0.0791015625,
+        0.1201171875,
+        0.056640625,
+        0.1162109375,
+        0.0654296875,
+        0.0673828125,
+        0.083984375,
+        0.06884765625,
+        0.06982421875,
+        0.068359375,
+        0.06201171875,
+        0.06787109375,
+        0.06884765625,
+        0.06103515625,
+        0.07373046875,
+        0.06591796875,
+        0.0673828125,
+        0.07177734375,
+        0.06591796875,
+        0.06494140625,
+        0.07083536684513092,
+        0.06985832750797272,
+        0.06790424883365631,
+        0.07816316932439804,
+        0.06985832750797272,
+        0.06692720949649811,
+        0.07718612253665924,
+        0.0654616504907608,
+        0.07278944551944733,
+        0.0659501701593399,
+        0.06790424883365631,
+        0.07718612253665924,
+        0.0659501701593399,
+        0.07376648485660553,
+        0.06936980783939362,
+        0.07767464220523834,
+        0.08109428733587265,
+        0.09379579871892929,
+        0.07865168899297714,
+        0.08793356269598007,
+        0.07914020866155624,
+        0.08353688567876816,
+        0.09037616103887558,
+        0.08597948402166367,
+        0.07816316932439804,
+        0.07376648485660553,
+        0.08842208236455917,
+        0.07034684717655182,
+        0.08695652335882187,
+        0.07718612253665924,
+        0.08549096435308456,
+        0.08695652335882187,
+        0.08158280700445175,
+        0.08500244468450546,
+        0.08451392501592636,
+        0.08500244468450546,
+        0.09086468070745468,
+        0.08402540534734726,
+        0.08207132667303085,
+        0.07327796518802643,
+        0.07914020866155624,
+        0.08744504302740097,
+        0.07816316932439804,
+        0.08255984634160995,
+        0.08255984634160995,
+        0.0649731308221817,
+        0.08451392501592636,
+        0.08695652335882187,
+        0.08353688567876816,
+        0.08744504302740097,
+        0.07132388651371002,
+        0.08646800369024277,
+        0.09086468070745468,
+        0.07132388651371002,
+        0.07376648485660553,
+        0.08695652335882187,
+        0.08451392501592636,
+        0.07767464220523834,
+        0.09135320037603378,
+        0.07816316932439804,
+        0.0947728380560875,
+        0.08842208236455917,
+        0.07865168899297714,
+        0.07523204386234283,
+        0.08304836601018906,
+        0.07914020866155624,
+        0.07914020866155624,
+        0.08207132667303085,
+        0.08304836601018906,
+        0.0659501701593399,
+        0.08451392501592636,
+        0.07376648485660553,
+        0.07718612253665924,
+        0.07425500452518463,
+        0.08451392501592636,
+        0.07572056353092194,
+        0.07181240618228912,
+        0.07816316932439804,
+        0.07620908319950104,
+        0.08158280700445175,
+        0.07132388651371002,
+        0.07865168899297714,
+        0.07523204386234283,
+        0.08597948402166367,
+        0.07767464220523834,
+        0.07230092585086823,
+        0.08939912170171738,
+        0.06985832750797272,
+        0.08402540534734726
+      ],
+      "share_reaching_post_think": 0.0
+    },
+    "nothink/gen_all/L14": {
+      "mean": 0.32752661547724815,
+      "slices": [
+        0.3229957956499049,
+        0.33205743530459136
+      ]
+    },
+    "nothink/gen_all/L17": {
+      "mean": 0.25977298209207017,
+      "slices": [
+        0.25862537537798674,
+        0.2609205888061536
+      ]
+    },
+    "nothink/gen_all/L20": {
+      "mean": 0.2770253051002779,
+      "slices": [
+        0.2735032791708557,
+        0.28054733102970014
+      ]
+    },
+    "nothink/gen_all/L22": {
+      "mean": 0.5448568844754598,
+      "slices": [
+        0.5393680014345892,
+        0.5503457675163305
+      ]
+    },
+    "nothink/gen_all/L25": {
+      "mean": 0.5569321344601494,
+      "slices": [
+        0.5511324101157636,
+        0.5627318588045351
+      ]
+    },
+    "nothink/gen_all/L28": {
+      "mean": 0.5484830219700767,
+      "slices": [
+        0.5440854588444083,
+        0.5528805850957452
+      ]
+    },
+    "nothink/gen_poscentered/L14": {
+      "mean": 0.3148291597651859,
+      "slices": [
+        0.30935326351587783,
+        0.3203050560144939
+      ]
+    },
+    "nothink/gen_poscentered/L17": {
+      "mean": 0.25886394099737764,
+      "slices": [
+        0.25643552953073057,
+        0.2612923524640247
+      ]
+    },
+    "nothink/gen_poscentered/L20": {
+      "mean": 0.2787766592993559,
+      "slices": [
+        0.2749343725725037,
+        0.28261894602620813
+      ]
+    },
+    "nothink/gen_poscentered/L22": {
+      "mean": 0.5316648292655541,
+      "slices": [
+        0.5273547741905791,
+        0.5359748843405293
+      ]
+    },
+    "nothink/gen_poscentered/L25": {
+      "mean": 0.5444223264725037,
+      "slices": [
+        0.5400328960178141,
+        0.5488117569271932
+      ]
+    },
+    "nothink/gen_poscentered/L28": {
+      "mean": 0.5374355432389781,
+      "slices": [
+        0.5341945703973402,
+        0.5406765160806162
+      ]
+    },
+    "nothink/gen_post_think/L14": {
+      "mean": 0.32752661547724815,
+      "slices": [
+        0.3229957956499049,
+        0.33205743530459136
+      ]
+    },
+    "nothink/gen_post_think/L17": {
+      "mean": 0.25977298209207017,
+      "slices": [
+        0.25862537537798674,
+        0.2609205888061536
+      ]
+    },
+    "nothink/gen_post_think/L20": {
+      "mean": 0.2770253051002779,
+      "slices": [
+        0.2735032791708557,
+        0.28054733102970014
+      ]
+    },
+    "nothink/gen_post_think/L22": {
+      "mean": 0.5448568844754598,
+      "slices": [
+        0.5393680014345892,
+        0.5503457675163305
+      ]
+    },
+    "nothink/gen_post_think/L25": {
+      "mean": 0.5569321344601494,
+      "slices": [
+        0.5511324101157636,
+        0.5627318588045351
+      ]
+    },
+    "nothink/gen_post_think/L28": {
+      "mean": 0.5484830219700767,
+      "slices": [
+        0.5440854588444083,
+        0.5528805850957452
+      ]
+    },
+    "nothink/gen_tokcentered/L14": {
+      "mean": 0.3776530536923358,
+      "slices": [
+        0.37212827912723684,
+        0.38317782825743485
+      ]
+    },
+    "nothink/gen_tokcentered/L17": {
+      "mean": 0.30438770135524124,
+      "slices": [
+        0.30137433958033727,
+        0.3074010631301452
+      ]
+    },
+    "nothink/gen_tokcentered/L20": {
+      "mean": 0.3245542798079626,
+      "slices": [
+        0.3198204970646098,
+        0.3292880625513154
+      ]
+    },
+    "nothink/gen_tokcentered/L22": {
+      "mean": 0.5784991997668558,
+      "slices": [
+        0.5749638432906259,
+        0.5820345562430856
+      ]
+    },
+    "nothink/gen_tokcentered/L25": {
+      "mean": 0.5816429928045779,
+      "slices": [
+        0.5777779671280674,
+        0.5855080184810882
+      ]
+    },
+    "nothink/gen_tokcentered/L28": {
+      "mean": 0.5709649768108084,
+      "slices": [
+        0.5677141526526195,
+        0.5742158009689973
+      ]
+    },
+    "nothink/gen_tokcentered_loo20/L25": {
+      "mean": 0.5865780072508312,
+      "slices": [
+        0.5833268704762007,
+        0.5898291440254617
+      ]
+    },
+    "nothink/gen_tokcentered_loo20/L28": {
+      "mean": 0.5754640797749007,
+      "slices": [
+        0.5726384872911295,
+        0.5782896722586717
+      ]
+    },
+    "nothink/loo20_centered_position_share/L25": 0.9081376047013031,
+    "nothink/loo20_centered_position_share/L28": 0.9081376047013031,
+    "num_items": 2048,
+    "reference/mpnet_stored": {
+      "mean": 0.6331674124539387,
+      "slices": [
+        0.6283532881930586,
+        0.6379815367148188
+      ]
+    },
+    "think/diagnostics": {
+      "examples": [
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a large building with bars on the windows, people walking in front of it, and a street with many cars. Let me break this down.\n\nFirst, the building itself. A large building with bars on the windows. That makes me think of a prison, maybe a fortress, or a high-security place. The bars would be on the windows, so the structure is probably tall and imposing. The color of the building could be something like concrete or steel, with maybe some graffiti or murals on the walls. The bars would be visible from the outside",
+        "<think>\nOkay, let's see. The user wants me to imagine what it would look like to see the described scene. So, first, I need to break down the elements given.\n\nThere's a white round plate on a table with a plastic tablecloth. Then, two foil-covered food halves on the white plate, along with golden yellow french fries. Next to the white plate is a short, topless plastic container with white sauce. Diagonally, there are edges of stacked plates, and there are black shadows on the table.\n\nHmm, I need to visualize this. Let me start with the main elements. The white plate",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a woman in a blue tennis outfit standing on a green tennis court, swinging a blue racket, and there's a green tennis ball above her head. Let me break this down.\n\nFirst, the setting: a green tennis court. I should describe the court's appearance. Green grass, maybe some sunlight, the colors of the court. Then the woman in blue tennis outfit. She's on the court, so I need to visualize her posture, maybe her legs, the way she's standing. The racket is blue, so it's a key detail.",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a large red and white train in a rural area. Let me break down the details they provided.\n\nFirst, the train is red and white, with a large red and white color scheme. The front upper part is red, and there are red stripes and trim on the sides. The roof is grey. The train is on tracks in a rural area, with trees and hills in the background, and the ground is dry. The train has many large windows for passengers to look out of.\n\nI need to visualize this scene. Rural areas usually have open spaces",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a very clean and tidy bathroom that's both retro and modern. Let me break this down.\n\nFirst, the bathroom is clean and tidy. So, no clutter, everything is in order. The walls are porcelain white, which is a classic choice for bathrooms. I should mention the white color, maybe the texture of the tiles, like a smooth, glossy finish. \n\nThen, it's both retro and modern. Retro elements could be things like vintage fixtures, maybe a clawfoot bathtub, or old-style mirrors. Modern elements would be sleek, contemporary designs",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see the described scene. Let me break down the elements they provided.\n\nFirst, there are four small pizzas on a brown wooden plate. The plate is on a white table. The pizzas have broccoli, red peppers, and cheese as toppings, with greens in the center for garnish. \n\nI need to visualize this. So, the main elements are the pizzas, the plate, the table, and the garnish. The colors are brown for the plate, white for the table, and the pizzas have green toppings (broccoli and red peppers) and cheese"
+      ],
+      "mean_generated_positions": 128.0,
+      "mean_post_think_positions": 0.0,
+      "scaffold_token_share_by_position": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.95654296875,
+        0.95654296875,
+        0.95654296875,
+        0.95654296875,
+        0.95654296875,
+        0.9560546875,
+        0.9560546875,
+        0.556640625,
+        0.2431640625,
+        0.30712890625,
+        0.349609375,
+        0.349609375,
+        0.35009765625,
+        0.3466796875,
+        0.34765625,
+        0.35693359375,
+        0.27978515625,
+        0.29345703125,
+        0.1474609375,
+        0.23828125,
+        0.23828125,
+        0.27294921875,
+        0.1923828125,
+        0.142578125,
+        0.16796875,
+        0.068359375,
+        0.0673828125,
+        0.07470703125,
+        0.078125,
+        0.068359375,
+        0.0703125,
+        0.06298828125,
+        0.07177734375,
+        0.0625,
+        0.0712890625,
+        0.072265625,
+        0.06640625,
+        0.0673828125,
+        0.07421875,
+        0.068359375,
+        0.08056640625,
+        0.072265625,
+        0.07373046875,
+        0.07568359375,
+        0.0673828125,
+        0.08447265625,
+        0.0703125,
+        0.06689453125,
+        0.0732421875,
+        0.0703125,
+        0.06640625,
+        0.06640625,
+        0.068359375,
+        0.0712890625,
+        0.07666015625,
+        0.07177734375,
+        0.06005859375,
+        0.0751953125,
+        0.06884765625,
+        0.0703125,
+        0.0673828125,
+        0.06591796875,
+        0.06884765625,
+        0.06591796875,
+        0.0654296875,
+        0.068359375,
+        0.05859375,
+        0.07421875,
+        0.068359375,
+        0.0595703125,
+        0.06884765625,
+        0.06591796875,
+        0.0732421875,
+        0.0595703125,
+        0.06298828125,
+        0.0693359375,
+        0.064453125,
+        0.064453125,
+        0.0615234375,
+        0.0693359375,
+        0.068359375,
+        0.0712890625,
+        0.0673828125,
+        0.0654296875,
+        0.0673828125,
+        0.05908203125,
+        0.060546875,
+        0.05615234375,
+        0.0673828125,
+        0.06396484375,
+        0.06201171875,
+        0.0712890625,
+        0.06005859375,
+        0.0625,
+        0.06640625,
+        0.06884765625,
+        0.05419921875,
+        0.0654296875,
+        0.06640625,
+        0.0634765625,
+        0.0625,
+        0.0625,
+        0.0712890625,
+        0.0654296875,
+        0.06591796875,
+        0.068359375,
+        0.0625,
+        0.06591796875,
+        0.0625,
+        0.06201171875,
+        0.06591796875,
+        0.05908203125,
+        0.064453125,
+        0.0625,
+        0.0625,
+        0.06884765625,
+        0.0712890625,
+        0.06103515625
+      ],
+      "share_reaching_post_think": 0.0
+    },
+    "think/gen_all/L14": {
+      "mean": 0.29951727898212677,
+      "slices": [
+        0.29506886298159035,
+        0.30396569498266324
+      ]
+    },
+    "think/gen_all/L17": {
+      "mean": 0.23821023777021264,
+      "slices": [
+        0.23401212431163138,
+        0.2424083512287939
+      ]
+    },
+    "think/gen_all/L20": {
+      "mean": 0.2554938614823633,
+      "slices": [
+        0.25061017308686034,
+        0.26037754987786627
+      ]
+    },
+    "think/gen_all/L22": {
+      "mean": 0.5192124068287274,
+      "slices": [
+        0.5147869966448462,
+        0.5236378170126085
+      ]
+    },
+    "think/gen_all/L25": {
+      "mean": 0.5639978828719809,
+      "slices": [
+        0.559269299442857,
+        0.568726466301105
+      ]
+    },
+    "think/gen_all/L28": {
+      "mean": 0.5914365495263665,
+      "slices": [
+        0.5867848611855407,
+        0.5960882378671921
+      ]
+    },
+    "think/gen_poscentered/L14": {
+      "mean": 0.29682523107286735,
+      "slices": [
+        0.2914581041595322,
+        0.3021923579862025
+      ]
+    },
+    "think/gen_poscentered/L17": {
+      "mean": 0.23750219576887524,
+      "slices": [
+        0.23202134539728664,
+        0.24298304614046384
+      ]
+    },
+    "think/gen_poscentered/L20": {
+      "mean": 0.2549789932918703,
+      "slices": [
+        0.24923025860729445,
+        0.26072772797644617
+      ]
+    },
+    "think/gen_poscentered/L22": {
+      "mean": 0.5052612215251875,
+      "slices": [
+        0.5012731406243706,
+        0.5092493024260043
+      ]
+    },
+    "think/gen_poscentered/L25": {
+      "mean": 0.5558735819361913,
+      "slices": [
+        0.5522118744577958,
+        0.5595352894145867
+      ]
+    },
+    "think/gen_poscentered/L28": {
+      "mean": 0.582584069314201,
+      "slices": [
+        0.578913591300358,
+        0.586254547328044
+      ]
+    },
+    "think/gen_post_think/L14": {
+      "mean": 0.29951727898212677,
+      "slices": [
+        0.29506886298159035,
+        0.30396569498266324
+      ]
+    },
+    "think/gen_post_think/L17": {
+      "mean": 0.23821023777021264,
+      "slices": [
+        0.23401212431163138,
+        0.2424083512287939
+      ]
+    },
+    "think/gen_post_think/L20": {
+      "mean": 0.2554938614823633,
+      "slices": [
+        0.25061017308686034,
+        0.26037754987786627
+      ]
+    },
+    "think/gen_post_think/L22": {
+      "mean": 0.5192124068287274,
+      "slices": [
+        0.5147869966448462,
+        0.5236378170126085
+      ]
+    },
+    "think/gen_post_think/L25": {
+      "mean": 0.5639978828719809,
+      "slices": [
+        0.559269299442857,
+        0.568726466301105
+      ]
+    },
+    "think/gen_post_think/L28": {
+      "mean": 0.5914365495263665,
+      "slices": [
+        0.5867848611855407,
+        0.5960882378671921
+      ]
+    },
+    "think/gen_tokcentered/L14": {
+      "mean": 0.2919497940135216,
+      "slices": [
+        0.28570825526670446,
+        0.29819133276033877
+      ]
+    },
+    "think/gen_tokcentered/L17": {
+      "mean": 0.2329180359501612,
+      "slices": [
+        0.22624171870501728,
+        0.23959435319530512
+      ]
+    },
+    "think/gen_tokcentered/L20": {
+      "mean": 0.24915326406335742,
+      "slices": [
+        0.24184172175114002,
+        0.25646480637557484
+      ]
+    },
+    "think/gen_tokcentered/L22": {
+      "mean": 0.4981908901595895,
+      "slices": [
+        0.49230088983249726,
+        0.5040808904866818
+      ]
+    },
+    "think/gen_tokcentered/L25": {
+      "mean": 0.5412786077383203,
+      "slices": [
+        0.5358410555734695,
+        0.5467161599031711
+      ]
+    },
+    "think/gen_tokcentered/L28": {
+      "mean": 0.5729048162687123,
+      "slices": [
+        0.5678785314292325,
+        0.5779311011081921
+      ]
+    },
+    "think/gen_tokcentered_loo20/L25": {
+      "mean": 0.5532980312066302,
+      "slices": [
+        0.5485536254665444,
+        0.5580424369467162
+      ]
+    },
+    "think/gen_tokcentered_loo20/L28": {
+      "mean": 0.581198717411519,
+      "slices": [
+        0.5770029509430646,
+        0.5853944838799732
+      ]
+    },
+    "think/loo20_centered_position_share/L25": 0.9280967712402344,
+    "think/loo20_centered_position_share/L28": 0.9280967712402344
+  },
+  "batch_by_corpus": {
+    "StanfordParagraphCaptioning": 16,
+    "coco_train2014": 64
+  },
+  "coco_train2014": {
+    "mean/caption_span_not_found": 0,
+    "mean/mean_all/L14": {
+      "mean": 0.32753086955002647,
+      "slices": [
+        0.3230836878728364,
+        0.3319780512272165
+      ]
+    },
+    "mean/mean_all/L17": {
+      "mean": 0.3414823964386621,
+      "slices": [
+        0.3373901941258539,
+        0.3455745987514703
+      ]
+    },
+    "mean/mean_all/L20": {
+      "mean": 0.33213596908575693,
+      "slices": [
+        0.329490557090324,
+        0.3347813810811899
+      ]
+    },
+    "mean/mean_all/L22": {
+      "mean": 0.4681534399231634,
+      "slices": [
+        0.465403978584105,
+        0.47090290126222173
+      ]
+    },
+    "mean/mean_all/L25": {
+      "mean": 0.515747915321124,
+      "slices": [
+        0.5151473672872489,
+        0.5163484633549992
+      ]
+    },
+    "mean/mean_all/L28": {
+      "mean": 0.5045218537938145,
+      "slices": [
+        0.501282080456278,
+        0.5077616271313512
+      ]
+    },
+    "mean/mean_caption/L14": {
+      "mean": 0.33008943736934876,
+      "slices": [
+        0.3244065252653656,
+        0.3357723494733319
+      ]
+    },
+    "mean/mean_caption/L17": {
+      "mean": 0.34704191326577255,
+      "slices": [
+        0.342799526074913,
+        0.3512843004566321
+      ]
+    },
+    "mean/mean_caption/L20": {
+      "mean": 0.33879018036506026,
+      "slices": [
+        0.33586651361759456,
+        0.3417138471125259
+      ]
+    },
+    "mean/mean_caption/L22": {
+      "mean": 0.47274154258584805,
+      "slices": [
+        0.4696868473370178,
+        0.4757962378346783
+      ]
+    },
+    "mean/mean_caption/L25": {
+      "mean": 0.5189007367973625,
+      "slices": [
+        0.5179699577711839,
+        0.519831515823541
+      ]
+    },
+    "mean/mean_caption/L28": {
+      "mean": 0.5064519515020338,
+      "slices": [
+        0.5019278338335244,
+        0.5109760691705433
+      ]
+    },
+    "mean/mean_no_first/L14": {
+      "mean": 0.3310948060139045,
+      "slices": [
+        0.3260606457127014,
+        0.33612896631510764
+      ]
+    },
+    "mean/mean_no_first/L17": {
+      "mean": 0.3456004306828761,
+      "slices": [
+        0.3412220038777745,
+        0.3499788574879777
+      ]
+    },
+    "mean/mean_no_first/L20": {
+      "mean": 0.3340805875706159,
+      "slices": [
+        0.33143260315705353,
+        0.33672857198417827
+      ]
+    },
+    "mean/mean_no_first/L22": {
+      "mean": 0.46921874873722624,
+      "slices": [
+        0.46645044253458984,
+        0.4719870549398627
+      ]
+    },
+    "mean/mean_no_first/L25": {
+      "mean": 0.5163272324682238,
+      "slices": [
+        0.5156869113671575,
+        0.51696755356929
+      ]
+    },
+    "mean/mean_no_first/L28": {
+      "mean": 0.5029228209056215,
+      "slices": [
+        0.4998824328170615,
+        0.5059632089941815
+      ]
+    },
+    "nothink/diagnostics": {
+      "examples": [
+        "Imagine standing in a kitchen, the air filled with the scent of fresh bread and the earthy aroma of broccoli. You look down and see a row of bins, each one neatly stacked with colorful, diverse food items. The bins are arranged in a way that makes sense to the person who uses them \u2014 perhaps a grocery store, a home kitchen, or a community pantry.\n\nEach bin is a small, rectangular container, maybe a few inches high, with a lid that's easy to open and close. Inside, the bins are filled with a variety of food: whole grains like whole wheat bread, fresh vegetables such as broccoli, and other",
+        "Imagine standing at the base of a tall tree, its branches stretching high into the sky, and a giraffe gracefully grazing from the top. The air is crisp, and the sunlight filters through the leaves, casting dappled shadows on the ground. The giraffe's long, slender neck sways as it reaches for the highest leaves, its eyes wide with curiosity and focus. Its tongue, long and sticky, flicks back and forth, sipping the nectar or leaves that are just out of reach. The sound of its soft, deliberate chewing is a gentle rhythm, blending with the rustle of the leaves and the distant calls",
+        "If I were to imagine what it would look like to see a flower vase sitting on a porch stand, the scene would be peaceful, inviting, and filled with the soft hues of nature. Here's a vivid description:\n\nThe flower vase is placed on a weathered, wooden porch stand, its surface worn by time and the elements. The stand itself is sturdy, with a rustic wooden frame that has been weathered by the sun and rain. It's likely painted in a warm, earthy tone, such as a soft beige or a muted green, to blend with the surrounding environment.\n\nThe flower vase is a simple, elegant piece,",
+        "To imagine seeing a zebra grazing on lush green grass in a field, I would describe it in vivid, sensory detail, capturing the colors, sounds, and atmosphere of the scene. Here's a vivid depiction:\n\n---\n\n**The scene unfolds in a vast, open field, where the sun casts golden rays across the soft, emerald grass.** The air is warm and still, carrying the scent of earth and wildflowers. A zebra, sleek and powerful, stands in the center of the field, its coat a striking contrast against the green backdrop. Its long, striped coat is a masterpiece of nature, each stripe a subtle pattern",
+        "Imagine standing on a sunny day, the sun casting golden rays across the sky, and you're standing in a park or a beachside area, surrounded by the warmth of the day. You're wearing a sleek, modern swim suit, the fabric flowing smoothly with the breeze. As you walk, you hold a parasol, its canopy a soft shade of green, providing a cool refuge from the sun.\n\nThe parasol is a symbol of comfort and protection, and as you move through the sunlight, it casts a gentle shadow on the ground. The air is warm, but the parasol offers a moment of respite, a place to",
+        "Imagine standing on a vast, emerald-green field, the air crisp and filled with the scent of earth and wildflowers. You're looking up, wide-eyed, as two men, their backs to you, mount their horses. The horses are sleek and powerful, their hooves kicking up dust as they take off. You can see the gleam of their armor, the gleam of their eyes, the way they move with a grace that seems almost otherworldly. \n\nThe men are tall, their figures silhouetted against the sky, their faces turned toward the horizon. You can see the determination in their eyes, the"
+      ],
+      "mean_generated_positions": 127.9443359375,
+      "mean_post_think_positions": 0.0,
+      "scaffold_token_share_by_position": [
+        0.6806640625,
+        0.6279296875,
+        0.373046875,
+        0.4130859375,
+        0.12890625,
+        0.24560546875,
+        0.17431640625,
+        0.1162109375,
+        0.142578125,
+        0.109375,
+        0.0908203125,
+        0.10546875,
+        0.11669921875,
+        0.08203125,
+        0.07763671875,
+        0.07373046875,
+        0.08154296875,
+        0.068359375,
+        0.08837890625,
+        0.06298828125,
+        0.07568359375,
+        0.0712890625,
+        0.06787109375,
+        0.0693359375,
+        0.06396484375,
+        0.0615234375,
+        0.0693359375,
+        0.07373046875,
+        0.08349609375,
+        0.0751953125,
+        0.07958984375,
+        0.08544921875,
+        0.08740234375,
+        0.07568359375,
+        0.0771484375,
+        0.08544921875,
+        0.06884765625,
+        0.07861328125,
+        0.07958984375,
+        0.078125,
+        0.07421875,
+        0.07373046875,
+        0.07327796518802643,
+        0.08597948402166367,
+        0.08158280700445175,
+        0.07962872833013535,
+        0.07718612253665924,
+        0.06790424883365631,
+        0.09281875938177109,
+        0.08207132667303085,
+        0.07962872833013535,
+        0.09135320037603378,
+        0.08500244468450546,
+        0.09233023971319199,
+        0.08939912170171738,
+        0.09428431838750839,
+        0.08207132667303085,
+        0.09428431838750839,
+        0.09379579871892929,
+        0.07718612253665924,
+        0.09330727905035019,
+        0.08451392501592636,
+        0.09233023971319199,
+        0.08549096435308456,
+        0.09135320037603378,
+        0.0962383970618248,
+        0.08207132667303085,
+        0.08939912170171738,
+        0.10063507407903671,
+        0.09233023971319199,
+        0.09916951507329941,
+        0.08011724799871445,
+        0.08646800369024277,
+        0.08255984634160995,
+        0.09086468070745468,
+        0.10356619209051132,
+        0.07962872833013535,
+        0.08011724799871445,
+        0.08207132667303085,
+        0.08304836601018906,
+        0.08744504302740097,
+        0.08988764137029648,
+        0.08304836601018906,
+        0.09330727905035019,
+        0.09233023971319199,
+        0.08695652335882187,
+        0.08549096435308456,
+        0.08109428733587265,
+        0.08744504302740097,
+        0.08939912170171738,
+        0.08207132667303085,
+        0.09916951507329941,
+        0.08207132667303085,
+        0.08988764137029648,
+        0.07572056353092194,
+        0.07034684717655182,
+        0.08011724799871445,
+        0.09281875938177109,
+        0.08744504302740097,
+        0.08597948402166367,
+        0.08744504302740097,
+        0.08158280700445175,
+        0.07767464220523834,
+        0.08602150529623032,
+        0.08162267506122589,
+        0.08651026338338852,
+        0.08553274720907211,
+        0.06989247351884842,
+        0.08162267506122589,
+        0.07478006184101105,
+        0.08504398912191391,
+        0.08553274720907211,
+        0.08797653764486313,
+        0.08895405381917953,
+        0.07966764271259308,
+        0.0826001986861229,
+        0.09677419066429138,
+        0.07184750586748123,
+        0.0830889567732811,
+        0.07917888462543488,
+        0.08504398912191391,
+        0.09530791640281677,
+        0.07673509418964386,
+        0.0840664729475975,
+        0.07869012653827667,
+        0.08899755775928497,
+        0.07921760529279709,
+        0.08655256778001785
+      ],
+      "share_reaching_post_think": 0.0
+    },
+    "nothink/gen_all/L14": {
+      "mean": 0.41894583268744123,
+      "slices": [
+        0.42870800422223887,
+        0.40918366115264365
+      ]
+    },
+    "nothink/gen_all/L17": {
+      "mean": 0.3646881256692291,
+      "slices": [
+        0.3738319906675324,
+        0.35554426067092576
+      ]
+    },
+    "nothink/gen_all/L20": {
+      "mean": 0.37389974112906066,
+      "slices": [
+        0.38419408081556394,
+        0.3636054014425574
+      ]
+    },
+    "nothink/gen_all/L22": {
+      "mean": 0.5944356625031735,
+      "slices": [
+        0.6006987336288467,
+        0.5881725913775001
+      ]
+    },
+    "nothink/gen_all/L25": {
+      "mean": 0.6022482494748508,
+      "slices": [
+        0.606891966697478,
+        0.5976045322522235
+      ]
+    },
+    "nothink/gen_all/L28": {
+      "mean": 0.5871346720816564,
+      "slices": [
+        0.5914662241145118,
+        0.582803120048801
+      ]
+    },
+    "nothink/gen_poscentered/L14": {
+      "mean": 0.40051608696063623,
+      "slices": [
+        0.40695693977403735,
+        0.3940752341472351
+      ]
+    },
+    "nothink/gen_poscentered/L17": {
+      "mean": 0.35635449061826724,
+      "slices": [
+        0.3622747718333089,
+        0.35043420940322556
+      ]
+    },
+    "nothink/gen_poscentered/L20": {
+      "mean": 0.370968491779991,
+      "slices": [
+        0.3779049881106681,
+        0.364031995449314
+      ]
+    },
+    "nothink/gen_poscentered/L22": {
+      "mean": 0.5833078528811408,
+      "slices": [
+        0.5875647382824982,
+        0.5790509674797834
+      ]
+    },
+    "nothink/gen_poscentered/L25": {
+      "mean": 0.5909725858349447,
+      "slices": [
+        0.5942037432299148,
+        0.5877414284399747
+      ]
+    },
+    "nothink/gen_poscentered/L28": {
+      "mean": 0.5783021091453895,
+      "slices": [
+        0.5811995764691389,
+        0.57540464182164
+      ]
+    },
+    "nothink/gen_post_think/L14": {
+      "mean": 0.41894583268744123,
+      "slices": [
+        0.42870800422223887,
+        0.40918366115264365
+      ]
+    },
+    "nothink/gen_post_think/L17": {
+      "mean": 0.3646881256692291,
+      "slices": [
+        0.3738319906675324,
+        0.35554426067092576
+      ]
+    },
+    "nothink/gen_post_think/L20": {
+      "mean": 0.37389974112906066,
+      "slices": [
+        0.38419408081556394,
+        0.3636054014425574
+      ]
+    },
+    "nothink/gen_post_think/L22": {
+      "mean": 0.5944356625031735,
+      "slices": [
+        0.6006987336288467,
+        0.5881725913775001
+      ]
+    },
+    "nothink/gen_post_think/L25": {
+      "mean": 0.6022482494748508,
+      "slices": [
+        0.606891966697478,
+        0.5976045322522235
+      ]
+    },
+    "nothink/gen_post_think/L28": {
+      "mean": 0.5871346720816564,
+      "slices": [
+        0.5914662241145118,
+        0.582803120048801
+      ]
+    },
+    "nothink/gen_tokcentered/L14": {
+      "mean": 0.4416989087231356,
+      "slices": [
+        0.4467690582625455,
+        0.43662875918372573
+      ]
+    },
+    "nothink/gen_tokcentered/L17": {
+      "mean": 0.3873741224569438,
+      "slices": [
+        0.39211014504427794,
+        0.3826380998696097
+      ]
+    },
+    "nothink/gen_tokcentered/L20": {
+      "mean": 0.40144232207311437,
+      "slices": [
+        0.4082510975192016,
+        0.39463354662702715
+      ]
+    },
+    "nothink/gen_tokcentered/L22": {
+      "mean": 0.605283110522443,
+      "slices": [
+        0.6087586433346408,
+        0.6018075777102453
+      ]
+    },
+    "nothink/gen_tokcentered/L25": {
+      "mean": 0.6069036292769765,
+      "slices": [
+        0.6092297658923409,
+        0.604577492661612
+      ]
+    },
+    "nothink/gen_tokcentered/L28": {
+      "mean": 0.5909543888754571,
+      "slices": [
+        0.5935362420661935,
+        0.5883725356847208
+      ]
+    },
+    "nothink/gen_tokcentered_loo20/L25": {
+      "mean": 0.6118291371128821,
+      "slices": [
+        0.6134825840092794,
+        0.610175690216485
+      ]
+    },
+    "nothink/gen_tokcentered_loo20/L28": {
+      "mean": 0.5952266173598093,
+      "slices": [
+        0.5972105201856112,
+        0.5932427145340076
+      ]
+    },
+    "nothink/loo20_centered_position_share/L25": 0.9012441323512574,
+    "nothink/loo20_centered_position_share/L28": 0.9012441323512574,
+    "num_items": 2048,
+    "reference/mpnet_stored": {
+      "mean": 0.6874736160799624,
+      "slices": [
+        0.6845891003376794,
+        0.6903581318222454
+      ]
+    },
+    "think/diagnostics": {
+      "examples": [
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a close-up of bins of food that include broccoli and bread. Let me break this down.\n\nFirst, I need to visualize the scene. The bins are probably filled with various food items. Broccoli is a vegetable, so it's green, maybe a bit fibrous. Bread is a staple, so it's white, maybe slightly stale, and has a crumbly texture. The bins could be in a kitchen or a grocery store. \n\nI should consider the lighting. Natural light would make the colors pop, but maybe there's a soft light",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a giraffe eating from the top of a tree. Let me start by breaking down the scenario.\n\nFirst, I need to visualize the setting. A giraffe in a savannah, maybe a tall tree like a baobab or a acacia. The giraffe is standing tall, stretching its neck. The tree is high up, so the giraffe has to reach. The environment is probably sunny, with some grass and maybe some other animals around.\n\nNext, the giraffe's movements. It's moving slowly, maybe with a calm demeanor.",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a flower vase on a porch stand. Let me start by visualizing the scene. A porch stand is usually a wooden or stone structure, maybe with a railing. The flower vase is on it, so I need to think about the setting.\n\nFirst, the porch itself. It's a porch, so it's probably outside, maybe in a garden or a backyard. The sun is probably shining, so the light would be warm and golden. The porch stand could be made of wood, with a slight slope to hold the flower vase. The vase might",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a zebra grazing on lush green grass in a field. Let me start by breaking down the elements involved.\n\nFirst, the setting: a field with lush green grass. I need to describe the grass in detail. Maybe mention the color, the texture, how it looks under the sun. The zebra itself is a key element. I should think about its appearance\u2014stripes, coloration, movement. How does a zebra move? Maybe describe the way it walks, the way its body moves, the way it looks when grazing.\n\nThen,",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a woman in a swim suit holding a parasol on a sunny day. Let me break this down.\n\nFirst, I need to visualize the setting. A sunny day means the sun is out, so the environment is bright and warm. The woman is in a swim suit, which is typically light-colored, maybe white or pastel, to contrast with the sunlight. She's holding a parasol, which is a traditional umbrella, but maybe a bit more decorative. \n\nI should consider the lighting. The sun is high, so the light is direct,",
+        "<think>\nOkay, the user wants me to imagine what it would look like to see a couple of men riding horses on top of a green field. Let me break this down.\n\nFirst, I need to visualize the setting. A green field suggests a large, open area, maybe a meadow or a pasture. The men are riding horses, so I should think about the horses' appearance\u2014maybe they're wild or domesticated, but since it's a scene, maybe they're wild. The couple is on top of the field, so they're elevated, perhaps on a hill or a high point.\n\nI should consider the lighting."
+      ],
+      "mean_generated_positions": 128.0,
+      "mean_post_think_positions": 0.0,
+      "scaffold_token_share_by_position": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.99951171875,
+        0.96240234375,
+        0.96240234375,
+        0.96240234375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.9599609375,
+        0.77490234375,
+        0.10498046875,
+        0.119140625,
+        0.16845703125,
+        0.1552734375,
+        0.1103515625,
+        0.146484375,
+        0.146484375,
+        0.1259765625,
+        0.18701171875,
+        0.18701171875,
+        0.18701171875,
+        0.16650390625,
+        0.15673828125,
+        0.13720703125,
+        0.14990234375,
+        0.13427734375,
+        0.1259765625,
+        0.14013671875,
+        0.1572265625,
+        0.1591796875,
+        0.1171875,
+        0.146484375,
+        0.142578125,
+        0.1337890625,
+        0.1328125,
+        0.13720703125,
+        0.11376953125,
+        0.08642578125,
+        0.08203125,
+        0.07763671875,
+        0.0986328125,
+        0.09326171875,
+        0.1025390625,
+        0.10205078125,
+        0.08740234375,
+        0.08642578125,
+        0.080078125,
+        0.08740234375,
+        0.08349609375,
+        0.07666015625,
+        0.078125,
+        0.07470703125,
+        0.0771484375,
+        0.08056640625,
+        0.0810546875,
+        0.08447265625,
+        0.0830078125,
+        0.0947265625,
+        0.08642578125,
+        0.087890625,
+        0.08447265625,
+        0.07568359375,
+        0.0751953125,
+        0.08056640625,
+        0.0703125,
+        0.07568359375,
+        0.07861328125,
+        0.07470703125,
+        0.078125,
+        0.08056640625,
+        0.07861328125,
+        0.078125,
+        0.068359375,
+        0.0703125,
+        0.07177734375,
+        0.07568359375,
+        0.080078125,
+        0.07763671875,
+        0.07763671875,
+        0.07763671875,
+        0.07666015625,
+        0.068359375,
+        0.07177734375,
+        0.06591796875,
+        0.0732421875,
+        0.076171875,
+        0.08154296875,
+        0.0732421875,
+        0.08544921875,
+        0.07763671875,
+        0.08203125,
+        0.07080078125,
+        0.07958984375,
+        0.07861328125,
+        0.072265625,
+        0.0732421875,
+        0.0703125,
+        0.07763671875,
+        0.07177734375,
+        0.07177734375,
+        0.07275390625,
+        0.07568359375,
+        0.0703125,
+        0.0771484375,
+        0.07568359375,
+        0.06640625,
+        0.07373046875,
+        0.07373046875,
+        0.0732421875,
+        0.07666015625,
+        0.078125,
+        0.0751953125,
+        0.07763671875,
+        0.08544921875,
+        0.0732421875,
+        0.07666015625,
+        0.078125,
+        0.076171875,
+        0.0712890625,
+        0.0732421875
+      ],
+      "share_reaching_post_think": 0.0
+    },
+    "think/gen_all/L14": {
+      "mean": 0.41241700950700017,
+      "slices": [
+        0.4183267358933316,
+        0.40650728312066875
+      ]
+    },
+    "think/gen_all/L17": {
+      "mean": 0.3576403356111381,
+      "slices": [
+        0.3655732718486393,
+        0.34970739937363693
+      ]
+    },
+    "think/gen_all/L20": {
+      "mean": 0.3674497917437221,
+      "slices": [
+        0.3762674560802752,
+        0.35863212740716904
+      ]
+    },
+    "think/gen_all/L22": {
+      "mean": 0.5892507053844842,
+      "slices": [
+        0.5976244557487966,
+        0.5808769550201718
+      ]
+    },
+    "think/gen_all/L25": {
+      "mean": 0.6213063597209691,
+      "slices": [
+        0.6295684439452655,
+        0.6130442754966728
+      ]
+    },
+    "think/gen_all/L28": {
+      "mean": 0.6232170156397263,
+      "slices": [
+        0.6297438907539276,
+        0.6166901405255252
+      ]
+    },
+    "think/gen_poscentered/L14": {
+      "mean": 0.41048909841518955,
+      "slices": [
+        0.4154259743956098,
+        0.40555222243476924
+      ]
+    },
+    "think/gen_poscentered/L17": {
+      "mean": 0.3625776118620664,
+      "slices": [
+        0.368611043109594,
+        0.3565441806145388
+      ]
+    },
+    "think/gen_poscentered/L20": {
+      "mean": 0.3711374993799815,
+      "slices": [
+        0.37833844668206457,
+        0.3639365520778984
+      ]
+    },
+    "think/gen_poscentered/L22": {
+      "mean": 0.5847114435556446,
+      "slices": [
+        0.5916149433977842,
+        0.5778079437135052
+      ]
+    },
+    "think/gen_poscentered/L25": {
+      "mean": 0.6142872444723617,
+      "slices": [
+        0.6217607959950747,
+        0.6068136929496488
+      ]
+    },
+    "think/gen_poscentered/L28": {
+      "mean": 0.6158837598294438,
+      "slices": [
+        0.6223418847139135,
+        0.609425634944974
+      ]
+    },
+    "think/gen_post_think/L14": {
+      "mean": 0.41241700950700017,
+      "slices": [
+        0.4183267358933316,
+        0.40650728312066875
+      ]
+    },
+    "think/gen_post_think/L17": {
+      "mean": 0.3576403356111381,
+      "slices": [
+        0.3655732718486393,
+        0.34970739937363693
+      ]
+    },
+    "think/gen_post_think/L20": {
+      "mean": 0.3674497917437221,
+      "slices": [
+        0.3762674560802752,
+        0.35863212740716904
+      ]
+    },
+    "think/gen_post_think/L22": {
+      "mean": 0.5892507053844842,
+      "slices": [
+        0.5976244557487966,
+        0.5808769550201718
+      ]
+    },
+    "think/gen_post_think/L25": {
+      "mean": 0.6213063597209691,
+      "slices": [
+        0.6295684439452655,
+        0.6130442754966728
+      ]
+    },
+    "think/gen_post_think/L28": {
+      "mean": 0.6232170156397263,
+      "slices": [
+        0.6297438907539276,
+        0.6166901405255252
+      ]
+    },
+    "think/gen_tokcentered/L14": {
+      "mean": 0.3961668576712425,
+      "slices": [
+        0.40154239752151094,
+        0.39079131782097404
+      ]
+    },
+    "think/gen_tokcentered/L17": {
+      "mean": 0.34901222479797406,
+      "slices": [
+        0.3562873639800011,
+        0.341737085615947
+      ]
+    },
+    "think/gen_tokcentered/L20": {
+      "mean": 0.35717075506024476,
+      "slices": [
+        0.3655787358899365,
+        0.3487627742305531
+      ]
+    },
+    "think/gen_tokcentered/L22": {
+      "mean": 0.5685732400200476,
+      "slices": [
+        0.576662963114557,
+        0.5604835169255383
+      ]
+    },
+    "think/gen_tokcentered/L25": {
+      "mean": 0.5956802424198469,
+      "slices": [
+        0.6042472276618899,
+        0.5871132571778038
+      ]
+    },
+    "think/gen_tokcentered/L28": {
+      "mean": 0.6020694125163508,
+      "slices": [
+        0.6091084986055089,
+        0.5950303264271927
+      ]
+    },
+    "think/gen_tokcentered_loo20/L25": {
+      "mean": 0.6046606799374684,
+      "slices": [
+        0.6121287265472175,
+        0.5971926333277193
+      ]
+    },
+    "think/gen_tokcentered_loo20/L28": {
+      "mean": 0.6086253147216824,
+      "slices": [
+        0.6152957298079699,
+        0.6019548996353948
+      ]
+    },
+    "think/loo20_centered_position_share/L25": 0.9249458312988281,
+    "think/loo20_centered_position_share/L28": 0.9249458312988281
+  },
+  "config": {
+    "batch": 64,
+    "corpora": [
+      "coco_train2014",
+      "StanfordParagraphCaptioning"
+    ],
+    "data": "payload",
+    "depths": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "device": "NVIDIA GeForce RTX 4080",
+    "items": 2048,
+    "layers": [
+      14,
+      17,
+      20,
+      22,
+      25,
+      28
+    ],
+    "long_batch": 16,
+    "max_new_tokens": 128,
+    "model": "/mnt/big/llm-models/Qwen3-1.7B",
+    "num_hidden_layers": 28,
+    "save_dir": "/mnt/usb-storage/unpaired-rosetta-e3/20261009T182733",
+    "thinking": [
+      true,
+      false
+    ],
+    "torch": "2.13.0+cu130"
+  },
+  "peak_vram_mb": 6029.013671875,
+  "smoke": {
+    "captured_positions_ge_1": true,
+    "captured_positions_le_budget": true,
+    "cka_self_is_one": true,
+    "deterministic_states": true,
+    "deterministic_tokens": true,
+    "example_think": "<think>\nOkay, the user wants me to imagine what it would look like to see a close-up of bins of food that include broccoli and bread. Let me break this down.\n\nFirst, I need to visualize the scene. The main elements are broccoli and bread. Broccoli is a vegetable, so it's green, maybe a bit fibrous, ",
+    "finite": true
+  },
+  "wall_s": 702.5321819782257
+}

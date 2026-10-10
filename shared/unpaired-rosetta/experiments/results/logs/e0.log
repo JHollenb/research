@@ -1,0 +1,91 @@
+/Users/jakeholl/domains/research/shared/unpaired-rosetta/experiments/.venv/lib/python3.12/site-packages/unpaired_rosetta/randomness.py:95: UserWarning: ignoring invalid value for ATEN_CPU_CAPABILITY: avx2 (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/DispatchStub.cpp:83.)
+  return torch.randint(0, 2**32 - 1, (num_seeds,), generator=generator).tolist()
+{
+  "templates_distinct": [
+    "a close-up photograph of a {animal} at dusk in tall grass",
+    "a photograph of a {animal} standing in a sunlit meadow",
+    "a photorealistic {animal} sitting in fresh snow at dawn, soft light",
+    "a {animal} resting beside a mountain river, golden hour photo"
+  ],
+  "kernel_offdiag_corr": 0.8904894176144994,
+  "qap_class": {
+    "correct": 18,
+    "of": 18,
+    "objective_found": 23.591526091528266,
+    "objective_true": 23.591526091528266,
+    "restarts": 2000,
+    "restarts_hitting_truth": 169,
+    "best_single_swap": 23.538783018107814,
+    "top_local_optima": [
+      23.591526,
+      23.355782,
+      23.294022,
+      23.232353,
+      23.10362
+    ],
+    "errors": []
+  },
+  "mpopt_class": {
+    "correct": 18,
+    "of": 18
+  },
+  "qap_prefix": {
+    "a close-up photograph of a {animal} at dusk in tall grass": {
+      "correct": 18,
+      "of": 18,
+      "restarts_hitting_truth": 27
+    },
+    "a photograph of a {animal} standing in a sunlit meadow": {
+      "correct": 18,
+      "of": 18,
+      "restarts_hitting_truth": 26
+    },
+    "a photorealistic {animal} sitting in fresh snow at dawn, soft light": {
+      "correct": 18,
+      "of": 18,
+      "restarts_hitting_truth": 22
+    },
+    "a {animal} resting beside a mountain river, golden hour photo": {
+      "correct": 18,
+      "of": 18,
+      "restarts_hitting_truth": 32
+    }
+  },
+  "null_gaussian_correct": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    2,
+    0,
+    0,
+    0,
+    1
+  ],
+  "seeded": {
+    "1": {
+      "mean_acc_other": 0.2205882352941176,
+      "chance": 0.058823529411764705
+    },
+    "2": {
+      "mean_acc_other": 0.29375,
+      "chance": 0.0625
+    },
+    "3": {
+      "mean_acc_other": 0.5233333333333334,
+      "chance": 0.06666666666666667
+    },
+    "5": {
+      "mean_acc_other": 0.7230769230769231,
+      "chance": 0.07692307692307693
+    }
+  },
+  "rows_unpaired": {
+    "animal_recovered_share": 0.4166666666666667,
+    "chance": 0.05555555555555555,
+    "cluster_ari_source": 0.019283369803063458,
+    "cluster_ari_native": 0.3308972016540052
+  }
+}
+receipt: /Users/jakeholl/domains/research/shared/unpaired-rosetta/experiments/results/e0_symbol_qap/e0_symbol_qap-20261009T180533.json

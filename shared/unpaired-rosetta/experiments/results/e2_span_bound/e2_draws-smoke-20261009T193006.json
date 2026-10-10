@@ -1,0 +1,68 @@
+{
+  "config": {
+    "language": "mpnet",
+    "pairs": [
+      5
+    ],
+    "seeds": [
+      1
+    ],
+    "selection": [
+      "random",
+      "medoid"
+    ],
+    "smoke": true,
+    "train": "coco_train2014",
+    "validation": "coco_val2014"
+  },
+  "experiment": "e2_draws-smoke",
+  "results": {
+    "rows": [
+      {
+        "energy": 0.13287984917904938,
+        "energy_kyfan": 0.27304636373114877,
+        "linear": {
+          "alpha_mean": 0.20631511325622534,
+          "foscttm": 0.21446198099049524
+        },
+        "oracle_foscttm": 0.06346023011505753,
+        "orthogonal": {
+          "alpha_mean": 0.0624020057780522,
+          "foscttm": 0.301783891945973
+        },
+        "p": 5,
+        "seed": 1,
+        "selection": "random",
+        "span_rank": 5
+      },
+      {
+        "energy": 0.14801705222244813,
+        "energy_kyfan": 0.27304636373114877,
+        "linear": {
+          "alpha_mean": 0.25673450214656757,
+          "foscttm": 0.1734169584792396
+        },
+        "oracle_foscttm": 0.07486943471735867,
+        "orthogonal": {
+          "alpha_mean": 0.09557078641409061,
+          "foscttm": 0.22608754377188595
+        },
+        "p": 5,
+        "seed": 1,
+        "selection": "medoid",
+        "span_rank": 5
+      }
+    ]
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "4eaed8bd4c884c8bba2c122eccf85346076574b0",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T02:30:06Z"
+}

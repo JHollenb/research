@@ -1,0 +1,108 @@
+{
+  "config": {
+    "dump": "/Users/jakeholl/domains/saturn/results/symbol-table-bridge/job-0706b0497903/report.json",
+    "restarts": 50,
+    "seed": 0,
+    "smoke": true
+  },
+  "experiment": "e0_symbol_qap-smoke",
+  "results": {
+    "kernel_offdiag_corr": 0.8904894176144994,
+    "mpopt_class": {
+      "correct": 18,
+      "of": 18
+    },
+    "null_gaussian_correct": [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "qap_class": {
+      "best_single_swap": 23.538783018107814,
+      "correct": 18,
+      "errors": [],
+      "objective_found": 23.591526091528266,
+      "objective_true": 23.591526091528266,
+      "of": 18,
+      "restarts": 50,
+      "restarts_hitting_truth": 4,
+      "top_local_optima": [
+        23.591526,
+        23.294022,
+        23.10362,
+        22.955752,
+        22.930772
+      ]
+    },
+    "qap_prefix": {
+      "a close-up photograph of a {animal} at dusk in tall grass": {
+        "correct": 18,
+        "of": 18,
+        "restarts_hitting_truth": 1
+      },
+      "a photograph of a {animal} standing in a sunlit meadow": {
+        "correct": 10,
+        "of": 18,
+        "restarts_hitting_truth": 0
+      },
+      "a photorealistic {animal} sitting in fresh snow at dawn, soft light": {
+        "correct": 3,
+        "of": 18,
+        "restarts_hitting_truth": 0
+      },
+      "a {animal} resting beside a mountain river, golden hour photo": {
+        "correct": 18,
+        "of": 18,
+        "restarts_hitting_truth": 2
+      }
+    },
+    "rows_unpaired": {
+      "animal_recovered_share": 0.4166666666666667,
+      "chance": 0.05555555555555555,
+      "cluster_ari_native": 0.3308972016540052,
+      "cluster_ari_source": 0.019283369803063458
+    },
+    "seeded": {
+      "1": {
+        "chance": 0.058823529411764705,
+        "mean_acc_other": 0.2205882352941176
+      },
+      "2": {
+        "chance": 0.0625,
+        "mean_acc_other": 0.29375
+      },
+      "3": {
+        "chance": 0.06666666666666667,
+        "mean_acc_other": 0.5233333333333334
+      },
+      "5": {
+        "chance": 0.07692307692307693,
+        "mean_acc_other": 0.7230769230769231
+      }
+    },
+    "templates_distinct": [
+      "a close-up photograph of a {animal} at dusk in tall grass",
+      "a photograph of a {animal} standing in a sunlit meadow",
+      "a photorealistic {animal} sitting in fresh snow at dawn, soft light",
+      "a {animal} resting beside a mountain river, golden hour photo"
+    ]
+  },
+  "software": {
+    "host": "Jakes-MacBook-Pro.local",
+    "numpy": "2.5.3",
+    "our_commit": "1b0c9f83f2bc8ea148e166c268705e3e963bb3e5",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.14.1"
+  },
+  "utc": "2026-10-10T00:38:23Z"
+}

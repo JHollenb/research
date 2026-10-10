@@ -1,0 +1,42 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "candidate": "pc3",
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "language": "mpnet",
+    "seed": 0,
+    "smoke": false,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e5_gates-mpnet-pc3",
+  "results": {
+    "row": {
+      "S1_matched_cosine": 0.5190195441246033,
+      "S2_matched_linear_cka": 0.671337975957451,
+      "candidate": "pc3",
+      "foscttm_eval_only": 0.04322111055527764,
+      "language": "mpnet",
+      "matched_pairs": 8780
+    }
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-10T05:47:06Z",
+  "fleet": {
+    "job_id": "job-c4dda63ac912",
+    "host": "beast"
+  }
+}

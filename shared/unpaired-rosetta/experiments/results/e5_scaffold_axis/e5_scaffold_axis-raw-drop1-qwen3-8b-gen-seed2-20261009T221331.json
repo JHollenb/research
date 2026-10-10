@@ -1,0 +1,53 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arms": [
+      "raw",
+      "drop1"
+    ],
+    "corpus": "StanfordParagraphCaptioning",
+    "holdout": 2000,
+    "k": 10,
+    "languages": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+    ],
+    "seed": 2,
+    "smoke": false,
+    "threshold": 0.3,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e5_scaffold_axis-raw-drop1-qwen3-8b-gen-seed2",
+  "results": {
+    "rows": [
+      {
+        "arm": "raw",
+        "foscttm": 0.4672251125562781,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+      },
+      {
+        "arm": "drop1",
+        "foscttm": 0.037189094547273635,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769"
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-10T05:13:31Z",
+  "fleet": {
+    "job_id": "job-8ee821ee1594",
+    "host": "beast"
+  }
+}

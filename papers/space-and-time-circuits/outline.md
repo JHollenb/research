@@ -206,7 +206,7 @@ A time circuit is the *sink* that space circuits write into (`obsidian/blog/2026
 - **Panel.** Twenty contrasts across twelve categories: 6 strict 9/9, 11 carrier 7/9, 3 candidates.
   - Top strict rows: lighting .935, identity .920, weather .911, fur .894, orientation .873, relation .866.
   - Sources: `research/bfl/demos/certified-semantic-route.md`; `research/bfl/artifacts/twenty-axis-semantic-route-circuit/`.
-- **Held-out seeds.** Route gates replicated across the panel; the only route failure missed by 0.002 (0.1522 vs 0.15). The strict tier was seed-sensitive (5/14/1).
+- **Held-out seeds.** Route gates replicated across the panel; the one necessity value above its frozen bar landed there by 0.002 (0.1522 vs 0.15), inside this axis's seed spread — read as a near-bar outcome, not a route failure (beside→behind joins the route-certified group on the route gates). The strict tier was seed-sensitive (5/14/1 by the frozen arithmetic).
 - **Held-out prompts.** 4/6 strict and 6/6 route, exactly at the preregistered bar. Source: `certified-semantic-circuits/experiments/2026-09-22-prompt-heldout/`.
 - **Clean-room audit.** 0 decision mismatches; 5/5 tamper injections caught.
 

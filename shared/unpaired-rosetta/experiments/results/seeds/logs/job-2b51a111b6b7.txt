@@ -1,0 +1,31 @@
+<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour
+Downloading sympy (6.0MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading networkx (2.0MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading numpy (15.9MiB)
+Downloading nvidia-cufile (1.2MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading triton (188.6MiB)
+Downloading nvidia-cudnn-cu13 (349.2MiB)
+Downloading nvidia-nccl-cu13 (196.4MiB)
+Downloading hf-xet (4.3MiB)
+Downloading nvidia-nvjitlink (38.9MiB)
+Downloading scikit-learn (8.7MiB)
+Downloading scipy (33.6MiB)
+Downloading cuda-bindings (6.2MiB)
+Downloading torch (502.2MiB)
+  × Failed to download `pylibmgm==1.1.2`
+  ├─▶ Request failed after 3 retries in 124.9s
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/a0/e3/000799351d33f0195502bfc108a8cd3bbedaeefd21470022b1aa2a5c42cc/pylibmgm-1.1.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl`
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/a0/e3/000799351d33f0195502bfc108a8cd3bbedaeefd21470022b1aa2a5c42cc/pylibmgm-1.1.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl)
+  ╰─▶ operation timed out

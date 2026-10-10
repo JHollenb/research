@@ -1,0 +1,87 @@
+{
+  "config": {
+    "language": "mpnet",
+    "oracle_pairs": 20000,
+    "ours_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "pairs": [],
+    "seed": 1,
+    "smoke": false,
+    "train": "coco_train2014",
+    "train_size": null,
+    "validation": "coco_val2014",
+    "validation_size": null,
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e1_fidelity_gap-seed1",
+  "results": {
+    "arms": [
+      {
+        "alpha": {
+          "mean": 0.46334722201829825,
+          "q05": 0.13301178719180146,
+          "q25": 0.3383190632991173,
+          "q50": 0.47409577409135367,
+          "q75": 0.6034726947943934,
+          "q95": 0.7466200431437339
+        },
+        "arm": "ours-p0",
+        "distractor_mean": 5.543422388466779e-05,
+        "distractor_q99": 0.4619313211409549,
+        "foscttm": 0.02588383546534952,
+        "share_alpha_ge_flux_renders": 0.0,
+        "share_alpha_le_flux_fails": 0.5529330436500098
+      },
+      {
+        "alpha": {
+          "mean": 0.5655883444848318,
+          "q05": 0.34402456292875844,
+          "q25": 0.4785100001594868,
+          "q50": 0.5708751478887523,
+          "q75": 0.6597380286814759,
+          "q95": 0.7659095750876214
+        },
+        "arm": "orth-oracle",
+        "distractor_mean": 9.057648488948712e-05,
+        "distractor_q99": 0.46292917158172725,
+        "foscttm": 0.00266942032452672,
+        "share_alpha_ge_flux_renders": 0.0,
+        "share_alpha_le_flux_fails": 0.30226644282046217
+      },
+      {
+        "alpha": {
+          "mean": 0.7605691447463194,
+          "q05": 0.5485607323877896,
+          "q25": 0.6986994796345358,
+          "q50": 0.7810000925211569,
+          "q75": 0.8442405404956179,
+          "q95": 0.900888991040556
+        },
+        "arm": "lin-oracle",
+        "distractor_mean": 0.0001428558892280053,
+        "distractor_q99": 0.6322173648954159,
+        "foscttm": 0.0026581368000728775,
+        "share_alpha_ge_flux_renders": 0.06540094805451313,
+        "share_alpha_le_flux_fails": 0.02831819079597077
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-10T05:35:36Z",
+  "fleet": {
+    "job_id": "job-1403f850fd10",
+    "host": "beast"
+  }
+}
