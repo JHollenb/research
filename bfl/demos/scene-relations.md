@@ -98,5 +98,5 @@ more than three seeds.
   offline `verify.py`).
 - 2026-10-09 replication attempts: [`replication-2026-10-09/`](../artifacts/scene-relations-and-instance-binding/replication-2026-10-09/)
   (pre-registration, viability sheets, failure note, run report). The unscored images and the blinding
-  key are in saturn-pub `pub/bfl-demo-controls` (commit `1a1618d`), under
+  key are in saturn-pub `pub/bfl-demo-controls` (commit `c3f7eb7`), under
   `experiments/bfl_demo_controls/results/exp2b/`.

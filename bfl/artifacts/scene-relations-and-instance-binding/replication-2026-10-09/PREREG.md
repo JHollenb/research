@@ -1,7 +1,7 @@
 # Pre-registration — BFL demo controls (FLUX.2 Klein 4B)
 
 Written and committed before the scored mrun jobs. Two control experiments that
-harden two existing public demo pages. All compute on Beast (RTX 4080) through mrun.
+harden two existing public demo pages. All compute on a single RTX 4080 (16 GB) through mrun.
 
 - Model: `black-forest-labs/FLUX.2-klein-4B`, pinned revision
   `e7b7dc27f91deacad38e78976d1f2b499d76a294`, materialized at

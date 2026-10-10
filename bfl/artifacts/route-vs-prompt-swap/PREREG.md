@@ -1,7 +1,7 @@
 # Pre-registration — BFL demo controls (FLUX.2 Klein 4B)
 
 Written and committed before the scored mrun jobs. Two control experiments that
-harden two existing public demo pages. All compute on Beast (RTX 4080) through mrun.
+harden two existing public demo pages. All compute on a single RTX 4080 (16 GB) through mrun.
 
 - Model: `black-forest-labs/FLUX.2-klein-4B`, pinned revision
   `e7b7dc27f91deacad38e78976d1f2b499d76a294`, materialized at
@@ -113,6 +113,58 @@ Text-only generalization of `research/bfl/demos/scene-relations-and-instance-bin
   the viability gate before trusting the full panel. Up to two pre-registered prompt
   variants were allowed in the smoke stage; this run uses the single primary set above and
   defers any prompt change to the coordinator.
+
+## Experiment 2 — viability gate outcome and prompt retry (added before the retry job)
+
+**First scene viability gate FAILED by coordinator inspection** of
+`results/exp2/native-left-right-viability.png` (job `job-ed0aee67ac23`, prompts "… adjusts the
+focus of the left/right camera", seeds 7001…7177): native LEFT ≈ 0/16, native RIGHT ≈ 4/16
+requested-side contact (subjects mostly hold a handheld camera or touch their face). Gate
+requires ≥ 10/16 each → fails, so that 128-image run is **not scored** and is kept as an
+immutable failed-viability record (see `results/exp2/VIABILITY-FAILED.md`). The 8-arm run is
+**not** launched for the retry until the coordinator passes the new scene.
+
+**Gate-first retry (`--experiment exp2viab`, pre-registered here before the retry job):** one
+mrun job that renders **native left/right only** for **two prompt variants** across **16 fresh
+seeds** `8101, 8111, 8117, 8123, 8147, 8161, 8167, 8171, 8179, 8191, 8209, 8219, 8221, 8231,
+8233, 8237` (disjoint from 7001… and the historical 26091741 set), 512², then **stops**. Same
+mechanics smoke gate first (abort on failure). The two tripod cameras are described as large and
+on tripods, clearly separate from the person, who reaches out and makes explicit contact with
+the camera on a stated **side of the image**; left/right prompts are token-length matched and
+differ only at the side token; the predicate span (the action phrase) is kept as the predicate
+rows for the eventual M/D arms. Exact strings:
+
+- **Variant A** (predicate span "adjusting its focus ring"; verified predicate rows
+  `[38,39,40,41]`=`[' adjusting',' its',' focus',' ring']`, left/right differ only at token 32):
+  - left:  `a photo of a person seated at a wooden table between two large cameras on tripods, reaching out with one hand and touching the camera on the left side of the image, adjusting its focus ring`
+  - right: `… touching the camera on the right side of the image, adjusting its focus ring`
+- **Variant B** (predicate span "firmly gripping the lens"; verified predicate rows
+  `[28,29,30,31]`=`[' firmly',' gripping',' the',' lens']`, left/right differ only at token 37):
+  - left:  `a photo of a person seated at a wooden table between two large cameras on separate tripods, reaching out with one hand and firmly gripping the lens of the camera on the left side of the image`
+  - right: `… firmly gripping the lens of the camera on the right side of the image`
+
+Deliverable: one non-blinded viability sheet per variant (labelled seed + side),
+`results/exp2viab/viability-variant-A.png` and `…-B.png`, plus per-image PNGs. The worker does
+not judge; the coordinator applies the ≥ 10/16-each gate and decides whether (and with which
+variant) to authorize the full 8-arm run.
+
+**Gate decision (coordinator, non-blinded read of the viability sheets):** **Variant B PASSES**
+(left ≈ 14/16, right ≈ 15/16 requested-side contact; clean single-person layouts). Variant A not
+used (crowded, multiple people, ambiguous hands). Authorized the full 8-arm blinded run on
+Variant B + the same 16 fresh seeds `8101…8237`.
+
+**Full 8-arm blinded run on Variant B (`--experiment exp2b`):** prompts =
+- left: `…reaching out with one hand and firmly gripping the lens of the camera on the left side of the image`
+- right: `… on the right side of the image`
+- neutral (Variant B without the action/side clause, same structure):
+  `a photo of a person seated at a wooden table between two large cameras on separate tripods`
+
+Arms: `neutral`, `native left`, `native right`, `M`, `M+D_rest (→right)`, `M−D_rest (→left)`,
+`M+D_pred (→right)`, `M−D_pred (→left)`. Predicate rows `[28,29,30,31]`=`[' firmly',' gripping',
+' the',' lens']`; interventions overwrite the full `joint.3` text each of the 4 steps on the
+neutral-conditioned trajectory. 512², 16 seeds `8101…8237`. Same mechanics smoke gate; same
+blinding (random ids, separate `judge-key.json`, shuffled sheets labelled by id only). Metrics
+and sign convention unchanged from the Experiment 2 section above. Worker does not judge.
 
 ## Recording
 
