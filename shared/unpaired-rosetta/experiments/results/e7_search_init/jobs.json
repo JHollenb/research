@@ -339,7 +339,8 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "timeout"
   },
   {
     "job_id": "job-d72a714c8988",
@@ -357,7 +358,8 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "timeout"
   },
   {
     "job_id": "job-3bdc6bcae65b",
@@ -382,7 +384,10 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armC-DenselyCaptionedImages-gen-none-k1-5-10-50-100-seed1-20261024T010426.json",
+    "collected": true
   },
   {
     "job_id": "job-5d7d1940550f",
@@ -407,7 +412,10 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armC-DenselyCaptionedImages-gen-none-k1-5-10-50-100-seed2-20261024T005755.json",
+    "collected": true
   },
   {
     "job_id": "job-f42b6a0bc79c",
@@ -432,7 +440,8 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "timeout"
   },
   {
     "job_id": "job-28e4a032f7c2",
@@ -457,7 +466,8 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "timeout"
   },
   {
     "job_id": "job-b017d81060f6",
@@ -476,7 +486,10 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armA-DenselyCaptionedImages-gen-none-seed1-20261024T003337.json",
+    "collected": true
   },
   {
     "job_id": "job-05923c170bd6",
@@ -495,7 +508,10 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armA-DenselyCaptionedImages-gen-none-seed2-20261024T004129.json",
+    "collected": true
   },
   {
     "job_id": "job-28382167c3ad",
@@ -514,7 +530,10 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armA-DOCCIDataset-gen-none-seed1-20261024T012024.json",
+    "collected": true
   },
   {
     "job_id": "job-ae375b2cc0a1",
@@ -533,6 +552,105 @@
       "4",
       "--manifest-sha256",
       "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}"
-    ]
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armA-DOCCIDataset-gen-none-seed2-20261024T012421.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-521f884cd1f2",
+    "plan": "Bseeds",
+    "args": [
+      "e7_search_init.arms",
+      "--arm",
+      "b",
+      "--targets",
+      "DenselyCaptionedImages",
+      "DOCCIDataset",
+      "--b-cands",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"4959bc06ef9c04740067ae364da231e1c2f3699beb760bb873426e07b5e7e7f6\", \"submit.py\": \"d3b59f49b29aed7395e25158aa4191e61f888eb8b2f107e7190f3c42310560a0\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armB-SPCinit-gen-seed1-20261024T031137.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-881e96e64e00",
+    "plan": "Bseeds",
+    "args": [
+      "e7_search_init.arms",
+      "--arm",
+      "b",
+      "--targets",
+      "DenselyCaptionedImages",
+      "DOCCIDataset",
+      "--b-cands",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"4959bc06ef9c04740067ae364da231e1c2f3699beb760bb873426e07b5e7e7f6\", \"submit.py\": \"d3b59f49b29aed7395e25158aa4191e61f888eb8b2f107e7190f3c42310560a0\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armB-SPCinit-gen-seed2-20261024T031313.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-25b8395e0b27",
+    "plan": "Cdocci",
+    "args": [
+      "e7_search_init.arms",
+      "--arm",
+      "c",
+      "--corpus",
+      "DOCCIDataset",
+      "--candidates",
+      "none",
+      "--ks",
+      "50",
+      "100",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"4959bc06ef9c04740067ae364da231e1c2f3699beb760bb873426e07b5e7e7f6\", \"submit.py\": \"d3b59f49b29aed7395e25158aa4191e61f888eb8b2f107e7190f3c42310560a0\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armC-DOCCIDataset-gen-none-k50-100-seed1-20261024T031012.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-05ceeeb39068",
+    "plan": "Cdocci",
+    "args": [
+      "e7_search_init.arms",
+      "--arm",
+      "c",
+      "--corpus",
+      "DOCCIDataset",
+      "--candidates",
+      "none",
+      "--ks",
+      "50",
+      "100",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"4959bc06ef9c04740067ae364da231e1c2f3699beb760bb873426e07b5e7e7f6\", \"submit.py\": \"d3b59f49b29aed7395e25158aa4191e61f888eb8b2f107e7190f3c42310560a0\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e7_search_init/e7_armC-DOCCIDataset-gen-none-k50-100-seed2-20261024T031119.json",
+    "collected": true
   }
 ]

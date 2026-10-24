@@ -86,15 +86,19 @@ def plan(name: str, sha: str) -> list[dict]:
         return [dict(args=["e7_search_init.arms", "--arm", "a", "--corpus", c, "--candidate", "none",
                            "--seed", str(s), "--workers", "4", "--manifest-sha256", sha], ram_mb=9000,
                       timeout_s=5400) for c in PRIMARY for s in (1, 2)]
-    if name == "Bseeds":
-        return [dict(args=["e7_search_init.arms", "--arm", "b", "--targets", *PRIMARY, "--seed", str(s),
-                           "--workers", "4", "--manifest-sha256", sha], ram_mb=10000, timeout_s=5400)
-                for s in (1, 2)]
+    if name == "Bseeds":  # lean: pc0 only (skips the none control fits), one job per seed
+        return [dict(args=["e7_search_init.arms", "--arm", "b", "--targets", *PRIMARY, "--b-cands", "pc0",
+                           "--seed", str(s), "--workers", "4", "--manifest-sha256", sha], ram_mb=10000,
+                      timeout_s=9000) for s in (1, 2)]
     if name == "Cseeds":  # confirm the recovery k; all k, both corpora, seeds 1,2
         return [dict(args=["e7_search_init.arms", "--arm", "c", "--corpus", c, "--candidates", "none",
                            "--ks", "1", "5", "10", "50", "100", "--seed", str(s), "--workers", "4",
                            "--manifest-sha256", sha], ram_mb=8000, timeout_s=5400)
                 for c in PRIMARY for s in (1, 2)]
+    if name == "Cdocci":  # just the recovery region on DOCCI, seeds 1,2 (seed-0 and DCI already done)
+        return [dict(args=["e7_search_init.arms", "--arm", "c", "--corpus", "DOCCIDataset", "--candidates",
+                           "none", "--ks", "50", "100", "--seed", str(s), "--workers", "4",
+                           "--manifest-sha256", sha], ram_mb=8000, timeout_s=7200) for s in (1, 2)]
     raise SystemExit(f"unknown plan {name}")
 
 
@@ -173,7 +177,7 @@ def collect() -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--plan", choices=["smoke", "A", "B", "C", "Cpc0", "D", "E", "Emulti",
-                                           "Aseeds", "Bseeds", "Cseeds"])
+                                           "Aseeds", "Bseeds", "Cseeds", "Cdocci"])
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--priority", type=int, default=75)
     parser.add_argument("--collect", action="store_true")

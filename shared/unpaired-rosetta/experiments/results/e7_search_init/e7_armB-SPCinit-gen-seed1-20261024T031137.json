@@ -1,0 +1,90 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "b",
+    "b_cands": [
+      "pc0"
+    ],
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      1,
+      5,
+      10,
+      50,
+      100
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"4959bc06ef9c04740067ae364da231e1c2f3699beb760bb873426e07b5e7e7f6\", \"submit.py\": \"d3b59f49b29aed7395e25158aa4191e61f888eb8b2f107e7190f3c42310560a0\"}",
+    "seed": 1,
+    "smoke": false,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armB-SPCinit-gen-seed1",
+  "results": {
+    "rows": [
+      {
+        "arm": "B_spc_fit",
+        "candidate": "pc0",
+        "corpus": "StanfordParagraphCaptioning",
+        "foscttm_eval_only": 0.044113806903451715
+      },
+      {
+        "arm": "B_transfer",
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.121283891945973
+      },
+      {
+        "arm": "B_refine",
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.08542071035517759
+      },
+      {
+        "arm": "B_transfer",
+        "candidate": "pc0",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.11257653826913458
+      },
+      {
+        "arm": "B_refine",
+        "candidate": "pc0",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.06035017508754378
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T10:11:37Z",
+  "fleet": {
+    "job_id": "job-521f884cd1f2",
+    "host": "beast"
+  }
+}

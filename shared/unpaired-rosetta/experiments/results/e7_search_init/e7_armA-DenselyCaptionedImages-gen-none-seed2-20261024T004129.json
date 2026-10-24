@@ -1,0 +1,90 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "a",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      1,
+      5,
+      10,
+      50,
+      100
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"a7983c910c0566ab1db18f0c56932a4364a72da9caee1aa68098291b47207351\"}",
+    "n": 7805,
+    "pivot_encoder": "qwen3-embedding-8b",
+    "seed": 2,
+    "smoke": false,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armA-DenselyCaptionedImages-gen-none-seed2",
+  "results": {
+    "rows": [
+      {
+        "arm": "A_emb_pivot_control",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.20948174087043522
+      },
+      {
+        "R_orth_err": 0.00026115935179404914,
+        "arm": "A_text_text_emb_to_gen",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.00023661830915457725
+      },
+      {
+        "S1_matched_cosine": 0.35527753829956055,
+        "S2_matched_linear_cka": 0.2782694395424664,
+        "arm": "A_compose",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.2457146073036518,
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.44331830739974976,
+        "S2_matched_linear_cka": 0.2848814565713469,
+        "arm": "A_refine",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.25161680840420214,
+        "matched_pairs": 2902
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T07:41:29Z",
+  "fleet": {
+    "job_id": "job-05923c170bd6",
+    "host": "beast"
+  }
+}

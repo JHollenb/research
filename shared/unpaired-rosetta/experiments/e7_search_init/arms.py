@@ -297,7 +297,7 @@ def arm_b(args, kwargs) -> tuple[str, dict, list]:
     if not args.smoke:
         print("smoke gate (SPC gen):", smoke_gate(ssx, ssy, svx, svy), flush=True)
     W_spc, spc_models = {}, {}
-    for cand in ("none", "pc0"):
+    for cand in args.b_cands:
         basis = basis_for(cand, ssy)
         m = Gated(WassersteinProcrustes(**kwargs), basis).fit(ssx, ssy, Randomness(args.seed))
         spc_models[cand] = m
@@ -309,7 +309,7 @@ def arm_b(args, kwargs) -> tuple[str, dict, list]:
     for corpus in args.targets:
         tx, ty, tn, tix, tiy, tsx, tsy, tvx, tvy = splits(corpus, GEN, args.seed, args.holdout, args.smoke)
         # B_transfer: apply the SPC model directly (its own means + weight + its SPC-estimated basis)
-        for cand in ("none", "pc0"):
+        for cand in args.b_cands:
             f = foscttm(spc_models[cand], tvx, tvy, args.seed)
             rows.append({"corpus": corpus, "arm": "B_transfer", "candidate": cand, "foscttm_eval_only": f})
             print(rows[-1], flush=True)
@@ -402,6 +402,7 @@ def main() -> None:
     parser.add_argument("--encoders", nargs="*", default=[GEN, EMB, "mpnet"])
     parser.add_argument("--candidate", default="none")
     parser.add_argument("--candidates", nargs="*", default=["none"])
+    parser.add_argument("--b-cands", nargs="*", default=["none", "pc0"])
     parser.add_argument("--ks", nargs="*", type=int, default=[1, 5, 10, 50, 100])
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--holdout", type=int, default=2000)
