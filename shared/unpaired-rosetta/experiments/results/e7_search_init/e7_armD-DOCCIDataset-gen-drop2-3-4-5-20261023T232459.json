@@ -1,0 +1,97 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "d",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DOCCIDataset",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"d11ec94807763948b6423a48303f7ca49fdee8786149afb5d5ec33e692fe7eca\"}",
+    "n": 14847,
+    "seed": 0,
+    "smoke": false,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armD-DOCCIDataset-gen-drop2-3-4-5",
+  "results": {
+    "rows": [
+      {
+        "S1_matched_cosine": 0.4162285327911377,
+        "S2_matched_linear_cka": 0.568484431474998,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop2",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.35421910955477737,
+        "k_removed": 2,
+        "matched_pairs": 6423
+      },
+      {
+        "S1_matched_cosine": 0.4119364321231842,
+        "S2_matched_linear_cka": 0.5870792424320267,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop3",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.40949374687343676,
+        "k_removed": 3,
+        "matched_pairs": 6423
+      },
+      {
+        "S1_matched_cosine": 0.40207117795944214,
+        "S2_matched_linear_cka": 0.5011209763982295,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop4",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.531612056028014,
+        "k_removed": 4,
+        "matched_pairs": 6423
+      },
+      {
+        "S1_matched_cosine": 0.39472252130508423,
+        "S2_matched_linear_cka": 0.48362763964094396,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop5",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.5289012006003002,
+        "k_removed": 5,
+        "matched_pairs": 6423
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T06:24:59Z",
+  "fleet": {
+    "job_id": "job-92c25798cd1c",
+    "host": "beast"
+  }
+}

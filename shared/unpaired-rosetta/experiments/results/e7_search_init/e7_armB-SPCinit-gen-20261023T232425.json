@@ -1,0 +1,105 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "b",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      1,
+      5,
+      10,
+      50,
+      100
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"d11ec94807763948b6423a48303f7ca49fdee8786149afb5d5ec33e692fe7eca\"}",
+    "seed": 0,
+    "smoke": false,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armB-SPCinit-gen",
+  "results": {
+    "rows": [
+      {
+        "arm": "B_spc_fit",
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "foscttm_eval_only": 0.4191890945472736
+      },
+      {
+        "arm": "B_spc_fit",
+        "candidate": "pc0",
+        "corpus": "StanfordParagraphCaptioning",
+        "foscttm_eval_only": 0.032466483241620804
+      },
+      {
+        "arm": "B_transfer",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.48901225612806404
+      },
+      {
+        "arm": "B_transfer",
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.09076138069034516
+      },
+      {
+        "arm": "B_refine",
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.06667746373186594
+      },
+      {
+        "arm": "B_transfer",
+        "candidate": "none",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.48599749874937476
+      },
+      {
+        "arm": "B_transfer",
+        "candidate": "pc0",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.08771660830415207
+      },
+      {
+        "arm": "B_refine",
+        "candidate": "pc0",
+        "corpus": "DOCCIDataset",
+        "foscttm_eval_only": 0.042498499249624816
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T06:24:25Z",
+  "fleet": {
+    "job_id": "job-02edaca8a199",
+    "host": "beast"
+  }
+}

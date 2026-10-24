@@ -68,5 +68,34 @@ def main() -> None:
                   f"S1sel_gain_vs_last={gain_vs_last:+.4f}  corr(S1,-FOSCTTM)={c:.3f}  [{fname}]")
 
 
+def aggregate():
+    """Mean +/- sd over seeds per (arm, corpus, cand/k). Ignores smoke receipts."""
+    import statistics as st
+    acc = {}
+    for fname, rec in load_receipts():
+        if "smoke" in fname:
+            continue
+        for r in rec.get("results", {}).get("rows", []):
+            arm = r.get("arm", "")
+            if arm.startswith("E_"):
+                continue
+            key = r.get("candidate", "")
+            if "k_pairs" in r:
+                key = f"k={r['k_pairs']}"
+            if "k_removed" in r:
+                key = f"drop{r['k_removed']}"
+            f = r.get("foscttm_eval_only")
+            if f is None:
+                continue
+            acc.setdefault((arm, r.get("corpus", "?"), str(key)), []).append(f)
+    print("\n## Seed-aggregated FOSCTTM (mean +/- sd, n)")
+    for k in sorted(acc):
+        vs = acc[k]
+        sd = st.pstdev(vs) if len(vs) > 1 else 0.0
+        mark = "  <0.10" if st.mean(vs) < 0.10 else ""
+        print(f"  {k[0]:28s} {k[1]:28s} {k[2]:8s} {st.mean(vs):.4f} +/- {sd:.4f}  n={len(vs)}  {sorted(round(v,4) for v in vs)}{mark}")
+
+
 if __name__ == "__main__":
     main()
+    aggregate()

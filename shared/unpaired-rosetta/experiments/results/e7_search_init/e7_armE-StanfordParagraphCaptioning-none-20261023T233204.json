@@ -1,0 +1,1623 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "e",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "StanfordParagraphCaptioning",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      1,
+      5,
+      10,
+      50,
+      100
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"d11ec94807763948b6423a48303f7ca49fdee8786149afb5d5ec33e692fe7eca\"}",
+    "seed": 0,
+    "smoke": false,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armE-StanfordParagraphCaptioning-none",
+  "results": {
+    "rows": [
+      {
+        "S1_best": 0.42152610421180725,
+        "S1_last": 0.4215221703052521,
+        "arm": "E_trace_baseline",
+        "bestS1_iter": 7,
+        "best_iter": 2,
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "foscttm_at_bestS1": 0.41917183591795903,
+        "foscttm_best": 0.4182306153076538,
+        "foscttm_last": 0.4191890945472736,
+        "language": "qwen3-8b-gen",
+        "n_iters": 100,
+        "seed": 0,
+        "trace": [
+          {
+            "S1_matched_cosine": 0.404288649559021,
+            "foscttm": 0.4204794897448725,
+            "iter": 0
+          },
+          {
+            "S1_matched_cosine": 0.4153532385826111,
+            "foscttm": 0.4194972486243121,
+            "iter": 1
+          },
+          {
+            "S1_matched_cosine": 0.41935721039772034,
+            "foscttm": 0.4182306153076538,
+            "iter": 2
+          },
+          {
+            "S1_matched_cosine": 0.42047902941703796,
+            "foscttm": 0.4186448224112056,
+            "iter": 3
+          },
+          {
+            "S1_matched_cosine": 0.42090746760368347,
+            "foscttm": 0.4190322661330665,
+            "iter": 4
+          },
+          {
+            "S1_matched_cosine": 0.42123302817344666,
+            "foscttm": 0.41898424212106056,
+            "iter": 5
+          },
+          {
+            "S1_matched_cosine": 0.4213920533657074,
+            "foscttm": 0.41913181590795395,
+            "iter": 6
+          },
+          {
+            "S1_matched_cosine": 0.42152610421180725,
+            "foscttm": 0.41917183591795903,
+            "iter": 7
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 8
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 9
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 10
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191893446723361,
+            "iter": 11
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 12
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 13
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 14
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 15
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 16
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918909454727366,
+            "iter": 17
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 18
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 19
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 20
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 21
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 22
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 23
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191894697348674,
+            "iter": 24
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 25
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 26
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 27
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 28
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 29
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 30
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 31
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 32
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 33
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 34
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 35
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 36
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 37
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 38
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 39
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918896948474244,
+            "iter": 40
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 41
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 42
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 43
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 44
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 45
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 46
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191885942971486,
+            "iter": 47
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 48
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 49
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 50
+          },
+          {
+            "S1_matched_cosine": 0.4215221107006073,
+            "foscttm": 0.41918934467233615,
+            "iter": 51
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 52
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 53
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191888444222111,
+            "iter": 54
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 55
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 56
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 57
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 58
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191888444222111,
+            "iter": 59
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 60
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 61
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 62
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 63
+          },
+          {
+            "S1_matched_cosine": 0.4215221107006073,
+            "foscttm": 0.41918934467233615,
+            "iter": 64
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 65
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191889694847424,
+            "iter": 66
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 67
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191893446723361,
+            "iter": 68
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 69
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 70
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 71
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 72
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191894697348674,
+            "iter": 73
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191885942971486,
+            "iter": 74
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 75
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 76
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 77
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 78
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918934467233615,
+            "iter": 79
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 80
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.41918909454727366,
+            "iter": 81
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 82
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 83
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918934467233615,
+            "iter": 84
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191895947973987,
+            "iter": 85
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191893446723361,
+            "iter": 86
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 87
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 88
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 89
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 90
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 91
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191888444222111,
+            "iter": 92
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191885942971486,
+            "iter": 93
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191890945472736,
+            "iter": 94
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.41918909454727366,
+            "iter": 95
+          },
+          {
+            "S1_matched_cosine": 0.42152220010757446,
+            "foscttm": 0.4191888444222111,
+            "iter": 96
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 97
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 98
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191888444222111,
+            "iter": 99
+          },
+          {
+            "S1_matched_cosine": 0.4215221703052521,
+            "foscttm": 0.4191890945472736,
+            "iter": 100
+          }
+        ]
+      },
+      {
+        "S1_best": 0.4600682258605957,
+        "S1_last": 0.4600681662559509,
+        "arm": "E_trace_baseline",
+        "bestS1_iter": 55,
+        "best_iter": 8,
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "foscttm_at_bestS1": 0.021080040020010002,
+        "foscttm_best": 0.021078039019509758,
+        "foscttm_last": 0.021080040020010002,
+        "language": "qwen3-emb",
+        "n_iters": 100,
+        "seed": 0,
+        "trace": [
+          {
+            "S1_matched_cosine": 0.4411509037017822,
+            "foscttm": 0.02437393696848424,
+            "iter": 0
+          },
+          {
+            "S1_matched_cosine": 0.45213520526885986,
+            "foscttm": 0.022443721860930466,
+            "iter": 1
+          },
+          {
+            "S1_matched_cosine": 0.4556719660758972,
+            "foscttm": 0.022012256128064032,
+            "iter": 2
+          },
+          {
+            "S1_matched_cosine": 0.45744720101356506,
+            "foscttm": 0.02173911955977989,
+            "iter": 3
+          },
+          {
+            "S1_matched_cosine": 0.45842230319976807,
+            "foscttm": 0.021540770385192594,
+            "iter": 4
+          },
+          {
+            "S1_matched_cosine": 0.45919278264045715,
+            "foscttm": 0.02140545272636318,
+            "iter": 5
+          },
+          {
+            "S1_matched_cosine": 0.4595123827457428,
+            "foscttm": 0.02125812906453227,
+            "iter": 6
+          },
+          {
+            "S1_matched_cosine": 0.45982626080513,
+            "foscttm": 0.021178339169584795,
+            "iter": 7
+          },
+          {
+            "S1_matched_cosine": 0.46000105142593384,
+            "foscttm": 0.021078039019509758,
+            "iter": 8
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 9
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 10
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 11
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 12
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021079789894947475,
+            "iter": 13
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 14
+          },
+          {
+            "S1_matched_cosine": 0.46006813645362854,
+            "foscttm": 0.021079789894947475,
+            "iter": 15
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 16
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 17
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 18
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079914957478737,
+            "iter": 19
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 20
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 21
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 22
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 23
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 24
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 25
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 26
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 27
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 28
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 29
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 30
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 31
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 32
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 33
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 34
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 35
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 36
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 37
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 38
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079914957478737,
+            "iter": 39
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 40
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 41
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 42
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 43
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 44
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 45
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 46
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 47
+          },
+          {
+            "S1_matched_cosine": 0.46006813645362854,
+            "foscttm": 0.021080040020010002,
+            "iter": 48
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 49
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 50
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 51
+          },
+          {
+            "S1_matched_cosine": 0.46006813645362854,
+            "foscttm": 0.021079789894947475,
+            "iter": 52
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 53
+          },
+          {
+            "S1_matched_cosine": 0.46006813645362854,
+            "foscttm": 0.021079789894947475,
+            "iter": 54
+          },
+          {
+            "S1_matched_cosine": 0.4600682258605957,
+            "foscttm": 0.021080040020010002,
+            "iter": 55
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 56
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 57
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 58
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 59
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 60
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 61
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 62
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 63
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 64
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 65
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 66
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 67
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 68
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 69
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 70
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 71
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 72
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 73
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 74
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 75
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 76
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 77
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 78
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 79
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 80
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 81
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 82
+          },
+          {
+            "S1_matched_cosine": 0.46006813645362854,
+            "foscttm": 0.021080040020010002,
+            "iter": 83
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 84
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 85
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 86
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 87
+          },
+          {
+            "S1_matched_cosine": 0.4600682258605957,
+            "foscttm": 0.021080040020010002,
+            "iter": 88
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 89
+          },
+          {
+            "S1_matched_cosine": 0.4600682258605957,
+            "foscttm": 0.021080040020010002,
+            "iter": 90
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 91
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079914957478737,
+            "iter": 92
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 93
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 94
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 95
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 96
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021079789894947475,
+            "iter": 97
+          },
+          {
+            "S1_matched_cosine": 0.46006810665130615,
+            "foscttm": 0.021080040020010002,
+            "iter": 98
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 99
+          },
+          {
+            "S1_matched_cosine": 0.4600681662559509,
+            "foscttm": 0.021080040020010002,
+            "iter": 100
+          }
+        ]
+      },
+      {
+        "S1_best": 0.47793591022491455,
+        "S1_last": 0.4779358506202698,
+        "arm": "E_trace_baseline",
+        "bestS1_iter": 17,
+        "best_iter": 5,
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "foscttm_at_bestS1": 0.0301495747873937,
+        "foscttm_best": 0.030077538769384696,
+        "foscttm_last": 0.0301495747873937,
+        "language": "mpnet",
+        "n_iters": 100,
+        "seed": 0,
+        "trace": [
+          {
+            "S1_matched_cosine": 0.45089250802993774,
+            "foscttm": 0.03350525262631316,
+            "iter": 0
+          },
+          {
+            "S1_matched_cosine": 0.46912941336631775,
+            "foscttm": 0.031628064032016005,
+            "iter": 1
+          },
+          {
+            "S1_matched_cosine": 0.4745093584060669,
+            "foscttm": 0.03092921460730365,
+            "iter": 2
+          },
+          {
+            "S1_matched_cosine": 0.4766809046268463,
+            "foscttm": 0.03051250625312656,
+            "iter": 3
+          },
+          {
+            "S1_matched_cosine": 0.4775081276893616,
+            "foscttm": 0.03025312656328164,
+            "iter": 4
+          },
+          {
+            "S1_matched_cosine": 0.47782424092292786,
+            "foscttm": 0.030077538769384696,
+            "iter": 5
+          },
+          {
+            "S1_matched_cosine": 0.47789013385772705,
+            "foscttm": 0.030093796898449227,
+            "iter": 6
+          },
+          {
+            "S1_matched_cosine": 0.4779309630393982,
+            "foscttm": 0.0301415707853927,
+            "iter": 7
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 8
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 9
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 10
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 11
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 12
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 13
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 14
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 15
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 16
+          },
+          {
+            "S1_matched_cosine": 0.47793591022491455,
+            "foscttm": 0.0301495747873937,
+            "iter": 17
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 18
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 19
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 20
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 21
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 22
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 23
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 24
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 25
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 26
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 27
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 28
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 29
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 30
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 31
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 32
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 33
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 34
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 35
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 36
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 37
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 38
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 39
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 40
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 41
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 42
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 43
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 44
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 45
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 46
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 47
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 48
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 49
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 50
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 51
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 52
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 53
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 54
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 55
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 56
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 57
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 58
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 59
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 60
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 61
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 62
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 63
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 64
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 65
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 66
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 67
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 68
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 69
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 70
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 71
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 72
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 73
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.03014982491245623,
+            "iter": 74
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 75
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.030149324662331167,
+            "iter": 76
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 77
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 78
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 79
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 80
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 81
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 82
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 83
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 84
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 85
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 86
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 87
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 88
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 89
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 90
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 91
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 92
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 93
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 94
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 95
+          },
+          {
+            "S1_matched_cosine": 0.47793588042259216,
+            "foscttm": 0.0301495747873937,
+            "iter": 96
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 97
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 98
+          },
+          {
+            "S1_matched_cosine": 0.4779358208179474,
+            "foscttm": 0.0301495747873937,
+            "iter": 99
+          },
+          {
+            "S1_matched_cosine": 0.4779358506202698,
+            "foscttm": 0.0301495747873937,
+            "iter": 100
+          }
+        ]
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T06:32:04Z",
+  "fleet": {
+    "job_id": "job-c3e899d07f47",
+    "host": "beast"
+  }
+}

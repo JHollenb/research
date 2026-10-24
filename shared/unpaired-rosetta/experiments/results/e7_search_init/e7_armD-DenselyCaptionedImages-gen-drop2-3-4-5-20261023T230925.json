@@ -1,0 +1,97 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "d",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"d11ec94807763948b6423a48303f7ca49fdee8786149afb5d5ec33e692fe7eca\"}",
+    "n": 7805,
+    "seed": 0,
+    "smoke": false,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armD-DenselyCaptionedImages-gen-drop2-3-4-5",
+  "results": {
+    "rows": [
+      {
+        "S1_matched_cosine": 0.47613513469696045,
+        "S2_matched_linear_cka": 0.5560003288554368,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop2",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.46345147573786893,
+        "k_removed": 2,
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.473127156496048,
+        "S2_matched_linear_cka": 0.5451845966497434,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop3",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.36845147573786896,
+        "k_removed": 3,
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.4702644348144531,
+        "S2_matched_linear_cka": 0.543318956848467,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop4",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.4669802401200601,
+        "k_removed": 4,
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.46479639410972595,
+        "S2_matched_linear_cka": 0.5138961425184886,
+        "arm": "D_cumulative_dropk",
+        "candidate": "drop5",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.4703749374687344,
+        "k_removed": 5,
+        "matched_pairs": 2902
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T06:09:25Z",
+  "fleet": {
+    "job_id": "job-50ebe003a321",
+    "host": "beast"
+  }
+}
