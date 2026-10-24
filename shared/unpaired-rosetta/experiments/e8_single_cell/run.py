@@ -225,7 +225,10 @@ def synthetic_smoke():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--seeds", type=int, default=20)
+    parser.add_argument("--seeds", type=int, default=20)  # kept for back-compat; == total-seeds when slicing unused
+    parser.add_argument("--total-seeds", type=int, default=0)  # seed universe derive_seeds(42, total); 0 -> --seeds
+    parser.add_argument("--seed-lo", type=int, default=0)
+    parser.add_argument("--seed-hi", type=int, default=-1)  # exclusive; -1 -> end
     parser.add_argument("--remove-topk", type=int, default=0)
     parser.add_argument("--iters", type=int, default=100)
     parser.add_argument("--restarts", type=int, default=30)
@@ -248,17 +251,22 @@ def main():
               "lin_holdout": round(oracle_foscttm(x, y, "lin"), 5)}
     print("canary:", canary, "oracle:", oracle, flush=True)
 
-    seeds = derive_seeds(42, args.seeds)
+    total = args.total_seeds or args.seeds
+    hi = args.seed_hi if args.seed_hi >= 0 else total
+    seeds = derive_seeds(42, total)[args.seed_lo:hi]
+    print(f"seed universe total={total} slice[{args.seed_lo}:{hi}] -> {len(seeds)} seeds", flush=True)
     per_seed = []
     pooled_s1, pooled_fos = [], []
     for seed in seeds:
         rnd = Randomness(seed)
         idx_x, idx_y = disjoint_split(x.shape[0], rnd, None)  # 500/500 disjoint, their protocol (holdout=0)
         sx, sy = x[idx_x], y[idx_y]
+        # Their run_alignment passes the SAME randomness object (already advanced by the split) into fit, not a fresh
+        # Randomness(seed). Reproducing that exactly is required to match their 0.225 +/- 0.13.
         aligner = LoggedWassersteinProcrustes(
             num_clusters=30, num_restarts=args.restarts, batch_size=10_000,
             num_iterations=args.iters, num_workers=args.workers,
-        ).fit(sx, sy, randomness=seed)
+        ).fit(sx, sy, randomness=rnd)
         tx, ty = aligner.train_x, aligner.train_y
         iters = []
         for t, w in enumerate(aligner.trajectory):
@@ -317,10 +325,10 @@ def main():
         print("axis:", axis, flush=True)
 
     config = {**vars(args), "dataset": DATASET, "modality_x": MOD_X, "modality_y": MOD_Y, "model": MODEL,
-              "seeds": [int(s) for s in seeds], "aligner": {"C": 30, "S": args.restarts, "b": 10000, "R": args.iters},
-              "smoke": smoke}
+              "seed_universe_total": total, "seed_slice": [args.seed_lo, hi], "seeds": [int(s) for s in seeds],
+              "aligner": {"C": 30, "S": args.restarts, "b": 10000, "R": args.iters}, "smoke": smoke}
     results = {"canary": canary, "oracle": oracle, "selection": selection, "axis": axis, "per_seed": per_seed}
-    name = f"e8_citeseq_remove{args.remove_topk}"
+    name = f"e8_citeseq_remove{args.remove_topk}_s{args.seed_lo}_{hi}"
     print("receipt:", receipt(name, config, results, OUT))
 
 

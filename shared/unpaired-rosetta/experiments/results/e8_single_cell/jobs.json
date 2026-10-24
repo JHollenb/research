@@ -1,15 +1,134 @@
 [
   {
-    "job_id": "job-9779e67cfc0a",
-    "plan": "smoke",
+    "job_id": "job-06a9c7d97274",
+    "plan": "baseline",
     "args": [
       "e8_single_cell.run",
-      "--seeds",
-      "2",
+      "--total-seeds",
+      "20",
+      "--seed-lo",
+      "0",
+      "--seed-hi",
+      "3",
+      "--remove-topk",
+      "0",
       "--workers",
-      "1",
+      "4",
       "--manifest-sha256",
-      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"419868c89c76dcf5048c42345aea7396dcd72d47f273f4f50be45e0c34ae9667\", \"submit.py\": \"ad4667cb07e26fc64a28c2aecc95f5b41e18c82b3f7362be63d09fd4711677e8\"}"
-    ]
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"bf253352dfd7ef067c1406662d0bc91fce5cff861d5f37f9b16ba18cd0663e40\", \"submit.py\": \"7c2fadac0fe6e93a0be64a10657d43c333f1a4512861d1c6e4bd9862819b6363\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e8_single_cell/e8_citeseq_remove0_s0_3-20261023T235148.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-84b8d9b76ae3",
+    "plan": "baseline",
+    "args": [
+      "e8_single_cell.run",
+      "--total-seeds",
+      "20",
+      "--seed-lo",
+      "3",
+      "--seed-hi",
+      "6",
+      "--remove-topk",
+      "0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"bf253352dfd7ef067c1406662d0bc91fce5cff861d5f37f9b16ba18cd0663e40\", \"submit.py\": \"7c2fadac0fe6e93a0be64a10657d43c333f1a4512861d1c6e4bd9862819b6363\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e8_single_cell/e8_citeseq_remove0_s3_6-20261023T235109.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-76beff7dcbb4",
+    "plan": "baseline",
+    "args": [
+      "e8_single_cell.run",
+      "--total-seeds",
+      "20",
+      "--seed-lo",
+      "6",
+      "--seed-hi",
+      "9",
+      "--remove-topk",
+      "0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"bf253352dfd7ef067c1406662d0bc91fce5cff861d5f37f9b16ba18cd0663e40\", \"submit.py\": \"7c2fadac0fe6e93a0be64a10657d43c333f1a4512861d1c6e4bd9862819b6363\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e8_single_cell/e8_citeseq_remove0_s6_9-20261023T235144.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-1f437f00652f",
+    "plan": "baseline",
+    "args": [
+      "e8_single_cell.run",
+      "--total-seeds",
+      "20",
+      "--seed-lo",
+      "9",
+      "--seed-hi",
+      "12",
+      "--remove-topk",
+      "0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"bf253352dfd7ef067c1406662d0bc91fce5cff861d5f37f9b16ba18cd0663e40\", \"submit.py\": \"7c2fadac0fe6e93a0be64a10657d43c333f1a4512861d1c6e4bd9862819b6363\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e8_single_cell/e8_citeseq_remove0_s9_12-20261023T235113.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-d99a81cffc18",
+    "plan": "removal",
+    "args": [
+      "e8_single_cell.run",
+      "--total-seeds",
+      "20",
+      "--seed-lo",
+      "0",
+      "--seed-hi",
+      "3",
+      "--remove-topk",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"bf253352dfd7ef067c1406662d0bc91fce5cff861d5f37f9b16ba18cd0663e40\", \"submit.py\": \"7c2fadac0fe6e93a0be64a10657d43c333f1a4512861d1c6e4bd9862819b6363\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e8_single_cell/e8_citeseq_remove1_s0_3-20261023T235714.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-50fa2d621902",
+    "plan": "removal",
+    "args": [
+      "e8_single_cell.run",
+      "--total-seeds",
+      "20",
+      "--seed-lo",
+      "3",
+      "--seed-hi",
+      "6",
+      "--remove-topk",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"bf253352dfd7ef067c1406662d0bc91fce5cff861d5f37f9b16ba18cd0663e40\", \"submit.py\": \"7c2fadac0fe6e93a0be64a10657d43c333f1a4512861d1c6e4bd9862819b6363\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e8_single_cell/e8_citeseq_remove1_s3_6-20261024T000115.json",
+    "collected": true
   }
 ]

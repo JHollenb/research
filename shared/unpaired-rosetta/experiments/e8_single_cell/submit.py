@@ -35,16 +35,27 @@ def manifest_sha256() -> str:
     return json.dumps(out, sort_keys=True)
 
 
+TOTAL = 20  # canonical seed universe derive_seeds(42, 20); shards slice it so jobs stay under the 30-min cap.
+
+
+def _job(sha, lo, hi, k=0):
+    # workers=4 + ram 12000: the O(C^4) QAP model build holds a large per-restart structure, so 8 parallel builds at
+    # 6000 MB were killed_ram; 4 workers keep it under cap while still ~4x faster than serial.
+    return dict(args=["e8_single_cell.run", "--total-seeds", str(TOTAL), "--seed-lo", str(lo), "--seed-hi", str(hi),
+                      "--remove-topk", str(k), "--workers", "4", "--manifest-sha256", sha],
+                ram_mb=12000, timeout_s=1800)
+
+
 def plan(name: str, sha: str) -> list[dict]:
-    if name == "smoke":  # 2 real seeds, full config: validates env + canary + oracle, measures per-seed Beast time
-        return [dict(args=["e8_single_cell.run", "--seeds", "2", "--workers", "1", "--manifest-sha256", sha],
+    # The O(C^4) QAP model build is ~20 s/restart x S=30 ~ 10 min/seed single-threaded; --workers 8 parallelizes the
+    # 30 restarts, and seeds are sharded so each job fits the cap. Smoke already covered baseline seeds [0:2].
+    if name == "smoke":  # 2 real seeds (universe [0:2]), full config: validates env + canary + oracle + axis
+        return [dict(args=["e8_single_cell.run", "--seeds", "2", "--workers", "8", "--manifest-sha256", sha],
                      ram_mb=4000, timeout_s=1800)]
-    if name == "baseline":  # 20 seeds, no removal: canary, oracle, selection, axis probe
-        return [dict(args=["e8_single_cell.run", "--seeds", "20", "--workers", "1", "--manifest-sha256", sha],
-                     ram_mb=6000, timeout_s=1800)]
-    if name == "removal":  # 20 seeds, top-1 and top-2 pairs-free axis removal
-        return [dict(args=["e8_single_cell.run", "--seeds", "20", "--remove-topk", str(k), "--workers", "1",
-                           "--manifest-sha256", sha], ram_mb=6000, timeout_s=1800) for k in (1, 2)]
+    if name == "baseline":  # 12 seeds [0:12], sharded by 3 (smoke used the pre-fix randomness, so it is re-run)
+        return [_job(sha, lo, hi) for lo, hi in [(0, 3), (3, 6), (6, 9), (9, 12)]]
+    if name == "removal":  # top-1 pairs-free axis removal, seeds [0:6], sharded by 3 (control for Q3)
+        return [_job(sha, lo, hi, k=1) for lo, hi in [(0, 3), (3, 6)]]
     raise SystemExit(f"unknown plan {name}")
 
 
