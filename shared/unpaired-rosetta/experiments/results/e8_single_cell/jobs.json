@@ -1,0 +1,15 @@
+[
+  {
+    "job_id": "job-9779e67cfc0a",
+    "plan": "smoke",
+    "args": [
+      "e8_single_cell.run",
+      "--seeds",
+      "2",
+      "--workers",
+      "1",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"820660d2bd2159c3937c6eabf008c334ec752ea9c0a6b58b1381d4c862220783\", \"aligner_logged.py\": \"fc7ccbcf222b62d08a1d875c9df1f9aea9c7bcc04845f6480a62012b0e7a3a95\", \"run.py\": \"419868c89c76dcf5048c42345aea7396dcd72d47f273f4f50be45e0c34ae9667\", \"submit.py\": \"ad4667cb07e26fc64a28c2aecc95f5b41e18c82b3f7362be63d09fd4711677e8\"}"
+    ]
+  }
+]

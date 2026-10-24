@@ -1,0 +1,202 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "batch_size": 1500,
+      "num_clusters": 10,
+      "num_iterations": 5,
+      "num_restarts": 3,
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "e",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      1,
+      5,
+      10,
+      50,
+      100
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"0adc26e63cfa31d6b2c7cada389a7b21eacefa4417c274724484678a3713898a\"}",
+    "seed": 0,
+    "smoke": true,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armE-DenselyCaptionedImages-none-smoke",
+  "results": {
+    "rows": [
+      {
+        "S1_best": 0.4395380914211273,
+        "S1_last": 0.4395380914211273,
+        "arm": "E_trace_baseline",
+        "bestS1_iter": 5,
+        "best_iter": 5,
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_at_bestS1": 0.3472831415707854,
+        "foscttm_best": 0.3472831415707854,
+        "foscttm_last": 0.3472831415707854,
+        "language": "qwen3-8b-gen",
+        "n_iters": 5,
+        "seed": 0,
+        "trace": [
+          {
+            "S1_matched_cosine": 0.43061861395835876,
+            "foscttm": 0.3692434967483742,
+            "iter": 0
+          },
+          {
+            "S1_matched_cosine": 0.41763752698898315,
+            "foscttm": 0.36202101050525265,
+            "iter": 1
+          },
+          {
+            "S1_matched_cosine": 0.428077757358551,
+            "foscttm": 0.35769009504752375,
+            "iter": 2
+          },
+          {
+            "S1_matched_cosine": 0.4334416389465332,
+            "foscttm": 0.3566910955477739,
+            "iter": 3
+          },
+          {
+            "S1_matched_cosine": 0.4342036247253418,
+            "foscttm": 0.352661955977989,
+            "iter": 4
+          },
+          {
+            "S1_matched_cosine": 0.4395380914211273,
+            "foscttm": 0.3472831415707854,
+            "iter": 5
+          }
+        ]
+      },
+      {
+        "S1_best": 0.40774497389793396,
+        "S1_last": 0.40774497389793396,
+        "arm": "E_trace_baseline",
+        "bestS1_iter": 5,
+        "best_iter": 0,
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_at_bestS1": 0.3317993996998499,
+        "foscttm_best": 0.31884942471235617,
+        "foscttm_last": 0.3317993996998499,
+        "language": "qwen3-emb",
+        "n_iters": 5,
+        "seed": 0,
+        "trace": [
+          {
+            "S1_matched_cosine": 0.4038892090320587,
+            "foscttm": 0.31884942471235617,
+            "iter": 0
+          },
+          {
+            "S1_matched_cosine": 0.3858776390552521,
+            "foscttm": 0.32596498249124556,
+            "iter": 1
+          },
+          {
+            "S1_matched_cosine": 0.39606407284736633,
+            "foscttm": 0.32824737368684337,
+            "iter": 2
+          },
+          {
+            "S1_matched_cosine": 0.40125080943107605,
+            "foscttm": 0.3296678339169584,
+            "iter": 3
+          },
+          {
+            "S1_matched_cosine": 0.40366634726524353,
+            "foscttm": 0.33209629814907454,
+            "iter": 4
+          },
+          {
+            "S1_matched_cosine": 0.40774497389793396,
+            "foscttm": 0.3317993996998499,
+            "iter": 5
+          }
+        ]
+      },
+      {
+        "S1_best": 0.41782426834106445,
+        "S1_last": 0.41782426834106445,
+        "arm": "E_trace_baseline",
+        "bestS1_iter": 5,
+        "best_iter": 0,
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_at_bestS1": 0.5784509754877438,
+        "foscttm_best": 0.5706353176588295,
+        "foscttm_last": 0.5784509754877438,
+        "language": "mpnet",
+        "n_iters": 5,
+        "seed": 0,
+        "trace": [
+          {
+            "S1_matched_cosine": 0.39924564957618713,
+            "foscttm": 0.5706353176588295,
+            "iter": 0
+          },
+          {
+            "S1_matched_cosine": 0.3981930613517761,
+            "foscttm": 0.5760172586293146,
+            "iter": 1
+          },
+          {
+            "S1_matched_cosine": 0.407789409160614,
+            "foscttm": 0.5793211605802903,
+            "iter": 2
+          },
+          {
+            "S1_matched_cosine": 0.4117845892906189,
+            "foscttm": 0.5800577788894448,
+            "iter": 3
+          },
+          {
+            "S1_matched_cosine": 0.4133288860321045,
+            "foscttm": 0.5786348174087045,
+            "iter": 4
+          },
+          {
+            "S1_matched_cosine": 0.41782426834106445,
+            "foscttm": 0.5784509754877438,
+            "iter": 5
+          }
+        ]
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T05:20:19Z",
+  "fleet": {
+    "job_id": "job-0563bf424e02",
+    "host": "beast"
+  }
+}

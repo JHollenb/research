@@ -1,0 +1,94 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "batch_size": 1500,
+      "num_clusters": 10,
+      "num_iterations": 5,
+      "num_restarts": 3,
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "arm": "a",
+    "candidate": "none",
+    "candidates": [
+      "none"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "encoders": [
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "qwen3-embedding-8b",
+      "mpnet"
+    ],
+    "holdout": 2000,
+    "ks": [
+      1,
+      5,
+      10,
+      50,
+      100
+    ],
+    "manifest_sha256": "{\"PREREG.md\": \"d80c6155be4f0ab044ff59893372768f51175021d28e3b22293e17f1565575f0\", \"__init__.py\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"arms.py\": \"565d596679843c03810ba40ea4920418ce392ec62e39dab9197c7120bd85d169\", \"submit.py\": \"0adc26e63cfa31d6b2c7cada389a7b21eacefa4417c274724484678a3713898a\"}",
+    "n": 7805,
+    "pivot_encoder": "qwen3-embedding-8b",
+    "seed": 0,
+    "smoke": true,
+    "synthetic_smoke": false,
+    "targets": [
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e7_armA-DenselyCaptionedImages-gen-none-smoke",
+  "results": {
+    "rows": [
+      {
+        "arm": "A_emb_pivot_control",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.3317993996998499
+      },
+      {
+        "R_orth_err": 0.00026279527810402215,
+        "arm": "A_text_text_emb_to_gen",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.00023761880940470235
+      },
+      {
+        "S1_matched_cosine": 0.34668412804603577,
+        "S2_matched_linear_cka": 0.2724272577463549,
+        "arm": "A_compose",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.334727863931966,
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.448291152715683,
+        "S2_matched_linear_cka": 0.3919729505525011,
+        "arm": "A_refine",
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.3529902451225613,
+        "matched_pairs": 2902
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-24T05:19:24Z",
+  "fleet": {
+    "job_id": "job-f719885333b8",
+    "host": "beast"
+  }
+}
