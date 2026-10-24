@@ -1,0 +1,64 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "candidates": [
+      "pc3",
+      "pc4"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "holdout": 2000,
+    "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+    "manifest_sha256": "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"d679818f977c8c92d832cd9a4aedf6cee6693f85665c92135f8478456d4afe1a\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}",
+    "rows_available": 7805,
+    "seed": 0,
+    "smoke": false,
+    "smoke_gate": {
+      "tiny_fit_holdout_foscttm": 0.3472831415707854,
+      "trace_after_drop_pc0": 250.9522705078125,
+      "trace_full": 312.679931640625
+    },
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-pc3-pc4",
+  "results": {
+    "rows": [
+      {
+        "S1_matched_cosine": 0.485506147146225,
+        "S2_matched_linear_cka": 0.6567036504659182,
+        "candidate": "pc3",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.43714357178589297,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.4919493794441223,
+        "S2_matched_linear_cka": 0.6734145726801094,
+        "candidate": "pc4",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.4550935467733867,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "matched_pairs": 2902
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-23T06:04:33Z",
+  "fleet": {
+    "job_id": "job-7fb22ef1774e",
+    "host": "beast"
+  }
+}

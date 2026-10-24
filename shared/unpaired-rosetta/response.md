@@ -1,15 +1,15 @@
 ---
-title: "Reading Is Not Authoring: A Hidden Scaffold Axis, an Unpaired Fix, and the Rotation Ceiling in Unpaired Cross-Modal Alignment"
+title: "Reading Is Not Authoring: A Hidden Non-Visual Axis, an Unpaired Fix, and the Rotation Ceiling in Unpaired Cross-Modal Alignment"
 subtitle: "A response to Schnaus, Dagès, Cremers, Wang and Isola, 'Shared Geometry as a Rosetta Stone' (arXiv 2610.09411)"
-status: "DRAFT 2 (2026-10-10). E0, E1, E2, E3 and E5 measured; E4 designed, not built."
-date: 2026-10-10
+status: "DRAFT 3.1 (2026-10-23 10:26 PDT; the CKA point in §1, §3.5 and §8 is re-aimed at App. D after a full-text check showed their main-text predictor is already linear CKA). E0, E1, E2, E3, E5 measured; E6 generality measured (the non-visual axis and the unpaired detector reproduce on SPC, DCI and DOCCI and are absent on short COCO captions; the one-axis removal fix is SPC-specific — E6b oracle: given true pairs a single rotation aligns gen on all three corpora, so the off-SPC failure is a failure of the unpaired search, not the geometry); E4 designed, not built."
+date: 2026-10-22
 authors: TBD
 code: experiments/ (their library pinned at fdfad84; every scored number has a JSON receipt in experiments/results/)
 ---
 
 # Reading Is Not Authoring
 
-**A hidden scaffold axis, an unpaired fix, and the rotation ceiling in unpaired cross-modal alignment.**
+**A hidden non-visual axis, an unpaired fix, and the rotation ceiling in unpaired cross-modal alignment.**
 *A response to Schnaus, Dagès, Cremers, Wang and Isola, "Shared Geometry as a Rosetta Stone" (arXiv 2610.09411).*
 
 > **How to read this report.**
@@ -28,13 +28,24 @@ single rotation with no paired data. We confirm the premise on a new kind of pai
 18-symbol correspondence between SmolLM2 and the text conditioner of a diffusion model, exactly, with their solver.
 We then report three results that their evaluation does not show.
 
-1. **A hidden scaffold axis, and an unpaired fix.** Their stored Qwen3-8B generative embeddings of long captions put
-   13.8% of their variance on one axis that the image embedding barely predicts (R² 0.16, against 0.88–0.89 for
-   MPNet and Qwen3-Embedding). The clipped CKA in their appendix hides this. Under their aligner, removing that one
+1. **A hidden non-visual axis, and an unpaired fix.** Their stored Qwen3-8B generative embeddings of long captions
+   put 13.8% of their variance on one axis that the image embedding barely predicts (R² 0.16, against 0.88–0.89 for
+   MPNet and Qwen3-Embedding). Linear CKA, the predictor of their main text, shows gen's deficit, and the deficit sits on this axis; the clipped CKA of their Appendix D does not show it on SPC. Under their aligner, removing that one
    axis takes SPC holdout FOSCTTM from **0.415 ± 0.055 to 0.038 ± 0.006** over three seeds. Removing the top axis of
-   MPNet or Qwen3-Embedding instead wrecks them, so it is not a blanket rule. A gate detector that uses **no pairs**
-   chooses correctly in **9 of 9** encoder × seed cases. It gates off Qwen3-gen's axis, leaves the other two alone,
-   and every choice is the best of the settings compared on true-pair FOSCTTM.
+   MPNet or Qwen3-Embedding instead wrecks them, so it is not a blanket rule. A pairs-free detector picks the
+   right setting for all three encoders: at seed 0 it chooses among six gate settings, and at seeds 1 and 2 it keeps
+   the same choice over the seed-0 runner-up (9 of 9 encoder × seed comparisons). It gates off Qwen3-gen's axis,
+   leaves the other two alone, and every choice is the best of the settings compared on true-pair FOSCTTM; the
+   MPNet margin at seed 0 is thin (0.005 in S1). **Generality (E6, §3.6): this axis
+   reproduces on their two other long-caption corpora (DenselyCaptionedImages and DOCCI, top-PC variance 19–22%,
+   image R² 0.05) and is absent on short COCO captions (image R² 0.90), so it is a long-caption effect, and the
+   unpaired detector still selects it. But removing it rescues the alignment only on SPC (and an SPC-fit map with
+   the axis removed transfers to held-out COCO-val, 0.409 → 0.022): on DCI and DOCCI the same projection leaves gen
+   near chance (~0.39–0.48), not at the control encoders' ~0.10. A true-pair oracle shows why (E6b): a single
+   rotation aligns Qwen3-gen to the image on all three corpora, with or without the axis (holdout FOSCTTM
+   0.007–0.014, against 0.001–0.003 for Qwen3-Embedding), so the encoder they find weakest is not geometrically
+   misaligned. What fails is the unpaired search, which the non-visual axis misleads; removing it is a search aid
+   that suffices on SPC and not on DCI or DOCCI, and eight pairs-free restarts do not close the gap.**
 2. **Retrieval is not fidelity, and the rotation is the ceiling.** On COCO their zero-pair map retrieves almost
    perfectly (FOSCTTM 0.0073), yet its median cosine to the true partner is 0.53. Two oracle maps fitted on 20,000
    true pairs retrieve identically (FOSCTTM 0.0027 vs 0.0026) but differ by 0.21 in median fidelity (0.57 vs 0.78).
@@ -62,8 +73,8 @@ Receipts: `results/e5_scaffold_axis/e5_gates-*.json`.*
 
 | finding | measured result | what they could change |
 |---|---|---|
-| A non-visual dominant axis in Qwen3 generative pooling (§3) | removing it: SPC FOSCTTM 0.415 → 0.038 (3 seeds) | run the unpaired gate detector before fitting: six fits instead of one |
-| Clipped CKA hides that axis (§3.5) | clipped CKA 0.61–0.66 for all three encoders; linear CKA 0.43 for gen vs 0.63–0.66 | report linear CKA next to clipped CKA when predicting alignability |
+| A non-visual dominant axis in Qwen3 generative pooling of long captions (§3, §3.6) | on SPC removing it: FOSCTTM 0.415 → 0.038 (3 seeds); the axis itself reproduces on DCI and DOCCI (variance 19–22%, image R² 0.05) and is absent on short COCO captions (R² 0.90); removing it leaves DCI/DOCCI near chance (~0.39–0.48), yet a true-pair rotation aligns gen on all three corpora (0.007–0.014), so the failure is the unpaired search | run the unpaired detector before fitting as a diagnostic (it flags the deficit on all three long-caption corpora); treat gen's near-chance score as a search failure, not an incompatible geometry |
+| Clipped CKA misses that axis on SPC (§3.5) | clipped CKA 0.61–0.66 for all three encoders; linear CKA 0.43 for gen vs 0.63–0.66, and 0.58 once the axis is projected out | in App. D, report linear CKA (the main-text predictor) next to clipped CKA |
 | FOSCTTM does not measure fidelity (§4) | equal FOSCTTM (0.0027 / 0.0026), median α 0.57 vs 0.78 | report per-pair α next to FOSCTTM, especially for text-to-image use |
 | The rotation, not the estimate, limits fidelity (§4.3) | estimation gap 0.07 ± 0.03; rotation constraint 0.21 | for generation, relax the rotation (for example a non-orthogonal correction on a few anchors); untested |
 | Span ceiling of pair baselines (§5) | bound holds, loose; their method with 5 pairs retrieves better than the baselines with 200 | a proof of why their few-pair baselines need many pairs |
@@ -73,13 +84,28 @@ Receipts: `results/e5_scaffold_axis/e5_gates-*.json`.*
 | # | claim | test | status |
 |---|---|---|---|
 | — | Their premise holds for a language model vs a diffusion conditioner, at the symbol level | E0 | **confirmed**: 18/18 at zero pairs |
-| A\* | *(post-hoc)* One non-visual axis dominates Qwen3-gen embeddings; removing it fixes the alignment; an unpaired detector finds it | axis probe, E5, gates | **measured**: 0.415 → 0.038 over 3 seeds; detector correct in 9/9 |
+| A\* | *(post-hoc)* One non-visual axis dominates Qwen3-gen embeddings; an unpaired detector finds it; removing it fixes the alignment | axis probe, E5, gates | **mixed (E6)**: axis + detector reproduce on SPC, DCI, DOCCI and are absent on short COCO captions; the *removal fix* is SPC-specific (0.415 → 0.038 on SPC; only ~0.5 → ~0.4–0.47 on DCI/DOCCI); a true-pair oracle aligns gen on all three (0.007–0.014), so off SPC the unpaired search fails, not the geometry (E6b) |
 | D | Near-zero FOSCTTM is compatible with low per-pair fidelity | E1, E1b | **supported**: equal-FOSCTTM oracles differ by 0.21 in α; the D1 formula is right in direction, off 3–30× in magnitude |
 | C | Span-confined pair baselines: mean fidelity ≤ sqrt(top-p eigen-energy) | proof, E2 | **proved; holds on data**, but loose |
 | E | Choosing pairs (vision-side medoids) helps | E2 | **baselines only**; no gain for their method |
 | A | The thinking preamble dilutes CKA; token-centering removes it | E3 | **refuted**: centering lowers CKA in every thinking-on cell |
 | B | A late, non-final layer aligns better | E3 | **supported, small**: +0.007–0.015 in 5 of 6 no-thinking cells; not for thinking mode |
 | F | A consumer-grounded benchmark with causal ground truth | E4 | designed, not built |
+
+### 1.3 Related work
+
+Aligning separately trained representations without paired data has a long line behind it. In word translation,
+Gromov–Wasserstein matching aligns spaces by their internal pairwise similarities rather than absolute positions
+(Mémoli 2011; Alvarez-Melis and Jaakkola 2018), and MUSE learns an adversarial map, refines it with Procrustes,
+and retrieves with CSLS (Conneau et al. 2018) — an early separation of the *retrieval* criterion from the map
+itself, which is the distinction §4 makes quantitative. More recent work translates text embeddings across spaces
+with no pairs (vec2vec; Jha et al. 2025), using a shared latent and a non-orthogonal decoder — the relaxed map
+class §4.3 points to when per-item fidelity, not retrieval, is the goal — and maps activation spaces between
+language models to transfer interventions (Oozeer et al. 2025). Schnaus et al.'s own earlier QAP matcher (Blind
+Match, CVPR 2025) casts unpaired vision–language correspondence as a quadratic assignment and notes that mutual
+k-NN, CKA and Gromov–Wasserstein are special cases of it. Against this background our contribution is not another
+matcher but a diagnosis: when their pipeline fails (Qwen3 generative pooling on long captions), why (a dominant
+non-visual axis, §3), and a pairs-free detector that flags it — plus the two evaluation results in §4 and §5.
 
 ---
 
@@ -115,13 +141,15 @@ Receipt: `experiments/results/e0_symbol_qap/e0_symbol_qap-20261009T180533.json`.
 
 ---
 
-## 3. A hidden scaffold axis, and an unpaired fix
+## 3. A hidden non-visual axis, and an unpaired fix
 
 ### 3.1 The axis (measured offline, post-hoc)
 
 The question came out of the failure in §6.1. Their generative pooling aligns near chance on long captions, yet its
 clipped CKA (0.607) is close to MPNet's (0.633); if the token-level preamble is not the cause, what is? We examined
-their stored SPC embeddings directly: 4,096 rows of DINOv2-B and of each language model. Script
+their stored SPC embeddings directly: 4,096 rows of DINOv2-B and of each language model. Throughout, the
+**non-visual axis** means a dominant principal axis of the text embeddings that the paired image embedding barely
+predicts (held-out R² near 0). Script
 `experiments/e5_scaffold_axis/axis_probe.py`; receipt `results/e5_scaffold_axis/e5_axis_probe-20261009T191307.json`.
 
 | SPC, first 4,096 rows | Qwen3-8B gen | Qwen3-Embedding-8B | MPNet |
@@ -131,14 +159,19 @@ their stored SPC embeddings directly: 4,096 rows of DINOv2-B and of each languag
 | top language PC: share of variance | **13.8%** | 5.4% | 6.7% |
 | held-out R² of top language PC from the image embedding | **0.16** | 0.89 | 0.88 |
 | \|corr\| of top language PC with top image PC | **0.006** | 0.889 | 0.901 |
-| corr of top language PC with paragraph length (n = 2,048) | 0.229 | −0.034 | 0.071 |
+| corr of top language PC with paragraph length (n = 2,048) [†] | 0.229 | −0.034 | 0.071 |
 | **linear CKA after projecting out the top language PC** | **0.583 (↑)** | 0.498 (↓) | 0.466 (↓) |
 | mutual 10-NN with the image embedding (n = 1,024) | **0.216** | 0.349 | 0.330 |
 
+[†] Every number in this table is in the committed receipt `e5_axis_probe-20261009T191307.json` except the
+paragraph-length correlation, which is `null` in that receipt (the caption payload was absent when it ran) and was
+computed in a separate pass; treat that one row as not receipt-backed here. It is a minor supporting detail and
+decides no claim.
+
 The opposite signs in the CKA-after-projection row are what this lemma predicts:
 
-**Lemma A1 (scaffold dilution of CKA, exact in population).** Let X = R + S be zero-mean, with S independent of
-(R, Y). Then
+**Lemma A1 (nuisance-axis dilution of CKA, exact in population).** Let X = R + S be zero-mean, with S (a component
+independent of the image, such as the non-visual axis) independent of (R, Y). Then
 
 ```
 CKA(X, Y) = CKA(R, Y) · ||Σ_R||_F / ||Σ_R + Σ_S||_F  ≤  CKA(R, Y) / sqrt(1 + ρ²),   ρ = ||Σ_S||_F / ||Σ_R||_F,
@@ -149,9 +182,9 @@ with equality if and only if Σ_R Σ_S = 0.
 *Proof.* Independence gives Cov(X, Y) = Cov(R, Y) and Cov(X) = Σ_R + Σ_S. Then
 ||Σ_R + Σ_S||_F² = ||Σ_R||² + ||Σ_S||² + 2 tr(Σ_R Σ_S), and tr(Σ_R Σ_S) ≥ 0 for positive semidefinite matrices. ∎
 
-So removing a pure scaffold raises CKA, and removing an axis the image shares lowers it. Qwen3-gen's top axis
-behaves as a scaffold: removing it raises linear CKA by 35%. The other two encoders' top axes are the image's own
-top axis. The implied scaffold ratio for gen is ρ ≈ 0.9, from 0.583 / 0.433 = 1.35 ≈ sqrt(1 + ρ²).
+So removing a pure image-independent axis raises CKA, and removing an axis the image shares lowers it. Qwen3-gen's
+top axis behaves this way: removing it raises linear CKA by 35%. The other two encoders' top axes are the image's
+own top axis. The implied nuisance ratio for gen is ρ ≈ 0.9, from 0.583 / 0.433 = 1.35 ≈ sqrt(1 + ρ²).
 
 ### 3.2 Removing it fixes their aligner (measured, E5)
 
@@ -171,8 +204,8 @@ of the unpaired language training rows, projected out of every language row. Bea
   change is far beyond any seed noise we observed, so we did not re-seed it.
 - **Mechanism (inferred from the sign pattern and §3.1).** Their aligner locks onto each space's dominant axis.
   For MPNet and Qwen3-Embedding that axis is the image's own top axis (|corr| 0.89–0.90), so it carries the
-  alignment. For Qwen3-gen it is non-visual (|corr| 0.006), so the image's top axis is matched to a scaffold and
-  the alignment collapses.
+  alignment. For Qwen3-gen it is non-visual (|corr| 0.006), so the image's top axis is matched to the non-visual
+  axis and the alignment collapses.
 
 ### 3.3 Finding the axis without pairs (measured)
 
@@ -180,14 +213,13 @@ of the unpaired language training rows, projected out of every language row. Bea
 language PCs that the mapped image side could not predict (ridge R² < 0.3).
 - **Result.** For Qwen3-gen it dropped PC 8, not PC 0, and FOSCTTM worsened from 0.407 to 0.484 (laptop, seed 0).
   For the two controls it correctly dropped nothing.
-- **Cause (inferred).** The test is circular. On its pseudo-pairs the image side "predicts" the scaffold PC with
+- **Cause (inferred).** The test is circular. On its pseudo-pairs the image side "predicts" the non-visual PC with
   R² 0.855, against 0.16 on true pairs. The pseudo-pairs come from a fit that had already rotated the image's top
-  axis onto the scaffold, so the test certifies whatever the broken fit matched.
+  axis onto the non-visual axis, so the test certifies whatever the broken fit matched.
 
-**A gate detector that works.** It is ported from our spectral dimension ladder. There, one learned gate per axis
-drove every nuisance-axis gate to exactly 0 (61 of 61 at 64 axes), and the setting that scored best on discovery
-data was kept. Those gates were trained on a supervised loss; here the only signal is the alignment, and gating
-inside one fit is the circular trap above. So we port the second mechanism, **discovery selection**:
+**A gate detector that works.** The fix is to give each candidate gate setting its own fresh fit and to choose
+between fits by a pairs-free score, instead of gating inside a single fit — which certifies whatever the broken
+fit already matched (the circular trap above). We call this **selection over fits**:
 1. Fit once per gate setting: no gate, or gate off one of language PCs 0–4, estimated on unpaired rows.
 2. Score each fit on its own training rows, with no true pair:
    - **S1** is the mean cosine of Hungarian-matched pairs: how well one rotation makes the two clouds coincide as
@@ -237,11 +269,121 @@ The Qwen3-8B-gen file is stored in fp32, although their loader docstring says bf
 
 ### 3.5 What it means for their predictors
 
-- **Clipped CKA hides the deficit.** Their App. D clipped CKA gives 0.61–0.66 for all three encoders, while linear
-  CKA separates gen (0.433) from the others (0.63–0.66). Inferred: clipping bounds the dominant axis's large
-  coordinates, so a predictor built on clipped CKA over-rates generative pooling.
+- **Clipped CKA misses the SPC deficit; their main predictor does not.** Their main-text alignability predictor is
+  already linear CKA (R² 0.73 against FOSCTTM, Sec. 4.3), and it rates gen low. Their App. D analysis uses the clipped
+  CKA of Wang et al., which on SPC gives 0.61–0.66 for all three encoders and puts gen level with mean pooling (+0.014);
+  it does turn negative on the two densest corpora (−0.144 DOCCI, −0.067 DCI). Linear CKA separates gen (0.433) from
+  the others (0.63–0.66) on SPC, and projecting out the one axis raises it to 0.583. Inferred: clipping bounds the
+  dominant axis's large coordinates, so App. D's clipped-CKA comparison understates gen's SPC deficit. This is a note
+  on App. D, not on their predictor.
+- **CKA predicts the search, not the existence of a rotation.** Gen's low linear CKA (0.21–0.43 on the long-caption
+  corpora) correctly predicts that their unpaired aligner fails there, yet the true-pair oracle (§3.6) finds a single
+  rotation that aligns it (0.007–0.014). Low CKA is evidence that unpaired search will struggle, not that the shared
+  geometry is missing.
 - **Local geometry agrees.** Mutual 10-NN is 0.216 for gen against 0.33–0.35. This suggests the axis reorganizes
   neighborhoods, which Hungarian matching depends on.
+
+### 3.6 Generality across corpora: the axis reproduces, the single-axis fix does not (measured, E6)
+
+§3.1–§3.3 were on one corpus (SPC). Schnaus et al. validate SPC-trained maps on COCO-val and report Qwen3
+generative pooling near chance on two further long-caption corpora, DenselyCaptionedImages (DCI) and DOCCI. We ran
+the same probe and the same unpaired gate detector on their stored DCI, DOCCI and COCO-val embeddings — their load
+path, their aligner at commit `fdfad84`, only the corpus changed. Receipts under `results/e6_generality/`;
+pre-registration `experiments/e6_generality/PREREG.md`. The result splits cleanly: **the non-visual axis, and the
+detector that finds it, reproduce; the single-axis removal as a *fix* does not.**
+
+**The axis is present, and it is a long-caption effect (axis probe, first 4,096 rows).**
+
+| Qwen3-8B gen | SPC | DCI | DOCCI | COCO-val |
+|---|---:|---:|---:|---:|
+| top language PC: share of variance | 13.8% | 19.4% | 22.2% | 12.3% |
+| held-out R² of top PC from the image | 0.16 | **0.052** | **0.052** | **0.899** |
+| linear CKA (gen vs image) | 0.433 | 0.253 | 0.213 | 0.670 |
+| linear CKA after projecting out the top PC | 0.583 ↑ | 0.462 ↑ | 0.449 ↑ | 0.513 ↓ |
+| mutual 10-NN with the image | 0.216 | 0.132 | 0.115 | 0.368 |
+
+On DCI and DOCCI the top gen axis is non-visual (image R² 0.05) and dominant (19–22% of variance), and projecting
+it out raises linear CKA — the same Lemma A1 behavior as on SPC, more pronounced. The control encoders keep the
+opposite sign on both corpora (their top PC has R² 0.77–0.87; projecting it out lowers CKA). **On COCO-val (short
+captions, the one setting where Schnaus et al. do not report the gen failure) the axis is absent:** gen's top PC is
+image-predictable (R² 0.899), gen's linear CKA (0.670) matches the control encoders, projecting the top PC out
+*lowers* CKA (0.670 → 0.513, as for a good encoder), and mutual 10-NN is 0.368, not 0.12. So the non-visual axis is
+specifically a property of generative pooling on long, detailed captions, not of generative pooling as such.
+Receipts: `e6_axis_probe-{DenselyCaptionedImages,DOCCIDataset,coco_val2014}-*.json`.
+
+**But removing that one axis does not rescue the alignment off SPC.** Their aligner, holdout FOSCTTM on the last
+2,000 rows:
+
+| holdout FOSCTTM | SPC | DCI | DOCCI |
+|---|---|---|---|
+| gen, no gate | 0.415 ± 0.055 | 0.479 ± 0.066 (0.542 / 0.484 / 0.411) | 0.474 ± 0.044 (0.515 / 0.428 / 0.480) |
+| gen, top PC removed | **0.038 ± 0.006** | **0.391 ± 0.069 (0.413 / 0.314 / 0.447)** | **0.478 ± 0.012 (0.465 / 0.482 / 0.488)** |
+| Qwen3-Embedding, no gate / removed | 0.019 / 0.364 | 0.093 / 0.322 | 0.096 / 0.485 |
+| MPNet, no gate / removed | 0.026 / 0.325 | 0.400 / 0.325 | 0.121 / 0.473 |
+
+On SPC the removal is a rescue: 0.415 → 0.038, near-perfect retrieval. On DCI and DOCCI the same removal does not
+rescue gen: on DCI it lowers FOSCTTM only from 0.479 to 0.391 (three seeds), and on DOCCI it does essentially
+nothing, 0.474 → 0.478. Either way gen stays near chance (0.39–0.48), nowhere near the 0.09–0.12 the best control
+encoder reaches on the same corpus.
+
+**Why the fix fails off SPC: the geometry is alignable, the unpaired search is not (oracle, E6b).** Is the off-SPC
+failure a geometry problem (no single rotation can align gen to the image) or a search problem (a rotation exists but
+their unpaired solver does not find it)? An oracle settles it: give the solver the *true* pairs, fit the best map it
+can on the same training rows, and measure the same holdout FOSCTTM. With the true pairs a single orthogonal map
+aligns Qwen3-gen near-perfectly on all three corpora — with or without the axis removed:
+
+| oracle holdout FOSCTTM (true pairs) | SPC | DCI | DOCCI |
+|---|---|---|---|
+| gen, no gate — orthogonal map | 0.009 | 0.014 | 0.010 |
+| gen, top PC removed — orthogonal map | 0.007 | 0.010 | 0.007 |
+| gen, top PC removed — unconstrained linear map | 0.010 | 0.018 | 0.010 |
+| Qwen3-Embedding, no gate — orthogonal map | 0.002 | 0.003 | 0.001 |
+
+Receipt `e6b_oracle-*.json`. A single rotation *can* align gen to the image on DCI and DOCCI: the pc0-removed oracle
+reaches 0.007–0.010, essentially the control-encoder ceiling (0.001–0.003) and far below the 0.391/0.478 their
+unpaired solver reaches. So the geometry is rotation-alignable; what fails off SPC is the unpaired *search*, not the
+geometry. Two facts sharpen this. First, even gen *without* the axis removed is rotation-alignable with true pairs
+(0.009–0.014), so the non-visual axis does not break the geometry even on SPC — it corrupts the pseudo-pairing the
+unpaired solver bootstraps from, and removing it is a *search aid*, not a geometry repair. Second, an unconstrained
+linear map does no better than the rotation (0.010–0.018), so the orthogonality constraint is not the obstacle
+either; the shared linear structure is there and the unpaired solver simply does not reach it.
+
+**More unpaired restarts do not recover it.** Re-running their aligner on gen with the top PC removed over eight
+restarts (seeds 0–7) and selecting one per corpus by the pairs-free S1 alone leaves gen near chance
+(DCI 0.396, DOCCI 0.502); even the best of the eight restarts (0.280 / 0.341) is nowhere near the
+0.007–0.010 the oracle shows is reachable. The unpaired correspondence bootstrap, not the number of restarts, is
+the bottleneck.
+
+**No other single axis helps.** Gating off each of the next language PCs individually leaves gen near chance
+(DCI pc1–pc4 0.492 / 0.511 / 0.437 / 0.455; DOCCI 0.443 / 0.552 / 0.408 / 0.570), as expected from the axis
+probe: PCs 1–3 are the visual directions (held-out image R² 0.47–0.61), so removing them discards shared signal
+rather than a nuisance axis.
+
+**SPC→COCO transfer (their headline validation).** A map fit on SPC gen and evaluated on held-out COCO-val gen
+(the setting Schnaus et al. validate in) reaches holdout FOSCTTM 0.409 raw and 0.022 with the SPC top PC
+removed from both sides (5000 COCO-val rows the map never saw). So the SPC-fit map, axis removed, transfers
+to COCO — the same diagnosis read forward: the removal rescues the *fitting*, and here the fitting is done on SPC.
+
+(Qwen3-gen runs at three seeds on DCI and DOCCI, plus five more restarts each for the search test; the control
+encoders at seed 0; the oracle ceilings, the pc1–pc4 ladder and the SPC→COCO transfer are now measured.)
+
+**The unpaired detector still identifies the right axis.** Its S1 (mean cosine of Hungarian-matched pairs,
+no true pairs) still prefers removing the top PC for gen and keeping it for the well-aligned control encoders:
+on DOCCI it chooses correctly in 3 of 3 (pc0 for gen, no-gate for Qwen3-Embedding and MPNet); on DCI it chooses
+pc0 for gen and no-gate for Qwen3-Embedding, and pc0 for MPNet — which on DCI is itself poorly aligned (0.400) and
+is also helped by the removal (0.325), so the detector is self-consistent (it picks the setting that helps) rather
+than wrong. The S1 margins on the new corpora are thin, though — on gen, S1(pc0) beats S1(none) by only 0.001–0.006
+(DCI: no gate 0.485, gate off PC0 0.491; DOCCI: 0.436 and 0.437), against a clear 0.043 on SPC — consistent with the removal being only
+weakly useful there. The detector transfers as a flag; what it selects simply is not a cure off SPC.
+
+**What this means for the response.** The *diagnostic* — a dominant non-visual axis in Qwen3 generative pooling of
+long captions, read by linear-minus-clipped CKA and by the held-out image-predictability of the top PC, found
+without pairs — is now measured on three corpora and shown absent on short captions. That part generalises and is
+strengthened. The *fix* — "project out the top PC and the alignment is restored" — is specific to SPC and is scoped
+to SPC below. The oracle explains why: off SPC the pc0-removed geometry is still a single rotation away from the
+image (true-pair FOSCTTM 0.007–0.010), so the deficit their aligner leaves is a failure of the unpaired search, not
+of the geometry, and removing the one axis is a search aid that is enough on SPC but not off it. Recommending the
+detector to the authors still stands (it flags the deficit before fitting); claiming a one-line repair does not.
 
 ---
 
@@ -392,8 +534,8 @@ the receipt.
 
 **What we tested.** Their generative pooling wraps each caption as "Imagine what it would look like to see:
 {caption}" in Qwen3's chat template with thinking on. It decodes 128 greedy tokens and averages the final-layer
-states that produce them. We predicted that the shared `<think>` preamble is a scaffold in Lemma A1's sense, and
-that centering it away would raise CKA.
+states that produce them. We predicted that the shared `<think>` preamble is an image-independent nuisance in
+Lemma A1's sense, and that centering it away would raise CKA.
 
 **Setup.**
 - **Model and data.** Qwen3-1.7B in bf16 (the model of their Fig. 21 ladder), on the first 2,048 items of COCO
@@ -423,7 +565,7 @@ that centering it away would raise CKA.
 | A1: the first 12 generated tokens are shared by ≥ 90% of captions | true | 96–100% for each of the first 16 | preamble present |
 | A2: token-centering beats theirs | false (0/4 cells) | −0.021 / −0.019 | opposite sign |
 | A2′ *(post-hoc)*: leave-own-out centering beats theirs | false (0/4) | −0.015 / −0.010 | opposite sign |
-| A3: best scaffold-removed arm gains ≥ 0.02 on SPC | false | −0.004 | no gain under any margin |
+| A3: best nuisance-removed arm gains ≥ 0.02 on SPC | false | −0.004 | no gain under any margin |
 | A4: caption-token mean pooling ≥ all-token | true | +0.002 / +0.013 | SPC supported; COCO a tie |
 
 - **Refuted on the sign, not on a margin.** Both slices agree in every cell, and every thinking-on centering arm
@@ -475,8 +617,10 @@ This would give an acceptance test for unpaired maps with causal ground truth. *
 
 | change | evidence | expected effect | status |
 |---|---|---|---|
-| Run the unpaired gate detector before fitting (six fits) | §3.3 | fixes Qwen3 generative pooling on long captions (0.415 → 0.038); leaves good encoders unchanged | measured on SPC holdout, 3 seeds; DCI, DOCCI and their COCO-val protocol untested |
-| Report linear CKA next to clipped CKA | §3.5 | a predictor that stops over-rating generative pooling | measured on SPC |
+| Run the unpaired detector before fitting, as a diagnostic | §3.3, §3.6 | flags the non-visual axis in Qwen3 generative pooling of long captions, with no pairs, on SPC, DCI and DOCCI; absent on short COCO captions | detector measured on SPC (9/9) and DCI/DOCCI (E6) |
+| Treat the one-axis removal as an SPC-specific repair, not a general fix | §3.6 | restores alignment on SPC (0.415 → 0.038; the SPC-fit map transfers to COCO-val, 0.409 → 0.022) but leaves gen near chance on DCI (0.479 → 0.391) and DOCCI (0.474 → 0.478, no change) | measured, E6 and E6b (gen 3 seeds each, plus 8 restarts) |
+| Do not read Qwen3-gen's near-chance score as incompatible geometry | §3.6 (E6b) | a single rotation fitted on true pairs aligns it on SPC, DCI and DOCCI (0.007–0.014); a better-initialized unpaired search is the open lever | oracle measured; better initialization untested |
+| In App. D, report linear CKA next to clipped CKA | §3.5, §3.6 | shows the SPC deficit that clipped CKA misses, and that it sits on one axis | measured on SPC, DCI, DOCCI, COCO |
 | Report per-pair α next to FOSCTTM | §4.2 | separates maps that retrieval ranks as equal | measured (E1) |
 | For text-to-image use, relax the rotation (for example a non-orthogonal correction on a few anchors) | §4.3 | higher per-item fidelity than any rotation | ceiling measured; correction untested |
 | Read mean pooling at depth ≈ 0.9 | §6.2 | +0.007–0.015 clipped CKA | measured on CKA only |
@@ -514,10 +658,15 @@ This would give an acceptance test for unpaired maps with causal ground truth. *
 
 ## 10. Limits
 
-- **One corpus for the axis.** The axis finding and the fix are on SPC, with a holdout protocol. Their paper
-  validates SPC-trained maps on COCO val; that protocol, DCI and DOCCI are untested.
+- **The fix is SPC-specific (measured, E6).** The non-visual axis itself reproduces on DCI and DOCCI (and is
+  absent on short COCO captions), and the unpaired detector still selects it (§3.6). But projecting the axis out
+  rescues the alignment only on SPC; on DCI and DOCCI it leaves gen near chance (~0.39–0.48), not
+  at the ~0.10 the control encoders reach. On those corpora the single-axis removal is not enough to make the unpaired solver converge, though a single
+  rotation given the true pairs aligns gen as well as the control encoders (§3.6). Qwen3-gen
+  is at three seeds on each corpus plus five further restarts for the search test; the control encoders at seed 0;
+  the oracle ceilings, the pc1–pc4 ladder and the SPC→COCO transfer are now measured.
 - **Scope of the gate detector.** It searches the top five language PCs and was tested on three encoders. A
-  scaffold outside the top five, or one on the vision side, would be missed.
+  non-visual axis outside the top five, or one on the vision side, would be missed.
 - **Model size in E3.** E3 used Qwen3-1.7B, not their 8B. The replication matches within 0.016 clipped CKA, but
   the token-level negative might not transfer to 8B.
 - **Lemma A1 assumes independence.** The thinking preamble violates it, which is why A2 failed. The axis behaves as
@@ -535,12 +684,40 @@ See `experiments/README.md`. Laptop runs use `uv run python -m <module>`. Fleet 
 ## References
 
 1. Schnaus, Dagès, Cremers, Wang, Isola. Shared Geometry as a Rosetta Stone: Cross-Modal Alignment Without Paired
-   Data. arXiv 2610.09411, 2026.
+   Data. arXiv 2610.09411, 2026. (We read v2, 8 Oct 2026, and code commit `fdfad84`.)
 2. Huh, Cheung, Wang, Isola. The Platonic Representation Hypothesis. ICML 2024.
 3. Kornblith, Norouzi, Lee, Hinton. Similarity of Neural Network Representations Revisited. ICML 2019.
 4. Hutschenreiter et al. Fusion Moves for Graph Matching. ICCV 2021 (MPOpt).
 5. Ky Fan. On a theorem of Weyl concerning eigenvalues of linear transformations. PNAS 1949.
-6. Our records: the FLUX encoder swap and symbol table (`obsidian/arcs/cross-conditioner-to-time-circuits.md`); the
-   LM commit band (`research/papers/space-and-time-circuits/`); the spectral dimension ladder
-   (`spf-wt-phaselock/domains/ml/spectral-native/docs/v4-dimension-ladder-findings.md`); rotation swamping
-   (`research/papers/rounding-placement/`).
+6. Schnaus, Araslanov, Cremers. It's a (Blind) Match! Towards Vision-Language Correspondence Without Parallel
+   Data. CVPR 2025, pp. 24983–24992. arXiv 2503.24129. (Their unpaired QAP matcher; its supplement notes that
+   mutual k-NN, CKA and the Gromov–Wasserstein distance are special cases of the same quadratic assignment.)
+7. Mémoli. Gromov–Wasserstein Distances and the Metric Approach to Object Matching. Foundations of Computational
+   Mathematics 11(4):417–487, 2011. (Isometry-invariant matching of metric measure spaces.)
+8. Alvarez-Melis, Jaakkola. Gromov–Wasserstein Alignment of Word Embedding Spaces. EMNLP 2018, pp. 1881–1890.
+   arXiv 1809.00013. (Unpaired cross-lingual alignment by matching intra-space similarities.)
+9. Conneau, Lample, Ranzato, Denoyer, Jégou. Word Translation Without Parallel Data. ICLR 2018. arXiv 1710.04087.
+   (MUSE: adversarial map, Procrustes refinement, and CSLS retrieval — a precedent for separating retrieval from
+   the map's fidelity.)
+10. Jha, Zhang, Shmatikov, Morris. Harnessing the Universal Geometry of Embeddings. arXiv 2505.12540, 2025.
+    (vec2vec: translating text embeddings between spaces with no paired data, via a shared latent and a
+    non-orthogonal decoder — the kind of relaxed map class §4.3 points to for fidelity.)
+11. Oozeer, Nathawani, Prakash, Lan, Harrasse, Abdullah. Activation Space Interventions Can Be Transferred Between
+    Large Language Models. arXiv 2503.04429, 2025. (Learned maps between model activation spaces transfer
+    steering interventions.)
+12. Our records: the FLUX encoder swap and symbol table (`obsidian/arcs/cross-conditioner-to-time-circuits.md`); the
+    LM commit band (`research/papers/space-and-time-circuits/`); the learned per-axis gate ladder that the
+    detector in §3.3 adapts (`research/shared/.../spectral-native` notes); rotation swamping
+    (`research/papers/rounding-placement/`).
+
+---
+
+## Send checklist (not sent)
+
+A record of how this would reach the authors; nothing here has been sent, posted, or emailed.
+
+- **To whom.** Dominik Schnaus (first author, TU Munich / MCML), with Thomas Dagès, Daniel Cremers, Xi Wang and Phillip Isola.
+- **What.** This response, plus the `experiments/e6_generality/` and `experiments/e5_scaffold_axis/` code and the JSON receipts it cites: the non-visual axis and the pairs-free detector (now measured on SPC, DCI and DOCCI, and shown absent on short COCO captions), the SPC-specific removal fix, the retrieval-vs-fidelity gap and rotation ceiling (§4), and the span ceiling (§5). Everything is built on their stored embeddings and their library at commit `fdfad84`.
+- **Where.** A short note or email to the authors, or an issue on `github.com/dominik-schnaus/unpaired-rosetta` referencing their HF embeddings; the diagnostic (run the detector before fitting) is the part most directly useful to a revision.
+- **When.** Before their next revision. The current arXiv version is v2 (8 October 2026); no v3 exists as of 2026-10-22 (we checked the arXiv version history; we did not re-diff the Appendix D clipped-CKA material that §3.5 addresses between v1 and v2, so that should be re-checked against whatever version they revise from).
+- **Status.** Not sent. This agent did not contact anyone.

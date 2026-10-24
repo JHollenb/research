@@ -13,6 +13,7 @@ are never cited as results.
 | E2 `e2_span_bound` | C + E: span ceiling of pair baselines; vision-side medoid pairs raise it | laptop CPU; `ours` only at p ∈ {5, 20} | queued after E1; E2b `draws.py` (seeds 1–5, baselines only) queued after E2 |
 | E3 `e3_pooling_scaffold` | A + B: generative-pooling scaffold; commit-layer depth | mrun (CUDA), ~12 min | **MEASURED** (`job-9426423166f5`, `job-5fd45e7c7f0d`): A refuted on effect sign; B supported in direction, small (PREREG Amendment 3) |
 | E5 `e5_scaffold_axis` | A\* (post-hoc): a non-visual axis in Qwen3-gen embeddings; an unpaired detector removes it | laptop CPU (`axis_probe.py` seconds; `run.py` ~1 h) | probe **MEASURED**; gen fix 0.415 ± 0.055 → 0.038 ± 0.006 (3 seeds); controls wrecked by the same drop; pseudo-pair detector failed; **gate detector `gates.py` selects correctly in 9/9 encoder × seed cases** |
+| E6 `e6_generality` | A\* generality: does the non-visual axis / the removal fix / the detector reproduce beyond SPC? | Beast CPU via mrun | **MEASURED**: axis present on DCI (var 19.4%, R² 0.052) and DOCCI (22.2%, 0.052), absent on short COCO captions (R² 0.90); detector still picks pc0 for gen / none for the good controls; but the removal **fix is SPC-specific** — gen FOSCTTM only ~0.48–0.52 → ~0.39–0.47 on DCI/DOCCI (vs SPC 0.415 → 0.038), not to the controls' ~0.10 (DCI 3 seeds; DOCCI gen seed 0) |
 | E4 `e4_consumer_closure` | D on a real generator with causal ground truth (FLUX.2 Klein 4B) | mrun (CUDA) | design only |
 
 ## Seeds on the fleet

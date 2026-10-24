@@ -1,0 +1,258 @@
+{
+  "config": {
+    "cells": [
+      [
+        "qwen3-8b-gen",
+        "none"
+      ],
+      [
+        "qwen3-8b-gen",
+        "pc0"
+      ],
+      [
+        "qwen3-embedding-8b",
+        "none"
+      ]
+    ],
+    "corpora": [
+      "StanfordParagraphCaptioning",
+      "DenselyCaptionedImages",
+      "DOCCIDataset"
+    ],
+    "holdout": 2000,
+    "manifest_sha256": "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}",
+    "ridge_lambda": 0.001,
+    "smoke": {
+      "polar_orth_err": 2.20438427793924e-13,
+      "synthetic_orth_foscttm": 0.0
+    },
+    "vision": "dinov2_vit-b14@224_mean"
+  },
+  "experiment": "e6b_oracle",
+  "results": {
+    "rows": [
+      {
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "cross_fro": 1751.316549381813,
+        "foscttm_oracle": 0.009163331665832917,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 17561,
+        "weight_orth_err": 2.0303801578146222e-13
+      },
+      {
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "cross_fro": 1751.316549381813,
+        "foscttm_oracle": 0.018962231115557778,
+        "gram_trace": 17561.0,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 17561,
+        "weight_fro": 26.392686834407648
+      },
+      {
+        "candidate": "pc0",
+        "corpus": "StanfordParagraphCaptioning",
+        "cross_fro": 1831.822137939207,
+        "foscttm_oracle": 0.007111805902951475,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 17561,
+        "weight_orth_err": 1.9982766414009822e-13
+      },
+      {
+        "candidate": "pc0",
+        "corpus": "StanfordParagraphCaptioning",
+        "cross_fro": 1831.822137939207,
+        "foscttm_oracle": 0.009983741870935469,
+        "gram_trace": 17561.0,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 17561,
+        "weight_fro": 21.608454371360597
+      },
+      {
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "cross_fro": 1672.4027979177988,
+        "foscttm_oracle": 0.002141320660330165,
+        "language": "qwen3-embedding-8b",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 17561,
+        "weight_orth_err": 2.001388664667886e-13
+      },
+      {
+        "candidate": "none",
+        "corpus": "StanfordParagraphCaptioning",
+        "cross_fro": 1672.4027979177988,
+        "foscttm_oracle": 0.0025522761380690345,
+        "gram_trace": 17561.0,
+        "language": "qwen3-embedding-8b",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 17561,
+        "weight_fro": 24.15856185995867
+      },
+      {
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "cross_fro": 483.16885950040626,
+        "foscttm_oracle": 0.01440645322661331,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 5805,
+        "weight_orth_err": 2.0562112952117178e-13
+      },
+      {
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "cross_fro": 483.16885950040626,
+        "foscttm_oracle": 0.047080040020010004,
+        "gram_trace": 5804.9999999999945,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 5805,
+        "weight_fro": 30.02084112330603
+      },
+      {
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "cross_fro": 521.926721249233,
+        "foscttm_oracle": 0.00973111555777889,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 5805,
+        "weight_orth_err": 2.0339608445206897e-13
+      },
+      {
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "cross_fro": 521.926721249233,
+        "foscttm_oracle": 0.018062281140570284,
+        "gram_trace": 5804.9999999999945,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 5805,
+        "weight_fro": 30.564120232379512
+      },
+      {
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "cross_fro": 497.1902357021365,
+        "foscttm_oracle": 0.002777388694347174,
+        "language": "qwen3-embedding-8b",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 5805,
+        "weight_orth_err": 2.0376792496482305e-13
+      },
+      {
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "cross_fro": 497.1902357021365,
+        "foscttm_oracle": 0.0034464732366183094,
+        "gram_trace": 5804.9999999999945,
+        "language": "qwen3-embedding-8b",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 5805,
+        "weight_fro": 30.74532504071296
+      },
+      {
+        "candidate": "none",
+        "corpus": "DOCCIDataset",
+        "cross_fro": 1019.5969196113484,
+        "foscttm_oracle": 0.010401200600300151,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 12847,
+        "weight_orth_err": 2.021376350947355e-13
+      },
+      {
+        "candidate": "none",
+        "corpus": "DOCCIDataset",
+        "cross_fro": 1019.5969196113484,
+        "foscttm_oracle": 0.02922011005502751,
+        "gram_trace": 12847.000000000002,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 12847,
+        "weight_fro": 25.85829811527966
+      },
+      {
+        "candidate": "pc0",
+        "corpus": "DOCCIDataset",
+        "cross_fro": 1113.486984695904,
+        "foscttm_oracle": 0.0068119059529764886,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 12847,
+        "weight_orth_err": 2.0358376811200495e-13
+      },
+      {
+        "candidate": "pc0",
+        "corpus": "DOCCIDataset",
+        "cross_fro": 1113.486984695904,
+        "foscttm_oracle": 0.010170085042521261,
+        "gram_trace": 12847.000000000002,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 12847,
+        "weight_fro": 25.493557419542864
+      },
+      {
+        "candidate": "none",
+        "corpus": "DOCCIDataset",
+        "cross_fro": 1084.923523742245,
+        "foscttm_oracle": 0.0010185092546273135,
+        "language": "qwen3-embedding-8b",
+        "map": "orth",
+        "n_holdout": 2000,
+        "n_train": 12847,
+        "weight_orth_err": 2.0266109740849032e-13
+      },
+      {
+        "candidate": "none",
+        "corpus": "DOCCIDataset",
+        "cross_fro": 1084.923523742245,
+        "foscttm_oracle": 0.000945472736368184,
+        "gram_trace": 12847.000000000002,
+        "language": "qwen3-embedding-8b",
+        "map": "lin",
+        "n_holdout": 2000,
+        "n_train": 12847,
+        "weight_fro": 26.95672451759985
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-23T05:32:21Z",
+  "fleet": {
+    "job_id": "job-1aca147d43d7",
+    "host": "beast"
+  }
+}

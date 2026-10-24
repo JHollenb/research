@@ -1,0 +1,15 @@
+<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour
+env ok torch 2.13.0+cu130
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/hdd8tb/mrun-work/job-44d4f3190025/e6_generality/sweep.py", line 117, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/hdd8tb/mrun-work/job-44d4f3190025/e6_generality/sweep.py", line 91, in main
+    smoke = smoke_gate(sx, sy) if not args.smoke else {"skipped_for_smoke_config": True}
+            ~~~~~~~~~~^^^^^^^^
+  File "/mnt/hdd8tb/mrun-work/job-44d4f3190025/e6_generality/sweep.py", line 50, in smoke_gate
+    assert sx.shape[0] == sy.shape[0], "x/y training row-count mismatch"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: x/y training row-count mismatch

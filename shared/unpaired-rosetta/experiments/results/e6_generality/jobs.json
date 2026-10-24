@@ -1,0 +1,1049 @@
+[
+  {
+    "job_id": "job-a629139497bc",
+    "plan": "probe",
+    "args": [
+      "e6_generality.axis_probe",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"60ec0ef8e357159ee6cc1a53f36819c0b751c5c9002f9361fe3eca5045cc9ad5\", \"sweep.py\": \"2b38e6fbe09961a55701735bb0f659c50346df50217a966cc5b69bf8f5ffc954\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_axis_probe-DenselyCaptionedImages-20261022T192714.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-5356338cacb3",
+    "plan": "probe",
+    "args": [
+      "e6_generality.axis_probe",
+      "--corpus",
+      "DOCCIDataset",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"60ec0ef8e357159ee6cc1a53f36819c0b751c5c9002f9361fe3eca5045cc9ad5\", \"sweep.py\": \"2b38e6fbe09961a55701735bb0f659c50346df50217a966cc5b69bf8f5ffc954\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_axis_probe-DOCCIDataset-20261022T192722.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-4303deb1c1f0",
+    "plan": "smoke",
+    "args": [
+      "e6_generality.sweep",
+      "--smoke",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"2b38e6fbe09961a55701735bb0f659c50346df50217a966cc5b69bf8f5ffc954\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-none-pc0-smoke-20261022T192513.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-b2b6a6fc7e72",
+    "plan": "smoke",
+    "args": [
+      "e6_generality.sweep",
+      "--smoke",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"2b38e6fbe09961a55701735bb0f659c50346df50217a966cc5b69bf8f5ffc954\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-8b-gen-none-pc0-smoke-20261022T192521.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-a32987300c1d",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-c589ff23f93a",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-embedding-8b",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-0468a5c56245",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "mpnet",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-4c04886ab838",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-56e2bdc2c9fb",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-embedding-8b",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-44d4f3190025",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "mpnet",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-8536eed8701b",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-662e843ac86f",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-4eac931747ca",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-6f83553186cb",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"77b4ab4f9b8637e7a6d33fffa1f4d092a91a3a6782215e569af91145e01a5ae6\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-1be208ed6b2f",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-e464cd53ba6f",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-embedding-8b",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-d3471faf724d",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "mpnet",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-c1a4efd1fb97",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-f14ec7d78490",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-embedding-8b",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-437917369948",
+    "plan": "sweep0",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "mpnet",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-f0029fa62fdd",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-none-pc0-seed1-20261022T195107.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-b8c91f8d5a3f",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-none-pc0-seed2-20261022T195039.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-9c10549ab5a5",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-24e4a761b9c0",
+    "plan": "sweeds",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-e938a85d13fa",
+    "plan": "docci_gen",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"aed23381ae0df91aa872978bcc5af1c09e04d3c6185b7dc6bfa838ac6b99d8ef\", \"sweep.py\": \"d7bc405c83e9418bbdb02d782c6491bf4130cc1a61996694b00ce7dca751ba1a\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-37ebfed704c4",
+    "plan": "docci_gen",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"aed23381ae0df91aa872978bcc5af1c09e04d3c6185b7dc6bfa838ac6b99d8ef\", \"sweep.py\": \"d7bc405c83e9418bbdb02d782c6491bf4130cc1a61996694b00ce7dca751ba1a\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-9a0391379e68",
+    "plan": "docci_gen",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"aed23381ae0df91aa872978bcc5af1c09e04d3c6185b7dc6bfa838ac6b99d8ef\", \"sweep.py\": \"d7bc405c83e9418bbdb02d782c6491bf4130cc1a61996694b00ce7dca751ba1a\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "failed",
+    "collected": true
+  },
+  {
+    "job_id": "job-f371f1b29bc2",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-embedding-8b",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-e3146b0dbefe",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "mpnet",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-868592e7c204",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-embedding-8b",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-573c9491f099",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "mpnet",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-55e341868f19",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-2cce508c8a77",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-45f9d35d7a29",
+    "plan": "rerun",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"42a3e7642ead94beb91fe105ad1585d36ea8979cd029726cb97f0cc3bbca6952\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "lost"
+  },
+  {
+    "job_id": "job-3a898888f2f9",
+    "plan": "coco_probe",
+    "args": [
+      "e6_generality.axis_probe",
+      "--corpus",
+      "coco_val2014",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"3cbe6f6dc777bb11abdf7105fce0600cb00ec3bb72a73d2055f6b2cf77b32d91\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "killed_ram"
+  },
+  {
+    "job_id": "job-33529518d5d3",
+    "plan": "transfer",
+    "args": [
+      "e6_generality.transfer",
+      "--eval-corpus",
+      "coco_val2014",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"3cbe6f6dc777bb11abdf7105fce0600cb00ec3bb72a73d2055f6b2cf77b32d91\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "killed_ram"
+  },
+  {
+    "job_id": "job-c9868e3b4841",
+    "plan": "coco_probe",
+    "args": [
+      "e6_generality.axis_probe",
+      "--corpus",
+      "coco_val2014",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"77f9d5e8542801054884ea5176f28b8102bc7823b37e4a28cc7f3eddb56ac4d9\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_axis_probe-coco_val2014-20261022T204317.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-f74e76ac14bd",
+    "plan": "transfer",
+    "args": [
+      "e6_generality.transfer",
+      "--eval-corpus",
+      "coco_val2014",
+      "--workers",
+      "2",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"77f9d5e8542801054884ea5176f28b8102bc7823b37e4a28cc7f3eddb56ac4d9\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "killed_ram"
+  },
+  {
+    "job_id": "job-3f254db93e6d",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-none-pc0-20261022T211443.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-81f52f4d7eaa",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidates",
+      "none",
+      "pc0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-embedding-8b-none-pc0-20261022T211501.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-99b417e4d670",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "mpnet",
+      "--candidates",
+      "none",
+      "pc0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-mpnet-none-pc0-20261022T212128.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-08cbb5e58593",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-8b-gen-none-pc0-20261022T214046.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-6c4416b4b71f",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-embedding-8b",
+      "--candidates",
+      "none",
+      "pc0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-embedding-8b-none-pc0-20261022T214035.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-7b3ccb2c3ac4",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "mpnet",
+      "--candidates",
+      "none",
+      "pc0",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-mpnet-none-pc0-20261022T213805.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-291fc0f1299c",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "1",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-8b-gen-none-pc0-seed1-20261022T214258.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-ad4430449870",
+    "plan": "p3fast",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "none",
+      "pc0",
+      "--seed",
+      "2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-8b-gen-none-pc0-seed2-20261022T214635.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-1aca147d43d7",
+    "plan": "oracle",
+    "args": [
+      "e6_generality.e6b_oracle",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6b_oracle-20261022T223221.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-41bbc0fa9a5a",
+    "plan": "transfer2",
+    "args": [
+      "e6_generality.e6b_transfer",
+      "--eval-corpus",
+      "coco_val2014",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6b_transfer-SPC-to-coco_val2014-20261022T231943.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-8edb276681b7",
+    "plan": "restarts",
+    "args": [
+      "e6_generality.e6b_restarts",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--seeds",
+      "3",
+      "4",
+      "5",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6b_restarts-DenselyCaptionedImages-qwen3-8b-gen-pc0-seeds3-4-5-20261022T230155.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-da8dfb505f89",
+    "plan": "restarts",
+    "args": [
+      "e6_generality.e6b_restarts",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--seeds",
+      "6",
+      "7",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6b_restarts-DenselyCaptionedImages-qwen3-8b-gen-pc0-seeds6-7-20261022T225153.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-0af15fd3826f",
+    "plan": "restarts",
+    "args": [
+      "e6_generality.e6b_restarts",
+      "--corpus",
+      "DOCCIDataset",
+      "--seeds",
+      "3",
+      "4",
+      "5",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6b_restarts-DOCCIDataset-qwen3-8b-gen-pc0-seeds3-4-5-20261022T231940.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-01e790c31637",
+    "plan": "restarts",
+    "args": [
+      "e6_generality.e6b_restarts",
+      "--corpus",
+      "DOCCIDataset",
+      "--seeds",
+      "6",
+      "7",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"22d32599864ba2524647e142ed9db4cf69c2a92867c9e62c7e680b7bbb2b4aab\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6b_restarts-DOCCIDataset-qwen3-8b-gen-pc0-seeds6-7-20261022T231121.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-965818c000d2",
+    "plan": "genpcs",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "pc1",
+      "pc2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"d679818f977c8c92d832cd9a4aedf6cee6693f85665c92135f8478456d4afe1a\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-pc1-pc2-20261022T230139.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-7fb22ef1774e",
+    "plan": "genpcs",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DenselyCaptionedImages",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "pc3",
+      "pc4",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"d679818f977c8c92d832cd9a4aedf6cee6693f85665c92135f8478456d4afe1a\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-pc3-pc4-20261022T230433.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-4f10dffd87be",
+    "plan": "genpcs",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "pc1",
+      "pc2",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"d679818f977c8c92d832cd9a4aedf6cee6693f85665c92135f8478456d4afe1a\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-8b-gen-pc1-pc2-20261022T231506.json",
+    "collected": true
+  },
+  {
+    "job_id": "job-3b0f64c737c4",
+    "plan": "genpcs",
+    "args": [
+      "e6_generality.sweep",
+      "--corpus",
+      "DOCCIDataset",
+      "--language",
+      "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+      "--candidates",
+      "pc3",
+      "pc4",
+      "--workers",
+      "4",
+      "--manifest-sha256",
+      "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"PREREG_E6b.md\": \"f4e22d9d90bb18aa94c6165d5ee517bab1d854c67ea2acfeb18a408e9f24e9f9\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"e6b_ladder.py\": \"c80dd05766f9fa38c78cf0b0e7ec30c6f6876bd7114f4023d3c2ac664e3d174a\", \"e6b_oracle.py\": \"799719387e4a713a11828b91967da9f586a8014dae9d76155f7c72a5de7f6c61\", \"e6b_restarts.py\": \"61733f8c71644e83fd2e18ada273790304ec4a5e26d037eb79f414f7c8c3298e\", \"e6b_transfer.py\": \"c7224ee9cbba074797582ba67bdba8aca0e05754afe26378622f5c7c2e21c278\", \"submit.py\": \"d679818f977c8c92d832cd9a4aedf6cee6693f85665c92135f8478456d4afe1a\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}"
+    ],
+    "state": "succeeded",
+    "receipt": "results/e6_generality/e6_sweep-DOCCIDataset-qwen3-8b-gen-pc3-pc4-20261022T231724.json",
+    "collected": true
+  }
+]

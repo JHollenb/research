@@ -1,0 +1,64 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "candidates": [
+      "none",
+      "pc0"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "holdout": 2000,
+    "language": "mpnet",
+    "manifest_sha256": "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"f6e25e2bb4e6c4a063423c849e7c57aa60ab542bada656371623dbdff3d1d8c3\", \"sweep.py\": \"fa4576df42c01329c1d09ecefb3b463c398ed1972d98e60bc8dfeb1eeb92baff\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}",
+    "rows_available": 7805,
+    "seed": 0,
+    "smoke": false,
+    "smoke_gate": {
+      "tiny_fit_holdout_foscttm": 0.5784509754877438,
+      "trace_after_drop_pc0": 1716.409912109375,
+      "trace_full": 1838.43603515625
+    },
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e6_sweep-DenselyCaptionedImages-mpnet-none-pc0",
+  "results": {
+    "rows": [
+      {
+        "S1_matched_cosine": 0.44385483860969543,
+        "S2_matched_linear_cka": 0.5156287839585948,
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.4002925212606303,
+        "language": "mpnet",
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.44436320662498474,
+        "S2_matched_linear_cka": 0.5657762366021045,
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.32451475737868934,
+        "language": "mpnet",
+        "matched_pairs": 2902
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-23T04:21:28Z",
+  "fleet": {
+    "job_id": "job-99b417e4d670",
+    "host": "beast"
+  }
+}

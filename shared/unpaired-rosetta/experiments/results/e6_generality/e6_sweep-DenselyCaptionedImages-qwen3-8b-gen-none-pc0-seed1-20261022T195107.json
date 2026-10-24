@@ -1,0 +1,64 @@
+{
+  "config": {
+    "aligner_kwargs": {
+      "num_threads": 4,
+      "num_workers": 4
+    },
+    "candidates": [
+      "none",
+      "pc0"
+    ],
+    "corpus": "DenselyCaptionedImages",
+    "holdout": 2000,
+    "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+    "manifest_sha256": "{\"PREREG.md\": \"ac2259bdd4b5c12c2c548a280683722cb8595422d7c030f9b879010c2a982f4c\", \"axis_probe.py\": \"dccc5c8c2f23334619bc4e8044b3ddc2228181fcfaadc5d279c9a1bf834f0fbf\", \"submit.py\": \"c39c7a9f491f31aac09e51ceb7534603e8de83908a6e5728d0d2c5f0e330beb1\", \"sweep.py\": \"c8606f6466ceefb46e8ee0d53cfd9752404835a2b3ab1391a41846e76efc2ad2\", \"transfer.py\": \"11262152a2fa306d67ee7ba14ff552622ca51b159719cf6bc30c8edb5a8e1213\"}",
+    "rows_available": 7805,
+    "seed": 1,
+    "smoke": false,
+    "smoke_gate": {
+      "tiny_fit_holdout_foscttm": 0.4832356178089044,
+      "trace_after_drop_pc0": 252.16030883789062,
+      "trace_full": 314.0968933105469
+    },
+    "vision": "dinov2_vit-b14@224_mean",
+    "workers": 4
+  },
+  "experiment": "e6_sweep-DenselyCaptionedImages-qwen3-8b-gen-none-pc0-seed1",
+  "results": {
+    "rows": [
+      {
+        "S1_matched_cosine": 0.4879409968852997,
+        "S2_matched_linear_cka": 0.6593624808313318,
+        "candidate": "none",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.4842421210605302,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "matched_pairs": 2902
+      },
+      {
+        "S1_matched_cosine": 0.4832220673561096,
+        "S2_matched_linear_cka": 0.5550722471553112,
+        "candidate": "pc0",
+        "corpus": "DenselyCaptionedImages",
+        "foscttm_eval_only": 0.31402651325662834,
+        "language": "qwen3-8b-gen_69445574b3021b8a2733e87d8603d769",
+        "matched_pairs": 2902
+      }
+    ]
+  },
+  "software": {
+    "host": "pop-os",
+    "numpy": "2.5.1",
+    "our_commit": "",
+    "python": "3.14.6",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "their_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "torch": "2.13.0+cu130"
+  },
+  "utc": "2026-10-23T02:51:07Z",
+  "fleet": {
+    "job_id": "job-f0029fa62fdd",
+    "host": "beast"
+  }
+}

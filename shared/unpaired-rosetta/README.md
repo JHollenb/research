@@ -18,7 +18,7 @@ This folder holds our reading of the paper and what we can offer the authors:
 |---|---|
 | `README.md` | this page: what they did and how, with links |
 | [`shared.md`](shared.md) | how our work relates to theirs, what we can do for them, what they can do for us |
-| [`response.md`](response.md) | **the response paper (draft 2)**: a hidden scaffold axis in Qwen3 generative pooling and an unpaired fix (SPC FOSCTTM 0.415 → 0.038), the retrieval-vs-fidelity gap and rotation ceiling, a span ceiling for pair baselines, and the ideas that failed |
+| [`response.md`](response.md) | **the response paper (draft 3)**: a hidden non-visual axis in Qwen3 generative pooling and an unpaired detector that finds it (SPC FOSCTTM 0.415 → 0.038); its generality (E6 — the axis reproduces on DCI and DOCCI and is absent on short COCO captions; the one-axis removal fix is SPC-specific, and an oracle shows why — given true pairs a single rotation aligns gen on all three corpora, so the off-SPC failure is a search failure, not a geometry one); the retrieval-vs-fidelity gap and rotation ceiling; a span ceiling for pair baselines; and the ideas that failed |
 | [`experiments/`](experiments/README.md) | the code for every claim, built on their library at the pinned commit |
 | [`figures/`](figures/) | report figures, regenerated from receipts by `experiments/figures/make_figures.py` |
 
