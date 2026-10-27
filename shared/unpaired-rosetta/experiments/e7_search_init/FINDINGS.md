@@ -5,7 +5,7 @@ Written 2026-10-24 by the coordinator from NOTES.md and the receipts in `../resu
 | start | uses image-caption pairs? | DCI | DOCCI | seeds |
 |---|---|---|---|---|
 | SPC-fit rotation (top PC removed) as the start, then their refinement | yes, but only on SPC | 0.078 ± 0.008 | 0.051 ± 0.007 | 3 |
-| same, applied directly without refinement | SPC only | 0.107 | 0.100 | 1 |
+| same, applied directly without refinement | SPC only | 0.107 ± 0.013 | 0.100 ± 0.010 | 3 |
 | 100 true pairs on the target (their Sec 4.4 protocol) | 100 on target | 0.085 ± 0.002 | 0.100 ± 0.008 | 3 |
 | 50 true pairs | 50 on target | about 0.11 | about 0.15 | see NOTES |
 | text pivot: gen to Qwen3-Embedding on the same captions, composed with the unpaired Qwen3-Embedding to image map | no | 0.170 ± 0.055 | 0.172 ± 0.026 | 3 |
@@ -22,5 +22,5 @@ Written 2026-10-24 by the coordinator from NOTES.md and the receipts in `../resu
 ## Caveats
 
 - Only the pivot uses zero image-caption pairs. Whether a second encoder of the same modality fits their definition of "unpaired" is for the authors to judge.
-- The direct-transfer, more-PCs and selection cells are seed 0 or few seeds; the headline arms have 3 seeds.
+- The more-PCs and selection cells are seed 0 or few seeds; the headline arms have 3 seeds.
 - Four early full-size seed jobs timed out under Beast contention and were replaced by leaner resubmissions (NOTES, deviations).
