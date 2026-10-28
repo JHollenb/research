@@ -116,7 +116,7 @@ We checked for a nuisance direction and found none. Each of CITE-seq's top five 
 
 ### 4.3 A diagnostic to tell them apart
 
-This diagnostic uses true pairs only in its first step. It is a diagnostic to confirm, not a validated rule.
+The first two steps use true pairs, which a small held-out paired set can supply. The third step is pairs-free. It is a diagnostic to confirm, not a validated rule.
 
 1. Run the oracle. If it is poor, the geometry is not shared, and the rest does not apply.
 2. Run the axis probe. A dominant PC with near-zero held-out R² in the other space suggests a nuisance direction.
@@ -190,9 +190,9 @@ This section shows what linear CKA tells you about a pair and what it does not. 
 
 Your main-text predictor is linear CKA. It explains most of the variance in FOSCTTM (R² 0.73 in your Section 4.3), and it rates gen low. On SPC, gen's linear CKA is 0.433 against 0.657 for Qwen3-Embedding and 0.633 for MPNet. On DCI and DOCCI it is 0.253 and 0.213. That prediction is right: your unpaired aligner does fail on gen there.
 
-CKA predicts the difficulty of the search. It does not predict whether a rotation exists. The oracle in Section 3 finds one for gen on all three corpora, so low CKA is evidence that unpaired search will struggle and not that the geometry is missing. CITE-seq shows the other side (Section 4.2). Its CKA is the highest you report, and its seeds still vary widely. A high CKA predicts that a rotation exists. It does not guarantee that the search finds one.
+CKA predicts the difficulty of the search. It does not predict whether a rotation exists. The oracle in Section 3 finds one for gen on all three corpora, so low CKA is evidence that unpaired search will struggle and not that the geometry is missing. CITE-seq shows the other side (Section 4.2). Its CKA is the highest you report, and its seeds still vary widely. So a low CKA does not rule out a rotation, and a high CKA does not guarantee that the search finds one.
 
-On the first open problem, we offer the diagnostic in Section 4.3 as a pairs-free ingredient and nothing more. It is not an alignment prediction score. It tells you, before fitting, that low CKA is likely a nuisance direction and not absent geometry.
+On the first open problem, we offer S1 as a pairs-free ingredient and nothing more. It is not an alignment prediction score. Read across seeds, it flags seed variance (Section 5). Read across removal settings, it picks the nuisance PC on SPC without any pairs (Section 5). The axis probe in Section 4.3 is clearer, but it uses true pairs.
 
 **A note on your Appendix D.** That analysis uses the clipped CKA of Wang et al. On SPC it gives 0.608, 0.659 and 0.636 for gen, Qwen3-Embedding and MPNet, which puts gen level with the others (+0.014 over mean pooling). It turns negative on the two densest corpora (−0.144 on DOCCI, −0.067 on DCI). Linear CKA separates gen (0.433) from the others (0.63 to 0.66) on SPC. Our inferred reading is that clipping bounds the large coordinates of the dominant axis, so the clipped comparison understates the SPC deficit. This is a comment on your Appendix D, not on your main predictor.
 
