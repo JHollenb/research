@@ -1,0 +1,43 @@
+# Round 6: combined masked-key arm, Mamba s719 (original 7-pair split)
+
+Counts with Wilson 95% intervals. `held pairs` = the original seven withheld pairs (4,096 rows); `extra` = the additional withheld pairs of the coverage scan. iid and held literal count only trained pairs (round-3 runs have no per-pair counts, so their iid is the whole panel). Round-3 runs are the 7-pair baseline.
+
+| Run | Job | Withheld | iid | held literal | held pairs | extra pairs | last cand. held pairs | best cand. held pairs |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Mamba r3 s719 (40k) | `job-bd6e595c05a7` | 7 | 8181/8192 (99.8–99.9%) | 8183/8192 (99.8–99.9%) | 3348/4096 (80.5–82.9%) | — | 3348/4096 (80.5–82.9%) | 3446/4096 (83.0–85.2%) |
+| Mamba regptr s719 (40k) | `job-ea9e3cd4f308+job-39fecc59b599` | 7 | 8172/8192 (99.6–99.8%) | 8179/8192 (99.7–99.9%) | 3268/4096 (78.5–81.0%) | — | 3268/4096 (78.5–81.0%) | 3268/4096 (78.5–81.0%) |
+| Mamba masked key s719 (15k) | `job-cfba9878aaa1` | 7 | 8191/8192 (99.9–100.0%) | 8192/8192 (100.0–100.0%) | 4095/4096 (99.9–100.0%) | — | 4095/4096 (99.9–100.0%) | 4095/4096 (99.9–100.0%) |
+
+## Held pairs, per pair (accepted model; exact / rows, destination pick in brackets where measured)
+
+| Run | `add_r32_8:2` | `add_r64_8:3` | `mov_r32_c7:5` | `mov_r64:5` | `mov_r64_r64:3` | `sub_r64_8:6` | `xor_r32_r32:1` |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Mamba r3 s719 (40k) | 95.8% | 99.3% | 90.0% | 17.8% | 76.0% | 99.5% | 94.5% |
+| Mamba regptr s719 (40k) | 596/598 [598] | 568/570 [570] | 3/591 [14] | 386/586 [462] | 594/596 [596] | 568/568 [568] | 553/587 [576] |
+| Mamba masked key s719 (15k) | 598/598 | 570/570 | 590/591 | 586/586 | 596/596 | 568/568 | 587/587 |
+
+## Programs (exact out of 16 / 8 / 4 at 16 / 128 / 1,024 steps), counters, stdout, per-step error
+
+| Run | train literals | held literals | held pairs | extra pairs | counters | stdout | step errors, train pairs | step errors, all pairs |
+|---|---|---|---|---|---|---|---:|---:|
+| Mamba r3 s719 (40k) | 16 / 7 / 2 | 16 / 6 / 2 | 0 / 0 / 0 | — | 4/4 | 3/3 | — | — |
+| Mamba regptr s719 (40k) | 14 / 1 / 0 | 12 / 2 / 0 | 0 / 0 / 0 | — | 4/4 | 3/3 | 144/65536 (0.2–0.3%) | 544/65536 (0.8–0.9%) |
+| Mamba masked key s719 (15k) | 15 / 8 / 2 | 15 / 8 / 2 | 15 / 8 / 0 | — | 4/4 | 3/3 | 33/65536 (0.0–0.1%) | 32/65536 (0.0–0.1%) |
+
+## Field starts (accepted model)
+
+| Panel | pass-2 dest start on the field | pass-1 dest start on the field | pass-1 == pass-2 (dest) | pass-2 src start on the source field |
+|---|---:|---:|---:|---:|
+| iid | 4238/4238 | 0/4238 | 0/8192 | 308/1728 |
+| heldout_literal | 4443/4443 | 0/4443 | 0/8192 | 0/0 |
+| heldout_pairs | 4096/4096 | 0/4096 | 0/4096 | 0/1183 |
+
+The source pointer collapsed onto the destination field (same start as dest on every register-register form), so source values come through the trunk's raw register tokens, not the pointer; source composition is not tested by this split.
+
+## Snapped vs soft (errors)
+
+| Variant | iid | held literal | held pairs |
+|---|---:|---:|---:|
+| soft | 1 | 0 | 1 |
+| snap_all | 1443 | 1895 | 367 |
+| snap_pointer | 1023 | 1623 | 6 |

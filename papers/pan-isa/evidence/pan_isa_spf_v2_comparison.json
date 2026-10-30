@@ -1,0 +1,196 @@
+{
+  "comparison": [
+    {
+      "artifact_bytes": 129869,
+      "artifact_kind": "file",
+      "artifact_path": "/Users/jakeholl/domains/data/artifacts/2026-06-17/pan-x86-isa/pan_vs_qemu_stage3_spf_v2/pan_v1_report.json",
+      "artifact_storage_bytes": 129869,
+      "available": true,
+      "cpu_time_s": 0.652808,
+      "elapsed_s": 0.648707,
+      "engine": "pan_stage3_v1",
+      "exact": 1.0,
+      "final_exact": true,
+      "max_rss_bytes": 420593664,
+      "ok": true,
+      "qemu_faster_by": 3.912,
+      "qemu_speed_ratio": 0.255625,
+      "steps": 8192,
+      "steps_per_s": 12628.19
+    },
+    {
+      "artifact_bytes": 140384,
+      "artifact_kind": "file",
+      "artifact_path": "/Users/jakeholl/domains/data/artifacts/2026-06-17/pan-x86-isa/pan_vs_qemu_stage3_spf_v2/pan_spf_v2_report.json",
+      "artifact_storage_bytes": 140384,
+      "available": true,
+      "cpu_time_s": 0.368695,
+      "elapsed_s": 0.369115,
+      "engine": "pan_stage3_spf_v2",
+      "exact": 1.0,
+      "final_exact": true,
+      "max_rss_bytes": 427950080,
+      "ok": true,
+      "qemu_faster_by": 2.226,
+      "qemu_speed_ratio": 0.449252,
+      "steps": 8192,
+      "steps_per_s": 22193.6
+    },
+    {
+      "artifact_bytes": 1477781,
+      "artifact_kind": "directory",
+      "artifact_path": "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/pan_vs_qemu_stage3_uninterrupted_flag_fixed/qemu",
+      "artifact_storage_bytes": 1477781,
+      "available": true,
+      "cpu_time_s": null,
+      "elapsed_s": 0.165826,
+      "engine": "qemu_x86_64",
+      "exact": 1.0,
+      "final_exact": true,
+      "max_rss_bytes": 37830656,
+      "ok": true,
+      "qemu_faster_by": 1.0,
+      "qemu_speed_ratio": 1.0,
+      "steps": 8192,
+      "steps_per_s": 49401.23
+    }
+  ],
+  "fastest_engine": "qemu_x86_64",
+  "notes": [
+    "PAN v1 and SPF v2 elapsed times measure Python execution loops, not model/SPF compile time.",
+    "QEMU report is the existing run for the same uninterrupted program and includes child RSS telemetry.",
+    "PAN RSS is measured in the Python/Torch process; QEMU RSS is measured for the emulator child process.",
+    "PAN storage includes the Stage 3 checkpoint; SPF v2 storage also includes its materialized selector table; QEMU storage includes the image/report directory."
+  ],
+  "program": {
+    "final_rip": "0x000000000050cc95",
+    "instructions": 8192,
+    "program_byte_len": 52373,
+    "start_rip": "0x0000000000500000",
+    "trace_id": "uninterrupted-2026061701-8192"
+  },
+  "spf_v2": {
+    "compile_elapsed_s": 0.371772,
+    "flag_state_count": 16,
+    "op_operator_count": 125,
+    "op_operator_kind": "spf.tensor.core.LowRankOperator diagonal block matrix",
+    "parity": {
+      "blockmatrix_routed_table_exact": true,
+      "decoded_selector_table_exact": true,
+      "v2_words_exact": true,
+      "v3_words_exact": true
+    },
+    "runtime_router": "compiled",
+    "runtime_router_note": "compiled uses the SPF block-matrix materialized table; blockmatrix applies LowRankOperator per instruction",
+    "selector_table_bytes": 8000,
+    "selector_table_shape": [
+      125,
+      16
+    ],
+    "selector_table_words": 2000,
+    "spf_source": "/Users/jakeholl/domains/spectral-phase-format-research/src",
+    "spftensor_v2": {
+      "dims": [
+        125,
+        16
+      ],
+      "metadata": {
+        "active_encoding": 0,
+        "band_exp": [
+          0,
+          0
+        ],
+        "coarse_exp": 0,
+        "cubic_ramp": [
+          0,
+          0
+        ],
+        "dims": [
+          125,
+          16
+        ],
+        "global_L_bias": 0,
+        "global_T_bias": 0,
+        "order": 2,
+        "origin": [
+          0,
+          0
+        ],
+        "outlier_count": 0,
+        "payload_bytes": 0,
+        "payload_offsets": {},
+        "precision_mode": 1,
+        "profile_terms": [
+          {
+            "coefficient_q16": 65536,
+            "flags": 0,
+            "metadata": {},
+            "profile_id": 1,
+            "rank": 0
+          }
+        ],
+        "q_dL": 4,
+        "q_dTheta": 4,
+        "quadratic_ramp": [
+          0,
+          0
+        ],
+        "ramp_R": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "ramp_alpha_v1": [
+          0,
+          0
+        ],
+        "ramp_b": [
+          0,
+          0
+        ],
+        "ramp_beta_v1": [
+          0,
+          0
+        ],
+        "reserved": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "scalar_format_id": 2,
+        "version": 2
+      },
+      "type": "spf.tensor.v2.TensorBlock"
+    },
+    "spftensor_v3": {
+      "base_model": 0,
+      "dims": [
+        125,
+        16
+      ],
+      "residual_codec": 1,
+      "storage_bits": 128320,
+      "type": "spf.tensor.v3.SPFBlockV3"
+    }
+  }
+}

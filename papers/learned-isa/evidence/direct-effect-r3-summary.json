@@ -1,0 +1,3403 @@
+{
+  "arch": {
+    "ab-base": {
+      "config": {
+        "aligned": false,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 22500,
+        "max_updates": 15000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": false,
+          "exit_code": 21,
+          "first_divergence_vs_native": 1,
+          "native_agree": 2,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": false,
+          "exit_code": 21,
+          "first_divergence_vs_native": 1,
+          "native_agree": 2,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": false,
+          "exit_code": 21,
+          "first_divergence_vs_native": 1,
+          "native_agree": 2,
+          "native_steps": 16,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.50048828125,
+          "flags": 0.9971923828125,
+          "imm_decode": 0.79052734375,
+          "n": 8192,
+          "regs": 0.4967041015625,
+          "state": 0.49658203125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.348388671875,
+          "flags": 0.996337890625,
+          "imm_decode": 0.796630859375,
+          "n": 4096,
+          "regs": 0.320556640625,
+          "state": 0.3193359375,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.7066650390625,
+          "flags": 0.9969482421875,
+          "imm_decode": 0.8712158203125,
+          "n": 8192,
+          "regs": 0.70361328125,
+          "state": 0.703125,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1469.5615234375,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              0,
+              2,
+              0,
+              1,
+              1,
+              0,
+              2
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              5,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              1,
+              9,
+              0,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              0,
+              0,
+              6
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              1,
+              4,
+              1,
+              0,
+              8,
+              7,
+              2
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              2,
+              4,
+              2,
+              6,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              3,
+              0,
+              1,
+              0,
+              8,
+              0
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": false,
+          "exit_code": 0,
+          "first_divergence_vs_native": 4,
+          "native_agree": 5,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        },
+        "128": {
+          "exact": false,
+          "exit_code": 0,
+          "first_divergence_vs_native": 4,
+          "native_agree": 5,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        },
+        "16": {
+          "exact": false,
+          "exit_code": 0,
+          "first_divergence_vs_native": 6,
+          "native_agree": 7,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 15000,
+        "attempted_updates": 15000,
+        "parameters": 289363,
+        "train_wall_s": 1912.8196017680457
+      }
+    },
+    "ab-both": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 22500,
+        "max_updates": 15000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9967041015625,
+          "flags": 0.9998779296875,
+          "imm_decode": 0.9998779296875,
+          "n": 8192,
+          "regs": 0.996337890625,
+          "state": 0.9962158203125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.869140625,
+          "flags": 0.99658203125,
+          "imm_decode": 0.999267578125,
+          "n": 4096,
+          "regs": 0.85595703125,
+          "state": 0.855224609375,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.9979248046875,
+          "flags": 0.9996337890625,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.99755859375,
+          "state": 0.9971923828125,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1471.07763671875,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              223,
+              176,
+              10,
+              201
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 4,
+            "first_divergence": [
+              null,
+              null,
+              43,
+              106,
+              49,
+              null,
+              null,
+              116
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 14,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              13,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              4,
+              0,
+              19,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              7,
+              49,
+              9,
+              4,
+              0,
+              4,
+              23,
+              4
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 2,
+            "first_divergence": [
+              10,
+              0,
+              null,
+              9,
+              6,
+              null,
+              7,
+              4,
+              12,
+              0,
+              5,
+              11,
+              14,
+              0,
+              11,
+              5
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              41,
+              122,
+              281,
+              256
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 5,
+            "first_divergence": [
+              null,
+              null,
+              117,
+              null,
+              null,
+              null,
+              50,
+              60
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 15000,
+        "attempted_updates": 15000,
+        "parameters": 291851,
+        "train_wall_s": 1902.892057433026
+      }
+    },
+    "ab-data": {
+      "config": {
+        "aligned": false,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 22500,
+        "max_updates": 15000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": false,
+          "exit_code": 125,
+          "first_divergence_vs_native": 28,
+          "native_agree": 45,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": false,
+          "exit_code": 125,
+          "first_divergence_vs_native": 28,
+          "native_agree": 29,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.703369140625,
+          "flags": 0.9974365234375,
+          "imm_decode": 0.8048095703125,
+          "n": 8192,
+          "regs": 0.6884765625,
+          "state": 0.6868896484375,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.59423828125,
+          "flags": 0.995849609375,
+          "imm_decode": 0.824462890625,
+          "n": 4096,
+          "regs": 0.551513671875,
+          "state": 0.55029296875,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.8170166015625,
+          "flags": 0.9989013671875,
+          "imm_decode": 0.878662109375,
+          "n": 8192,
+          "regs": 0.8074951171875,
+          "state": 0.8072509765625,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1469.5615234375,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              2,
+              2,
+              0,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              2,
+              4,
+              1,
+              2,
+              1,
+              0,
+              2
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              5,
+              0,
+              1,
+              6,
+              1,
+              1,
+              0,
+              1,
+              4,
+              4,
+              0,
+              1,
+              5,
+              0,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              0,
+              3,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              2,
+              5,
+              2
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              4,
+              0,
+              1,
+              0,
+              1,
+              1,
+              5,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              0,
+              5,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              1,
+              10,
+              6
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              1,
+              5,
+              8,
+              0,
+              8,
+              8,
+              0
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              2,
+              5,
+              2,
+              4,
+              0,
+              6,
+              0,
+              1,
+              0,
+              1,
+              3,
+              0,
+              1,
+              2,
+              8,
+              4
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": false,
+          "exit_code": 0,
+          "first_divergence_vs_native": 28,
+          "native_agree": 33,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "b576000000000000"
+        },
+        "128": {
+          "exact": false,
+          "exit_code": 0,
+          "first_divergence_vs_native": 28,
+          "native_agree": 33,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "b506000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 15000,
+        "attempted_updates": 15000,
+        "parameters": 289363,
+        "train_wall_s": 1908.8448387450771
+      }
+    },
+    "ab-layout": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 22500,
+        "max_updates": 15000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9913330078125,
+          "flags": 0.999755859375,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.9896240234375,
+          "state": 0.9893798828125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.850830078125,
+          "flags": 0.999755859375,
+          "imm_decode": 0.9990234375,
+          "n": 4096,
+          "regs": 0.835693359375,
+          "state": 0.83544921875,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.993896484375,
+          "flags": 0.999755859375,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.992919921875,
+          "state": 0.99267578125,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1471.07763671875,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              212,
+              56,
+              48,
+              6
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 2,
+            "first_divergence": [
+              17,
+              4,
+              43,
+              15,
+              39,
+              null,
+              null,
+              3
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 12,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              4,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              15,
+              0,
+              null,
+              null,
+              13,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              7,
+              1,
+              48,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              8,
+              30,
+              1,
+              3,
+              0,
+              6,
+              5,
+              5
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 2,
+            "first_divergence": [
+              4,
+              10,
+              12,
+              9,
+              3,
+              15,
+              6,
+              4,
+              null,
+              0,
+              0,
+              13,
+              null,
+              0,
+              5,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              33,
+              157,
+              38,
+              18
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 4,
+            "first_divergence": [
+              79,
+              null,
+              71,
+              82,
+              null,
+              null,
+              60,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 14,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              6,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              0
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 15000,
+        "attempted_updates": 15000,
+        "parameters": 291851,
+        "train_wall_s": 1910.5148293119855
+      }
+    },
+    "ab-relptr": {
+      "config": {
+        "aligned": false,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 22500,
+        "max_updates": 15000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": true,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9962158203125,
+          "flags": 0.999755859375,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.993896484375,
+          "state": 0.9937744140625,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.85009765625,
+          "flags": 0.99951171875,
+          "imm_decode": 0.998779296875,
+          "n": 4096,
+          "regs": 0.825439453125,
+          "state": 0.825439453125,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.996826171875,
+          "flags": 0.9998779296875,
+          "imm_decode": 0.999755859375,
+          "n": 8192,
+          "regs": 0.995849609375,
+          "state": 0.9957275390625,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1486.13818359375,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              263,
+              31,
+              4
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 5,
+            "first_divergence": [
+              105,
+              4,
+              null,
+              null,
+              null,
+              null,
+              55,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 13,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              0,
+              null,
+              3,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              5,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              7,
+              1,
+              11,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              8,
+              26,
+              0,
+              6,
+              0,
+              15,
+              8,
+              8
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 1,
+            "first_divergence": [
+              3,
+              5,
+              12,
+              0,
+              3,
+              2,
+              7,
+              4,
+              null,
+              1,
+              0,
+              13,
+              5,
+              0,
+              11,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              11,
+              362,
+              265,
+              200
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 7,
+            "first_divergence": [
+              null,
+              21,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 15,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 15000,
+        "attempted_updates": 15000,
+        "parameters": 336442,
+        "train_wall_s": 1036.026335087954
+      }
+    },
+    "hydra": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 60000,
+        "max_updates": 40000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": false,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9993896484375,
+          "flags": 0.9998779296875,
+          "imm_decode": 0.9996337890625,
+          "n": 8192,
+          "regs": 0.9991455078125,
+          "state": 0.9991455078125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.888916015625,
+          "flags": 0.996826171875,
+          "imm_decode": 0.999755859375,
+          "n": 4096,
+          "regs": 0.884033203125,
+          "state": 0.883544921875,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.99951171875,
+          "flags": 1.0,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.999267578125,
+          "state": 0.999267578125,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 282.40185546875,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              291,
+              29,
+              573,
+              128
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 8,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              6,
+              3,
+              11,
+              13
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              30,
+              7,
+              1,
+              7,
+              0,
+              7,
+              17,
+              3
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              8,
+              12,
+              1,
+              3,
+              11,
+              6,
+              5,
+              5,
+              1,
+              2,
+              13,
+              4,
+              0,
+              6,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 1,
+            "first_divergence": [
+              722,
+              null,
+              483,
+              7
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 7,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              126,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 30000,
+        "attempted_updates": 40000,
+        "parameters": null,
+        "train_wall_s": 4258.887254867004
+      }
+    },
+    "hydra-s719": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 60000,
+        "max_updates": 40000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": false,
+        "schedule_on": "attempts",
+        "seed": 719,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.99951171875,
+          "flags": 0.9998779296875,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.999267578125,
+          "state": 0.999267578125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.849609375,
+          "flags": 0.998779296875,
+          "imm_decode": 1.0,
+          "n": 4096,
+          "regs": 0.829345703125,
+          "state": 0.829345703125,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.99951171875,
+          "flags": 0.9998779296875,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.999267578125,
+          "state": 0.999267578125,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1890.97802734375,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 3,
+            "first_divergence": [
+              580,
+              null,
+              null,
+              null
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 7,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              66,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              2,
+              7,
+              0
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              4,
+              10,
+              0,
+              5,
+              12,
+              3,
+              7,
+              6
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              6,
+              1,
+              6,
+              3,
+              1,
+              3,
+              4,
+              3,
+              0,
+              10,
+              5,
+              2,
+              0,
+              3,
+              0
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 2,
+            "first_divergence": [
+              null,
+              785,
+              null,
+              885
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 6,
+            "first_divergence": [
+              null,
+              44,
+              null,
+              null,
+              57,
+              null,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 35000,
+        "attempted_updates": 40000,
+        "parameters": 292151,
+        "train_wall_s": 3235.846270886017
+      }
+    },
+    "mamba": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 60000,
+        "max_updates": 40000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9993896484375,
+          "flags": 1.0,
+          "imm_decode": 0.9998779296875,
+          "n": 8192,
+          "regs": 0.9991455078125,
+          "state": 0.9991455078125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.916259765625,
+          "flags": 0.9931640625,
+          "imm_decode": 0.99951171875,
+          "n": 4096,
+          "regs": 0.901123046875,
+          "state": 0.901123046875,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.9991455078125,
+          "flags": 1.0,
+          "imm_decode": 0.999755859375,
+          "n": 8192,
+          "regs": 0.9986572265625,
+          "state": 0.9986572265625,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1471.07763671875,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 1,
+            "first_divergence": [
+              null,
+              627,
+              514,
+              232
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 8,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              7,
+              0,
+              16,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              6,
+              31,
+              9,
+              2,
+              0,
+              7,
+              71,
+              4
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 6,
+            "first_divergence": [
+              0,
+              0,
+              9,
+              12,
+              6,
+              null,
+              null,
+              4,
+              null,
+              3,
+              5,
+              null,
+              null,
+              9,
+              null,
+              5
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 1,
+            "first_divergence": [
+              735,
+              131,
+              60,
+              null
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 7,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              60
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 30000,
+        "attempted_updates": 40000,
+        "parameters": 291851,
+        "train_wall_s": 2907.024141097092
+      }
+    },
+    "mamba-relptr": {
+      "config": {
+        "aligned": false,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 60000,
+        "max_updates": 40000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": true,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.996337890625,
+          "flags": 1.0,
+          "imm_decode": 0.9986572265625,
+          "n": 8192,
+          "regs": 0.995849609375,
+          "state": 0.995849609375,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.822021484375,
+          "flags": 0.99755859375,
+          "imm_decode": 0.996337890625,
+          "n": 4096,
+          "regs": 0.794921875,
+          "state": 0.794677734375,
+          "store": 0.999755859375
+        },
+        "iid": {
+          "dest_value": 0.9971923828125,
+          "flags": 0.999755859375,
+          "imm_decode": 0.9993896484375,
+          "n": 8192,
+          "regs": 0.9967041015625,
+          "state": 0.99658203125,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1486.13818359375,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              37,
+              406,
+              159,
+              52
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 3,
+            "first_divergence": [
+              29,
+              14,
+              null,
+              105,
+              80,
+              8,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 15,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              4,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              0,
+              3,
+              11,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              8,
+              21,
+              1,
+              6,
+              0,
+              1,
+              22,
+              8
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 1,
+            "first_divergence": [
+              1,
+              0,
+              7,
+              6,
+              6,
+              1,
+              7,
+              1,
+              5,
+              0,
+              0,
+              7,
+              null,
+              0,
+              11,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              143,
+              147,
+              42,
+              172
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 4,
+            "first_divergence": [
+              98,
+              null,
+              null,
+              null,
+              111,
+              16,
+              1,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 40000,
+        "attempted_updates": 40000,
+        "parameters": 336442,
+        "train_wall_s": 3118.0122264049714
+      }
+    },
+    "mamba-relptr-s719": {
+      "config": {
+        "aligned": false,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 60000,
+        "max_updates": 40000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": true,
+        "schedule_on": "attempts",
+        "seed": 719,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9990234375,
+          "flags": 1.0,
+          "imm_decode": 0.9998779296875,
+          "n": 8192,
+          "regs": 0.9981689453125,
+          "state": 0.9981689453125,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.90234375,
+          "flags": 0.998779296875,
+          "imm_decode": 0.9990234375,
+          "n": 4096,
+          "regs": 0.89404296875,
+          "state": 0.893798828125,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.9989013671875,
+          "flags": 0.9998779296875,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.9986572265625,
+          "state": 0.9986572265625,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1486.13818359375,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              120,
+              338,
+              81,
+              194
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 5,
+            "first_divergence": [
+              null,
+              52,
+              null,
+              null,
+              110,
+              null,
+              107,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              21,
+              9,
+              10,
+              6
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              1,
+              2,
+              5,
+              12,
+              39,
+              10,
+              12
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 2,
+            "first_divergence": [
+              1,
+              13,
+              1,
+              1,
+              9,
+              1,
+              7,
+              null,
+              null,
+              7,
+              6,
+              5,
+              5,
+              0,
+              3,
+              3
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 1,
+            "first_divergence": [
+              126,
+              213,
+              null,
+              157
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 6,
+            "first_divergence": [
+              101,
+              null,
+              null,
+              null,
+              64,
+              null,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 15,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              2
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 35000,
+        "attempted_updates": 40000,
+        "parameters": 336442,
+        "train_wall_s": 1249.9040405330015
+      }
+    },
+    "mamba-s719": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 60000,
+        "max_updates": 40000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": false,
+        "schedule_on": "attempts",
+        "seed": 719,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9990234375,
+          "flags": 1.0,
+          "imm_decode": 0.9996337890625,
+          "n": 8192,
+          "regs": 0.9989013671875,
+          "state": 0.9989013671875,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.82666015625,
+          "flags": 0.995849609375,
+          "imm_decode": 0.99951171875,
+          "n": 4096,
+          "regs": 0.818115234375,
+          "state": 0.8173828125,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.9990234375,
+          "flags": 1.0,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.9986572265625,
+          "state": 0.9986572265625,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 1471.07763671875,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 2,
+            "first_divergence": [
+              299,
+              823,
+              null,
+              null
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 6,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              24,
+              8,
+              null,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              4,
+              40,
+              2,
+              3,
+              5,
+              13,
+              6,
+              4
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              10,
+              6,
+              1,
+              4,
+              0,
+              3,
+              3,
+              4,
+              3,
+              1,
+              1,
+              5,
+              2,
+              0,
+              1,
+              0
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 2,
+            "first_divergence": [
+              11,
+              null,
+              71,
+              null
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 7,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              6,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 40000,
+        "attempted_updates": 40000,
+        "parameters": 291851,
+        "train_wall_s": 2910.031064204988
+      }
+    },
+    "nn": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 90000,
+        "max_updates": 60000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "schedule_on": "attempts",
+        "seed": 673,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9986572265625,
+          "flags": 1.0,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.99853515625,
+          "state": 0.99853515625,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.845458984375,
+          "flags": 0.995849609375,
+          "imm_decode": 0.999755859375,
+          "n": 4096,
+          "regs": 0.840576171875,
+          "state": 0.838623046875,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.9974365234375,
+          "flags": 0.999755859375,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.9969482421875,
+          "state": 0.9969482421875,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 411.17041015625,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              125,
+              44,
+              69,
+              232
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 4,
+            "first_divergence": [
+              null,
+              99,
+              101,
+              null,
+              null,
+              86,
+              null,
+              116
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              4,
+              7,
+              0,
+              1
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              8,
+              3,
+              1,
+              6,
+              0,
+              8,
+              17,
+              9
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 3,
+            "first_divergence": [
+              4,
+              13,
+              1,
+              9,
+              3,
+              null,
+              4,
+              1,
+              null,
+              0,
+              0,
+              6,
+              4,
+              0,
+              null,
+              1
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              11,
+              104,
+              281,
+              906
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 6,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              78,
+              23
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 16,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 60000,
+        "attempted_updates": 60000,
+        "parameters": 322283,
+        "train_wall_s": 1396.5541084379656
+      }
+    },
+    "nn-s719": {
+      "config": {
+        "aligned": true,
+        "batch": 256,
+        "lr": 0.001,
+        "margin_se": 2.0,
+        "max_attempt_steps": 90000,
+        "max_updates": 60000,
+        "patience": 99,
+        "plateau_delta": 0.003,
+        "relptr": false,
+        "schedule_on": "attempts",
+        "seed": 719,
+        "steps": 5000,
+        "warmup": 1000
+      },
+      "counter": {
+        "1024": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_steps": 1024,
+          "status": "exit"
+        },
+        "128": {
+          "exact": true,
+          "exit_code": 125,
+          "first_divergence_vs_native": null,
+          "native_agree": 128,
+          "native_steps": 128,
+          "status": "exit"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 13,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_steps": 16,
+          "status": "exit"
+        },
+        "8192": {
+          "exact": true,
+          "exit_code": 253,
+          "first_divergence_vs_native": null,
+          "native_agree": 8192,
+          "native_steps": 8192,
+          "status": "exit"
+        }
+      },
+      "panels": {
+        "heldout_literal": {
+          "dest_value": 0.9974365234375,
+          "flags": 1.0,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.996826171875,
+          "state": 0.996826171875,
+          "store": 1.0
+        },
+        "heldout_pairs": {
+          "dest_value": 0.82763671875,
+          "flags": 0.994384765625,
+          "imm_decode": 0.999755859375,
+          "n": 4096,
+          "regs": 0.819091796875,
+          "state": 0.81884765625,
+          "store": 1.0
+        },
+        "iid": {
+          "dest_value": 0.9981689453125,
+          "flags": 1.0,
+          "imm_decode": 1.0,
+          "n": 8192,
+          "regs": 0.998046875,
+          "state": 0.998046875,
+          "store": 1.0
+        }
+      },
+      "peak_cuda_allocated_mb": 411.17041015625,
+      "programs": {
+        "heldout_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              124,
+              23,
+              307,
+              54
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 3,
+            "first_divergence": [
+              74,
+              112,
+              62,
+              null,
+              null,
+              77,
+              79,
+              null
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 15,
+            "first_divergence": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              3,
+              null
+            ],
+            "programs": 16
+          }
+        },
+        "heldout_pairs": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              2,
+              7,
+              14
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 0,
+            "first_divergence": [
+              4,
+              1,
+              2,
+              3,
+              3,
+              2,
+              9,
+              6
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 0,
+            "first_divergence": [
+              1,
+              3,
+              1,
+              0,
+              1,
+              3,
+              0,
+              1,
+              1,
+              7,
+              11,
+              12,
+              5,
+              1,
+              3,
+              3
+            ],
+            "programs": 16
+          }
+        },
+        "train_literals": {
+          "1024": {
+            "exact": 0,
+            "first_divergence": [
+              15,
+              213,
+              169,
+              111
+            ],
+            "programs": 4
+          },
+          "128": {
+            "exact": 4,
+            "first_divergence": [
+              112,
+              null,
+              114,
+              null,
+              49,
+              null,
+              null,
+              60
+            ],
+            "programs": 8
+          },
+          "16": {
+            "exact": 13,
+            "first_divergence": [
+              null,
+              null,
+              1,
+              null,
+              null,
+              null,
+              12,
+              null,
+              3,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "programs": 16
+          }
+        }
+      },
+      "stdout": {
+        "1024": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 1024,
+          "native_stdout": "f503000000000000",
+          "status": "exit",
+          "stdout": "f503000000000000"
+        },
+        "128": {
+          "exact": false,
+          "exit_code": 0,
+          "first_divergence_vs_native": 0,
+          "native_agree": 127,
+          "native_stdout": "7500000000000000",
+          "status": "exit",
+          "stdout": "7500000000000000"
+        },
+        "16": {
+          "exact": true,
+          "exit_code": 0,
+          "first_divergence_vs_native": null,
+          "native_agree": 16,
+          "native_stdout": "0500000000000000",
+          "status": "exit",
+          "stdout": "0500000000000000"
+        }
+      },
+      "training": {
+        "accepted_updates": 55000,
+        "attempted_updates": 60000,
+        "parameters": 322283,
+        "train_wall_s": 684.8170465599978
+      }
+    }
+  },
+  "jobs": [
+    "job-e86940b8794a",
+    "job-9e7c3abc8459",
+    "job-3c94aeed1239+job-bee0c5d92f4e",
+    "job-ae7d42b49051",
+    "job-bd6e595c05a7",
+    "job-5b7bdecfaf11",
+    "job-3b5c4d048142",
+    "job-75d906236bb2",
+    "job-34b115a303e2",
+    "job-95d47dc97d66",
+    "job-ddbb51e6b1d5",
+    "job-d2d1ab1b5e64",
+    "job-fa56a31b6886"
+  ]
+}

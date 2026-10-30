@@ -1,0 +1,30 @@
+# Raw-window route and native response validation
+
+The route table was fit from eight discovery forwards using only the 15-byte raw windows and measured changed-register outputs. The search covered all 120 input bits. The previously frozen finite response program was loaded by its staged file and selected-program hashes. The 32 heldout predictions were recomputed and sealed before native heldout rows were read.
+
+Checkpoint SHA-256: `9399e921776d7a5437c5bbd51bfc1928f09d2ddea444fe2aa1c9cf282baf7f1e`. Discovery routes agreed with the native destination head in 8/8 rows.
+
+## Selected raw-bit route rules
+
+| Route bit | Rule | Status | Candidate count |
+|---:|---|---|---:|
+| 0 | copy raw bit 16 (byte 2, bit 0) | uniquely-identified-on-discovery | 1 |
+| 1 | copy raw bit 17 (byte 2, bit 1) | uniquely-identified-on-discovery | 1 |
+| 2 | copy raw bit 18 (byte 2, bit 2) | uniquely-identified-on-discovery | 1 |
+
+## Heldout observations
+
+Across 32 seeded bank/window pairs, the raw-bit route matched the native changed-word slot in 32/32; destination argmax agreed in 32/32. The frozen q-law's target word was exact in 31/32 cases, with 1 output-bit mismatch total. The full eight-register word vector was exact in 31/32 cases, with 1 register-bit mismatches.
+
+The single q-law miss remains a native counterexample to the finite program on this heldout bank. It does not change the route learner's observed bit-index result, and no semantic instruction name is assigned.
+
+## Bank-variant counts
+
+| Bank variant | Rows | Route correct | Destination agrees | Target word exact | Target-bit mismatches | Full register exact | Register-bit mismatches |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| low-11-ones | 8 | 8/8 | 8/8 | 8/8 | 0 | 8/8 | 0 |
+| low-17-ones | 8 | 8/8 | 8/8 | 8/8 | 0 | 8/8 | 0 |
+| low-31-ones-hole-15 | 8 | 8/8 | 8/8 | 7/8 | 1 | 7/8 | 1 |
+| random-64-bit | 8 | 8/8 | 8/8 | 8/8 | 0 | 8/8 | 0 |
+
+Unselected register words copied on all 56 discovery comparisons. Heldout predictions were reproduced by a fresh process with model/framework imports and native-source file reads blocked. This is evidence for the bounded raw-window route and its interaction with the separately frozen q-law on these inputs; it does not establish general instruction decoding.

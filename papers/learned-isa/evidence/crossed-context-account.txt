@@ -1,0 +1,74 @@
+# The context can transfer while the value stays put
+
+The same-sign decoder context can come from a different operand without changing the intended edited result. In the new four-row ADD panel, the joint edit produces complete register vectors, flags and lengths correctly **4/4** with either matched context or context from the other low-seven-bit pattern. The result follows the fixed value ports V rather than the context donor's operand. Both subsequent native calls then match the raw-input counterfactual across all eleven output heads.
+
+This is **sign-qualified context compatibility across two low-seven-bit patterns** in one frozen NN. All context transplants remain counterfactual-assisted. It is stronger than copying the whole matching context, while falling short of a pure sign switch, a recipient-local constructor, or general reusable-symbol semantics.
+
+![Crossed context results](../outputs/crossed-context-20261030-nn-r1-figure-v6/crossed-context-factorial.png)
+
+## What we changed
+
+The [previous experiment](context-factorial-findings.md) repaired two signed ADD edits with changed values plus the final decoder broadcast. It left a central ambiguity: did the broadcast supply compatible interpretation, or did it simply carry another copy of the operand?
+
+Astra reviewed the [new protocol](crossed-context-protocol.md) before execution. Four original immediates, `06`, `26`, `86`, `a6`, share one before-state, destination and program tail. The native reader independently selects byte three on all four inputs. Flipping caller bit seven gives target immediates `86`, `a6`, `06`, `26`. Their signed values are −122, −90, 6 and 38; the destination starts at 96.
+
+V contains the target row's exact counterfactual aligned, raw-slot and attention reads. We keep V fixed while crossing C, the final 256-feature decoder broadcast, between rows. The already-computed selected-register reads remain native. Source maps and payloads are sealed before suffixes; every candidate's own-state futures finish before ordinary target references run. No arithmetic answer or repaired after-state enters construction.
+
+| Context with target V fixed | Target −26 | Target 6 | Target 102 | Target 134 | Complete register vectors |
+|---|---:|---:|---:|---:|---:|
+| Matched C | −26 | 6 | 102 | 134 | 4/4 |
+| Same sign, different low-seven-bit pattern | −26 | 6 | 102 | 134 | 4/4 |
+| Opposite sign, matching low-seven-bit pattern | 230 | 262 | `0x930105bf01c20066` | −122 | 0/4 |
+| Opposite sign, different low-seven-bit pattern | 230 | 262 | `0x934105ff01c30066` | −122 | 0/4 |
+
+The same-sign C donors' native results would instead be 6, −26, 134 and 102. The crossed outputs do not follow those donor values. Here “pattern” means the low seven encoded bits, not absolute signed magnitude: `06` and `86` mean +6 and −122.
+
+Values alone also recover 0/4 complete edited register vectors, with 4/4 low bytes and 2/4 flags. C alone recovers 0/4 full words and 0/4 target low bytes. Every joint matched/same-sign arm has correct flags and length 4/4; opposite-sign arms retain correct low bytes 4/4 and flags 2/4. No off-target register changes appear in these comparisons. Original/sham results are correct for their original inputs, rather than attempts at the edited target.
+
+## Compatibility is coarser than identical computation
+
+The same-sign swap preserves hard register decisions while changing first-call register logits by up to 1.74070, flags by 1.28257 and immediate logits by 3.06744 relative to matched C. The two contexts are therefore compatible for this consumer and observable, rather than identical internal computations. The supported interpretation is conditional on the held-fixed opcode, register bank, native R and target V.
+
+The opposite-sign control also sharpens the limit. A narrow sign-extension rule predicted only a ±256 word error. That prediction holds in three of four rows; the `86→06` edit instead produces an irregular upper word. Crossing its wrong-sign context to the other pattern changes three upper bits, without fixing the word or changing its low byte. A clean binary extension switch is not established.
+
+The source-routing calibration is exact: the opposite-sign, matching-pattern C source is physically the original input context. Its tensor matches original C exactly, and its output matches V-only across every raw head. Sham also matches ordinary native execution exactly. These calibrate the intervention instrument; they are separate from the scientific compatibility trend.
+
+## What survives in time
+
+All nine initial outputs receive native COPY followed by ADD +3, using their own predicted registers, flags and instruction lengths. All **72** later case-level instructions compute the correct register, flag and length result for their actual incoming state, including branches that committed the wrong first word. Matched C and same-sign crossed C each retain the intended edited complete state in all eight later rows. At both later calls, each is bit-exact to the raw-input counterfactual across all eleven heads.
+
+```mermaid
+flowchart LR
+    V[Target value ports V] --> CAT[Native concatenation]
+    C[Compatible C from another pattern] --> CAT
+    R[Recipient register reads R] --> CAT
+    CAT --> N[Unchanged learned consumer]
+    N --> A[Predicted register / flag / length ABI]
+    A --> F[Native COPY then ADD +3]
+```
+
+This adds a measured compatibility relation to the symbol table: a value, a consumer, compatible context, an intervention boundary, and the state that survives commitment. Within a pass, the dynamic circuit can change its continuous response while preserving the same edited decision. Across passes, the supplied host commit ABI erases those soft differences and the unchanged next computation consumes identical state. This NN has no recurrent hidden state between calls. It adds no new CoT or Mamba result.
+
+The adjacent Mamba computation-atlas work studies a different relation: a receiver-specific approximation for small continuous changes. Its table shows 1.95% error at dose 1/8, 7.6% at 1/4, and first observed decision changes at 1/2. The demonstrated 5% approximation neighborhood ends before those decision-changing updates; the two boundaries have not been shown to coincide. Neither its local law nor its radius transfers to this NN. The common research question is which computation depends on context, and which interface remains usable when that context changes.
+
+## Next: construct the compatible context locally
+
+Astra recommends constructing V′ and C′ from each recipient's current prefix, edited raw source bit and frozen native weights, with no activation from another case. The decoder's two GELU layers permit an exact mathematical finite-update construction: update the first preactivation by the changed input column, propagate that change through the second layer, and recompute native read coefficients. That supplies a concrete recipient-local candidate without target arithmetic.
+
+The next test should freeze that constructor, retain the successful final V/C intervention scope, and use fresh immediate patterns and before-states before observing reference outputs. Keep values-only, context-only and sham controls; preserve flag or register-read failures instead of silently widening the patch. Such a result could establish a recipient-local interface to native computation. Because it would use the full native prefix weights and supplied edit grammar, it would still be partial recomputation rather than a compact extracted sign instruction. Today's assisted result has not established that constructor.
+
+**Donor-free follow-up, October 30:** the [recipient-local constructor](recipient-context-findings.md) has now been frozen and tested on eight fresh envelopes across two destinations and new banks. Joint local V′/C′ edits recover complete intended registers, flags and length 8/8; either factor alone gives 0/8 complete target words. Both native successor calls are raw-logit exact to the intended input reference across all eleven heads. The wrong-coordinate constructor performs its own different edit correctly 8/8. This subsequent result uses only recipient state and frozen weights; the present crossed-context run remains historical donor-assisted evidence.
+
+## Execution and evidence
+
+Guarded mrun job `job-8c00552d119c` succeeded on Beast with CPU FP32, one worker thread and zero training. It used 31 counted execution segments, 124 example rows, eight typed Acts, 39 work items and 949 FX transitions. Worker science/report time was 192.90 seconds; scheduler elapsed time was 215.44 seconds. Peak RSS was 1,009.3 MB and VRAM zero. Weights, parent preservation, fixed inputs, typed full-concatenation closure and own-state joins verify exactly.
+
+The archive contains 1,180 files, 81,565,827 expanded bytes and 24,849,207 compressed bytes; SHA-256 `a29a0744ed110d0f1ed8e5a8cdb2f97060798210ab080bafc9217f1c923ffe51`. The public Project proof opens a temporary derivative only: eighteen indexed cuts, sixteen receipts and 43 symbols in the main session, plus two cuts and one receipt in the source session. It loads no model or tensor pages and preserves the raw Project inventory.
+
+Use the corrected [audit v3](../outputs/crossed-context-20261030-nn-r1-audit-v3/analysis.json), [numeric v3](../outputs/crossed-context-20261030-nn-r1-numeric-v3/analysis.json), [figure v6](../outputs/crossed-context-20261030-nn-r1-figure-v6/figure-data.json) and [evidence v2](../../saturn/results/crossed-context-20261030-nn-r1-evidence-v2/receipt.json). Earlier derived outputs remain historical: initial prediction metadata confused original with target operand signs, and the initial numeric reader missed arrays inside tensor descriptors. Raw observations and model execution are unchanged; neither error changes the independently checked first/future decoded outcomes.
+
+The evidence projection retains 108 observations, 72 trajectory joins and eight Act/closure records. Standard Saturn evidence run and verify complete without broken instruments or findings over those three streams and 188 records. This verifies the declared evidence machinery, without automatically accepting semantic claims. The [post-analysis custody check](../outputs/crossed-context-postanalysis-custody-20261030-r1.json) compares every extracted file with its archived bytes: zero missing, extra or mismatched files.
+
+Final validation: **61 focused tests pass**, including known-wiring intervention mechanics, the new launcher and audit instruments, and regression checks for the preceding experiment modes. Ruff is clean. The saved PNG was visually inspected after correcting its layout.
+
+Sources: [protocol](crossed-context-protocol.md), [raw report](../runs/crossed-context-20261030-nn-r1/report.json), [retained observations](../runs/crossed-context-20261030-nn-r1/extracted/readable-result/), [runtime](../isa_lab/crossed_context_assay.py), [Project proof](../outputs/crossed-context-project-reopen-20261030-r1/crossed-context-project-reopen-proof.json).

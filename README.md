@@ -1,6 +1,6 @@
 # Research
 
-Papers, demonstrations, and evidence bundles from a program that treats a trained model as software: capture its state at a declared boundary, fork it, change one thing, replay it exactly, and let the model's own output judge the change. Every number in the papers traces to a frozen result file, and the headline numbers are bound to those files in a hash-chained [evidence registry](papers/evidence-registry/README.md) that re-checks offline.
+Papers, demonstrations, and evidence bundles from a program that treats a trained model as software: capture its state at a declared boundary, fork it, change one thing, replay it exactly, and let the model's own output judge the change. Headline numbers in the six current manuscripts are bound to their frozen result files in a hash-chained [evidence registry](papers/evidence-registry/README.md) that re-checks offline. The ISA research series below includes its own source and measurement snapshots.
 
 ## Start here
 
@@ -26,6 +26,13 @@ The full list, including earlier drafts and what superseded them, is in [papers/
 - **Preregistration and blind tests.** Predictions and scorers are hash-frozen before data; failed predictions are reported with the falsifier that fired.
 - **Stock execution.** Headline claims run on unmodified Hugging Face eager forward passes and were validated against TransformerLens where a comparison exists.
 - **Receipts.** Every result folder carries the worker, the frozen design, the collected reports, and the verifier; the registry binds headline numbers to receipt bytes.
+
+## ISA research
+
+Two technical write-ups follow the instruction-execution work from the original PAN-ISA system to the newer architecture comparisons and recovered programs. Each explains the mathematics, learned and supplied components, supported execution, model size, and measured performance against the relevant software or native CPU baseline.
+
+- [PAN-ISA](papers/pan-isa/README.md) covers the early staged learners, typed x86 runtime, phase representations, and QEMU comparison.
+- [Learned ISA](papers/learned-isa/README.md) covers the six-model comparison, direct-effect networks, SPF automata, FieldLM programs, causal symbol editing, and executable programs recovered from model computation.
 
 ## Diffusion program
 

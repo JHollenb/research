@@ -1,0 +1,58 @@
+# ISA model training and execution comparison
+
+On three fresh seeds, all models answered every isolated test correctly. FieldLM and the native SPF adapter preserved every continuous intermediate state. The neural selector was faster at inference but made one routing error that propagated for eleven steps before later instructions restored the correct final state. These observations describe the current candidate-selection adapters on eleven known x86 byte-ALU forms.
+
+## Accuracy and execution cost
+
+The revised campaign used seeds 101, 137 and 173. Every model received the same 352 discovery observations per seed, with separate feedback and heldout panels. Heldout evidence totals 1,056 isolated steps, 384 continuous steps and twelve final-state checks per model. All execution used Beast's CPU, one Torch/BLAS thread and scalar inference. There was no GPU use.
+
+| Model | Isolated exact | Continuous step exact | Final state exact | Warm inference µs/instruction |
+| --- | ---: | ---: | ---: | ---: |
+| NN | 1,056/1,056 | 373/384 (97.14%) | 12/12 | 47.62 |
+| FieldLM | 1,056/1,056 | 384/384 (100%) | 12/12 | 154.51 |
+| SPF native adapter | 1,056/1,056 | 384/384 (100%) | 12/12 | 99.57 |
+
+Each model has thirty timing samples: three seeds, five rotated order rounds and two warmed repetitions. Models run in isolated serial processes. Fresh-process output fingerprints match the captured heldout predictions exactly for every sample. The timed path includes routing, shared candidate semantics, commit validation and returned state construction; gold scoring and artifact writes are outside it. Median paired round ratios are 3.25 for FieldLM/NN, 2.09 for SPF/NN and 1.55 for FieldLM/SPF. Repeated timing rows within a seed are correlated observations, not additional independent learning specimens.
+
+| Model | Complete training wall s/seed | Training CPU s/seed | Learner update wall ms/seed | Training peak RSS MiB | Inference peak RSS MiB | Model JSON KiB |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| NN | 1.093 | 0.776 | 164.88 | 671.7 | 513.8 | 136.97 |
+| FieldLM | 0.654 | 0.521 | 0.074 | 656.3 | 505.2 | 4.63 |
+| SPF native adapter | 0.598 | 0.475 | 0.525 | 657.5 | 505.7 | 2.03 |
+
+Training wall/CPU and update times are means over seeds; RSS values are the maximum observed across the relevant phases. Complete training includes model preparation, shared label inference, Saturn capture/restore, feedback replay and artifact writing. Runtime import costs are separate: approximately 0.56 seconds per process. Median cold artifact load costs after runtime import are 3.87 ms for NN, 4.77 ms for FieldLM and 6.99 ms for SPF. Individual phase costs, process lifetime high-water marks and all raw timing samples are retained.
+
+The NN executed and accepted 128 gradient updates per seed, consuming 45,056 training rows with reuse. Each structural model fitted once from 352 rows. The NN stores 4,299 numerical parameters; FieldLM stores eleven learned route records; SPF stores eleven route records with 176 bytes of packed key/value planes. Complete JSON sizes include metadata and structural state, while those component counts do not. Process RSS includes Python and the shared Torch runtime used for Saturn's state boundary; it is not a measurement of weights alone. RSS is sampled every 10 ms, and CPU time measures process consumption. Energy and physical hardware FLOP counters were not measured.
+
+![Measured accuracy training and inference](../runs/2026-10-14-comparison-v2/comparison.png)
+
+## What the learner acquired
+
+All three learn which supplied transition operator applies. Exact candidate code computes the arithmetic and flags. FieldLM/SPF use supplied instruction-key separation and exact addressed recall; the NN embeds the raw two-byte window and before-state features. This gives the addressed models an explicit operand-invariance prior, while the NN must learn to ignore irrelevant immediate/state features for routing. The SPF adapter is a native phase/read component, not a full contextual SPFTransformer.
+
+In seed 101, the first neural divergence was heldout trace 3, step 13: bytes `24fa` mean AND AL, 250, but the learned head selected DEC. Its DEC logit was 5.522 versus AND's 5.147. That wrong transition affected eleven successive state comparisons; later execution recovered, so the final-state score alone hid the error. Seeds 137 and 173 had exact continuous execution. Discovery cross-entropy fell from approximately 2.42 to 0.006 in all three specimens. This is a positive training trajectory alongside a retained generalization failure.
+
+The scope is operand/state and sequence generalization within the supplied instruction forms. It does not establish learned arithmetic, unseen instruction-family discovery, full x86 coverage, architectural priority or a speed ranking for full FieldLM/SPFTransformer implementations. Terminal certification was not run.
+
+## Original campaign and controller correction
+
+The original campaign on seeds 17, 29 and 43 achieved 100% isolated accuracy for all models, but NN continuous accuracy was 369/384 (96.09%) and final-state accuracy was 11/12. Its controller compared only discrete feedback scores. When those scores saturated, it rejected lower-loss futures as equivalent; accepted NN updates were 64, 64 and 96 out of 128 physical updates. Two rejected futures for a seed repeated the same deterministic candidate. All original candidate artifacts and receipts are preserved.
+
+The revised continuation policy adds discovery-only cross-entropy improvement while retaining non-regression on feedback isolated, continuous and endpoint scores. It accepted all 128 updates on fresh seeds. This was an instrument/controller correction motivated by saturated feedback and observed training progress. The panels have different seeds, so their accuracy difference is not a matched estimate of the policy's causal benefit. The new intermediate error remains visible.
+
+## Custody and reproduction
+
+The final campaign is mrun `job-63f53ec27618`; the original is `job-09039a348305`. The corrected fleet smoke is `job-90d9c35df61e`. The initial smoke `job-3ab885e603ec` failed before model loading because UV's default cache could not rename a downloaded wheel across filesystems; the canonical Saturn worker cache path fixed that setup failure. No automatic retry or nested scheduler job was used. MLflow was skipped after the user's instruction.
+
+All datasets, checkpoints, rejected futures, source manifests, resource rows, receipts and verified result archives are retained under [the final run](../runs/2026-10-14-comparison-v2/) and [the original run](../runs/2026-10-14-comparison-v1/). [Final machine-readable summary](../runs/2026-10-14-comparison-v2/comparison.json), [generated report](../runs/2026-10-14-comparison-v2/comparison.md), [original summary](../runs/2026-10-14-comparison-v1/comparison.json).
+
+Run from the repository through the common environment:
+
+```bash
+rtk proxy env PYTHONPATH=. ../common/bin/common exec python scripts/campaign_launch.py --run-dir runs/new-comparison --seeds 101 137 173 --examples-per-form 32 --traces-per-split 4 --intervals 4 --steps 32 --timing-rounds 5 --timing-repeats 2 --execute
+rtk proxy env PYTHONPATH=. ../common/bin/common exec python scripts/campaign_collect.py runs/new-comparison
+rtk proxy env PYTHONPATH=. ../common/bin/common exec python scripts/campaign_analyze.py runs/new-comparison/result
+rtk proxy env PYTHONPATH=. ../common/bin/common exec python scripts/campaign_plot.py runs/new-comparison
+```
+
+The same seeds reproduce the declared specimen identities; fresh research replications should choose new seeds and retain the prior artifacts. The next comparison should test direct effects or a matched instruction-key prior before interpreting these routing results as broader model differences.

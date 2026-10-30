@@ -1,0 +1,76 @@
+# A frozen value editor transfers to arithmetic with one collateral error
+
+The exact [recipient-only editor](reusable-symbol-value-edit.md) now transfers from a MOV immediate at byte 1 to an ADD imm8 operand at byte 3. All **16/16 intended destination words** and all **16/16 CF/ZF/SF/OF flag vectors** match independent arithmetic. Complete register states match in **15/16** rows: one edit also clears an unrelated register bit. This is a useful extension of the measured value interface, with a concrete limit on its selectivity.
+
+![Operand reading, arithmetic edits, full-state exceptions and native continuation](../outputs/arithmetic-symbol-edit-nn-r2/arithmetic-symbol-edit.png)
+
+The [prospective protocol](arithmetic-symbol-value-edit-protocol.md) froze the cases, controls and predictions before any native outputs. [Astra's plan](../outputs/arithmetic-symbol-edit-advisor-nn/README.md), the [assay](../isa_lab/arithmetic_symbol_edit_assay.py), [independent audit](../outputs/arithmetic-symbol-edit-nn-r2/audit.json) and [result review](../outputs/arithmetic-symbol-edit-advisor-nn/RESULT-REVIEW.md) retain construction, interpretation and limitations separately. Terminal certification remains unassessed.
+
+## The same locator and editor have a different native consumer
+
+The frozen NN checkpoint is `30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235`, CPU FP32, one thread. Both the entire structural-locator module and the recipient-only editor are byte-identical to the earlier successful MOV panel. The locator finds the unique raw-window-only `[16,64,1]` carrier entering the native token concatenation. The public symbol table binds its prior measured role to the exact graph, parent cut, input context and consumer. No successful output or hard-coded tensor ID selects the site.
+
+All 16 native sign-decoded carrier words match raw bytes 3–10, with the low byte equal to the current immediate. The learned eight-way offset reader selects byte 3 in every row; its mass there ranges from `0.99528545` to `0.99983609`. Reconstructing the carrier from the actual soft weights closes within `1.19209e-7`. The model's routing, rather than a new host offset argument to the editor, supplies this address change.
+
+The separate [observed public symbol sidecar](../outputs/arithmetic-symbol-edit-nn-r2/value-symbols-observed.json) records these reader/edit/use observations and the collateral under the exact original model, execution, context, location and parent cut. Its [metadata proof](../outputs/arithmetic-symbol-edit-nn-r2/observed-sidecar-proof.json) verifies public binding serialization and hash-bound evidence with zero model forwards, Project opens or tensor hydration. The original supplied sidecar and Project remain unchanged; the annotation adds no mutation authority.
+
+The caller requests the same coordinate-5 reflection, `c[5] := -c[5]`. The carrier contains an aligned eight-byte window, including subsequent instruction bytes; it is not intrinsically a sign-extended imm8 value. The unchanged consumer determines how that carrier is used. Bit layouts, architecture, training supervision, copy prior, the previously measured sign-code role, caller masks, programs and ABI remain supplied.
+
+## Arithmetic changes include full carry chains
+
+The 16 fixed cases cross four destination/before-state contexts with signed immediates `21`, `53`, `−107` and `−75`. Reflecting coordinate 5 changes the requested addend by `+32` or `−32`, while leaving its sign bit unchanged. The contexts cover ordinary arithmetic, carry, zero/wrap and signed overflow. Every register bank is populated; exact evaluation-counterfactual input envelopes are excluded from the native parent panel by distinct unchanged program tails.
+
+| Observation | Result |
+| --- | --- |
+| Original native arithmetic | 15/16 complete register vectors; 16/16 flag vectors |
+| Main recipient-only edit | 16/16 destination words; 15/16 complete register vectors; 16/16 flags and lengths |
+| Main complete registers versus native input counterfactual | 14/16; the two disagreements have different causes |
+| Different-coordinate specificity control | 15/16 complete register vectors for its own `−16` operand change |
+| Upper-coordinate contrast | Native hard registers and flags retained in 16/16; soft and disabled-store collateral remain |
+| Sham and twice-reflected undo | Exact native output across all eleven heads |
+| Subsequent COPY, then ADD-one | Each correct for its own predicted input state in 16/16 main rows; first-call collateral persists |
+| Later complete outputs versus main native counterfactual | Exact across all eleven heads in 14/16 rows at each later call |
+
+For example, R0 begins at 96. The original addend `−107` produces `−11`; the reflected addend `−75` produces `21`. The unchanged arithmetic consumer changes **59 result bits**, after only one carrier coordinate was edited. Native COPY then carries 21 into R3, and native ADD-one produces 22. The reciprocal direction works as well. This is evidence of an operand used by arithmetic, beyond transporting one output bit.
+
+The main arm's 256 mathematically changing target bits all have positive intended margins, with minimum `0.3107493`. Their signed logit movements range from `9.1541233` to `37.7321548`. The observed total of 256 register-bit changes alone would conceal the exception below; coordinate identity and full-state comparison matter.
+
+## The exceptions distinguish editing from native competence
+
+In `arithmetic-3-15`, the before-value is R7=`0x7fffffffffffffd0`. The original native ADD-21 misses R7 bit 26, producing `0x7ffffffffbffffe5` instead of `0x7fffffffffffffe5`. The carrier edit correctly produces the requested ADD-53 destination `0x8000000000000005` and overflow flags, but also clears **R5 bit 13**: `0xaa55aa55aa55aa55` becomes `0xaa55aa55aa558a55`. The evaluation-only raw-input counterfactual has the correct complete register state. This is an edit-specific collateral failure in a row that also contains a distinct original native error.
+
+In `arithmetic-3-35`, the carrier edit correctly produces `0x7fffffffffffffe5` with every other register preserved. The raw-input counterfactual instead misses R7 bit 26. Consequently, 14/16 complete-register agreement with that comparator does **not** mean two failed edits. One disagreement is collateral in the edit; the other is a native counterfactual error while the edit is arithmetically correct. The independent equations never repair either branch.
+
+The bit-4 specificity control has its own error in `arithmetic-2-15`, missing R5 bit 14. Its requested addend delta is `−16` in all rows, rather than a null perturbation. Upper-coordinate reflection is also a measured preservation contrast, not a certified null: it preserves hard registers/flags while changing raw register logits by up to `1.79000` and a disabled store-value bit. No unfavorable row is removed.
+
+The first main edited output is not numerically identical to its raw-input counterfactual. Maximum register-logit difference is `1.61009`, and maximum flag-logit difference is `2.16436`. Relative to the original native parent, destination, source, width, length, store-enable and syscall logits remain exactly unchanged; registers, flags, immediate and inactive store outputs move. The store gate remains disabled. Correct arithmetic flags here require some large flag-logit changes, so preservation of the original flags would be the wrong criterion.
+
+## The unrelated bit crosses the learned output projection
+
+Astra's [saved-state analysis](../outputs/arithmetic-symbol-edit-advisor-nn/readout-projection.json) reconstructs the R5 bit-13 logit from the actual final hidden vector and frozen `reg_out` weights. The supplied copy prior remains `+4`. The native learned contribution is `+5.13555384`, yielding logit `+9.13555336`; after the operand reflection, the learned contribution becomes `−4.18443775`, yielding `−0.18443775`. Its hidden-vector/weight decomposition accounts for the `−9.31999194` logit change within `8.3e-7`. The [reproducible analysis source](../outputs/arithmetic-symbol-edit-advisor-nn/readout_projection.py) verifies the public stored cuts, actual output heads and frozen weights without constructing or forwarding the model.
+
+The raw-input counterfactual's saved output margin is `+0.14119220`, so the carrier edit lies `0.32562995` below it and crosses the preservation boundary. This architecture adds a shared learned output to a copy prior; it has no hard destination-write mux guaranteeing that other registers stay fixed. The arithmetic operand effect can therefore coexist with an unintended output bit change. This is numerical localization of the failure, not proof of an individual neuron's semantic role or the upstream cause of the edit/counterfactual difference. The counterfactual hidden vector was not captured and is not regenerated for this analysis.
+
+The resulting interface contract needs a preservation footprint alongside its reader, context and lifetime. An Act that changes only one carrier coordinate can affect multiple native outputs. A stronger editing claim must account for that downstream footprint, rather than infer selectivity from the Act's narrow write list.
+
+## Later native use preserves both intended values and mistakes
+
+Each completed branch receives COPY followed by ADD-one, using its own predicted register bank, flags and instruction length. All 224 successor rows across seven trajectories reach the planned byte offsets 4 and 7. Their COPY/ADD register and flag computations are correct for those actual inputs. The main trajectory has 16 rows per later call, including the row with collateral; no oracle state repairs that row.
+
+The 15 correct first-call complete states remain correct through both uses. The R5 collateral in the remaining row survives. Main and evaluation-counterfactual later outputs match exactly across eleven heads in 14/16 rows at each step, because the different first-call errors remain present. These later calls establish native use and lifetime through the supplied ABI, rather than 32 independent replications of first-call semantics.
+
+## Execution and evidence
+
+Job `job-beba4c4234fa` succeeded on beast in `308.96` worker seconds, with peak RSS `1,131.2 MB` and zero VRAM. It loaded one frozen model, made 16 ordinary batched calls, ran one graph-stepped baseline and five suffix branches, and retained 352 counted row evaluations, 602 FX transitions and 30 logical work items. Copy, undo, stepped/native parity, restore and unchanged model state all agree exactly. Six Act applications close over 14 indexed cuts and 15 indexed receipts.
+
+The collected archive contains 757 members, `84,826,456` expanded bytes and `58,277,493` compressed bytes. Its SHA-256 is `8a0005ead176a1d411580f71fb8daee598b23d920b0537d1aad48d2ef07f767c`; extraction and declared/sealed/executed payload custody agree. Remote CAS publication remains queued after an unavailable storage endpoint; the local collected archive is verified. R1 was superseded before submission. The initial local bootstrap-cache mismatch and independent checker's initial incorrect control-recipe inference remain separate instrument history; raw native artifacts are unchanged.
+
+The final [custody check](../outputs/arithmetic-symbol-edit-nn-r2/custody-after-analysis.json) compares all 757 extracted raw files with the original archive after analysis: zero mismatches. The [figure provenance](../outputs/arithmetic-symbol-edit-nn-r2/figure-manifest.json) records source and generator hashes, and the blog image is byte-identical to the final plotted artifact.
+
+The framework-free [audit](../outputs/arithmetic-symbol-edit-nn-r2/audit.json) reads JSON and SQLite/store bytes without model execution or Project hydration. Standard Saturn [evidence run](../outputs/arithmetic-symbol-edit-native-evidence-nn-r2/evidence-run.json) and [verification](../outputs/arithmetic-symbol-edit-native-evidence-nn-r2/evidence-verify.json) exit zero on the 19-row native observation journal, with target-streams-only scope and zero automatic semantic claims. Exact-envelope comparison finds zero overlap with four prior coordinate cases and 24 prior value-edit cases. Four other prior input formats are unparsed by this checker and grant no exclusion evidence; the prior panel's separate 258-row parser coverage is not inherited automatically. These are investigation-level novelty checks, and overlap with original training data remains unknown.
+
+All 42 focused assay, independent-audit, editor and launcher tests pass; Ruff is clean. Plotting, symbol annotation and projection analysis use the saved result and add no native forwards. Earlier plot-label and checker-recipe mistakes remain separately preserved; their corrections do not alter the scientific rows.
+
+The working inference is a reusable aligned value interface with native addressing and arithmetic use, whose complete-state selectivity is imperfect near a measured boundary. The next causal cut should explain the off-target margin before enlarging the semantic claim. A same-parent comparison of reflection and an exact native-counterfactual carrier replacement would be an explicitly donor-assisted diagnostic of local construction versus carrier sufficiency, separate from the recipient-only result. Cross-checkpoint recipient-only editing, persistent hidden-state semantics and CoT portability remain open.
+
+Sources: [raw report](../runs/arithmetic-symbol-edit-20261029-nn-r2/report.json), [all retained native artifacts](../runs/arithmetic-symbol-edit-20261029-nn-r2/extracted/readable-result), [packed prelaunch checks](../runs/arithmetic-symbol-edit-20261029-nn-r2/prelaunch-audit.json), [archive verification](../runs/arithmetic-symbol-edit-20261029-nn-r2/extraction.json), [independent audit implementation](../scripts/arithmetic_symbol_edit_audit.py).

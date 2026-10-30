@@ -1,0 +1,85 @@
+# A donor-free edit that the native computation can use
+
+We can now generate compatible edited values and context from each recipient's own state and frozen weights. The unchanged learned consumer produces the intended complete registers, flags and instruction length on **8/8 fresh experiment inputs**. Values alone and context alone each recover 0/8 complete edited register vectors. Both subsequent native calls match the raw-input reference exactly across all eleven output heads.
+
+This is a bounded donor-free constructor and native-consumer result in one frozen ISA NN. The constructor uses supplied architecture, raw-bit edit grammar and the full native decoder/read weights. Compact semantic instructions, broader input coverage and cross-checkpoint portability remain open.
+
+![Donor-free edit and continuation](../outputs/recipient-context-20261030-nn-r1-figure-v2/recipient-context.png)
+
+## What changed since the donor-assisted result
+
+The [crossed-context experiment](crossed-context-findings.md) showed that the target value could use context from another same-sign operand. It still obtained context and values from counterfactual activations. This experiment replaces that source with a recipient-local mathematical constructor, reviewed by Astra and frozen in the [pre-run protocol](recipient-context-protocol.md).
+
+The original recipient stops before the final concatenation. Its learned offset selects byte three in all eight rows; caller bit seven then selects source coordinate 31. From this same recipient we read the two existing decoder preactivations a₁ and a₂. For bipolar raw input u, a flip at coordinate j changes the first preactivation by a single frozen weight column:
+
+```
+δa₁ = −2 u[j] W₁[:, j]
+a₁′ = a₁ + δa₁
+a₂′ = a₂ + W₂ (GELU(a₁′) − GELU(a₁))
+z′ = GELU(a₂′)
+```
+
+The constructor then recomputes the native offset and attention coefficients from z′ and reads the edited raw bits. V′ comprises the aligned, bipolar raw-slot and immediate-attention values. C′ is the final broadcast of z′. A typed Act writes these final four ports. Original selected-register reads R and the shared upstream decoder state, including direct flag/auxiliary paths, remain in place.
+
+The constructor accepts raw recipient bits, its captured a₁/a₂, source coordinates and frozen weight tensors. It has no model, donor, evaluator, answer or target-output argument. It does not compute a repaired register word. The unchanged neural suffix performs the arithmetic, carries and register writes.
+
+Every payload and all candidate own-state futures are sealed before ordinary original-input and edited-raw-input reference calls execute. Those complete reference forwards are used only for evaluation; no separate counterfactual prefix is captured as an activation source. No training or outcome-based fitting occurs.
+
+## The fresh panel and controls
+
+The panel uses encoded immediates `09`, `4d`, `89`, `cd`: two low-seven-bit patterns, each in both sign directions. Four rows target R2 starting at +96; four target R5 starting at −54. Every row has its own prospectively generated remaining register bank and input flags. These exact envelopes are fresh to this experiment, with no claim that they were absent from model training.
+
+For example, R2 starts at 96 and the original immediate is `09`, or +9. Flipping bit seven produces `89`, or −119. The requested result is −23. The constructor supplies edited native inputs to the learned consumer, which computes that result. Across all rows the intended words are −23, 45, 105, 173, −173, −105, −45 and 23.
+
+| Final-port edit | Complete intended registers | Intended low byte | Intended flags | Length |
+|---|---:|---:|---:|---:|
+| V-local | 0/8 | 8/8 | 5/8 | 8/8 |
+| C-local | 0/8 | 0/8 | 0/8 | 8/8 |
+| VC-local | **8/8** | **8/8** | **8/8** | **8/8** |
+| VC at wrong coordinate, bit five | 0/8 | 0/8 | 0/8 | 8/8 |
+| Ordinary edited-raw-input reference | 8/8 | 8/8 | 8/8 | 8/8 |
+
+The wrong-coordinate arm correctly performs its **own** different edit on 8/8 complete register/flag/length states. For the first example it changes `09` to `29`, computing 96 + 41 = 137. It does not produce the requested −23. This demonstrates coordinate specificity without treating a legitimate alternative edit as a no-effect null.
+
+Sham is raw-logit exact to ordinary original-input execution across all eleven heads. Native/sham are correct 8/8 for their original inputs. All five primary arms preserve the seven off-destination registers on every row. Zero-dose construction reconstructs all four native ports exactly, including their soft values.
+
+## The next computation consumes the edit
+
+Each of seven initial outputs receives COPY followed by ADD +3, using its own predicted register state, flags and fetched length. All **112** later case-level instructions are correct for their actual incoming state, including branches that committed an incorrect first word relative to the requested edit. Literal state and predicted-length joins verify for every row.
+
+VC-local retains the intended complete state through both instructions, giving 16/16 correct later case states. At each later call its full output is exactly equal to the edited-raw-input reference across all eleven raw heads. The next computation therefore uses the locally constructed edit correctly without a repaired after-state being supplied by the harness.
+
+The first call has a different numerical boundary. VC-local agrees with the reference on all eleven decoded fields, but its raw tensors differ: the maximum register-logit difference is 2.0981e−5; flags differ by up to 7.4161 and length logits by 10.2472. Finite-update rounding and retained original paths remain distinct from raw replay equality. The identical committed register/flag/length interface then produces identical inputs and exact later outputs. This establishes lifetime across the declared host ABI, rather than persistent identity of a continuous hidden state.
+
+## What this means for the symbol table
+
+The interface now connects a native-resolved source, a recipient-local constructor, compatible values/context, an unchanged learned consumer and a measured future. The earlier context-local repair has acquired a usable donor-free construction on new contexts. That is a bounded instance of the proposed debugging/editing milestone.
+
+```mermaid
+flowchart LR
+    P[Recipient raw bits and current prefix] --> J[Native source resolution + caller edit]
+    J --> K[Frozen-weight finite constructor]
+    W[Native decoder and read weights] --> K
+    K --> V[Edited V′ and C′]
+    V --> N[Unchanged learned consumer]
+    N --> A[Predicted register / flag / length ABI]
+    A --> F[Native COPY then ADD +3]
+```
+
+The supplied pieces remain explicit: ISA byte/bit layout, model architecture, copy prior, ABI, edit grammar, final-port role vocabulary and decoder module identities. The final ports are structurally resolved; a₁/a₂ are bound through the supplied `decoder.0` and `decoder.2` paths on a neutral graph. The learned model resolves the source and supplies the downstream computation. The causal evidence supports that declared combination, rather than architecture-free recovery of every internal instruction.
+
+This NN has no recurrent hidden state between calls. This run adds no new Mamba, residual-stream or CoT evidence; transferring this constructor to them requires family-specific source and consumer tests. A useful next compression question is how much of the full decoder response is needed to represent this compatible context while retaining the native consumer and fresh-input behavior.
+
+## Execution, evidence and custody
+
+Guarded mrun job `job-34e07810771c` succeeded on Beast using CPU FP32 and one worker thread, with zero training. It used 24 counted model execution segments, 192 example rows, five typed Acts, 29 work items and 733 FX transitions. Three additional bounded local constructor batches—intended, wrong-coordinate and zero-dose—processed 24 rows. These are additional computation, with no speedup or forward-avoidance claim.
+
+Worker science/report time was 137.77 seconds; scheduler elapsed time was 193.24 seconds. Peak RSS was 1,053.2 MB, VRAM zero. Model and constructor weights, immutable parent and all own-state joins verify unchanged. Astra independently decoded all 56 first outputs from saved raw logits, checked ordering/seals and confirmed the native futures.
+
+The sealed local archive contains 952 files, 115,851,868 expanded bytes and 39,143,197 compressed bytes, SHA-256 `f8fa68ad5a321fb20b79d30722ecc3a2f56453d635bcc5da47ee97ec7e5b6817`. A [custody check](../outputs/recipient-context-postanalysis-custody-20261030-r1.json) verifies all extracted files against the initial hash manifest. Remote object-store publication separately reports `failed-queued`; the locally collected archive and its hashes remain verified.
+
+The [public Project proof](../outputs/recipient-context-project-reopen-20261030-r1/recipient-context-project-reopen-proof.json) opens only a temporary derivative: one main session with thirteen readable cuts, eleven receipts and 43 structural symbols. There is no counterfactual source session. The proof performs zero tensor hydration and zero model forwards, preserving the raw Project.
+
+The [evidence projection](../../saturn/results/recipient-context-20261030-nn-r1-evidence/receipt.json) retains 168 observations, 112 trajectory joins and five Act records. Standard Saturn evidence run and verify both complete without broken instruments or findings across three streams and 285 records. Mechanics are valid, instrument status is observed, trend status is observational and terminal certification remains unassessed. The final focused suite passes **47 tests** and Ruff is clean. The saved figure was visually inspected.
+
+Sources: [protocol](recipient-context-protocol.md), [constructor and assay](../isa_lab/recipient_context_assay.py), [raw report](../runs/recipient-context-20261030-nn-r1/report.json), [raw observations](../runs/recipient-context-20261030-nn-r1/extracted/readable-result/), [independent audit](../outputs/recipient-context-20261030-nn-r1-audit/analysis.json), [raw-logit contrasts](../outputs/recipient-context-20261030-nn-r1-audit/logit-contrasts.json), [figure data](../outputs/recipient-context-20261030-nn-r1-figure-v2/figure-data.json).

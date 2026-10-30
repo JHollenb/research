@@ -1,0 +1,125 @@
+# First executable symbol primitive: a generated clock update and streaming readout
+
+The October 29 continuation has now recovered a Boolean operation directly from native responses. Its frozen equations predict 93/96 held complete register vectors; the three native exceptions expose a third response class that the binary machine cannot represent. The [response atlas](../outputs/response-quotient-r3-mamba/response-atlas.md) and [independent Astra audit](../outputs/response-quotient-advisor-r3-mamba/SUMMARY.md) retain the law, exceptions and exact applicability. The complete three-scan implementation and a history-localization experiment have also executed; their scope is recorded below.
+
+The final [symbol catalog](../outputs/moonshot-r3-mamba/README.md) joins eleven actual bundles into fourteen source-qualified or measured symbols. Its [table](../outputs/moonshot-r3-mamba/symbol-table.md) links the raw-byte route, finite response law, five MLPs, state frontier, clock continuation and complete own-state loop. The [validation guide](../outputs/moonshot-validation-r3-mamba/README.md) gives the model-free reproduction command and keeps automated evidence-stream coverage separate from direct artifact and receipt verification.
+
+## Complete streamed model and the extra history dependency
+
+The subsequent [raw-route program](../outputs/response-route-r3-mamba/SUMMARY.md) learns register-index bits from native responses by searching all 120 raw input bits. It identifies positions 16, 17 and 18, gives 32/32 held route matches and 31/32 complete register vectors with the original frozen word law. Its remaining mismatch reproduces the bit-32 hole-prefix family. The [independent audit](../outputs/response-route-advisor-r3-mamba/SUMMARY.md) verifies the complete search and model-free serving.
+
+The final [prospective symbolic-loop run](../runs/native-forward-symbols-20261029T100021.116951Z/report.json) composes that route and word law with native-derived flag/length hypotheses. All eight calls in two four-instruction paths match native registers, flags and length, with identical raw roots and offsets. The third flag is predicted from routed emitted-word bit 63; its before-word alternative remains observationally ambiguous. Other flags are discovery-constant zero, and the observed length is four. The eight predictions and independent framework-blocked child outputs precede every native call. Each path consumes its own predicted state, including nonzero flags. No expected after-state, model weights or native fallback enters standalone serving. This earns bounded compact-program composition across the complete native feedback ABI, while the wider native exceptions and unmodeled auxiliary heads remain explicit.
+
+Job `job-642347daef57` exports all three Mamba mixers, five MLPs and eleven heads into a module-free parameter program. Four fresh asymmetric 64-bit register banks each run four dependent calls. Every path uses its own predicted registers, flags and instruction length. Across all 16 baseline pairs the decoded states and lengths match; the maximum scalar difference across all heads is `3.0517578125e-5`. The 64-row recurrence is evaluated row by row, with three 384-coordinate scan states and three two-row, 96-channel convolution histories. Output prefixes, flag statistics, hoisted factors, temporaries and weights also occupy memory. This is complete source-qualified lowering, not neural parameter compression or automatic semantic discovery.
+
+A fresh child loads the exported program and raw roots with native imports and explicit checkpoint/source file access blocked. Its complete output matches the parent exactly. The [installed public proof](../runs/native-forward-symbols-20261029T090450.332745Z/installed-proof.json) checks four native traces, eight native typed branches and 56 whole-call Saturn receipts, including byte reconstruction of every FP32 head from JSON. The extra child receipt has a separate stored seal; it is outside those 56 full-cut verifications. The job completed normally in 13.57 worker seconds, with 1026.6 MB peak RSS and zero VRAM. No speed or total-memory comparison is claimed.
+
+The fixed layer-2 row-8 clock grid spans factors `0.125,0.25,0.5,2,4,8,16`. All 28 non-unit candidate doses change continuous outputs, but none changes decoded feedback or length. All four paths therefore select the declared scale-1 fallback. Native confirmation calibrates that no-op; a nonzero clock effect persisting across instructions remains unestablished by this panel.
+
+Job `job-eca3c04e5e3c` then crosses recurrent H and convolution history at the complete frontier before row 31. Its two parents are the previously observed ordinary and hole prefixes with the same suffix 1. All future raw row inputs and hoisted exogenous terms match. Six separately typed carry ports expose all three H states and all three convolution histories. Eight independent registered Acts cover the H-by-convolution grid in both directions, preserving recipient emitted prefixes and accumulated flag statistics.
+
+For the ordinary recipient, register slot 7 bit 32 has these logit values:
+
+| Donor recurrent state | Donor convolution history | Output logit |
+|---|---|---:|
+| no | no | -7.93289948 |
+| no | yes | -5.13868046 |
+| yes | no | -6.15488386 |
+| yes | yes | +0.07155466 |
+
+The signed interaction is `+3.43221951`. Neither partial transplant reproduces the exceptional positive bit; the complete transplant does. Both reciprocal full swaps reproduce the donor's complete future register-logit suffix exactly, and both copies reproduce their recipient streamed baselines exactly. The original native exceptional margin is `+0.07156086`, so the qualitative threshold result survives measured implementation rounding. This is a causal result in the source-qualified streamed native equations with native baseline calibration. It does not identify an abstract three-state native variable or establish that all six ports are individually necessary.
+
+The [raw frontier report](../runs/native-forward-symbols-20261029T091023.984177Z/report.json) and [framework-free proof](../runs/native-forward-symbols-20261029T091023.984177Z/installed-proof.json) preserve both native parents, all 16 Act/continuation receipts, state bindings and output bytes. Six full forwards, eight 33-row continuations and two root replays complete 16 logical executions; receipts are nested evidence. Worker time is 10.45 seconds, peak RSS 961.8 MB and VRAM zero. The symbol-table implication is a measured dependency spanning recurrent state and short convolution history, alongside the simpler response law and its counterexamples.
+
+The long-term target is a compact program recovered from model computation that selects its own addresses, forms its own updates and composes through the native consumer. This first cut compiles the final R3 Mamba scan into a program with a smaller state trajectory. It also predicts a clock intervention from live factors without a captured donor. It does not yet discover an abstract arithmetic operator or a smaller sufficient recurrent state.
+
+## The computation to replace
+
+The final mixer receives the live output of the preceding native scan and post block. Its entry is `[batch,64,48]`. Source-qualified normalization, input projection, causal convolution and selection produce `u, dt, B, C, G`; the compiled program owns independent copies of the learned parameters. For each bit position t:
+
+```
+A = -exp(a_log)
+D_t = exp(dt_t[...,None] * A)
+W_t = (dt_t * u_t)[...,None] * B_t[:,None,:]
+H_t = D_t * H_(t-1) + W_t
+r_t = sum_state(H_t * C_t[:,None,:])
+M = entry + Linear_out((stack(r_t) + d*u) * G)
+```
+
+`H` starts at zero on every model call. The compiled evaluation retains a current `[batch,96,4]` recurrent state and consumes it at each row. It avoids complete `[batch,64,96,4]` decay, writer and state trajectories. A `[batch,64,96]` readout buffer keeps the output projection's batched geometry unchanged. Old/new states and temporary decay, writer and product buffers also occupy memory; 384 persistent state elements are not the total peak working set.
+
+The source scan uses associative doubling, while this primitive evaluates the diagonal recurrence sequentially. These are the same real-arithmetic state update with different floating-point association. All signed head differences and any decoded-state divergence remain observations. The primitive runs without an autograd tape; training behavior is outside its ABI.
+
+The compiled candidate replaces `mixers[2]` before execution. It must neither call nor retain the removed native final mixer. Its own parameter storage must not alias that mixer. The first two native scans and all later post/flag/register/store consumers remain part of the native model. A replacement installed only after native H was already computed would not qualify as this lowering.
+
+## Sealed inputs and predictions
+
+The checkpoint remains `9399e921776d7a5437c5bbd51bfc1928f09d2ddea444fe2aa1c9cf282baf7f1e`, with its original R3 model and SSM source. Execution is CPU FP32, one thread, one finite mrun lease, no automatic retry, no training and no after-state oracle.
+
+The four case seeds are `0x5CA1AB1E + case_index`. Seven non-target 32-bit register values are drawn in register order from each case's seeded generator. Register slot 7 takes these predeclared values; input flags are all zero:
+
+| Case | Slot-7 value |
+|---|---|
+| carry-depth-0 | `0x012345FF` |
+| carry-depth-1 | `0x34567FFF` |
+| carry-depth-2 | `0x5678FFFF` |
+| carry-depth-3 | `0x789FFFFF` |
+
+The complete banks, case seeds, raw program and case-plan hash are stored before any model call. Freshness means unused by this symbol experiment; it does not assert a model-training held-out split. Raw program bytes are `4883c7014883c701`. Each stream performs two model calls and advances its byte offset using its own predicted instruction length. The second call consumes that stream's own predicted registers and flags. Wrong lengths, model mistakes and resulting windows remain part of the record; host arithmetic never repairs them.
+
+For the counterfactual, multiply all 96 final-scan dt coordinates at bit row 8 by 1.5 on the first call only. The program recomputes both `exp(dt*A)` and `(dt*u)*B`. The second call has the ordinary clock. Reader, gate and other row factors follow their declared native dependencies. This is a coupled clock-and-write intervention, rather than an isolated retention change.
+
+All four compiled baseline and clock-edited two-call predictions are saved and hash-sealed before any native typed clock replay. The compiled function receives raw inputs, its own prior predicted state, its cloned parameters and the declared clock option; it receives no native target output, donor activation or expected architectural answer. Native baseline captures calibrate the instrument before prediction, but are not inputs to the compiled candidate. Native counterfactual outputs are withheld until the prediction seal and then used for comparison. The compiled source and inputs are frozen before the run.
+
+## Native comparisons and execution budget
+
+The panel contains four streams per case: native baseline, compiled baseline, native clock edit and compiled clock edit. Native first calls supply four SSA captures, four untraced exact-input controls and four exact root replays. Four typed dt copies calibrate the intervention; four typed scaled-dt branches test the sealed compiled predictions. Every branch retains all eleven native output heads.
+
+The budget is **32 physical full-model calls, four root replays and eight typed suffix branches: 44 logical items**. It includes four native baseline second calls, eight compiled baseline calls, eight compiled clock calls and four native clock second calls. Native clock first calls are suffix replays rather than additional full-model calls. Compiled prediction sealing precedes those clock replays in the execution ledger.
+
+Each of the 16 compiled calls runs the recovered component once through the public Saturn Adapter and Session continuation. Its receipt seals the actual input and output ports, before/after Frames and StateCuts, checkpoint, parameters and program source. These transitions are nested inside the full-model calls, so they do not add to the 44 macro work items. Together with the eight native intervention receipts, the panel is expected to retain 24 public execution receipts.
+
+Independent shape instrumentation is scoped to the replaced mixer: record operation outputs with full trajectory geometry in the native implementation and their absence in the compiled one. Output-shape occurrences include views and do not measure distinct allocations or allocator peak. Report row-buffer geometry separately from process RSS and timing. A reduction in trajectory storage is not a parameter reduction or a speed claim. Retain full wall-time and resource observations even if the sequential version is slower.
+
+Only identity, shape/device/finite-value contracts, exact replay/copy calibration, immutable prediction seals and state lineage can stop mechanics. Approximation errors, threshold decisions and speed are observations during discovery. A future bounded substitution claim needs its own declared consumer-aligned numerical contract.
+
+## What would advance the moonshot
+
+A useful outcome is a source-bound, donor-free clock/readout primitive that predicts native counterfactual responses and survives a dependent continuation while avoiding the dense state trajectory. The symbol table should expose its entry, equations, live state, bit clock, native consumer, observed differences and source provenance.
+
+The recurrent state remains 96 channels by four modes. Time-varying C readers and mode-dependent retention can expose components invisible to a current 48-feature readout, so the earlier 384-to-48 intervention lowering does not imply a 48-state recurrent machine. Finding a smaller sufficient state, deriving input-conditioned arithmetic roles, learning address applicability and transferring those roles to other checkpoints remain later scientific work.
+
+## Recovered result: the first primitive executes
+
+The completed assay in `job-6137cc8ce5c5` ran all 32 full-model calls, four root replays and eight typed native branches. Its final publication failed after the assay completed; the [explicit recovery receipt](../runs/native-forward-symbols-20261029T072605.019798Z/collection-recovery.json) binds the existing remote output files to the sealed request and payload. Recovery ran no model calls. The original scheduler failure and unmodified worker report remain preserved.
+
+Across the four cases, all **16 compiled/native paired calls agree in decoded outputs across all eleven heads** under the existing head ABI. The largest scalar output difference is `1.9073486328125e-5`. The first two native mixers and all native output consumers remain in place; the candidate's removed final mixer is collected before execution. Its replacement computes from live entry tokens and independently stored checkpoint parameters, with no captured H, target output or donor activation entering the candidate.
+
+The compiled clock predictions were sealed before the native clock branches. The observed native register-logit effects and maximum clock-effect prediction residuals are:
+
+| Case | Native first-call max register-logit effect | Max clock-effect residual across all heads |
+|---|---:|---:|
+| carry-depth-0 | 0.249926 | 8.583e-6 |
+| carry-depth-1 | 0.330589 | 1.1444e-5 |
+| carry-depth-2 | 0.340879 | 9.5367e-6 |
+| carry-depth-3 | 0.326221 | 9.5367e-6 |
+
+The residual is `(compiled_clock - compiled_baseline) - (native_clock - native_baseline)`, with every signed head coordinate retained. This distinguishes predicting the intervention's effect from merely reproducing the ordinary forward. No threshold is used to erase a small or mixed response.
+
+All second calls consume their own path's predicted state and byte offset, and their native/compiled input roots match in this panel. The first-call clock edit changes no decoded feedback state. Consequently the baseline and clock second calls coincide exactly within each implementation, and their second-step clock effect is zero. This demonstrates own-state continuation parity; it does not demonstrate propagation of a nonzero clock effect across instructions. The internal 64-row clock resets at each call.
+
+The native final mixer emits 16 operation outputs with shape `[1,64,96,4]` per captured call. All 16 compiled calls emit zero outputs with that full-trajectory shape while retaining a current `[1,96,4]` recurrent state. The 384 state coordinates remain intact. Factor tensors, the readout sequence, row temporaries and weights still occupy memory. Scoped operation counts increase from 120 native operations to 1050/1051 compiled operations; these counts are not FLOPs or measured latency. No total-memory or speed comparison was performed.
+
+The [installed-wheel proof](../runs/native-forward-symbols-20261029T072605.019798Z/installed-proof.json) verifies four native traces, eight intervention receipts and sixteen public Saturn component receipts with frameworks and private runtime imports blocked. The mrun record reports 12.30 seconds from start to terminal failure, 1084.1 MB peak RSS and zero VRAM; assay-only timing is unavailable because publication stopped before that wrapper field was written. These costs are observations for the whole instrumented panel, not a native-versus-compiled benchmark.
+
+The [readable atlas](../outputs/compiled-scan-r3-mamba/atlas.json), [signed comparison findings](../outputs/compiled-scan-r3-mamba/findings.json) and [independent numerical audit](../outputs/compiled-scan-advisor-r3-mamba/advisor.json) retain the complete comparisons. This is a source-qualified, manually implemented scan lowering and a donor-free clock counterfactual. Automatic discovery of a semantic instruction set and recurrent-state compression remain open.
+
+The [final validation](../outputs/compiled-scan-r3-mamba/validation-summary.json) records 212 passing focused tests, 141 unique artifact-reference checks without mismatches and four exact full-table renderings through the installed public MDB CLI. Each case retains a focused Markdown guide and the complete [forward table](../outputs/compiled-scan-r3-mamba/cases/carry-depth-0/symbol-table.txt). The isolated raw and final derived evidence sweeps verify eight and 32 observation rows respectively, with no findings; the clean final sweep reports zero unparseable files. Direct receipt verification covers all 24 public receipts, separately from automatic evidence-stream coverage.
+
+## Instrument history
+
+The first attempt, `job-061c55e7cdfc` in `runs/native-forward-symbols-20261029T071329.469840Z`, stopped before compiled predictions because the parameter provenance recorder could not resolve `mixers.2.dt_proj.bias` to an executed trace edge. Its request, shipped source, custody, resource observations and failure log are preserved. This is an incomplete instrument attempt, with no scientific outcome. A corrected source must be sealed into a separate run rather than overwriting that attempt.
+
+The second attempt, `job-fb2944c7c148` in `runs/native-forward-symbols-20261029T072320.938733Z`, resolved the parameter roots but stopped before compiled prediction at an unsupported `compact` keyword passed to a shared JSON writer. Its immutable payload and failure records remain separate. The worker now uses its own declared compact serializer; the shared helper's API remains unchanged.
+
+The third attempt, `job-6137cc8ce5c5` in `runs/native-forward-symbols-20261029T072605.019798Z`, completed the scientific panel and wrote 65 output files. The launcher's causal-schema allowlist omitted `compiled-scan`, so the job remains `failed`. A read-only SSH transfer recovered the existing files, checked every output SHA256 and shipped source against the sealed request, normalized archive directory entries, and passed the corrected bounded publication validator. The [recovery record](../runs/native-forward-symbols-20261029T072605.019798Z/collection-recovery.json) preserves both received and normalized archive identities and the exact validator source. No successful scheduler status or missing worker timing is reconstructed.

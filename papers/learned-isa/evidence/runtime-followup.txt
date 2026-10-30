@@ -1,0 +1,71 @@
+# PAN history, operand generalization and complete execution time
+
+PAN's historical perfect result and the new runtime errors concern different consumers. The June 17 [exact-status report](../../pan-isa/reports/current/pan_isa_exact_status.md) reports perfect scoped Stage 0–4 results and 8,192/8,192 uninterrupted Stage 3 steps. Those heads receive supplied decoded opcode identities. The fresh comparison reproduces perfect staged selection and continuation. The failing component is the separate 33-family runtime head receiving bytes and numeric context. These are newly trained weights, a different corpus and a different optimization schedule, not a same-checkpoint regression. The [October source review](../../obsidian/blog/2026-10-06-113629-pan-isa-neural-instruction-execution.md) makes the same historical distinction.
+
+The original 99.78% NN and 99.65% PAN figures are **runtime-case accuracy**, pooling mostly single-instruction cases with four whole programs per seed. They are not per-executed-instruction error rates. Several failed programs share the same MOV literal, so their failures are correlated. Both neural models retain 100% isolated and continued stage scores.
+
+## Controlled operand experiment
+
+Keeping the frozen native consumer and before-state fixed, MOV immediates vary from 0 through 255 in EAX, EDI, RAX and RDI forms. The native family remains `MOV_IMM_REG`. There are 1,024 inputs per model seed, or 3,072 predictions per architecture. This diagnostic includes familiar and unfamiliar literals; it is not a new quarantined certification set. Raw labels and confidences are retained.
+
+| Model | Correct family with confidence ≥0.5 | Wrong top-1 family | Label changes relative to the same form with literal zero |
+|---|---:|---:|---:|
+| NN | 1,304/3,072 (42.45%) | 1,562 | 2,449 |
+| Original PAN | 1,098/3,072 (35.74%) | 1,895 | 2,614 |
+| FieldLM | 3,072/3,072 | 0 | 0 |
+| SPF adapter | 3,072/3,072 | 0 | 0 |
+
+The neural heads lack family invariance to operand changes. Removing the confidence threshold would still leave many wrong top-1 labels. The [original encoder](../pan_isa/upstream/pan_isa_x86_runtime_spf/neural_runtime.py) exposes immediate bytes directly and derives `second_norm` and ModRM-named fields from bytes after the opcode, including MOV immediate bytes on forms with no ModRM byte. Discovery mostly uses patterned immediates around `0x11223344`, plus a small number of program literals. Operand-dependent shortcuts are the working explanation; the sweep establishes the invariance failure without isolating individual feature channels.
+
+FieldLM and SPF have an explicit operand-invariance chart in [runtime_key](../isa_lab/full_models.py). It discards literal distinctions before lookup. Their perfect result includes this supplied prior; it does not isolate architecture from representation. All four arms select supplied native semantics, and SPF is the phase-memory adapter.
+
+Saturn's retained futures show a positive but incomplete trend: NN's accepted diagnostic predictions rise from 962/3,072 at 128 updates to 1,304 at 512; PAN rises from 1,000 to 1,098. Discovery loss falls sharply while staged scores reach 100%. No additional training or checkpoint selection occurred in this investigation. A useful next contrast is the same neural architecture trained with invariant features versus expanded literal diversity, followed by fresh program evaluation.
+
+The stdout programs additionally expose an unfamiliar register-to-register MOV on one seed. NN and PAN each fail all 45 stdout trials in the phase cohort; FieldLM and SPF complete all 45. The native typed validator stops mismatched proposals without reference-state repair.
+
+## Complete binary execution
+
+Every model receives identical counter ELF bytes and initial state. The program increments RDI and exits with its computed value. Each length has 15 trials per model, from three trained seeds and five repeats. All models complete all 45 counter trials correctly.
+
+| Model | 16 instructions, output ready | 128 instructions | 1,024 instructions | 1,024 plus full diagnostic JSON | Fresh-process entry to successful 1,024-step output |
+|---|---:|---:|---:|---:|---:|
+| NN | 6.61 ms | 27.02 ms | 190.82 ms | 222.02 ms | 1.569 s |
+| Original PAN | 6.33 ms | 24.29 ms | 175.41 ms | 206.36 ms | 1.370 s |
+| FieldLM | 6.68 ms | 28.30 ms | 206.63 ms | 237.59 ms | 1.510 s |
+| SPF adapter | 8.72 ms | 44.50 ms | 332.79 ms | 363.66 ms | 1.058 s |
+
+Medians on Beast CPU, one thread, explicit PS backend, no GPU. Warm output-ready timing includes request setup, reading/loading the ELF, state initialization and every model-driven instruction through program stop. It excludes imports/model restoration, diagnostic finalization and network transport. The fresh-process column includes imports, restoration and the first successful request from child entry. Filesystem caches were not flushed; its denominator is three processes per model, and scheduler queueing/process spawn before entry are excluded.
+
+The original 189.6–331.7 µs measurements were prepared `runtime.step()` calls, excluding setup and final snapshots and mixing instruction families and early stops. They were not complete request latency.
+
+At 1,024 counter instructions, measured median setup is about 2.3–3.2 ms, execution 173–330 ms and diagnostic finalization about 31 ms per model. The last phase hashes 2,050 mapped pages, about 8 MiB, and serializes roughly 175 KB of architectural state/page-digest JSON. A response containing just program output does not need that diagnostic payload. Separate phase medians need not sum exactly to the median total.
+
+The 1,024-step stdout ELF produces its computed eight-byte result in 206.73 ms for FieldLM and 334.49 ms for SPF, or 237.72/365.15 ms with diagnostics. NN and PAN have no correct completion time for this workload; error-response latencies remain separate.
+
+The decoded Stage 3 lane is distinct. At 16/128/1,024/8,192 steps, complete final-state JSON medians were NN 1.82/7.07/48.60/383.03 ms, PAN 2.01/8.26/58.86/461.93 ms, FieldLM 2.52/11.75/84.67/665.15 ms and SPF 3.82/21.62/163.74/1,303.42 ms. All nine trials per size/model were exact. This lane supplies decoded opcodes and a smaller state surface; its timing is not interchangeable with binary ELF timing.
+
+The earlier counter cohort is retained separately: 1,024-step diagnostic medians were 230.20/208.69/309.97/384.93 ms, all correct, with some contention-related long tails including a 1.823 s PAN sample. The phase cohort's full-response ranges were NN 215.6–246.0 ms, PAN 199.0–217.1 ms, FieldLM 234.8–338.3 ms and SPF 358.2–402.1 ms. These are fleet CPU observations, not exclusive-host latency certification.
+
+## Training and runtime correlation
+
+Across four architecture averages, training wall time versus prepared runtime step has Pearson r = −0.7596; training CPU gives −0.7659. Median training wall gives −0.7804. Pooling 12 architecture/seed observations weakens wall correlation to −0.3052. Training wall versus the new 1,024-step output-ready medians gives −0.6724.
+
+These are architecture-confounded descriptions, not randomized training-dose experiments. Neural fitting performs 512 gradient updates; structural fitting installs 760 records in one update. Execution paths also differ. More updates leave a neural head's matrix shapes unchanged, so this evidence does not show that longer training makes a fixed network execute faster. Completion, warm serving, startup and diagnostics must remain separate measurements.
+
+## Reproduction and custody
+
+Hydra resolves configuration before submission. DVC records stages, sources, artifacts and metrics; MLflow remains disabled. Existing models/futures resolve from content-addressed mrun archives rather than scheduler payloads. Original baseline custody records remain intact. Completed baseline and first-study stages are frozen so unrelated workspace edits do not refresh historical specimens; unfreeze deliberately for new work.
+
+- Execution/literal study: `job-be558989cd85`.
+- Initial counter control: `job-119d31daf874`.
+- Counter/stdout phase study: `job-bfbee1cd48ee`.
+- Raw [execution evidence](../outputs/execution-study), [counter evidence](../outputs/counter-study) and [phase evidence](../outputs/counter-phase-study).
+- Derived [summary JSON](../outputs/execution-report/summary.json), [figure](../outputs/execution-report/execution-comparison.png) and [tables](../outputs/execution-report/summary.md).
+
+Failed fixture attempts, the decoder fetch-boundary diagnostic and the interrupted immutable-outbox write attempt remain under `runs/`. They are mechanics outcomes, not model accuracy observations. Current rows use corrected fixtures and immutable per-unit publication. Mechanics and reference-instrument checks pass; terminal certification remains unestablished.
+
+```bash
+cd ~/domains/isa
+rtk proxy ../common/bin/common exec python -m dvc repro
+rtk proxy ../common/bin/common exec python -m dvc metrics show metrics/execution-summary.json
+```

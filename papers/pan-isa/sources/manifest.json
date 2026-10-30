@@ -1,0 +1,266 @@
+[
+  {
+    "snapshot": "sources/WHITEPAPER-PAN-ISA.md",
+    "source_path": "pan-isa/WHITEPAPER-PAN-ISA.md",
+    "source_sha256": "f2ff8dd887abea552ec68bbbd300b4569b477a717de1efed7801ccb8b8ee5e5f",
+    "snapshot_sha256": "f2ff8dd887abea552ec68bbbd300b4569b477a717de1efed7801ccb8b8ee5e5f",
+    "snapshot_bytes": 13223,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/WHITEPAPER-PAN-FABRIC.md",
+    "source_path": "pan-isa/WHITEPAPER-PAN-FABRIC.md",
+    "source_sha256": "47ea3a4c86d2d3d6a22065587900bfd6e79dd55bf9cd3d939cca7d9eefe4b4f8",
+    "snapshot_sha256": "47ea3a4c86d2d3d6a22065587900bfd6e79dd55bf9cd3d939cca7d9eefe4b4f8",
+    "snapshot_bytes": 11508,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/pan_isa_exact_status.md",
+    "source_path": "pan-isa/reports/current/pan_isa_exact_status.md",
+    "source_sha256": "b2357bc0e1e5c694e1b21345356cc601d3f9c2f7aa99caf76d7f8387c8527184",
+    "snapshot_sha256": "b2357bc0e1e5c694e1b21345356cc601d3f9c2f7aa99caf76d7f8387c8527184",
+    "snapshot_bytes": 18195,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/pan_isa_spf_v2_comparison.md",
+    "source_path": "pan-isa/reports/current/pan_isa_spf_v2_comparison.md",
+    "source_sha256": "37e56b897db5058822d5aa4bd37eb937b0fa0e4409b1cff5b8e0be7c024f95d7",
+    "snapshot_sha256": "37e56b897db5058822d5aa4bd37eb937b0fa0e4409b1cff5b8e0be7c024f95d7",
+    "snapshot_bytes": 1625,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/pan_isa_spf_v2_comparison.json",
+    "source_path": "pan-isa/reports/current/pan_isa_spf_v2_comparison.json",
+    "source_sha256": "e8e9cff6ddb348adc8ef4a3c3a96e1d95bc3159fea81f718f3f2e7d0278424cf",
+    "snapshot_sha256": "e8e9cff6ddb348adc8ef4a3c3a96e1d95bc3159fea81f718f3f2e7d0278424cf",
+    "snapshot_bytes": 5025,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage0_networks.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage0_x86_pan.py",
+    "source_sha256": "c02cd038679b12a1e5393f85ad02db080af7561258cdbbd0e232310444b2c1ab",
+    "snapshot_sha256": "389807c0d747c8de06965a64cd72eee5a4f1c44b1d64f8cbd9d8ed3a9594b36a",
+    "snapshot_bytes": 15439,
+    "source_lines_inclusive": [
+      932,
+      1323
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage0_scope.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage0_x86_pan.py",
+    "source_sha256": "c02cd038679b12a1e5393f85ad02db080af7561258cdbbd0e232310444b2c1ab",
+    "snapshot_sha256": "a610fcd7b1a373adf68d9822e6e3f651dcdbf8eccc33de63823694a5999e3a41",
+    "snapshot_bytes": 2822,
+    "source_lines_inclusive": [
+      48,
+      122
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage0_effect_commit.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage0_x86_pan.py",
+    "source_sha256": "c02cd038679b12a1e5393f85ad02db080af7561258cdbbd0e232310444b2c1ab",
+    "snapshot_sha256": "5ec59c35a4cad6f6b4da1602a9de2c7f6bf8ade0681c2b71f3245688b4b6d40b",
+    "snapshot_bytes": 1663,
+    "source_lines_inclusive": [
+      1412,
+      1446
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage3_selector.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage3_complex_scalar_pan.py",
+    "source_sha256": "d3abf15e8a5cdc94bdec667652f727cf8f58729e86a998dbdc82b1536ff75d85",
+    "snapshot_sha256": "6771dbeb049f7f66d6bcc7b168459d3c3a54a3d998f5446e3b742e04a514b9b8",
+    "snapshot_bytes": 4228,
+    "source_lines_inclusive": [
+      1992,
+      2103
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/benchmark_stage3_uninterrupted.py",
+    "source_path": "pan-isa/pan_x86_stages/benchmark_stage3_uninterrupted.py",
+    "source_sha256": "1eb4b1776965b4fab8b3b342b5e2e6cb0937d9b338f89612801f797304712a60",
+    "snapshot_sha256": "1eb4b1776965b4fab8b3b342b5e2e6cb0937d9b338f89612801f797304712a60",
+    "snapshot_bytes": 21107,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/benchmark_stage3_spf_v2.py",
+    "source_path": "pan-isa/pan_x86_stages/benchmark_stage3_spf_v2.py",
+    "source_sha256": "ba825cf96ec3d8c7ea444ee01c393ec48947c6dbc20bc1b892c0d9d653bb5a53",
+    "snapshot_sha256": "ba825cf96ec3d8c7ea444ee01c393ec48947c6dbc20bc1b892c0d9d653bb5a53",
+    "snapshot_bytes": 26583,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/neural_runtime.py",
+    "source_path": "pan-isa/pan_isa_x86_runtime_spf/neural_runtime.py",
+    "source_sha256": "fab3dc09b3cc27697c986028d582d527d563755c4ae4a23d48fb00956262198d",
+    "snapshot_sha256": "fab3dc09b3cc27697c986028d582d527d563755c4ae4a23d48fb00956262198d",
+    "snapshot_bytes": 32239,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/runtime.py",
+    "source_path": "pan-isa/pan_isa_x86_runtime_spf/runtime.py",
+    "source_sha256": "a6c5b5fee3f46a5e4f540cf44735e1d998e7a7971e138c913d7a5e5d31856b1e",
+    "snapshot_sha256": "a6c5b5fee3f46a5e4f540cf44735e1d998e7a7971e138c913d7a5e5d31856b1e",
+    "snapshot_bytes": 14849,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/spf_backend.py",
+    "source_path": "pan-isa/pan_isa_x86_runtime_spf/spf_backend.py",
+    "source_sha256": "78f545a9527dc4f5f8f84470ae484977b091aabf1a30d2662ae6883a730c1f94",
+    "snapshot_sha256": "78f545a9527dc4f5f8f84470ae484977b091aabf1a30d2662ae6883a730c1f94",
+    "snapshot_bytes": 4780,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/stage0_w8_train_summary.json",
+    "source_path": "pan-isa/artifacts_snapshot/2026-06-16/pan-x86-isa/stage0_x86_lite_alu/neural-vector-heldout-w8-unicorn-selector/train_summary.json",
+    "source_sha256": "b70f50263b7744e732d34cd5376cb7840769975650aebd60333663728f572498",
+    "snapshot_sha256": "b70f50263b7744e732d34cd5376cb7840769975650aebd60333663728f572498",
+    "snapshot_bytes": 1852,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/stage0_w8_validation_report.json",
+    "source_path": "pan-isa/artifacts_snapshot/2026-06-16/pan-x86-isa/stage0_x86_lite_alu/neural-vector-heldout-w8-unicorn-selector/validation_report.json",
+    "source_sha256": "6211fd66a8ff48ba22cd5c42ae4b021f4ee995bf806cc4fe913a98b9d5d3b63e",
+    "snapshot_sha256": "6211fd66a8ff48ba22cd5c42ae4b021f4ee995bf806cc4fe913a98b9d5d3b63e",
+    "snapshot_bytes": 21193,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/stage3_v21_train_summary.json",
+    "source_path": "pan-isa/artifacts_snapshot/2026-06-16/pan-x86-isa/stage3_complex_scalar/stage3-complex-scalar-base-alu-v21-neural/train_summary.json",
+    "source_sha256": "9de0b658a84a7b6e1e57ae60e48d5a5ea533c534162dae1e49b5041eae10ca0c",
+    "snapshot_sha256": "9de0b658a84a7b6e1e57ae60e48d5a5ea533c534162dae1e49b5041eae10ca0c",
+    "snapshot_bytes": 402,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage1_network.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage1_memory_pan.py",
+    "source_sha256": "e619f116b4f16d9b67cf2196b51a6d8c1434859cd37277e80d76acffae6358fa",
+    "snapshot_sha256": "880da38cf105c6ed7ad3c5f71e9baa71b26e2a5fc1c32ccdebcbb0c56d68a599",
+    "snapshot_bytes": 1281,
+    "source_lines_inclusive": [
+      820,
+      856
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage2_network.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage2_control_flow_pan.py",
+    "source_sha256": "5592fcb14ff4f0f1e007f9cc2e831e3c4c90400fa782e57b9c72d03c692cb88a",
+    "snapshot_sha256": "aac89dd323d607069ffe6d56b9ddf450c08aa381d6ce0a573d202ce5facc2037",
+    "snapshot_bytes": 1222,
+    "source_lines_inclusive": [
+      676,
+      706
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage4_network.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage4_simd_x87_pan.py",
+    "source_sha256": "86e91f97f92995b60f0e4d6047228caa51a0e7143963465ea4db71f71f8f9f63",
+    "snapshot_sha256": "c9c6c29af4646798ef17b3ed63ee9bc82e603b0779943f0fc779fb6782a7fd51",
+    "snapshot_bytes": 849,
+    "source_lines_inclusive": [
+      1868,
+      1895
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/transitions.py",
+    "source_path": "pan-isa/pan_isa_x86_runtime_spf/transitions.py",
+    "source_sha256": "2275bd5b038390dafc30d9a01af83ff1d44655996db5602727eea191c2ad82ac",
+    "snapshot_sha256": "2275bd5b038390dafc30d9a01af83ff1d44655996db5602727eea191c2ad82ac",
+    "snapshot_bytes": 14499,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "evidence/full_isa_user64_report.json",
+    "source_path": "pan-isa/reports/generated/full_isa_user64_report.json",
+    "source_sha256": "c3169630bacf5ab8a36eabd0febf8a60ba00f1270a8078b2c7fba80014545080",
+    "snapshot_sha256": "c3169630bacf5ab8a36eabd0febf8a60ba00f1270a8078b2c7fba80014545080",
+    "snapshot_bytes": 2704,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/qemu_until_serial_result.py",
+    "source_path": "pan-isa/pan_x86_stages/qemu_until_serial_result.py",
+    "source_sha256": "c6f5b3122f5cd5e780986714ed7a8a93923b2c58d59e52b8b6f93abfb951c842",
+    "snapshot_sha256": "c6f5b3122f5cd5e780986714ed7a8a93923b2c58d59e52b8b6f93abfb951c842",
+    "snapshot_bytes": 4841,
+    "source_lines_inclusive": null,
+    "scope": "verbatim complete file",
+    "captured_date": "2026-10-30"
+  },
+  {
+    "snapshot": "sources/code/stage0_controls.py.txt",
+    "source_path": "pan-isa/pan_x86_stages/stage0_x86_pan.py",
+    "source_sha256": "c02cd038679b12a1e5393f85ad02db080af7561258cdbbd0e232310444b2c1ab",
+    "snapshot_sha256": "b7d52121730c77e484aa26246d06cdde0782ee30c9405657476c626195fefdc2",
+    "snapshot_bytes": 520,
+    "source_lines_inclusive": [
+      1791,
+      1798
+    ],
+    "scope": "verbatim contiguous source excerpt",
+    "captured_date": "2026-10-30"
+  }
+]

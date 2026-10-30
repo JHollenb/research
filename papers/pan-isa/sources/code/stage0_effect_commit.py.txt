@@ -1,0 +1,35 @@
+def effect_targets(batch: Dict[str, torch.Tensor], device: torch.device) -> Tuple[torch.Tensor, torch.Tensor]:
+    op = batch["op"].long()
+    dst = batch["dst"].long()
+    rows = torch.arange(op.shape[0], device=device)
+    reg_write = torch.zeros((op.shape[0], len(REGS)), dtype=torch.long, device=device)
+    writes_dst = OP_WRITES_DST.to(device)[op]
+    if writes_dst.any():
+        reg_write[rows[writes_dst], dst[writes_dst]] = 1
+    flag_write = OP_WRITES_FLAGS.to(device)[op].long().reshape(-1, 1).repeat(1, len(FLAGS))
+    return reg_write, flag_write
+
+
+def effect_commit_batch(
+    rows: Dict[str, np.ndarray],
+    sub: np.ndarray,
+    outputs: Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor],
+) -> Tuple[np.ndarray, np.ndarray, Dict[str, float]]:
+    reg_write_logits, reg_value_logits, flag_write_logits, flag_value_logits = outputs
+    pred_reg_write = reg_write_logits.argmax(-1).cpu().numpy()
+    pred_reg_values = reg_value_logits.argmax(-1).cpu().numpy()
+    pred_flag_write = flag_write_logits.argmax(-1).cpu().numpy()
+    pred_flag_values = flag_value_logits.argmax(-1).cpu().numpy()
+    pred_regs = rows["before_regs"][sub].copy()
+    pred_flags = rows["before_flags"][sub].copy()
+    for j in range(len(sub)):
+        for ridx in range(len(REGS)):
+            if int(pred_reg_write[j, ridx]):
+                pred_regs[j, ridx] = int(pred_reg_values[j, ridx])
+        for fidx in range(len(FLAGS)):
+            if int(pred_flag_write[j, fidx]):
+                pred_flags[j, fidx] = int(pred_flag_values[j, fidx])
+
+    target_batch = {
+        "op": torch.tensor(rows["op"][sub]),
+        "dst": torch.tensor(rows["dst"][sub]),

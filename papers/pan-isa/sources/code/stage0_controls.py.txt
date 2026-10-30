@@ -1,0 +1,8 @@
+def control_results(word_bits: int, val_traces: Sequence[Dict[str, Any]], long_traces: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    scrambled_op = StructuredPredictor(word_bits, op_offset=1)
+    scrambled_flags = StructuredPredictor(word_bits, scramble_flags=True)
+    return {
+        "scrambled_opcode_val": free_run_metrics(scrambled_op, val_traces),
+        "scrambled_flags_val": free_run_metrics(scrambled_flags, val_traces),
+        "scrambled_opcode_long": free_run_metrics(scrambled_op, long_traces),
+    }

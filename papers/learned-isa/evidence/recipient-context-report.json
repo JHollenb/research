@@ -1,0 +1,2001 @@
+{
+  "archive": {
+    "bytes": 39143197,
+    "sha256": "f8fa68ad5a321fb20b79d30722ecc3a2f56453d635bcc5da47ee97ec7e5b6817"
+  },
+  "checkpoint_sha256": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+  "counterfactual_prefixes": 0,
+  "donor_activations_supplied": false,
+  "evidence_boundary": {
+    "donor_activations_supplied": false,
+    "oracle_after_state_supplied": false,
+    "reference_outputs_after_primary_futures": true,
+    "semantic_labels_supplied_to_model": false,
+    "target_outputs_used_for_edit": false,
+    "write_set_enforcement": false
+  },
+  "experiment": "recipient-context",
+  "installed_source_files_verified": 19,
+  "instrument_status": "observed",
+  "interventions": {
+    "budget": {
+      "examples": 192,
+      "model_calls": 24,
+      "steps": 733,
+      "work": 29
+    },
+    "constructor": {
+      "calls": 3,
+      "counterfactual_prefixes": 0,
+      "donor_activations_supplied": false,
+      "example_rows": 24,
+      "kernel": "finite-two-GELU-prefix-and-native-read-equations",
+      "weights_sha256": "e7b6b1efb9fbef33ce61da57831cdfa323bfab555d33d9b4cfae79d5caab29c2",
+      "weights_unchanged": true,
+      "zero_dose_reconstruction": {
+        "aligned": {
+          "exact": true,
+          "max_abs": 0.0
+        },
+        "attention": {
+          "exact": true,
+          "max_abs": 0.0
+        },
+        "decoder-z": {
+          "exact": true,
+          "max_abs": 0.0
+        },
+        "raw-slots": {
+          "exact": true,
+          "max_abs": 0.0
+        }
+      }
+    },
+    "context_contract_sha256": "26d381e8a1d778c4fcd6500e705cc9988b4f780e4cb0d2a96e7c3e96703683bf",
+    "event_order_sha256": "f32560a11566f56cd0ff6b6cc32faa05e718a17c6129cf2ff360f7d6a37b7232",
+    "intervention_records": [
+      {
+        "construction_sources": {
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "sham",
+        "origin": "recipient-native-final-port-copy",
+        "output_sha256": "930913d88fb63ff30f4b77707e9b037ad8501ca1c2d31de9dedb58d78781b8e1",
+        "parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839",
+        "payload_sha256": "212a9f914dfad119a326c3f53ef78678c30debb76eb746ad1c7a03047152eb76",
+        "receipts": [
+          {
+            "act": {
+              "invalidates": [],
+              "name": "sham",
+              "numerical_contract": "behavioral-intervention",
+              "operation": {
+                "authority": "registered",
+                "id": "isa.value-alias.2feacf81266cdfa7e5249280de16d8391437774b8c6057c5f646279a753dfe8f",
+                "implementation_digest": "77468a1f69e08921d9375f8a350ef17b6c5ffeee0fa70c5b97be3bc0980fbe8e",
+                "implementation_state_digest": "26ce738b6cd2460161b5a7a1e96566d2570f9feb5441e661a83a383fa96fb9e2",
+                "pure": true,
+                "version": "1"
+              },
+              "parameters": {
+                "items": [
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "7f9d0397bfa60aeb70b82e9e6cec7d7f60eb2079e716b079024756080b9604bb"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sources"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "donor_activations_supplied"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "bool",
+                            "value": false
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "native_prefix_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "recipient_parent_cut"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                          }
+                        }
+                      ],
+                      "kind": "mapping"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "origin"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient-native-final-port-copy"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "payload_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "212a9f914dfad119a326c3f53ef78678c30debb76eb746ad1c7a03047152eb76"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "ports"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v033"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v035"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v036"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v039"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v046"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v049"
+                        }
+                      ],
+                      "kind": "list"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient_parent"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                    }
+                  }
+                ],
+                "kind": "mapping"
+              },
+              "preconditions": {},
+              "preserve": [],
+              "reads": [
+                "v049",
+                "v033",
+                "v046",
+                "v039",
+                "v035",
+                "v036"
+              ],
+              "writes": [
+                "v049",
+                "v033",
+                "v046",
+                "v039",
+                "v035",
+                "v036"
+              ]
+            },
+            "boundary": "node",
+            "execution": {
+              "adapter": "mdb-forward-debugger-v1",
+              "family": "torch-fx",
+              "graph_fingerprint": "c93b6f6e942ba54c49cae765dd7d655ce6a73c6f54d236262d3b37e16867265f",
+              "graph_nodes": 135,
+              "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+              "node_execution": "original-graph-node-call",
+              "operation_level": "native-neural-graph",
+              "semantic_authority": "unresolved-structural-observation",
+              "statefulness": "frozen-module-required-known-drift-checked",
+              "trace_side_effect_authority": "known-targets-and-source-owned-attrs"
+            },
+            "execution_point": {
+              "edge": "before",
+              "family": "torch-fx",
+              "index": 46,
+              "local_clock": 46,
+              "logical_step": 46,
+              "next_operation": "fx.v050",
+              "operator": "call_function",
+              "phase": "node"
+            },
+            "fingerprint": "f0c19df25b761cb892a9cfe8e081b6549b1410f8e2a4f9972d17e680767b1730",
+            "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+            "numerical_contract": {
+              "atol": 0.0,
+              "comparator": "typed-content-digest",
+              "mode": "same-program-exact",
+              "program": "torch.fx original graph node calls",
+              "rtol": 0.0
+            },
+            "operation": "apply",
+            "parent": "538ac7dbfa06cf9786f19d3e42f89217e647d75e67ae6d717a3c4ce99f330af5",
+            "result": "9a1afb94f7ea184f46040482759247f6e764c5e6cc9907f27c76340d9457d574",
+            "schema": "saturn-pub-receipt-v1",
+            "writes": {
+              "items": [
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v033"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "bde69c2579191c1e62dc01930748c9285b37d6e88947c47b8cbed60430dcc38b",
+                    "shape": [
+                      8,
+                      64,
+                      2
+                    ],
+                    "stride": [
+                      128,
+                      2,
+                      1
+                    ],
+                    "tensor": "bde69c2579191c1e62dc01930748c9285b37d6e88947c47b8cbed60430dcc38b"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v035"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "717182e562a7d1b4166294232b17a3e26a40e3fb4c6f53e53e782173ebcf52c3",
+                    "shape": [
+                      8,
+                      64,
+                      1
+                    ],
+                    "stride": [
+                      64,
+                      1,
+                      1
+                    ],
+                    "tensor": "717182e562a7d1b4166294232b17a3e26a40e3fb4c6f53e53e782173ebcf52c3"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v036"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "79a7dbe8488c4017e54a659cd49200db4b634dfaeaefcd718fdb714d51370c41",
+                    "shape": [
+                      8,
+                      64,
+                      1
+                    ],
+                    "stride": [
+                      64,
+                      1,
+                      1
+                    ],
+                    "tensor": "79a7dbe8488c4017e54a659cd49200db4b634dfaeaefcd718fdb714d51370c41"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v039"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "5a751dabb36efe5dbbd16e9836f8a04249038dd080ac6c10e344c571f8cb7017",
+                    "shape": [
+                      8,
+                      64,
+                      256
+                    ],
+                    "stride": [
+                      16384,
+                      256,
+                      1
+                    ],
+                    "tensor": "5a751dabb36efe5dbbd16e9836f8a04249038dd080ac6c10e344c571f8cb7017"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v046"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "0b9e54d4a5aacd8c09456726d50015db7cec8ab6b6c73a81f6f34ae13276bed6",
+                    "shape": [
+                      8,
+                      64,
+                      8
+                    ],
+                    "stride": [
+                      512,
+                      1,
+                      64
+                    ],
+                    "tensor": "0b9e54d4a5aacd8c09456726d50015db7cec8ab6b6c73a81f6f34ae13276bed6"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v049"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "8c4e8337bada165274ff370554b6d42434cd6863875e6ed3ccf3be284f936070",
+                    "shape": [
+                      8,
+                      64,
+                      1
+                    ],
+                    "stride": [
+                      64,
+                      1,
+                      1
+                    ],
+                    "tensor": "8c4e8337bada165274ff370554b6d42434cd6863875e6ed3ccf3be284f936070"
+                  }
+                }
+              ],
+              "kind": "mapping"
+            }
+          }
+        ],
+        "status": "observed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "V-local",
+        "origin": "recipient-local-finite-update",
+        "output_sha256": "6889d8ba1c90394dde9dc02702a82e98271f76bfae7e9a583875f527be149ffd",
+        "parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839",
+        "payload_sha256": "019bada2b4552d9f045ad6117ea2e3994a1878430b3b461e52117309f8404c18",
+        "receipts": [
+          {
+            "act": {
+              "invalidates": [],
+              "name": "V-local",
+              "numerical_contract": "behavioral-intervention",
+              "operation": {
+                "authority": "registered",
+                "id": "isa.value-alias.20750ac5d203d3002d3722bfa4fcaf1bf253946f77eaf582e43bd53ccbee9910",
+                "implementation_digest": "77468a1f69e08921d9375f8a350ef17b6c5ffeee0fa70c5b97be3bc0980fbe8e",
+                "implementation_state_digest": "77890ce54c0b70126021edb0b0bb4aed77ba59f70c3fcff8cb5fd1a1a3e39771",
+                "pure": true,
+                "version": "1"
+              },
+              "parameters": {
+                "items": [
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "1c6570019e1e3a4c4c74eb2a6ca5752d58c80e2df83feeec73531baa983fa64d"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sources"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "construction_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "donor_activations_supplied"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "bool",
+                            "value": false
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "native_prefix_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "recipient_parent_cut"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                          }
+                        }
+                      ],
+                      "kind": "mapping"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "origin"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient-local-finite-update"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "payload_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "019bada2b4552d9f045ad6117ea2e3994a1878430b3b461e52117309f8404c18"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "ports"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v033"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v046"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v049"
+                        }
+                      ],
+                      "kind": "list"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient_parent"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                    }
+                  }
+                ],
+                "kind": "mapping"
+              },
+              "preconditions": {},
+              "preserve": [],
+              "reads": [
+                "v049",
+                "v046",
+                "v033"
+              ],
+              "writes": [
+                "v049",
+                "v046",
+                "v033"
+              ]
+            },
+            "boundary": "node",
+            "execution": {
+              "adapter": "mdb-forward-debugger-v1",
+              "family": "torch-fx",
+              "graph_fingerprint": "c93b6f6e942ba54c49cae765dd7d655ce6a73c6f54d236262d3b37e16867265f",
+              "graph_nodes": 135,
+              "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+              "node_execution": "original-graph-node-call",
+              "operation_level": "native-neural-graph",
+              "semantic_authority": "unresolved-structural-observation",
+              "statefulness": "frozen-module-required-known-drift-checked",
+              "trace_side_effect_authority": "known-targets-and-source-owned-attrs"
+            },
+            "execution_point": {
+              "edge": "before",
+              "family": "torch-fx",
+              "index": 46,
+              "local_clock": 46,
+              "logical_step": 46,
+              "next_operation": "fx.v050",
+              "operator": "call_function",
+              "phase": "node"
+            },
+            "fingerprint": "131fb530e29f6b4387b4e1bf42028a4e98fe2b34eba584204ab2f2895c9581e2",
+            "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+            "numerical_contract": {
+              "atol": 0.0,
+              "comparator": "typed-content-digest",
+              "mode": "same-program-exact",
+              "program": "torch.fx original graph node calls",
+              "rtol": 0.0
+            },
+            "operation": "apply",
+            "parent": "538ac7dbfa06cf9786f19d3e42f89217e647d75e67ae6d717a3c4ce99f330af5",
+            "result": "cf8cebda5dd938912120b0e5dd4c545560ce5a537cc1350cd69b7f3f4578fd98",
+            "schema": "saturn-pub-receipt-v1",
+            "writes": {
+              "items": [
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v033"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "8fdc64ac6e49530c656916b9698fb2ef7f0cdd27f04272ebcdfaf3ce911ca71d",
+                    "shape": [
+                      8,
+                      64,
+                      2
+                    ],
+                    "stride": [
+                      128,
+                      2,
+                      1
+                    ],
+                    "tensor": "8fdc64ac6e49530c656916b9698fb2ef7f0cdd27f04272ebcdfaf3ce911ca71d"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v046"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "d494d6411cdc1ee6ac83b5e04f8c0cd5a8d5436f8746299ab6ca0bf9b3f83f79",
+                    "shape": [
+                      8,
+                      64,
+                      8
+                    ],
+                    "stride": [
+                      512,
+                      1,
+                      64
+                    ],
+                    "tensor": "d494d6411cdc1ee6ac83b5e04f8c0cd5a8d5436f8746299ab6ca0bf9b3f83f79"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v049"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "355a6a47b21af88638bb80184afaa825845d45501e510dffa5e4747aa0e6327c",
+                    "shape": [
+                      8,
+                      64,
+                      1
+                    ],
+                    "stride": [
+                      64,
+                      1,
+                      1
+                    ],
+                    "tensor": "355a6a47b21af88638bb80184afaa825845d45501e510dffa5e4747aa0e6327c"
+                  }
+                }
+              ],
+              "kind": "mapping"
+            }
+          }
+        ],
+        "status": "observed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "C-local",
+        "origin": "recipient-local-finite-update",
+        "output_sha256": "f5f070dc3ebf4d99c216361ef8c27b011bbd7c7d0f4c98e66fceec5b88a23bb6",
+        "parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839",
+        "payload_sha256": "3b270ff504a504be9b7750233ea52b9ebb794ae766ecc8e3418cbeb54a4e4a6f",
+        "receipts": [
+          {
+            "act": {
+              "invalidates": [],
+              "name": "C-local",
+              "numerical_contract": "behavioral-intervention",
+              "operation": {
+                "authority": "registered",
+                "id": "isa.value-alias.79cf64b8c97175fe2009d1cd579ed6af4b75b24421f6ff59aaa885d93e78f4f2",
+                "implementation_digest": "77468a1f69e08921d9375f8a350ef17b6c5ffeee0fa70c5b97be3bc0980fbe8e",
+                "implementation_state_digest": "b33a0dc7ea73c6c4a9d0fefc3ce7ce794efefc6beb8333651bc7f7b4daf31ee6",
+                "pure": true,
+                "version": "1"
+              },
+              "parameters": {
+                "items": [
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "1c6570019e1e3a4c4c74eb2a6ca5752d58c80e2df83feeec73531baa983fa64d"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sources"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "construction_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "donor_activations_supplied"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "bool",
+                            "value": false
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "native_prefix_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "recipient_parent_cut"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                          }
+                        }
+                      ],
+                      "kind": "mapping"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "origin"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient-local-finite-update"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "payload_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "3b270ff504a504be9b7750233ea52b9ebb794ae766ecc8e3418cbeb54a4e4a6f"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "ports"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v039"
+                        }
+                      ],
+                      "kind": "list"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient_parent"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                    }
+                  }
+                ],
+                "kind": "mapping"
+              },
+              "preconditions": {},
+              "preserve": [],
+              "reads": [
+                "v039"
+              ],
+              "writes": [
+                "v039"
+              ]
+            },
+            "boundary": "node",
+            "execution": {
+              "adapter": "mdb-forward-debugger-v1",
+              "family": "torch-fx",
+              "graph_fingerprint": "c93b6f6e942ba54c49cae765dd7d655ce6a73c6f54d236262d3b37e16867265f",
+              "graph_nodes": 135,
+              "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+              "node_execution": "original-graph-node-call",
+              "operation_level": "native-neural-graph",
+              "semantic_authority": "unresolved-structural-observation",
+              "statefulness": "frozen-module-required-known-drift-checked",
+              "trace_side_effect_authority": "known-targets-and-source-owned-attrs"
+            },
+            "execution_point": {
+              "edge": "before",
+              "family": "torch-fx",
+              "index": 46,
+              "local_clock": 46,
+              "logical_step": 46,
+              "next_operation": "fx.v050",
+              "operator": "call_function",
+              "phase": "node"
+            },
+            "fingerprint": "d8cfbbbe68484341485fd6f2c1c60db034fc4b330da4ad2d4ab3d6190953874d",
+            "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+            "numerical_contract": {
+              "atol": 0.0,
+              "comparator": "typed-content-digest",
+              "mode": "same-program-exact",
+              "program": "torch.fx original graph node calls",
+              "rtol": 0.0
+            },
+            "operation": "apply",
+            "parent": "538ac7dbfa06cf9786f19d3e42f89217e647d75e67ae6d717a3c4ce99f330af5",
+            "result": "30fbdc6b9a8001e862af8ec4749c6ede04661439ff5bf44a8098b1dd5e08392a",
+            "schema": "saturn-pub-receipt-v1",
+            "writes": {
+              "items": [
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v039"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "aa86e7604a7ea15a38438be2b20f7ec6a9c644eea07344b9accceacda8e50376",
+                    "shape": [
+                      8,
+                      64,
+                      256
+                    ],
+                    "stride": [
+                      256,
+                      0,
+                      1
+                    ],
+                    "tensor": "aa86e7604a7ea15a38438be2b20f7ec6a9c644eea07344b9accceacda8e50376"
+                  }
+                }
+              ],
+              "kind": "mapping"
+            }
+          }
+        ],
+        "status": "observed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "VC-local",
+        "origin": "recipient-local-finite-update",
+        "output_sha256": "b8b5b3910da7b66eded4ac7f5c7046989032463d144905003e9e920f9fb41606",
+        "parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839",
+        "payload_sha256": "fdae66d3ce8c9959dec4c9d14e764d0180693957e80ca9ada20f55cf32637d71",
+        "receipts": [
+          {
+            "act": {
+              "invalidates": [],
+              "name": "VC-local",
+              "numerical_contract": "behavioral-intervention",
+              "operation": {
+                "authority": "registered",
+                "id": "isa.value-alias.9855f26855c939af778c71ed8a40665ec24a4b48cfd0398417d1f37b3ebfe7a7",
+                "implementation_digest": "77468a1f69e08921d9375f8a350ef17b6c5ffeee0fa70c5b97be3bc0980fbe8e",
+                "implementation_state_digest": "56ed5a9512ed9b5ba7a5cb051b7f7b6e515059e828e26646d13f93577e284f3a",
+                "pure": true,
+                "version": "1"
+              },
+              "parameters": {
+                "items": [
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "1c6570019e1e3a4c4c74eb2a6ca5752d58c80e2df83feeec73531baa983fa64d"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sources"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "construction_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "donor_activations_supplied"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "bool",
+                            "value": false
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "native_prefix_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "recipient_parent_cut"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                          }
+                        }
+                      ],
+                      "kind": "mapping"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "origin"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient-local-finite-update"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "payload_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "fdae66d3ce8c9959dec4c9d14e764d0180693957e80ca9ada20f55cf32637d71"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "ports"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v033"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v039"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v046"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v049"
+                        }
+                      ],
+                      "kind": "list"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient_parent"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                    }
+                  }
+                ],
+                "kind": "mapping"
+              },
+              "preconditions": {},
+              "preserve": [],
+              "reads": [
+                "v049",
+                "v046",
+                "v033",
+                "v039"
+              ],
+              "writes": [
+                "v049",
+                "v046",
+                "v033",
+                "v039"
+              ]
+            },
+            "boundary": "node",
+            "execution": {
+              "adapter": "mdb-forward-debugger-v1",
+              "family": "torch-fx",
+              "graph_fingerprint": "c93b6f6e942ba54c49cae765dd7d655ce6a73c6f54d236262d3b37e16867265f",
+              "graph_nodes": 135,
+              "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+              "node_execution": "original-graph-node-call",
+              "operation_level": "native-neural-graph",
+              "semantic_authority": "unresolved-structural-observation",
+              "statefulness": "frozen-module-required-known-drift-checked",
+              "trace_side_effect_authority": "known-targets-and-source-owned-attrs"
+            },
+            "execution_point": {
+              "edge": "before",
+              "family": "torch-fx",
+              "index": 46,
+              "local_clock": 46,
+              "logical_step": 46,
+              "next_operation": "fx.v050",
+              "operator": "call_function",
+              "phase": "node"
+            },
+            "fingerprint": "12226dccc5557298700feb29b6a11051b673ce1b79ae54e6efb4d97b253a0322",
+            "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+            "numerical_contract": {
+              "atol": 0.0,
+              "comparator": "typed-content-digest",
+              "mode": "same-program-exact",
+              "program": "torch.fx original graph node calls",
+              "rtol": 0.0
+            },
+            "operation": "apply",
+            "parent": "538ac7dbfa06cf9786f19d3e42f89217e647d75e67ae6d717a3c4ce99f330af5",
+            "result": "ca4b7718b33f323675080f5bc12a41df4a435814e3fe16507f871252f31decd1",
+            "schema": "saturn-pub-receipt-v1",
+            "writes": {
+              "items": [
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v033"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "8fdc64ac6e49530c656916b9698fb2ef7f0cdd27f04272ebcdfaf3ce911ca71d",
+                    "shape": [
+                      8,
+                      64,
+                      2
+                    ],
+                    "stride": [
+                      128,
+                      2,
+                      1
+                    ],
+                    "tensor": "8fdc64ac6e49530c656916b9698fb2ef7f0cdd27f04272ebcdfaf3ce911ca71d"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v039"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "aa86e7604a7ea15a38438be2b20f7ec6a9c644eea07344b9accceacda8e50376",
+                    "shape": [
+                      8,
+                      64,
+                      256
+                    ],
+                    "stride": [
+                      256,
+                      0,
+                      1
+                    ],
+                    "tensor": "aa86e7604a7ea15a38438be2b20f7ec6a9c644eea07344b9accceacda8e50376"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v046"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "d494d6411cdc1ee6ac83b5e04f8c0cd5a8d5436f8746299ab6ca0bf9b3f83f79",
+                    "shape": [
+                      8,
+                      64,
+                      8
+                    ],
+                    "stride": [
+                      512,
+                      1,
+                      64
+                    ],
+                    "tensor": "d494d6411cdc1ee6ac83b5e04f8c0cd5a8d5436f8746299ab6ca0bf9b3f83f79"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v049"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "355a6a47b21af88638bb80184afaa825845d45501e510dffa5e4747aa0e6327c",
+                    "shape": [
+                      8,
+                      64,
+                      1
+                    ],
+                    "stride": [
+                      64,
+                      1,
+                      1
+                    ],
+                    "tensor": "355a6a47b21af88638bb80184afaa825845d45501e510dffa5e4747aa0e6327c"
+                  }
+                }
+              ],
+              "kind": "mapping"
+            }
+          }
+        ],
+        "status": "observed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "0111befad9cfb4a403b2488a8215f31f7df5a9936d75f0b4dd7869df57bc9d0f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "VC-wrong-coordinate",
+        "origin": "recipient-local-finite-update",
+        "output_sha256": "9f883ff4390add6747692df8c562e9f380579409893f87cbeb0ccb1b35d45972",
+        "parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839",
+        "payload_sha256": "dc9cba9af2dd61bd24633deb734bf3db3b6c33cdae0bd5d0d17a090ada3b7320",
+        "receipts": [
+          {
+            "act": {
+              "invalidates": [],
+              "name": "VC-wrong-coordinate",
+              "numerical_contract": "behavioral-intervention",
+              "operation": {
+                "authority": "registered",
+                "id": "isa.value-alias.4d6b475b6e23d562f7e213af494c0cd7d0820f7740cdc8d42f212a26811736f6",
+                "implementation_digest": "77468a1f69e08921d9375f8a350ef17b6c5ffeee0fa70c5b97be3bc0980fbe8e",
+                "implementation_state_digest": "ea53e5d5a5a297b0183296db90b75993a120017c9ac953455f472f88e4104b4d",
+                "pure": true,
+                "version": "1"
+              },
+              "parameters": {
+                "items": [
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "a48637b0e595b0531f0934364b1154a56bc1633b10ef7869bc07d8adc2a61c13"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "construction_sources"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "construction_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "0111befad9cfb4a403b2488a8215f31f7df5a9936d75f0b4dd7869df57bc9d0f"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "donor_activations_supplied"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "bool",
+                            "value": false
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "native_prefix_sha256"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645"
+                          }
+                        },
+                        {
+                          "key": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "recipient_parent_cut"
+                          },
+                          "value": {
+                            "kind": "scalar",
+                            "type": "str",
+                            "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                          }
+                        }
+                      ],
+                      "kind": "mapping"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "origin"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient-local-finite-update"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "payload_sha256"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "dc9cba9af2dd61bd24633deb734bf3db3b6c33cdae0bd5d0d17a090ada3b7320"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "ports"
+                    },
+                    "value": {
+                      "items": [
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v033"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v039"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v046"
+                        },
+                        {
+                          "kind": "scalar",
+                          "type": "str",
+                          "value": "v049"
+                        }
+                      ],
+                      "kind": "list"
+                    }
+                  },
+                  {
+                    "key": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "recipient_parent"
+                    },
+                    "value": {
+                      "kind": "scalar",
+                      "type": "str",
+                      "value": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+                    }
+                  }
+                ],
+                "kind": "mapping"
+              },
+              "preconditions": {},
+              "preserve": [],
+              "reads": [
+                "v049",
+                "v046",
+                "v033",
+                "v039"
+              ],
+              "writes": [
+                "v049",
+                "v046",
+                "v033",
+                "v039"
+              ]
+            },
+            "boundary": "node",
+            "execution": {
+              "adapter": "mdb-forward-debugger-v1",
+              "family": "torch-fx",
+              "graph_fingerprint": "c93b6f6e942ba54c49cae765dd7d655ce6a73c6f54d236262d3b37e16867265f",
+              "graph_nodes": 135,
+              "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+              "node_execution": "original-graph-node-call",
+              "operation_level": "native-neural-graph",
+              "semantic_authority": "unresolved-structural-observation",
+              "statefulness": "frozen-module-required-known-drift-checked",
+              "trace_side_effect_authority": "known-targets-and-source-owned-attrs"
+            },
+            "execution_point": {
+              "edge": "before",
+              "family": "torch-fx",
+              "index": 46,
+              "local_clock": 46,
+              "logical_step": 46,
+              "next_operation": "fx.v050",
+              "operator": "call_function",
+              "phase": "node"
+            },
+            "fingerprint": "035b681f12c5a22097d19620a47c7cf1b9db2a1760ef811f94a43dc25b22b96d",
+            "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+            "numerical_contract": {
+              "atol": 0.0,
+              "comparator": "typed-content-digest",
+              "mode": "same-program-exact",
+              "program": "torch.fx original graph node calls",
+              "rtol": 0.0
+            },
+            "operation": "apply",
+            "parent": "538ac7dbfa06cf9786f19d3e42f89217e647d75e67ae6d717a3c4ce99f330af5",
+            "result": "f7df72e10e854517bd54c27f842d7b6f09435891bebca6b346fa68a078c1e2bc",
+            "schema": "saturn-pub-receipt-v1",
+            "writes": {
+              "items": [
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v033"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "8fe72ead71bbc68269562d290ae227bd86e4ea8d1dfe23760f04589005c3eeea",
+                    "shape": [
+                      8,
+                      64,
+                      2
+                    ],
+                    "stride": [
+                      128,
+                      2,
+                      1
+                    ],
+                    "tensor": "8fe72ead71bbc68269562d290ae227bd86e4ea8d1dfe23760f04589005c3eeea"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v039"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "2e98723d5349f07ad90b442103457c246167516aba4cb73659bb25e734990af6",
+                    "shape": [
+                      8,
+                      64,
+                      256
+                    ],
+                    "stride": [
+                      256,
+                      0,
+                      1
+                    ],
+                    "tensor": "2e98723d5349f07ad90b442103457c246167516aba4cb73659bb25e734990af6"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v046"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "196316d49a909937fc1e9d625f35be9945f6f8d17aafc24abc5619f30d7ff96e",
+                    "shape": [
+                      8,
+                      64,
+                      8
+                    ],
+                    "stride": [
+                      512,
+                      1,
+                      64
+                    ],
+                    "tensor": "196316d49a909937fc1e9d625f35be9945f6f8d17aafc24abc5619f30d7ff96e"
+                  }
+                },
+                {
+                  "key": {
+                    "kind": "scalar",
+                    "type": "str",
+                    "value": "v049"
+                  },
+                  "value": {
+                    "dtype": "torch.float32",
+                    "kind": "tensor",
+                    "layout": "strided-dense",
+                    "sha256": "289eaf428f8b5adfc4c79e239845e441196d9668785e5bb54336f72b0755572a",
+                    "shape": [
+                      8,
+                      64,
+                      1
+                    ],
+                    "stride": [
+                      64,
+                      1,
+                      1
+                    ],
+                    "tensor": "289eaf428f8b5adfc4c79e239845e441196d9668785e5bb54336f72b0755572a"
+                  }
+                }
+              ],
+              "kind": "mapping"
+            }
+          }
+        ],
+        "status": "observed"
+      }
+    ],
+    "own_state_joins_exact": true,
+    "parent_preservation_exact": true,
+    "payloads": [
+      {
+        "construction_sources": {
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "sham",
+        "origin": "recipient-native-final-port-copy",
+        "payload_sha256": "212a9f914dfad119a326c3f53ef78678c30debb76eb746ad1c7a03047152eb76",
+        "ports": [
+          "v033",
+          "v035",
+          "v036",
+          "v039",
+          "v046",
+          "v049"
+        ],
+        "status": "payload-sealed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "V-local",
+        "origin": "recipient-local-finite-update",
+        "payload_sha256": "019bada2b4552d9f045ad6117ea2e3994a1878430b3b461e52117309f8404c18",
+        "ports": [
+          "v033",
+          "v046",
+          "v049"
+        ],
+        "status": "payload-sealed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "C-local",
+        "origin": "recipient-local-finite-update",
+        "payload_sha256": "3b270ff504a504be9b7750233ea52b9ebb794ae766ecc8e3418cbeb54a4e4a6f",
+        "ports": [
+          "v039"
+        ],
+        "status": "payload-sealed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "612787591d2df4eb80b91b0eff472f5ec3bec1dcd9a2871f4dc461d3af9be34f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "VC-local",
+        "origin": "recipient-local-finite-update",
+        "payload_sha256": "fdae66d3ce8c9959dec4c9d14e764d0180693957e80ca9ada20f55cf32637d71",
+        "ports": [
+          "v033",
+          "v039",
+          "v046",
+          "v049"
+        ],
+        "status": "payload-sealed"
+      },
+      {
+        "construction_sources": {
+          "construction_sha256": "0111befad9cfb4a403b2488a8215f31f7df5a9936d75f0b4dd7869df57bc9d0f",
+          "donor_activations_supplied": false,
+          "native_prefix_sha256": "9c276119a430daf079ee69703bc18e11733885a16ffd2dd5be853a88f5815645",
+          "recipient_parent_cut": "e639149d8c143aa1c3af67ba528d1c41e5384732e5ab8d8b6c8a44ffc2f16839"
+        },
+        "name": "VC-wrong-coordinate",
+        "origin": "recipient-local-finite-update",
+        "payload_sha256": "dc9cba9af2dd61bd24633deb734bf3db3b6c33cdae0bd5d0d17a090ada3b7320",
+        "ports": [
+          "v033",
+          "v039",
+          "v046",
+          "v049"
+        ],
+        "status": "payload-sealed"
+      }
+    ],
+    "project": {
+      "revision": 1,
+      "session_id": "recipient-context"
+    },
+    "reference_parity": {
+      "decoded_and_raw_parity_are_separate": true,
+      "local_vs_fullrawCF": {
+        "dest": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 6.446605682373047,
+          "shape": [
+            8,
+            8
+          ],
+          "status": "observed"
+        },
+        "flags": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 7.4160919189453125,
+          "shape": [
+            8,
+            4
+          ],
+          "status": "observed"
+        },
+        "imm": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 1.52587890625e-05,
+          "shape": [
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "length": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 10.24720287322998,
+          "shape": [
+            8,
+            15
+          ],
+          "status": "observed"
+        },
+        "regs": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 2.09808349609375e-05,
+          "shape": [
+            8,
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "src": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 5.920284271240234,
+          "shape": [
+            8,
+            8
+          ],
+          "status": "observed"
+        },
+        "store": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 6.966438293457031,
+          "shape": [
+            8
+          ],
+          "status": "observed"
+        },
+        "store_addr": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 1.5735626220703125e-05,
+          "shape": [
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "store_value": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 1.1444091796875e-05,
+          "shape": [
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "syscall": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 8.039474487304688,
+          "shape": [
+            8
+          ],
+          "status": "observed"
+        },
+        "width": {
+          "dtype": "torch.float32",
+          "exact": false,
+          "max_abs": 5.755363464355469,
+          "shape": [
+            8,
+            3
+          ],
+          "status": "observed"
+        }
+      },
+      "sham_vs_ordinary_native": {
+        "dest": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            8
+          ],
+          "status": "observed"
+        },
+        "flags": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            4
+          ],
+          "status": "observed"
+        },
+        "imm": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "length": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            15
+          ],
+          "status": "observed"
+        },
+        "regs": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "src": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            8
+          ],
+          "status": "observed"
+        },
+        "store": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8
+          ],
+          "status": "observed"
+        },
+        "store_addr": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "store_value": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            64
+          ],
+          "status": "observed"
+        },
+        "syscall": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8
+          ],
+          "status": "observed"
+        },
+        "width": {
+          "dtype": "torch.float32",
+          "exact": true,
+          "max_abs": 0.0,
+          "shape": [
+            8,
+            3
+          ],
+          "status": "observed"
+        }
+      }
+    },
+    "source_map_sha256": "846c8befc29d910959115adeb1b615a66ae8ec83a22724f6c150321931cdfe06"
+  },
+  "isa_wheel_sha256": "8de299bf160f08df2622e83126f099b49190cd7ece8f2d4b2ce60524cc6c5474",
+  "job_id": "job-34e07810771c",
+  "limits": {
+    "actual_model_calls": 24,
+    "actual_native_examples": 192,
+    "actual_native_node_steps": 733,
+    "actual_work_items": 29,
+    "max_model_calls": 64,
+    "max_native_examples": 1024,
+    "max_native_node_steps": 4096,
+    "max_work_items": 96
+  },
+  "mechanics": {
+    "constructor_weights_unchanged": true,
+    "model_state_unchanged": true,
+    "own_state_joins_exact": true,
+    "parent_preservation_exact": true
+  },
+  "mechanics_status": "valid",
+  "model_config": {
+    "aligned": true,
+    "arch": "nn",
+    "fieldptr": false,
+    "layers": 3,
+    "maskkey": false,
+    "regptr": false,
+    "relptr": false,
+    "state": 4,
+    "store": true,
+    "width": 48
+  },
+  "model_identity": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+  "oracle_after_state_supplied": false,
+  "phase_partition": {
+    "primary_donor_activations_supplied": false,
+    "reference_outputs_after_primary_futures": true
+  },
+  "posthoc_rule_fitting": false,
+  "protocol_schema": "isa-recipient-context-contract-v1",
+  "protocol_sha256": "115499876a0cb77888c7cf07fd3b57187ca218eb28cf645a44b63e98b4056d63",
+  "request_sha256": "ac1cbfe9d3edff9d55b878cd9166e2c40ae72791108045b0056f2275d7f7f67b",
+  "schema": "isa-recipient-context-assay-v1",
+  "scope": "Eight fresh ADD recipients; recipient-local frozen-weight finite V/C updates, native R/direct-z; two own-state futures; output-only late references.",
+  "semantic_labels_supplied_to_model": false,
+  "source_manifest_sha256": "e9cd327c945be8f16ac16a90c5f992176bddf1b1c264c6215e7d96c23dc7991c",
+  "state_frozen": {
+    "after": "2e33218a8cdb418d81b8d8c2ee2278b9f067ecb63ed30646f5d5168c6c5c66b4",
+    "before": "2e33218a8cdb418d81b8d8c2ee2278b9f067ecb63ed30646f5d5168c6c5c66b4",
+    "unchanged": true
+  },
+  "target_outputs_used_for_edit": false,
+  "terminal_status": "not-assessed",
+  "training_steps": 0,
+  "trend_status": "all-signed-rows-retained",
+  "worker_environment": {
+    "backend": "cpu-fp32",
+    "cpu_threads": 1,
+    "python": "3.14.6",
+    "torch": "2.13.0+cu130"
+  },
+  "worker_seconds": 137.7728462330997
+}

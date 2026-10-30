@@ -1,0 +1,8 @@
+# Symbolic loop: finite own-state check
+
+The compact program reproduced all eight four-step native comparisons on identical per-step roots in this panel. This is a bounded observation for the two declared fresh banks and eight previously observed raw windows, not a semantic ISA decoder.
+
+- Pure child: 8 steps; blocked imports, file opens, and loaded modules: []/[]/[].
+- Per-step exact: registers 8/8, flags 8/8, length 8/8.
+- Selected finite flag hypotheses: `[{"kind": "constant", "value": 0}, {"kind": "constant", "value": 0}, {"invert": 0, "kind": "output_word", "position": 63}, {"kind": "constant", "value": 0}]`. Candidate alternatives remain in `findings.json`; the flag-2 emitted-bit choice is not uniquely identified against its input-bit alternative on the prior rows.
+- Native feedback is independent: each native call consumes its own previous register, flag, and length outputs. The symbolic path consumes its own predictions. No native head is fed into symbolic serving.

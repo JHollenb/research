@@ -1,0 +1,102 @@
+# Finite native response quotient
+
+This table reports a finite observed response model for one exact raw-byte window and one seeded input panel. It supplies no instruction mnemonic or expected architectural state. The generated full-width program is a stationarity hypothesis; only the listed discovery cells identify its Boolean tables.
+
+Raw window: `4883c7014883c7014883c7014883c7` (15 bytes); checkpoint SHA-256 `9399e921776d7a5437c5bbd51bfc1928f09d2ddea444fe2aa1c9cf282baf7f1e`.
+The varied input was register slot 7; all other words, flags, byte-window values, and the high slot-7 tail followed the sealed query plan.
+
+## Observed address and response
+
+Changed-output register selection: **7** via `unique-most-changed-output-word`. Changed output-bit counts by register: `[0, 0, 0, 0, 0, 0, 0, 163]`.
+Destination-head argmax winners: `[7]`; agreement is retained as a diagnostic (True).
+
+| Trace case | Input register root | Native register-logit head | Producer | Fingerprint |
+|---|---|---|---|---|
+| `discovery-000` | `v000019` | `v000485` shape `[1, 8, 64]`; target slot 7 | `aten.transpose.int @ <root>` | `8ef90258751ad1704e9e4d168a9926fc3b7eb6f3a223c3d4e77199f3e5756640` |
+| `discovery-031` | `v000019` | `v000485` shape `[1, 8, 64]`; target slot 7 | `aten.transpose.int @ <root>` | `bf34f31fdbd51f35f6cd2993e39e1b2905ffc25d4d5ed2c81e553d656fa304de` |
+
+The output head decodes each bit independently by the observed native rule `logit > 0`. The address above is the captured `regs` tensor; the selected slot was inferred from native changed-bit counts, with `dest` retained as a separate diagnostic.
+
+## Boolean table
+
+The initial state evidence is `1` (identified); this is inferred from native output bit 0 on sampled inputs whose varied input bit 0 was zero.
+Observed transition outputs: `y(q,x) = q ⊕ x`.
+Observed next-state relation: `q_next(q,x) = q·x`.
+The ANFs are the literal GF(2) Möbius transforms of the identified 2×2 response tables. Reusing them across all 64 positions is a separate stationarity hypothesis.
+
+| State before bit `q` | Input bit `x` | Output bit `y` | Next observed state | Status | Rows |
+|---:|---:|---:|---:|---|---:|
+| 0 | 0 | 0 | 0 | identified | 10 |
+| 0 | 1 | 1 | 0 | identified | 10 |
+| 1 | 0 | 1 | 0 | identified | 2 |
+| 1 | 1 | 0 | 1 | identified | 2 |
+
+### Future-response classes
+
+The class IDs are discovery-derived equivalence classes; they are local response labels, not assigned semantic names.
+
+| Cut | Class | Prefix members | Zero-suffix anchor labels | Signature length |
+|---|---|---|---|---:|
+| q8 | `q8-0` | 0, 127, 254 | `0` | 24 |
+| q8 | `q8-1` | 255 | `1` | 24 |
+| q9 | `q9-0` | [0, 0], [0, 1], [127, 0], [127, 1], [254, 0], [254, 1], [255, 0] | `0` | 8 |
+| q9 | `q9-1` | [255, 1] | `1` | 8 |
+| q10_diagnostic | `q10-0` | [0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 1], [127, 0, 0], [127, 0, 1], [127, 1, 0], [127, 1, 1], [254, 0, 0], [254, 0, 1], [254, 1, 0], [254, 1, 1], [255, 0, 0], [255, 0, 1], [255, 1, 0] | `0` | 2 |
+| q10_diagnostic | `q10-1` | [255, 1, 1] | `1` | 2 |
+
+## Other register response rules
+
+The per-bit copy/flip/constant scan chose its deterministic display rule on the discovery panel while retaining all alternatives. Selected-rule counts: `{'copy': 496, 'flip': 1, 'unresolved': 15}`; uniquely identified coordinates: 1/512.
+
+## Heldout observations
+
+Predictions were recorded and sealed before the 96 heldout native forwards. Values below are descriptive comparisons; no threshold certifies the model or excludes other mechanisms.
+
+| Cut | Rows | Target words compared | Exact target words | Hamming distance sum | Max |
+|---:|---:|---:|---:|---:|---:|
+| 11 | 32 | 32 | 32 | 0 | 0 |
+| 17 | 32 | 32 | 32 | 0 | 0 |
+| 31 | 32 | 32 | 29 | 3 | 1 |
+
+Across all heldout rows, all eight predicted register words matched in 93/96 rows, with 3 total register-bit differences.
+
+| Output register | Exact words | Rows | Hamming distance sum | Max per word |
+|---:|---:|---:|---:|---:|
+| 0 | 96 | 96 | 0 | 0 |
+| 1 | 96 | 96 | 0 | 0 |
+| 2 | 96 | 96 | 0 | 0 |
+| 3 | 96 | 96 | 0 | 0 |
+| 4 | 96 | 96 | 0 | 0 |
+| 5 | 96 | 96 | 0 | 0 |
+| 6 | 96 | 96 | 0 | 0 |
+| 7 | 93 | 96 | 3 | 1 |
+
+### Native heldout bit exceptions
+
+The frozen program emits bits, not logits. These rows retain each native signed register logit beside the program bit; native bits use `logit > 0`.
+
+| Query | Cut | Prefix | Prefix value | Suffix | Register | Bit | Program bit | Native bit | Native logit | Abs logit margin |
+|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `held-081` | 31 | all-but-middle-bit | `0x7fff7fff` | 1 | 7 | 32 | 0 | 1 | 0.0715608597 | 0.0715608597 |
+| `held-085` | 31 | all-but-middle-bit | `0x7fff7fff` | 5 | 7 | 32 | 0 | 1 | 0.0715608597 | 0.0715608597 |
+| `held-087` | 31 | all-but-middle-bit | `0x7fff7fff` | 7 | 7 | 34 | 0 | 1 | 1.62961006 | 1.62961006 |
+
+### Heldout response-class refinement (post hoc)
+
+This repartitions native target outputs by their three-bit future response over the eight suffix values. It is a diagnostic from heldout data only: it did not alter the discovery-fitted program or its predictions.
+
+| Cut | Prefixes | Distinct sampled response classes |
+|---:|---:|---:|
+| 11 | 4 | 2 |
+| 17 | 4 | 2 |
+| 31 | 4 | 3 |
+
+At cut 11, sampled classes: {zero=`0x0`, seeded-random=`0x42e`, all-but-middle-bit=`0x7df`}; {all-ones=`0x7ff`}.
+
+At cut 17, sampled classes: {zero=`0x0`, seeded-random=`0xc0ad`, all-but-middle-bit=`0x1feff`}; {all-ones=`0x1ffff`}.
+
+At cut 31, sampled classes: {zero=`0x0`, seeded-random=`0x4126c19c`}; {all-but-middle-bit=`0x7fff7fff`}; {all-ones=`0x7fffffff`}.
+
+At cut 31, these sampled future-response signatures separate three prefixes into distinct classes. That is a finite-panel lower bound for preserving this three-bit response table at this cut; it does not identify a global state size or change the frozen program.
+
+All native output heads and per-row predictions remain in the raw JSONL artifacts. A mismatch or unresolved quotient is retained as an observation; it does not establish absence of a response pattern.

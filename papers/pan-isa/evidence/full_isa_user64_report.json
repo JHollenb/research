@@ -1,0 +1,86 @@
+{
+  "gate_failures": [
+    "source_hashes"
+  ],
+  "mode_status_counts": {
+    "environment_dependent": 12,
+    "exception_only": 10,
+    "executable_user64": 1088,
+    "legacy_compat_only": 304,
+    "privileged_system": 159,
+    "unsupported": 6926,
+    "validate_only": 15,
+    "vendor_divergent": 349
+  },
+  "ok": false,
+  "promotions": {
+    "ADDPS_XMMps_XMMps": {
+      "path": "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/full_isa_user64/classification/promotions/ADDPS_XMMps_XMMps.json",
+      "status": "fully_validated_user64",
+      "updated_unix": 1781726397
+    }
+  },
+  "schema_version": "pan-x86-user64-full-isa-report-v1",
+  "source_freeze": {
+    "amd_apm": {
+      "searched": [
+        "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/source_deps/amd-apm/amd64-architecture-programmers-manual.pdf",
+        "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/source_deps/amd-apm/amd-apm.pdf"
+      ],
+      "status": "missing"
+    },
+    "intel_sdm": {
+      "searched": [
+        "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/source_deps/intel-sdm/325462-sdm-vol-1-2abcd-3abcd.pdf",
+        "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/source_deps/intel-sdm/intel-sdm.pdf"
+      ],
+      "status": "missing"
+    },
+    "ok": false,
+    "xed": {
+      "coverage_overlay": "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/xed_iform_ledger/xed-iform-ledger-stage3-base-alu-v21-stage4-aligned-exception-v31-2026-06-17/xed_iform_ledger.json",
+      "kind": "xed_idata",
+      "path": "/Users/jakeholl/domains/data/artifacts/2026-06-16/pan-x86-isa/source_deps/intel-xed-main-2026-06-16/install/misc/idata.txt",
+      "sha256": "sha256:20e82accb71a079e7161537f887314ad3bdb66790ab171b5c8f5796a6ca9f0ff"
+    }
+  },
+  "summary": {
+    "classified_out_of_scope_rows": 7775,
+    "classified_rows": 8863,
+    "executable_user64_rows": 1088,
+    "fully_validated_user64_rows": 1,
+    "operand_subset_learned_validated_rows": 370,
+    "oracle_validated_rows": 0,
+    "trained_rows": 0,
+    "unclassified_rows": 0,
+    "xed_rows": 8863
+  },
+  "target": "user64",
+  "target_coverage_status_counts": {
+    "classified_out_of_scope": 7775,
+    "fully_validated_user64": 1,
+    "operand_subset_learned_validated": 370,
+    "unimplemented": 718
+  },
+  "top_remaining_executable_gaps": {
+    "BINARY": 127,
+    "BITBYTE": 10,
+    "BMI1": 34,
+    "BMI2": 20,
+    "CALL": 5,
+    "CMOV": 32,
+    "COND_BR": 43,
+    "DATAXFER": 58,
+    "LOGICAL": 86,
+    "LZCNT": 4,
+    "MISC": 9,
+    "POP": 13,
+    "PUSH": 16,
+    "RET": 6,
+    "ROTATE": 22,
+    "SETCC": 32,
+    "SHIFT": 36,
+    "SSE": 159,
+    "UNCOND_BR": 6
+  }
+}

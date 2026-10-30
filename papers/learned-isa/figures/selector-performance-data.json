@@ -1,0 +1,97 @@
+{
+  "source": "isa/outputs/ssm-native-report/report.json",
+  "source_sha256": "7232407f88943318b88c2e3f6f9eb7db358799e7e470c3d42f04d51ddc024648",
+  "case": "counter-1024",
+  "host": "beast",
+  "backend": "cpu1",
+  "jobs": [
+    "job-cf83bbfb2001",
+    "job-6dde56f923eb",
+    "job-b6f841fcb23f"
+  ],
+  "seeds": [
+    673,
+    719,
+    757
+  ],
+  "scope": "candidate selectors over supplied native semantics; native ELF observes stdout/exit, models additionally return diagnostic state",
+  "rows": [
+    {
+      "key": "native",
+      "label": "Native CPU process",
+      "source_metric": "wall_s",
+      "median_ms": 0.13881904305890203,
+      "min_ms": 0.13116502668708563,
+      "max_ms": 0.20598003175109625,
+      "n": 60,
+      "correct": 60,
+      "total": 60
+    },
+    {
+      "key": "pan_isa",
+      "label": "Original PAN selector",
+      "source_metric": "program_stop_s",
+      "median_ms": 179.50304492842406,
+      "min_ms": 175.45802099630237,
+      "max_ms": 207.23492396064103,
+      "n": 9,
+      "correct": 9,
+      "total": 9
+    },
+    {
+      "key": "nn",
+      "label": "NN selector",
+      "source_metric": "program_stop_s",
+      "median_ms": 191.62653503008187,
+      "min_ms": 188.18275805097073,
+      "max_ms": 587.3600890627131,
+      "n": 9,
+      "correct": 9,
+      "total": 9
+    },
+    {
+      "key": "fieldlm",
+      "label": "FieldLM selector",
+      "source_metric": "program_stop_s",
+      "median_ms": 208.2087219459936,
+      "min_ms": 204.29100701585412,
+      "max_ms": 214.59179394878447,
+      "n": 9,
+      "correct": 9,
+      "total": 9
+    },
+    {
+      "key": "spf_transformer",
+      "label": "SPF memory selector",
+      "source_metric": "program_stop_s",
+      "median_ms": 336.9407330173999,
+      "min_ms": 335.5590139981359,
+      "max_ms": 394.23939504195005,
+      "n": 9,
+      "correct": 9,
+      "total": 9
+    },
+    {
+      "key": "mamba",
+      "label": "Mamba selector",
+      "source_metric": "program_stop_s",
+      "median_ms": 457.01827201992273,
+      "min_ms": 454.07494995743036,
+      "max_ms": 462.93284103740007,
+      "n": 9,
+      "correct": 9,
+      "total": 9
+    },
+    {
+      "key": "hydra",
+      "label": "Hydra selector",
+      "source_metric": "program_stop_s",
+      "median_ms": 543.1397260399535,
+      "min_ms": 527.758638956584,
+      "max_ms": 551.1712220031768,
+      "n": 9,
+      "correct": 9,
+      "total": 9
+    }
+  ]
+}

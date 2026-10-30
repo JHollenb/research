@@ -1,0 +1,338 @@
+{
+  "snapshot_date": "2026-10-30",
+  "original_path_root": "domains workspace (paths are provenance only; not needed for offline verification)",
+  "isa_git_head": "0c529e1d3b03638d62e42dd03f6fd726b066daef",
+  "note": "Later uncommitted evidence is bound by file hashes, not this commit. Selected reading bundle excludes models, trace stores and complete archives. Figures have their own provenance.",
+  "files": [
+    {
+      "original_path": "isa/outputs/ssm-native-report/report.json",
+      "original_sha256": "7232407f88943318b88c2e3f6f9eb7db358799e7e470c3d42f04d51ddc024648",
+      "original_bytes": 671294,
+      "original_mtime_local": "2026-10-14T14:10:05.289813",
+      "snapshot_path": "evidence/six-model-summary.json",
+      "snapshot_sha256": "2704bc5b002ba08e34860656f6ad526b7258b7af1c1c1dfffa4ffe038efba1cf",
+      "snapshot_bytes": 14249,
+      "transformation": "selected top-level report fields; all model entries retained"
+    },
+    {
+      "original_path": "isa/outputs/direct-effect-r3-report/report.json",
+      "original_sha256": "0c842ed34dac31f1fc12a1d121ab55d57d5d32821e1283e61c70c72d9e8fe36b",
+      "original_bytes": 282783,
+      "original_mtime_local": "2026-10-15T02:00:33.168678",
+      "snapshot_path": "evidence/direct-effect-r3-summary.json",
+      "snapshot_sha256": "bdb21686896b73c8937cd2f17221c0117209e75ff78bf837ac0750a170443da6",
+      "snapshot_bytes": 77958,
+      "transformation": "jobs and all architecture entries; selected training/config/panel metrics/program/counter/stdout/CUDA-allocation fields; probe/replay trajectories omitted"
+    },
+    {
+      "original_path": "isa/outputs/desf-report/report.json",
+      "original_sha256": "954558e9cd8e7c6180ecb9050827280b2c7e923f0a7b77933b998daa0b2094cc",
+      "original_bytes": 63526,
+      "original_mtime_local": "2026-10-15T13:48:10.379171",
+      "snapshot_path": "evidence/desf-report.json",
+      "snapshot_sha256": "1695e2e70e028106875151c85635f56945bd526a78bc3e8d81bbe86b0712cfed",
+      "snapshot_bytes": 63527,
+      "transformation": "UTF-8 snapshot with trailing whitespace normalized to one final newline"
+    },
+    {
+      "original_path": "isa/outputs/direct-effect-r7-report/report.json",
+      "original_sha256": "cd77a54b43043c6cd4771b369ef5cfdbcfcbb96c78c4a3b5580cfc8074eac468",
+      "original_bytes": 18518,
+      "original_mtime_local": "2026-10-15T16:26:35.993601",
+      "snapshot_path": "evidence/r7-report.json",
+      "snapshot_sha256": "cd77a54b43043c6cd4771b369ef5cfdbcfcbb96c78c4a3b5580cfc8074eac468",
+      "snapshot_bytes": 18518,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/reusable-symbol-edit-nn-r3/audit.json",
+      "original_sha256": "ea9e67fec34e5f8158a7818abcffcca4067d6fac9d4e3eefebdfc71d8a6995a4",
+      "original_bytes": 31693,
+      "original_mtime_local": "2026-10-29T12:29:28.863940",
+      "snapshot_path": "evidence/nn-value-edit-audit.json",
+      "snapshot_sha256": "ea9e67fec34e5f8158a7818abcffcca4067d6fac9d4e3eefebdfc71d8a6995a4",
+      "snapshot_bytes": 31693,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/runs/recipient-context-20261030-nn-r1/report.json",
+      "original_sha256": "6695d35827af3bf24b50fc25adfa870f9c8f1794465648e613388f243190e4ea",
+      "original_bytes": 72134,
+      "original_mtime_local": "2026-10-30T10:13:10.948601",
+      "snapshot_path": "evidence/recipient-context-report.json",
+      "snapshot_sha256": "6695d35827af3bf24b50fc25adfa870f9c8f1794465648e613388f243190e4ea",
+      "snapshot_bytes": 72134,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/response-route-r3-mamba/SUMMARY.md",
+      "original_sha256": "f67749fd4fb7acf7bdec0a21da5b1cf25313e1ea6d3c241a20bf490b064474be",
+      "original_bytes": 2270,
+      "original_mtime_local": "2026-10-29T02:54:35.876194",
+      "snapshot_path": "evidence/mamba-route-summary.txt",
+      "snapshot_sha256": "f67749fd4fb7acf7bdec0a21da5b1cf25313e1ea6d3c241a20bf490b064474be",
+      "snapshot_bytes": 2270,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/response-quotient-r3-mamba/response-atlas.md",
+      "original_sha256": "90daae15e3b65c5a84149e4c5554c01d668b00952c4d7bf02e84fccfb9e1c4b6",
+      "original_bytes": 6058,
+      "original_mtime_local": "2026-10-29T02:02:45.380229",
+      "snapshot_path": "evidence/mamba-response-atlas.txt",
+      "snapshot_sha256": "90daae15e3b65c5a84149e4c5554c01d668b00952c4d7bf02e84fccfb9e1c4b6",
+      "snapshot_bytes": 6058,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/symbolic-loop-r3-mamba/SUMMARY.md",
+      "original_sha256": "ca0c1d3a6554ad3b03d577c506f0d6c342e30d75432dae25b3098acd17e5fc4c",
+      "original_bytes": 988,
+      "original_mtime_local": "2026-10-29T03:07:27.890876",
+      "snapshot_path": "evidence/mamba-loop-summary.txt",
+      "snapshot_sha256": "ca0c1d3a6554ad3b03d577c506f0d6c342e30d75432dae25b3098acd17e5fc4c",
+      "snapshot_bytes": 988,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/state-encoding-collateral-r3-mamba/collateral-restoration.json",
+      "original_sha256": "8bc0cb42e52e39cd1e492ebcf2ed9da0a2ee7c76527e7c70c652d88c24516ae5",
+      "original_bytes": 3129,
+      "original_mtime_local": "2026-10-30T02:18:19.336687",
+      "snapshot_path": "evidence/mamba-collateral-restoration.json",
+      "snapshot_sha256": "8bc0cb42e52e39cd1e492ebcf2ed9da0a2ee7c76527e7c70c652d88c24516ae5",
+      "snapshot_bytes": 3129,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/isa_lab/ssm.py",
+      "original_sha256": "319f942903166039e3f6d25a82b38f87412054ea18bf31e19c77554af6998573",
+      "original_bytes": 5971,
+      "original_mtime_local": "2026-10-14T14:11:14.557641",
+      "snapshot_path": "sources/ssm.py",
+      "snapshot_sha256": "319f942903166039e3f6d25a82b38f87412054ea18bf31e19c77554af6998573",
+      "snapshot_bytes": 5971,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/direct_effect/model.py",
+      "original_sha256": "0cecd8699f4a603d38fc1583a0141eeddb99db3da1272fe143f38bb7159aa09c",
+      "original_bytes": 18673,
+      "original_mtime_local": "2026-10-15T15:16:02.140460",
+      "snapshot_path": "sources/direct_effect_model.py",
+      "snapshot_sha256": "0cecd8699f4a603d38fc1583a0141eeddb99db3da1272fe143f38bb7159aa09c",
+      "snapshot_bytes": 18673,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/direct_effect/spf_datapath.py",
+      "original_sha256": "ae121a9b662235c3edf10e7069d5d261abeb56a62495ff73ec9f69b92c750343",
+      "original_bytes": 11273,
+      "original_mtime_local": "2026-10-15T13:48:10.377940",
+      "snapshot_path": "sources/spf_datapath.py",
+      "snapshot_sha256": "ae121a9b662235c3edf10e7069d5d261abeb56a62495ff73ec9f69b92c750343",
+      "snapshot_bytes": 11273,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/direct_effect/fieldlm_microcode.py",
+      "original_sha256": "48f23cd466ee42e621c0ca9ec6fd957671a3c44591b91621857ef7c4bc144222",
+      "original_bytes": 31319,
+      "original_mtime_local": "2026-10-15T13:48:10.377273",
+      "snapshot_path": "sources/fieldlm_microcode.py",
+      "snapshot_sha256": "48f23cd466ee42e621c0ca9ec6fd957671a3c44591b91621857ef7c4bc144222",
+      "snapshot_bytes": 31319,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/nn/model.py",
+      "original_sha256": "422ee2a2c74e296f8550750da023626c825e05fd73b45fdf32ee18f79d7e3cd4",
+      "original_bytes": 3444,
+      "original_mtime_local": "2026-10-14T11:05:46.561611",
+      "snapshot_path": "sources/starter_nn.py",
+      "snapshot_sha256": "422ee2a2c74e296f8550750da023626c825e05fd73b45fdf32ee18f79d7e3cd4",
+      "snapshot_bytes": 3444,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/nn/full_model.py",
+      "original_sha256": "a5124369f9c5e36320cbb20c728966c6aec22a3b2f7da82e5085901cfe0ecb02",
+      "original_bytes": 1722,
+      "original_mtime_local": "2026-10-14T11:35:06.679667",
+      "snapshot_path": "sources/selector_nn.py",
+      "snapshot_sha256": "a5124369f9c5e36320cbb20c728966c6aec22a3b2f7da82e5085901cfe0ecb02",
+      "snapshot_bytes": 1722,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/fieldlm/full_model.py",
+      "original_sha256": "2592a4ba295ef951746aa103d9e2208f967e2fdd0e49f48a883e1dd2c84016a4",
+      "original_bytes": 1705,
+      "original_mtime_local": "2026-10-14T11:36:34.808568",
+      "snapshot_path": "sources/selector_fieldlm.py",
+      "snapshot_sha256": "2592a4ba295ef951746aa103d9e2208f967e2fdd0e49f48a883e1dd2c84016a4",
+      "snapshot_bytes": 1705,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/spf_transformer/full_model.py",
+      "original_sha256": "a65fd4ed7b3118bede34997c4677f3ff0189d7347d88325dd6ceae1ee4d93c44",
+      "original_bytes": 2179,
+      "original_mtime_local": "2026-10-14T11:47:40.560825",
+      "snapshot_path": "sources/selector_spf.py",
+      "snapshot_sha256": "a65fd4ed7b3118bede34997c4677f3ff0189d7347d88325dd6ceae1ee4d93c44",
+      "snapshot_bytes": 2179,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/isa_lab/response_route.py",
+      "original_sha256": "54ff3bff6c2218964080ea2dbb0d776b2dbd3056599dc50dcbd83ee1e47fe4ce",
+      "original_bytes": 12647,
+      "original_mtime_local": "2026-10-29T02:36:43.198184",
+      "snapshot_path": "sources/response_route.py",
+      "snapshot_sha256": "54ff3bff6c2218964080ea2dbb0d776b2dbd3056599dc50dcbd83ee1e47fe4ce",
+      "snapshot_bytes": 12647,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/isa_lab/symbol_value_edit.py",
+      "original_sha256": "74a9c8c0caf72b878f12ceb4ae1c602d68ca9186aad60f2f904ad3fbc8927ad7",
+      "original_bytes": 4965,
+      "original_mtime_local": "2026-10-29T12:10:38.124030",
+      "snapshot_path": "sources/symbol_value_edit.py",
+      "snapshot_sha256": "74a9c8c0caf72b878f12ceb4ae1c602d68ca9186aad60f2f904ad3fbc8927ad7",
+      "snapshot_bytes": 4965,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/results-2026-10-14.md",
+      "original_sha256": "5423b2d6da0d0ebdd2e651243e3929ef8027599add1d48eb2a7da4666df7d080",
+      "original_bytes": 7850,
+      "original_mtime_local": "2026-10-14T11:15:46.031829",
+      "snapshot_path": "evidence/starter-results.txt",
+      "snapshot_sha256": "5423b2d6da0d0ebdd2e651243e3929ef8027599add1d48eb2a7da4666df7d080",
+      "snapshot_bytes": 7850,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/runtime-accuracy-and-e2e-2026-10-14.md",
+      "original_sha256": "45ea4cd499423f96d03413b813e3512f366f13e1d261453a114a255504eaaf47",
+      "original_bytes": 9055,
+      "original_mtime_local": "2026-10-14T13:28:54.229327",
+      "snapshot_path": "evidence/runtime-followup.txt",
+      "snapshot_sha256": "45ea4cd499423f96d03413b813e3512f366f13e1d261453a114a255504eaaf47",
+      "snapshot_bytes": 9055,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/native-inspection-report/report.md",
+      "original_sha256": "5914e7751c3ab1ca5bf7c3cf6c75bf4d61216c62073a49e754fec280686c4207",
+      "original_bytes": 5680,
+      "original_mtime_local": "2026-10-14T14:40:36.803299",
+      "snapshot_path": "evidence/native-inspection.txt",
+      "snapshot_sha256": "5914e7751c3ab1ca5bf7c3cf6c75bf4d61216c62073a49e754fec280686c4207",
+      "snapshot_bytes": 5680,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/executable-symbol-scan-lowering.md",
+      "original_sha256": "dfebb5214f6a73393e955459c717068f9cb1cf1f90fd9814a845df0d93e26c68",
+      "original_bytes": 20357,
+      "original_mtime_local": "2026-10-29T03:14:27.875361",
+      "snapshot_path": "evidence/compiled-scan-account.txt",
+      "snapshot_sha256": "dfebb5214f6a73393e955459c717068f9cb1cf1f90fd9814a845df0d93e26c68",
+      "snapshot_bytes": 20357,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/arithmetic-symbol-value-edit.md",
+      "original_sha256": "dbaff8672760651b11c9dafbb4d03be50f8bd6763f52261a580d2c5ad37824ea",
+      "original_bytes": 13923,
+      "original_mtime_local": "2026-10-29T14:36:37.285965",
+      "snapshot_path": "evidence/arithmetic-edit-account.txt",
+      "snapshot_sha256": "dbaff8672760651b11c9dafbb4d03be50f8bd6763f52261a580d2c5ad37824ea",
+      "snapshot_bytes": 13923,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/recipient-context-findings.md",
+      "original_sha256": "2205002413bd7b009cf6e1a1ccfc30e3a289f7c5e0b2ee02b7929369b1152f7d",
+      "original_bytes": 10410,
+      "original_mtime_local": "2026-10-30T10:23:16.791082",
+      "snapshot_path": "evidence/recipient-context-account.txt",
+      "snapshot_sha256": "2205002413bd7b009cf6e1a1ccfc30e3a289f7c5e0b2ee02b7929369b1152f7d",
+      "snapshot_bytes": 10410,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/crossed-context-findings.md",
+      "original_sha256": "6e546374e84abf992d4e86d96a051c6ba84492c2c1e407b2088d7654e58e24cc",
+      "original_bytes": 11079,
+      "original_mtime_local": "2026-10-30T10:23:16.791256",
+      "snapshot_path": "evidence/crossed-context-account.txt",
+      "snapshot_sha256": "6e546374e84abf992d4e86d96a051c6ba84492c2c1e407b2088d7654e58e24cc",
+      "snapshot_bytes": 11079,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/docs/state-transition-sequence.md",
+      "original_sha256": "f5103ba59d953d06c62e1c5d218fadcd09456541b13508ca7f69a63e7e09ff83",
+      "original_bytes": 36110,
+      "original_mtime_local": "2026-10-30T02:26:58.428621",
+      "snapshot_path": "evidence/state-transition-account.txt",
+      "snapshot_sha256": "f5103ba59d953d06c62e1c5d218fadcd09456541b13508ca7f69a63e7e09ff83",
+      "snapshot_bytes": 36110,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/direct-effect-report/report.md",
+      "original_sha256": "63c5a5012c68aadaf7a1907256ab74414ae286e37226be277b25491f7af6a303",
+      "original_bytes": 4240,
+      "original_mtime_local": "2026-10-14T17:31:56.295478",
+      "snapshot_path": "evidence/early-direct-effect-results.txt",
+      "snapshot_sha256": "63c5a5012c68aadaf7a1907256ab74414ae286e37226be277b25491f7af6a303",
+      "snapshot_bytes": 4240,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/direct-effect-r4-report/report.md",
+      "original_sha256": "d405b47253558a9c5fbb6eb8594d4bdbc76a31083e79c4125e8976e7254b4017",
+      "original_bytes": 5984,
+      "original_mtime_local": "2026-10-15T12:50:24.310521",
+      "snapshot_path": "evidence/r4-results.txt",
+      "snapshot_sha256": "d405b47253558a9c5fbb6eb8594d4bdbc76a31083e79c4125e8976e7254b4017",
+      "snapshot_bytes": 5984,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/direct-effect-r5-report/report.md",
+      "original_sha256": "3a3122ce8cb5d20f13c22cec720449dae70ebeba7ed67a3929695cb2db7ecd7d",
+      "original_bytes": 4169,
+      "original_mtime_local": "2026-10-15T14:18:55.130790",
+      "snapshot_path": "evidence/r5-results.txt",
+      "snapshot_sha256": "3a3122ce8cb5d20f13c22cec720449dae70ebeba7ed67a3929695cb2db7ecd7d",
+      "snapshot_bytes": 4169,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/direct-effect-r6-report/report.md",
+      "original_sha256": "ab0ba50026fa525d2108d825a045b48307af1896390560c674f52e05936e1d84",
+      "original_bytes": 3177,
+      "original_mtime_local": "2026-10-15T15:12:54.016963",
+      "snapshot_path": "evidence/r6-results.txt",
+      "snapshot_sha256": "ab0ba50026fa525d2108d825a045b48307af1896390560c674f52e05936e1d84",
+      "snapshot_bytes": 3177,
+      "transformation": "byte-identical UTF-8 snapshot"
+    },
+    {
+      "original_path": "isa/outputs/desf-report/report.md",
+      "original_sha256": "ccd562aa3cf6c21599b7f94d3bfef0a2ed83ca3e31acc22d30581c2c6a4c3f30",
+      "original_bytes": 8706,
+      "original_mtime_local": "2026-10-15T13:48:10.379347",
+      "snapshot_path": "evidence/desf-account.txt",
+      "snapshot_sha256": "ccd562aa3cf6c21599b7f94d3bfef0a2ed83ca3e31acc22d30581c2c6a4c3f30",
+      "snapshot_bytes": 8706,
+      "transformation": "byte-identical UTF-8 snapshot"
+    }
+  ]
+}

@@ -2,12 +2,12 @@
 title: Research Papers
 type: research-documentation
 status: active
-updated: 2026-10-05
+updated: 2026-10-30
 ---
 
 # Research Papers
 
-Six manuscripts are current. Everything else in this directory is an earlier draft, a parked note, or a companion that one of the six absorbed; those are listed at the end with what superseded them. Headline numbers across the six are bound to their result files in the [evidence registry](evidence-registry/README.md) (41 claims, re-checkable offline with `saturn-pub evidence claims verify --check`).
+Six manuscripts are current. The other research write-ups, earlier drafts, parked notes, and companions are listed below. Headline numbers across the six are bound to their result files in the [evidence registry](evidence-registry/README.md) (41 claims, re-checkable offline with `saturn-pub evidence claims verify --check`).
 
 ## Current manuscripts
 
@@ -21,6 +21,15 @@ Six manuscripts are current. Everything else in this directory is an earlier dra
 | 6 | [mdb and saturn-pub](mdb-saturn-pub/README.md) | Tools note for the two public packages that run a frozen model as a receipted, forkable, durable transaction across families. | Cross-family demonstrations (bit-identical CUDA-VMM aliasing, 21/21 RGB parity across five diffusion families, bit-exact Mamba fork); novelty claimed only for the combination. |
 
 Suggested reading order: 1, 2, 3, then 4 as the methods companion, 5 for the theory, 6 for the tooling.
+
+## ISA research
+
+Read these in order for the progression from learned instruction selection to learned state transitions and recovered executable programs. Both include mathematical explanations, capability boundaries, and size and performance measurements, with local source snapshots for the reported results.
+
+| Write-up | Coverage |
+|---|---|
+| [PAN-ISA](pan-isa/README.md) | The original staged networks, typed x86 execution, phase representations, PAN Fabric, and historical comparison with QEMU. |
+| [Learned ISA](learned-isa/README.md) | Six-model comparison and native CPU baseline; direct-effect NN, Mamba, and Hydra; SPF automata and FieldLM programs; symbol recovery, causal edits, and compiled execution. |
 
 ## Supporting documents
 

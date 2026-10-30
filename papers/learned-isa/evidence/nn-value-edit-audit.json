@@ -1,0 +1,977 @@
+{
+  "analysis_source_sha256": "051f3c6fc149fd4dd9b9c485eb32910545ae77c219bc9336a6ecd5e199d12841",
+  "checks": [
+    {
+      "detail": "native role-binding carrier only; no output/donor values entered reconstruction",
+      "name": "native-carrier-payload-reconstruction",
+      "status": "verified"
+    },
+    {
+      "detail": "8 Act states close over indexed cuts/receipts",
+      "name": "project-act-state-receipt-closure",
+      "status": "verified"
+    },
+    {
+      "name": "signed-target-shifts-and-all-head-collateral",
+      "status": "verified"
+    },
+    {
+      "detail": {
+        "case_count": 24,
+        "composition_indices": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17,
+          20,
+          23
+        ],
+        "composition_xor_all_heads_exact": true,
+        "sham_and_undo_all_heads_exact": true,
+        "sham_undo": {
+          "sham": {
+            "all_heads_exact": true,
+            "max_abs_delta": 0.0
+          },
+          "undo": {
+            "all_heads_exact": true,
+            "max_abs_delta": 0.0
+          }
+        }
+      },
+      "name": "sham-undo-and-composition-parity",
+      "status": "verified"
+    },
+    {
+      "detail": {
+        "exact_input_joins": 384,
+        "rows": 384
+      },
+      "name": "predicted-state-followup-input-joins",
+      "status": "verified"
+    },
+    {
+      "name": "counterfactual-post-freeze-order",
+      "status": "verified"
+    },
+    {
+      "name": "model-state-digest-unchanged",
+      "status": "verified"
+    }
+  ],
+  "collected_run_root": "/Users/jakeholl/domains/isa/runs/reusable-symbol-edit-20261029-nn-r3",
+  "evaluation": {
+    "arms": {
+      "composed": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              31
+            ]
+          ],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.27557373046875,
+            "imm": 63.03219985961914,
+            "length": 0.0,
+            "regs": 42.182594299316406,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 3.8396263122558594,
+            "store_value": 27.349756240844727,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [
+            42.001739501953125,
+            42.182594299316406
+          ],
+          "target_signed_margins": [
+            25.091520309448242,
+            23.64685821533203
+          ]
+        },
+        "maximum_reported_field_delta": 77.1164321899414,
+        "recomputed_signed_target_logit_changes": [
+          42.001739501953125,
+          42.182594299316406,
+          39.06006622314453,
+          34.08815956115723,
+          41.68918037414551,
+          40.29923439025879,
+          42.1792106628418,
+          39.50191879272461,
+          53.55276870727539,
+          50.59990692138672,
+          46.1734619140625,
+          47.498165130615234,
+          38.60078048706055,
+          37.85480499267578,
+          41.7121696472168,
+          41.07456398010254,
+          49.74495506286621,
+          43.55706024169922,
+          40.660247802734375,
+          36.46729850769043,
+          35.83725929260254,
+          39.57776069641113,
+          37.00545883178711,
+          34.88665962219238,
+          42.71458435058594,
+          43.13661766052246,
+          43.22332954406738,
+          38.3127326965332,
+          40.14928436279297,
+          42.90626525878906,
+          41.52453804016113,
+          42.52951240539551,
+          47.81456184387207,
+          47.29371643066406,
+          44.50922966003418,
+          48.699533462524414,
+          42.39529228210449,
+          44.075504302978516,
+          47.64996337890625,
+          41.80183410644531,
+          49.76542854309082,
+          45.74924087524414,
+          46.16823196411133,
+          50.66310501098633,
+          43.92264747619629,
+          43.950918197631836,
+          39.9970588684082,
+          43.14436340332031
+        ],
+        "rows": 24,
+        "signed_target_logit_change_count": 48,
+        "signed_target_logit_changes": [
+          42.001739501953125,
+          42.182594299316406,
+          39.06006622314453,
+          34.088157653808594,
+          41.689178466796875,
+          40.299232482910156,
+          42.1792106628418,
+          39.50191879272461,
+          53.55276870727539,
+          50.59990692138672,
+          46.1734619140625,
+          47.498165130615234,
+          38.60078048706055,
+          37.85480499267578,
+          41.7121696472168,
+          41.074562072753906,
+          49.744956970214844,
+          43.55706024169922,
+          40.660247802734375,
+          36.46730041503906,
+          35.837257385253906,
+          39.5777587890625,
+          37.00545883178711,
+          34.88665771484375,
+          42.71458435058594,
+          43.136619567871094,
+          43.22332763671875,
+          38.3127326965332,
+          40.14928436279297,
+          42.90626525878906,
+          41.5245361328125,
+          42.529510498046875,
+          47.81455993652344,
+          47.29371643066406,
+          44.50923156738281,
+          48.69953155517578,
+          42.395294189453125,
+          44.075504302978516,
+          47.64996337890625,
+          41.80183410644531,
+          49.76542663574219,
+          45.74924087524414,
+          46.16823196411133,
+          50.66310501098633,
+          43.922645568847656,
+          43.95092010498047,
+          39.9970588684082,
+          43.14436340332031
+        ],
+        "status": "verified"
+      },
+      "input-counterfactual": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [
+            [
+              0,
+              31
+            ]
+          ],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 3.2012100219726562,
+            "flags": 0.752354621887207,
+            "imm": 55.12733459472656,
+            "length": 1.6751956939697266,
+            "regs": 42.18785095214844,
+            "src": 5.230031967163086,
+            "store": 0.8034439086914062,
+            "store_addr": 2.522962808609009,
+            "store_value": 24.38193130493164,
+            "syscall": 2.1754684448242188,
+            "width": 0.9521141052246094
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [
+            42.18785095214844
+          ],
+          "target_signed_margins": [
+            23.652116775512695
+          ]
+        },
+        "maximum_reported_field_delta": 79.7615966796875,
+        "recomputed_signed_target_logit_changes": [
+          42.18785285949707,
+          38.36958694458008,
+          39.78654479980469,
+          38.93003463745117,
+          40.02919006347656,
+          53.40169334411621,
+          46.45090293884277,
+          47.84328079223633,
+          37.99043273925781,
+          42.115285873413086,
+          49.19109535217285,
+          43.07965850830078,
+          37.42984199523926,
+          35.951229095458984,
+          37.1573429107666,
+          34.799790382385254,
+          43.13315200805664,
+          43.505720138549805,
+          39.7274284362793,
+          43.67020797729492,
+          42.26082420349121,
+          46.89274597167969,
+          44.83690071105957,
+          48.711748123168945,
+          44.864118576049805,
+          46.9432430267334,
+          50.07589340209961,
+          44.55896759033203,
+          50.72726249694824,
+          45.025352478027344,
+          40.257450103759766,
+          43.5053653717041
+        ],
+        "rows": 24,
+        "signed_target_logit_change_count": 32,
+        "signed_target_logit_changes": [
+          42.18785095214844,
+          38.36958694458008,
+          39.78654479980469,
+          38.93003463745117,
+          40.02919006347656,
+          53.401695251464844,
+          46.450904846191406,
+          47.84328079223633,
+          37.99043273925781,
+          42.11528778076172,
+          49.19109344482422,
+          43.07965850830078,
+          37.429840087890625,
+          35.951229095458984,
+          37.15734100341797,
+          34.79978942871094,
+          43.13315200805664,
+          43.50572204589844,
+          39.7274284362793,
+          43.67020797729492,
+          42.260826110839844,
+          46.89274597167969,
+          44.83689880371094,
+          48.71174621582031,
+          44.86412048339844,
+          46.94324493408203,
+          50.07589340209961,
+          44.55896759033203,
+          50.727264404296875,
+          45.025352478027344,
+          40.257450103759766,
+          43.50536346435547
+        ],
+        "status": "verified"
+      },
+      "native": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.0,
+            "imm": 0.0,
+            "length": 0.0,
+            "regs": 0.0,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 0.0,
+            "store_value": 0.0,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [],
+          "target_signed_margins": []
+        },
+        "maximum_reported_field_delta": 0.0,
+        "recomputed_signed_target_logit_changes": [],
+        "rows": 24,
+        "signed_target_logit_change_count": 0,
+        "signed_target_logit_changes": [],
+        "status": "verified"
+      },
+      "sham": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.0,
+            "imm": 0.0,
+            "length": 0.0,
+            "regs": 0.0,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 0.0,
+            "store_value": 0.0,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [],
+          "target_signed_margins": []
+        },
+        "maximum_reported_field_delta": 0.0,
+        "recomputed_signed_target_logit_changes": [],
+        "rows": 24,
+        "signed_target_logit_change_count": 0,
+        "signed_target_logit_changes": [],
+        "status": "verified"
+      },
+      "undo": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.0,
+            "imm": 0.0,
+            "length": 0.0,
+            "regs": 0.0,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 0.0,
+            "store_value": 0.0,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [],
+          "target_signed_margins": []
+        },
+        "maximum_reported_field_delta": 0.0,
+        "recomputed_signed_target_logit_changes": [],
+        "rows": 24,
+        "signed_target_logit_change_count": 0,
+        "signed_target_logit_changes": [],
+        "status": "verified"
+      },
+      "upper-half": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.027634620666503906,
+            "imm": 1.6281299591064453,
+            "length": 0.0,
+            "regs": 1.2265758514404297,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 0.08394432067871094,
+            "store_value": 0.6081771850585938,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [],
+          "target_signed_margins": []
+        },
+        "maximum_reported_field_delta": 13.227039337158203,
+        "recomputed_signed_target_logit_changes": [],
+        "rows": 24,
+        "signed_target_logit_change_count": 0,
+        "signed_target_logit_changes": [],
+        "status": "verified"
+      },
+      "wrong-coordinate": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [
+            [
+              0,
+              6
+            ]
+          ],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.22802352905273438,
+            "imm": 66.9568862915039,
+            "length": 0.0,
+            "regs": 35.60710144042969,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 3.9842262268066406,
+            "store_value": 23.59360694885254,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [
+            35.60710144042969
+          ],
+          "target_signed_margins": [
+            15.991966247558594
+          ]
+        },
+        "maximum_reported_field_delta": 77.45848846435547,
+        "recomputed_signed_target_logit_changes": [
+          35.60710144042969,
+          38.07628631591797,
+          39.65769958496094,
+          39.56440544128418,
+          40.47584915161133,
+          49.671199798583984,
+          39.63599395751953,
+          45.4811897277832,
+          47.17639923095703,
+          38.40534019470215,
+          42.60498809814453,
+          44.30484580993652,
+          37.31910514831543,
+          40.022071838378906,
+          39.23849296569824,
+          39.51392364501953,
+          42.927412033081055,
+          40.080780029296875,
+          42.87374687194824,
+          42.64122200012207,
+          35.986114501953125,
+          41.089237213134766,
+          43.11387825012207,
+          45.061744689941406,
+          43.86538314819336,
+          42.46127891540527,
+          48.806976318359375,
+          45.38892936706543,
+          48.528127670288086,
+          44.18061828613281,
+          46.37454414367676,
+          45.423044204711914
+        ],
+        "rows": 24,
+        "signed_target_logit_change_count": 32,
+        "signed_target_logit_changes": [
+          35.60710144042969,
+          38.07628631591797,
+          39.65769958496094,
+          39.56440734863281,
+          40.47584915161133,
+          49.671199798583984,
+          39.63599395751953,
+          45.4811897277832,
+          47.17639923095703,
+          38.40534210205078,
+          42.60498809814453,
+          44.304847717285156,
+          37.31910705566406,
+          40.022071838378906,
+          39.238494873046875,
+          39.51392364501953,
+          42.92741394042969,
+          40.080780029296875,
+          42.873748779296875,
+          42.64122009277344,
+          35.986114501953125,
+          41.089237213134766,
+          43.11387634277344,
+          45.061744689941406,
+          43.86538314819336,
+          42.461280822753906,
+          48.806976318359375,
+          45.38893127441406,
+          48.52812957763672,
+          44.18061828613281,
+          46.374542236328125,
+          45.42304229736328
+        ],
+        "status": "verified"
+      },
+      "xor": {
+        "first_step": {
+          "case_id": "sealed-0-established-bit31",
+          "changed_register_coordinates": [
+            [
+              0,
+              31
+            ]
+          ],
+          "collateral_register_coordinates": [],
+          "field_max_abs_native_delta": {
+            "dest": 0.0,
+            "flags": 0.35394287109375,
+            "imm": 54.95453643798828,
+            "length": 0.0,
+            "regs": 42.199623107910156,
+            "src": 0.0,
+            "store": 0.0,
+            "store_addr": 2.7931807041168213,
+            "store_value": 23.68488311767578,
+            "syscall": 0.0,
+            "width": 0.0
+          },
+          "flags_native_equal": true,
+          "length_native_equal": true,
+          "target_signed_logit_changes": [
+            42.199623107910156
+          ],
+          "target_signed_margins": [
+            23.66388702392578
+          ]
+        },
+        "maximum_reported_field_delta": 77.1164321899414,
+        "recomputed_signed_target_logit_changes": [
+          42.199623107910156,
+          39.382240295410156,
+          41.68918037414551,
+          40.29923439025879,
+          39.68898391723633,
+          53.33559799194336,
+          46.1734619140625,
+          47.498165130615234,
+          38.51953315734863,
+          42.0809383392334,
+          49.74495506286621,
+          43.55706024169922,
+          36.44110679626465,
+          35.83196830749512,
+          37.00545883178711,
+          34.88665962219238,
+          43.502601623535156,
+          43.111351013183594,
+          40.14928436279297,
+          42.90626525878906,
+          41.84584999084473,
+          47.42403984069824,
+          44.50922966003418,
+          48.699533462524414,
+          44.17979431152344,
+          47.41154861450195,
+          49.76542854309082,
+          45.74924087524414,
+          50.88236045837402,
+          43.750104904174805,
+          39.9970588684082,
+          43.14436340332031
+        ],
+        "rows": 24,
+        "signed_target_logit_change_count": 32,
+        "signed_target_logit_changes": [
+          42.199623107910156,
+          39.382240295410156,
+          41.689178466796875,
+          40.299232482910156,
+          39.68898391723633,
+          53.33559799194336,
+          46.1734619140625,
+          47.498165130615234,
+          38.51953125,
+          42.08094024658203,
+          49.744956970214844,
+          43.55706024169922,
+          36.44110870361328,
+          35.83197021484375,
+          37.00545883178711,
+          34.88665771484375,
+          43.502601623535156,
+          43.111351013183594,
+          40.14928436279297,
+          42.90626525878906,
+          41.845848083496094,
+          47.424041748046875,
+          44.50923156738281,
+          48.69953155517578,
+          44.17979431152344,
+          47.41154861450195,
+          49.76542663574219,
+          45.74924087524414,
+          50.882362365722656,
+          43.75010681152344,
+          39.9970588684082,
+          43.14436340332031
+        ],
+        "status": "verified"
+      }
+    },
+    "authority": "signed target shifts and all-head collateral are observations; no semantic gate",
+    "status": "verified"
+  },
+  "followups": {
+    "arms": [
+      {
+        "arm": "composed",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "input-counterfactual",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "native",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "sham",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "undo",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "upper-half",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "wrong-coordinate",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      },
+      {
+        "arm": "xor",
+        "exact_input_joins": 48,
+        "planned_instruction_rows": 48,
+        "rows": 48,
+        "status": "verified"
+      }
+    ],
+    "authority": "each follow-up uses its branch's own predicted regs/flags and supplied bytes",
+    "exact_input_joins": 384,
+    "frozen_rule_rows": 384,
+    "planned_instruction_rows": 384,
+    "rows": 384,
+    "status": "verified"
+  },
+  "input_novelty": {
+    "checked_artifact_digest": "d4044f22ac685dfb8dc08b35ac77e156c82a8e52184610e770da895a4f5fb116",
+    "checked_artifacts": [
+      {
+        "applicability": "canonical-window-before-envelope",
+        "comparison_status": "exact-serialized-overlap",
+        "envelope_count": 4,
+        "exact_overlap_count": 0,
+        "kind": "coordinate-protocol",
+        "parsed_row_count": 4,
+        "path": "/Users/jakeholl/domains/isa/runs/coordinate-symbols-20261028-nn-cut1/extracted/readable-result/protocol.json",
+        "sha256": "4c42112b18316400bf4e2d2583797d5552dc2ecd855e914312cba2d638428577",
+        "unique_envelope_count": 4
+      },
+      {
+        "applicability": "canonical-window-before-envelope",
+        "comparison_status": "exact-serialized-overlap",
+        "envelope_count": 254,
+        "exact_overlap_count": 0,
+        "kind": "nn-readable-or-other-protocol",
+        "parsed_row_count": 254,
+        "path": "/Users/jakeholl/domains/isa/runs/readable-symbols-20261028-nn-advised-r2/extracted/readable-result/protocol.json",
+        "sha256": "344bac4bcfba4657bf0b6312582c2a296c85818aaa6fbff26064915bcf785915",
+        "unique_envelope_count": 254
+      },
+      {
+        "applicability": "not-applicable-format-not-parsed",
+        "comparison_status": "not-parsed",
+        "envelope_count": null,
+        "exact_overlap_count": null,
+        "format": "report-inputs.json",
+        "kind": "saved-forward-input-report",
+        "limitation": "saved-forward input schema lacks canonical window_hex+before envelope",
+        "parsed_row_count": 0,
+        "path": "/Users/jakeholl/domains/isa/runs/forward-symbols-20261028-nn-native/extracted/forward-result/report-inputs.json",
+        "sha256": "3acfce0118e416d8cc9ede43d86ee45e9f7efccd7612744029582eea607a543c",
+        "unique_envelope_count": null
+      },
+      {
+        "applicability": "not-applicable-format-not-parsed",
+        "comparison_status": "not-parsed",
+        "envelope_count": null,
+        "exact_overlap_count": null,
+        "format": "serve-probe-inputs.json",
+        "kind": "saved-forward-input-report",
+        "limitation": "saved-forward input schema lacks canonical window_hex+before envelope",
+        "parsed_row_count": 0,
+        "path": "/Users/jakeholl/domains/isa/runs/native-forward-symbols-20261029T094428.012463Z/extracted/response-route-result/serve-probe-inputs.json",
+        "sha256": "553b8a18b9caac65a34ccf148b25f5c57dda732c8b749031d93f9d8c0affb806",
+        "unique_envelope_count": null
+      },
+      {
+        "applicability": "not-applicable-format-not-parsed",
+        "comparison_status": "not-parsed",
+        "envelope_count": null,
+        "exact_overlap_count": null,
+        "format": "pure-inputs.json",
+        "kind": "saved-forward-input-report",
+        "limitation": "saved-forward input schema lacks canonical window_hex+before envelope",
+        "parsed_row_count": 0,
+        "path": "/Users/jakeholl/domains/isa/runs/native-forward-symbols-20261029T100021.116951Z/extracted/symbolic-loop-result/pure-inputs.json",
+        "sha256": "6c79a9b372ea97257493e2e59f6b81951d7d648dd24a6d8bdf71c832349fd451",
+        "unique_envelope_count": null
+      }
+    ],
+    "current_envelope_count": 24,
+    "parsed_row_count": 258,
+    "scope": "exact serialized input-envelope overlap only; no claim about training-unseen examples",
+    "training_unseen_authority": false
+  },
+  "instrument_status": "observed",
+  "limitations": [
+    "This audit checks post-freeze ordering from sealed artifacts; it does not establish a live execution-clock proof.",
+    "Input novelty is exact overlap against available saved envelopes, not a held-out or training-unseen claim.",
+    "Signed shifts and collateral are observations; no semantic or universal ISA claim is assigned."
+  ],
+  "mechanics_status": "verified-native-carrier-receipt-project-closure",
+  "model_forwards": 0,
+  "native_replays": 0,
+  "payload_reconstruction": {
+    "arms": [
+      {
+        "arm": "sham",
+        "candidate_sha256": "5d03eb0e814709951528fa5b2a13a9f06a6fd8c3cb3f1bb4d248e37e98de8fd8",
+        "recipe_steps": 1,
+        "source": "role-binding.carrier_values+protocol.requests",
+        "status": "observed",
+        "uses_output_or_donor": false
+      },
+      {
+        "arm": "xor",
+        "candidate_sha256": "13f1988a5a0895c043f807a5511bd59635915f0b519f4c2faf2c36eacb864cf9",
+        "recipe_steps": 1,
+        "source": "role-binding.carrier_values+protocol.requests",
+        "status": "observed",
+        "uses_output_or_donor": false
+      },
+      {
+        "arm": "wrong-coordinate",
+        "candidate_sha256": "f26a7acadd2023ede1e525f4045149613c2d6f5db2847d16a748702c9941980c",
+        "recipe_steps": 1,
+        "source": "role-binding.carrier_values+protocol.requests",
+        "status": "observed",
+        "uses_output_or_donor": false
+      },
+      {
+        "arm": "upper-half",
+        "candidate_sha256": "45c83a54419f454619414fec3159d31fc7c7094ae9558f72f570af806f522062",
+        "recipe_steps": 1,
+        "source": "role-binding.carrier_values+protocol.requests",
+        "status": "observed",
+        "uses_output_or_donor": false
+      },
+      {
+        "arm": "undo",
+        "candidate_sha256": "5d03eb0e814709951528fa5b2a13a9f06a6fd8c3cb3f1bb4d248e37e98de8fd8",
+        "recipe_steps": 2,
+        "source": "role-binding.carrier_values+protocol.requests",
+        "status": "observed",
+        "uses_output_or_donor": false
+      },
+      {
+        "arm": "composed",
+        "candidate_sha256": "264977b1dbf19ae52b09c327b51e46bc417e312729ea9616de81d1b0450ea01e",
+        "recipe_steps": 2,
+        "source": "role-binding.carrier_values+protocol.requests",
+        "status": "observed",
+        "uses_output_or_donor": false
+      }
+    ],
+    "binding_role": "observed.aligned_window64",
+    "candidate_source": "native role-binding carrier only; no output/donor values entered reconstruction",
+    "carrier_shape": [
+      24,
+      64,
+      1
+    ],
+    "parent_cut": "a2976b5d4639f0d5fb0b72ba0e6699418ecf0569a0f32f6bd3a443d70fbc2b2c"
+  },
+  "post_freeze": {
+    "candidate_freeze_counterfactual_forwards": 0,
+    "counterfactual_order_verified": true,
+    "counterfactual_target_used_for_edit": false,
+    "journal_phases": {
+      "native-followup": 16,
+      "native-suffix": 6
+    },
+    "native_clock_authority": "sealed journal/request declaration only; this audit does not infer a live clock proof",
+    "request_declaration": "evaluation only, after candidate execution and payload seals"
+  },
+  "project_closure": {
+    "act_receipts": [
+      {
+        "arm": "sham",
+        "fingerprint": "3a8e15b461cd97ad8a1fe9a5ba16cab2c48106b4c076dd36e612c15712343ae0",
+        "index": 0,
+        "operation": "apply",
+        "parent_cut": "bc2d2358ccfb1e24e68c94a2b89a072c9a48f5852f0adb5a5a404fbaeb09d4bc",
+        "result_cut": "aac2e93a9dd59e8612a0e0ce720a8e6ad0d5f527f1fa42558f7d0eac9452a2f2"
+      },
+      {
+        "arm": "xor",
+        "fingerprint": "610b74e83788247e152f1ace63092358243f364b721bfdd0188eb1ccc41a00cb",
+        "index": 0,
+        "operation": "apply",
+        "parent_cut": "bc2d2358ccfb1e24e68c94a2b89a072c9a48f5852f0adb5a5a404fbaeb09d4bc",
+        "result_cut": "47efe954cb215531105231c6d1e2375223f223c3320ec4b794fc4cf1563854b2"
+      },
+      {
+        "arm": "wrong-coordinate",
+        "fingerprint": "cc93b496127ff9511694c88708a569d72b0c3d1002f59bf6767b77d26a7c2409",
+        "index": 0,
+        "operation": "apply",
+        "parent_cut": "bc2d2358ccfb1e24e68c94a2b89a072c9a48f5852f0adb5a5a404fbaeb09d4bc",
+        "result_cut": "3a8a950977270d7d3ddaa5bd559b5db50156c4d42c0b9d228e053d531bd2cb76"
+      },
+      {
+        "arm": "upper-half",
+        "fingerprint": "9d9f2a98f03de20eab5ea500aad9bd0d00c30a085717b7fd6d07eeb2f23714bc",
+        "index": 0,
+        "operation": "apply",
+        "parent_cut": "bc2d2358ccfb1e24e68c94a2b89a072c9a48f5852f0adb5a5a404fbaeb09d4bc",
+        "result_cut": "0a5f9a88cd51ba03ec7f9aafa1c953142dfdd81b67aa9e3ca9dfe6258723c37a"
+      },
+      {
+        "arm": "undo",
+        "fingerprint": "26b1be036967c0f884d6334df5f14a94ec03ef51fca0a6fa204b8f3bc64394ff",
+        "index": 0,
+        "operation": "apply",
+        "parent_cut": "bc2d2358ccfb1e24e68c94a2b89a072c9a48f5852f0adb5a5a404fbaeb09d4bc",
+        "result_cut": "47efe954cb215531105231c6d1e2375223f223c3320ec4b794fc4cf1563854b2"
+      },
+      {
+        "arm": "undo",
+        "fingerprint": "3c44650cb296bf01e1dd289a31f60b9fb5689a9ad2036477f4b25ee509740525",
+        "index": 1,
+        "operation": "apply",
+        "parent_cut": "47efe954cb215531105231c6d1e2375223f223c3320ec4b794fc4cf1563854b2",
+        "result_cut": "e7cd2e4debb4b1edbac59845dbfa1d5830e37bee68bcb00ba4eaf22c01ff50d8"
+      },
+      {
+        "arm": "composed",
+        "fingerprint": "239895a46cce5743a0427ea85bb802283747cbf7c72530ef5eabb1441fae0769",
+        "index": 0,
+        "operation": "apply",
+        "parent_cut": "bc2d2358ccfb1e24e68c94a2b89a072c9a48f5852f0adb5a5a404fbaeb09d4bc",
+        "result_cut": "971bdebc264f3e2a3660da4da5ea9435ca0583474a6a553ea3c155aa78bad4ba"
+      },
+      {
+        "arm": "composed",
+        "fingerprint": "0a9f957bdd9e8e3eabaa2713f9b07ac41c40f87705929d2677e3b239415445f7",
+        "index": 1,
+        "operation": "apply",
+        "parent_cut": "971bdebc264f3e2a3660da4da5ea9435ca0583474a6a553ea3c155aa78bad4ba",
+        "result_cut": "93479d4179e85658b77c49017f0774a341b5f972ff4b11378b3f2095c2bcfd54"
+      }
+    ],
+    "act_states": 8,
+    "all_act_states_closed": true,
+    "indexed_cuts": 17,
+    "indexed_receipts": 18,
+    "revision": 1,
+    "session_id": "reusable-symbol-value-edit"
+  },
+  "protocol": {
+    "case_count": 24,
+    "path": "/Users/jakeholl/domains/isa/runs/reusable-symbol-edit-20261029-nn-r3/extracted/readable-result/protocol.json",
+    "schema": "isa-reusable-symbol-value-edit-protocol-v1",
+    "sha256": "dd8a901b8c07c872b758a60654eef0f284948e6adfa0d136c48c1081c502ef9d"
+  },
+  "schema": "isa-reusable-symbol-edit-independent-audit-v1",
+  "sham_undo_composition": {
+    "case_count": 24,
+    "composition_indices": [
+      2,
+      5,
+      8,
+      11,
+      14,
+      17,
+      20,
+      23
+    ],
+    "composition_xor_all_heads_exact": true,
+    "sham_and_undo_all_heads_exact": true,
+    "sham_undo": {
+      "sham": {
+        "all_heads_exact": true,
+        "max_abs_delta": 0.0
+      },
+      "undo": {
+        "all_heads_exact": true,
+        "max_abs_delta": 0.0
+      }
+    }
+  },
+  "source_report": {
+    "path": "/Users/jakeholl/domains/isa/runs/reusable-symbol-edit-20261029-nn-r3/extracted/readable-result/report.json",
+    "sha256": "bdc8a8e3f035f540248327042d0c48fdeed71849dee79a1006700406bdea756c"
+  },
+  "terminal_status": "not-assessed",
+  "trend_status": "signed-target-shifts-collateral-and-composition-rows-retained"
+}

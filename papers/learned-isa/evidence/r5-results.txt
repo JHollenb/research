@@ -1,0 +1,61 @@
+# Round 5: field pointer, Mamba s719 (vs round-4 regptr and round-3)
+
+Counts with Wilson 95% intervals. `held pairs` = the original seven withheld pairs (4,096 rows); `extra` = the additional withheld pairs of the coverage scan. iid and held literal count only trained pairs (round-3 runs have no per-pair counts, so their iid is the whole panel). Round-3 runs are the 7-pair baseline.
+
+| Run | Job | Withheld | iid | held literal | held pairs | extra pairs | last cand. held pairs | best cand. held pairs |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Mamba r3 s719 (no grid) | `job-bd6e595c05a7` | 7 | 8181/8192 (99.8–99.9%) | 8183/8192 (99.8–99.9%) | 3348/4096 (80.5–82.9%) | — | 3348/4096 (80.5–82.9%) | 3446/4096 (83.0–85.2%) |
+| Mamba regptr s719 (no grid) | `job-ea9e3cd4f308+job-39fecc59b599` | 7 | 8172/8192 (99.6–99.8%) | 8179/8192 (99.7–99.9%) | 3268/4096 (78.5–81.0%) | — | 3268/4096 (78.5–81.0%) | 3268/4096 (78.5–81.0%) |
+| Mamba fieldptr s719 (grid) | `job-407c7d52ae0c` | 7 | 8163/8192 (99.5–99.8%) | 8161/8192 (99.5–99.7%) | 2006/4096 (47.4–50.5%) | — | 2006/4096 (47.4–50.5%) | 2008/4096 (47.5–50.6%) |
+
+## Held pairs, per pair (accepted model; exact / rows, destination pick in brackets where measured)
+
+| Run | `add_r32_8:2` | `add_r64_8:3` | `mov_r32_c7:5` | `mov_r64:5` | `mov_r64_r64:3` | `sub_r64_8:6` | `xor_r32_r32:1` |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Mamba r3 s719 (no grid) | 95.8% | 99.3% | 90.0% | 17.8% | 76.0% | 99.5% | 94.5% |
+| Mamba regptr s719 (no grid) | 596/598 [598] | 568/570 [570] | 3/591 [14] | 386/586 [462] | 594/596 [596] | 568/568 [568] | 553/587 [576] |
+| Mamba fieldptr s719 (grid) | 570/614 | 618/619 | 4/572 | 279/631 | 322/508 | 161/623 | 52/529 |
+
+## Programs (exact out of 16 / 8 / 4 at 16 / 128 / 1,024 steps), counters, stdout, per-step error
+
+| Run | train literals | held literals | held pairs | extra pairs | counters | stdout | step errors, train pairs | step errors, all pairs |
+|---|---|---|---|---|---|---|---:|---:|
+| Mamba r3 s719 (no grid) | 16 / 7 / 2 | 16 / 6 / 2 | 0 / 0 / 0 | — | 4/4 | 3/3 | — | — |
+| Mamba regptr s719 (no grid) | 14 / 1 / 0 | 12 / 2 / 0 | 0 / 0 / 0 | — | 4/4 | 3/3 | 144/65536 (0.2–0.3%) | 544/65536 (0.8–0.9%) |
+| Mamba fieldptr s719 (grid) | 15 / 4 / 0 | 16 / 3 / 0 | 0 / 0 / 0 | — | 4/4 | 3/3 | 279/65536 (0.4–0.5%) | 8257/65536 (12.3–12.9%) |
+
+## Round 5 field pointer: where the learned field starts sit (top-4 start histogram per form)
+
+Correct start = the bit where the destination (source) field begins in the encoding (see tests/test_direct_effect_fieldptr.py).
+
+| Panel | dest starts exactly on the field | src starts exactly on the field |
+|---|---:|---:|
+| grid_dest_form | 186/2020 | 27/526 |
+| grid_literal | 119/798 | 0/0 |
+| grid_src_form | 242/1687 | 14/1999 |
+| grid_width | 154/1754 | 0/982 |
+| heldout_literal | 345/3107 | 0/0 |
+| heldout_pairs | 0/4068 | 0/1023 |
+| iid | 305/2798 | 24/1170 |
+
+## Grid panels (fieldptr s719, within-run only; no baseline trained on the grid)
+
+| Panel | exact | rows | dest pick |
+|---|---:|---:|---:|
+| grid_dest_form | 1086 | 2048 | 0.647 |
+| grid_src_form | 888 | 2048 | 0.952 |
+| grid_literal | 2043 | 2048 | 0.979 |
+| grid_width | 16 | 2048 | 0.414 |
+| heldout_pairs | 2006 | 4096 | 0.593 |
+| iid | 8163 | 8192 | 0.867 |
+| heldout_literal | 8161 | 8192 | 0.972 |
+
+## Soft vs snapped field pointer (errors)
+
+| Variant | grid_dest_form | grid_literal | grid_src_form | grid_width | heldout_literal | heldout_pairs | iid |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| soft | 962 | 5 | 1160 | 2032 | 31 | 2090 | 29 |
+| snap_all | 859 | 314 | 1331 | 2031 | 1647 | 1804 | 1157 |
+| snap_pointer | 841 | 307 | 1225 | 2031 | 1637 | 1778 | 1083 |
+
+Note: the Withheld column counts only the original pairs; the fieldptr run trained on the factor grid, which also withholds 13 (form, dest), 4 (form, src), 34 literal cells and 2 whole forms, so its held-pair comparison against the no-grid baselines is confounded by coverage (the round-4 coverage scan says fewer training cells cost 10-15 points at 14 withheld). The field-start histogram is the unconfounded evidence.

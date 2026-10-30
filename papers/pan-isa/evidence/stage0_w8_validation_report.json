@@ -1,0 +1,1123 @@
+{
+  "arch": "factorized",
+  "byte_overlap": {
+    "long_programs": 200,
+    "long_unique_bytes": 200,
+    "train_long_overlap": 0,
+    "train_programs": 1500,
+    "train_unique_bytes": 1500,
+    "train_val_overlap": 0,
+    "val_programs": 500,
+    "val_unique_bytes": 500
+  },
+  "controls": {
+    "scrambled_flags_val": {
+      "failure_examples": [
+        {
+          "asm": "shr1 AL",
+          "pred_flags": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pred_regs": [
+            13,
+            105,
+            87,
+            71
+          ],
+          "step": 0,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            13,
+            105,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "shr1 CL",
+          "pred_flags": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "pred_regs": [
+            71,
+            52,
+            87,
+            71
+          ],
+          "step": 2,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            52,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "or CL, CL",
+          "pred_flags": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pred_regs": [
+            71,
+            52,
+            87,
+            71
+          ],
+          "step": 3,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            52,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "or BL, BL",
+          "pred_flags": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pred_regs": [
+            71,
+            52,
+            87,
+            71
+          ],
+          "step": 4,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            52,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "add CL, 0x9f",
+          "pred_flags": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "pred_regs": [
+            239,
+            243,
+            63,
+            102
+          ],
+          "step": 0,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            239,
+            243,
+            63,
+            102
+          ]
+        },
+        {
+          "asm": "dec AL",
+          "pred_flags": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "pred_regs": [
+            238,
+            243,
+            63,
+            102
+          ],
+          "step": 1,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            238,
+            243,
+            63,
+            102
+          ]
+        },
+        {
+          "asm": "rol1 AL",
+          "pred_flags": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "pred_regs": [
+            221,
+            243,
+            63,
+            102
+          ],
+          "step": 2,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            221,
+            243,
+            63,
+            102
+          ]
+        },
+        {
+          "asm": "shr1 CL",
+          "pred_flags": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "pred_regs": [
+            221,
+            121,
+            63,
+            102
+          ],
+          "step": 3,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "true_regs": [
+            221,
+            121,
+            63,
+            102
+          ]
+        }
+      ],
+      "family_step_exact": {
+        "ADC": 0.0,
+        "ADD": 0.0,
+        "AND": 0.0,
+        "CMP": 0.0,
+        "DEC": 0.0,
+        "INC": 0.0,
+        "MOV": 0.550725,
+        "NEG": 0.0,
+        "NOT": 0.568966,
+        "OR": 0.0,
+        "ROTATE": 0.0,
+        "SBB": 0.0,
+        "SHIFT": 0.0,
+        "SUB": 0.0,
+        "TEST": 0.0,
+        "XOR": 0.0
+      },
+      "final_exact": 0.0,
+      "programs": 500,
+      "step_exact": 0.065981,
+      "steps": 1652
+    },
+    "scrambled_opcode_long": {
+      "failure_examples": [
+        {
+          "asm": "neg DL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            71,
+            48,
+            48,
+            167
+          ],
+          "step": 0,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            71,
+            48,
+            130,
+            167
+          ]
+        },
+        {
+          "asm": "add DL, CL",
+          "pred_flags": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            71,
+            48,
+            38,
+            167
+          ],
+          "step": 1,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            71,
+            48,
+            178,
+            167
+          ]
+        },
+        {
+          "asm": "or CL, AL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            71,
+            54,
+            38,
+            167
+          ],
+          "step": 2,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            119,
+            178,
+            167
+          ]
+        },
+        {
+          "asm": "shr1 AL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "pred_regs": [
+            142,
+            54,
+            38,
+            167
+          ],
+          "step": 3,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            35,
+            119,
+            178,
+            167
+          ]
+        },
+        {
+          "asm": "dec DL",
+          "pred_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "pred_regs": [
+            142,
+            54,
+            218,
+            167
+          ],
+          "step": 4,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            35,
+            119,
+            177,
+            167
+          ]
+        },
+        {
+          "asm": "add BL, 0xbb",
+          "pred_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "pred_regs": [
+            142,
+            54,
+            218,
+            205
+          ],
+          "step": 5,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "true_regs": [
+            35,
+            119,
+            177,
+            98
+          ]
+        },
+        {
+          "asm": "and BL, DL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            142,
+            54,
+            218,
+            73
+          ],
+          "step": 6,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            35,
+            119,
+            177,
+            32
+          ]
+        },
+        {
+          "asm": "neg AL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            8,
+            54,
+            218,
+            73
+          ],
+          "step": 7,
+          "trace_id": "heldout_reg_tuple-0-0",
+          "true_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            221,
+            119,
+            177,
+            32
+          ]
+        }
+      ],
+      "family_step_exact": {
+        "ADC": 0.00369,
+        "ADD": 0.0,
+        "AND": 0.0,
+        "CMP": 0.007477,
+        "DEC": 0.0,
+        "INC": 0.0,
+        "MOV": 0.0,
+        "NEG": 0.0,
+        "NOT": 0.0,
+        "OR": 0.003717,
+        "ROTATE": 0.0,
+        "SBB": 0.0,
+        "SHIFT": 0.0,
+        "SUB": 0.0,
+        "TEST": 0.0,
+        "XOR": 0.0
+      },
+      "final_exact": 0.0,
+      "programs": 200,
+      "step_exact": 0.001094,
+      "steps": 6400
+    },
+    "scrambled_opcode_val": {
+      "failure_examples": [
+        {
+          "asm": "shr1 AL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            52,
+            105,
+            87,
+            71
+          ],
+          "step": 0,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            13,
+            105,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "mov AL, BL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            123,
+            105,
+            87,
+            71
+          ],
+          "step": 1,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            105,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "shr1 CL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "pred_regs": [
+            123,
+            210,
+            87,
+            71
+          ],
+          "step": 2,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            52,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "or CL, CL",
+          "pred_flags": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "pred_regs": [
+            123,
+            215,
+            87,
+            71
+          ],
+          "step": 3,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            52,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "or BL, BL",
+          "pred_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            123,
+            215,
+            87,
+            103
+          ],
+          "step": 4,
+          "trace_id": "heldout_imm-0-0",
+          "true_flags": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "true_regs": [
+            71,
+            52,
+            87,
+            71
+          ]
+        },
+        {
+          "asm": "add CL, 0x9f",
+          "pred_flags": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            239,
+            101,
+            63,
+            102
+          ],
+          "step": 0,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            239,
+            243,
+            63,
+            102
+          ]
+        },
+        {
+          "asm": "dec AL",
+          "pred_flags": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "pred_regs": [
+            17,
+            101,
+            63,
+            102
+          ],
+          "step": 1,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            238,
+            243,
+            63,
+            102
+          ]
+        },
+        {
+          "asm": "rol1 AL",
+          "pred_flags": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "pred_regs": [
+            136,
+            101,
+            63,
+            102
+          ],
+          "step": 2,
+          "trace_id": "heldout_imm-0-1",
+          "true_flags": [
+            1,
+            0,
+            1,
+            0
+          ],
+          "true_regs": [
+            221,
+            243,
+            63,
+            102
+          ]
+        }
+      ],
+      "family_step_exact": {
+        "ADC": 0.0,
+        "ADD": 0.0,
+        "AND": 0.007519,
+        "CMP": 0.066667,
+        "DEC": 0.0,
+        "INC": 0.0,
+        "MOV": 0.0,
+        "NEG": 0.0,
+        "NOT": 0.0,
+        "OR": 0.048,
+        "ROTATE": 0.0,
+        "SBB": 0.0,
+        "SHIFT": 0.0,
+        "SUB": 0.0,
+        "TEST": 0.0,
+        "XOR": 0.0
+      },
+      "final_exact": 0.0,
+      "programs": 500,
+      "step_exact": 0.010291,
+      "steps": 1652
+    }
+  },
+  "external_oracle": {
+    "checked_steps": 8052,
+    "enabled": true,
+    "error": null,
+    "failure_examples": [],
+    "ok": true,
+    "oracle": "unicorn",
+    "splits": {
+      "long": {
+        "checked_steps": 6400,
+        "exact": 1.0
+      },
+      "val": {
+        "checked_steps": 1652,
+        "exact": 1.0
+      }
+    }
+  },
+  "free_run": {
+    "long": {
+      "failure_examples": [],
+      "family_step_exact": {
+        "ADC": 1.0,
+        "ADD": 1.0,
+        "AND": 1.0,
+        "CMP": 1.0,
+        "DEC": 1.0,
+        "INC": 1.0,
+        "MOV": 1.0,
+        "NEG": 1.0,
+        "NOT": 1.0,
+        "OR": 1.0,
+        "ROTATE": 1.0,
+        "SBB": 1.0,
+        "SHIFT": 1.0,
+        "SUB": 1.0,
+        "TEST": 1.0,
+        "XOR": 1.0
+      },
+      "final_exact": 1.0,
+      "programs": 200,
+      "step_exact": 1.0,
+      "steps": 6400
+    },
+    "val": {
+      "failure_examples": [],
+      "family_step_exact": {
+        "ADC": 1.0,
+        "ADD": 1.0,
+        "AND": 1.0,
+        "CMP": 1.0,
+        "DEC": 1.0,
+        "INC": 1.0,
+        "MOV": 1.0,
+        "NEG": 1.0,
+        "NOT": 1.0,
+        "OR": 1.0,
+        "ROTATE": 1.0,
+        "SBB": 1.0,
+        "SHIFT": 1.0,
+        "SUB": 1.0,
+        "TEST": 1.0,
+        "XOR": 1.0
+      },
+      "final_exact": 1.0,
+      "programs": 500,
+      "step_exact": 1.0,
+      "steps": 1652
+    }
+  },
+  "gate_status": {
+    "full_x86_goal_complete": false,
+    "schema_valid": true,
+    "stage0_gate_passed": true
+  },
+  "model_kind": "neural",
+  "operator_structure": {
+    "ADC_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "ADC",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "ADD_RI": {
+      "dft_diag_energy": 0.0625,
+      "family": "ADD",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "ADD_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "ADD",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "AND_RI": {
+      "dft_diag_energy": 0.07696,
+      "family": "AND",
+      "perm_peak": 0.482253,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "AND_RR": {
+      "dft_diag_energy": 0.07696,
+      "family": "AND",
+      "perm_peak": 0.482253,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "CMP_RI": {
+      "dft_diag_energy": 0.0625,
+      "family": "CMP",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "CMP_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "CMP",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "DEC_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "DEC",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "INC_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "INC",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "MOV_RI": {
+      "dft_diag_energy": 0.0625,
+      "family": "MOV",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "MOV_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "MOV",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "NEG_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "NEG",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "NOT_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "NOT",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "OR_RI": {
+      "dft_diag_energy": 0.050287,
+      "family": "OR",
+      "perm_peak": 0.482253,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "OR_RR": {
+      "dft_diag_energy": 0.050287,
+      "family": "OR",
+      "perm_peak": 0.482253,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "ROL1_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "ROTATE",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 8
+    },
+    "ROR1_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "ROTATE",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 8
+    },
+    "SBB_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "SBB",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "SHL1_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "SHIFT",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 8
+    },
+    "SHR1_R": {
+      "dft_diag_energy": 0.0625,
+      "family": "SHIFT",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 8
+    },
+    "SUB_RI": {
+      "dft_diag_energy": 0.0625,
+      "family": "SUB",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "SUB_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "SUB",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "TEST_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "TEST",
+      "perm_peak": 1.0,
+      "probe_bits": 4,
+      "rank": 16
+    },
+    "XOR_RI": {
+      "dft_diag_energy": 0.0625,
+      "family": "XOR",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    },
+    "XOR_RR": {
+      "dft_diag_energy": 0.0625,
+      "family": "XOR",
+      "perm_peak": 0.0625,
+      "probe_bits": 4,
+      "rank": 1
+    }
+  },
+  "stage": "stage0_x86_lite_alu",
+  "teacher_forced": {
+    "long": {
+      "family_step_exact": {
+        "ADC": 1.0,
+        "ADD": 1.0,
+        "AND": 1.0,
+        "CMP": 1.0,
+        "DEC": 1.0,
+        "INC": 1.0,
+        "MOV": 1.0,
+        "NEG": 1.0,
+        "NOT": 1.0,
+        "OR": 1.0,
+        "ROTATE": 1.0,
+        "SBB": 1.0,
+        "SHIFT": 1.0,
+        "SUB": 1.0,
+        "TEST": 1.0,
+        "XOR": 1.0
+      },
+      "flag_exact": 1.0,
+      "n_steps": 6400,
+      "reg_exact": 1.0,
+      "step_exact": 1.0
+    },
+    "train": {
+      "family_step_exact": {
+        "ADC": 1.0,
+        "ADD": 1.0,
+        "AND": 1.0,
+        "CMP": 1.0,
+        "DEC": 1.0,
+        "INC": 1.0,
+        "MOV": 1.0,
+        "NEG": 1.0,
+        "NOT": 1.0,
+        "OR": 1.0,
+        "ROTATE": 1.0,
+        "SBB": 1.0,
+        "SHIFT": 1.0,
+        "SUB": 1.0,
+        "TEST": 1.0,
+        "XOR": 1.0
+      },
+      "flag_exact": 1.0,
+      "n_steps": 4795,
+      "reg_exact": 1.0,
+      "step_exact": 1.0
+    },
+    "val": {
+      "family_step_exact": {
+        "ADC": 1.0,
+        "ADD": 1.0,
+        "AND": 1.0,
+        "CMP": 1.0,
+        "DEC": 1.0,
+        "INC": 1.0,
+        "MOV": 1.0,
+        "NEG": 1.0,
+        "NOT": 1.0,
+        "OR": 1.0,
+        "ROTATE": 1.0,
+        "SBB": 1.0,
+        "SHIFT": 1.0,
+        "SUB": 1.0,
+        "TEST": 1.0,
+        "XOR": 1.0
+      },
+      "flag_exact": 1.0,
+      "n_steps": 1652,
+      "reg_exact": 1.0,
+      "step_exact": 1.0
+    }
+  },
+  "thresholds": {
+    "configured_stage0_exact_final_state": 0.995,
+    "configured_stage0_exact_step_state": 0.99,
+    "note": "Smoke runs are allowed to fall short; failures are evidence for next training pass."
+  },
+  "word_bits": 8
+}

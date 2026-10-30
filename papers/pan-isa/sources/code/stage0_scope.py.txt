@@ -1,0 +1,75 @@
+REGS = ("AL", "CL", "DL", "BL")
+PARENT_REGS = {"AL": "RAX", "CL": "RCX", "DL": "RDX", "BL": "RBX"}
+FLAGS = ("CF", "ZF", "SF", "OF")
+SPLITS = ("train", "heldout_imm", "heldout_reg_tuple", "full")
+FLAG_BITS = {"CF": 0, "ZF": 6, "SF": 7, "OF": 11}
+
+
+@dataclasses.dataclass(frozen=True)
+class OpSpec:
+    name: str
+    iform: str
+    family: str
+    operands: str  # rr, ri, r, none
+    writes_dst: bool
+    writes_flags: bool
+
+
+OPS: Tuple[OpSpec, ...] = (
+    OpSpec("MOV_RI", "MOV_GPR8_IMMb", "MOV", "ri", True, False),
+    OpSpec("MOV_RR", "MOV_GPR8_GPR8", "MOV", "rr", True, False),
+    OpSpec("ADD_RR", "ADD_GPR8_GPR8", "ADD", "rr", True, True),
+    OpSpec("ADD_RI", "ADD_GPR8_IMMb", "ADD", "ri", True, True),
+    OpSpec("SUB_RR", "SUB_GPR8_GPR8", "SUB", "rr", True, True),
+    OpSpec("SUB_RI", "SUB_GPR8_IMMb", "SUB", "ri", True, True),
+    OpSpec("ADC_RR", "ADC_GPR8_GPR8", "ADC", "rr", True, True),
+    OpSpec("SBB_RR", "SBB_GPR8_GPR8", "SBB", "rr", True, True),
+    OpSpec("INC_R", "INC_GPR8", "INC", "r", True, True),
+    OpSpec("DEC_R", "DEC_GPR8", "DEC", "r", True, True),
+    OpSpec("NEG_R", "NEG_GPR8", "NEG", "r", True, True),
+    OpSpec("AND_RR", "AND_GPR8_GPR8", "AND", "rr", True, True),
+    OpSpec("AND_RI", "AND_GPR8_IMMb", "AND", "ri", True, True),
+    OpSpec("OR_RR", "OR_GPR8_GPR8", "OR", "rr", True, True),
+    OpSpec("OR_RI", "OR_GPR8_IMMb", "OR", "ri", True, True),
+    OpSpec("XOR_RR", "XOR_GPR8_GPR8", "XOR", "rr", True, True),
+    OpSpec("XOR_RI", "XOR_GPR8_IMMb", "XOR", "ri", True, True),
+    OpSpec("NOT_R", "NOT_GPR8", "NOT", "r", True, False),
+    OpSpec("CMP_RR", "CMP_GPR8_GPR8", "CMP", "rr", False, True),
+    OpSpec("CMP_RI", "CMP_GPR8_IMMb", "CMP", "ri", False, True),
+    OpSpec("TEST_RR", "TEST_GPR8_GPR8", "TEST", "rr", False, True),
+    OpSpec("SHL1_R", "SHL_GPR8_1", "SHIFT", "r", True, True),
+    OpSpec("SHR1_R", "SHR_GPR8_1", "SHIFT", "r", True, True),
+    OpSpec("ROL1_R", "ROL_GPR8_1", "ROTATE", "r", True, True),
+    OpSpec("ROR1_R", "ROR_GPR8_1", "ROTATE", "r", True, True),
+)
+
+OP_INDEX = {op.name: i for i, op in enumerate(OPS)}
+REG_INDEX = {reg: i for i, reg in enumerate(REGS)}
+OP_WRITES_DST = torch.tensor([int(op.writes_dst) for op in OPS], dtype=torch.bool)
+OP_WRITES_FLAGS = torch.tensor([int(op.writes_flags) for op in OPS], dtype=torch.bool)
+OP_USES_IMM = torch.tensor([int(op.operands == "ri") for op in OPS], dtype=torch.bool)
+VALUE_CANDIDATE_INDEX = {
+    "MOV_RI": 1,
+    "MOV_RR": 1,
+    "ADD_RR": 2,
+    "ADD_RI": 2,
+    "SUB_RR": 4,
+    "SUB_RI": 4,
+    "ADC_RR": 3,
+    "SBB_RR": 5,
+    "INC_R": 6,
+    "DEC_R": 7,
+    "NEG_R": 8,
+    "AND_RR": 9,
+    "AND_RI": 9,
+    "OR_RR": 10,
+    "OR_RI": 10,
+    "XOR_RR": 11,
+    "XOR_RI": 11,
+    "NOT_R": 12,
+    "CMP_RR": 4,
+    "CMP_RI": 4,
+    "TEST_RR": 9,
+    "SHL1_R": 13,
+    "SHR1_R": 14,
+    "ROL1_R": 15,

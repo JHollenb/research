@@ -1,0 +1,603 @@
+# Post1 through the final scan and output consumer
+
+Two native experiments now connect the source interaction before post1 to its
+write, the final selective scan, the final post MLP and the register consumer.
+The clearest result is conditional restoration: with exactly the same additive
+P1 output installed, restoring native M1 changes R7 from 510 to the complete
+native decoded register result, R7=512. The post1 output interaction alone is
+not required to preserve the tested carry decisions under its declared cut.
+
+[Figure](../outputs/state-origin-r3-mamba/state-transition-sequence.png) ·
+[Sequence audit](../outputs/state-sequence-r3-mamba/audit-v2/audit.json) ·
+[Origin audit](../outputs/state-origin-r3-mamba/audit.json) ·
+[Cross-panel payload join](../outputs/state-origin-r3-mamba/cross-panel-join.json) ·
+[Campaign summary](../outputs/state-origin-r3-mamba/campaign-summary.json)
+
+## Specimen and intervention contract
+
+Frozen checkpoint `9399e921776d7a5437c5bbd51bfc1928f09d2ddea444fe2aa1c9cf282baf7f1e`,
+native CPU FP32/thread1, raw instruction `4883c701`, register R7=508..511,
+other registers/flags zero. These are repeat captures of the existing native
+source square, not new independent semantic examples. The model receives raw
+instruction/register/flag bits. Supplied ADD1 evaluates predictions; no oracle
+after-state, semantic label, training update or repair enters a forward.
+
+M1 is mixer1's residual output and post1's input. P1 is post1's write. X2=M1+P1
+feeds the final mixer. Its decay D, local scan writer w and completed state H
+remain distinct from its projected residual write W2. M2=X2+W2 feeds post2,
+whose write P2 produces the final residual M2+P2.
+
+Completion is always actual FP32 `(10+01)-00`. Full tensors are completed.
+Native clamps are supplied intervention state, explicitly recorded in typed
+receipts. One immutable prepared parent seals all candidate payloads before
+suffix execution; no physical batch fusion is claimed.
+
+## First panel
+
+| Intervention | R7 | Next R7 | Bit8 logit | Bit9 logit |
+|---|---:|---:|---:|---:|
+| Native P1 copy | 512 | 513 | -26.748415 | +22.237938 |
+| P1 completion | 512 | 513 | -20.976673 | +14.052446 |
+| P1 completion, native X2 | 512 | 513 | -26.748415 | +22.237938 |
+| P1 completion, native W2 | 512 | 513 | -25.577181 | +22.163422 |
+| P1 completion, native H | 512 | 513 | -26.977350 | +18.877506 |
+| P1 completion, native M2 | 512 | 513 | -26.748415 | +22.237938 |
+| P1 completion, native P2 | 512 | 513 | -24.164286 | +16.352411 |
+| P1 completion, native D | 512 | 513 | -24.193773 | +17.332861 |
+| P1 completion, native w | 512 | 513 | -22.913450 | +15.580015 |
+| P1 completion, native D and w | 512 | 513 | -26.977350 | +18.877506 |
+| P1 completion only at rows 10..63 | 512 | 513 | -26.748415 | +22.237938 |
+| P1 interaction enhancement | 512 | 513 | -23.126207 | +24.391251 |
+
+All twelve preserve native register/flag hard decisions. They change continuous
+outputs, with complete heads retained. Future-only edits preserve target logits
+exactly while moving later/pooled outputs. Enhancing and removing the interaction
+both weaken bit 8's native negative margin, so the edit is not a monotone carry
+control.
+
+Native X2 and M2 clamps recover all eleven heads exactly. They are closure
+controls. The W2 clamp leaves the changed residual path and post2 response;
+its remaining effect is not purely a linear projection. Restoring H still
+leaves changed C, gate, local bypass and X2. Restoring D and w reproduces H
+exactly and matches the H-clamp arm across all heads; those two arms are one
+path-closure check, not independent scientific evidence.
+
+## Interaction inside the recurrence
+
+The full-position D/w factorial holds the P1-completed X2, C, gate and local
+bypass exactly fixed across its four corners. Its mixed remainder is
+`H(D1,w1)-H(D0,w1)-H(D1,w0)+H(D0,w0)`.
+
+Unlike the earlier single-position clock panel, interaction can arise before
+the MLP: changed retention at later positions multiplies changed earlier writes.
+
+| Reader | H mixed norm | Direct mixed projection | P2 mixed projection | Actual head mixed effect |
+|---|---:|---:|---:|---:|
+| R7 bit 8 | 0.739944 | -0.161125 | -0.685675 | -0.846800 |
+| R7 bit 9 | 0.718071 | +0.032667 | -0.015596 | +0.017076 |
+
+The native H→C→gate→output-matrix→register pullback predicts the direct
+projection within 5.05e-6. Direct+post reconciliation is within 4.59e-6 logits.
+Residuals remain observations. The post mixed term combines response to
+nonadditive M2 with any newly generated post2 curvature; it does not isolate
+the latter or partition native causal importance into percentages.
+
+Full per-stage trajectories and signed components are in
+[transition-sequence.json](../outputs/state-sequence-r3-mamba/audit-v2/transition-sequence.json).
+
+## Origin of the post1 interaction
+
+The second panel reuses all four sealed native M1/P1 arrays from the first.
+It captures only native511 again, with a fresh copy and two new causal corners:
+M1 completion with native-recomputed P1, and M1 completion with P1 completion.
+
+| M1 | P1 | R7→next | Bit8/9 logits | Other register/flag decisions changed |
+|---|---|---|---|---:|
+| Native | Native | 512→513 | -26.748415, +22.237938 | 0 |
+| Native | Completed, from first panel | 512→513 | -20.976673, +14.052446 | 0 |
+| Completed | Native P1(M1add) | 508→509 | +7.354660, -5.809855 | 6 |
+| Completed | Same P1 completion | 510→511 | +7.805198, -6.952922 | 7 |
+
+The fixed-P1 cross-panel digest and native eleven-head baseline join are
+verified. Restoring native M1 under that same P1 completion is sufficient for
+native decoded registers in this background. This is not global necessity,
+exclusive mediation, a semantic instruction or a smallest circuit.
+
+Define `K1=P1(M1add)-P1add`, `G1=P1native-P1(M1add)`. Full-state norms are
+7.698004 and 21.969912, with cosine 0.105290. K1's row 1 norm is 7.667966 and
+its row 8 norm 0.128475. G1 spans rows 1..8, with norms 7.153983, 9.950900,
+9.749740, 8.959263, 8.076226, 6.864114, 6.050301 and 2.813609.
+
+The K+G identity telescopes exactly in the retained FP64 accounting. It is not
+independent evidence of semantic decomposition, and component norms are not
+causal percentages. Post1 remains pointwise; distributed G reflects distributed
+input, and mixer2 performs subsequent transport.
+
+At fixed additive M1, using native P1(M1add) instead of P1add shifts targets
+by -0.450538/+1.143067 toward native, leaves both target decisions wrong and
+changes the full word510→508. This supports target-margin correction with
+collateral, not arithmetic repair.
+
+The [origin vectors](../outputs/state-origin-r3-mamba/post1-origin.json),
+[native outcomes](../outputs/state-origin-r3-mamba/measurements.json) and
+[revisable names](../outputs/state-origin-r3-mamba/role-hypotheses.json) are separate
+from immutable execution evidence. A useful overall name is post1 inherited-
+interaction response and conditioning of final-scan ADD1 carry margins.
+
+## Execution and custody
+
+Job `job-47c4ee1ec1b2` completed 32 physical calls, four root replays and twelve
+suffixes: 48 logical items, 12.7108 worker seconds, 1139.8 MB peak RSS. Its
+outer scheduler status remains failed: packaging exceeded the 64 MiB compressed
+log-archive budget after all science completed. MinIO upload also remained
+failed-queued. Authenticated read-only recovery from the scheduler-recorded
+worker directory retained all 68 original files, 295, 880, 772 expanded bytes,
+in a 108, 423, 856-byte archive. Every file and archive hash verified, with zero
+model reruns. The [recovery audit](../runs/native-forward-symbols-20261030T033100.976474Z/recovery-audit.json)
+and exact executed recovery source remain beside the failed job. A bounded
+128 MiB recovery reader retains all path, member, expanded-size and hash checks;
+normal log publication still uses its original 64 MiB default.
+
+Job `job-e60ee9a19c0a` succeeded: eight physical calls, one root replay and three
+suffixes, twelve logical items, 8.4842 worker seconds, 993.4 MB peak RSS. Both
+used CPU FP32/thread1, strict preflight, installed public wheels, one finite
+mrun lease each, no training and no automatic retries. The initial submission
+attempt against a local scheduler did not create a model job.
+
+Independent public audits verify fifteen typed receipts, 165 exact per-head
+suffix-versus-full-forward joins and fifteen literal own-state successor joins.
+All successors consume model-predicted registers/flags. They start from even
+R7 words, so these are state-consumption checks rather than a new carry-chain
+propagation test. Full output flags remain predictions; ADD1 register scoring
+does not certify their semantic correctness.
+
+The public catalogs reload exactly. Standard evidence run/verify succeeds with
+target-streams-only coverage and no automatic receipt ingestion; direct typed
+audits are the numerical authority. Fifty-three focused tests pass. The
+analyzers and helper sources are retained under each final audit's `sources/`;
+the first sequence analysis remains separate from the final `audit-v2`.
+
+To inspect without another model run, use the installed public MDB environment:
+
+```sh
+/path/to/qualified/python isa/scripts/upstream_writer_analyze.py \
+  --run-dir isa/runs/native-forward-symbols-20261030T034333.710458Z \
+  --output isa/outputs/NEW-ORIGIN-AUDIT \
+  --installed-proof artifacts/mdb-discovery-upgrade-20261029/installed-proof.json
+```
+
+Protocol sources: [sequence and cuts](../isa_lab/upstream_writer.py),
+[native execution](../isa_lab/upstream_writer_assay.py),
+[origin plan](../scripts/prepare_state_origin.py),
+[independent audit](../scripts/upstream_writer_analyze.py),
+[presentation](../scripts/present_state_sequence.py).
+
+## Follow-up: response removal and the same update in two recipients
+
+The proposed G1 contrast has now run as `job-df88c373dcbd`. Native M1 stays
+fixed and the actual retained P1(M1add) is installed. A fresh native-copy
+control supplies the reference. No source vectors are fitted to the output.
+
+Removing G1 changes the bit 8/9 logits to −21.559338/+14.559992: shifts of
++5.189077/−7.677946 from native. Registers remain512 and then513; all hard
+register/flag decisions remain native. This separates removing the inherited
+response from removing K1+G1.
+
+The new corner also completes the same-K comparison across receiving states:
+
+| Receiving M1 | Effect of P1add→actual P1(M1add), bit 8 | Bit9 |
+|---|---:|---:|
+| Additive M1 | −0.450538 | +1.143067 |
+| Native M1 | −0.582664 | +0.507545 |
+| Native minus additive effect | −0.132127 | −0.635521 |
+
+The P1 endpoint tensors are exactly identical across recipients. FP32 residual
+addition makes the realized X2 displacement differ slightly: L2 7.6573e−6,
+maximum element difference1.90735e−6. This is a context-dependent finite
+effect with the same sign at both readers, not a sign reversal or a
+bit-identical post-add displacement. The [cross-panel audit](../outputs/state-response-r3-mamba/recipient-dependence.json)
+checks model/input identity, payloads, native baselines and original receipts.
+
+![Same post1 replacement in two receiving states](../outputs/state-response-r3-mamba/post1-recipient-dependence.png)
+
+## Follow-up: one row travels through the scan
+
+`job-57bb3613005a` uses native M1 and P1add as its baseline. It independently
+switches row 1 or all remaining P1 rows to the actual P1(M1add) endpoint. A
+fourth arm makes the row 1 switch and restores the full H2 from the retained
+**P1add baseline**, rather than the original native H. The prior full-K arm
+completes the row 1/rest factorial without another model run.
+
+The fresh baseline reproduces every retained stage and all eleven heads.
+The row 1 edit changes P1, X2 and the gate only at row 1. Decay, local writer,
+C and local bypass change only at rows 1–3, matching the causal width-three
+convolution. H changes at every row 1–63. At rows 8/9, X2, C, gate and local
+bypass are exactly baseline.
+
+Beyond the last changed factor at row 3, the signed transport satisfies
+`ΔH[t] = Dbaseline[t] * ΔH[t−1]` within a maximum element residual of
+8.44897e−7 across rows 4–63. Signed vectors, predictions and per-position
+residuals remain in [post1-local-route.json](../outputs/state-local-r3-mamba/audit-v2/post1-local-route.json).
+These residuals retain native FP32 parallel-scan rounding; they are observations.
+
+| Replacement relative to P1add | Bit8 logit shift | Bit9 logit shift |
+|---|---:|---:|
+| Row1 only | −0.588724 | +0.664017 |
+| Remaining rows only | +0.011599 | −0.170225 |
+| Full K, retained prior arm | −0.582664 | +0.507545 |
+| Full minus row 1 minus remaining | −0.005539 | +0.013754 |
+| Row1 with baseline H restored | **0 exactly** | **0 exactly** |
+
+For row 1 alone, the native H→C→gate→output→register pullback predicts direct
+R7 effects −0.171601/+0.128538, with residuals −2.74e−7/+5.84e−8. Post2
+adds −0.417124/+0.535481. This final-MLP response reinforces the direct
+effect, but the panel does not isolate its new curvature.
+
+Baseline-H restoration removes both target effects exactly while early local
+paths and pooled heads remain changed. The whole register tensor is not
+restored numerically. All four branches retain native hard register/flag
+decisions, compute 512→513 and consume their own predicted states. Thus this
+is a measured conditional transport route to these readers, not complete
+state repair, unique mediation, or evidence that row 1 itself means carry.
+
+![Measured row-local temporal route](../outputs/state-local-r3-mamba/audit-v2/post1-local-route.png)
+
+The qualified alias is **row-1 post.1 interaction contribution transported by
+the final scan to ADD1 carry margins**, under native M1/P1add and the 508–511
+source square. The [separately sealed role annotation](../outputs/state-local-r3-mamba/audit-v2/role-hypotheses.json)
+binds actual computation-record IDs and explicitly distinguishes its P1add
+comparison from the generic immutable records' original-native comparison.
+Semantic-operation identity and cross-context transfer remain unestablished.
+
+## Follow-up execution and audit
+
+The response job succeeded with six physical calls, nine logical items,
+two typed branches, 22 exact independent head joins and two own-state joins;
+11.5394 worker seconds and 1032.5 MB peak RSS. The local job succeeded with
+ten physical calls, 15 logical items, four typed branches, 44 exact independent
+head joins and four own-state joins; 4.5731 worker seconds and 1056.4 MB peak RSS.
+Both used the same frozen checkpoint, CPU FP32/thread1, strict preflight,
+installed public wheels, single finite mrun leases and no retries or training.
+
+Across all four panels: **56 physical calls, 84 logical items, 21 typed branches,
+231 exact independent head comparisons and 21 literal own-state successor
+joins**. These are controlled contrasts on one source square, not 21 independent
+semantic examples. The [new campaign summary](../outputs/state-local-r3-mamba/audit-v2/campaign-summary.json)
+retains the earlier publication failure and all four audit identities.
+
+Astra reviewed the temporal experiment and identified one missing provenance
+check in the first local audit: the retained full-K corner needed its own M1
+and selected-value receipt joins, plus exact report-row reference binding.
+The final [audit-v2](../outputs/state-local-r3-mamba/audit-v2/audit.json)
+adds those checks offline and preserves the initial audit. Every numerical
+measurement is unchanged. No model rerun was used. Analysis sources are
+snapshotted with hashes; standard evidence run/verify is clean with
+target-streams-only coverage, distinct from the direct typed audits.
+Sixty-two focused tests pass.
+
+## Matched-prefix consumer transfer
+
+The next context uses the previously observed native square 252–255. Its low
+prefix is identical to 508–511 through bit 7. All four M1/P1 source arrays match
+through that prefix, including the row 1 slices. The checkpoint and positionwise
+post1 law are fixed, so we reuse the byte-bound actual P1(M1add) row 1 endpoint.
+The full new P1add baseline is measured from four fresh native sources.
+This is a new causal contrast on known inputs, not an independent replication
+of the temporal route or a held-out model-generalization claim.
+
+At physical bit 8, the earlier result512 requires zero while the new result256
+requires one. Bit7 clears in both and serves as a shared-prefix control. Bit9
+is an adjacent-output diagnostic, one in512 and zero in256.
+
+Before the new row 1 replay, the plan seals a forecast: take old signed ΔH7,
+transport it with the new baseline D8/D9, and apply the new baseline C, gate
+and learned projections. It uses no new row 1 outputs. The actual final-MLP
+response remains unpredicted.
+
+| Physical row | Prior total effect, 511→512 | New direct forecast | New actual direct | New post2 response | New actual total |
+|---|---:|---:|---:|---:|---:|
+| 7 | −0.442333 | −0.125116 | −0.125114 | −0.317219 | −0.442333 |
+| 8 | −0.588724 | +0.111672 | +0.111674 | +0.570498 | +0.682170 |
+| 9 | +0.664017 | +0.022483 | +0.022483 | −0.164623 | −0.142140 |
+
+All 94 selected-stage prefix comparisons across the baseline/row1 pairs are
+exact through row 7. The largest new direct-forecast discrepancy across the
+three readers is 1.94804e−6; ΔH forecast residuals at rows 8/9 are2.71e−7 and
+1.59e−7. Sealed predictions are authoritative; FP64 reconstruction differences
+are retained diagnostics rather than a scientific hard gate. Restoring the
+new baseline H removes all three target effects exactly. Every new transfer
+arm predicts 256→257 and keeps native hard register/flag decisions.
+
+The same transported contribution supports the supplied target bits in both
+contexts, with different signs at the same physical reader. At row 9, the direct
+contribution opposes the required zero and the final MLP response reverses the
+total effect. Support belongs to a specified consumer boundary and contrast.
+
+The [prospective record](../outputs/state-transfer-r3-mamba/audit-v2/consumer-transfer.json),
+[qualified role revision](../outputs/state-transfer-r3-mamba/audit-v2/role-hypotheses.json)
+and [figure](../outputs/state-transfer-r3-mamba/audit-v2/matched-prefix-transfer.png)
+retain the source lineage and numerical observations.
+
+## Native test of gate-dependent direction
+
+Offline evaluations cross the saved H displacement, C and gate operands.
+At row 8, replacing only the gate changes the direct equation's sign; replacing
+only H or C does not. These are diagnostic equation evaluations, not native
+intervention arms. A two-arm follow-up tests the gate explanation directly.
+
+Both branches use the new 255 recipient. One installs new P1add; the other adds
+the same row 1 endpoint. In each, only post-SiLU gate row 8 comes from the old 511
+P1add baseline. Every other gate position keeps that branch's natural value.
+The paired effect is row 1-present minus row 1-absent under one common gate.
+Baseline movement from changing the gate is measured separately.
+
+| Gate at row 8 | Direct row 1 effect | Post2 response | Actual total row 1 effect | Baseline row 8 logit |
+|---|---:|---:|---:|---:|
+| Natural new gate | +0.111674 | +0.570498 | +0.682170 | +11.938418 |
+| Old511 gate | −0.151249 | −1.008764 | −1.160011 | −32.880829 |
+
+All 16 checks of M1/P1/X2/D/w/H/C/local bypass across the two gate-edited arms
+are exactly their corresponding natural-gate parent. Rows 7/9 effects remain
+exactly unchanged. The sealed old-gate direct prediction is−0.1512488315;
+the native result differs by 1.17051e−7. The complete response also reverses,
+with post2 reinforcing the new negative direct effect.
+
+The gate replacement itself causes wrong arithmetic: both branches predict
+R7=0 instead of 256. Their next native ADD1 consumes that actual0 and predicts 1.
+No other hard register/flag decision changes relative to native. Soft collateral
+and all eleven heads remain retained. This is a conditional gate-context result
+using donor state, not complete arithmetic repair or a universal carry command.
+
+![Native gate-context factorial](../outputs/state-gate-r3-mamba/gate-conditioned-direction.png)
+
+The earned role is **recipient-gate-dependent direction of the transported
+post1 row 1 contribution**. A stable temporal-route name can coexist with
+different reader-specific behavior annotations. The [gate record](../outputs/state-gate-r3-mamba/gate-context.json)
+and [separately sealed alias](../outputs/state-gate-r3-mamba/role-hypotheses.json)
+bind the actual paired comparison; generic immutable computation records still
+compare with the original native output.
+
+## Transfer execution and remaining scope
+
+| Job | Purpose | Physical/logical calls | Worker seconds | Peak RSS MB |
+|---|---|---:|---:|---:|
+| `job-f2a9a24ad491` | Four new source captures and P1add baseline | 10/15 | 7.0403 | 1049.2 |
+| `job-8d47bc95a1c8` | Baseline, row 1 and baseline-H restoration | 8/12 | 8.7401 | 1029.4 |
+| `job-3e22dd7870ff` | Paired old-gate comparison | 6/9 | 7.1914 | 941.3 |
+
+All three jobs succeeded and used CPU FP32/thread1, strict preflight, installed
+public wheels, finite single leases and zero training/retries. They add24
+physical calls, 36 logical items, six typed branches, 66 exact independent head
+comparisons and six literal own-state successor joins. Standard evidence
+run/verify is clean with target-streams-only coverage. Sixty-two focused tests
+pass and changed research modules pass Ruff.
+
+The [complete campaign summary](../outputs/state-gate-r3-mamba/campaign-summary.json)
+now retains 80 physical calls, 120 logical items, 27 typed branches, 297 independent
+head joins and 27 own-state joins. Prior raw results, failed publication status
+and initial analysis versions remain preserved. Transfer audit-v2 demotes exact
+FP64 forecast reconstruction into diagnostics and checks ordered forecast rows;
+it uses zero additional model calls. All executed offline sources are snapshotted.
+
+## October 30 source context and displacement applicability
+
+The source test has now run with R6=3 across R7=252–255, keeping the raw ADD1
+instruction and flags fixed. All four fresh native cases compute the complete
+expected register state and preserve R6. This changes the low-position source:
+native M1 row 1 differs from the R6=0 context by L2 2.963492, and P1 by 1.277166.
+No matched-prefix or old-ΔH forecast is assumed.
+
+Two calibration arms retain actual new P1add and actual P1(M1add). The latter
+replaces only full M1, with selected M1/P1 values joined to its typed receipt
+and independent full-forward audit. Its whole-model outcome is wrong:
+R7=252→253 with five additional hard changes beyond the target rows. R6 stays 3.
+The useful P1 endpoint remains a valid native MLP computation on M1add. Its
+later row-only installation into native M1 is a declared hybrid intervention.
+
+The fresh K1 row-1 norm is 7.59520024 versus old realized 7.66796589. Their cosine
+is 0.998609034 and difference norm 0.40904014. The native M1 row-1 interaction
+norm changes from 16.146943 to 15.945828. Signed vectors remain in
+[source-applicability.json](../outputs/state-source-route-r3-mamba/source-applicability.json).
+Norms and cosines have no scientific gating authority.
+
+Three route arms use the new native-M1/P1add recipient: fresh row-1 endpoint,
+fresh row 1 plus new-baseline H restoration, and old displacement added to the
+new P1add row 1. The new baseline is retained once from the audited calibration;
+it is not counted as another route replay. The old update is reconstructed
+from named receipt-bound old baseline/row-1 branches as
+`FP32(old_row1_P1-old_baseline_P1)`, then installed as
+`FP32(new_P1add_row1+old_update_row1)`.
+
+| Reader | Fresh direct | Fresh post2 | Fresh total | Transferred direct | Transferred post2 | Transferred total |
+|---|---:|---:|---:|---:|---:|---:|
+| R7 bit 7 | −0.032634 | −0.183331 | −0.215965 | −0.074679 | −0.257865 | −0.332542 |
+| R7 bit 8 | +0.038186 | +0.616923 | +0.655109 | +0.062945 | +0.630569 | +0.693516 |
+| R7 bit 9 | +0.019469 | −0.171783 | −0.152314 | +0.021715 | −0.170793 | −0.149078 |
+
+Both row-1 changes affect P1/X2/gate only at row 1, D/w/C/local at rows 1–3,
+and H at rows 1–63. Target-local X2/C/gate/local remain exactly baseline.
+Fresh transport beyond row 3 follows new baseline D times preceding ΔH,
+with maximum element residual 8.81658e−7. Restoring baseline H removes all
+three fresh target effects exactly; early and pooled outputs remain changed.
+
+Fresh P1 installation has zero endpoint residual. Old-update addition has
+maximum P1 displacement residual 5.96e−8. Realized X2 versus P1 differences
+are 2.24e−7 for fresh and 1.79e−7 for transfer. These finite numerical residuals
+remain observations, not thresholds deciding whether a route exists.
+
+All three route arms preserve complete register correctness and native hard
+flag decisions, with R6=3 and R7=256→257. High vector similarity does not give
+equal numerical behavior: bit-7 effects and bit-8 direct projections differ
+substantially. This is bounded displacement transfer with recurring transport,
+not a portable source-independent formation law.
+
+The [continuation comparison](../outputs/state-source-route-r3-mamba/continuation-equivalence.json)
+checks actual saved tensors: each route arm supplies exactly the same raw
+instruction, decoded registers and flags to the next fresh call as the retained
+baseline. All eleven successor heads are exactly equal. Current register,
+flag, immediate and store-value/address logits remain unequal. This is
+decoded-state continuation equivalence under supplied next ADD1, not current
+hidden-state equivalence or persistent H across calls. The 33 derived head joins
+are not added to the independent suffix-versus-full-forward denominator.
+
+The [role annotations](../outputs/state-source-route-r3-mamba/role-hypotheses.json)
+bind source-context-qualified row-1 transport and bounded displacement transfer
+to actual computation records. Their comparison baseline is P1add; generic
+immutable record projections still use original native output. The
+[figure](../outputs/state-source-route-r3-mamba/source-applicability.png)
+and [follow-up post](../../obsidian/blog/2026-10-30-001156-computation-routes-across-source-contexts.md)
+preserve that distinction.
+
+| Job | Purpose | Physical/logical calls | Worker seconds | Peak RSS MB |
+|---|---|---:|---:|---:|
+| `job-787b5db321e4` | Four fresh R6=3 sources, P1add/M1add calibration | 12/18 | 10.0127 | 1063.4 |
+| `job-59ff2bd222c6` | Three route/transfer arms with retained baseline | 8/12 | 8.7596 | 994.5 |
+
+Both succeeded under CPU FP32/thread1, strict preflight, installed public
+wheels, finite single leases and no training/retries. They add 20 physical
+calls, 30 logical items, five typed branches, 55 exact independent head joins
+and five literal own-state successor joins. Standard evidence run/verify is
+clean with target-streams-only coverage. Sixty-two focused tests pass; changed
+modules pass Ruff. Astra reviewed source applicability and strengthened the
+fresh endpoint's selected-M1 receipt join before the route audit.
+
+The [new complete campaign summary](../outputs/state-source-route-r3-mamba/campaign-summary.json)
+retains 100 physical calls, 150 logical items, 32 typed branches, 352 independent
+head joins and 32 own-state joins across nine jobs. Historical raw evidence and
+analysis versions remain preserved. The next independent condition can change
+the instruction or several source-register bits, with the route and payload
+applicability tested separately rather than inferred from a cosine score.
+
+## Equivalent register updates, changed encoding and early collateral
+
+The next panel fixes R6=3 and R7=252..255 while changing imm8 ADD1
+`4883c701` to imm32 ADD1 `4881c701000000`. Both padded windows have fifteen
+bytes; only byte1 changes, XOR2. Expected instruction length changes4→7.
+This is register-update equivalence, with no claim about PC/fetch execution.
+All four fresh native cases preserve the complete expected register vector
+and predict length7. The P1add calibration predicts256→257; M1add remains
+wrong252→253 with five other hard changes. All length predictions remain7.
+
+The [encoding route](../outputs/state-encoding-route-r3-mamba/source-applicability.json)
+uses a fresh endpoint and separately transfers the latest R6=3 imm8 update.
+Its old baseline is the actual `calibration-P1add` in `job-787b5db321e4`;
+its endpoint is `local-row1` in `job-59ff2bd222c6`. Separate report, sealed
+plan, receipt, selected-value and independent-head joins qualify both sources.
+The new baseline is retained once from the new calibration, not replayed as
+another route branch.
+
+Native M1/P1 row1 changes have L2 norms6.898802/3.325210. Fresh K1 row1 has
+norm10.030385 versus old realized7.595200, cosine.985897 and difference
+norm2.842347. These are geometry observations, not semantic gates.
+
+| R7 reader | Fresh direct | Fresh post2 | Fresh total | Old displacement direct | Old displacement post2 | Old displacement total |
+|---|---:|---:|---:|---:|---:|---:|
+| bit7 | −.055019 | −.288069 | −.343088 | −.031573 | −.204840 | −.236414 |
+| bit8 | +.071827 | +.900600 | +.972426 | +.025931 | +.800661 | +.826593 |
+| bit9 | +.017513 | −.186865 | −.169353 | +.017100 | −.152941 | −.135841 |
+
+P1/X2 edits remain at row1; D/w/C/local changes span rows1–3 and H changes
+span rows1–63. Later target X2/C/G/local fields stay exactly baseline.
+Beyond row3, baseline-decay transport has maximum element residual8.11e−7.
+Restoring full actual baseline H removes all three later target effects
+exactly. Fresh endpoint installation residual is zero; old FP32-displacement
+addition residual is2.98e−8. X2/P1 residuals remain1.79e−7/2.38e−7.
+
+The [full-state collateral analysis](../outputs/state-encoding-route-r3-mamba/collateral/audit-v2/collateral.json)
+prevents a target-only equivalence claim. All arms predict R7=256→257, but
+fresh row1 and fresh+H restore also set R3bit2, producing R3=4 through the
+successor. Baseline R3bit2 logit is−2.418501; fresh gives+.855049,
+H-restored gives+1.274229, and old displacement gives−.194489. The old edit
+preserves hard state but has a substantial continuous near miss. All hard
+flags remain baseline decisions; their semantic correctness is unassessed.
+
+At row2, X2 and G are exactly baseline. With H restored, C and local S
+remain changed. The native readout expansion
+`z = ((H*C).sum(-1) + S) * G` gives direct R3 contributions C+1.100231 and
+local+.125542, followed by post2+2.466957. This is a signed algebraic
+expansion, not an independent intervention on each term or a causal fraction.
+
+### Native C/S restoration factorial
+
+The [three-arm follow-up](../outputs/state-encoding-collateral-r3-mamba/collateral-restoration.json)
+holds the fresh P1row1 and actual baseline H fixed. It restores physical
+row2 of C, S, or both using saved baseline tensors; all other rows use the
+actual retained H-only parent. Independent reconstruction, source receipt
+joins and all11 native-head audits qualify the new patches.
+
+| Corner | R3bit2 logit | Direct from P1add | Post2 from P1add | Hard R3 |
+|---|---:|---:|---:|---:|
+| Retained H-only | +1.274229 | +1.225773 | +2.466957 | 4 |
+| Restore C2 | −2.067744 | +.125540 | +.225218 | 0 |
+| Restore S2 | +.910255 | +1.100231 | +2.228527 | 4 |
+| Restore C2 and S2 | −2.418501 | 0 | 0 | 0 |
+
+H, G and X2 are exactly fixed across all four corners. Joint C/S restoration
+recovers every register logit at row2 exactly; later R7 rows7–9 remain
+exactly baseline in all corners. The signed restoration mixed contrast
+`CS-C-S+Honly` has M2 row2 maximum element1.43051e−6, direct R3 projection
+1.62184e−6, post2 projection+.01321183 and total head+.01321650. The
+incoming mixed state is nearly additive, while the measured MLP output has
+a small finite mixed response. This is one conditional contrast, not a
+universal multiplication or ISA-operation label.
+
+Changed C still sets the collateral bit with S restored. Thus the error does
+not require joint nonlinear C/S cooperation; the small mixed term is distinct
+from the much larger total post2 response, which includes a linear component.
+C restoration is a repair in this tested background, not a universal
+necessity claim or proof that MLP curvature caused the flip.
+
+C-only and joint restoration preserve the complete hard register vector and
+hard flags. Their next calls receive exactly baseline register/flag/raw
+inputs; all11 successor heads match baseline. S-only retains R3=4 and its
+different future. See [continuation comparisons](../outputs/state-encoding-collateral-r3-mamba/continuation-equivalence.json).
+Each fresh call resets H and uses separately supplied imm8 ADD1. Current
+continuous/pooled heads can differ despite equal decoded-state futures.
+
+The [qualified aliases](../outputs/state-encoding-collateral-r3-mamba/role-hypotheses.json)
+separate recurring temporal transport from early reader/local response
+amplified by post2. They bind law, receiving state, intervention contrast,
+reader and horizon. The H and C/S restorations are conditional path closures;
+they establish neither a globally minimum graph cut nor a unique semantic
+program. Whole-tensor graph capacity remains distinct from causal effect.
+
+| Job | Purpose | Physical/logical items | Worker seconds | Peak RSS MB |
+|---|---|---:|---:|---:|
+| `job-8bf646141d50` | Four imm32 sources plus P1add/M1add | 12/18 | 11.3588 | 1194.8 |
+| `job-bce4198e8b55` | Fresh/H-restored/transferred row1 | 8/12 | 5.0578 | 1031.2 |
+| `job-85ea13c19ead` | C2/S2/joint restoration | 8/12 | 5.6438 | 996.2 |
+
+The new [campaign summary](../outputs/state-encoding-collateral-r3-mamba/campaign-summary.json)
+adds28 physical calls,42 logical items,8 typed branches,88 exact independent
+head comparisons and8 literal own-state joins: cumulative128/192 calls/items,
+40 typed branches,440 independent head comparisons and40 own-state joins.
+All completed jobs use frozen CPU FP32/thread1, strict preflight, installed
+public wheels, finite one-lease mrun plans, no training and no expected
+after-state. Sixty-four focused tests and changed research-module Ruff checks
+pass. The launcher retains ten pre-existing lint diagnostics outside the new
+code. Standard evidence run/verify exits0 on all three raw results with
+target-streams-only coverage and zero automatic receipt ingestion.
+
+[Execution notes](../outputs/state-encoding-collateral-r3-mamba/execution-notes.json)
+retain two pre-model submission failures: the new override provenance origin
+was initially missing from the worker allowlist, and the new collateral phase
+initially omitted an imported helper from its wheel. Each has zero scientific
+model calls. The shared-xref lock result is preserved before a successful
+separate-database sweep. Initial collateral algebra remains preserved;
+`audit-v2` adds explicit baseline/route cross-report joins without new model
+calls or changed values. Source snapshots bind every executed offline version.
+
+The launcher now accepts `--program-plan` for a sealed canonical program plan,
+requiring matching phase/checkpoint and physical/logical work geometry on both
+the client and worker. The request, payload and source manifest bind the
+selected bytes. This supports new controlled contexts without a new launcher
+phase for every instruction encoding.
+
+The [synthesis post](../../obsidian/blog/2026-10-30-022119-one-computation-route-two-consumers.md),
+[encoding figure](../outputs/state-encoding-route-r3-mamba/encoding-applicability.png)
+and [collateral figure](../outputs/state-encoding-collateral-r3-mamba/collateral-restoration.png)
+show why source formation, transport, consumer selectivity and continuation
+need separate records. Astra reviewed the source lineage, expansion and C/S
+factorial. Mechanics are valid; trends remain bounded; terminal status is
+not assessed. Original training overlap and generality to other operations,
+models and prompt/CoT systems remain unknown.

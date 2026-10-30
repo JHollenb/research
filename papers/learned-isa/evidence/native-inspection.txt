@@ -1,0 +1,57 @@
+# What resembles the native binary inside the ISA models?
+
+The familiar structure is an x86 instruction-family decoder connected to a supplied architectural state machine. The ADD sequence is visible in the committed program state. The learned ADD carrier remains identical while the counter changes. The SSM scans are causally involved in family recognition, with recipient-dependent behavior under replacement; arithmetic and program-state carry are supplied by the shared runtime.
+
+Frozen three-seed captures: `job-3f80146577e9`. Independent per-step native hardware acquisition is unavailable; no hardware state-parity claim is made.
+
+| Native counter bytes | Role | Who provides it here? |
+|---|---|---|
+| `31 ff` | XOR EDI,EDI: initialize RDI | Learned family selection; supplied XOR effect |
+| `48 83 c7 01`, thirteen copies | ADD RDI,1: count | Learned family selection; supplied ADD and flags |
+| `b8 3c 00 00 00` | MOV EAX,60: exit syscall number | Learned MOV family; supplied immediate/register decoding |
+| `0f 05` | SYSCALL | Learned family; supplied Linux service |
+
+This binary has an unrolled ADD chain. It contains no loop backedge, so a repeated activation is not evidence of a learned loop.
+
+| Model | Counter complete | Stdout complete | Identical ADD carrier | Register edits correct | RDI/decoder replay exact | Forced wrong family stops |
+|---|---:|---:|---:|---:|---:|---:|
+| nn | 3/3 | 0/3 | 3/3 | 15/15 | 3/3 | 3/3 |
+| pan_isa | 3/3 | 0/3 | 3/3 | 15/15 | 3/3 | 3/3 |
+| fieldlm | 3/3 | 3/3 | 3/3 | 15/15 | 3/3 | 3/3 |
+| spf_transformer | 3/3 | 3/3 | 3/3 | 15/15 | 3/3 | 3/3 |
+| mamba | 3/3 | 0/3 | 3/3 | 15/15 | 3/3 | 3/3 |
+| hydra | 3/3 | 1/3 | 3/3 | 15/15 | 3/3 | 3/3 |
+
+Each of thirteen ADDs has the same bytes/features and identical captured neural activations (or structural route/address), while RDI advances from 0 to 13. A common-parent Saturn Act sets RDI to 0, 1, 41 or 2^64−1 before the ADD. The learned carriers remain identical; the consumer produces 1, 2, 42 or 0. Parent replay matches the recorded RDI result and full decoder activations exactly. This replay check does not certify a whole-process snapshot. This localizes the counter value and arithmetic effect to the supplied architectural state/consumer, not a recurrent learned register.
+
+Changing the emitted family from ADD to SUB stops execution before a register write. The learned route is therefore consumed; the runtime does not silently repair a wrong family.
+
+| Native consumer accepts / trials | ADD immediates | MOV EAX | MOV EDI | MOV RAX | MOV RDI |
+|---|---:|---:|---:|---:|---:|
+| nn | 24/24 | 14/24 | 9/24 | 4/24 | 1/24 |
+| pan_isa | 24/24 | 10/24 | 8/24 | 6/24 | 3/24 |
+| fieldlm | 24/24 | 24/24 | 24/24 | 24/24 | 24/24 |
+| spf_transformer | 24/24 | 24/24 | 24/24 | 24/24 | 24/24 |
+| mamba | 24/24 | 13/24 | 10/24 | 4/24 | 4/24 |
+| hydra | 24/24 | 20/24 | 19/24 | 15/24 | 2/24 |
+
+Eight immediate values per form, three frozen seeds. Counts measure family selection accepted by the unchanged typed consumer. This is a diagnostic operand panel, not a new heldout benchmark. Field/SPF's chart explicitly removes the irrelevant literal variation; any corresponding invariance includes that supplied prior.
+
+## Paired SSM output interventions
+
+Saturn captures the actual selective-scan output before the native mixer consumes it. Each arm forks the same typed parent; only that output changes. Numeric features, convolution/skip/diagonal paths, parameters and native consumer remain fixed. Wrong-source uses the other instruction's scan output; random is norm matched. These are paired branches, not independent specimens.
+
+| Model / target | Native | Zero | Half | Negative | Other instruction | Norm-matched random | Uninstall |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| mamba / ADD RDI,1 | 3/3 | 2/3 | 3/3 | 0/3 | 0/3 | 0/3 | 3/3 |
+| mamba / MOV EAX,60 | 3/3 | 3/3 | 3/3 | 0/3 | 0/3 | 1/3 | 3/3 |
+| hydra / ADD RDI,1 | 3/3 | 2/3 | 3/3 | 1/3 | 1/3 | 2/3 | 3/3 |
+| hydra / MOV EAX,60 | 3/3 | 3/3 | 3/3 | 2/3 | 3/3 | 3/3 | 3/3 |
+
+The raw report retains every label, confidence, logit change, parent identity and Act receipt, including counter-trends. Zeroing a path that still leaves a correct answer does not establish that the path is generally unnecessary; parallel supplied features and learned skip/diagonal paths remain available. A donor-shaped tensor that changes the family does not by itself establish a portable instruction program.
+
+Mamba/Hydra state resets for each instruction. The captured recurrent states process the instruction bytes, while the shared runtime carries architectural registers/memory across instructions. No learned register file, learned ALU, full compiler recovery, arbitrary-x86 equivalence or trained cross-instruction SSM state is claimed.
+
+Native comparison, when available: identical ELF hashes; compare PC, initialized RDI/RAX, stack-relative RSP, stack bytes after store and CF/ZF/SF/OF. Initial ABI-undefined registers, absolute ASLR stack addresses, untracked flags and kernel-clobbered unused registers are outside this comparison. The initial native GDB instrument was unavailable on Beast; its status remains in the original capture. No independent per-step hardware comparison is available in this report.
+
+Native-only follow-up `job-42bd05790e4c` ended `cancelled` before execution. Scheduler diagnostic: waiting: beast: host disabled by operator; mbp1: needs payload custody v2 agent; fits an idle host; blocked by live external usage. Its sealed source, submission and cancellation receipt are retained in `outputs/native-hardware-attempt`. This is an instrument limitation, not evidence about hardware/model parity.

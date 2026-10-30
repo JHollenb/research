@@ -1,0 +1,558 @@
+{
+  "backend": "cpu1",
+  "host": "beast",
+  "instrument_status": "valid",
+  "jobs": [
+    "job-cf83bbfb2001",
+    "job-6dde56f923eb",
+    "job-b6f841fcb23f"
+  ],
+  "mechanics_status": "valid",
+  "models": {
+    "fieldlm": {
+      "accepted_updates": [
+        1,
+        1,
+        1
+      ],
+      "artifact_bytes": {
+        "max": 42016,
+        "mean": 42016,
+        "median": 42016,
+        "min": 42016,
+        "n": 3
+      },
+      "cold_correct": 3,
+      "cold_s": {
+        "max": 1.2685993579216301,
+        "mean": 1.2542574763065204,
+        "median": 1.2485429260414094,
+        "min": 1.2456301449565217,
+        "n": 3
+      },
+      "continued_correct": 7458,
+      "cumulative_correct": 54,
+      "cumulative_total": 54,
+      "elf_correct": 3,
+      "isolated_correct": 7458,
+      "learned_state": {
+        "learned_record_count": 760,
+        "parameter_count": 0
+      },
+      "physical_updates": [
+        1,
+        1,
+        1
+      ],
+      "program_correct": 12,
+      "program_total": 12,
+      "pure_correct": 24576,
+      "pure_total": 24576,
+      "runtime_correct": 3138,
+      "runtime_total": 3138,
+      "staged_total": 7458,
+      "train_cpu_s": {
+        "max": 6.761350626,
+        "mean": 6.344428561,
+        "median": 6.569382789,
+        "min": 5.702552268,
+        "n": 3
+      },
+      "train_peak_rss_mb": 826.37890625,
+      "train_wall_s": {
+        "max": 9.453071543946862,
+        "mean": 9.162676105974242,
+        "median": 9.18087101902347,
+        "min": 8.854085754952393,
+        "n": 3
+      },
+      "update_cpu_s": {
+        "max": 0.028998929000000118,
+        "mean": 0.027498549,
+        "median": 0.026823704999999975,
+        "min": 0.026673012999999912,
+        "n": 3
+      },
+      "update_wall_s": {
+        "max": 0.028562769992277026,
+        "mean": 0.027165496644253533,
+        "median": 0.026722456910647452,
+        "min": 0.026211263029836118,
+        "n": 3
+      }
+    },
+    "hydra": {
+      "accepted_updates": [
+        512,
+        512,
+        512
+      ],
+      "artifact_bytes": {
+        "max": 2527107,
+        "mean": 2526858.3333333335,
+        "median": 2526897,
+        "min": 2526571,
+        "n": 3
+      },
+      "cold_correct": 3,
+      "cold_s": {
+        "max": 1.6747122780652717,
+        "mean": 1.631457741993169,
+        "median": 1.613726784940809,
+        "min": 1.6059341629734263,
+        "n": 3
+      },
+      "continued_correct": 7458,
+      "cumulative_correct": 54,
+      "cumulative_total": 54,
+      "elf_correct": 3,
+      "isolated_correct": 7458,
+      "learned_state": {
+        "parameter_count": 78713
+      },
+      "physical_updates": [
+        512,
+        512,
+        512
+      ],
+      "program_correct": 8,
+      "program_total": 12,
+      "pure_correct": 24576,
+      "pure_total": 24576,
+      "runtime_correct": 3132,
+      "runtime_total": 3138,
+      "staged_total": 7458,
+      "train_cpu_s": {
+        "max": 101.427820146,
+        "mean": 99.43795920066667,
+        "median": 98.66248369099999,
+        "min": 98.22357376500001,
+        "n": 3
+      },
+      "train_peak_rss_mb": 1100.35546875,
+      "train_wall_s": {
+        "max": 102.60559980501421,
+        "mean": 101.91728733666241,
+        "median": 101.67394245998003,
+        "min": 101.472319744993,
+        "n": 3
+      },
+      "update_cpu_s": {
+        "max": 78.63251940699993,
+        "mean": 76.7577722816666,
+        "median": 76.01181487899997,
+        "min": 75.6289825589999,
+        "n": 3
+      },
+      "update_wall_s": {
+        "max": 77.67274588951841,
+        "mean": 75.79306123359129,
+        "median": 75.04913088248577,
+        "min": 74.65730692876969,
+        "n": 3
+      }
+    },
+    "mamba": {
+      "accepted_updates": [
+        512,
+        512,
+        512
+      ],
+      "artifact_bytes": {
+        "max": 2505534,
+        "mean": 2505488.3333333335,
+        "median": 2505510,
+        "min": 2505421,
+        "n": 3
+      },
+      "cold_correct": 3,
+      "cold_s": {
+        "max": 2.421996954944916,
+        "mean": 1.8373018293253456,
+        "median": 1.5750327639980242,
+        "min": 1.5148757690330967,
+        "n": 3
+      },
+      "continued_correct": 7345,
+      "cumulative_correct": 54,
+      "cumulative_total": 54,
+      "elf_correct": 2,
+      "isolated_correct": 7440,
+      "learned_state": {
+        "parameter_count": 78113
+      },
+      "physical_updates": [
+        512,
+        512,
+        512
+      ],
+      "program_correct": 0,
+      "program_total": 12,
+      "pure_correct": 1304,
+      "pure_total": 24576,
+      "runtime_correct": 3113,
+      "runtime_total": 3138,
+      "staged_total": 7458,
+      "train_cpu_s": {
+        "max": 74.75676936800001,
+        "mean": 74.46616554766666,
+        "median": 74.429001435,
+        "min": 74.21272583999999,
+        "n": 3
+      },
+      "train_peak_rss_mb": 1035.3359375,
+      "train_wall_s": {
+        "max": 77.72576276201289,
+        "mean": 76.90395631967112,
+        "median": 77.27587503101677,
+        "min": 75.71023116598371,
+        "n": 3
+      },
+      "update_cpu_s": {
+        "max": 54.03377874099988,
+        "mean": 53.78176104066662,
+        "median": 53.77119113300003,
+        "min": 53.54031324799996,
+        "n": 3
+      },
+      "update_wall_s": {
+        "max": 53.39010645938106,
+        "mean": 53.2128821661075,
+        "median": 53.14296469895635,
+        "min": 53.10557533998508,
+        "n": 3
+      }
+    },
+    "nn": {
+      "accepted_updates": [
+        512,
+        512,
+        512
+      ],
+      "artifact_bytes": {
+        "max": 1807775,
+        "mean": 1807384.3333333333,
+        "median": 1807203,
+        "min": 1807175,
+        "n": 3
+      },
+      "cold_correct": 3,
+      "cold_s": {
+        "max": 1.2639248210471123,
+        "mean": 1.2514289210084826,
+        "median": 1.2561319780070335,
+        "min": 1.234229963971302,
+        "n": 3
+      },
+      "continued_correct": 7458,
+      "cumulative_correct": 54,
+      "cumulative_total": 54,
+      "elf_correct": 3,
+      "isolated_correct": 7458,
+      "learned_state": {
+        "parameter_count": 56929
+      },
+      "physical_updates": [
+        512,
+        512,
+        512
+      ],
+      "program_correct": 6,
+      "program_total": 12,
+      "pure_correct": 24576,
+      "pure_total": 24576,
+      "runtime_correct": 3131,
+      "runtime_total": 3138,
+      "staged_total": 7458,
+      "train_cpu_s": {
+        "max": 52.039802783,
+        "mean": 30.642092235,
+        "median": 20.564587671,
+        "min": 19.321886251,
+        "n": 3
+      },
+      "train_peak_rss_mb": 848.16796875,
+      "train_wall_s": {
+        "max": 93.51206684904173,
+        "mean": 47.21342269835683,
+        "median": 26.072151571977884,
+        "min": 22.056049674050882,
+        "n": 3
+      },
+      "update_cpu_s": {
+        "max": 14.858510794000063,
+        "mean": 8.717635088666686,
+        "median": 5.758491111999979,
+        "min": 5.535903360000017,
+        "n": 3
+      },
+      "update_wall_s": {
+        "max": 14.56566149997525,
+        "mean": 8.600639645475894,
+        "median": 5.727833793032914,
+        "min": 5.508423643419519,
+        "n": 3
+      }
+    },
+    "pan_isa": {
+      "accepted_updates": [
+        512,
+        512,
+        512
+      ],
+      "artifact_bytes": {
+        "max": 7275684,
+        "mean": 7275298.666666667,
+        "median": 7275319,
+        "min": 7274893,
+        "n": 3
+      },
+      "cold_correct": 3,
+      "cold_s": {
+        "max": 2.3568097460083663,
+        "mean": 1.66533587500453,
+        "median": 1.332361923996359,
+        "min": 1.3068359550088644,
+        "n": 3
+      },
+      "continued_correct": 7458,
+      "cumulative_correct": 54,
+      "cumulative_total": 54,
+      "elf_correct": 3,
+      "isolated_correct": 7458,
+      "learned_state": {
+        "parameter_count": 225329
+      },
+      "physical_updates": [
+        512,
+        512,
+        512
+      ],
+      "program_correct": 5,
+      "program_total": 12,
+      "pure_correct": 24576,
+      "pure_total": 24576,
+      "runtime_correct": 3127,
+      "runtime_total": 3138,
+      "staged_total": 7458,
+      "train_cpu_s": {
+        "max": 33.208124808,
+        "mean": 26.447116519,
+        "median": 24.043076937,
+        "min": 22.090147812,
+        "n": 3
+      },
+      "train_peak_rss_mb": 862.484375,
+      "train_wall_s": {
+        "max": 55.833451570011675,
+        "mean": 37.549117116373964,
+        "median": 30.249069072073326,
+        "min": 26.56483070703689,
+        "n": 3
+      },
+      "update_cpu_s": {
+        "max": 9.274811493999964,
+        "mean": 8.117890749666651,
+        "median": 7.83643259199996,
+        "min": 7.242428163000032,
+        "n": 3
+      },
+      "update_wall_s": {
+        "max": 9.20428249600809,
+        "mean": 8.068340176406005,
+        "median": 7.794540970236994,
+        "min": 7.206197062972933,
+        "n": 3
+      }
+    },
+    "spf_transformer": {
+      "accepted_updates": [
+        1,
+        1,
+        1
+      ],
+      "artifact_bytes": {
+        "max": 42156,
+        "mean": 42156,
+        "median": 42156,
+        "min": 42156,
+        "n": 3
+      },
+      "cold_correct": 3,
+      "cold_s": {
+        "max": 1.045241061015986,
+        "mean": 1.0237749069929123,
+        "median": 1.0174082180019468,
+        "min": 1.0086754419608042,
+        "n": 3
+      },
+      "continued_correct": 7458,
+      "cumulative_correct": 54,
+      "cumulative_total": 54,
+      "elf_correct": 3,
+      "isolated_correct": 7458,
+      "learned_state": {
+        "learned_record_count": 760,
+        "packed_plane_bytes": 39520,
+        "parameter_count": 0
+      },
+      "physical_updates": [
+        1,
+        1,
+        1
+      ],
+      "program_correct": 12,
+      "program_total": 12,
+      "pure_correct": 24576,
+      "pure_total": 24576,
+      "runtime_correct": 3138,
+      "runtime_total": 3138,
+      "staged_total": 7458,
+      "train_cpu_s": {
+        "max": 6.480803727,
+        "mean": 5.993255528,
+        "median": 6.021804228,
+        "min": 5.477158629,
+        "n": 3
+      },
+      "train_peak_rss_mb": 750.24609375,
+      "train_wall_s": {
+        "max": 9.528881354024634,
+        "mean": 8.488547819977006,
+        "median": 8.023230069899,
+        "min": 7.913532036007382,
+        "n": 3
+      },
+      "update_cpu_s": {
+        "max": 0.06659851700000008,
+        "mean": 0.06564811066666672,
+        "median": 0.06633119100000018,
+        "min": 0.06401462399999991,
+        "n": 3
+      },
+      "update_wall_s": {
+        "max": 0.06443409703206271,
+        "mean": 0.06347373166742425,
+        "median": 0.06411022297106683,
+        "min": 0.06187687499914318,
+        "n": 3
+      }
+    }
+  },
+  "native_builds": [
+    {
+      "binary_bytes": 20328,
+      "binary_sha256": "64c3f9fe2bc84db8305b64588eb239db80c5b3ea208e188ba39c231e1a9dbfdc",
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "native_asm/kernel.c",
+        "-o",
+        "result/native-kernel"
+      ],
+      "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "cpu_s": 0.028141,
+      "seed": 673,
+      "source_sha256": "17f470acfb6a23a14167af2a537a0fd8fd7a3c2fb7992f6b7a41e13ffc2409f0",
+      "stderr": "",
+      "stdout": "",
+      "wall_s": 0.028481691027991474
+    },
+    {
+      "binary_bytes": 20328,
+      "binary_sha256": "64c3f9fe2bc84db8305b64588eb239db80c5b3ea208e188ba39c231e1a9dbfdc",
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "native_asm/kernel.c",
+        "-o",
+        "result/native-kernel"
+      ],
+      "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "cpu_s": 0.028365999999999995,
+      "seed": 719,
+      "source_sha256": "17f470acfb6a23a14167af2a537a0fd8fd7a3c2fb7992f6b7a41e13ffc2409f0",
+      "stderr": "",
+      "stdout": "",
+      "wall_s": 0.03453928302042186
+    },
+    {
+      "binary_bytes": 20328,
+      "binary_sha256": "64c3f9fe2bc84db8305b64588eb239db80c5b3ea208e188ba39c231e1a9dbfdc",
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "native_asm/kernel.c",
+        "-o",
+        "result/native-kernel"
+      ],
+      "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "cpu_s": 0.027499999999999997,
+      "seed": 757,
+      "source_sha256": "17f470acfb6a23a14167af2a537a0fd8fd7a3c2fb7992f6b7a41e13ffc2409f0",
+      "stderr": "",
+      "stdout": "",
+      "wall_s": 0.02764677396044135
+    }
+  ],
+  "native_kernel": {
+    "1024": {
+      "cpu_ns_per_call": {
+        "max": 194.9902,
+        "mean": 176.90956666666668,
+        "median": 173.32765,
+        "min": 172.81615,
+        "n": 15
+      },
+      "wall_ns_per_call": {
+        "max": 195.30505,
+        "mean": 177.30028666666666,
+        "median": 173.4076,
+        "min": 172.84355,
+        "n": 15
+      }
+    },
+    "128": {
+      "cpu_ns_per_call": {
+        "max": 19.79465,
+        "mean": 12.027766666666666,
+        "median": 11.3122,
+        "min": 11.3097,
+        "n": 15
+      },
+      "wall_ns_per_call": {
+        "max": 19.823,
+        "mean": 12.047663333333333,
+        "median": 11.32995,
+        "min": 11.32615,
+        "n": 15
+      }
+    },
+    "16": {
+      "cpu_ns_per_call": {
+        "max": 1.9687,
+        "mean": 1.3919466666666667,
+        "median": 1.1146,
+        "min": 1.1086,
+        "n": 15
+      },
+      "wall_ns_per_call": {
+        "max": 2.0624,
+        "mean": 1.4233066666666667,
+        "median": 1.13515,
+        "min": 1.1241,
+        "n": 15
+      }
+    }
+  },
+  "seeds": [
+    673,
+    719,
+    757
+  ],
+  "terminal_status": "not-certified",
+  "trend_status": "exploratory"
+}

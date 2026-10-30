@@ -1,0 +1,37 @@
+class FactorizedStage1PAN(nn.Module):
+    """Learn selectors over phase-native Stage 1 transition candidates."""
+
+    def __init__(self, hidden: int = 64):
+        super().__init__()
+        self.op_emb = nn.Embedding(len(OPS), 16)
+        self.value_net = nn.Sequential(
+            nn.Linear(16, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, 3),
+        )
+        self.memory_net = nn.Sequential(
+            nn.Linear(16, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, 4),
+        )
+
+    def selector_logits(self, op: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        x = self.op_emb(op.long())
+        return self.value_net(x), self.memory_net(x)
+
+
+class EffectStage1PAN(FactorizedStage1PAN):
+    """Learned Stage 1 typed-effect selector head.
+
+    Stage 1 effects are decomposed into two architectural axes: register value
+    source and memory event kind. The old neural path learned those axes but
+    reported them as generic selectors; this class makes the effect contract
+    explicit and gives validation a separate promotion gate.
+    """
+
+
+def make_model(arch: str, hidden: int) -> FactorizedStage1PAN:

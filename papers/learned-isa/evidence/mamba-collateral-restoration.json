@@ -1,0 +1,100 @@
+{
+  "definition": "restore physical row2 C/S separately and jointly under fresh P1row1 plus actual baseline H; H-only corner retained from preceding job",
+  "mechanics_status": "valid",
+  "mixed": {
+    "M2_row2_max_abs": 1.430511474609375e-06,
+    "direct_R3bit2": 1.621841808630009e-06,
+    "head_R3bit2": 0.013216495513916016,
+    "post2_R3bit2": 0.013211827577431723
+  },
+  "observations": [
+    {
+      "C2_exact_baseline": false,
+      "R3bit2_logit": 1.274228572845459,
+      "S2_exact_baseline": false,
+      "all_row2_register_logits_exact_baseline": false,
+      "branch_id": "H-only",
+      "direct": 1.225773015307169,
+      "fixed_H_G_X": {
+        "consumer.2.G_post_silu": true,
+        "mixer.2.input": true,
+        "scan.2.H": true
+      },
+      "head_delta_from_P1add": 3.6927294731140137,
+      "later_R7_logits_exact_baseline": {
+        "7": true,
+        "8": true,
+        "9": true
+      },
+      "post2": 2.4669571444646987,
+      "reconciliation": -6.866578541320223e-07
+    },
+    {
+      "C2_exact_baseline": true,
+      "R3bit2_logit": -2.0677437782287598,
+      "S2_exact_baseline": false,
+      "all_row2_register_logits_exact_baseline": false,
+      "branch_id": "collateral-C2",
+      "direct": 0.1255404265204847,
+      "fixed_H_G_X": {
+        "consumer.2.G_post_silu": true,
+        "mixer.2.input": true,
+        "scan.2.H": true
+      },
+      "head_delta_from_P1add": 0.3507571220397949,
+      "later_R7_logits_exact_baseline": {
+        "7": true,
+        "8": true,
+        "9": true
+      },
+      "post2": 0.22521799659496206,
+      "reconciliation": -1.3010756518272437e-06
+    },
+    {
+      "C2_exact_baseline": false,
+      "R3bit2_logit": 0.910254955291748,
+      "S2_exact_baseline": true,
+      "all_row2_register_logits_exact_baseline": false,
+      "branch_id": "collateral-S2",
+      "direct": 1.1002309669448758,
+      "fixed_H_G_X": {
+        "consumer.2.G_post_silu": true,
+        "mixer.2.input": true,
+        "scan.2.H": true
+      },
+      "head_delta_from_P1add": 3.3287558555603027,
+      "later_R7_logits_exact_baseline": {
+        "7": true,
+        "8": true,
+        "9": true
+      },
+      "post2": 2.228527320292305,
+      "reconciliation": -2.431676878078548e-06
+    },
+    {
+      "C2_exact_baseline": true,
+      "R3bit2_logit": -2.4185009002685547,
+      "S2_exact_baseline": true,
+      "all_row2_register_logits_exact_baseline": true,
+      "branch_id": "collateral-CS2",
+      "direct": 0.0,
+      "fixed_H_G_X": {
+        "consumer.2.G_post_silu": true,
+        "mixer.2.input": true,
+        "scan.2.H": true
+      },
+      "head_delta_from_P1add": 0.0,
+      "later_R7_logits_exact_baseline": {
+        "7": true,
+        "8": true,
+        "9": true
+      },
+      "post2": 0.0,
+      "reconciliation": 0.0
+    }
+  ],
+  "schema": "isa-C-S-collateral-factorial-v1",
+  "scope": "restoration factorial, native consumer; no oracle output supplied; mixed M2 roundoff and post2 response retained separately; no global minimum or universal role",
+  "terminal_status": "not-assessed",
+  "trend_status": "signed conditional C/S and final-MLP contrasts"
+}

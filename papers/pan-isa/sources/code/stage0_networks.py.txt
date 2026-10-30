@@ -1,0 +1,392 @@
+class Stage0PAN(nn.Module):
+    def __init__(self, word_bits: int, hidden: int = 192, freqs: int = 8):
+        super().__init__()
+        self.word_bits = word_bits
+        self.m = 1 << word_bits
+        self.freqs = min(freqs, max(1, self.m // 2))
+        self.op_emb = nn.Embedding(len(OPS), 24)
+        self.reg_emb = nn.Embedding(len(REGS), 8)
+        table = []
+        for v in range(self.m):
+            feats = []
+            for k in range(1, self.freqs + 1):
+                ang = 2 * math.pi * k * v / self.m
+                feats.extend([math.cos(ang), math.sin(ang)])
+            table.append(feats)
+        self.register_buffer("phase_table", torch.tensor(table, dtype=torch.float32))
+        phase_dim = self.freqs * 2
+        in_dim = (
+            len(REGS) * phase_dim
+            + len(FLAGS)
+            + phase_dim * 5
+            + 24
+            + 8 * 2
+        )
+        self.net = nn.Sequential(
+            nn.Linear(in_dim, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, len(REGS) * self.m + len(FLAGS) * 2),
+        )
+
+    def phase(self, values: torch.Tensor) -> torch.Tensor:
+        return self.phase_table[values.long().clamp(0, self.m - 1)]
+
+    def forward(
+        self,
+        regs: torch.Tensor,
+        flags: torch.Tensor,
+        op: torch.Tensor,
+        dst: torch.Tensor,
+        src: torch.Tensor,
+        imm: torch.Tensor,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        regs = regs.long()
+        flags = flags.float()
+        dst = dst.long()
+        src = src.long()
+        imm = imm.long() % self.m
+        batch = regs.shape[0]
+        all_reg_phase = self.phase(regs.reshape(-1)).reshape(batch, len(REGS), -1).reshape(batch, -1)
+        dst_val = regs[torch.arange(batch, device=regs.device), dst]
+        src_val = regs[torch.arange(batch, device=regs.device), src]
+        dst_phase = self.phase(dst_val)
+        src_phase = self.phase(src_val)
+        imm_phase = self.phase(imm)
+        add_mix = self.phase((dst_val + src_val) % self.m)
+        sub_mix = self.phase((dst_val - src_val) % self.m)
+        x = torch.cat([
+            all_reg_phase,
+            flags,
+            dst_phase,
+            src_phase,
+            imm_phase,
+            add_mix,
+            sub_mix,
+            self.op_emb(op.long()),
+            self.reg_emb(dst),
+            self.reg_emb(src),
+        ], dim=1)
+        y = self.net(x)
+        reg_logits = y[:, : len(REGS) * self.m].reshape(batch, len(REGS), self.m)
+        flag_logits = y[:, len(REGS) * self.m :].reshape(batch, len(FLAGS), 2)
+        return reg_logits, flag_logits
+
+
+class FactorizedStage0PAN(nn.Module):
+    """Shared Stage 0 transition head.
+
+    The dense model predicts every register slot independently. This head
+    predicts only the touched low-byte value plus flags from a shared operand
+    basis, then writes the predicted value back through the selected destination
+    register. It is still trained by supervision, but it gives the learner the
+    same factored structure the structured cartridge uses.
+    """
+
+    def __init__(self, word_bits: int, hidden: int = 192, freqs: int = 8):
+        super().__init__()
+        self.word_bits = word_bits
+        self.m = 1 << word_bits
+        self.mask = self.m - 1
+        self.sign = 1 << (word_bits - 1)
+        self.freqs = min(freqs, max(1, self.m // 2))
+        self.op_emb = nn.Embedding(len(OPS), 32)
+        self.reg_emb = nn.Embedding(len(REGS), 8)
+        table = []
+        for v in range(self.m):
+            feats = []
+            for k in range(1, self.freqs + 1):
+                ang = 2 * math.pi * k * v / self.m
+                feats.extend([math.cos(ang), math.sin(ang)])
+            table.append(feats)
+        self.register_buffer("phase_table", torch.tensor(table, dtype=torch.float32))
+        candidate_count = 17
+        flag_candidate_count = 15
+        self.value_net = nn.Sequential(
+            nn.Linear(32, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, candidate_count),
+        )
+        self.flag_net = nn.Sequential(
+            nn.Linear(32, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, flag_candidate_count),
+        )
+
+    def phase(self, values: torch.Tensor) -> torch.Tensor:
+        return self.phase_table[values.long().clamp(0, self.m - 1)]
+
+    def selector_logits(self, op: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        op_features = self.op_emb(op.long())
+        return self.value_net(op_features), self.flag_net(op_features)
+
+    def _add_flags(self, a: torch.Tensor, b: torch.Tensor, result: torch.Tensor, carry_in: torch.Tensor) -> torch.Tensor:
+        full = a + b + carry_in
+        cf = full.ge(self.m)
+        zf = result.eq(0)
+        sf = result.bitwise_and(self.sign).ne(0)
+        of = (torch.bitwise_and(torch.bitwise_not(torch.bitwise_xor(a, b)), torch.bitwise_xor(a, result))).bitwise_and(self.sign).ne(0)
+        return torch.stack([cf, zf, sf, of], dim=1).float()
+
+    def _sub_flags(self, a: torch.Tensor, b: torch.Tensor, result: torch.Tensor, borrow_in: torch.Tensor) -> torch.Tensor:
+        rhs = b + borrow_in
+        cf = a.lt(rhs)
+        zf = result.eq(0)
+        sf = result.bitwise_and(self.sign).ne(0)
+        of = torch.bitwise_and(torch.bitwise_and(torch.bitwise_xor(a, rhs), torch.bitwise_xor(a, result)), self.sign).ne(0)
+        return torch.stack([cf, zf, sf, of], dim=1).float()
+
+    def _logical_flags(self, result: torch.Tensor) -> torch.Tensor:
+        cf = torch.zeros_like(result, dtype=torch.bool)
+        zf = result.eq(0)
+        sf = result.bitwise_and(self.sign).ne(0)
+        of = torch.zeros_like(result, dtype=torch.bool)
+        return torch.stack([cf, zf, sf, of], dim=1).float()
+
+    def forward(
+        self,
+        regs: torch.Tensor,
+        flags: torch.Tensor,
+        op: torch.Tensor,
+        dst: torch.Tensor,
+        src: torch.Tensor,
+        imm: torch.Tensor,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        regs = regs.long()
+        flags_long = flags.long()
+        flags_f = flags.float()
+        op = op.long()
+        dst = dst.long()
+        src = src.long()
+        imm = imm.long() % self.m
+        batch = regs.shape[0]
+        device = regs.device
+        row = torch.arange(batch, device=device)
+        dst_val = regs[row, dst]
+        src_val = regs[row, src]
+        uses_imm = OP_USES_IMM.to(device)[op]
+        arg_val = torch.where(uses_imm, imm, src_val)
+        cf = flags_long[:, 0]
+
+        add_res = (dst_val + arg_val) & self.mask
+        addc_res = (dst_val + arg_val + cf) & self.mask
+        sub_res = (dst_val - arg_val) & self.mask
+        subb_res = (dst_val - arg_val - cf) & self.mask
+        inc_res = (dst_val + 1) & self.mask
+        dec_res = (dst_val - 1) & self.mask
+        neg_res = (-dst_val) & self.mask
+        and_res = dst_val & arg_val
+        or_res = dst_val | arg_val
+        xor_res = dst_val ^ arg_val
+        not_res = torch.bitwise_not(dst_val) & self.mask
+        shl_res = (dst_val << 1) & self.mask
+        shr_res = (dst_val >> 1) & self.mask
+        rol_cf = dst_val.bitwise_and(self.sign).ne(0).long()
+        rol_res = ((dst_val << 1) | rol_cf) & self.mask
+        ror_cf = dst_val & 1
+        ror_res = ((dst_val >> 1) | (ror_cf << (self.word_bits - 1))) & self.mask
+
+        candidates = torch.stack([
+            dst_val,
+            arg_val,
+            add_res,
+            addc_res,
+            sub_res,
+            subb_res,
+            inc_res,
+            dec_res,
+            neg_res,
+            and_res,
+            or_res,
+            xor_res,
+            not_res,
+            shl_res,
+            shr_res,
+            rol_res,
+            ror_res,
+        ], dim=1)
+        old_cf = flags_f[:, 0:1]
+        add_f = self._add_flags(dst_val, arg_val, add_res, torch.zeros_like(cf))
+        addc_f = self._add_flags(dst_val, arg_val, addc_res, cf)
+        sub_f = self._sub_flags(dst_val, arg_val, sub_res, torch.zeros_like(cf))
+        subb_f = self._sub_flags(dst_val, arg_val, subb_res, cf)
+        inc_f = torch.cat([old_cf, self._add_flags(dst_val, torch.ones_like(dst_val), inc_res, torch.zeros_like(cf))[:, 1:]], dim=1)
+        dec_f = torch.cat([old_cf, self._sub_flags(dst_val, torch.ones_like(dst_val), dec_res, torch.zeros_like(cf))[:, 1:]], dim=1)
+        neg_f = self._sub_flags(torch.zeros_like(dst_val), dst_val, neg_res, torch.zeros_like(cf))
+        neg_f = torch.cat([dst_val.ne(0).float().reshape(batch, 1), neg_f[:, 1:]], dim=1)
+        logical_and_f = self._logical_flags(and_res)
+        logical_or_f = self._logical_flags(or_res)
+        logical_xor_f = self._logical_flags(xor_res)
+        shl_cf = dst_val.bitwise_and(self.sign).ne(0).float().reshape(batch, 1)
+        shl_f = torch.cat([
+            shl_cf,
+            shl_res.eq(0).float().reshape(batch, 1),
+            shl_res.bitwise_and(self.sign).ne(0).float().reshape(batch, 1),
+            (shl_res.bitwise_and(self.sign).ne(0) ^ shl_cf.bool().reshape(batch)).float().reshape(batch, 1),
+        ], dim=1)
+        shr_cf = dst_val.bitwise_and(1).float().reshape(batch, 1)
+        shr_f = torch.cat([
+            shr_cf,
+            shr_res.eq(0).float().reshape(batch, 1),
+            shr_res.bitwise_and(self.sign).ne(0).float().reshape(batch, 1),
+            dst_val.bitwise_and(self.sign).ne(0).float().reshape(batch, 1),
+        ], dim=1)
+        rol_msb = rol_res.bitwise_and(self.sign).ne(0)
+        rol_f = torch.cat([
+            rol_cf.float().reshape(batch, 1),
+            flags_f[:, 1:2],
+            flags_f[:, 2:3],
+            (rol_msb ^ rol_cf.bool()).float().reshape(batch, 1),
+        ], dim=1)
+        ror_msb = ror_res.bitwise_and(self.sign).ne(0)
+        ror_next_msb = ror_res.bitwise_and(self.sign >> 1).ne(0) if self.word_bits > 1 else torch.zeros_like(ror_msb)
+        ror_f = torch.cat([
+            ror_cf.float().reshape(batch, 1),
+            flags_f[:, 1:2],
+            flags_f[:, 2:3],
+            (ror_msb ^ ror_next_msb).float().reshape(batch, 1),
+        ], dim=1)
+        flag_candidates = torch.cat([
+            flags_f,
+            add_f,
+            addc_f,
+            sub_f,
+            subb_f,
+            inc_f,
+            dec_f,
+            neg_f,
+            logical_and_f,
+            logical_or_f,
+            logical_xor_f,
+            shl_f,
+            shr_f,
+            rol_f,
+            ror_f,
+        ], dim=1)
+
+        op_features = self.op_emb(op)
+        candidate_scores = self.value_net(op_features)
+
+        dst_logits = torch.full((batch, self.m), -20.0, device=device, dtype=candidate_scores.dtype)
+        for i in range(candidates.shape[1]):
+            target = candidates[:, i].long().clamp(0, self.m - 1)
+            old = dst_logits[row, target]
+            dst_logits[row, target] = torch.maximum(old, candidate_scores[:, i])
+
+        flag_candidate_values = flag_candidates.reshape(batch, -1, len(FLAGS)).long().clamp(0, 1)
+        flag_scores = self.flag_net(op_features)
+        flag_logits = torch.full((batch, len(FLAGS), 2), -20.0, device=device, dtype=flag_scores.dtype)
+        for i in range(flag_candidate_values.shape[1]):
+            for fidx in range(len(FLAGS)):
+                target = flag_candidate_values[:, i, fidx]
+                old = flag_logits[row, fidx, target]
+                flag_logits[row, fidx, target] = torch.maximum(old, flag_scores[:, i])
+        reg_logits = torch.zeros(batch, len(REGS), self.m, device=device, dtype=dst_logits.dtype)
+        reg_logits[row, dst, :] = dst_logits
+        return reg_logits, flag_logits
+
+
+class EffectStage0PAN(nn.Module):
+    """Learned typed-effect Stage 0 transition head.
+
+    Unlike the dense and factorized baselines, this model does not get the
+    architectural write masks at commit time. It learns register/flag write
+    masks and the corresponding values, then the predictor commits exactly the
+    typed effects the model emitted.
+    """
+
+    def __init__(self, word_bits: int, hidden: int = 192, freqs: int = 8):
+        super().__init__()
+        self.word_bits = word_bits
+        self.m = 1 << word_bits
+        self.freqs = min(freqs, max(1, self.m // 2))
+        self.op_emb = nn.Embedding(len(OPS), 24)
+        self.reg_emb = nn.Embedding(len(REGS), 8)
+        table = []
+        for v in range(self.m):
+            feats = []
+            for k in range(1, self.freqs + 1):
+                ang = 2 * math.pi * k * v / self.m
+                feats.extend([math.cos(ang), math.sin(ang)])
+            table.append(feats)
+        self.register_buffer("phase_table", torch.tensor(table, dtype=torch.float32))
+        phase_dim = self.freqs * 2
+        in_dim = (
+            len(REGS) * phase_dim
+            + len(FLAGS)
+            + phase_dim * 5
+            + 24
+            + 8 * 2
+        )
+        self.body = nn.Sequential(
+            nn.Linear(in_dim, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+        )
+        self.reg_write_head = nn.Linear(hidden, len(REGS) * 2)
+        self.reg_value_head = nn.Linear(hidden, len(REGS) * self.m)
+        self.flag_write_head = nn.Linear(hidden, len(FLAGS) * 2)
+        self.flag_value_head = nn.Linear(hidden, len(FLAGS) * 2)
+
+    def phase(self, values: torch.Tensor) -> torch.Tensor:
+        return self.phase_table[values.long().clamp(0, self.m - 1)]
+
+    def features(
+        self,
+        regs: torch.Tensor,
+        flags: torch.Tensor,
+        op: torch.Tensor,
+        dst: torch.Tensor,
+        src: torch.Tensor,
+        imm: torch.Tensor,
+    ) -> torch.Tensor:
+        regs = regs.long()
+        flags = flags.float()
+        dst = dst.long()
+        src = src.long()
+        imm = imm.long() % self.m
+        batch = regs.shape[0]
+        all_reg_phase = self.phase(regs.reshape(-1)).reshape(batch, len(REGS), -1).reshape(batch, -1)
+        row = torch.arange(batch, device=regs.device)
+        dst_val = regs[row, dst]
+        src_val = regs[row, src]
+        dst_phase = self.phase(dst_val)
+        src_phase = self.phase(src_val)
+        imm_phase = self.phase(imm)
+        add_mix = self.phase((dst_val + src_val) % self.m)
+        sub_mix = self.phase((dst_val - src_val) % self.m)
+        return torch.cat([
+            all_reg_phase,
+            flags,
+            dst_phase,
+            src_phase,
+            imm_phase,
+            add_mix,
+            sub_mix,
+            self.op_emb(op.long()),
+            self.reg_emb(dst),
+            self.reg_emb(src),
+        ], dim=1)
+
+    def forward(
+        self,
+        regs: torch.Tensor,
+        flags: torch.Tensor,
+        op: torch.Tensor,
+        dst: torch.Tensor,
+        src: torch.Tensor,
+        imm: torch.Tensor,
+    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        batch = regs.shape[0]
+        h = self.body(self.features(regs, flags, op, dst, src, imm))
+        reg_write_logits = self.reg_write_head(h).reshape(batch, len(REGS), 2)
+        reg_value_logits = self.reg_value_head(h).reshape(batch, len(REGS), self.m)
+        flag_write_logits = self.flag_write_head(h).reshape(batch, len(FLAGS), 2)
+        flag_value_logits = self.flag_value_head(h).reshape(batch, len(FLAGS), 2)
+        return reg_write_logits, reg_value_logits, flag_write_logits, flag_value_logits

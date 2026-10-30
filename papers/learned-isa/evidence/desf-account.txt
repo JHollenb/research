@@ -1,0 +1,119 @@
+# SPF + FieldLM direct-effect lanes, seed 719
+
+One seed (719, the seed that failed held pairs in round 3/4). One seed cannot establish seed-to-seed spread.
+
+## Lane A: induced per-bit automata on SPF monomial_scan
+
+| form | w | states | min N result | min N flags | min N run panel | largest N | state exact @ largest |
+|---|---|---|---|---|---|---|---|
+| adc_al8 | 8 | 2 | 4 | 64 | 4 | 1024 | 1.0000 |
+| adc_r64_8 | 64 | 2 | 4 | 1024 | 2 | 1024 | 1.0000 |
+| add_al8 | 8 | 2 | 4 | 256 | 4 | 1024 | 1.0000 |
+| add_r32_8 | 32 | 2 | 4 | None | 2 | 256 | 0.9948 |
+| add_r64_32 | 64 | 2 | 2 | 1024 | 2 | 1024 | 1.0000 |
+| add_r64_8 | 64 | 2 | 4 | None | 1 | 256 | 0.9979 |
+| and_al8 | 8 | 1 | 1 | 4 | n/a (no carry) | 1024 | 1.0000 |
+| cmp_al8 | | | | | | | result not written: the table is chosen in lane B from the library by the flags |
+| cmp_r64_8 | | | | | | | result not written: the table is chosen in lane B from the library by the flags |
+| dec_al8 | 8 | 2 | 8 | 256 | n/a (no carry) | 1024 | 1.0000 |
+| inc_al8 | 8 | 2 | 8 | 32 | n/a (no carry) | 1024 | 1.0000 |
+| mov_al8 | 8 | 1 | 2 | 1 | n/a (no carry) | 1024 | 1.0000 |
+| mov_r32 | 32 | 1 | 1 | 1 | n/a (no carry) | 1024 | 1.0000 |
+| mov_r32_c7 | 32 | 1 | 4 | 1 | n/a (no carry) | 256 | 1.0000 |
+| mov_r32_r32 | 32 | 1 | 1 | 1 | n/a (no carry) | 1024 | 1.0000 |
+| mov_r64 | 64 | 1 | 1 | 1 | n/a (no carry) | 256 | 1.0000 |
+| mov_r64_c7 | 64 | 1 | 1 | 1 | n/a (no carry) | 1024 | 1.0000 |
+| mov_r64_r64 | 64 | 1 | 2 | 1 | n/a (no carry) | 256 | 1.0000 |
+| mov_r64_rm | 64 | 1 | 1 | 1 | n/a (no carry) | 1024 | 1.0000 |
+| or_al8 | 8 | 1 | 2 | 1024 | n/a (no carry) | 1024 | 1.0000 |
+| sbb_al8 | 8 | 2 | 8 | 16 | 8 | 1024 | 1.0000 |
+| sbb_r64_8 | 64 | 2 | 4 | 256 | 2 | 1024 | 1.0000 |
+| sub_al8 | 8 | 2 | 8 | 16 | 2 | 1024 | 1.0000 |
+| sub_r32_8 | 32 | 2 | 8 | 1024 | 8 | 1024 | 1.0000 |
+| sub_r64_32 | 64 | 2 | 1 | 1024 | 1 | 1024 | 1.0000 |
+| sub_r64_8 | 64 | 2 | 2 | 256 | 1 | 256 | 1.0000 |
+| test_al8 | | | | | | | result not written: the table is chosen in lane B from the library by the flags |
+| xor_al8 | 8 | 1 | 4 | 256 | n/a (no carry) | 1024 | 1.0000 |
+| xor_r32_r32 | 32 | 1 | 1 | 4 | n/a (no carry) | 256 | 1.0000 |
+| xor_r64_r64 | 64 | 1 | 1 | 32 | n/a (no carry) | 1024 | 1.0000 |
+
+r3 carry panel (v2.carry_run_panel RNG replicated, add_r64_8, runs 1..64): min 1.000, first below 1: None. Mamba r3 s719 first <1 at L=23; NN fails from L 10–13.
+
+## Lane A gradient arms (scan direction supplied to them)
+
+| form | arm | N | lr | iid soft | iid snapped | iid integer (SPF) | runs soft | runs integer | grid dist (rad) |
+|---|---|---|---|---|---|---|---|---|---|
+| adc_r64_8 | cart | 16 | 0.01 | 0.806 | 1.000 | 1.000 | 0.146 | 1.000 | 0.082 |
+| adc_r64_8 | cart | 16 | 0.05 | 0.957 | 1.000 | 1.000 | 0.250 | 1.000 | 0.177 |
+| adc_r64_8 | cart | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.118 |
+| adc_r64_8 | cart | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.137 |
+| adc_r64_8 | cart | 4096 | 0.01 | 0.224 | 0.272 | 0.272 | 0.997 | 1.000 | 0.059 |
+| adc_r64_8 | cart | 4096 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.116 |
+| adc_r64_8 | phase | 16 | 0.01 | 0.023 | 0.000 | 0.000 | 0.000 | 0.016 | 0.430 |
+| adc_r64_8 | phase | 16 | 0.05 | 0.018 | 0.000 | 0.000 | 0.000 | 0.016 | 0.377 |
+| adc_r64_8 | phase | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.044 |
+| adc_r64_8 | phase | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 |
+| adc_r64_8 | phase | 4096 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.054 |
+| adc_r64_8 | phase | 4096 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 |
+| adc_r64_8 | ste | 16 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.555 |
+| adc_r64_8 | ste | 16 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.481 |
+| adc_r64_8 | ste | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.527 |
+| adc_r64_8 | ste | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.484 |
+| adc_r64_8 | ste | 4096 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.531 |
+| adc_r64_8 | ste | 4096 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.437 |
+| add_r64_32 | cart | 16 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.171 |
+| add_r64_32 | cart | 16 | 0.05 | 0.099 | 0.002 | 0.002 | 0.019 | 0.000 | 0.538 |
+| add_r64_32 | cart | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.200 |
+| add_r64_32 | cart | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.206 |
+| add_r64_32 | phase | 16 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.006 |
+| add_r64_32 | phase | 16 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 |
+| add_r64_32 | phase | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.001 |
+| add_r64_32 | phase | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 |
+| add_r64_32 | ste | 16 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.480 |
+| add_r64_32 | ste | 16 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.458 |
+| add_r64_32 | ste | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.548 |
+| add_r64_32 | ste | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.512 |
+| sub_r64_32 | cart | 16 | 0.01 | 0.635 | 1.000 | 1.000 | 0.318 | 1.000 | 0.196 |
+| sub_r64_32 | cart | 16 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.165 |
+| sub_r64_32 | cart | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.216 |
+| sub_r64_32 | cart | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.200 |
+| sub_r64_32 | phase | 16 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.004 |
+| sub_r64_32 | phase | 16 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 |
+| sub_r64_32 | phase | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.004 |
+| sub_r64_32 | phase | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 |
+| sub_r64_32 | ste | 16 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.549 |
+| sub_r64_32 | ste | 16 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.349 |
+| sub_r64_32 | ste | 256 | 0.01 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.543 |
+| sub_r64_32 | ste | 256 | 0.05 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.471 |
+
+Run panels use b = 0 (adc/sbb: CF_in = 1), so they exercise only the (a_i, 0) symbols; a table wrong on b_i = 1 can pass them (adc cart N=4096 lr 0.01: runs 1.000, iid 0.272). iid is the full check.
+
+Induction on the same rows: adc_r64_8|16 iid 1.0 runs 1.0, adc_r64_8|256 iid 1.0 runs 1.0, adc_r64_8|4096 iid 1.0 runs 1.0, add_r64_32|16 iid 1.0 runs 1.0, add_r64_32|256 iid 1.0 runs 1.0, add_r64_32|4096 iid 1.0 runs 1.0, sub_r64_32|16 iid 1.0 runs 1.0, sub_r64_32|256 iid 1.0 runs 1.0, sub_r64_32|4096 iid 1.0 runs 1.0
+
+## Lane B: FieldLM microcode records
+
+| arm | records | iid | held literal | held pairs | pairs abstained | code map = identity |
+|---|---|---|---|---|---|---|
+| learned | 28 | 1.0000 | 1.0000 | 1.0000 | 0 | True |
+| supplied_map | 28 | 1.0000 | 1.0000 | 1.0000 | 0 | True |
+| unmasked | 399 | 1.0000 | 1.0000 | 0.0000 | 4096 | True |
+| learned N=500 | 32 | 1.0000 | 1.0000 | 1.0000 | 0 | True |
+| learned N=2000 | 31 | 1.0000 | 1.0000 | 1.0000 | 0 | True |
+| learned N=8000 | 36 | 1.0000 | 1.0000 | 1.0000 | 0 | True |
+| learned N=30000 | 28 | 1.0000 | 1.0000 | 1.0000 | 0 | True |
+
+Programs (learned arm, exact/total): {"heldout_literals": {"1024": "4/4", "128": "8/8", "16": "16/16"}, "heldout_pairs": {"1024": "4/4", "128": "8/8", "16": "16/16"}, "long_train_literals": {"8192": "4/4"}, "train_literals": {"1024": "4/4", "128": "8/8", "16": "16/16"}}
+
+Native ptrace comparisons: {"counter": {"1024": {"exact": true, "agree": "1024/1024"}, "128": {"exact": true, "agree": "128/128"}, "16": {"exact": true, "agree": "16/16"}, "8192": {"exact": true, "agree": "8192/8192"}}, "stdout": {"1024": {"exact": true, "agree": "1024/1024"}, "128": {"exact": true, "agree": "128/128"}, "16": {"exact": true, "agree": "16/16"}}}
+
+## Baselines (held pairs, state exact)
+
+Not like-for-like: lane B is given a role vocabulary (3-bit fields at bit 0/3, immediates of 0/1/4/8 bytes, width/merge classes, store to [register], SYSCALL) and lane A's automaton shape and flag-tap vocabulary; the sequence models are given bytes and state (r4 also a register-pointer read). The comparison measures what that structure buys, not a like-for-like learner.
+
+| model | supplied | held pairs |
+|---|---|---|
+| Mamba r3 s719 | learned end to end | 0.8174 |
+| Mamba r4 regptr s719 | learned register pointers (pointer structure supplied) | 0.7979 |
+| Mamba r4 regptr s673 | learned register pointers (pointer structure supplied) | 0.9907 |
+| Hydra r4 regptr s719 | learned register pointers (pointer structure supplied) | 0.8267 |
+| NN r4 regptr s673 | learned register pointers (pointer structure supplied) | 0.8203 |

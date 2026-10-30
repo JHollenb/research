@@ -1,0 +1,112 @@
+def transition_with_selector(
+    regs: List[int],
+    flags: List[int],
+    memory: Optional[List[int]],
+    step: Dict[str, Any],
+    selector: int,
+    flip_cf: bool = False,
+) -> Tuple[List[int], List[int], Optional[List[int]], Dict[str, Any]]:
+    p = step["pan_stage3"]
+    use_flags = list(flags)
+    if flip_cf:
+        use_flags[0] = 1 - use_flags[0]
+    selected_op = OPS[selector]
+    use_memory = [int(x) & 0xFF for x in memory] if memory is not None else None
+    if use_memory is None and "before_memory" in p:
+        use_memory = [int(x) & 0xFF for x in p["before_memory"]]
+    mem_offset = int(p["mem_offset"]) if "mem_offset" in p else None
+    mem_value = None
+    if selected_op.operands in MEMORY_OPERANDS and use_memory is not None and mem_offset is not None:
+        mem_value = read_memory_u64(use_memory, mem_offset)
+    out_regs, out_flags, flag_mask = apply_op(
+        regs,
+        use_flags,
+        selector,
+        int(p["dst"]),
+        int(p["src"]),
+        int(p["imm"]),
+        mem_value,
+    )
+    out_memory = apply_memory_effect(use_memory, selector, mem_offset, mem_value, int(p["imm"]), regs, int(p["src"]), use_flags)
+    return out_regs, out_flags, out_memory, {
+        "selector": selector,
+        "flag_mask": flag_mask,
+        "exception": selected_op.expected_exception,
+    }
+
+
+class StructuredStage3Predictor:
+    def __init__(self, op_offset: int = 0, flip_cf: bool = False):
+        self.op_offset = op_offset
+        self.flip_cf = flip_cf
+
+    def predict_next(
+        self,
+        regs: List[int],
+        flags: List[int],
+        memory: Optional[List[int]],
+        step: Dict[str, Any],
+    ) -> Tuple[List[int], List[int], Optional[List[int]], Dict[str, Any]]:
+        p = step["pan_stage3"]
+        selector = (int(p["op_index"]) + self.op_offset) % len(OPS)
+        try:
+            return transition_with_selector(regs, flags, memory, step, selector, flip_cf=self.flip_cf)
+        except Exception as exc:
+            return list(regs), list(flags), memory, {"selector": selector, "flag_mask": [0, 0, 0, 0], "error": f"{type(exc).__name__}: {exc}"}
+
+
+class FactorizedStage3PAN(nn.Module):
+    def __init__(self, hidden: int = 96):
+        super().__init__()
+        self.op_emb = nn.Embedding(len(OPS), 32)
+        self.net = nn.Sequential(
+            nn.Linear(32 + len(FLAGS), hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, len(OPS)),
+        )
+
+    def forward(self, op: torch.Tensor, flags: torch.Tensor) -> torch.Tensor:
+        x = torch.cat([self.op_emb(op.long()), flags.float()], dim=-1)
+        return self.net(x)
+
+
+class EffectStage3PAN(FactorizedStage3PAN):
+    """Learned Stage 3 effect-family selector head.
+
+    Stage 3 covers wide 64-bit scalar and exception-producing operations. This
+    first learned-effect mode emits the operation/effect family used for commit
+    and validation gates it separately from the legacy factorized selector path.
+    """
+
+
+def make_model(arch: str, hidden: int) -> FactorizedStage3PAN:
+    if arch == "factorized":
+        return FactorizedStage3PAN(hidden=hidden)
+    if arch == "effect":
+        return EffectStage3PAN(hidden=hidden)
+    raise ValueError(f"unknown Stage 3 arch {arch!r}")
+
+
+class NeuralStage3Predictor:
+    def __init__(self, model: FactorizedStage3PAN):
+        self.model = model.eval()
+        self.learned_effect_mode = isinstance(model, EffectStage3PAN)
+
+    def predict_next(
+        self,
+        regs: List[int],
+        flags: List[int],
+        memory: Optional[List[int]],
+        step: Dict[str, Any],
+    ) -> Tuple[List[int], List[int], Optional[List[int]], Dict[str, Any]]:
+        p = step["pan_stage3"]
+        with torch.no_grad():
+            op = torch.tensor([int(p["op_index"])], dtype=torch.long)
+            fl = torch.tensor([flags], dtype=torch.float32)
+            selector = int(self.model(op, fl).argmax(-1)[0])
+        try:
+            return transition_with_selector(regs, flags, memory, step, selector)
+        except Exception as exc:
+            return list(regs), list(flags), memory, {"selector": selector, "flag_mask": [0, 0, 0, 0], "error": f"{type(exc).__name__}: {exc}"}

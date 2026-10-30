@@ -1,0 +1,28 @@
+class FactorizedStage4PAN(nn.Module):
+    def __init__(self, hidden: int = 96):
+        super().__init__()
+        self.op_emb = nn.Embedding(len(OPS), 32)
+        self.net = nn.Sequential(
+            nn.Linear(32, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+            nn.Linear(hidden, len(OPS)),
+        )
+
+    def forward(self, op: torch.Tensor) -> torch.Tensor:
+        return self.net(self.op_emb(op.long()))
+
+
+class EffectStage4PAN(FactorizedStage4PAN):
+    """Learned Stage 4 XMM/SIMD effect-family selector head."""
+
+
+def make_model(arch: str, hidden: int) -> FactorizedStage4PAN:
+    if arch == "factorized":
+        return FactorizedStage4PAN(hidden=hidden)
+    if arch == "effect":
+        return EffectStage4PAN(hidden=hidden)
+    raise ValueError(f"unknown Stage 4 arch {arch!r}")
+
+

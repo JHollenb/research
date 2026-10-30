@@ -1,0 +1,31 @@
+class FactorizedStage2PAN(nn.Module):
+    def __init__(self, hidden: int = 96):
+        super().__init__()
+        self.op_emb = nn.Embedding(len(OPS), 24)
+        self.net = nn.Sequential(
+            nn.Linear(24 + len(FLAGS), hidden),
+            nn.GELU(),
+            nn.Linear(hidden, hidden),
+            nn.GELU(),
+        )
+        self.rip_head = nn.Linear(hidden, 3)
+        self.stack_head = nn.Linear(hidden, 5)
+        self.reg_head = nn.Linear(hidden, 4)
+        self.flag_head = nn.Linear(hidden, 4)
+
+    def selector_logits(self, op: torch.Tensor, flags: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        x = torch.cat([self.op_emb(op.long()), flags.float()], dim=-1)
+        h = self.net(x)
+        return self.rip_head(h), self.stack_head(h), self.reg_head(h), self.flag_head(h)
+
+
+class EffectStage2PAN(FactorizedStage2PAN):
+    """Learned Stage 2 typed-effect selector head.
+
+    The effect axes are RIP target class, stack event, RAX write source, and
+    flag write policy. Validation treats this as a learned transition contract
+    distinct from the legacy factorized selector baseline.
+    """
+
+
+def make_model(arch: str, hidden: int) -> FactorizedStage2PAN:
