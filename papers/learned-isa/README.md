@@ -6,6 +6,11 @@ This research line compares several ways to execute a bounded x86 profile, then 
 
 Jump to the [Mamba and Hydra equations](paper.md#mamba-and-hydra-equations), [size and native hardware performance](paper.md#size-and-performance-against-native-hardware), [direct-effect learners](paper.md#direct-prediction-of-architectural-effects), [SPF automata and FieldLM programs](paper.md#address-composition-and-explicit-automata), or [recipient-local editing](paper.md#recipient-local-nn-symbols-and-their-limits).
 
+The [compiled-C application matrix](c-app-matrix/README.md) adds an October 30
+execution comparison: native C, six selectors and three direct-effect models on
+Hello World, a checksum, a sort and a record parser, with exact artifact sizes,
+CPU/RSS, timing and retained failures.
+
 The strongest current observations are:
 
 - Six matched selector adapters expose a large gap between isolated accuracy and complete-program reliability; all arithmetic remains supplied in this cohort.

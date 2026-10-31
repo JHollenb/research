@@ -1,0 +1,15 @@
+
+result/programs/tiny.elf:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	mov    $0x1,%eax
+  401005:	mov    $0x402000,%esi
+  40100a:	mov    $0xe,%edx
+  40100f:	mov    %rax,%rdi
+  401012:	syscall
+  401014:	mov    $0x3c,%eax
+  401019:	xor    %edi,%edi
+  40101b:	syscall

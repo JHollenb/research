@@ -1,0 +1,74 @@
+{
+  "command": [
+    "/usr/bin/env",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "CUDA_VISIBLE_DEVICES=-1",
+    "uv",
+    "run",
+    "--no-sync",
+    "--project",
+    "{env}",
+    "python",
+    "run_matrix.py",
+    "worker"
+  ],
+  "request": {
+    "config": {
+      "cell_timeout_s": 10,
+      "device": "cpu",
+      "engines": [
+        "pan_reference",
+        "nn",
+        "pan_isa",
+        "fieldlm",
+        "spf_transformer",
+        "mamba",
+        "hydra",
+        "effect_nn",
+        "effect_mamba",
+        "effect_hydra"
+      ],
+      "max_steps": 200000,
+      "native_repeats": 15,
+      "schema": "isa-c-app-matrix-v1",
+      "scope": "Matched C-compiled freestanding ELF execution; native outputs checked independently; failures retained.",
+      "seed": 673,
+      "threads": 1,
+      "training_updates": 0,
+      "warm_repeats": 3,
+      "worker_budget_s": 420
+    },
+    "device": "cpu",
+    "needs": {
+      "cpu": true
+    },
+    "scheduling_contract": {
+      "additional_scheduler_submissions": 0,
+      "checkpoint_policy": "One frozen architecture per fresh child/cell, serial CPU1; no fitting/fallback; four apps share exact ELF bytes.",
+      "collection_policy": "direct_job_only",
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "execution_model": "finite_sequential_models",
+      "interactive": false,
+      "lease_scope": "entire-sequential-model-worker",
+      "max_local_work_items": 200,
+      "max_mrun_submissions": 1,
+      "model_loads": 40,
+      "model_process_execution": "sequential_subprocesses",
+      "model_processes": 40,
+      "mrun_retry_policy": "none_for_finite_lease",
+      "nested_mrun_submissions": 0,
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "resident_model_concurrency": 1,
+      "schema": "saturn-single-lease-sequential-models-scheduling-contract-v1",
+      "subprocess_retry_policy": "none",
+      "task_family": "inference"
+    },
+    "schema": "isa-c-app-matrix-request-v1",
+    "source_manifest_sha256": "be5ed4fa73fa1d243d78faf2244ee29de84e13a2d996c5de0d31c20793038b4f",
+    "task_family": "inference"
+  }
+}

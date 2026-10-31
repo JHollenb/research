@@ -1,0 +1,115 @@
+
+result/programs/small.elf:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	mov    0x1009(%rip),%rdx        # 402010 <b>
+  401007:	mov    0x100a(%rip),%rax        # 402018 <a>
+  40100e:	add    %rdx,%rax
+  401011:	mov    %rax,0x1000(%rip)        # 402018 <a>
+  401018:	mov    0xfe1(%rip),%rdx        # 402000 <d>
+  40101f:	mov    0xfe2(%rip),%rax        # 402008 <c>
+  401026:	xor    %rdx,%rax
+  401029:	mov    %rax,0xfd8(%rip)        # 402008 <c>
+  401030:	mov    0xfd1(%rip),%rdx        # 402008 <c>
+  401037:	mov    0xfd2(%rip),%rax        # 402010 <b>
+  40103e:	add    %rdx,%rax
+  401041:	mov    %rax,0xfc8(%rip)        # 402010 <b>
+  401048:	mov    0xfc9(%rip),%rdx        # 402018 <a>
+  40104f:	mov    0xfaa(%rip),%rax        # 402000 <d>
+  401056:	xor    %rdx,%rax
+  401059:	mov    %rax,0xfa0(%rip)        # 402000 <d>
+  401060:	mov    0xfb1(%rip),%rax        # 402018 <a>
+  401067:	lea    (%rax,%rax,2),%rax
+  40106b:	mov    %rax,0xfa6(%rip)        # 402018 <a>
+  401072:	mov    0xf87(%rip),%rdx        # 402000 <d>
+  401079:	mov    0xf90(%rip),%rax        # 402010 <b>
+  401080:	xor    %rdx,%rax
+  401083:	mov    %rax,0xf86(%rip)        # 402010 <b>
+  40108a:	mov    0xf87(%rip),%rdx        # 402018 <a>
+  401091:	mov    0xf70(%rip),%rax        # 402008 <c>
+  401098:	add    %rdx,%rax
+  40109b:	mov    %rax,0xf66(%rip)        # 402008 <c>
+  4010a2:	mov    0xf57(%rip),%rax        # 402000 <d>
+  4010a9:	lea    (%rax,%rax,4),%rax
+  4010ad:	mov    %rax,0xf4c(%rip)        # 402000 <d>
+  4010b4:	mov    0xf4d(%rip),%rdx        # 402008 <c>
+  4010bb:	mov    0xf56(%rip),%rax        # 402018 <a>
+  4010c2:	xor    %rdx,%rax
+  4010c5:	mov    %rax,0xf4c(%rip)        # 402018 <a>
+  4010cc:	mov    0xf45(%rip),%rdx        # 402018 <a>
+  4010d3:	mov    0xf36(%rip),%rax        # 402010 <b>
+  4010da:	sub    %rdx,%rax
+  4010dd:	mov    %rax,0xf2c(%rip)        # 402010 <b>
+  4010e4:	mov    0xf1d(%rip),%rax        # 402008 <c>
+  4010eb:	imul   $0x7,%rax,%rax
+  4010ef:	mov    %rax,0xf12(%rip)        # 402008 <c>
+  4010f6:	mov    0xf13(%rip),%rdx        # 402010 <b>
+  4010fd:	mov    0xefc(%rip),%rax        # 402000 <d>
+  401104:	add    %rdx,%rax
+  401107:	mov    %rax,0xef2(%rip)        # 402000 <d>
+  40110e:	mov    0xeeb(%rip),%rdx        # 402000 <d>
+  401115:	mov    0xefc(%rip),%rax        # 402018 <a>
+  40111c:	add    %rdx,%rax
+  40111f:	mov    %rax,0xef2(%rip)        # 402018 <a>
+  401126:	mov    0xee3(%rip),%rax        # 402010 <b>
+  40112d:	imul   $0xb,%rax,%rax
+  401131:	mov    %rax,0xed8(%rip)        # 402010 <b>
+  401138:	mov    0xed1(%rip),%rdx        # 402010 <b>
+  40113f:	mov    0xec2(%rip),%rax        # 402008 <c>
+  401146:	xor    %rdx,%rax
+  401149:	mov    %rax,0xeb8(%rip)        # 402008 <c>
+  401150:	mov    0xeb1(%rip),%rdx        # 402008 <c>
+  401157:	mov    0xea2(%rip),%rax        # 402000 <d>
+  40115e:	sub    %rdx,%rax
+  401161:	mov    %rax,0xe98(%rip)        # 402000 <d>
+  401168:	mov    0xea9(%rip),%rax        # 402018 <a>
+  40116f:	imul   $0xd,%rax,%rax
+  401173:	mov    %rax,0xe9e(%rip)        # 402018 <a>
+  40117a:	mov    0xe7f(%rip),%rdx        # 402000 <d>
+  401181:	mov    0xe88(%rip),%rax        # 402010 <b>
+  401188:	add    %rdx,%rax
+  40118b:	mov    %rax,0xe7e(%rip)        # 402010 <b>
+  401192:	mov    0xe7f(%rip),%rdx        # 402018 <a>
+  401199:	mov    0xe68(%rip),%rax        # 402008 <c>
+  4011a0:	add    %rdx,%rax
+  4011a3:	mov    %rax,0xe5e(%rip)        # 402008 <c>
+  4011aa:	mov    0xe5f(%rip),%rdx        # 402010 <b>
+  4011b1:	mov    0xe48(%rip),%rax        # 402000 <d>
+  4011b8:	xor    %rdx,%rax
+  4011bb:	mov    %rax,0xe3e(%rip)        # 402000 <d>
+  4011c2:	mov    0xe3f(%rip),%rdx        # 402008 <c>
+  4011c9:	mov    0xe48(%rip),%rax        # 402018 <a>
+  4011d0:	sub    %rdx,%rax
+  4011d3:	mov    %rax,0xe3e(%rip)        # 402018 <a>
+  4011da:	mov    0xe37(%rip),%rdx        # 402018 <a>
+  4011e1:	mov    0xe28(%rip),%rax        # 402010 <b>
+  4011e8:	xor    %rdx,%rax
+  4011eb:	mov    %rax,0xe1e(%rip)        # 402010 <b>
+  4011f2:	mov    0xe07(%rip),%rdx        # 402000 <d>
+  4011f9:	mov    0xe08(%rip),%rax        # 402008 <c>
+  401200:	add    %rdx,%rax
+  401203:	mov    %rax,0xdfe(%rip)        # 402008 <c>
+  40120a:	mov    0xdef(%rip),%rax        # 402000 <d>
+  401211:	imul   $0x11,%rax,%rax
+  401215:	mov    %rax,0xde4(%rip)        # 402000 <d>
+  40121c:	mov    0xdf5(%rip),%rax        # 402018 <a>
+  401223:	mov    0xde6(%rip),%rsi        # 402010 <b>
+  40122a:	mov    0xdd7(%rip),%rcx        # 402008 <c>
+  401231:	mov    0xdc8(%rip),%rdx        # 402000 <d>
+  401238:	xor    %rsi,%rax
+  40123b:	lea    -0x8(%rsp),%rsi
+  401240:	xor    %rcx,%rax
+  401243:	xor    %rdx,%rax
+  401246:	mov    $0x8,%edx
+  40124b:	mov    %rax,-0x8(%rsp)
+  401250:	mov    $0x1,%eax
+  401255:	mov    %rax,%rdi
+  401258:	syscall
+  40125a:	xor    %edi,%edi
+  40125c:	cmp    $0x8,%rax
+  401260:	mov    $0x3c,%eax
+  401265:	setne  %dil
+  401269:	syscall

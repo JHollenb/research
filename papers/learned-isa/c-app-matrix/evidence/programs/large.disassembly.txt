@@ -1,0 +1,81 @@
+
+result/programs/large.elf:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <parse_unsigned>:
+  401000:	xor    %eax,%eax
+  401002:	mov    (%rdi),%rdx
+  401005:	mov    (%rdx),%cl
+  401007:	cmp    $0x2f,%cl
+  40100a:	jle    401025 <parse_unsigned+0x25>
+  40100c:	mov    (%rdx),%cl
+  40100e:	cmp    $0x39,%cl
+  401011:	jg     401025 <parse_unsigned+0x25>
+  401013:	imul   $0xa,%eax,%eax
+  401016:	movsbl (%rdx),%ecx
+  401019:	inc    %rdx
+  40101c:	mov    %rdx,(%rdi)
+  40101f:	lea    -0x30(%rax,%rcx,1),%eax
+  401023:	jmp    401002 <parse_unsigned+0x2>
+  401025:	ret
+
+0000000000401026 <_start>:
+  401026:	push   %rax
+  401027:	pop    %rax
+  401028:	sub    $0x10,%rsp
+  40102c:	movq   $0x402000,0x8(%rsp)
+  401035:	mov    0x8(%rsp),%rax
+  40103a:	mov    (%rax),%dl
+  40103c:	test   %dl,%dl
+  40103e:	je     4010a2 <_start+0x7c>
+  401040:	xor    %esi,%esi
+  401042:	mov    (%rax),%dl
+  401044:	lea    0x1(%rax),%rcx
+  401048:	cmp    $0x2c,%dl
+  40104b:	je     40105c <_start+0x36>
+  40104d:	mov    (%rax),%al
+  40104f:	lea    (%rsi,%rax,1),%edx
+  401052:	mov    %rcx,%rax
+  401055:	mov    %edx,%esi
+  401057:	and    $0x7,%esi
+  40105a:	jmp    401042 <_start+0x1c>
+  40105c:	lea    0x8(%rsp),%rdi
+  401061:	mov    %rcx,0x8(%rsp)
+  401066:	call   401000 <parse_unsigned>
+  40106b:	incq   0x8(%rsp)
+  401070:	mov    %eax,%r8d
+  401073:	call   401000 <parse_unsigned>
+  401078:	mov    %esi,%edx
+  40107a:	mov    %r8d,%ecx
+  40107d:	incq   0x8(%rsp)
+  401082:	mov    %eax,%eax
+  401084:	add    %rcx,0x4034a0(,%rdx,8)
+  40108c:	imul   %rcx,%rax
+  401090:	incq   0x403420(,%rdx,8)
+  401098:	add    %rax,0x403460(,%rdx,8)
+  4010a0:	jmp    401035 <_start+0xf>
+  4010a2:	movabs $0x14650fb0739d0383,%rax
+  4010ac:	xor    %edx,%edx
+  4010ae:	movabs $0x100000001b3,%rcx
+  4010b8:	xor    0x4034a0(%rdx),%rax
+  4010bf:	add    $0x8,%rdx
+  4010c3:	imul   %rcx,%rax
+  4010c7:	xor    0x403458(%rdx),%rax
+  4010ce:	imul   %rcx,%rax
+  4010d2:	xor    0x403418(%rdx),%rax
+  4010d9:	imul   %rcx,%rax
+  4010dd:	cmp    $0x40,%rdx
+  4010e1:	jne    4010b8 <_start+0x92>
+  4010e3:	mov    %rax,0x8(%rsp)
+  4010e8:	mov    $0x1,%eax
+  4010ed:	lea    0x8(%rsp),%rsi
+  4010f2:	mov    $0x8,%edx
+  4010f7:	mov    %rax,%rdi
+  4010fa:	syscall
+  4010fc:	xor    %edi,%edi
+  4010fe:	cmp    $0x8,%rax
+  401102:	mov    $0x3c,%eax
+  401107:	setne  %dil
+  40110b:	syscall

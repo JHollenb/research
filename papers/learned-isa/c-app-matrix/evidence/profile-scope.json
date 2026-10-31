@@ -1,0 +1,182 @@
+{
+  "direct_effect_encoding_form_count": 28,
+  "direct_effect_encoding_forms": {
+    "add_al8": [
+      8,
+      "add",
+      1
+    ],
+    "add_r32_8": [
+      32,
+      "add",
+      1
+    ],
+    "add_r64_32": [
+      64,
+      "add",
+      4
+    ],
+    "add_r64_8": [
+      64,
+      "add",
+      1
+    ],
+    "and_al8": [
+      8,
+      "and",
+      1
+    ],
+    "cmp_al8": [
+      8,
+      "cmp",
+      1
+    ],
+    "dec_al8": [
+      8,
+      "dec",
+      0
+    ],
+    "inc_al8": [
+      8,
+      "inc",
+      0
+    ],
+    "mov_al8": [
+      8,
+      "mov",
+      1
+    ],
+    "mov_r32": [
+      32,
+      "mov",
+      4
+    ],
+    "mov_r32_c7": [
+      32,
+      "mov",
+      4
+    ],
+    "mov_r32_r32": [
+      32,
+      "mov",
+      0
+    ],
+    "mov_r64": [
+      64,
+      "mov",
+      8
+    ],
+    "mov_r64_c7": [
+      64,
+      "mov",
+      4
+    ],
+    "mov_r64_r64": [
+      64,
+      "mov",
+      0
+    ],
+    "mov_r64_rm": [
+      64,
+      "mov",
+      0
+    ],
+    "nop": [
+      64,
+      "nop",
+      0
+    ],
+    "or_al8": [
+      8,
+      "or",
+      1
+    ],
+    "store_m64_r64": [
+      64,
+      "store",
+      0
+    ],
+    "sub_al8": [
+      8,
+      "sub",
+      1
+    ],
+    "sub_r32_8": [
+      32,
+      "sub",
+      1
+    ],
+    "sub_r64_32": [
+      64,
+      "sub",
+      4
+    ],
+    "sub_r64_8": [
+      64,
+      "sub",
+      1
+    ],
+    "syscall": [
+      64,
+      "syscall",
+      0
+    ],
+    "test_al8": [
+      8,
+      "test",
+      1
+    ],
+    "xor_al8": [
+      8,
+      "xor",
+      1
+    ],
+    "xor_r32_r32": [
+      32,
+      "xor",
+      0
+    ],
+    "xor_r64_r64": [
+      64,
+      "xor",
+      0
+    ]
+  },
+  "note": "Counts describe different profile units, not full x86 ISA coverage. Extracted from frozen source literals without importing/executing model code.",
+  "selector_runtime_family_count": 33,
+  "selector_runtime_family_labels": [
+    "NOP",
+    "INT3",
+    "SYSCALL",
+    "PUSH_RBP",
+    "POP_RBP",
+    "LEAVE",
+    "RET",
+    "CALL_REL32",
+    "JMP_REL32",
+    "JMP_REL8",
+    "MOV_IMM_REG",
+    "MOV_RM_REG",
+    "MOV_REG_RM",
+    "LEA",
+    "XOR_RM_REG",
+    "ADD_IMM_RM",
+    "SUB_IMM_RM",
+    "MOV_IMM_RM",
+    "MOVDQA_XMM_XMM",
+    "MOVDQA_XMM_M128",
+    "MOVDQA_M128_XMM",
+    "MOVDQA_ALIGNMENT_FAULT",
+    "MOVDQU_XMM_XMM",
+    "MOVDQU_XMM_M128",
+    "MOVDQU_M128_XMM",
+    "PXOR_XMM_XMM",
+    "PXOR_XMM_M128",
+    "PADDQ_XMM_XMM",
+    "PADDQ_XMM_M128",
+    "FNOP",
+    "FLD1",
+    "FLDZ",
+    "FSTP_ST"
+  ]
+}

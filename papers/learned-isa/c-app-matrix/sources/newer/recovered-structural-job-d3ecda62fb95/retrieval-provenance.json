@@ -1,0 +1,20 @@
+{
+  "job_id": "job-d3ecda62fb95",
+  "job_state": "succeeded",
+  "retrieval_status": "archive-unavailable",
+  "original_artifact_pointer": {
+    "sha256": "9c2e70f7f6a950ce2218d77e64037a8e6681678209491252629c5cf93c253b78",
+    "name": "result.tar.gz",
+    "bytes": 100997
+  },
+  "run_manifest_failure": "NoSuchBucket during configured mrun run-manifest lookup; no published manifest.json available",
+  "direct_cas_failure": "object 9c2e70f7f6a950ce2218d77e64037a8e6681678209491252629c5cf93c253b78 not found in any configured artifact store via mrun.artifacts.fetch_object",
+  "log_bytes": 3863,
+  "log_sha256": "f2612a649305a39fe5da1b50fe4080ac59bd79d5207323595736230180035e1c",
+  "receipt_sha256": "2e567d24d05dd788ee70fcf333a0f9d1ab9490870ec9b7b4757a291b00d37989",
+  "inline_archive_chunks": 0,
+  "model_calls": 0,
+  "training": false,
+  "original_evidence_mutated": false,
+  "interpretation": "Original scientific job succeeded. This bounded retrieval could preserve scheduler evidence but could not obtain its saved executable microcode. No program reconstruction or fitting was performed."
+}

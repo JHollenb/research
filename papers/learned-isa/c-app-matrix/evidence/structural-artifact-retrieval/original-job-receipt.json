@@ -1,0 +1,464 @@
+{
+  "job_id": "job-d3ecda62fb95",
+  "client_run_id": "a6689ad481ab92b6",
+  "experiment": "isa-direct-effect-spf-fieldlm",
+  "state": "succeeded",
+  "payload_kind": "shipped",
+  "env_alias": "mrun",
+  "timeout_s": 2400.0,
+  "priority": 100,
+  "assigned_host": "beast",
+  "lease_expires_ts": 1792096592.6607413,
+  "kill_requested": 0,
+  "created_ts": 1792096183.7883875,
+  "started_ts": 1792096190.0450237,
+  "finished_ts": 1792096533.8002813,
+  "status_detail": null,
+  "external_rss_mb": null,
+  "external_vram_mb": null,
+  "needs": {
+    "cpu": true,
+    "prefer_host": "beast",
+    "payload_custody_v2": true
+  },
+  "reservation": {
+    "ram_mb": 3000.0,
+    "vram_mb": 0.0,
+    "cpu_threads": 4,
+    "disk_gb": 1.0,
+    "est_wall_s": 1500.0,
+    "source": "declared"
+  },
+  "cmd": [
+    "/usr/bin/env",
+    "UV_CACHE_DIR=/tmp/isa-uv-cache",
+    "uv",
+    "run",
+    "--project",
+    "{env}",
+    "--with",
+    "unicorn==2.1.4",
+    "--with",
+    "psutil>=5.9",
+    "python",
+    "de_spf_fieldlm_job.py",
+    "worker"
+  ],
+  "config": {
+    "task_family": "training",
+    "device": "cpu",
+    "needs": {
+      "cpu": true
+    },
+    "config": {
+      "schema": "isa-direct-effect-spf-fieldlm",
+      "profile": "x86-de64-v2",
+      "seed": 719,
+      "train_n": 60000,
+      "test_n": 8192,
+      "gen_workers": 4,
+      "cpu_threads": 4,
+      "lanes": [
+        "b"
+      ],
+      "lane_a_rows": 4096,
+      "lane_a_curve": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        256,
+        1024
+      ],
+      "grad_forms": [
+        "add_r64_32",
+        "sub_r64_32",
+        "adc_r64_8"
+      ],
+      "grad_n": [
+        16,
+        256,
+        4096
+      ],
+      "grad_seeds": 1,
+      "grad_steps": 1500,
+      "grad_lrs": [
+        0.05,
+        0.01
+      ],
+      "lane_b_arms": [
+        "learned",
+        "supplied_map",
+        "unmasked"
+      ],
+      "lane_b_curve": [
+        500,
+        2000,
+        8000,
+        30000
+      ],
+      "counters": [
+        16,
+        128,
+        1024,
+        8192
+      ],
+      "stdouts": [
+        16,
+        128,
+        1024
+      ],
+      "program_lengths": [
+        16,
+        128,
+        1024
+      ],
+      "program_counts": [
+        16,
+        8,
+        4
+      ],
+      "long_programs": 8192,
+      "long_count": 4,
+      "child_timeout_s": 10800,
+      "smoke": false,
+      "labels": "Unicorn 2.1.4 single-step (independent emulator); native ptrace for counter/stdout",
+      "supplied": "lane A: operand fetch, width, write-back, {0,\u03c0} bit readout, tap vocabulary; lane B: role vocabulary (3-bit fields at bit 0/3 of an opcode byte, trailing 0/1/4/8-byte immediates with zero/sign extension, width/merge classes, store to [register], SYSCALL), lookup tie-break, fetch at the emitted RIP, OS boundary",
+      "sources": {
+        "spf": {
+          "head": "9436749ccd6ceb01a67f9d445dc0c26c9f3b0acb",
+          "dirty_paths_under_source": 0
+        },
+        "spectral_native": {
+          "head": "02241e5502b576b4959a48a37d8b5443c1c748e0",
+          "dirty_paths_under_source": 10
+        },
+        "isa_worktree": {
+          "head": "f63944b474c18d792a0759b6caad691c8c3701ae",
+          "dirty": []
+        }
+      }
+    },
+    "scheduling_contract": {
+      "schema": "saturn-single-lease-sequential-models-scheduling-contract-v1",
+      "lease_scope": "entire-sequential-model-worker",
+      "execution_model": "finite_sequential_models",
+      "task_family": "training",
+      "max_mrun_submissions": 1,
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "additional_scheduler_submissions": 0,
+      "nested_mrun_submissions": 0,
+      "model_processes": 2,
+      "model_loads": 2,
+      "resident_model_concurrency": 1,
+      "model_process_execution": "sequential_subprocesses",
+      "subprocess_retry_policy": "none",
+      "max_local_work_items": 256,
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "mrun_retry_policy": "none_for_finite_lease",
+      "collection_policy": "direct_job_only",
+      "interactive": false,
+      "checkpoint_policy": "structural induction (no gradient checkpoints); every fitted record set written to result"
+    },
+    "admission_attempt": 0,
+    "saturn_request_sha256": "76536081b8a1187aff79bc712ab7bc6dca3476f014afcd887d6e69325d8182f9",
+    "retry_on_kill": false,
+    "mrun_guarded_request_sha256": "71b46e9a1b5b5fc56c1e701dc07a2b323c0fe8cbe38bb0065e28d390a89b3f08"
+  },
+  "result": {
+    "status": "ok",
+    "returncode": 0,
+    "elapsed_s": 343.82,
+    "peak_rss_mb": 2504.3,
+    "peak_vram_mb": 0.0,
+    "executed_payload": {
+      "sha256": "4cf216c81dab7776d9728af398c036054747bcc4400bf3e79cd9aca4ae4415a9",
+      "size_bytes": 2075027,
+      "host": "beast"
+    },
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "payload_sandbox_backend": "off",
+    "payload_sandbox": {
+      "requested": false
+    },
+    "diagnostics": {
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1792096189.987634
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1792096190.0405831
+        },
+        {
+          "name": "process.launch",
+          "ts": 1792096190.0426946
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1792096190.046721
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1792096533.712595
+        },
+        {
+          "name": "finished",
+          "ts": 1792096533.7172742
+        }
+      ],
+      "command": [
+        "/usr/bin/env",
+        "UV_CACHE_DIR=/tmp/isa-uv-cache",
+        "uv",
+        "run",
+        "--project",
+        "/home/beast/domains/mrun",
+        "--with",
+        "unicorn==2.1.4",
+        "--with",
+        "psutil>=5.9",
+        "python",
+        "de_spf_fieldlm_job.py",
+        "worker"
+      ],
+      "cwd": "/mnt/hdd8tb/mrun-work/job-d3ecda62fb95",
+      "log_path": "/mnt/hdd8tb/mrun-work/job-d3ecda62fb95/job.log"
+    },
+    "failure": null,
+    "artifacts": {
+      "schema": "mrun.run-artifacts-v1",
+      "job_id": "job-d3ecda62fb95",
+      "job_status": "ok",
+      "store": {
+        "endpoint": "http://192.168.68.202:9030",
+        "bucket": "mrun",
+        "cas_prefix": "cas/",
+        "runs_prefix": "runs/"
+      },
+      "runs_prefix": "s3://mrun/runs/job-d3ecda62fb95/",
+      "rows": 2,
+      "objects": 1,
+      "objects_uploaded": 1,
+      "objects_already_remote": 0,
+      "objects_pending": 0,
+      "bytes_sent": 100997,
+      "ledger": {
+        "sha256": "575b854657fd72879f766e4358a6d394c230f4254cdc2e33eefc93dba80718be",
+        "bytes": 682
+      },
+      "job_log": {
+        "sha256": "f2612a649305a39fe5da1b50fe4080ac59bd79d5207323595736230180035e1c",
+        "bytes": 3863
+      },
+      "status": "complete",
+      "errors": []
+    }
+  },
+  "plans": null,
+  "plan": null,
+  "meta": {
+    "queue_note": "ISA direct-effect SPF datapath (lane A, monomial_scan, induced) + FieldLM microcode (lane B, induced records); CPU; same round-3 splits/panels; native ptrace; single seed.",
+    "observed_peak_rss_mb": 2462.7,
+    "observed_peak_rss_ts": 1792096199.9453154
+  },
+  "admission": {
+    "claim_key": "mrun:71b46e9a1b5b5fc56c1e701dc07a2b323c0fe8cbe38bb0065e28d390a89b3f08",
+    "fencing_epoch": 1,
+    "idempotency_key": "mrun:71b46e9a1b5b5fc56c1e701dc07a2b323c0fe8cbe38bb0065e28d390a89b3f08",
+    "scope_sha256": "14d37b12dd1d097faa8d944c82fddcc71294794abb8b84ff038fec2b6af6204f"
+  },
+  "submitted_request": {
+    "client_estimate": null,
+    "client_run_id": "a6689ad481ab92b6",
+    "cmd": [
+      "/usr/bin/env",
+      "UV_CACHE_DIR=/tmp/isa-uv-cache",
+      "uv",
+      "run",
+      "--project",
+      "{env}",
+      "--with",
+      "unicorn==2.1.4",
+      "--with",
+      "psutil>=5.9",
+      "python",
+      "de_spf_fieldlm_job.py",
+      "worker"
+    ],
+    "config": {
+      "admission_attempt": 0,
+      "config": {
+        "child_timeout_s": 10800,
+        "counters": [
+          16,
+          128,
+          1024,
+          8192
+        ],
+        "cpu_threads": 4,
+        "gen_workers": 4,
+        "grad_forms": [
+          "add_r64_32",
+          "sub_r64_32",
+          "adc_r64_8"
+        ],
+        "grad_lrs": [
+          0.05,
+          0.01
+        ],
+        "grad_n": [
+          16,
+          256,
+          4096
+        ],
+        "grad_seeds": 1,
+        "grad_steps": 1500,
+        "labels": "Unicorn 2.1.4 single-step (independent emulator); native ptrace for counter/stdout",
+        "lane_a_curve": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64,
+          256,
+          1024
+        ],
+        "lane_a_rows": 4096,
+        "lane_b_arms": [
+          "learned",
+          "supplied_map",
+          "unmasked"
+        ],
+        "lane_b_curve": [
+          500,
+          2000,
+          8000,
+          30000
+        ],
+        "lanes": [
+          "b"
+        ],
+        "long_count": 4,
+        "long_programs": 8192,
+        "profile": "x86-de64-v2",
+        "program_counts": [
+          16,
+          8,
+          4
+        ],
+        "program_lengths": [
+          16,
+          128,
+          1024
+        ],
+        "schema": "isa-direct-effect-spf-fieldlm",
+        "seed": 719,
+        "smoke": false,
+        "sources": {
+          "isa_worktree": {
+            "dirty": [],
+            "head": "f63944b474c18d792a0759b6caad691c8c3701ae"
+          },
+          "spectral_native": {
+            "dirty_paths_under_source": 10,
+            "head": "02241e5502b576b4959a48a37d8b5443c1c748e0"
+          },
+          "spf": {
+            "dirty_paths_under_source": 0,
+            "head": "9436749ccd6ceb01a67f9d445dc0c26c9f3b0acb"
+          }
+        },
+        "stdouts": [
+          16,
+          128,
+          1024
+        ],
+        "supplied": "lane A: operand fetch, width, write-back, {0,\u03c0} bit readout, tap vocabulary; lane B: role vocabulary (3-bit fields at bit 0/3 of an opcode byte, trailing 0/1/4/8-byte immediates with zero/sign extension, width/merge classes, store to [register], SYSCALL), lookup tie-break, fetch at the emitted RIP, OS boundary",
+        "test_n": 8192,
+        "train_n": 60000
+      },
+      "device": "cpu",
+      "mrun_guarded_request_sha256": "71b46e9a1b5b5fc56c1e701dc07a2b323c0fe8cbe38bb0065e28d390a89b3f08",
+      "needs": {
+        "cpu": true
+      },
+      "retry_on_kill": false,
+      "saturn_request_sha256": "76536081b8a1187aff79bc712ab7bc6dca3476f014afcd887d6e69325d8182f9",
+      "scheduling_contract": {
+        "additional_scheduler_submissions": 0,
+        "checkpoint_policy": "structural induction (no gradient checkpoints); every fitted record set written to result",
+        "collection_policy": "direct_job_only",
+        "control_plane": "mrun_outer_lease",
+        "data_plane": "resident_worker",
+        "execution_model": "finite_sequential_models",
+        "interactive": false,
+        "lease_scope": "entire-sequential-model-worker",
+        "max_local_work_items": 256,
+        "max_mrun_submissions": 1,
+        "model_loads": 2,
+        "model_process_execution": "sequential_subprocesses",
+        "model_processes": 2,
+        "mrun_retry_policy": "none_for_finite_lease",
+        "nested_mrun_submissions": 0,
+        "per_branch_mrun_submissions": 0,
+        "per_transition_mrun_submissions": 0,
+        "resident_model_concurrency": 1,
+        "schema": "saturn-single-lease-sequential-models-scheduling-contract-v1",
+        "subprocess_retry_policy": "none",
+        "task_family": "training"
+      },
+      "task_family": "training"
+    },
+    "env_alias": "mrun",
+    "experiment": "isa-direct-effect-spf-fieldlm",
+    "needs": {
+      "cpu": true,
+      "payload_custody_v2": true,
+      "prefer_host": "beast"
+    },
+    "payload": {
+      "sha256": "4cf216c81dab7776d9728af398c036054747bcc4400bf3e79cd9aca4ae4415a9",
+      "size_bytes": 2075027
+    },
+    "payload_kind": "shipped",
+    "plans": null,
+    "priority": 100,
+    "reservation": {
+      "cpu_threads": 4,
+      "est_wall_s": 1500.0,
+      "ram_mb": 3000.0,
+      "vram_mb": 0.0
+    },
+    "schema": "mrun.normalized-job-request.v2",
+    "timeout_s": 2400.0
+  },
+  "submitted_request_sha256": "4c86bd233b71422da4c4c1d486c90d72e956ef974e7a894dd8fe921c632baa7b",
+  "payload_custody": {
+    "required": true,
+    "declared": {
+      "sha256": "4cf216c81dab7776d9728af398c036054747bcc4400bf3e79cd9aca4ae4415a9",
+      "size_bytes": 2075027
+    },
+    "sealed": {
+      "sha256": "4cf216c81dab7776d9728af398c036054747bcc4400bf3e79cd9aca4ae4415a9",
+      "size_bytes": 2075027,
+      "sealed_ts": 1792096183.9614444
+    },
+    "executed": {
+      "sha256": "4cf216c81dab7776d9728af398c036054747bcc4400bf3e79cd9aca4ae4415a9",
+      "size_bytes": 2075027,
+      "reported_ts": 1792096189.9964235,
+      "host": "beast"
+    }
+  }
+}

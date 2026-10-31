@@ -1,0 +1,19 @@
+<frozen runpy>:130: RuntimeWarning: 'mrun.os_limit' found in sys.modules after import of package 'mrun', but prior to execution of 'mrun.os_limit'; this may result in unpredictable behaviour
+ISA_DESF_NATIVE:{"status": "valid", "counter-16": {"steps": 16, "exit": [13]}, "counter-128": {"steps": 128, "exit": [125]}, "counter-1024": {"steps": 1024, "exit": [253]}, "counter-8192": {"steps": 8192, "exit": [253]}, "stdout-16": {"steps": 16, "exit": [0]}, "stdout-128": {"steps": 128, "exit": [0]}, "stdout-1024": {"steps": 1024, "exit": [0]}}
+ISA_DESF_DATA:{"train_n": 60000, "gen_s": 10.6, "forms_train": 28}
+ISA_DESF_FIT:{"arm": "learned", "rows": 60000, "groups": 399, "records": 28, "merged": 16, "split": 0, "collided": 2, "absorbed": 28, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB:{"arm": "learned", "records": 28, "iid": 1.0, "held_lit": 1.0, "held_pairs": 1.0, "abstained_pairs": 0, "carry_first_fail": null, "programs": {"train_literals": {"16": 16, "128": 8, "1024": 4}, "heldout_literals": {"16": 16, "128": 8, "1024": 4}, "heldout_pairs": {"16": 16, "128": 8, "1024": 4}, "long_train_literals": {"8192": 4}}, "counter": {"16": true, "128": true, "1024": true, "8192": true}, "stdout": {"16": true, "128": true, "1024": true}, "fit_s": 28.1}
+ISA_DESF_FIT:{"arm": "supplied_map", "rows": 60000, "groups": 399, "records": 28, "merged": 16, "split": 0, "collided": 2, "absorbed": 28, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB:{"arm": "supplied_map", "records": 28, "iid": 1.0, "held_lit": 1.0, "held_pairs": 1.0, "abstained_pairs": 0, "carry_first_fail": null, "programs": {}, "counter": {}, "stdout": {}, "fit_s": 27.6}
+ISA_DESF_FIT:{"arm": "unmasked", "rows": 60000, "groups": 399, "records": 399, "merged": 0, "split": 0, "collided": 0, "absorbed": 0, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB:{"arm": "unmasked", "records": 399, "iid": 1.0, "held_lit": 1.0, "held_pairs": 0.0, "abstained_pairs": 4096, "carry_first_fail": null, "programs": {}, "counter": {}, "stdout": {}, "fit_s": 27.8}
+ISA_DESF_FIT:{"arm": "learned", "rows": 500, "groups": 160, "records": 32, "merged": 16, "split": 0, "collided": 3, "absorbed": 14, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB_CURVE:{"n": 500, "records": 32, "iid": 1.0, "held_pairs": 1.0, "abstained_pairs": 0, "unfit": 0}
+ISA_DESF_FIT:{"arm": "learned", "rows": 2000, "groups": 290, "records": 31, "merged": 16, "split": 0, "collided": 6, "absorbed": 31, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB_CURVE:{"n": 2000, "records": 31, "iid": 1.0, "held_pairs": 1.0, "abstained_pairs": 0, "unfit": 0}
+ISA_DESF_FIT:{"arm": "learned", "rows": 8000, "groups": 396, "records": 36, "merged": 16, "split": 0, "collided": 2, "absorbed": 24, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB_CURVE:{"n": 8000, "records": 36, "iid": 1.0, "held_pairs": 1.0, "abstained_pairs": 0, "unfit": 0}
+ISA_DESF_FIT:{"arm": "learned", "rows": 30000, "groups": 399, "records": 28, "merged": 16, "split": 0, "collided": 2, "absorbed": 28, "tables": 6, "unfit_rows": 0, "code_map": {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}}
+ISA_DESF_LANEB_CURVE:{"n": 30000, "records": 28, "iid": 1.0, "held_pairs": 1.0, "abstained_pairs": 0, "unfit": 0}
+ISA_DESF_LANE_DONE:{"lane": "b", "wall_s": 329.8, "rss_mb": 603.6484375}
+ISA_ARTIFACT:{"sha256": "9c2e70f7f6a950ce2218d77e64037a8e6681678209491252629c5cf93c253b78", "name": "result.tar.gz", "bytes": 100997}

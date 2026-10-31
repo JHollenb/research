@@ -1,0 +1,251 @@
+{
+  "schema": "isa-freestanding-c-apps-v1",
+  "target": "Linux x86-64; little endian; freestanding _start",
+  "compile_policy": "All apps compiled with the identical ordinary harness flags; no model-specific source or compiler tailoring.",
+  "required_common_flags": [
+    "-Os",
+    "-nostdlib",
+    "-static",
+    "-no-pie"
+  ],
+  "os_boundary": "Supplied inline asm only for Linux write(1,...) and exit(status); arithmetic, sorting, parsing and aggregation are C. No libc/startup claim.",
+  "expected_observables": "Exact stdout bytes and exit status. Native execution must use the same ELF bytes as every ISA architecture. Intermediate state correctness requires separate tracing.",
+  "reference_sha256": "81404edd3538607eda5e8bfdbd371dd9ad64b893fa04c9f34f5c375530eb9131",
+  "shared_header": {
+    "source": "linux_syscalls.h",
+    "sha256": "c13e4d6aa0232715d9bdfaee86102f0a15bf06dde9bf8a61ac425d5d4f86652a"
+  },
+  "tiny_provenance": {
+    "source": "examples/c-hello/hello.c",
+    "sha256": "4cad5a99b51d8c12ae0e20b2c671fb53532f90cb1f2a684f214984ce4de3c121",
+    "byte_identical": true
+  },
+  "apps": [
+    {
+      "id": "tiny",
+      "source": "tiny_hello.c",
+      "difficulty": "tiny",
+      "description": "Known Hello; one fixed stdout write plus exit.",
+      "source_bytes": 521,
+      "source_sha256": "4cad5a99b51d8c12ae0e20b2c671fb53532f90cb1f2a684f214984ce4de3c121",
+      "inputs": {
+        "kind": "literal",
+        "message_utf8": "Hello, world!\n",
+        "input_bytes": 14
+      },
+      "expected_stdout_hex": "48656c6c6f2c20776f726c64210a",
+      "expected_stdout_bytes": 14,
+      "expected_exit_code": 0,
+      "expected_details": {},
+      "reference": {
+        "source": "reference.py",
+        "method": "Literal UTF-8 bytes, independent of compiled execution."
+      },
+      "native_dynamic_instruction_count": null,
+      "instruction_count_note": "Not measured; suite design target below approximately 50000 dynamic native instructions."
+    },
+    {
+      "id": "small",
+      "source": "small_checksum.c",
+      "difficulty": "small",
+      "description": "24 straight-line updates of four volatile unsigned 64-bit cells; addition, subtraction, XOR and constant multiplication.",
+      "source_bytes": 684,
+      "source_sha256": "b2b4c08c8c9a4d5ed52d62e51c0eeca491c34c19da5463030e819de864523fb5",
+      "inputs": {
+        "kind": "four_volatile_u64_seeds",
+        "seeds_hex": [
+          "123456789abcdef0",
+          "0fedcba987654321",
+          "3141592653589793",
+          "2718281828459045"
+        ],
+        "data_bytes": 32,
+        "updates": 24
+      },
+      "expected_stdout_hex": "dd9753859a054fad",
+      "expected_stdout_bytes": 8,
+      "expected_exit_code": 0,
+      "expected_details": {
+        "result_u64": 12488206452941625309,
+        "final_cells": {
+          "a": 14539781062502754628,
+          "b": 9391043594763288720,
+          "c": 18332517229223918300,
+          "d": 1779264227701310677
+        },
+        "updates": 24
+      },
+      "reference": {
+        "source": "reference.py",
+        "method": "Interpret the update recipe in Python integers; reduce each write modulo 2**64 and XOR the final four cells."
+      },
+      "native_dynamic_instruction_count": null,
+      "instruction_count_note": "Not measured; suite design target below approximately 50000 dynamic native instructions."
+    },
+    {
+      "id": "medium",
+      "source": "medium_sort.c",
+      "difficulty": "medium",
+      "description": "Insertion sort of 32 u32 elements with loops/conditionals; order-sensitive 64-bit digest.",
+      "source_bytes": 1043,
+      "source_sha256": "c36095ade40404a444dea6b036b125c71c07ab156e34ec704a959c9ea5ce968b",
+      "inputs": {
+        "kind": "volatile_u32_array",
+        "values": [
+          93,
+          7,
+          4294967295,
+          41,
+          0,
+          18,
+          73,
+          7,
+          2048,
+          511,
+          31,
+          99,
+          2,
+          65535,
+          1009,
+          17,
+          8,
+          1,
+          4096,
+          63,
+          127,
+          255,
+          1023,
+          3,
+          8191,
+          5,
+          29,
+          11,
+          47,
+          23,
+          89,
+          13
+        ],
+        "data_bytes": 128
+      },
+      "expected_stdout_hex": "31e3ef26d58a61a3",
+      "expected_stdout_bytes": 8,
+      "expected_exit_code": 0,
+      "expected_details": {
+        "result_u64": 11772843549009109809,
+        "sorted_values": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7,
+          7,
+          8,
+          11,
+          13,
+          17,
+          18,
+          23,
+          29,
+          31,
+          41,
+          47,
+          63,
+          73,
+          89,
+          93,
+          99,
+          127,
+          255,
+          511,
+          1009,
+          1023,
+          2048,
+          4096,
+          8191,
+          65535,
+          4294967295
+        ],
+        "elements": 32
+      },
+      "reference": {
+        "source": "reference.py",
+        "method": "Python sorted() supplies the order independently of C insertion sort, followed by the documented modulo integer digest."
+      },
+      "native_dynamic_instruction_count": null,
+      "instruction_count_note": "Not measured; suite design target below approximately 50000 dynamic native instructions."
+    },
+    {
+      "id": "large",
+      "source": "large_records.c",
+      "difficulty": "large",
+      "description": "Multi-function CSV parsing and eight-bucket quantity/revenue/count aggregation, then a 24-value digest.",
+      "source_bytes": 3200,
+      "source_sha256": "1c19cbf7df53a5406c4993d11392e60d5dc775618b6ff67eac1581ded2b53bad",
+      "inputs": {
+        "kind": "built_in_valid_ascii_csv",
+        "format": "name,quantity,unit_price\\n",
+        "records": 80,
+        "input_bytes": 1053,
+        "input_sha256": "0da3ab9204faa491b2a0c2a290a92b7fb6691f397c6af6ff50a997fc50c0b597",
+        "generation": "For i=0..79: name=NAMES[(3*i+1)%8], quantity=(7*i)%23+1, unit_price=(137*i)%2000+50.",
+        "names": [
+          "amber",
+          "birch",
+          "cedar",
+          "delta",
+          "elm",
+          "fir",
+          "granite",
+          "hazelnut"
+        ],
+        "aggregate_bytes": 192
+      },
+      "expected_stdout_hex": "cd1ab3d21ccc3952",
+      "expected_stdout_bytes": 8,
+      "expected_exit_code": 0,
+      "expected_details": {
+        "result_u64": 5924991208948701901,
+        "records": 80,
+        "input_bytes": 1053,
+        "input_sha256": "0da3ab9204faa491b2a0c2a290a92b7fb6691f397c6af6ff50a997fc50c0b597",
+        "quantities": [
+          115,
+          119,
+          220,
+          117,
+          0,
+          0,
+          116,
+          261
+        ],
+        "revenues": [
+          108662,
+          131386,
+          225075,
+          133060,
+          0,
+          0,
+          121724,
+          233649
+        ],
+        "counts": [
+          10,
+          10,
+          20,
+          10,
+          0,
+          0,
+          10,
+          20
+        ]
+      },
+      "reference": {
+        "source": "reference.py",
+        "method": "Python splitlines/split/int parsing; sum(name_bytes)%8 independently replaces C rolling name hash; exact integer bucket totals; modulo digest."
+      },
+      "native_dynamic_instruction_count": null,
+      "instruction_count_note": "Not measured; suite design target below approximately 50000 dynamic native instructions."
+    }
+  ]
+}

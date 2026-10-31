@@ -1,0 +1,209 @@
+{
+  "archive_sha256": "948241c0d5ffb35a7f7271f534784bfa20e90f2d77228bd545a8d275b1e4d574",
+  "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "cpu_model": "AMD Ryzen 9 7950X 16-Core Processor",
+  "elapsed_s": 60.3,
+  "executed_payload": {
+    "host": "beast",
+    "sha256": "599b8fc8ddfc727b3979a9fa402b665cfbb28bf0b056d65027c4210b4711748b",
+    "size_bytes": 10158032
+  },
+  "files": {
+    "README.md": {
+      "bytes": 11872,
+      "sha256": "dc7452bc4428b9b0018f7e52d6df8f759183b18bd439dec582d07967f7a9e06d"
+    },
+    "evidence/matrix.json": {
+      "bytes": 245063,
+      "sha256": "72e46d91a2423b87454eff7d548633800669c7fee72491f47511dd4277a5997a"
+    },
+    "evidence/profile-scope.json": {
+      "bytes": 2486,
+      "sha256": "f85cf3c0f9db58397708ab0df355ca183dc142dc66e5609eaed194fa285f4294"
+    },
+    "evidence/programs/large.disassembly.txt": {
+      "bytes": 2353,
+      "sha256": "79336641fa03143ffcb0d0c117eae1d316fb07e5cf7a6fd43a47f488dbf38f9b"
+    },
+    "evidence/programs/large.elf": {
+      "bytes": 10216,
+      "sha256": "44d184b1fb5c94968b824c2c7f8c3e810357100eaa8fca760ac532756d99e3c0"
+    },
+    "evidence/programs/large.opmix.txt": {
+      "bytes": 3120,
+      "sha256": "7dc2ab76618d4554a02f9bae27544c21f7e8eb0c0c904a95c9877f48801a39a2"
+    },
+    "evidence/programs/medium.disassembly.txt": {
+      "bytes": 1655,
+      "sha256": "e50605174c14d0190492296904625c8695b0eec5d87e6e6b1b034efd1ed6e28b"
+    },
+    "evidence/programs/medium.elf": {
+      "bytes": 9080,
+      "sha256": "62c8a1d89c31f48efb7b441767efc67033fdd2949cabb022e223080a794f404c"
+    },
+    "evidence/programs/medium.opmix.txt": {
+      "bytes": 2248,
+      "sha256": "4e5c82f544d1a7d55f1ea3bd15d767c6b1953be987ffde437ca561aaf9fae8cb"
+    },
+    "evidence/programs/small.disassembly.txt": {
+      "bytes": 4955,
+      "sha256": "ca6c758dee594a83ba17c5ba52faa879a51eb3b4923cfadc04315677a3d0cd80"
+    },
+    "evidence/programs/small.elf": {
+      "bytes": 9056,
+      "sha256": "79a973400883fb3a3b7dd61789acb85baed38d106883c23bf7bb37c0737c1e17"
+    },
+    "evidence/programs/small.opmix.txt": {
+      "bytes": 4560,
+      "sha256": "e14dab2e511f854bce34a3ee32c97dfce39e7a6ee81d6cd091b0a146bc6e4360"
+    },
+    "evidence/programs/tiny.disassembly.txt": {
+      "bytes": 320,
+      "sha256": "572f357f111ebcf8e6bfc344989b9429bc8c175af1d3d7b67c284e0396371440"
+    },
+    "evidence/programs/tiny.elf": {
+      "bytes": 8968,
+      "sha256": "f6e1eb09ce93102c90586061bf7fb9e3c696f0707b47d095fcf5805e0830f510"
+    },
+    "evidence/programs/tiny.opmix.txt": {
+      "bytes": 358,
+      "sha256": "2e0a3b4912c3153a5792cb8c9ed1d9c66f19fb0f987a9f4f847ff1b25aaf223e"
+    },
+    "evidence/receipt.json": {
+      "bytes": 9875,
+      "sha256": "79ac189edc5ade4310ee6b4f1679542ccbba84bc1eb4252c37eb0f441b55029d"
+    },
+    "evidence/request.json": {
+      "bytes": 2206,
+      "sha256": "26459f62df420dabb9fc3379c4b14104b06a8f5be585c3716eec6838d7638cb7"
+    },
+    "evidence/source-manifest.json": {
+      "bytes": 56326,
+      "sha256": "be5ed4fa73fa1d243d78faf2244ee29de84e13a2d996c5de0d31c20793038b4f"
+    },
+    "evidence/structural-artifact-retrieval/original-job-receipt.json": {
+      "bytes": 12923,
+      "sha256": "2e567d24d05dd788ee70fcf333a0f9d1ab9490870ec9b7b4757a291b00d37989"
+    },
+    "evidence/structural-artifact-retrieval/original-scheduler.log": {
+      "bytes": 3863,
+      "sha256": "f2612a649305a39fe5da1b50fe4080ac59bd79d5207323595736230180035e1c"
+    },
+    "evidence/structural-artifact-retrieval/retrieval-provenance.json": {
+      "bytes": 1096,
+      "sha256": "f11523240a34eb22a4c926334bd8e8d8cd29cc15c2f4515c2353ef1cb3a0be16"
+    },
+    "evidence/submission.json": {
+      "bytes": 35,
+      "sha256": "f40225f15b9bac896f71787ed7cfb719e0f58c7228d41539a681cfd7f1308dd7"
+    },
+    "measurements.md": {
+      "bytes": 16848,
+      "sha256": "c1e774ff862257d064597a009936bb6c358a2a08ebc040bd73556f564bbf9314"
+    },
+    "sources/README.md": {
+      "bytes": 5215,
+      "sha256": "e6d34f94ae6a38a732f4a32d3bf3b1af35a1fd84ec9ca2f0d3aba71a1d60ce49"
+    },
+    "sources/direct_effect/model.py": {
+      "bytes": 18673,
+      "sha256": "0cecd8699f4a603d38fc1583a0141eeddb99db3da1272fe143f38bb7159aa09c"
+    },
+    "sources/direct_effect/profile.py": {
+      "bytes": 8941,
+      "sha256": "183e33962c33b9091f947a4cc5c2cfcaa22a332c10e43abb46c822d3a2876397"
+    },
+    "sources/direct_effect/v2.py": {
+      "bytes": 35994,
+      "sha256": "b73400031e5749560921a0c24bfa8f0d4d4cf9fa98bce110de1413f09c1500a1"
+    },
+    "sources/native_measure.c": {
+      "bytes": 1861,
+      "sha256": "5d880b5089e82680533452e1dd2a2cbde6a2a79fd2234b35dcd6d922207bd077"
+    },
+    "sources/newer-model-inventory.json": {
+      "bytes": 4350,
+      "sha256": "4284812a54a1aaf7ea046bd5c187a7e27d843a249c9e69f093556a3649830ab7"
+    },
+    "sources/newer/recovered-structural-job-d3ecda62fb95/original-job-receipt.json": {
+      "bytes": 12923,
+      "sha256": "2e567d24d05dd788ee70fcf333a0f9d1ab9490870ec9b7b4757a291b00d37989"
+    },
+    "sources/newer/recovered-structural-job-d3ecda62fb95/original-scheduler.log": {
+      "bytes": 3863,
+      "sha256": "f2612a649305a39fe5da1b50fe4080ac59bd79d5207323595736230180035e1c"
+    },
+    "sources/newer/recovered-structural-job-d3ecda62fb95/retrieval-provenance.json": {
+      "bytes": 1096,
+      "sha256": "f11523240a34eb22a4c926334bd8e8d8cd29cc15c2f4515c2353ef1cb3a0be16"
+    },
+    "sources/newer_adapter.py": {
+      "bytes": 6082,
+      "sha256": "61b6bd3e30ba539e91c151d3ea3393348fe91037e909533fe11477ec39ed4de5"
+    },
+    "sources/programs/README.md": {
+      "bytes": 3068,
+      "sha256": "170488d7773d5de2b2b7c2d23ddec6bf80459ef16f35b6c9bd628ac2d67725d7"
+    },
+    "sources/programs/large_records.c": {
+      "bytes": 3200,
+      "sha256": "1c19cbf7df53a5406c4993d11392e60d5dc775618b6ff67eac1581ded2b53bad"
+    },
+    "sources/programs/linux_syscalls.h": {
+      "bytes": 933,
+      "sha256": "c13e4d6aa0232715d9bdfaee86102f0a15bf06dde9bf8a61ac425d5d4f86652a"
+    },
+    "sources/programs/manifest.json": {
+      "bytes": 7515,
+      "sha256": "fa440c75102a17f491417a05a36a2a8536a867841a74dd850949215464af234e"
+    },
+    "sources/programs/medium_sort.c": {
+      "bytes": 1043,
+      "sha256": "c36095ade40404a444dea6b036b125c71c07ab156e34ec704a959c9ea5ce968b"
+    },
+    "sources/programs/reference.py": {
+      "bytes": 3629,
+      "sha256": "81404edd3538607eda5e8bfdbd371dd9ad64b893fa04c9f34f5c375530eb9131"
+    },
+    "sources/programs/small_checksum.c": {
+      "bytes": 684,
+      "sha256": "b2b4c08c8c9a4d5ed52d62e51c0eeca491c34c19da5463030e819de864523fb5"
+    },
+    "sources/programs/tiny_hello.c": {
+      "bytes": 521,
+      "sha256": "4cad5a99b51d8c12ae0e20b2c671fb53532f90cb1f2a684f214984ce4de3c121"
+    },
+    "sources/run_matrix.py": {
+      "bytes": 24376,
+      "sha256": "b1584aaed194b406daaecc147b1395206bc4678a1d78e674bd352d5785114fae"
+    },
+    "sources/selector-neural-runtime.py": {
+      "bytes": 32239,
+      "sha256": "fab3dc09b3cc27697c986028d582d527d563755c4ae4a23d48fb00956262198d"
+    },
+    "sources/summarize.py": {
+      "bytes": 25692,
+      "sha256": "f16087c24c11526cbdde9ecbca2e34718b135e3f519acf4099b91f2106d92019"
+    },
+    "sources/trace_opmix.c": {
+      "bytes": 3270,
+      "sha256": "6c5d6c23e04374d4478853f84139c7dc2714d240dbfeee7e4a95f67b643d97b7"
+    },
+    "summary.json": {
+      "bytes": 570750,
+      "sha256": "931aca023aa945e4312931dcf6d565e8d405faee513ae1b1a0a900b360545be2"
+    }
+  },
+  "job_id": "job-007fe5d65603",
+  "original_run_dir": "/Users/jakeholl/domains/isa/runs/c-app-matrix-20261030-full",
+  "pilot_runs_excluded": [
+    "job-107bd16d5b31",
+    "job-bad56733f841"
+  ],
+  "raw_matrix_sha256": "72e46d91a2423b87454eff7d548633800669c7fee72491f47511dd4277a5997a",
+  "schema": "isa-compiled-c-reading-bundle-v1",
+  "scope": "One frozen specimen per path; supplied typed semantics for selectors, supplied Linux ABI for direct effects. No full ISA or intermediate-state parity claim. Full weights/shared environment excluded. All copied bytes retain original SHA256; measurements.md changes only the raw-matrix link for this bundle.",
+  "source_manifest_sha256": "be5ed4fa73fa1d243d78faf2244ee29de84e13a2d996c5de0d31c20793038b4f",
+  "state": "succeeded",
+  "training_updates": 0
+}

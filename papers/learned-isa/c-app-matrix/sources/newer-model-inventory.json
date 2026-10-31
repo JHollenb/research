@@ -1,0 +1,51 @@
+{
+  "inventory_date": "2026-10-30",
+  "models_executed_during_inventory": 0,
+  "adapter": "benchmarks/c_apps/newer_adapter.py",
+  "source_root": "outputs/law-find-census/runs/w2-full-20261016T140303/source",
+  "source_files_required": ["direct_effect/__init__.py", "direct_effect/model.py", "isa_lab/__init__.py", "isa_lab/ssm.py"],
+  "source_identity": {
+    "note": "The frozen source root and current ISA source files were byte-identical at inventory. The adapter verifies imported source bytes and exact checkpoint SHA256 before loading.",
+    "direct_effect/model.py": "0cecd8699f4a603d38fc1583a0141eeddb99db3da1272fe143f38bb7159aa09c",
+    "isa_lab/ssm.py": "319f942903166039e3f6d25a82b38f87412054ea18bf31e19c77554af6998573"
+  },
+  "models": {
+    "nn": {
+      "artifact_dir": "outputs/law-find-census/runs/w2-full-20261016T140303/source/checkpoints/r3-nn-result/models/nn",
+      "model_sha256": "30caebe4b2fb96b037829dc212a8620673b75b10ff74d3e421ec79c7d582e235",
+      "model_file_bytes": 1314005,
+      "parameters_from_prior_report": 322283
+    },
+    "mamba": {
+      "artifact_dir": "outputs/law-find-census/runs/w2-full-20261016T140303/source/checkpoints/r3-mamba-result/models/mamba",
+      "model_sha256": "9399e921776d7a5437c5bbd51bfc1928f09d2ddea444fe2aa1c9cf282baf7f1e",
+      "model_file_bytes": 1191012,
+      "parameters_from_prior_report": 291851
+    },
+    "hydra": {
+      "artifact_dir": "outputs/law-find-census/runs/w2-full-20261016T140303/source/checkpoints/r3-hydra-result/models/hydra",
+      "model_sha256": "0dc718f43f1336305419df39d22c62c4cba4e971b0aaf7199f2ffd95409a951c",
+      "model_file_bytes": 1191859,
+      "parameters_from_prior_report": 292151
+    }
+  },
+  "factory": "direct_effect.model.Executor(arch, width=48, layers=3, state=4, store=True, aligned=True); relptr=False for selected cohort",
+  "config_file": "result.json under each artifact_dir; top-level config. Training schedule fields do not change serving.",
+  "serving": {
+    "input": "Actual current fetch bytes (up to 15, zero-padded), own eight GPR values in RAX,RCX,RDX,RBX,RSP,RBP,RSI,RDI order, own CF/ZF/SF/OF bits and RIP",
+    "output": "Predicted complete eight registers, four flags, length, RIP=before RIP+length, store enable/address/value, syscall bit",
+    "native_interface_reference": "direct_effect/v2.py step at line 313; adapter mirrors raw inference without memory or Linux effects",
+    "abi_boundary_reference": "direct_effect/v2.py os_boundary and run_program; caller must explicitly report any supplied syscall handling",
+    "no_reference_after_state": true,
+    "hidden_state_resets_each_call": true,
+    "fieldlm_spf": "A bounded local inventory found no lane_b_learned_microcode.json frozen serving description. scripts/de_spf_fieldlm.py writes one at result/lanes/lane_b_learned_microcode.json, but only derived outputs/desf-report/report.json is currently local. That report contains selected table descriptions but omits the full microcode records and flag taps needed to reconstruct serving without fitting. Omit this newer structural row unless the immutable original artifact is collected. Original run is runs/desf-s719-b3 per scripts/desf_report.py; completed lane-B job job-d3ecda62fb95. Lane A is a datapath with supplied operand fetch/writeback, not an independent raw-window ELF executor."
+  },
+  "capability_limits": [
+    "There is no memory-load input beyond current instruction bytes and registers. Model-emitted stores may be committed by the host.",
+    "There is no branch target or arbitrary RIP head; raw prediction advances by a positive 1..15-byte length.",
+    "Training profile lacks general calls, returns, conditional branches, multiplication, shifts and many ordinary compiler instructions.",
+    "Running compiled C is an out-of-profile execution attempt. Failures, wrong outputs and limits are outcomes, not permission to introduce candidate semantics or oracle repairs.",
+    "Checkpoint file bytes, neural parameters, tensor bytes and full process RSS are different quantities. This inventory measured only file bytes/hash and quoted parameter counts from the existing report."
+  ],
+  "validation": "Python AST syntax check only. No Torch import, checkpoint hydration or model forward was run locally. Strict state_dict compatibility is checked by the adapter at actual load time."
+}

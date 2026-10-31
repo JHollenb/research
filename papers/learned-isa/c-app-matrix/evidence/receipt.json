@@ -1,0 +1,318 @@
+{
+  "job_id": "job-007fe5d65603",
+  "client_run_id": "5b76c51eb6fdcb55",
+  "experiment": "isa-c-app-matrix",
+  "state": "succeeded",
+  "payload_kind": "shipped",
+  "env_alias": "mrun",
+  "timeout_s": 600.0,
+  "priority": 0,
+  "assigned_host": "beast",
+  "lease_expires_ts": 1793404736.1073017,
+  "kill_requested": 0,
+  "created_ts": 1793404616.2163568,
+  "started_ts": 1793404616.6724775,
+  "finished_ts": 1793404676.8517506,
+  "status_detail": null,
+  "external_rss_mb": null,
+  "external_vram_mb": null,
+  "needs": {
+    "cpu": true,
+    "prefer_host": "beast",
+    "payload_custody_v2": true
+  },
+  "reservation": {
+    "ram_mb": 4096.0,
+    "vram_mb": 0.0,
+    "cpu_threads": 4,
+    "disk_gb": 1.0,
+    "est_wall_s": null,
+    "source": "probe-default"
+  },
+  "cmd": [
+    "/usr/bin/env",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "CUDA_VISIBLE_DEVICES=-1",
+    "uv",
+    "run",
+    "--no-sync",
+    "--project",
+    "{env}",
+    "python",
+    "run_matrix.py",
+    "worker"
+  ],
+  "config": {
+    "schema": "isa-c-app-matrix-request-v1",
+    "task_family": "inference",
+    "device": "cpu",
+    "needs": {
+      "cpu": true
+    },
+    "config": {
+      "schema": "isa-c-app-matrix-v1",
+      "engines": [
+        "pan_reference",
+        "nn",
+        "pan_isa",
+        "fieldlm",
+        "spf_transformer",
+        "mamba",
+        "hydra",
+        "effect_nn",
+        "effect_mamba",
+        "effect_hydra"
+      ],
+      "warm_repeats": 3,
+      "native_repeats": 15,
+      "cell_timeout_s": 10,
+      "max_steps": 200000,
+      "worker_budget_s": 420,
+      "threads": 1,
+      "device": "cpu",
+      "seed": 673,
+      "training_updates": 0,
+      "scope": "Matched C-compiled freestanding ELF execution; native outputs checked independently; failures retained."
+    },
+    "source_manifest_sha256": "be5ed4fa73fa1d243d78faf2244ee29de84e13a2d996c5de0d31c20793038b4f",
+    "scheduling_contract": {
+      "schema": "saturn-single-lease-sequential-models-scheduling-contract-v1",
+      "lease_scope": "entire-sequential-model-worker",
+      "execution_model": "finite_sequential_models",
+      "task_family": "inference",
+      "max_mrun_submissions": 1,
+      "per_branch_mrun_submissions": 0,
+      "per_transition_mrun_submissions": 0,
+      "additional_scheduler_submissions": 0,
+      "nested_mrun_submissions": 0,
+      "model_processes": 40,
+      "model_loads": 40,
+      "resident_model_concurrency": 1,
+      "model_process_execution": "sequential_subprocesses",
+      "subprocess_retry_policy": "none",
+      "max_local_work_items": 200,
+      "control_plane": "mrun_outer_lease",
+      "data_plane": "resident_worker",
+      "mrun_retry_policy": "none_for_finite_lease",
+      "collection_policy": "direct_job_only",
+      "interactive": false,
+      "checkpoint_policy": "One frozen architecture per fresh child/cell, serial CPU1; no fitting/fallback; four apps share exact ELF bytes."
+    },
+    "saturn_request_sha256": "d44b4ffdf656d0f00a640cb596d4f2a62f92e5dec80825d8fe8e236f6057f907",
+    "retry_on_kill": false,
+    "mrun_guarded_request_sha256": "831f07864d93aedf8dad12b19d379c800540212e3a8ddbc01432b71e2ddd31ef"
+  },
+  "result": {
+    "status": "ok",
+    "returncode": 0,
+    "elapsed_s": 60.3,
+    "peak_rss_mb": 693.8,
+    "peak_vram_mb": 0.0,
+    "executed_payload": {
+      "sha256": "599b8fc8ddfc727b3979a9fa402b665cfbb28bf0b056d65027c4210b4711748b",
+      "size_bytes": 10158032,
+      "host": "beast"
+    },
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "payload_sandbox_backend": "off",
+    "payload_sandbox": {
+      "requested": false
+    },
+    "diagnostics": {
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1793404616.5496573
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1793404616.6673768
+        },
+        {
+          "name": "process.launch",
+          "ts": 1793404616.6698472
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1793404616.673836
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1793404674.881646
+        },
+        {
+          "name": "finished",
+          "ts": 1793404674.8845391
+        }
+      ],
+      "command": [
+        "/usr/bin/env",
+        "OMP_NUM_THREADS=1",
+        "MKL_NUM_THREADS=1",
+        "OPENBLAS_NUM_THREADS=1",
+        "CUDA_VISIBLE_DEVICES=-1",
+        "uv",
+        "run",
+        "--no-sync",
+        "--project",
+        "/home/beast/domains/mrun",
+        "python",
+        "run_matrix.py",
+        "worker"
+      ],
+      "cwd": "/mnt/hdd8tb/mrun-work/job-007fe5d65603",
+      "log_path": "/mnt/hdd8tb/mrun-work/job-007fe5d65603/job.log"
+    },
+    "failure": null,
+    "artifacts": {
+      "schema": "mrun.run-artifacts-v1",
+      "job_id": "job-007fe5d65603",
+      "job_status": "ok",
+      "store": {
+        "endpoint": "http://192.168.68.202:9030",
+        "bucket": "mrun",
+        "cas_prefix": "cas/",
+        "runs_prefix": "runs/"
+      },
+      "runs_prefix": "s3://mrun/runs/job-007fe5d65603/",
+      "status": "failed-queued",
+      "errors": [
+        "finish: EndpointConnectionError: Could not connect to the endpoint URL: \"http://192.168.68.202:9030/\""
+      ],
+      "rows": 0,
+      "objects": 0,
+      "objects_pending": 0
+    }
+  },
+  "plans": null,
+  "plan": null,
+  "meta": {
+    "queue_note": "Compiled-C matrix:4 apps, 10 frozen paths, serial CPU1. Each whole cell <=10s/200k instructions; first+3 warm requests. Native reference and ptrace separately. No fitting, fallback, or per-model compiler changes; stop science at420s, finalize by600s.",
+    "observed_peak_rss_mb": 689.1,
+    "observed_peak_rss_ts": 1793404655.9564312
+  },
+  "admission": {
+    "claim_key": "mrun:831f07864d93aedf8dad12b19d379c800540212e3a8ddbc01432b71e2ddd31ef",
+    "fencing_epoch": 1,
+    "idempotency_key": "mrun:831f07864d93aedf8dad12b19d379c800540212e3a8ddbc01432b71e2ddd31ef",
+    "scope_sha256": "7bafe2a5ec49c74f17a7d17d3c330c27887baca6e2d0272fa76666d8f4ef56ef"
+  },
+  "submitted_request": {
+    "client_estimate": null,
+    "client_run_id": "5b76c51eb6fdcb55",
+    "cmd": [
+      "/usr/bin/env",
+      "OMP_NUM_THREADS=1",
+      "MKL_NUM_THREADS=1",
+      "OPENBLAS_NUM_THREADS=1",
+      "CUDA_VISIBLE_DEVICES=-1",
+      "uv",
+      "run",
+      "--no-sync",
+      "--project",
+      "{env}",
+      "python",
+      "run_matrix.py",
+      "worker"
+    ],
+    "config": {
+      "config": {
+        "cell_timeout_s": 10,
+        "device": "cpu",
+        "engines": [
+          "pan_reference",
+          "nn",
+          "pan_isa",
+          "fieldlm",
+          "spf_transformer",
+          "mamba",
+          "hydra",
+          "effect_nn",
+          "effect_mamba",
+          "effect_hydra"
+        ],
+        "max_steps": 200000,
+        "native_repeats": 15,
+        "schema": "isa-c-app-matrix-v1",
+        "scope": "Matched C-compiled freestanding ELF execution; native outputs checked independently; failures retained.",
+        "seed": 673,
+        "threads": 1,
+        "training_updates": 0,
+        "warm_repeats": 3,
+        "worker_budget_s": 420
+      },
+      "device": "cpu",
+      "mrun_guarded_request_sha256": "831f07864d93aedf8dad12b19d379c800540212e3a8ddbc01432b71e2ddd31ef",
+      "needs": {
+        "cpu": true
+      },
+      "retry_on_kill": false,
+      "saturn_request_sha256": "d44b4ffdf656d0f00a640cb596d4f2a62f92e5dec80825d8fe8e236f6057f907",
+      "scheduling_contract": {
+        "additional_scheduler_submissions": 0,
+        "checkpoint_policy": "One frozen architecture per fresh child/cell, serial CPU1; no fitting/fallback; four apps share exact ELF bytes.",
+        "collection_policy": "direct_job_only",
+        "control_plane": "mrun_outer_lease",
+        "data_plane": "resident_worker",
+        "execution_model": "finite_sequential_models",
+        "interactive": false,
+        "lease_scope": "entire-sequential-model-worker",
+        "max_local_work_items": 200,
+        "max_mrun_submissions": 1,
+        "model_loads": 40,
+        "model_process_execution": "sequential_subprocesses",
+        "model_processes": 40,
+        "mrun_retry_policy": "none_for_finite_lease",
+        "nested_mrun_submissions": 0,
+        "per_branch_mrun_submissions": 0,
+        "per_transition_mrun_submissions": 0,
+        "resident_model_concurrency": 1,
+        "schema": "saturn-single-lease-sequential-models-scheduling-contract-v1",
+        "subprocess_retry_policy": "none",
+        "task_family": "inference"
+      },
+      "schema": "isa-c-app-matrix-request-v1",
+      "source_manifest_sha256": "be5ed4fa73fa1d243d78faf2244ee29de84e13a2d996c5de0d31c20793038b4f",
+      "task_family": "inference"
+    },
+    "env_alias": "mrun",
+    "experiment": "isa-c-app-matrix",
+    "needs": {
+      "cpu": true,
+      "payload_custody_v2": true,
+      "prefer_host": "beast"
+    },
+    "payload": {
+      "sha256": "599b8fc8ddfc727b3979a9fa402b665cfbb28bf0b056d65027c4210b4711748b",
+      "size_bytes": 10158032
+    },
+    "payload_kind": "shipped",
+    "plans": null,
+    "priority": 0,
+    "reservation": null,
+    "schema": "mrun.normalized-job-request.v2",
+    "timeout_s": 600.0
+  },
+  "submitted_request_sha256": "8383306f9d5981fa89bd2835ad226e2ecfd3b7ccb234854ae14f49047d65dc3d",
+  "payload_custody": {
+    "required": true,
+    "declared": {
+      "sha256": "599b8fc8ddfc727b3979a9fa402b665cfbb28bf0b056d65027c4210b4711748b",
+      "size_bytes": 10158032
+    },
+    "sealed": {
+      "sha256": "599b8fc8ddfc727b3979a9fa402b665cfbb28bf0b056d65027c4210b4711748b",
+      "size_bytes": 10158032,
+      "sealed_ts": 1793404616.5242572
+    },
+    "executed": {
+      "sha256": "599b8fc8ddfc727b3979a9fa402b665cfbb28bf0b056d65027c4210b4711748b",
+      "size_bytes": 10158032,
+      "reported_ts": 1793404616.5657222,
+      "host": "beast"
+    }
+  }
+}

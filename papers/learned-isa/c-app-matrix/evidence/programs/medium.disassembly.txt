@@ -1,0 +1,59 @@
+
+result/programs/medium.elf:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	push   %rax
+  401001:	pop    %rax
+  401002:	xor    %eax,%eax
+  401004:	sub    $0x18,%rsp
+  401008:	mov    %eax,%edx
+  40100a:	mov    0x402000(,%rdx,4),%edx
+  401011:	mov    %edx,-0x68(%rsp,%rax,4)
+  401015:	inc    %rax
+  401018:	cmp    $0x20,%rax
+  40101c:	jne    401008 <_start+0x8>
+  40101e:	lea    -0x64(%rsp),%rcx
+  401023:	mov    $0x1,%edx
+  401028:	mov    (%rcx),%edi
+  40102a:	mov    %edx,%eax
+  40102c:	mov    %rcx,%rsi
+  40102f:	mov    -0x4(%rsi),%r8d
+  401033:	mov    %eax,%r9d
+  401036:	dec    %eax
+  401038:	cmp    %r8d,%edi
+  40103b:	jae    40104a <_start+0x4a>
+  40103d:	mov    %r8d,(%rsi)
+  401040:	sub    $0x4,%rsi
+  401044:	test   %eax,%eax
+  401046:	jne    40102f <_start+0x2f>
+  401048:	jmp    40104d <_start+0x4d>
+  40104a:	mov    %r9d,%eax
+  40104d:	inc    %rdx
+  401050:	mov    %edi,-0x68(%rsp,%rax,4)
+  401054:	add    $0x4,%rcx
+  401058:	cmp    $0x20,%rdx
+  40105c:	jne    401028 <_start+0x28>
+  40105e:	lea    -0x68(%rsp),%rax
+  401063:	lea    0x18(%rsp),%rcx
+  401068:	movabs $0x14650fb0739d0383,%rdx
+  401072:	movabs $0x100000001b3,%rsi
+  40107c:	mov    (%rax),%edi
+  40107e:	add    $0x4,%rax
+  401082:	xor    %rdi,%rdx
+  401085:	imul   %rsi,%rdx
+  401089:	cmp    %rax,%rcx
+  40108c:	jne    40107c <_start+0x7c>
+  40108e:	mov    $0x1,%eax
+  401093:	mov    %rdx,-0x70(%rsp)
+  401098:	lea    -0x70(%rsp),%rsi
+  40109d:	mov    $0x8,%edx
+  4010a2:	mov    %rax,%rdi
+  4010a5:	syscall
+  4010a7:	xor    %edi,%edi
+  4010a9:	cmp    $0x8,%rax
+  4010ad:	mov    $0x3c,%eax
+  4010b2:	setne  %dil
+  4010b6:	syscall
