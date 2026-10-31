@@ -11,6 +11,10 @@ execution comparison: native C, six selectors and three direct-effect models on
 Hello World, a checksum, a sort and a record parser, with exact artifact sizes,
 CPU/RSS, timing and retained failures.
 
+The companion blog post, [Running compiled C on our learned ISA models](blog.md),
+explains why Hello succeeds and how the larger apps expose instruction coverage,
+memory and control-flow limits.
+
 The strongest current observations are:
 
 - Six matched selector adapters expose a large gap between isolated accuracy and complete-program reliability; all arithmetic remains supplied in this cohort.
